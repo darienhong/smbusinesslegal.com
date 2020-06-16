@@ -12,6 +12,7 @@ export default class Homepage extends Component {
           <div class='homepage'>
            <h1 style={{ fontWeight: 800, fontSize: 80}}> SMB Legal </h1>
            <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
+           <br></br>
            <p style={{ textAlign: "center"}}> Sign up for the beta here!</p>
           <div class='signup'>  <TextField style={{ left: 410, width: 300}}
                  id="outlined-primary"
@@ -21,7 +22,7 @@ export default class Homepage extends Component {
                  /> 
         
         
-           <Button color="primary" style={{ left: 430, marginTop: 10}}> Sign Up </Button>
+           <Button style={{ left: 430, marginTop: 10}}> Sign Up </Button>
            </div>
            <br></br>
            <br></br>

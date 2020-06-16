@@ -15,13 +15,31 @@ import {
 export default class App extends Component {
   render() {
     return (
-      <div class="body" >
-        <div className="header">
-          <Button variant="contained" color="secondary"> Hello World </Button>
-        </div>
-        <div><Questions /></div>
-        <div><Homepage /> </div>
-      </div >
+<Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/Questions">Questions</Link>
+            </li>
+          </ul>
+        </nav>
+
+      
+        <Switch>
+          <Route path="/Questions">
+            <Questions />
+          </Route>
+          <Route path="/">
+            <Homepage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+
     );
   }
 }
