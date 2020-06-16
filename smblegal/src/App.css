@@ -46,20 +46,20 @@
 h1 {
   color: black;
   text-align: center; 
-  font-family: 'Spartan';
+  font-family: 'WorkSans';
   font-style: bold;
   padding: 0%;
 }
 
 h2 { 
   color: black;
-  font-family: 'Spartan';
+  font-family: 'WorkSans';
   font-weight: 500;
 }
 
 p {
   color: black; 
-  font-family: 'Spartan';
+  font-family: 'WorkSans';
   font-weight: 300;
 
 }
@@ -76,6 +76,57 @@ p {
 .display {
   flex:50%;
   text-align: left
+.container {
+  width: 85%;
+  margin: 0 auto;
+  position: sticky;
+}
+
+nav {
+  float: right;
+  position: sticky;
+
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+  position: relative;
+}
+
+nav a {
+  color: rgb(169, 172, 201);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 550;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: rgb(57, 60, 126);
+
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: rgb(57, 60, 126);
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
 }
 
 

@@ -4,6 +4,8 @@ import './App.css';
 import { Button } from '@material-ui/core';
 import Questions from './Questions.jsx';
 import Homepage from './Homepage.jsx';
+import Navbar from './nav-bar.jsx';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,30 +17,9 @@ import {
 export default class App extends Component {
   render() {
     return (
-<Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/Questions">Questions</Link>
-            </li>
-          </ul>
-        </nav>
-
-      
-        <Switch>
-          <Route path="/Questions">
-            <Questions />
-          </Route>
-          <Route path="/">
-            <Homepage />
-          </Route>
-        </Switch>
+      <div class="header">
+        <Navbar />
       </div>
-    </Router>
 
     );
   }
