@@ -11,8 +11,9 @@ export default class Questions extends Component {
     super(props);
     this.state = {
       startDate: new Date(),
-      name: '[NAME]',
-      address: '[ADDRESS]'
+      employeeName: '[NAME]',
+      address: '[ADDRESS]',
+      internName: '[NAME]'
     };
   }
 
@@ -23,12 +24,16 @@ export default class Questions extends Component {
     });
   };
 
-  handleNameChange = event => {
-    this.setState({ name: event.target.value });
+  handleEmployeeNameChange = event => {
+    this.setState({ employeeName: event.target.value });
   }
 
   handleAddressChange = event => {
     this.setState({ address: event.target.value });
+  }
+
+  handleInternNameChange = event => {
+    this.setState({ internName: event.target.value });
   }
 
   render() {
@@ -37,30 +42,41 @@ export default class Questions extends Component {
 
     return (
       <div class='qs'>
-        <div class='date'>
+        <div class='ask'>
           <p> Enter the date: </p>
           <DatePicker
             selected={this.state.startDate}
             onChange={this.handleDateChange}
           />
+          <form>
+            <p>Enter your name:</p>
+            <input
+              type='text'
+              onChange={this.handleEmployeeNameChange}
+            />
+          </form>
+          <form>
+            <p>Enter your address:</p>
+            <input
+              type='text'
+              onChange={this.handleAddressChange}
+            />
+          </form>
+
+          <form>
+            <p>Enter your intern's name:</p>
+            <input
+              type='text'
+              onChange={this.handleInternNameChange}
+            />
+          </form>
         </div>
-        <form>
-          <p>Enter your name:</p>
-          <input
-            type='text'
-            onChange={this.handleNameChange}
-          />
-        </form>
-        <form>
-          <p>Enter your address:</p>
-          <input
-            type='text'
-            onChange={this.handleAddressChange}
-          />
-        </form>
+
 
         <div class='display'>
-          <Document date={formattedDate} name={this.state.name} address={this.state.address} />
+          <Document date={formattedDate} employeeName={this.state.employeeName} address={this.state.address}
+            internName={this.state.internName}
+          />
         </div>
       </div>
     );

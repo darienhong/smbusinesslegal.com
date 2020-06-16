@@ -1,9 +1,7 @@
 .App {
   text-align: center;
 }
-.body {
-  padding-left: 20px;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -65,3 +63,19 @@ p {
   font-weight: 300;
 
 }
+
+.qs {
+  display: flex;
+  padding-left: 20px;
+}
+
+.ask {
+  flex: 50%;
+}
+
+.display {
+  flex:50%;
+  text-align: left
+}
+
+
