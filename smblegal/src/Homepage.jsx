@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Button, TextField } from '@material-ui/core';
-import { ReactComponent as Image } from './assets/Meeting.svg';
+import Lottie from 'react-lottie';
+import animationData from './assets/animation.json';
 
 
 export default class Homepage extends Component {
     constructor(props) {
         super(props);
     }
+  
     render() {
+      const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid slice"
+        }
+      };
+
         return (
           <div class="homepage">
-              <br></br>
-              <br></br>
-              <Image />
+        <Lottie 
+	          options={defaultOptions}
+            height={800}
+            width={800}
+          />   
            <h1 style={{ fontWeight: 800, fontSize: 80}}> SMB Legal </h1>
            <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
            <br></br>

@@ -92,14 +92,15 @@ nav li {
 }
 
 nav a {
-  color: rgb(0, 0, 0);
+  color: rgb(169, 172, 201);
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 550;
   font-size: 14px;
 }
 
 nav a:hover {
-  color: rgb(0, 0, 0);
+  color: rgb(57, 60, 126);
 
 }
 
@@ -107,7 +108,7 @@ nav a::before {
   content: '';
   display: block;
   height: 5px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(57, 60, 126);
   position: absolute;
   top: 0;
   width: 0%;
