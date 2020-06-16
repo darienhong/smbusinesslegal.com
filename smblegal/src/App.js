@@ -4,6 +4,7 @@ import './App.css';
 import { Button } from '@material-ui/core';
 import Questions from './Questions.jsx';
 import Homepage from './Homepage.jsx';
+import Navbar from './nav-bar.jsx';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +16,11 @@ import {
 export default class App extends Component {
   render() {
     return (
-<Router>
+
+      <div class="header">
+        <Navbar />
+      </div>
+/*<Router>
       <div>
         <nav>
           <ul>
@@ -39,6 +44,7 @@ export default class App extends Component {
         </Switch>
       </div>
     </Router>
+    */
 
     );
   }
