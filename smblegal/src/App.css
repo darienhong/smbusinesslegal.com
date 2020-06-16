@@ -48,13 +48,20 @@
 h1 {
   color: black;
   text-align: center; 
-  font-family: 'WorkSans';
+  font-family: 'Spartan';
+  font-style: bold;
   padding: 0%;
 }
 
 h2 { 
   color: black;
-  font-family: 'WorkSans';
-  font-weight: 400;
-  
+  font-family: 'Spartan';
+  font-weight: 500;
+}
+
+p {
+  color: black; 
+  font-family: 'Spartan';
+  font-weight: 300;
+
 }

@@ -3,12 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import './fonts/WorkSans-Bold.ttf';
-import './fonts/WorkSans-Medium.ttf';
-import './fonts/WorkSans-Italic.ttf';
-import './fonts/WorkSans-BoldItalic.ttf';
-import './fonts/WorkSans-Light.ttf';
 import './fonts/WorkSans-Regular.ttf';
+import './fonts/Spartan-Regular.ttf';
 
 
 ReactDOM.render(

@@ -16,3 +16,8 @@ code {
   font-family: 'WorkSans';
   src: local('WorkSans'), url(./fonts/WorkSans-Regular.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: 'Spartan';
+  src: local('Spartan'), url(./fonts/Spartan-Regular.ttf) format('truetype');
+}
