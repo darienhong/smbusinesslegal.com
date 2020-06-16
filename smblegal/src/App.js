@@ -16,35 +16,9 @@ import {
 export default class App extends Component {
   render() {
     return (
-
       <div class="header">
         <Navbar />
       </div>
-/*<Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/Questions">Questions</Link>
-            </li>
-          </ul>
-        </nav>
-
-      
-        <Switch>
-          <Route path="/Questions">
-            <Questions />
-          </Route>
-          <Route path="/">
-            <Homepage />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-    */
 
     );
   }

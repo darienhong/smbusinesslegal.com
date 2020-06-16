@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Button, TextField } from '@material-ui/core';
+import { ReactComponent as Image } from './assets/Meeting.svg';
 
 
 export default class Homepage extends Component {
@@ -9,9 +10,10 @@ export default class Homepage extends Component {
     }
     render() {
         return (
-          <div class='homepage'>
+          <div class="homepage">
               <br></br>
               <br></br>
+              <Image />
            <h1 style={{ fontWeight: 800, fontSize: 80}}> SMB Legal </h1>
            <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
            <br></br>
@@ -27,6 +29,11 @@ export default class Homepage extends Component {
         
            <Button style={{ left: 400, marginTop: 10}}> Sign Up </Button>
            </div>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
            <br></br>
            <br></br>
           </div>
