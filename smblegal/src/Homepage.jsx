@@ -14,11 +14,12 @@ export default class Homepage extends Component {
            <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
            <br></br>
            <p style={{ textAlign: "center"}}> Sign up for the beta here!</p>
+           <br></br>
           <div class='signup'>  <TextField style={{ left: 410, width: 300}}
                  id="outlined-primary"
                  label="Email"
                  variant="outlined"
-                 color="primary"
+                 color="black"
                  /> 
         
         
