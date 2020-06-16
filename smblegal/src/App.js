@@ -5,6 +5,7 @@ import { Button } from '@material-ui/core';
 import Questions from './Questions.jsx';
 import Homepage from './Homepage.jsx';
 import Navbar from './nav-bar.jsx';
+import AboutUs from './aboutus.jsx';
 
 import {
   BrowserRouter as Router,
