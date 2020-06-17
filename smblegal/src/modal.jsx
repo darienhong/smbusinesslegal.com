@@ -31,16 +31,15 @@ export default class ModalTest extends Component {
         return(
             <div>
 
-                <Modal show={this.state.show} onHide={this.handleClose}>
+                <Modal show={this.state.show} onHide={this.handleClose} dialogClassName="modal-90w">
                     <ModalBody style={{fontFamily: 'WorkSans'}}> 
                     <br></br>
                     <br></br>
-                     <center> Welcome! At <b>SMB Legal </b>we are as excited as you are that soon all the legal 
+                     <center> <p style={{padding: 10}} >Welcome! At <span style={{ fontWeight: 700}}> SMB Legal </span>we are as excited as you are that soon all the legal 
                         and document management needs of small businesses will be solved.  
-                        Until then sign up so that you are the first to know when we launch! </center>
-                        <br></br>
-                        <br></br>
-                        <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 500, borderRadius: 0}}> JOIN NOW </Button>{' '} </center>
+                        Until then sign up so that you are the first to know when we launch! </p> </center> 
+                        
+                        <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 550, borderRadius: 0}}> SIGN UP </Button>{' '} </center>
                         <br></br>
                         </ModalBody>
                     <ModalFooter>

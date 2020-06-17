@@ -41,8 +41,8 @@ export default class Homepage extends Component {
            <h1 style={{ fontWeight: 800, fontSize: 80}}> SMB Legal </h1>
            <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
            <br></br>
-           <p style={{ textAlign: "center"}}> You have come to the right place to bring your 
-           small business into the digital world and avoid legal headaches </p>
+           <p style={{ textAlign: "center", fontWeight: 500}}> You have come to the right place to bring your 
+           small business into the digital world and avoid legal headaches. </p>
            <br></br>
            
          <div class='signup'>  
@@ -55,7 +55,8 @@ export default class Homepage extends Component {
                  />
         */}
         
-             <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 500, borderRadius: 0}}> JOIN NOW </Button>{' '} </center>
+             <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 600,
+              borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center>
           
            </div>
            
