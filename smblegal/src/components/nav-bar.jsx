@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import {
     BrowserRouter as Router,
     Switch,
     Route, 
     Link
   } from "react-router-dom";
-import Questions from './Questions.jsx';
-import Homepage from './Homepage.jsx';
-import AboutUs from './aboutus.jsx';
+import Questions from '../Questions.jsx';
+import Homepage from '../Homepage.jsx';
+import AboutUs from '../aboutus.jsx';
 
 export default class Navbar extends Component {
 constructor(props) {

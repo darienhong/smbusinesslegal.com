@@ -4,13 +4,7 @@ import { TextField } from '@material-ui/core';
 import Button from 'react-bootstrap/Button';
 import Lottie from 'react-lottie';
 import animationData from './assets/animation.json';
-
-import ModalDialog from 'react-bootstrap/ModalDialog'
-import ModalHeader from 'react-bootstrap/ModalHeader'
-import ModalTitle from 'react-bootstrap/ModalTitle'
-import ModalBody from 'react-bootstrap/ModalBody'
-import ModalFooter from 'react-bootstrap/ModalFooter'
-import ModalTest from './modal.jsx';
+import ModalTest from './components/modal.jsx';
 
 
 export default class Homepage extends Component {
@@ -55,7 +49,7 @@ export default class Homepage extends Component {
                  />
         */}
         
-             <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 600,
+             <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 550,
               borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center>
           
            </div>
