@@ -1,18 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Button } from '@material-ui/core';
-import Questions from './Questions.jsx';
-import Homepage from './Homepage.jsx';
-import Navbar from './nav-bar.jsx';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route, 
-  Link
-} from "react-router-dom";
-
+import Navbar from './components/nav-bar.jsx';
 
 export default class App extends Component {
   render() {
@@ -20,7 +8,6 @@ export default class App extends Component {
       <div class="header">
         <Navbar />
       </div>
-
     );
   }
 }
