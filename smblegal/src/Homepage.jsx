@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Button, TextField } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
+import Button from 'react-bootstrap/Button';
 import Lottie from 'react-lottie';
 import animationData from './assets/animation.json';
 
@@ -32,14 +33,19 @@ export default class Homepage extends Component {
            <br></br>
            <p style={{ textAlign: "center"}}> Sign up for the beta here!</p>
            <br></br>
-          <div class='signup'>  <TextField style={{ left: 350, width: 330}}
+           
+         <div class='signup'>  
+         
+     {/*   <TextField style={{ left: 350, width: 330}}
                  id="outlined-primary"
                  label="Email"
                  variant="outlined"
                  color="black"
-                 /> 
-
-           <Button style={{ left: 400, marginTop: 10}}> Sign Up </Button> 
+                 />
+        */}
+        
+             <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans'}}> JOIN NOW </Button>{' '} </center>
+          
            </div>
            
            <br></br>
@@ -50,9 +56,8 @@ export default class Homepage extends Component {
            <br></br>
            <br></br>
           </div>
-
-    
         );
+      
       }
 
 }
