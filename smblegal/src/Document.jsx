@@ -9,8 +9,8 @@ export default class Questions extends Component {
   render() {
     return (
       <div class='internship'>
-        <p>{this.props.employeeName}</p>
         <p>{this.props.date}</p>
+        <p>{this.props.employeeName}</p>
         <p>{this.props.address}</p>
         <p>Dear {this.props.internName},</p>
         <p>Welcome to the team!</p>
