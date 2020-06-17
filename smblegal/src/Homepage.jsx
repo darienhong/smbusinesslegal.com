@@ -44,7 +44,7 @@ export default class Homepage extends Component {
                  />
         */}
         
-             <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans'}}> JOIN NOW </Button>{' '} </center>
+             <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 500, borderRadius: 0}}> JOIN NOW </Button>{' '} </center>
           
            </div>
            
