@@ -38,8 +38,10 @@ export default class Homepage extends Component {
                  variant="outlined"
                  color="black"
                  /> 
-           <Button style={{ left: 400, marginTop: 10}}> Sign Up </Button>
+
+           <Button style={{ left: 400, marginTop: 10}}> Sign Up </Button> 
            </div>
+           
            <br></br>
            <br></br>
            <br></br>
