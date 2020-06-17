@@ -14,6 +14,8 @@ export default class AboutUs extends Component {
     
         return (
           <div>
+              <br></br>
+              <br></br>
               <h1> About Us </h1>
           </div>
 
