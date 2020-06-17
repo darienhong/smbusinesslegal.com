@@ -113,6 +113,7 @@ nav a {
 
 nav a:hover {
   color: rgb(57, 60, 126);
+  text-decoration: none;
 
 }
 
