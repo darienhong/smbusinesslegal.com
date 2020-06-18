@@ -94,10 +94,11 @@ export default class Questions extends Component {
     address: '[ADDRESS]',
     internName: '[NAME]',
     companyName: '[LEGAL NAME]',
+    state: '[STATE]',
     title: '[X]',
     duties: '[X]',
     relationship: '[X]',
-    startDate: null,
+    startDate: new Date(),
     wage: '[X – if paid must comply with minimum wage laws]'
 
   }
@@ -130,8 +131,8 @@ export default class Questions extends Component {
 
   render() {
     const { step } = this.state;
-    const { date, employeeName, address, internName, companyName, title, duties, relationship, startDate, wage } = this.state;
-    const values = { date, employeeName, address, internName, companyName, title, duties, relationship, startDate, wage };
+    const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate, wage } = this.state;
+    const values = { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate, wage };
 
     switch (step) {
       case 1:

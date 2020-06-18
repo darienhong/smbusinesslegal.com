@@ -56,6 +56,13 @@ export default class Questions extends Component {
               onChange={this.props.handleChange('companyName')}
             />
           </form>
+          <form>
+            <p>Enter the state:</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('state')}
+            />
+          </form>
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <Document class='doc' values={values}
