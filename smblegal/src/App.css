@@ -159,6 +159,19 @@ nav a:hover::before {
   background-color: #dedede;
 }
 
+.footer { 
+  text-align: center; 
+  padding: 20px; 
+  font-size: 12px;
+  font-weight: lighter;
+  letter-spacing: 0.5mm;
+  opacity: 0.5;
+}
+
+.title { 
+  font-weight: bold;
+  font-size: 80px;
+}
 
 
 

@@ -13,7 +13,6 @@ export default class Homepage extends Component {
     }
   
     render() {
-      
       const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -32,7 +31,7 @@ export default class Homepage extends Component {
             height={800}
             width={800}
           />   
-           <h1 style={{ fontWeight: 800, fontSize: 80}}> SMB Legal </h1>
+           <h1 class="title"> SMB Legal </h1>
            <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
            <br></br>
            <p style={{ textAlign: "center", fontWeight: 500}}> You have come to the right place to bring your 
@@ -53,7 +52,6 @@ export default class Homepage extends Component {
               borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </a>
           
            </div>
-           
            <br></br>
            <br></br>
            <br></br>
@@ -61,7 +59,12 @@ export default class Homepage extends Component {
            <br></br>
            <br></br>
            <br></br>
-          </div>
+            <footer class="footer">
+           <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
+       </footer>
+  
+       </div>
+
         );
       
       }
