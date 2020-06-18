@@ -214,6 +214,34 @@ nav a:hover::before {
   }
 }
 
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.governance, .employment, .covid-19 {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  box-shadow: 3px 3px;
+  text-transform: uppercase;
+  font-weight: 580;
+}
+.employment, .governance {
+  margin-right: 100px;
+}
+
+
+
+.covid-19:hover, .employment:hover, .governance:hover {
+  color: rgb(169, 172, 201);
+  border-color: rgb(169, 172, 201) ;
+}
+
 
 
 
