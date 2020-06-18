@@ -37,11 +37,13 @@ export default class ModalTest extends Component {
                     <br></br>
                     <center> <h1 style={{ fontSize: 30, fontWeight: 800}}> Launching soon! </h1></center>
                     <br></br>
-                     <center> <p style={{padding: 10}} >Welcome! At <span style={{ fontWeight: 700}}> SMB Legal </span>we are as excited as you are that soon all the legal 
-                        and document management needs of small businesses will be solved.  
-                        Until then sign up so that you are the first to know when we launch! </p> </center> 
+                     <center> <p style={{padding: 10}} >Welcome! At <span style={{ fontWeight: 700}}> SMB Legal </span>
+                     we are as excited as you are that soon all the legal and document management 
+                     needs of small businesses will be solved. Until then, sign up for our waitlist so that 
+                     you are the first to know when we launch! </p> </center> 
                         
-                        <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 550, borderRadius: 0}}> SIGN UP </Button>{' '} </center>
+                        <a href="https://forms.gle/iNUd4My5DKTGHuAz8" target="_blank"><center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', 
+                        fontWeight: 550, borderRadius: 0}}> SIGN UP </Button>{' '} </center></a>
                         <br></br>
                         </ModalBody>
                     <ModalFooter>

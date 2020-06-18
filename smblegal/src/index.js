@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import './fonts/WorkSans-Regular.ttf';
 import './fonts/Spartan-Regular.ttf';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './fonts/OpenSans-Regular.ttf';
 
 
 ReactDOM.render(

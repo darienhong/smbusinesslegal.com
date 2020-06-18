@@ -49,8 +49,8 @@ export default class Homepage extends Component {
                  />
         */}
         
-             <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 550,
-              borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center>
+             <a href="https://forms.gle/iNUd4My5DKTGHuAz8" target="_blank"> <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 550,
+              borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </a>
           
            </div>
            
