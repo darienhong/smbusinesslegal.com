@@ -49,15 +49,15 @@ export default class Homepage extends Component {
             height={800}
             width={800}
           />   
-
-          <div data-aos="fade-in"  data-aos-easing="ease-in-out"  data-aos-duration="2000">
+          <div class="homepage-text">
+          <div data-aos="slide-up"  data-aos-easing="ease-in-out"  data-aos-duration="2000">
            <h1 class="title"> SMB Legal </h1>
            <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
            <br></br>
            <p style={{ textAlign: "center", fontWeight: 500}}> You have come to the right place to bring your 
            small business into the digital world and avoid legal headaches. </p>
            <br></br>
-           
+           </div>
          <div class='signup'>  
          
      {/*   <TextField style={{ left: 350, width: 330}}
@@ -68,9 +68,14 @@ export default class Homepage extends Component {
                  />
         */}
         
+        <svg height={50} width={700}>
+        <line class="svg-line" x1={400} x2={3000} y1={1} y2={1} stroke="black" style={{left: 5000}}/>
+        </svg>
+        
+        <div data-aos="slide-up" data-aos-easing="ease-in-out" data-aos-duration="2000">
              <a href="https://forms.gle/iNUd4My5DKTGHuAz8" target="_blank"> <center> <Button variant="outline-dark" style={{fontFamily: 'WorkSans', fontWeight: 550,
               borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </a>
-
+            </div>
             </div>
            </div>
            <br></br>
