@@ -6,10 +6,8 @@ import moment from 'moment';
 import Document from './Document.jsx';
 import LetterIntro from './LetterIntro.jsx';
 import InternshipInfo from './InternshipInfo.jsx';
+import InternshipInfo2 from './InternshipInfo2.jsx';
 import { Alert } from 'react-alert'
-
-
-
 
 
 export default class Questions extends Component {
@@ -99,7 +97,10 @@ export default class Questions extends Component {
     duties: '[X]',
     relationship: '[X]',
     startDate: new Date(),
-    wage: '[X – if paid must comply with minimum wage laws]'
+    wage: '[X – if paid must comply with minimum wage laws]',
+    hours: '[X]',
+    status: '[Exempt or non-exempt]',
+    atWill: '[X]'
 
   }
 
@@ -131,8 +132,12 @@ export default class Questions extends Component {
 
   render() {
     const { step } = this.state;
-    const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate, wage } = this.state;
-    const values = { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate, wage };
+    const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
+      wage, hours, status, atWill } = this.state;
+    const values = {
+      date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
+      wage, hours, status, atWill
+    };
 
     switch (step) {
       case 1:
@@ -145,6 +150,13 @@ export default class Questions extends Component {
 
       case 2:
         return <InternshipInfo
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          values={values}
+        />
+      case 3:
+        return <InternshipInfo2
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}

@@ -34,10 +34,13 @@ export default class Questions extends Component {
         <p> <span class='word'>Reporting Relationship:</span> <span class='fill'>{values.relationship}</span> </p>
         <p><span class='word'>Start Date:</span> <span class='fill'>{formattedStartDate}</span></p>
         <p><span class='word'>Base Wage:</span> <span class='fill'>{values.wage}</span>  </p>
-        <p><span class='word'>Hours: [X]</span> </p>
-        <p><span class='word'>Status: [Exempt or non-exempt]</span> </p>
-        <p><span class='word'>At-Will Employment: [X]</span> </p>
+        <p><span class='word'>Hours:</span> <span class='fill'>{values.hours}</span></p>
+        <p><span class='word'>Status:</span><span class='fill'>{values.status}</span> </p>
+        <p><span class='word'>At-Will Employment:</span><span class='fill'>{values.atWill}</span> </p>
         <p><span class='word'>[California Notice of Required Pay and Sick Leave: [X]]</span>  </p>
+        <p>Compensation or benefits may be adjusted based on performance or other relevant matters,
+        including business conditions, at the Company’s sole discretion.  Legally mandated benefits are
+        provided according to applicable law.</p>
       </div >
 
     );

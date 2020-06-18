@@ -6,7 +6,7 @@ import moment from 'moment';
 import Document from './Document.jsx';
 
 
-export default class Questions extends Component {
+export default class InternshipInfo extends Component {
   next = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -43,11 +43,12 @@ export default class Questions extends Component {
           />
         </form>
         <form>
-          <p>Enter the start date:</p>
+          <p> Enter the start date: </p>
           <input
-            type='text'
+            type='date' id="startdate" name="startdate"
             onChange={this.props.handleChange('startDate')}
           />
+
         </form>
         <form>
           <p>Enter the base wage:</p>

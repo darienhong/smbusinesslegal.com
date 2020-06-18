@@ -10,7 +10,7 @@ import { Alert } from 'react-alert'
 
 
 
-export default class Questions extends Component {
+export default class LetterIntro extends Component {
 
   next = (e) => {
     e.preventDefault();
@@ -22,10 +22,17 @@ export default class Questions extends Component {
     return (
       <div class='ask'>
         <div class='forms'>
-          <p> Enter the date: </p>
-          <DayPicker showOutsideDays
+          {/* <DayPicker showOutsideDays
             selectedDays={values.date}
-            onDayClick={this.handleDateClick} />
+            onDayClick={this.handleDateClick} /> */}
+          <form>
+            <p> Enter the date: </p>
+            <input
+              type='date' id="letterdate" name="letterdate"
+              onChange={this.props.handleChange('date')}
+            />
+
+          </form>
           <form>
             <p>Enter your name:</p>
             <input
