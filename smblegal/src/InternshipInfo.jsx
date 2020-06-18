@@ -21,31 +21,45 @@ export default class Questions extends Component {
     return (
       <div class='ask'>
         <form>
-          <p>Enter your name:</p>
+          <p>Enter employee's title:</p>
           <input
             type='text'
-            onChange={this.props.handleChange('employeeName')}
+            onChange={this.props.handleChange('title')}
           />
         </form>
         <form>
-          <p>Enter your address:</p>
+          <p>Enter employee's duties:</p>
           <input
             type='text'
-            onChange={this.props.handleChange('address')}
+            onChange={this.props.handleChange('duties')}
           />
         </form>
 
         <form>
-          <p>Enter your intern's name:</p>
+          <p>Enter the reporting relationship:</p>
           <input
             type='text'
-            onChange={this.props.handleChange('internName')}
+            onChange={this.props.handleChange('relationship')}
           />
         </form>
+        <form>
+          <p>Enter the start date:</p>
+          <input
+            type='text'
+            onChange={this.props.handleChange('startDate')}
+          />
+        </form>
+        <form>
+          <p>Enter the base wage:</p>
+          <input
+            type='text'
+            onChange={this.props.handleChange('wage')}
+          />
+        </form>
+
         <button class='prev' onClick={this.previous}>Previous </button>
         <button class='next' onClick={this.next}>Next </button>
-        <Document class='doc' employeeName={values.employeeName} date={values.date} address={values.address}
-          internName={values.internName}
+        <Document class='doc' values={values}
         />
       </div>
 

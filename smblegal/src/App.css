@@ -38,12 +38,6 @@
   }
 }
 
-.display {
-  padding-right: 20px;
-  flex:50%;
-  text-align: left
-}
-
 h1 {
   color: black;
   text-align: center; 
@@ -65,20 +59,10 @@ p {
 
 }
 
-.qs {
-  display: flex;
-  padding-left: 20px;
-}
-
 .ask {
-  display:flex
+  padding-top: 70px;
 }
 
-.display {
-  flex:50%;
-  text-align: left
-
-}
 .container {
   width: 85%;
   margin: 0 auto;
@@ -135,18 +119,40 @@ nav a:hover::before {
 
 .prev{
   margin-right: 30px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
-.forms {
-  flex: 20%;
+.next{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* .forms {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 }
 
 .doc {
-  flex: 80%;
-}
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}  */
 .modal-custom {
   max-width: 700px!important;
+}
+
+.internship {
+  border: 2px solid black;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+
+.word{
+  font-weight: bold
 }
 
 

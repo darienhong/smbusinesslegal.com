@@ -89,11 +89,17 @@ export default class Questions extends Component {
   // }
   state = {
     step: 1,
-    date: null,
+    date: new Date(),
     employeeName: '[NAME]',
     address: '[ADDRESS]',
     internName: '[NAME]',
-    companyName: '[COMPANY]'
+    companyName: '[LEGAL NAME]',
+    title: '[X]',
+    duties: '[X]',
+    relationship: '[X]',
+    startDate: null,
+    wage: '[X – if paid must comply with minimum wage laws]'
+
   }
 
   nextStep = () => {
@@ -124,11 +130,9 @@ export default class Questions extends Component {
 
   render() {
     const { step } = this.state;
-    const { date, employeeName, address, internName, companyName } = this.state;
-    const values = { date, employeeName, address, internName, companyName };
-    // <Document employeeName={this.state.employeeName} address={this.state.address}
-    //   internName={this.state.internName}
-    // />
+    const { date, employeeName, address, internName, companyName, title, duties, relationship, startDate, wage } = this.state;
+    const values = { date, employeeName, address, internName, companyName, title, duties, relationship, startDate, wage };
+
     switch (step) {
       case 1:
         return <LetterIntro

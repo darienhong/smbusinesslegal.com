@@ -56,10 +56,9 @@ export default class Questions extends Component {
               onChange={this.props.handleChange('companyName')}
             />
           </form>
-          <button onClick={this.next}>Next </button>
+          <button class='next' onClick={this.next}>Next </button>
         </div>
-        <Document employeeName={values.employeeName} date={values.date} address={values.address}
-          internName={values.internName}
+        <Document class='doc' values={values}
         />
       </div >
 
