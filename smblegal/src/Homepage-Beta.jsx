@@ -77,7 +77,7 @@ export default class Homepage extends Component {
            <br></br>
            <br></br>
           
-          <p style={{textAlign: "center", textTransform: "uppercase"}}> Services we will offer include </p>
+   {/*      <p style={{textAlign: "center", textTransform: "uppercase"}}> Services we will offer include </p>
           <br></br>
           
           <center> 
@@ -88,10 +88,7 @@ export default class Homepage extends Component {
             </div>
           </center>
 
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
+        */}
 
             <footer class="footer">
                 <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
@@ -116,3 +113,4 @@ export default class Homepage extends Component {
       }
 
 }
+

@@ -49,9 +49,15 @@ export default class AboutUs extends Component {
                     </div>
                 <br></br>
                 <br></br>
-                <Icon name="home"/>
-            </div>
 
+                <div class="about-us-features"> 
+                <br></br>
+                <br></br>
+                <Icon name="chevron circle right" size="big"/>
+
+                </div>
+            </div>
+            
 
 
 
