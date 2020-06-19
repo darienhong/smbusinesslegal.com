@@ -21,7 +21,7 @@ export default class LetterIntro extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        <div class='forms'>
+        <div class='col left'>
           {/* <DayPicker showOutsideDays
             selectedDays={values.date}
             onDayClick={this.handleDateClick} /> */}
@@ -72,8 +72,10 @@ export default class LetterIntro extends Component {
           </form>
           <button class='next' onClick={this.next}>Next </button>
         </div>
-        <Document class='doc' values={values}
-        />
+        <div class='col right'>
+          <Document class='doc' values={values}
+          />
+        </div>
       </div >
 
     );

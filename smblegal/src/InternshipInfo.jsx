@@ -20,48 +20,52 @@ export default class InternshipInfo extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        <form>
-          <p>Enter employee's title:</p>
-          <input
-            type='text'
-            onChange={this.props.handleChange('title')}
-          />
-        </form>
-        <form>
-          <p>Enter employee's duties:</p>
-          <input
-            type='text'
-            onChange={this.props.handleChange('duties')}
-          />
-        </form>
+        <div class='col'>
+          <form>
+            <p>Enter employee's title:</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('title')}
+            />
+          </form>
+          <form>
+            <p>Enter employee's duties:</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('duties')}
+            />
+          </form>
 
-        <form>
-          <p>Enter the reporting relationship:</p>
-          <input
-            type='text'
-            onChange={this.props.handleChange('relationship')}
-          />
-        </form>
-        <form>
-          <p> Enter the start date: </p>
-          <input
-            type='date' id="startdate" name="startdate"
-            onChange={this.props.handleChange('startDate')}
-          />
+          <form>
+            <p>Enter the reporting relationship:</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('relationship')}
+            />
+          </form>
+          <form>
+            <p> Enter the start date: </p>
+            <input
+              type='date' id="startdate" name="startdate"
+              onChange={this.props.handleChange('startDate')}
+            />
 
-        </form>
-        <form>
-          <p>Enter the base wage:</p>
-          <input
-            type='text'
-            onChange={this.props.handleChange('wage')}
-          />
-        </form>
+          </form>
+          <form>
+            <p>Enter the base wage:</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('wage')}
+            />
+          </form>
 
-        <button class='prev' onClick={this.previous}>Previous </button>
-        <button class='next' onClick={this.next}>Next </button>
-        <Document class='doc' values={values}
-        />
+          <button class='prev' onClick={this.previous}>Previous </button>
+          <button class='next' onClick={this.next}>Next </button>
+        </div>
+        <div class='col'>
+          <Document class='doc' values={values} />
+        </div>
+
       </div>
 
     );
