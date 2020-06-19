@@ -54,8 +54,8 @@ export default class Homepage extends Component {
            <h1 class="title"> SMB Legal </h1>
            <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
            <br></br>
-           <p style={{ textAlign: "center", fontWeight: 500}}> You have come to the right place to bring your 
-           small business into the digital world and avoid legal headaches. </p>
+           <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners who are using SMB Legal’s self-help 
+           tools to automate and power their business to run efficiently and avoid potential legal pitfalls. </p>
            <br></br>
            </div>
          <div class='signup'>  
@@ -84,7 +84,7 @@ export default class Homepage extends Component {
         <br></br>
                
         <svg height={50} width={700}>
-        <line class="svg-line" x1={400} x2={3000} y1={1} y2={1} stroke="black" style={{left: 5000}}/>
+        <line class="svg-line" x1={400} x2={3000} y1={1} y2={1} stroke="black" />
         </svg>
             </div>
            </div>
@@ -104,7 +104,7 @@ export default class Homepage extends Component {
            <br></br>
             <footer class="footer">
            <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
-           <p> SMB Legal (Eatery Legal Corporation) is NOT a law firm, is not a substitute 
+           <p style={{opacity: 0.4}}> SMB Legal (Eatery Legal Corporation) is NOT a law firm, is not a substitute 
              for an attorney or law firm and cannot provide 
              legal advice.  SMB Legal provides access to self-help services 
              at your specific direction.  We cannot provide any kind of advice, 

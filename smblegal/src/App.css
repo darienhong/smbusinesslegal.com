@@ -211,6 +211,8 @@ nav a:hover::before {
 .svg-line-1 {
   stroke-width: 2px;
   stroke: rgb(57, 60, 126);
+  animation: dash 1.5s linear forwards;
+  animation-iteration-count: 1;
   
 }
 
