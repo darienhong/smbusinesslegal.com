@@ -20,70 +20,74 @@ export default class InternshipInfo3 extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        <form>
-          <p>Academic credits given for internship:</p>
-          <input
-            type='radio' id="true" name="cred" value="True"
-            onChange={this.props.handleChange('credits')}
-          />
-          <label for="true"> True </label><br />
-          <input
-            type='radio' id="false" name="cred" value="False"
-            onChange={this.props.handleChange('credits')}
-          />
-          <label for="false"> False </label><br />
+        <div class='col'>
+          <form>
+            <p>Academic credits given for internship:</p>
+            <input
+              type='radio' id="true" name="cred" value="True"
+              onChange={this.props.handleChange('credits')}
+            />
+            <label for="true"> True </label><br />
+            <input
+              type='radio' id="false" name="cred" value="False"
+              onChange={this.props.handleChange('credits')}
+            />
+            <label for="false"> False </label><br />
 
-        </form>
+          </form>
 
-        <form>
-          <p>Will expenses be reimbursed?</p>
-          <input
-            type='radio' id="yes" name="exp" value="Yes"
-            onChange={this.props.handleChange('expenses')}
+          <form>
+            <p>Will expenses be reimbursed?</p>
+            <input
+              type='radio' id="yes" name="exp" value="Yes"
+              onChange={this.props.handleChange('expenses')}
+            />
+            <label for="yes"> Yes </label><br />
+            <input
+              type='radio' id="no" name="exp" value="No"
+              onChange={this.props.handleChange('expenses')}
+            />
+            <label for="no"> No </label><br />
+
+          </form>
+
+          <form>
+            <p>Will the company have professional liability for the employee?</p>
+            <input
+              type='radio' id="yes" name="lia" value="Yes"
+              onChange={this.props.handleChange('liability')}
+            />
+            <label for="yes"> Yes </label><br />
+            <input
+              type='radio' id="no" name="lia" value="No"
+              onChange={this.props.handleChange('liability')}
+            />
+            <label for="no"> No </label><br />
+
+          </form>
+
+          <form>
+            <p>Non-Compete Clause</p>
+            <input
+              type='radio' id="yes" name="comp" value="Yes"
+              onChange={this.props.handleChange('compete')}
+            />
+            <label for="yes"> Yes </label><br />
+            <input
+              type='radio' id="no" name="comp" value="No"
+              onChange={this.props.handleChange('compete')}
+            />
+            <label for="no"> No </label><br />
+
+          </form>
+
+          <button class='prev' onClick={this.previous}>Previous </button>
+          <button class='next' onClick={this.next}>Next </button>
+        </div>
+        <div class='col'>
+          <Document class='doc' values={values}
           />
-          <label for="yes"> Yes </label><br />
-          <input
-            type='radio' id="no" name="exp" value="No"
-            onChange={this.props.handleChange('expenses')}
-          />
-          <label for="no"> No </label><br />
-
-        </form>
-
-        <form>
-          <p>Will the company have professional liability for the employee?</p>
-          <input
-            type='radio' id="yes" name="lia" value="Yes"
-            onChange={this.props.handleChange('liability')}
-          />
-          <label for="yes"> Yes </label><br />
-          <input
-            type='radio' id="no" name="lia" value="No"
-            onChange={this.props.handleChange('liability')}
-          />
-          <label for="no"> No </label><br />
-
-        </form>
-
-        <form>
-          <p>Non-Compete Clause</p>
-          <input
-            type='radio' id="yes" name="comp" value="Yes"
-            onChange={this.props.handleChange('compete')}
-          />
-          <label for="yes"> Yes </label><br />
-          <input
-            type='radio' id="no" name="comp" value="No"
-            onChange={this.props.handleChange('compete')}
-          />
-          <label for="no"> No </label><br />
-
-        </form>
-
-        <button class='prev' onClick={this.previous}>Previous </button>
-        <button class='next' onClick={this.next}>Next </button>
-        <Document class='doc' values={values}
-        />
+        </div>
       </div>
 
     );
