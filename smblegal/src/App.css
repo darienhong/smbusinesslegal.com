@@ -194,14 +194,9 @@ nav a:hover::before {
     opacity: 1;
   }
 }
-
-@keyframes draw_in {
-  from {
-     stroke-dashoffset: 0%;
-  }
-  to {
-     stroke-dashoffset: 100%;
-  }
+.about-page { 
+  animation: fadeInAnimation 3s ease-in-out;
+  animation-iteration-count: 1;
 }
 
 .svg-line, .svg-line-1 { 
