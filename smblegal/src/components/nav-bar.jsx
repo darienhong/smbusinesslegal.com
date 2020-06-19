@@ -7,7 +7,7 @@ import {
     Link
   } from "react-router-dom";
 import Questions from '../Questions.jsx';
-import Homepage from '../Homepage.jsx';
+import Homepage from '../Homepage-Beta.jsx';
 import AboutUs from '../aboutus.jsx';
 
 export default class Navbar extends Component {
@@ -21,9 +21,11 @@ render() {
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/AboutUs"> About </Link></li>
-                    <li><Link to="/Questions"> Survey </Link></li>
-                    <li><Link to="/Questions">Questions</Link></li>
+                    <li><Link to="/AboutUs"> Why </Link></li>
+                    <li><Link to="/Questions"> Automation </Link></li>
+                    <li><Link to="/"> Pricing </Link></li>
+                    <li><Link to="/"> Sign Up </Link></li>
+                    <li><Link to="/"> Sign In </Link></li>
                 </ul>
             </nav>
           
