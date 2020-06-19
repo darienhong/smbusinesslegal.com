@@ -44,7 +44,7 @@ export default class InternshipInfo2 extends Component {
         <form>
           <p>At-will Employment:</p>
           <input
-            type='radio' id="true" name="check" value=" True "
+            type='radio' id="true" name="check" value="True"
             onChange={this.props.handleChange('atWill')}
           />
           <label for="true"> True </label><br />

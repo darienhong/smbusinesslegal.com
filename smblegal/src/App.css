@@ -246,7 +246,9 @@ nav a:hover::before {
 }
 
 
-
+ol.details {
+  list-style-type: lower-roman;
+}
 
 
 
