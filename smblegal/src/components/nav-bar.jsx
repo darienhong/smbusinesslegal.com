@@ -7,7 +7,7 @@ import {
     Link
   } from "react-router-dom";
 import Questions from '../Questions.jsx';
-import Homepage from '../Homepage-Beta.jsx';
+import Homepage from '../Homepage.jsx';
 import AboutUs from '../aboutus.jsx';
 
 export default class Navbar extends Component {

@@ -68,9 +68,11 @@ export default class Homepage extends Component {
                 <br></br>
                 <br></br>
                
-                <svg height={50} width={700}>
-                    <line class="svg-line" x1={400} x2={3000} y1={1} y2={1} stroke="black" />
+               <div style={{ textAlign: "center"}}>
+                <svg height={50} width={300}>
+                    <line class="svg-line" x1={1} x2={1000} y1={1} y2={1} stroke="black" />
                 </svg>
+                </div>
               </div>
            </div>
            <br></br>

@@ -53,6 +53,13 @@ h2 {
   color: black;
   font-family: 'WorkSans';
   font-weight: 500;
+} 
+
+h3 {
+  font-family: 'WorkSans';
+  font-weight: 500;
+  color: rgb(57, 60, 126);
+  font-style: italic;
 }
 
 p {
@@ -249,8 +256,6 @@ nav a:hover::before {
   margin-right: 100px;
 }
 
-
-
 .covid-19:hover, .employment:hover, .governance:hover {
   color: rgb(169, 172, 201);
   border-color: rgb(169, 172, 201) ;
@@ -259,6 +264,13 @@ nav a:hover::before {
 
 ol.details {
   list-style-type: lower-roman;
+}
+
+.mission-statement { 
+  padding: 20px; 
+  margin: 20px;
+  border: 2px solid rgb(57, 60, 126);
+  text-align: center;
 }
 
 
