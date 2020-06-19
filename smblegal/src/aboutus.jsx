@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Button, TextField, Icon } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 import Lottie from 'react-lottie';
 import animationData from './assets/animation.json';
 import FileImage from './assets/organize-files.png';
 import CustomerServiceImage from './assets/customer-service.png';
 import AnalyzeImage from './assets/analyze.png';
+import { Icon } from 'semantic-ui-react';
 
 
 
@@ -48,6 +49,7 @@ export default class AboutUs extends Component {
                     </div>
                 <br></br>
                 <br></br>
+                <Icon name="home"/>
             </div>
 
 

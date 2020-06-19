@@ -43,69 +43,60 @@ export default class Homepage extends Component {
         return (
           
           <div class="homepage">
-            <ModalTest />
-        <Lottie 
-	          options={defaultOptions}
-            height={800}
-            width={800}
-          />   
-          <div class="homepage-text">
-          <div data-aos="slide-up"  data-aos-easing="ease-in-out"  data-aos-duration="2000">
-           <h1 class="title"> SMB Legal </h1>
-           <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
-           <br></br>
-           <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners who are using SMB Legal’s self-help 
-           tools to automate and power their business to run efficiently and avoid potential legal pitfalls. </p>
-           <br></br>
-           </div>
-         <div class='signup'>  
-         
-     {/*   <TextField style={{ left: 350, width: 330}}
-                 id="outlined-primary"
-                 label="Email"
-                 variant="outlined"
-                 color="black"
-                 />
-        */}
-        
-      {/*  <svg height={50} width={700}>
-        <line class="svg-line" x1={400} x2={3000} y1={1} y2={1} stroke="black" style={{left: 5000}}/>
-        </svg>
+              <Lottie 
+	              options={defaultOptions}
+                height={800}
+                width={800}
+              />   
+              <div class="homepage-text">
+                  <div data-aos="slide-up"  data-aos-easing="ease-in-out"  data-aos-duration="2000">
+                  <h1 class="title"> SMB Legal </h1>
+                  <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
+                  <br></br>
+                  <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners 
+                  who are using SMB Legal’s self-help tools to automate and power their business to run efficiently 
+                  and avoid potential legal pitfalls. </p>
+                  <br></br>
+              </div>
+               <div class='signup'>      
+                  <div data-aos="slide-up" data-aos-easing="ease-in-out" data-aos-duration="2000">
+                      <a href="https://forms.gle/iNUd4My5DKTGHuAz8" target="_blank"> <center> <Button variant="outline-dark" 
+                      className="button" style={{fontFamily: 'WorkSans', fontWeight: 550,
+                      borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </a>
+                  </div>
 
-      */}
-        
-        <div data-aos="slide-up" data-aos-easing="ease-in-out" data-aos-duration="2000">
-             <a href="https://forms.gle/iNUd4My5DKTGHuAz8" target="_blank"> <center> <Button variant="outline-dark" className="button" style={{fontFamily: 'WorkSans', fontWeight: 550,
-              borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </a>
-            </div>
-
-
-        <br></br>
-        <br></br>
+                <br></br>
+                <br></br>
                
-        <svg height={50} width={700}>
-        <line class="svg-line" x1={400} x2={3000} y1={1} y2={1} stroke="black" />
-        </svg>
-            </div>
+                <svg height={50} width={700}>
+                    <line class="svg-line" x1={400} x2={3000} y1={1} y2={1} stroke="black" />
+                </svg>
+              </div>
            </div>
            <br></br>
            <br></br>
            <br></br>
-
-          <center> <div class="features">
+          
+          <p style={{textAlign: "center", textTransform: "uppercase"}}> Services we will offer include </p>
+          <br></br>
+          
+          <center> 
+            <div class="features">
              <p> <span class="governance">  Governance  </span></p>
              <p> <span class="employment">  Employment  </span></p>
              <p><span class="covid-19">  Covid-19  </span></p>
-           </div>
-           </center>
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
+            </div>
+          </center>
+
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+
             <footer class="footer">
-           <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
-           <p style={{opacity: 0.4}}> SMB Legal (Eatery Legal Corporation) is NOT a law firm, is not a substitute 
-             for an attorney or law firm and cannot provide 
+                <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
+                <p style={{opacity: 0.4}}> SMB Legal (Eatery Legal Corporation) is NOT a law firm, 
+             is not a substitute for an attorney or law firm and cannot provide 
              legal advice.  SMB Legal provides access to self-help services 
              at your specific direction.  We cannot provide any kind of advice, 
              explanation, opinion, or recommendation about possible legal rights, 
@@ -116,7 +107,7 @@ export default class Homepage extends Component {
              By relying on these documents, you assume all risk and liability that may result.  
              Review all documents carefully for accuracy before using them.  
              Your use of this site is subject to our Terms of Service. </p>
-       </footer>
+            </footer>
   
        </div>
 
