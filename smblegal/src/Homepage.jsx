@@ -69,9 +69,12 @@ export default class Homepage extends Component {
                 <br></br>
                 <br></br>
                
-                <svg height={50} width={700}>
-                    <line class="svg-line" x1={400} x2={3000} y1={1} y2={1} stroke="black" />
+
+               <div style={{textAlign: "center"}}>
+                <svg height={50} width={400}>
+                    <line class="svg-line" x1={1} x2={700} y1={1} y2={1} stroke="black" />
                 </svg>
+              </div>
               </div>
            </div>
            <br></br>
@@ -81,14 +84,13 @@ export default class Homepage extends Component {
           <p style={{textAlign: "center", textTransform: "uppercase"}}> Services we will offer include </p>
           <br></br>
           
-          <center> 
+          
             <div class="features">
              <p> <span class="formation"> Formation </span></p>
              <p> <span class="governance">  Governance  </span></p>
              <p> <span class="employment">  Employment  </span></p>
              <p><span class="covid-19">  Covid-19  </span></p>
             </div>
-          </center>
 
           <br></br>
           <br></br>
