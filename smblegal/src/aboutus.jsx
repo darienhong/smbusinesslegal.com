@@ -48,8 +48,7 @@ export default class AboutUs extends Component {
                         </p>
                     </div>
                     <br></br>
-                
-                    <h3 style={{fontFamily: 'WorkSans', fontSize: "16px"}}> The SMB Legal Team </h3>
+            
                     <div class="illustrations" style={{textAlign:"center"}}> 
                         <img src={FileImage} alt="files" style={{width: "300px"}}/>
                         <img src={AnalyzeImage} alt="analyze" style={{width: "300px"}}/>
@@ -75,7 +74,7 @@ export default class AboutUs extends Component {
 
                     <p> Thanks for coming and we’re glad to have you along for the journey. </p>
 
-                    <h3 style={{fontFamily: "WorkSans"}}> The SMB Legal Team </h3>
+                    <h3 style={{fontFamily: "WorkSans", fontSize: "16px"}}> The SMB Legal Team </h3>
                 <div class="about-us-features"> 
                 <br></br>
                 <br></br>
