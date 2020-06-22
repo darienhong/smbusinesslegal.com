@@ -6,6 +6,7 @@ import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import moment from 'moment';
 import Document from './Document.jsx';
+import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
 
 
@@ -14,13 +15,16 @@ export default class LetterIntro extends Component {
 
   next = (e) => {
     e.preventDefault();
+    this.props.increasePercentage();
     this.props.nextStep();
   }
 
   render() {
     const { values } = this.props;
+    // alert(values.percentage)
     return (
       <div class='ask'>
+        {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col left'>
           {/* <DayPicker showOutsideDays
             selectedDays={values.date}

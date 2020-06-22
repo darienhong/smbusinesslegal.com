@@ -8,6 +8,8 @@ import LetterIntro from './LetterIntro.jsx';
 import InternshipInfo from './InternshipInfo.jsx';
 import InternshipInfo2 from './InternshipInfo2.jsx';
 import InternshipInfo3 from './InternshipInfo3.jsx';
+import PDF from './PDF.jsx';
+
 
 import { Alert } from 'react-alert'
 
@@ -15,6 +17,7 @@ import { Alert } from 'react-alert'
 export default class Questions extends Component {
   state = {
     step: 1,
+    percent: 50,
     date: new Date(),
     employeeName: '[NAME]',
     address: '[ADDRESS]',
@@ -33,7 +36,6 @@ export default class Questions extends Component {
     expenses: '[X]',
     liability: '[X]',
     compete: '[X]'
-
   }
 
   nextStep = () => {
@@ -57,6 +59,23 @@ export default class Questions extends Component {
     alert("a change happened")
   }
 
+  increasePercentage = () => {
+    // this.setState((prevState) => ({
+    //   percent: prevState.percent >= 100 ? 0 : prevState.percent + 25,
+    // }))
+    const { percent } = this.state
+    this.setState({
+      percent: percent + 25
+    })
+  }
+
+
+  decreasePercentage = () => {
+    this.setState((prevState) => ({
+      percent: prevState.percent >= 100 ? 0 : prevState.percent - 25,
+    }))
+  }
+
 
   handleChange = input => event => {
     this.setState({ [input]: event.target.value })
@@ -65,10 +84,10 @@ export default class Questions extends Component {
   render() {
     const { step } = this.state;
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
-      wage, hours, status, atWill, credits, expenses, liability, compete } = this.state;
+      wage, hours, status, atWill, credits, expenses, liability, compete, percent } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
-      wage, hours, status, atWill, credits, expenses, liability, compete
+      wage, hours, status, atWill, credits, expenses, liability, compete, percent
     };
 
     switch (step) {
@@ -77,6 +96,8 @@ export default class Questions extends Component {
           nextStep={this.nextStep}
           handleDateChange={this.handleDateChange}
           handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
           values={values}
         />
 
@@ -85,6 +106,8 @@ export default class Questions extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
           values={values}
         />
       case 3:
@@ -92,6 +115,8 @@ export default class Questions extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
           values={values}
         />
       case 4:
@@ -99,11 +124,15 @@ export default class Questions extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
           values={values}
         />
 
-      // case 4:
-      //   return <Success />
+      case 5:
+        return <PDF
+          prevStep={this.prevStep}
+          values={values} />
     }
   }
 

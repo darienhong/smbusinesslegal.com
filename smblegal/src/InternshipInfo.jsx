@@ -3,23 +3,30 @@ import './App.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
+import { Progress } from 'semantic-ui-react'
 import Document from './Document.jsx';
 
 
 export default class InternshipInfo extends Component {
   next = (e) => {
     e.preventDefault();
+    this.props.increasePercentage();
     this.props.nextStep();
+
   }
   previous = (e) => {
     e.preventDefault();
     this.props.prevStep();
+    this.props.decreasePercentage();
+
   }
 
   render() {
     const { values } = this.props;
     return (
       <div class='ask'>
+        {/* <Progress percent={values.percentage} indicating /> */}
+
         <div class='col'>
           <form>
             <p>Enter employee's title:</p>
