@@ -22,7 +22,7 @@ render() {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/AboutUs"> Why </Link></li>
-                    <li><Link to="/Questions"> Automation </Link></li>
+                    <li><Link to="/Questions"> Solutions </Link></li>
                     <li><Link to="/"> Pricing </Link></li>
                     <li><Link to="/"> Sign Up </Link></li>
                     <li><Link to="/"> Sign In </Link></li>

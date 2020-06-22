@@ -83,6 +83,7 @@ export default class Homepage extends Component {
           
           <center> 
             <div class="features">
+             <p> <span class="formation"> Formation </span></p>
              <p> <span class="governance">  Governance  </span></p>
              <p> <span class="employment">  Employment  </span></p>
              <p><span class="covid-19">  Covid-19  </span></p>
