@@ -43,6 +43,7 @@ export default class Homepage extends Component {
         return (
           
           <div class="homepage">
+              <ModalTest />
               <Lottie 
 	              options={defaultOptions}
                 height={800}
