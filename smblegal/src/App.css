@@ -53,6 +53,13 @@ h2 {
   color: black;
   font-family: 'WorkSans';
   font-weight: 500;
+} 
+
+h3 {
+  font-family: 'WorkSans';
+  font-weight: 500;
+  color: rgb(57, 60, 126);
+  font-style: italic;
 }
 
 p {
@@ -203,14 +210,9 @@ nav a:hover::before {
     opacity: 1;
   }
 }
-
-@keyframes draw_in {
-  from {
-     stroke-dashoffset: 0%;
-  }
-  to {
-     stroke-dashoffset: 100%;
-  }
+.about-page { 
+  animation: fadeInAnimation 3s ease-in-out;
+  animation-iteration-count: 1;
 }
 
 .svg-line, .svg-line-1 { 
@@ -254,8 +256,6 @@ nav a:hover::before {
 .employment, .governance {
   margin-right: 100px;
 }
-
-
 
 .covid-19:hover, .employment:hover, .governance:hover {
   color: rgb(169, 172, 201);
@@ -312,5 +312,12 @@ button {
 .pdfgenerated {
   border:none;
 }
+.mission-statement { 
+  padding: 20px; 
+  margin: 20px;
+  border: 2px solid rgb(57, 60, 126);
+  text-align: center;
+}
+
 
 
