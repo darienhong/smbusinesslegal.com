@@ -35,7 +35,7 @@ export default class Questions extends Component {
     if (competeCheck)
       competeRequire = 'Non-Compete. ' + values.internName + ' agrees that as a condition of employment, ' + values.internName + ' will not engage in a directly competing enterprise for [X months or years] following the termination of the employment relationship between ' + values.internName + ' and the Company.'
     return (
-      <div class='internship'>
+      <div >
         <p ><span class='fill'>{formattedDate}</span></p>
         <p ><span class='fill'>{values.employeeName}</span></p>
         <p><span class='fill'>{values.address}</span></p>

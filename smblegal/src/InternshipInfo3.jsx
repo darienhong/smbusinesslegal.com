@@ -84,7 +84,7 @@ export default class InternshipInfo3 extends Component {
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>
-        <div class='col'>
+        <div class='col right'>
           <Document class='doc' values={values}
           />
         </div>

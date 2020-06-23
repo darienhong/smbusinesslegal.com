@@ -71,7 +71,7 @@ export default class PDF extends Component {
           <div style={{
             // height: 792,
             // width: 600,
-            padding: 'none',
+            padding: 8,
             backgroundColor: 'white',
             margin: 'auto',
             overflowX: 'hidden',
