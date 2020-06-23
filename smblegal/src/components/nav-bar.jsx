@@ -9,6 +9,7 @@ import {
 import Questions from '../Questions.jsx';
 import Homepage from '../Homepage.jsx';
 import AboutUs from '../aboutus.jsx';
+import SubMenu from './sub-menu.jsx';
 
 export default class Navbar extends Component {
 constructor(props) {
@@ -22,7 +23,7 @@ render() {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/AboutUs"> Why </Link></li>
-                    <li><Link to="/Questions"> Automation </Link></li>
+                    <li className="nav_menu-item"><Link to="/Questions"> Solutions </Link> <SubMenu /></li>
                     <li><Link to="/"> Pricing </Link></li>
                     <li><Link to="/"> Sign Up </Link></li>
                     <li><Link to="/"> Sign In </Link></li>
