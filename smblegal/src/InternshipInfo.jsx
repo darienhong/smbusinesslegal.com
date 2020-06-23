@@ -45,6 +45,7 @@ export default class InternshipInfo extends Component {
 
           <form>
             <p>Enter the reporting relationship:</p>
+
             <input
               type='text'
               onChange={this.props.handleChange('relationship')}
