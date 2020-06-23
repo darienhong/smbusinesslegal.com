@@ -7,7 +7,7 @@ import './fonts/WorkSans-Regular.ttf';
 import './fonts/Spartan-Regular.ttf';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fonts/OpenSans-Regular.ttf';
-import 'semantic-ui-css/semantic.min.css';
+/* import 'semantic-ui-css/semantic.min.css'; */
 
 
 ReactDOM.render(
