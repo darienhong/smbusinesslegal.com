@@ -13,7 +13,6 @@ export default class Pricing extends Component {
         super(props);
     }
     render() {
-
         return (
         <div class="pricing-page">
             <br></br>
@@ -23,7 +22,6 @@ export default class Pricing extends Component {
             <br></br>
             <h1 style={{color: "rgb(57, 60, 126)"}}> Pricing </h1>
               <br></br>
-
             <div style={{textAlign:"center"}}>
                 <svg height={50} width={400}>
                     <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1}/>
@@ -31,10 +29,9 @@ export default class Pricing extends Component {
             </div>
             <br></br>
             <p> Plan Comparison </p>
-
             <br></br>
-
             <div class="price-cards">
+                
             <div class="price-card-1">
             <Card>
                 <CardContent className="card-2-inside">
@@ -45,7 +42,6 @@ export default class Pricing extends Component {
                 <Button size="small">Learn More</Button>
                 </CardContent>
             </Card>
-
             </div> 
 
             <div class="price-card-2">
@@ -57,7 +53,6 @@ export default class Pricing extends Component {
                 <Button variant="dark">Learn More</Button>
                 </CardContent>
             </Card>
-
             </div> 
 
             <div class="price-card-3">
@@ -71,7 +66,7 @@ export default class Pricing extends Component {
                 </CardContent>
             </Card>
             </div> 
-            
+
             <div class="price-card-4">
             <Card>
                 <CardContent className="card-2-inside">
