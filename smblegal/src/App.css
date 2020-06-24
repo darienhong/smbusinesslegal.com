@@ -347,11 +347,13 @@ button {
 .tab { 
   margin-left: 40px; }
 
-
-
-.nav_submenu { 
-  display: none;
+.submenu-custom { 
+  font-family: 'WorkSans'; 
+  background-color: white;
+  color: rgb(169, 172, 201);
+  border-color: white;
 }
+
 
 .indoc {
   color:black;

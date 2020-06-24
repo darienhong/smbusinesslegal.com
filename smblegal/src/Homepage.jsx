@@ -7,6 +7,7 @@ import animationData from './assets/animation.json';
 import ModalTest from './components/modal.jsx';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Grommet, Menu } from 'grommet';
 
 AOS.init();
 
@@ -68,7 +69,8 @@ export default class Homepage extends Component {
 
                 <br></br>
                 <br></br>
-               
+
+              
 
                <div style={{textAlign: "center"}}>
                 <svg height={50} width={400}>
@@ -80,6 +82,7 @@ export default class Homepage extends Component {
            <br></br>
            <br></br>
            <br></br>
+
           
           <p style={{textAlign: "center", textTransform: "uppercase"}}> Services we will offer include </p>
           <br></br>

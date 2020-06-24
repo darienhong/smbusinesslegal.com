@@ -74,11 +74,10 @@ export default class AboutUs extends Component {
 
                     <p> Thanks for coming and we’re glad to have you along for the journey. </p>
 
-                    <h3 style={{fontFamily: "WorkSans", fontSize: "16px"}}> The SMB Legal Team </h3>
+                    <h3 style={{fontFamily: "WorkSans", fontSize: "16px", fontWeight: "600"}}> The SMB Legal Team </h3>
                 <div class="about-us-features"> 
                 <br></br>
                 <br></br>
-                <Icon name="chevron circle right" size="big"/>
                 <p>  </p>
                 <br></br>
                 <br></br>
