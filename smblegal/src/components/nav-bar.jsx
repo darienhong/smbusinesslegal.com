@@ -10,6 +10,8 @@ import Questions from '../Questions.jsx';
 import Homepage from '../Homepage.jsx';
 import AboutUs from '../aboutus.jsx';
 import SubMenu from './sub-menu.jsx';
+import Solutions from '../Solutions.jsx';
+import Pricing from '../Pricing.jsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { Grommet, Menu } from 'grommet';
 
@@ -25,8 +27,8 @@ render() {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/AboutUs"> Why </Link></li>
-                    <li className="nav_menu-item"><Link to="/Questions"> <SubMenu />  </Link> </li>
-                    <li><Link to="/"> Pricing </Link></li>
+                    <li><Link to="/Questions"> <SubMenu />  </Link> </li>
+                    <li><Link to="/Pricing"> Pricing </Link></li>
                     <li><Link to="/"> Sign Up </Link></li>
                     <li><Link to="/"> Sign In </Link></li>
                 </ul>
@@ -34,8 +36,14 @@ render() {
           
       
         <Switch>
+          <Route path="/Solutions">
+            <Solutions />
+          </Route>
           <Route path="/Questions">
             <Questions />
+          </Route>
+          <Route path="/Pricing">
+            <Pricing />
           </Route>
           <Route path="/AboutUs">
             <AboutUs />

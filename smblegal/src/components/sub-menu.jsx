@@ -1,6 +1,14 @@
 import React, { Component, Button } from 'react';
 import '../App.css';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, 
+    Link
+  } from "react-router-dom";
+import Questions from '../Questions.jsx';
+import Homepage from '../Homepage.jsx';
 
 export default class SubMenu extends Component { 
     render() {
@@ -12,20 +20,11 @@ export default class SubMenu extends Component {
             </Dropdown.Toggle>
           
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1"> Automated Documents </Dropdown.Item>
-              <Dropdown.Item href="#/action-2"> Governance Automation</Dropdown.Item>
+              <Dropdown.Item><Link to="/Questions">  Automated Documents </Link> </Dropdown.Item>
+              <Dropdown.Item><Link to="/Questions"> Governance Automation </Link></Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           
-    /*       <ul className="nav_submenu">
-                <li className="nav_submenu-item"> 
-                <a> Automated Documents  </a></li>
-                <li className="nav_submenu-item">
-                    <a> Governance Automation </a>
-                </li>
-            </ul>
-
-            */
         );
     }
 

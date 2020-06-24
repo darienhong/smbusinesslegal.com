@@ -66,6 +66,13 @@ h3 {
   font-style: italic;
 }
 
+h4 { 
+  font-family: 'WorkSans';
+  font-weight: 400;
+  color: black;
+  font-size: 10px;
+}
+
 p {
   color: black; 
   font-family: 'WorkSans';
@@ -221,10 +228,11 @@ nav a:hover::before {
     opacity: 1;
   }
 }
-.about-page { 
+.about-page, .pricing-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
 }
+
 
 .svg-line, .svg-line-1 { 
   stroke-dasharray: 500;
@@ -362,4 +370,32 @@ button {
 
 .bld {
   font-style: bold;
+}
+
+.price-cards { 
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+font-family: 'WorkSans';
+}
+
+.price-card-1, .price-card-2, .price-card-3, .price-card-4 {
+  width: 220px;
+  height: 220px;
+  margin: 10px;
+  font-family: 'WorkSans';
+}
+
+.card-2-inside:hover { 
+  background-color: rgb(153, 177, 229);
+  color: white;
+}
+
+.price-option {
+  font-size: 16px;
+}
+
+.price-category {
+  font-size: 25px;
+  font-weight: 550;
 }
