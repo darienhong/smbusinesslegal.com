@@ -12,9 +12,6 @@ export default class Pricing extends Component {
     constructor(props){
         super(props);
     }
-    
-
-
     render() {
 
         return (
@@ -73,9 +70,8 @@ export default class Pricing extends Component {
                 <Button size="small">Learn More</Button>
                 </CardContent>
             </Card>
-
             </div> 
-
+            
             <div class="price-card-4">
             <Card>
                 <CardContent className="card-2-inside">
@@ -87,11 +83,7 @@ export default class Pricing extends Component {
                 </CardContent>
             </Card>
             </div> 
-
-
             </div>
-
-
             <br></br>
             <br></br>
             <br></br>
@@ -112,9 +104,7 @@ export default class Pricing extends Component {
              Review all documents carefully for accuracy before using them.  
              Your use of this site is subject to our Terms of Service. </p>
             </footer>
-  
        </div>
-
 
         );
     }
