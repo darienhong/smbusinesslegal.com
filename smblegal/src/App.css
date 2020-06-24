@@ -49,6 +49,10 @@ h1 {
   padding: 0%;
 }
 
+.title { 
+  font-family: serif;
+}
+
 h2 { 
   color: black;
   font-family: 'WorkSans';
@@ -270,8 +274,10 @@ nav a:hover::before {
 }
 
 .covid-19:hover, .employment:hover, .governance:hover, .formation:hover {
-  color: rgb(169, 172, 201);
-  border-color: rgb(169, 172, 201) ;
+ /* color: rgb(169, 172, 201); */
+  color: rgb(57, 60, 126);
+  /* border-color: rgb(169, 172, 201) ; */
+  border-color: rgb(57, 60, 126);
 }
 
 
