@@ -37,6 +37,7 @@ export default class LetterIntro extends Component {
             />
 
           </form>
+          <br />
           <form>
             <p>Enter your name:</p>
             <input
@@ -44,6 +45,8 @@ export default class LetterIntro extends Component {
               onChange={this.props.handleChange('employeeName')}
             />
           </form>
+          <br />
+
           <form>
             <p>Enter your address:</p>
             <input
@@ -51,6 +54,7 @@ export default class LetterIntro extends Component {
               onChange={this.props.handleChange('address')}
             />
           </form>
+          <br />
 
           <form>
             <p>Enter your intern's name:</p>
@@ -59,6 +63,7 @@ export default class LetterIntro extends Component {
               onChange={this.props.handleChange('internName')}
             />
           </form>
+          <br />
 
           <form>
             <p>Enter company's name:</p>
@@ -67,6 +72,8 @@ export default class LetterIntro extends Component {
               onChange={this.props.handleChange('companyName')}
             />
           </form>
+          <br />
+
           <form>
             <p>Enter the state:</p>
             <input

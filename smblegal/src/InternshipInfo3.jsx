@@ -37,7 +37,7 @@ export default class InternshipInfo3 extends Component {
           </form>
 
           <form>
-            <p>Will expenses be reimbursed?</p>
+            <p>Are specific expenses of the intern covered by the company?</p>
             <input
               type='radio' id="yes" name="exp" value="Yes"
               onChange={this.props.handleChange('expenses')}

@@ -58,10 +58,12 @@ export default class PDF extends Component {
         <div ref={ref}>
           <Document class='pdfgenerated' values={values} />
         </div> */}
-        <center>
-          <button class='prev' onClick={this.previous}>Previous </button>
-          <button class='finalize' onClick={this.exportPDF}>Download PDF</button>
-        </center>
+        <div class='buttons'>
+          <center>
+            <button class='prev' onClick={this.previous}>Previous </button>
+            <button class='finalize' onClick={this.exportPDF}>Download PDF</button>
+          </center>
+        </div>
         <PDFExport paperSize="Letter"
           fileName="internship-document.pdf"
           title=""
@@ -71,13 +73,17 @@ export default class PDF extends Component {
           <div style={{
             // height: 792,
             // width: 600,
-            padding: 8,
+            padding: 40,
             backgroundColor: 'white',
             margin: 'auto',
             overflowX: 'hidden',
             overflowY: 'hidden'
           }}>
-            <Doc class='pdfgenerated' values={values} />
+            <div class='pdf'>
+              <h1>INTERNSHIP AGREEMENT</h1>
+              <Doc class='pdfgenerated' values={values} />
+            </div>
+
           </div>
         </PDFExport >
 

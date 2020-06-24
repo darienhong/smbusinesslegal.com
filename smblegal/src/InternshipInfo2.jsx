@@ -24,7 +24,7 @@ export default class InternshipInfo2 extends Component {
           <form>
             <p>Enter employee's hours:</p>
             <input
-              type='text'
+              type='number'
               onChange={this.props.handleChange('hours')}
             />
           </form>
@@ -56,6 +56,15 @@ export default class InternshipInfo2 extends Component {
             <label for="false"> False </label><br />
 
           </form>
+          {values.state === 'California' && (
+            <form>
+              <p>Please make your statement of California required pay and sick leave:</p>
+              <input
+                type='text'
+                onChange={this.props.handleChange('sick')}
+              />
+            </form>
+          )}
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>

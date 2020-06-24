@@ -8,6 +8,8 @@ import LetterIntro from './LetterIntro.jsx';
 import InternshipInfo from './InternshipInfo.jsx';
 import InternshipInfo2 from './InternshipInfo2.jsx';
 import InternshipInfo3 from './InternshipInfo3.jsx';
+import InternshipEmployer from './InternshipEmployer.jsx';
+
 import PDF from './PDF.jsx';
 
 
@@ -22,7 +24,7 @@ export default class Questions extends Component {
     employeeName: '[NAME]',
     address: '[ADDRESS]',
     internName: '[NAME]',
-    companyName: '[LEGAL NAME]',
+    companyName: '[COMPANY NAME]',
     state: '[STATE]',
     title: '[X]',
     duties: '[X]',
@@ -35,7 +37,11 @@ export default class Questions extends Component {
     credits: '[X]',
     expenses: '[X]',
     liability: '[X]',
-    compete: '[X]'
+    compete: '[X]',
+    sick: '[X]',
+    employerTitle: '[TITLE]',
+    phone: '[PHONE]',
+    email: '[EMAIL]'
   }
 
   nextStep = () => {
@@ -84,10 +90,13 @@ export default class Questions extends Component {
   render() {
     const { step } = this.state;
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
-      wage, hours, status, atWill, credits, expenses, liability, compete, percent } = this.state;
+      wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
+      employerTitle, phone, email
+    } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
-      wage, hours, status, atWill, credits, expenses, liability, compete, percent
+      wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle, phone, email
+
     };
 
     switch (step) {
@@ -128,8 +137,16 @@ export default class Questions extends Component {
           decreasePercentage={this.decreasePercentage}
           values={values}
         />
-
       case 5:
+        return <InternshipEmployer
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
+          values={values}
+        />
+      case 6:
         return <PDF
           prevStep={this.prevStep}
           values={values} />

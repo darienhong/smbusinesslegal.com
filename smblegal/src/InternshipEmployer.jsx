@@ -2,79 +2,65 @@ import React, { Component } from 'react';
 import './App.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 import moment from 'moment';
-import { Progress } from 'semantic-ui-react'
 import Document from './Document.jsx';
+import { Progress } from 'semantic-ui-react'
+import { Alert } from 'react-alert'
 
 
-export default class InternshipInfo extends Component {
+
+export default class InternshipEmployer extends Component {
+
   next = (e) => {
     e.preventDefault();
     this.props.increasePercentage();
     this.props.nextStep();
-
   }
+
   previous = (e) => {
     e.preventDefault();
     this.props.prevStep();
-    this.props.decreasePercentage();
-
   }
+
 
   render() {
     const { values } = this.props;
     return (
       <div class='ask'>
         {/* <Progress percent={values.percentage} indicating /> */}
-
-        <div class='col'>
+        <div class='col left'>
           <form>
-            <p>Enter employee's title:</p>
+            <p>Enter your title:</p>
             <input
               type='text'
-              onChange={this.props.handleChange('title')}
+              onChange={this.props.handleChange('employerTitle')}
             />
           </form>
           <form>
-            <p>Enter employee's duties:</p>
+            <p>Enter your phone number:</p>
             <input
               type='text'
-              onChange={this.props.handleChange('duties')}
+              onChange={this.props.handleChange('phone')}
             />
           </form>
 
           <form>
-            <p>Enter the reporting relationship:</p>
-
+            <p>Enter your email:</p>
             <input
-              type='text'
-              onChange={this.props.handleChange('relationship')}
+              type='email'
+              onChange={this.props.handleChange('email')}
             />
           </form>
-          <form>
-            <p> Enter the start date: </p>
-            <input
-              type='date' id="startdate" name="startdate"
-              onChange={this.props.handleChange('startDate')}
-            />
-
-          </form>
-          <form>
-            <p>Enter the base wage:</p>
-            <input
-              type='number'
-              onChange={this.props.handleChange('wage')}
-            />
-          </form>
-
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <Document class='doc' values={values} />
+          <Document class='doc' values={values}
+          />
         </div>
-
-      </div>
+      </div >
 
     );
   }

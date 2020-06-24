@@ -71,6 +71,7 @@ p {
 
 .ask {
   padding-top: 80px;
+  padding-left: 130px;
   display: flex;
   width: 80vw;
   height: 80vh;
@@ -81,7 +82,7 @@ p {
   flex: 50%;
   padding: 10px;
   float: left;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .left {
@@ -89,7 +90,7 @@ p {
 }
 
 .right {
-  width: 100%;
+  /* width: 100%; */
   height: 400px;
   border: 2px solid #008CBA;
   overflow:auto;
@@ -324,8 +325,9 @@ button {
   border:none;
   padding: 10px;
   height: 800px;
-  width: 500px;
+  /* width: 500px; */
 }
+
 .mission-statement { 
   padding: 20px; 
   margin: 20px;
@@ -333,7 +335,11 @@ button {
   text-align: center;
 }
 
-.tab { margin-left: 40px; }
+.tab1 { 
+  margin-left: 40px; }
+
+.tab { 
+  margin-left: 40px; }
 
 
 
@@ -341,4 +347,11 @@ button {
   display: none;
 }
 
+.indoc {
+  color:black;
+  font-style:normal;
+}
 
+.bld {
+  font-style: bold;
+}
