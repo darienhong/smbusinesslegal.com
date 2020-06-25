@@ -20,51 +20,78 @@ export default class InternshipInfo2 extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        <div class='col'>
+        <div class='col height'>
+
           <form>
-            <p>Enter employee's hours:</p>
+            <p>Enter the intern's status: </p>
             <input
-              type='number'
-              onChange={this.props.handleChange('hours')}
-            />
-          </form>
-          <form>
-            <p>Enter employee's status:</p>
-            <input
-              type='radio' id="exempt" name="stat" value=" Exempt "
+              type='radio' id="exempt" name="exe" value="Exempt"
               onChange={this.props.handleChange('status')}
             />
             <label for="exempt"> Exempt </label><br />
             <input
-              type='radio' id="nonexempt" name="check" value=" Non-Exempt "
-              onChange={this.props.handleChange('atWill')}
+              type='radio' id="nonexempt" name="exe" value="Non-Exempt"
+              onChange={this.props.handleChange('status')}
             />
             <label for="nonexempt"> Non-Exempt </label><br />
-          </form>
 
+          </form>
+          <br />
           <form>
-            <p>At-will Employment:</p>
+            <p>Is this a paid internship?</p>
             <input
-              type='radio' id="true" name="check" value="True"
-              onChange={this.props.handleChange('atWill')}
+              type='radio' id="yes" name="pay" value="Yes"
+              onChange={this.props.handleChange('paid')}
+            />
+            <label for="yes"> Yes </label><br />
+            <input
+              type='radio' id="no" name="not" value="No"
+              onChange={this.props.handleChange('paid')}
+            />
+            <label for="no"> No </label><br />
+
+          </form>
+          <br />
+
+          {values.paid === 'Yes' && (
+            <div>
+              <form>
+                <p>Enter base wage:</p>
+                <input
+                  type='text'
+                  onChange={this.props.handleChange('wage')}
+                />
+              </form>
+              <br />
+            </div>
+          )}
+
+          {(values.state === 'California') && (values.paid === 'Yes') && (
+            <div>
+              <form>
+                <p>Please make your statement of California required pay and sick leave:</p>
+                <input
+                  type='text'
+                  onChange={this.props.handleChange('sick')}
+                />
+              </form>
+              <br />
+            </div>
+          )}
+          <form>
+            <p>Is the intern receiving academic credit?</p>
+            <input
+              type='radio' id="true" name="cred" value="True"
+              onChange={this.props.handleChange('credits')}
             />
             <label for="true"> True </label><br />
             <input
-              type='radio' id="false" name="check" value=" False"
-              onChange={this.props.handleChange('atWill')}
+              type='radio' id="false" name="cred" value="False"
+              onChange={this.props.handleChange('credits')}
             />
             <label for="false"> False </label><br />
 
           </form>
-          {values.state === 'California' && (
-            <form>
-              <p>Please make your statement of California required pay and sick leave:</p>
-              <input
-                type='text'
-                onChange={this.props.handleChange('sick')}
-              />
-            </form>
-          )}
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>

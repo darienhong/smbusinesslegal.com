@@ -80,7 +80,6 @@ export default class PDF extends Component {
             overflowY: 'hidden'
           }}>
             <div class='pdf'>
-              <h1>INTERNSHIP AGREEMENT</h1>
               <Doc class='pdfgenerated' values={values} />
             </div>
 
