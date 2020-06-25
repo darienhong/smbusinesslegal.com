@@ -53,22 +53,6 @@ export default class Homepage extends Component {
 
           <Router>
           <div class="homepage">
-     
-    
-     {/*      <div class="header">
-           <header>
-           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170842746-1"></script>
-            <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag(‘js’, new Date());
-            gtag(‘config’, ‘UA-170842746-1’);
-            </script>
-
-           </header>
-            </div>
-
-        */}
               <ModalTest />
               <Lottie 
 	              options={defaultOptions}
