@@ -12,7 +12,6 @@ import './fonts/OpenSans-Regular.ttf';
 
 ReactDOM.render(
   <React.StrictMode>
-
     <App />
   </React.StrictMode>,
   document.getElementById('root')

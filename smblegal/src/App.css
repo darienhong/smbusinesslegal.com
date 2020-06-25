@@ -399,3 +399,8 @@ font-family: 'WorkSans';
   font-size: 25px;
   font-weight: 550;
 }
+
+.pick-document { 
+  text-align: center;
+  font-weight: 500;
+}
