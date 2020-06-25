@@ -18,7 +18,7 @@ export default class SubMenu extends Component {
           borderColor: "white", backgroundColor: "white",
           color: "rgb(169, 172, 201)", fontSize: "16px", fontWeight: "600", letterSpacing: 0, padding: "2px"
         }}>
-          SOLUTIONS
+          TOOLS
             </Dropdown.Toggle>
 
         <Dropdown.Menu>

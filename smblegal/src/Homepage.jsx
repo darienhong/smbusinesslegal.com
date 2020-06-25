@@ -114,12 +114,13 @@ export default class Homepage extends Component {
           
          
          <div class="features">
-             <p> <span class="formation"><Link to="/Formation"> Formation </Link></span></p>
-             <p> <span class="governance">  <Link to="/Governance"> Governance </Link> </span></p>
-             <p> <span class="employment">  <Link to="/Employment"> Employment </Link> </span></p>
-             <p><span class="covid-19">  <Link to="/Covid_19">Covid-19 </Link>  </span></p>
+             <p> <span class="formation"><Link to="/Formation" style={{textDecoration: "none", color: "black"}}> Formation </Link></span></p>
+             <p> <span class="governance">  <Link to="/Governance" style={{textDecoration: "none", color: "black"}}> Governance </Link> </span></p>
+             <p> <span class="employment">  <Link to="/Employment" style={{textDecoration: "none", color: "black"}}> Employment </Link> </span></p>
+             <p><span class="covid-19">  <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}>Covid-19 </Link>  </span></p>
             </div>
-          
+      
+  
           <br></br>
           <br></br>
           <br></br>
@@ -140,7 +141,9 @@ export default class Homepage extends Component {
              Review all documents carefully for accuracy before using them.  
              Your use of this site is subject to our Terms of Service. </p>
             </footer>
-  
+
+
+           
        </div>
         </Router>
         );
