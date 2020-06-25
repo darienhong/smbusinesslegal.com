@@ -59,7 +59,7 @@ export default class LetterIntro extends Component {
           <br />
 
           <form>
-            <p>Enter your intern's name:</p>
+            <p>Enter employee's name:</p>
             <input
               type='text'
               onChange={this.props.handleChange('internName')}
