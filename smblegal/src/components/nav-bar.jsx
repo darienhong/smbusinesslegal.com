@@ -14,7 +14,6 @@ import Solutions from '../Solutions.jsx';
 import Pricing from '../Pricing.jsx';
 import SignUp from '../SignUp.jsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import { Grommet, Menu } from 'grommet';
 
 export default class Navbar extends Component {
 constructor(props) {

@@ -17,6 +17,7 @@ import Covid_19 from './document types/COVID-19.jsx';
 import Employment from './document types/Employment.jsx';
 import Formation from './document types/Formation.jsx';
 import Governance from './document types/Governance.jsx';
+import DocumentMenu from './components/document-menu.jsx';
 
 AOS.init();
 
@@ -51,9 +52,11 @@ export default class Homepage extends Component {
       };
 
         return (
-          
+
+          <Router>
           <div class="homepage">
      
+    
      {/*      <div class="header">
            <header>
            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170842746-1"></script>
@@ -110,13 +113,13 @@ export default class Homepage extends Component {
           <br></br>
           
          
-            <div class="features">
+         <div class="features">
              <p> <span class="formation"><Link to="/Formation"> Formation </Link></span></p>
              <p> <span class="governance">  <Link to="/Governance"> Governance </Link> </span></p>
              <p> <span class="employment">  <Link to="/Employment"> Employment </Link> </span></p>
              <p><span class="covid-19">  <Link to="/Covid_19">Covid-19 </Link>  </span></p>
             </div>
-
+          
           <br></br>
           <br></br>
           <br></br>
@@ -139,7 +142,7 @@ export default class Homepage extends Component {
             </footer>
   
        </div>
-
+        </Router>
         );
       
       }
