@@ -6,7 +6,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Questions from '../Questions.jsx';
+// import Questions from '../Questions.jsx';
+import Questions from '../internship-files/Questions.jsx'
 import Homepage from '../Homepage.jsx';
 import AboutUs from '../aboutus.jsx';
 import SubMenu from './sub-menu.jsx';

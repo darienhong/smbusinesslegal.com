@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import './App.css';
+import '../App.css';
 
 
 export default class Document extends Component {
