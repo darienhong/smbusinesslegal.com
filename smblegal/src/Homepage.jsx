@@ -13,12 +13,10 @@ import {
   Route, 
   Link
 } from "react-router-dom";
-import Covid_19 from './document types/COVID-19.jsx';
-import Employment from './document types/Employment.jsx';
-import Formation from './document types/Formation.jsx';
-import Governance from './document types/Governance.jsx';
-import DocumentMenu from './components/document-menu.jsx';
+import ReactGA from 'react-ga';
 
+
+ReactGA.initialize("UA-170842746-1");
 AOS.init();
 
 AOS.init({
