@@ -7,6 +7,16 @@ import animationData from './assets/animation.json';
 import ModalTest from './components/modal.jsx';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route, 
+  Link
+} from "react-router-dom";
+import Covid_19 from './document types/COVID-19.jsx';
+import Employment from './document types/Employment.jsx';
+import Formation from './document types/Formation.jsx';
+import Governance from './document types/Governance.jsx';
 
 AOS.init();
 
@@ -43,6 +53,21 @@ export default class Homepage extends Component {
         return (
           
           <div class="homepage">
+     
+     {/*      <div class="header">
+           <header>
+           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170842746-1"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag(‘js’, new Date());
+            gtag(‘config’, ‘UA-170842746-1’);
+            </script>
+
+           </header>
+            </div>
+
+        */}
               <ModalTest />
               <Lottie 
 	              options={defaultOptions}
@@ -68,7 +93,6 @@ export default class Homepage extends Component {
 
                 <br></br>
                 <br></br>
-               
 
                <div style={{textAlign: "center"}}>
                 <svg height={50} width={400}>
@@ -80,16 +104,17 @@ export default class Homepage extends Component {
            <br></br>
            <br></br>
            <br></br>
+
           
           <p style={{textAlign: "center", textTransform: "uppercase"}}> Services we will offer include </p>
           <br></br>
           
-          
+         
             <div class="features">
-             <p> <span class="formation"> Formation </span></p>
-             <p> <span class="governance">  Governance  </span></p>
-             <p> <span class="employment">  Employment  </span></p>
-             <p><span class="covid-19">  Covid-19  </span></p>
+             <p> <span class="formation"><Link to="/Formation"> Formation </Link></span></p>
+             <p> <span class="governance">  <Link to="/Governance"> Governance </Link> </span></p>
+             <p> <span class="employment">  <Link to="/Employment"> Employment </Link> </span></p>
+             <p><span class="covid-19">  <Link to="/Covid_19">Covid-19 </Link>  </span></p>
             </div>
 
           <br></br>

@@ -23,6 +23,7 @@ export default class AboutUs extends Component {
               <br></br>
               <br></br>
               <br></br>
+              <br></br>
               <h1 style={{color: "rgb(57, 60, 126)"}}> About Us </h1>
               <br></br>
 
@@ -74,17 +75,33 @@ export default class AboutUs extends Component {
 
                     <p> Thanks for coming and we’re glad to have you along for the journey. </p>
 
-                    <h3 style={{fontFamily: "WorkSans", fontSize: "16px"}}> The SMB Legal Team </h3>
+                    <h3 style={{fontFamily: "WorkSans", fontSize: "16px", fontWeight: "600"}}> The SMB Legal Team </h3>
                 <div class="about-us-features"> 
                 <br></br>
                 <br></br>
-                <Icon name="chevron circle right" size="big"/>
                 <p>  </p>
                 <br></br>
                 <br></br>
                 </div>
             </div>
             
+            <footer class="footer">
+                <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
+                <p style={{opacity: 0.4}}> SMB Legal (Eatery Legal Corporation) is NOT a law firm, 
+             is not a substitute for an attorney or law firm and cannot provide 
+             legal advice.  SMB Legal provides access to self-help services 
+             at your specific direction.  We cannot provide any kind of advice, 
+             explanation, opinion, or recommendation about possible legal rights, 
+             remedies, defenses, options, selection of forms or strategies. 
+             Communication between you and SMB Legal is protected by our Privacy Policy 
+             and not by attorney-client privilege and it does not constitute 
+             the provision of legal advice or other professional advice by SMB Legal.  
+             By relying on these documents, you assume all risk and liability that may result.  
+             Review all documents carefully for accuracy before using them.  
+             Your use of this site is subject to our Terms of Service. </p>
+            </footer>
+
+
 
 
 
