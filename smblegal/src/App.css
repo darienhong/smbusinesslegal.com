@@ -278,6 +278,8 @@ nav a:hover::before {
   text-transform: uppercase;
   font-weight: 580;
   display: block;
+  text-decoration: none;
+  color: black;
   
 }
 .employment, .governance, .formation {
