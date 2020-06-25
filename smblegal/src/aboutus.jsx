@@ -23,6 +23,7 @@ export default class AboutUs extends Component {
               <br></br>
               <br></br>
               <br></br>
+              <br></br>
               <h1 style={{color: "rgb(57, 60, 126)"}}> About Us </h1>
               <br></br>
 

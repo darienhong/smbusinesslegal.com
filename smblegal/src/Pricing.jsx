@@ -36,7 +36,7 @@ export default class Pricing extends Component {
             <Card>
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 1</h4>
-                <h2 class="price-category">  FREEMIUM </h2>
+                <h2 class="price-category">  Freemium </h2>
                 <br></br>
                 <p> Some details about the price</p>
                 <Button size="small">Learn More</Button>
@@ -50,7 +50,7 @@ export default class Pricing extends Component {
                 <h4 class="price-option"> Option 2 </h4>
                 <h2 class="price-category">  Automated Governance </h2>
                 <p> Some details about the price</p>
-                <Button variant="dark">Learn More</Button>
+                <Button variant="small">Learn More</Button>
                 </CardContent>
             </Card>
             </div> 
@@ -71,7 +71,7 @@ export default class Pricing extends Component {
             <Card>
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 4 </h4>
-                <h2 class="price-category">  FORMATION </h2>
+                <h2 class="price-category">  Formation </h2>
                 <br></br>
                 <p> Some details about the price</p>
                 <Button size="small">Learn More</Button>
