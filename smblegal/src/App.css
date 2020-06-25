@@ -144,6 +144,7 @@ nav a {
   text-transform: uppercase;
   font-weight: 550;
   font-size: 14px;
+
 }
 
 nav a:hover {
@@ -232,7 +233,7 @@ nav a:hover::before {
     opacity: 1;
   }
 }
-.about-page, .pricing-page { 
+.about-page, .pricing-page, .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
 }
@@ -430,4 +431,35 @@ font-family: 'WorkSans';
 .pick-document { 
   text-align: center;
   font-weight: 500;
+  font-size: 20px;
+}
+
+.document-icon { 
+  text-align: center; 
+  padding: 10px;
+  border: 2px solid rgb(57, 60, 126);
+  border-radius: 25px;
+  width: 300px;
+  margin: 40px;
+  text-transform: uppercase;
+  box-shadow: 6px 6px rgb(201, 201, 201);
+}
+
+.document-icon p {
+  font-weight: 600;
+}
+
+.document-icon:hover { 
+  background-color: rgb(57, 60, 126);
+  opacity: 0.7;
+}
+
+.document-icon:hover p {
+  color: white;
+}
+
+.formation-documents { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

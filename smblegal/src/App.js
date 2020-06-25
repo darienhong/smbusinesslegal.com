@@ -11,6 +11,7 @@ import Formation from './document types/Formation.jsx';
 import Governance from './document types/Governance.jsx';
 import Employment from './document types/Employment.jsx';
 import Covid_19 from './document types/COVID-19.jsx';
+import Questions from './internship-files/Questions.jsx';
 import Homepage from './Homepage.jsx';
 
 
@@ -36,6 +37,9 @@ export default class App extends Component {
           </Route>
           <Route path="/">
             <Navbar />
+          </Route>
+          <Route path="/Questions">
+            <Questions />
           </Route>
         </Switch>
 

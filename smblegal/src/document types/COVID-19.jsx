@@ -7,6 +7,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+  import DescriptionIcon from '@material-ui/icons/Description';
 
 
 export default class Covid_19 extends Component { 
@@ -28,7 +29,20 @@ export default class Covid_19 extends Component {
                 </svg>
             </div>
             <p class="pick-document"> Choose a document to draft </p>
-
+            <br></br>
+            <br></br>
+            <div class="formation-documents"> 
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> California Covid-19 Notice of Inability to Pay Rent </p>
+            </div>
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> Work From Home Policy </p>
+            </div>
+             </div>
         </div>
 
 

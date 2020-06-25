@@ -7,6 +7,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+  import DescriptionIcon from '@material-ui/icons/Description';
 
 export default class Governance extends Component { 
 
@@ -28,6 +29,66 @@ export default class Governance extends Component {
                 </svg>
             </div>
             <p class="pick-document"> Choose a document to draft </p>
+            <br></br>
+            <br></br>
+            
+            <div class="formation-documents"> 
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> Board of Director Meeting Minutes </p>
+            </div>
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> Board Resolution </p>
+            </div>
+             </div>
+
+             <div class="formation-documents"> 
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> Waiver of Notice of the Meeting of the Board of Directors </p>
+            </div>
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> Waiver of Notice of the Meeting of the Shareholders </p>
+            </div>
+             </div>
+
+             <div class="formation-documents"> 
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> Shareholders Meeting Minutes </p>
+            </div>
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> Shareholders Resolution </p>
+            </div>
+             </div>
+             <div class="formation-documents"> 
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> Member Resolution (LLC) </p>
+            </div>
+            
+            <div class="document-icon">
+            <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
+            <p> N/A </p>
+            </div>
+             </div>
+
+
+
+
+
+
+
 
             </div>
         );
