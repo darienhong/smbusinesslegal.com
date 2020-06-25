@@ -18,7 +18,7 @@ export default class Covid_19 extends Component {
                <br></br>
                 <br></br>
                 <div class="back-button" style={{paddingLeft: "20px", marginLeft: "20px"}}>
-                <Link to="/" style={{color: "black", textDecoration: "none"}}> <ArrowBackIosIcon /></Link>
+                <Link to="/" style={{color: "black", textDecoration: "none"}}> <ArrowBackIosIcon className="back-button"/></Link>
                 </div>
                 <br></br>
                 <h1 style={{color: "rgb(57, 60, 126)"}}> COVID-19 </h1>
