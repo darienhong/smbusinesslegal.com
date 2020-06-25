@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
@@ -27,7 +27,7 @@ export default class InternshipInfo extends Component {
       <div class='ask'>
         {/* <Progress percent={values.percentage} indicating /> */}
 
-        <div class='col'>
+        <div class='col height'>
           <form>
             <p>Enter employee's title:</p>
             <input
@@ -35,6 +35,8 @@ export default class InternshipInfo extends Component {
               onChange={this.props.handleChange('title')}
             />
           </form>
+          <br />
+
           <form>
             <p>Enter employee's duties:</p>
             <input
@@ -42,6 +44,7 @@ export default class InternshipInfo extends Component {
               onChange={this.props.handleChange('duties')}
             />
           </form>
+          <br />
 
           <form>
             <p>Enter the reporting relationship:</p>
@@ -51,6 +54,8 @@ export default class InternshipInfo extends Component {
               onChange={this.props.handleChange('relationship')}
             />
           </form>
+          <br />
+
           <form>
             <p> Enter the start date: </p>
             <input
@@ -59,11 +64,12 @@ export default class InternshipInfo extends Component {
             />
 
           </form>
+          <br />
           <form>
-            <p>Enter the base wage:</p>
+            <p>Enter employee's hours:</p>
             <input
               type='number'
-              onChange={this.props.handleChange('wage')}
+              onChange={this.props.handleChange('hours')}
             />
           </form>
 

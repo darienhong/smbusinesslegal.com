@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
@@ -20,24 +20,26 @@ export default class InternshipInfo3 extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        <div class='col'>
+        <div class='col height'>
+
           <form>
-            <p>Academic credits given for internship:</p>
+            <p>Does your internship need employment verification?</p>
             <input
-              type='radio' id="true" name="cred" value="True"
-              onChange={this.props.handleChange('credits')}
+              type='radio' id="yes" name="ver" value="Yes"
+              onChange={this.props.handleChange('verification')}
             />
-            <label for="true"> True </label><br />
+            <label for="yes"> Yes </label><br />
             <input
-              type='radio' id="false" name="cred" value="False"
-              onChange={this.props.handleChange('credits')}
+              type='radio' id="no" name="ver" value="No"
+              onChange={this.props.handleChange('verification')}
             />
-            <label for="false"> False </label><br />
+            <label for="no"> No </label><br />
 
           </form>
+          <br />
 
           <form>
-            <p>Are specific expenses of the intern covered by the company?</p>
+            <p>Is the company reimbursing the intern for any expenses?</p>
             <input
               type='radio' id="yes" name="exp" value="Yes"
               onChange={this.props.handleChange('expenses')}
@@ -50,9 +52,48 @@ export default class InternshipInfo3 extends Component {
             <label for="no"> No </label><br />
 
           </form>
+          <br />
+
+          {values.expenses === 'Yes' && (
+            <div>
+              <form onChange={this.props.handleExpenseChange}>
+                <div class='listExp'>
+                  <p>Enter expenses:</p>
+                </div>
+                <div class='expButton'>
+                  <button class='add' onClick={this.props.addExpense}>+</button>
+                </div>
+                <br />
+                <div class='listExp'>
+                  {
+                    (values.expenseList).map((val, idx) => {
+                      let expenseId = `expense-${idx}`
+                      return (
+                        <div key={idx}>
+                          <label htmlFor={expenseId}>{`Expense #${idx + 1}`}</label>
+                          <input
+                            type="text"
+                            name={expenseId}
+                            data-id={idx}
+                            id={expenseId}
+                            value={(values.expenseList)[idx].name}
+                            className="name"
+                          />
+                          {" "}
+                        </div>
+
+                      )
+                    })
+                  }
+                </div>
+              </form>
+              <br />
+            </div>
+          )
+          }
 
           <form>
-            <p>Will the company have professional liability for the employee?</p>
+            <p>Is the company indemnifying the intern for any liability incurred via the internship?</p>
             <input
               type='radio' id="yes" name="lia" value="Yes"
               onChange={this.props.handleChange('liability')}
@@ -65,8 +106,8 @@ export default class InternshipInfo3 extends Component {
             <label for="no"> No </label><br />
 
           </form>
-
-          <form>
+          <br />
+          {/* <form>
             <p>Non-Compete Clause</p>
             <input
               type='radio' id="yes" name="comp" value="Yes"
@@ -79,16 +120,16 @@ export default class InternshipInfo3 extends Component {
             />
             <label for="no"> No </label><br />
 
-          </form>
+          </form> */}
 
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
-        </div>
+        </div >
         <div class='col right'>
           <Document class='doc' values={values}
           />
         </div>
-      </div>
+      </div >
 
     );
   }

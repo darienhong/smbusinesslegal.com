@@ -91,10 +91,14 @@ p {
 
 .col {
   flex: 50%;
-  padding: 10px;
+  /* padding: px; */
   float: left;
   /* padding: 10px; */
 }
+
+/* .height {
+  line-height: 75%;
+} */
 
 .left {
   column-width:1%;
@@ -368,9 +372,30 @@ button {
   font-style:normal;
 }
 
+.size {
+  font-size:15px;
+}
+
 .bld {
   font-style: bold;
 }
+
+.add{
+  padding: 4px 10px;
+}
+
+.add:hover {
+  background-color: #4CAF50;
+}
+
+.listExp {
+  display:inline-block;
+  margin-right:10px;
+}
+.expButton {
+  display:inline-block;
+}
+
 
 .price-cards { 
 display: flex;

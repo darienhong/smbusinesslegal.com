@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
@@ -20,6 +20,7 @@ export default class Questions extends Component {
   state = {
     step: 1,
     percent: 50,
+    expenseList: [{ name: "" }],
     date: new Date(),
     employeeName: '[NAME]',
     address: '[ADDRESS]',
@@ -35,13 +36,15 @@ export default class Questions extends Component {
     status: '[Exempt or non-exempt]',
     atWill: '[X]',
     credits: '[X]',
-    expenses: '[X]',
+    expenses: '',
     liability: '[X]',
     compete: '[X]',
     sick: '[X]',
     employerTitle: '[TITLE]',
     phone: '[PHONE]',
-    email: '[EMAIL]'
+    email: '[EMAIL]',
+    paid: '[X]',
+    verification: '[X]',
   }
 
   nextStep = () => {
@@ -87,16 +90,29 @@ export default class Questions extends Component {
     this.setState({ [input]: event.target.value })
   }
 
+  handleExpenseChange = (e) => {
+    let expenseList = [...this.state.expenseList]
+    expenseList[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState({ expenseList }, () => console.log(this.state.expenseList))
+  }
+
+  addExpense = (e) => {
+    e.preventDefault();
+    this.setState((prevState) => ({
+      expenseList: [...prevState.expenseList, { name: "" }],
+    }));
+  }
+
   render() {
     const { step } = this.state;
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
-      employerTitle, phone, email
+      employerTitle, phone, email, paid, verification, expenseList
     } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
-      wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle, phone, email
-
+      wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
+      phone, email, paid, verification, expenseList
     };
 
     switch (step) {
@@ -133,6 +149,9 @@ export default class Questions extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
+          handleExpenseChange={this.handleExpenseChange}
+          addExpense={this.addExpense}
+          // handleExpenses={this.handleExpenses}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
           values={values}

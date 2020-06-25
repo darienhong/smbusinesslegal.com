@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-import './App.css';
+import '../App.css';
 
 
-export default class Questions extends Component {
+export default class Document extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     const { values } = this.props;
+    const expenses = values.expenses.toString()
+
     var dateString = values.date.toString();
     var formattedDate = moment(dateString).format("LL");
     var startDateString = values.startDate.toString();
@@ -22,14 +24,8 @@ export default class Questions extends Component {
     var creditRequire = ''
     if (creditCheck)
       creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
-    const expensesCheck = values.expenses == 'Yes'
-    var expensesRequire = 'No Intern Expenses Will Be Covered.'
-    if (expensesCheck)
-      expensesRequire = 'Expenses. The Company shall reimburse ' + values.internName + ' for reasonable expenses approved by the Company, in writing, and incurred by ' + values.internName + ' which is necessary for the performance of your duties under this letter.'
-    const liablilityCheck = values.liability == 'Yes'
-    var liabilityRequire = 'No Professional Liability.'
-    if (liablilityCheck)
-      liabilityRequire = 'Professional Liability. The Company agrees that it will defend, hold harmless, and indemnify ' + values.internName + ' from any threatened or actual demands, claims, suits, actions or legal proceedings against ' + values.internName + ' caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performance in good faith.'
+
+
     const competeCheck = values.compete == 'Yes'
     var competeRequire = 'No Non-Compete Clause.'
     if (competeCheck)
@@ -39,8 +35,81 @@ export default class Questions extends Component {
     var sickRequire = ''
     if (sickCheck)
       sickRequire = 'California Notice of Required Pay and Sick Leave: ' + values.sick
+
+    const verify = values.verification == 'Yes'
+    var verifyRequire = ''
+    var verifyRequire2 = ''
+    var background = '3. Background and Reference Check.'
+    const expensesCheck = values.expenses == 'Yes'
+    var expensesRequire = ''
+    var expensesRequire2 = ''
+    const liablilityCheck = values.liability == 'Yes'
+    var liabilityRequire = ''
+    var liabilityRequire2 = ''
+    var breach = '4. No Breach.'
+    var atwill = '5. At-Will Internship.'
+    var conf = '6. Confidentiality, Non-Solicitation and Return of Property.'
+    var inv = '7. Invention Assignment.'
+    var misc = '8. Miscellaneous'
+    if (verify) {
+      verifyRequire = '3. Employment Eligibility Verification.'
+      verifyRequire2 = 'This offer of internship is contingent upon you showing documentation showing your right to work in the United States within three (3) days of being hired.  This offer may be revoked, and you will not be allowed to work for the Company, if this documentation is not provided within three (3) days.'
+      background = '4. Background and Reference Check.'
+      breach = '5. No Breach'
+      var atwill = '6. At-Will Internship.'
+      var conf = '7. Confidentiality, Non-Solicitation and Return of Property.'
+      var inv = '8. Invention Assignment.'
+      var misc = '9. Miscellaneous'
+      if (expensesCheck) {
+        expensesRequire = '5. Expenses'
+        expensesRequire2 = 'The Company shall reimburse Intern for reasonable expenses approved by the Company, in writing, and incurred by Intern which is necessary for the performance of your duties under this letter. Such expenses shall include:'
+        breach = '6. No Breach'
+        var atwill = '7. At-Will Internship.'
+        var conf = '8. Confidentiality, Non-Solicitation and Return of Property.'
+        var inv = '9. Invention Assignment.'
+        var misc = '10. Miscellaneous'
+        if (liablilityCheck) {
+          liabilityRequire = '6. Professional Liability'
+          liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Intern from any threatened or actual demands, claims, suits, actions or legal proceedings against Intern caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
+          breach = '7. No Breach'
+          var atwill = '8. At-Will Internship.'
+          var conf = '9. Confidentiality, Non-Solicitation and Return of Property.'
+          var inv = '10. Invention Assignment.'
+          var misc = '11. Miscellaneous'
+        }
+      }
+    }
+    else if (expensesCheck) {
+      expensesRequire = '4. Expenses'
+      expensesRequire2 = 'The Company shall reimburse Intern for reasonable expenses approved by the Company, in writing, and incurred by Intern which is necessary for the performance of your duties under this letter. Such expenses shall include:'
+      breach = '5. No Breach'
+      var atwill = '6. At-Will Internship.'
+      var conf = '7. Confidentiality, Non-Solicitation and Return of Property.'
+      var inv = '8. Invention Assignment.'
+      var misc = '9. Miscellaneous'
+      if (liablilityCheck) {
+        liabilityRequire = '5. Professional Liability'
+        liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Intern from any threatened or actual demands, claims, suits, actions or legal proceedings against Intern caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
+        breach = '6. No Breach'
+        var atwill = '7. At-Will Internship.'
+        var conf = '8. Confidentiality, Non-Solicitation and Return of Property.'
+        var inv = '9. Invention Assignment.'
+        var misc = '10. Miscellaneous'
+      }
+    }
+    else if (liablilityCheck) {
+      liabilityRequire = '4. Professional Liability'
+      liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Intern from any threatened or actual demands, claims, suits, actions or legal proceedings against Intern caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
+      breach = '5. No Breach'
+      var atwill = '6. At-Will Internship.'
+      var conf = '7. Confidentiality, Non-Solicitation and Return of Property.'
+      var inv = '8. Invention Assignment.'
+      var misc = '9. Miscellaneous'
+    }
+
+
     return (
-      <div >
+      <div class='size'>
         <p ><span class='fill'>{formattedDate}</span></p>
         <p ><span class='fill'>{values.employeeName}</span></p>
         <p><span class='fill'>{values.address}</span></p>
@@ -60,7 +129,7 @@ export default class Questions extends Component {
         <p>Base Wage: <span class='fill'>{values.wage}</span>  </p>
         <p>Hours: <span class='fill'>{values.hours}</span></p>
         <p>Status: <span class='fill'>{values.status}</span> </p>
-        <p>At-Will Employment: <span class='fill'>{values.atWill}</span> </p>
+        <p>At-Will Employment: Yes </p>
         <p>{sickRequire} </p>
         <br /><br />
         <p>Compensation or benefits may be adjusted based on performance or other relevant matters,
@@ -68,102 +137,88 @@ export default class Questions extends Component {
         provided according to applicable law.</p>
         <br /><br />
         <div id='container'>
-          {/* <ol class='info'>
-            <li> */}
-          <h3 class='indoc'>1. Internship Description. [Job Responsibilities]</h3>
-          {/* <ol class='details'>
-                <li> */}
+
+          <h5 class='indoc'>1. Internship Description. [Job Responsibilities]</h5>
           <p class='tab'>i. Educational Environment.
           <br /><br />
             <p class='tab'>This internship is for the educational benefit of <span class='fill'>{values.internName}</span>. {creditRequire} <span class='fill'>{values.internName}</span> will be the primary beneficiary of this internship.</p></p >
-          {/* </li>
-                <li> */}
           < p class='tab'> ii. No Expectation of Employment.
           <br /><br />
-
             < p class='tab' > By signing this agreement < span class='fill' > {values.internName}</span > acknowledges and
     agrees that this internship is for a fixed duration and comes with no promises or
     expectations of employment beyond the internship.</p ></p >
-          {/* </li>
-              </ol>
-            </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>2. Directives, Policies and Procedures. </h3>
+          <br />
+
+          <h5 class='indoc'>2. Directives, Policies and Procedures. </h5>
           <p>Employment is conditioned upon continued adherence to the directives, policies and procedures of the Company.
           As an employee you are expected to comply with the directives of your Manager as well as the policies and procedures that the
           Company puts in place.  Policies and procedures can include, but are not limited to, the contents of an employee handbook or
               employee training manual.  These policies and procedures may be modified at any time.</p>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>3. Employment Eligibility Verification.</h3>
-          <p>This offer of employment is contingent upon you showing documentation showing your
-          right to work in the United States within three (3) days of being hired.  This offer may be revoked, and you will not be
-              allowed to work for the Company, if this documentation is not provided within three (3) days.</p>
-          {/* </li> */}
-          {/* <li> */}
-          {/* </li> */}
 
-          {/* <li> */}
-          <h3 class='indoc'>4. Background and Reference Check. </h3>
+          <h5 class='indoc'>{verifyRequire} </h5>
+          <p>{verifyRequire2}</p>
+
+          <h5 class='indoc'>{background} </h5>
           <p>The Company has the right to, if they so choose, check the
               education and professional background of its prospective or actual employees.</p>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>5. {expensesRequire}</h3>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>6. {liabilityRequire}</h3>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>7. No Breach. </h3>
+
+          <h5 class='indoc'>{expensesRequire}</h5>
+          <p>{expensesRequire2}</p>
+
+          {values.expenses === 'Yes' && (
+            <div class='tab'>
+              {
+                (values.expenseList).map((val, idx) => {
+                  let expenseId = `expense-${idx}`
+                  return (
+                    <div key={idx}>
+                      <p>{`${idx + 1}. ` + (values.expenseList)[idx]['name']}</p>
+                    </div>
+
+                  )
+                })
+              }
+            </div>
+          )}
+          <h5 class='indoc'>{liabilityRequire}</h5>
+          <p>{liabilityRequire2}</p>
+
+          <h5 class='indoc'>{breach} </h5>
           <p><span class='fill'>{values.internName}</span> by signing this agreement, represents and warrants to Company that by
             accepting employment with the Company <span class='fill'>{values.internName}</span> will not breach their continuing obligations to a
             former employee and that they have not removed any confidential or proprietary information from
             their former employee and will not use such information at the Company.</p>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>8. At-Will Internship. </h3>
+
+          <h5 class='indoc'>{atwill}</h5>
           <p>All interns are “employees at will”.  This means that an intern may terminate
           internship at any time, for any reason.  The Company may also terminate the intern,
               with or without cause, for any reason.</p>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>9. Confidentiality, Non-Solicitation and Return of Property. </h3>
+
+          <h5 class='indoc'>{conf} </h5>
           <p>As a condition of employment <span class='fill'>{values.internName}</span> must refrain from using or disclosing trade-secrets or confidential information of the Company or
              its clients.  This includes files and information of both the client and Company, marketing
              data, financial information, forms and samples and any other materials related to the Company or
              its clients. <br /><br />After the employment relationship between <span class='fill'>{values.internName}</span> and the Company has ended, <span class='fill'>{values.internName}</span> agrees that trade secrets will not be used to solicit any clients or employees of the Company.
              <br /><br />All Company trade secrets and confidential information will be returned upon the termination of the
              employment relationship.</p>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>10. {competeRequire}</h3>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>11. Invention Assignment. </h3>
-          <p>All ideas, inventions, improvements, methods, processes,
-          works of authorship and other forms of intellectual property, conceived of,
-            reduced to practice or developed by <span class='fill'>{values.internName}</span> during the employment relationship will be
-            the sole and exclusive property of the Company. Any and all intellectual property shall
-            be considered “works made for hire”.</p>
-          {/* </li> */}
-          {/* <li> */}
-          <h3 class='indoc'>12. Miscellaneous</h3>
-          {/* <ol class='details'>
-                <li> */}
+
+          <h5 class='indoc'>{inv} </h5>
+          <p>All ideas, inventions, improvements, methods, processes, works of authorship and other
+          forms of intellectual property, conceived of, reduced to practice or developed by Intern
+          during or related to the internship relationship will be the sole and exclusive property of the Company.
+          </p>
+
+          <h5 class='indoc'>{misc}</h5>
           <p class='tab'>i. INTEGRATION.
           <br /><br />
             <p class='tab'>This offer letter contains the entire understanding between the Company
                   and  <span class='fill'>{values.internName}</span>.  This letter supersedes any prior representations or understandings, written or oral.</p>
-            {/* </li>
-                <li> */}</p>
+          </p>
           <p class='tab'>ii. GOVERNING LAW.
           <br /><br />
             <p class='tab'>The validity, interpretation, construction and performance of this offer
                   letter shall be governed by the laws of the State of <span class='fill'>{values.state}</span> without regard to conflicts of laws principals.</p>
           </p>
-          {/* </li>
-                <li> */}
           <p class='tab'>iii. ASSIGNMENT, SUCCESSORS AND ASSIGNS.
           <br /><br />
             <p class='tab'>  The rights bestowed upon <span class='fill'>{values.internName}</span> in this agreement are personal
@@ -171,8 +226,6 @@ export default class Questions extends Component {
                 attempted assignment of this agreement shall be null and void.
                 </p>
           </p>
-          {/* </li>
-                <li> */}
           <p class='tab'>iv. SEVERABILITY.
           <br /><br />
             <p class='tab'>If one or more provisions of this agreement are deemed void or
@@ -180,8 +233,6 @@ export default class Questions extends Component {
             possible by law and the force and validity of the remainder of the agreement shall still be in effect.
           </p>
           </p>
-          {/* </li>
-                <li> */}
           <p class='tab'> v. COUNTERPARTS.
           <br /><br />
             <p class='tab'>
@@ -190,12 +241,7 @@ export default class Questions extends Component {
               one and the same agreement.
                  </p>
           </p>
-          {/* 
-                </li>
-              </ol>
-            </li>
 
-          </ol> */}
           <br /><br />
           <p>
             Please indicate, by signing below and returning the signed copy to <span class='fill'>{values.employeeName}</span>, that you accept this offer of employment by <span class='fill'>{values.employeeName}</span>.

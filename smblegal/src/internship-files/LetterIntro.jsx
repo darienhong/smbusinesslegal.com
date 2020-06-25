@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import DayPicker from 'react-day-picker';
@@ -25,7 +25,7 @@ export default class LetterIntro extends Component {
     return (
       <div class='ask'>
         {/* <Progress percent={values.percentage} indicating /> */}
-        <div class='col left'>
+        <div class='col left height'>
           {/* <DayPicker showOutsideDays
             selectedDays={values.date}
             onDayClick={this.handleDateClick} /> */}
@@ -38,6 +38,7 @@ export default class LetterIntro extends Component {
 
           </form>
           <br />
+
           <form>
             <p>Enter your name:</p>
             <input
@@ -46,6 +47,7 @@ export default class LetterIntro extends Component {
             />
           </form>
           <br />
+
 
           <form>
             <p>Enter your address:</p>
@@ -65,6 +67,7 @@ export default class LetterIntro extends Component {
           </form>
           <br />
 
+
           <form>
             <p>Enter company's name:</p>
             <input
@@ -73,6 +76,7 @@ export default class LetterIntro extends Component {
             />
           </form>
           <br />
+
 
           <form>
             <p>Enter the state:</p>
