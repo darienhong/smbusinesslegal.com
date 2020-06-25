@@ -101,7 +101,6 @@ export default class Homepage extends Component {
              <p> <span class="employment">  <Link to="/Employment" style={{textDecoration: "none", color: "black"}}> Employment </Link> </span></p>
              <p><span class="covid-19">  <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}>Covid-19 </Link>  </span></p>
             </div>
-      
   
           <br></br>
           <br></br>
