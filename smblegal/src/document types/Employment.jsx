@@ -5,15 +5,17 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    HashRouter
   } from "react-router-dom";
-
-import DescriptionIcon from '@material-ui/icons/Description'
+import Questions from '../internship-files/Questions.jsx';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 export default class Employment extends Component { 
 
     render() { 
         return (
+            <Router> 
             <div class="employment-doc-page">
                 <br></br>
                 <br></br>
@@ -98,8 +100,19 @@ export default class Employment extends Component {
              Your use of this site is subject to our Terms of Service. </p>
             </footer>
 
-            </div>
 
+
+
+
+            <Switch>
+                <Route path="/Questions">
+                    <Questions />
+                </Route>
+
+            </Switch>
+
+            </div>
+            </Router> 
 
 
         );
