@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
-import EmploymentDocument from './EmploymentDocument.jsx';
-import LetterIntro from '../internship-files/LetterIntro.jsx';
-import InternshipInfo from '../internship-files/InternshipInfo.jsx';
-import EmploymentInfo from './EmploymentInfo.jsx';
-import EmploymentInfo2 from './EmploymentInfo2.jsx';
-import InternshipEmployer from '../internship-files/InternshipEmployer.jsx';
-import PDF from '../internship-files/PDF.jsx';
+import ConsultingIntro from './ConsultingIntro.jsx';
+import ConsultingInfo from './ConsultingInfo.jsx';
+import ConsultingInfo2 from './ConsultingInfo2.jsx';
+import ConsultingPDF from './ConsultingPDF.jsx';
 
 
 import { Alert } from 'react-alert'
@@ -21,13 +18,13 @@ export default class Questions extends Component {
     date: new Date(),
     employeeName: '[NAME]',
     address: '[ADDRESS]',
-    internName: '[NAME]',
+    consultantName: '[NAME]',
     companyName: '[COMPANY NAME]',
     state: '[STATE]',
     title: '[X]',
     duties: '[X]',
     relationship: '[X]',
-    startDate: new Date(),
+    endDate: new Date(),
     wage: '[X – if paid must comply with minimum wage laws]',
     hours: '[X]',
     status: '[Exempt or non-exempt]',
@@ -44,7 +41,14 @@ export default class Questions extends Component {
     restaurant: '[X]',
     commission: '[X]',
     comProcedure: '[X]',
-    tipping: '[X]'
+    tipping: '[X]',
+    registration: '[X]',
+    compensation: '[X]',
+    compSched: '[X]',
+    techConfidential: 'Technical data, trade secrets, know-how, research, product or service ideas or plans, software codes and designs, developments, inventions, laboratory notebooks, processes, formulas, techniques, materials, engineering designs and drawings, configurations, lists of or information or information relating to employees and consultants of the company, any intellectual property developed by the Consultant (as described above).',
+    nontechConfidential: 'Non-technical information relating to products, pricing, price lists, margins, market- share data, merchandising plans and strategies, finances, financial accounting data and information, suppliers, customers, customer lists, purchasing data, sales and marketing plans, current or future business plans.',
+    insurance: '[X]',
+    other: '[X]'
   }
 
   nextStep = () => {
@@ -98,19 +102,23 @@ export default class Questions extends Component {
 
   render() {
     const { step } = this.state;
-    const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
+    const { date, employeeName, address, consultantName, companyName, state, title, duties, relationship, endDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
-      employerTitle, phone, email, paid, verification, expenseList, restaurant, commission, tipping, comProcedure,
+      employerTitle, phone, email, paid, verification, expenseList, restaurant, commission,
+      tipping, comProcedure, registration, compensation, compSched,
+      techConfidential, nontechConfidential, insurance, other
     } = this.state;
     const values = {
-      date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
+      date, employeeName, address, consultantName, companyName, state, title, duties, relationship, endDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
-      phone, email, paid, verification, expenseList, restaurant, commission, tipping, comProcedure
+      phone, email, paid, verification, expenseList, restaurant, commission,
+      tipping, comProcedure, registration, compensation, compSched,
+      techConfidential, nontechConfidential, insurance, other
     };
 
     switch (step) {
       case 1:
-        return <LetterIntro
+        return <ConsultingIntro
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
@@ -120,37 +128,19 @@ export default class Questions extends Component {
         />
 
       case 2:
-        return <InternshipInfo
+        return <ConsultingInfo
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
           values={values}
-        />
-      case 3:
-        return <EmploymentInfo
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          handleChange={this.handleChange}
-          increasePercentage={this.increasePercentage}
-          decreasePercentage={this.decreasePercentage}
-          values={values}
-        />
-      case 4:
-        return <EmploymentInfo2
-          nextStep={this.nextStep}
-          prevStep={this.prevStep}
-          handleChange={this.handleChange}
           handleExpenseChange={this.handleExpenseChange}
           addExpense={this.addExpense}
-          // handleExpenses={this.handleExpenses}
-          increasePercentage={this.increasePercentage}
-          decreasePercentage={this.decreasePercentage}
-          values={values}
+
         />
-      case 5:
-        return <InternshipEmployer
+      case 3:
+        return <ConsultingInfo2
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
@@ -158,8 +148,29 @@ export default class Questions extends Component {
           decreasePercentage={this.decreasePercentage}
           values={values}
         />
-      case 6:
-        return <PDF
+      // case 4:
+      //   return <EmploymentInfo2
+      //     nextStep={this.nextStep}
+      //     prevStep={this.prevStep}
+      //     handleChange={this.handleChange}
+      //     handleExpenseChange={this.handleExpenseChange}
+      //     addExpense={this.addExpense}
+      //     // handleExpenses={this.handleExpenses}
+      //     increasePercentage={this.increasePercentage}
+      //     decreasePercentage={this.decreasePercentage}
+      //     values={values}
+      //   />
+      // case 5:
+      //   return <InternshipEmployer
+      //     nextStep={this.nextStep}
+      //     prevStep={this.prevStep}
+      //     handleChange={this.handleChange}
+      //     increasePercentage={this.increasePercentage}
+      //     decreasePercentage={this.decreasePercentage}
+      //     values={values}
+      //   />
+      case 4:
+        return <ConsultingPDF
           prevStep={this.prevStep}
           values={values} />
     }

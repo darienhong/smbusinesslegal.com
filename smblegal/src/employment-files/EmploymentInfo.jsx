@@ -3,7 +3,7 @@ import '../App.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
-import Document from './Document.jsx';
+import EmploymentDocument from './EmploymentDocument.jsx';
 
 
 export default class EmploymentInfo extends Component {
@@ -53,12 +53,12 @@ export default class EmploymentInfo extends Component {
             <p>Is this for a restaurant job?</p>
             <input
               type='radio' id="yes" name="res" value="Yes"
-              onChange={this.props.handleChange('paid')}
+              onChange={this.props.handleChange('restaurant')}
             />
             <label for="yes"> Yes </label><br />
             <input
               type='radio' id="no" name="res" value="No"
-              onChange={this.props.handleChange('paid')}
+              onChange={this.props.handleChange('restaurant')}
             />
             <label for="no"> No </label><br />
 
@@ -71,7 +71,7 @@ export default class EmploymentInfo extends Component {
                 <p>Enter the tipping procedure:</p>
                 <input
                   type='text'
-                  onChange={this.props.handleChange('commission')}
+                  onChange={this.props.handleChange('tipping')}
                 />
               </form>
               <br />
@@ -95,7 +95,7 @@ export default class EmploymentInfo extends Component {
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <Document class='doc' values={values}
+          <EmploymentDocument class='doc' values={values}
           />
         </div>
       </div>

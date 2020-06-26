@@ -4,7 +4,7 @@ import moment from 'moment';
 import '../App.css';
 
 
-export default class Document extends Component {
+export default class EmploymentDocument extends Component {
   constructor(props) {
     super(props);
   }
@@ -71,8 +71,8 @@ export default class Document extends Component {
     var misc = '9. Miscellaneous'
 
     if (handlerCheck) {
-      verifyRequire = '4. California Food Handler Card.'
-      verifyRequire2 = 'This offer of employment is contingent upon you successfully completing the courses for and obtaining a California Food Handler Card within thirty (30) days from the date of hire, if not already obtained prior to working with the Company. This offer may be revoked, and you will not be allowed to work if a California Food Handler Card is not obtained within thirty (30) days.'
+      handlerRequire = '4. California Food Handler Card.'
+      handlerRequire2 = 'This offer of employment is contingent upon you successfully completing the courses for and obtaining a California Food Handler Card within thirty (30) days from the date of hire, if not already obtained prior to working with the Company. This offer may be revoked, and you will not be allowed to work if a California Food Handler Card is not obtained within thirty (30) days.'
       background = '5. Background and Reference Check.'
       breach = '6. No Breach'
       var atwill = '7. At-Will Internship.'
@@ -189,14 +189,14 @@ export default class Document extends Component {
         <div id='container'>
 
           <h5 class='indoc'>1. Internship Description. [Job Responsibilities]</h5>
-          <p class='tab'>i. Educational Environment.
+          {/* <p class='tab'>i. Educational Environment.
           <br /><br />
             <p class='tab'>This internship is for the educational benefit of <span class='fill'>{values.internName}</span>. {creditRequire} <span class='fill'>{values.internName}</span> will be the primary beneficiary of this internship.</p></p >
           < p class='tab'> ii. No Expectation of Employment.
           <br /><br />
             < p class='tab' > By signing this agreement < span class='fill' > {values.internName}</span > acknowledges and
     agrees that this internship is for a fixed duration and comes with no promises or
-    expectations of employment beyond the internship.</p ></p >
+    expectations of employment beyond the internship.</p ></p > */}
           <br />
 
           <h5 class='indoc'>2. Directives, Policies and Procedures. </h5>

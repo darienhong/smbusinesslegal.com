@@ -3,56 +3,52 @@ import '../App.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
-import EmploymentDocument from './EmploymentDocument.jsx';
+import { Progress } from 'semantic-ui-react'
+import ConsultingDocument from './ConsultingDocument.jsx';
 
 
-export default class EmploymentInfo2 extends Component {
+export default class ConsultingInfo extends Component {
   next = (e) => {
     e.preventDefault();
+    this.props.increasePercentage();
     this.props.nextStep();
+
   }
   previous = (e) => {
     e.preventDefault();
     this.props.prevStep();
+    this.props.decreasePercentage();
+
   }
 
   render() {
     const { values } = this.props;
     return (
       <div class='ask'>
+        {/* <Progress percent={values.percentage} indicating /> */}
+
         <div class='col height'>
-
           <form>
-            <p>Does this job include payment via commission?</p>
+            <p>What is the total compensation?</p>
             <input
-              type='radio' id="yes" name="comm" value="Yes"
-              onChange={this.props.handleChange('commission')}
+              type='text'
+              onChange={this.props.handleChange('compensation')}
             />
-            <label for="yes"> Yes </label><br />
-            <input
-              type='radio' id="no" name="comm" value="No"
-              onChange={this.props.handleChange('commission')}
-            />
-            <label for="no"> No </label><br />
-
           </form>
           <br />
 
-          {(values.commission === 'Yes') && (
-            <div>
-              <form>
-                <p>Enter the commission procedure:</p>
-                <input
-                  type='text'
-                  onChange={this.props.handleChange('comProcedure')}
-                />
-              </form>
-              <br />
-            </div>
-          )}
+          <form>
+            <p>What is the payment schedule of that compensation?</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('compSched')}
+            />
+          </form>
+          <br />
+
 
           <form>
-            <p>Does the employee have any reimbursable expenses?</p>
+            <p>Does the Company agree to reimburse the consultant for any expenses?</p>
             <input
               type='radio' id="yes" name="exp" value="Yes"
               onChange={this.props.handleChange('expenses')}
@@ -105,44 +101,14 @@ export default class EmploymentInfo2 extends Component {
           )
           }
 
-          <form>
-            <p>Is the company indemnifying the employee for any liability incurred via the employment?</p>
-            <input
-              type='radio' id="yes" name="lia" value="Yes"
-              onChange={this.props.handleChange('liability')}
-            />
-            <label for="yes"> Yes </label><br />
-            <input
-              type='radio' id="no" name="lia" value="No"
-              onChange={this.props.handleChange('liability')}
-            />
-            <label for="no"> No </label><br />
-
-          </form>
-          <br />
-          <form>
-            <p>Does the company want to include a non-compete provision in the employment agreement?</p>
-            <input
-              type='radio' id="yes" name="comp" value="Yes"
-              onChange={this.props.handleChange('compete')}
-            />
-            <label for="yes"> Yes </label><br />
-            <input
-              type='radio' id="no" name="comp" value="No"
-              onChange={this.props.handleChange('compete')}
-            />
-            <label for="no"> No </label><br />
-
-          </form>
-
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
-        </div >
-        <div class='col right'>
-          <EmploymentDocument class='doc' values={values}
-          />
         </div>
-      </div >
+        <div class='col right'>
+          <ConsultingDocument class='doc' values={values} />
+        </div>
+
+      </div>
 
     );
   }
