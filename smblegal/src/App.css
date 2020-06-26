@@ -233,9 +233,12 @@ nav a:hover::before {
     opacity: 1;
   }
 }
-.about-page, .pricing-page, .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page { 
+.homepage, .about-page, .pricing-page, .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
+  margin-left: 40px; 
+  margin-right: 40px; 
+
 }
 
 
@@ -466,4 +469,25 @@ font-family: 'WorkSans';
 
 .back-button:hover {
   color: rgb(169, 172, 201);
+}
+
+.governance-automation-block{ 
+  width: 300px; 
+  display: flex;
+  justify-content: center;
+  border: 2px solid white; 
+  box-shadow: 3px 3px rgb(201, 201, 201);
+}
+
+.features-section {
+  display: flex; 
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.features-block {
+  width: 220px;
+  border: 2px solid white;
+  box-shadow: 3px 3px rgb(201, 201, 201);
+  margin: 30px;
 }

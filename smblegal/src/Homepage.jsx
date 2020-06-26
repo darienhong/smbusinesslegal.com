@@ -92,7 +92,7 @@ export default class Homepage extends Component {
            <br></br>
 
           
-          <p style={{textAlign: "center", textTransform: "uppercase"}}> Services we will offer include </p>
+          <p style={{textAlign: "center", textTransform: "uppercase"}}> Documents </p>
           <br></br>
           
          
@@ -106,6 +106,30 @@ export default class Homepage extends Component {
           <br></br>
           <br></br>
           <br></br>
+          <center>
+          <div class="governance-automation-block">
+            <div>
+            <p style={{fontWeight: "550", padding: "10px"}}> Governance Automation  </p>
+            <p style={{fontSize: "14px"}}> Some information on governance automation </p>
+            </div>
+            </div>
+          <br></br>
+          <br></br>
+            <div class="features-section">
+            <div class="features-block">
+            <p style={{fontWeight: "550", padding: "10px"}}> Increase Operational Efficiency  </p>
+            <p style={{fontSize: "14px", fontWeight: "400"}}> Some information on operational efficiency </p>
+            </div>
+            <div class="features-block">
+            <p style={{fontWeight: "550", padding: "10px"}}> Avoid Legal Pitfalls  </p>
+            <p style={{fontSize: "14px"}}> Some information on legal pitfalls </p>
+            </div>
+            <div class="features-block">
+            <p style={{fontWeight: "550", padding: "10px"}}> Save Money  </p>
+            <p style={{fontSize: "14px"}}> Some information on money saving </p>
+            </div>
+            </div>
+            </center>
           <br></br>
 
             <footer class="footer">
