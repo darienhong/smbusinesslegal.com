@@ -36,16 +36,28 @@ export default class EmploymentInfo extends Component {
             <label for="nonexempt"> Non-Exempt </label><br />
 
           </form>
+
           <br />
+
           <form>
-            <p>Is this a paid internship?</p>
+            <p>Enter base wage:</p>
             <input
-              type='radio' id="yes" name="pay" value="Yes"
+              type='text'
+              onChange={this.props.handleChange('wage')}
+            />
+          </form>
+
+          <br />
+
+          <form>
+            <p>Is this for a restaurant job?</p>
+            <input
+              type='radio' id="yes" name="res" value="Yes"
               onChange={this.props.handleChange('paid')}
             />
             <label for="yes"> Yes </label><br />
             <input
-              type='radio' id="no" name="not" value="No"
+              type='radio' id="no" name="res" value="No"
               onChange={this.props.handleChange('paid')}
             />
             <label for="no"> No </label><br />
@@ -53,20 +65,20 @@ export default class EmploymentInfo extends Component {
           </form>
           <br />
 
-          {values.paid === 'Yes' && (
+          {(values.restaurant === 'Yes') && (
             <div>
               <form>
-                <p>Enter base wage:</p>
+                <p>Enter the tipping procedure:</p>
                 <input
                   type='text'
-                  onChange={this.props.handleChange('wage')}
+                  onChange={this.props.handleChange('commission')}
                 />
               </form>
               <br />
             </div>
           )}
 
-          {(values.state === 'California') && (values.paid === 'Yes') && (
+          {(values.state === 'California') && (
             <div>
               <form>
                 <p>Please make your statement of California required pay and sick leave:</p>
@@ -78,20 +90,7 @@ export default class EmploymentInfo extends Component {
               <br />
             </div>
           )}
-          <form>
-            <p>Is the intern receiving academic credit?</p>
-            <input
-              type='radio' id="true" name="cred" value="True"
-              onChange={this.props.handleChange('credits')}
-            />
-            <label for="true"> True </label><br />
-            <input
-              type='radio' id="false" name="cred" value="False"
-              onChange={this.props.handleChange('credits')}
-            />
-            <label for="false"> False </label><br />
 
-          </form>
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>

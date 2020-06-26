@@ -30,10 +30,10 @@ export default class PDF extends Component {
 
   render() {
     const { values } = this.props;
-    const creditCheck = values.credits == "True"
-    var creditRequire = ''
-    if (creditCheck)
-      creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
+    // const creditCheck = values.credits == "True"
+    // var creditRequire = ''
+    // if (creditCheck)
+    //   creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
 
     const styles = StyleSheet.create({
       list: {
@@ -52,12 +52,7 @@ export default class PDF extends Component {
 
     return (
       <div class='generate'>
-        {/* <Pdf targetRef={ref} filename="internship-document.pdf">
-          {({ toPdf }) => <button class='finalize' onClick={toPdf}>Generate Pdf</button>}
-        </Pdf>
-        <div ref={ref}>
-          <Document class='pdfgenerated' values={values} />
-        </div> */}
+
         <div class='buttons'>
           <center>
             <button class='prev' onClick={this.previous}>Previous </button>
@@ -65,7 +60,7 @@ export default class PDF extends Component {
           </center>
         </div>
         <PDFExport paperSize="Letter"
-          fileName="internship-document.pdf"
+          fileName="legal-document.pdf"
           title=""
           subject=""
           keywords=""

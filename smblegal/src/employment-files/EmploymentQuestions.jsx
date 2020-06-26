@@ -4,7 +4,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import Document from './Document.jsx';
 import LetterIntro from '../internship-files/LetterIntro.jsx';
 import InternshipInfo from '../internship-files/InternshipInfo.jsx';
+import EmploymentInfo from '../internship-files/EmploymentInfo.jsx';
+import EmploymentInfo2 from '../internship-files/EmploymentInfo2.jsx';
 import InternshipEmployer from '../internship-files/InternshipEmployer.jsx';
+import PDF from '.../internship-files/PDF.jsx';
+
 
 
 import PDF from './PDF.jsx';
@@ -32,7 +36,6 @@ export default class Questions extends Component {
     hours: '[X]',
     status: '[Exempt or non-exempt]',
     atWill: '[X]',
-    credits: '[X]',
     expenses: '',
     liability: '[X]',
     compete: '[X]',
@@ -42,7 +45,10 @@ export default class Questions extends Component {
     email: '[EMAIL]',
     paid: '[X]',
     verification: '[X]',
-    restaurant: '[X]'
+    restaurant: '[X]',
+    commission: '[X]',
+    comProcedure: '[X]',
+    tipping: '[X]'
   }
 
   nextStep = () => {
@@ -98,12 +104,12 @@ export default class Questions extends Component {
     const { step } = this.state;
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
-      employerTitle, phone, email, paid, verification, expenseList
+      employerTitle, phone, email, paid, verification, expenseList, restaurant, commission, tipping
     } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
-      phone, email, paid, verification, expenseList
+      phone, email, paid, verification, expenseList, restaurant, commission, tipping
     };
 
     switch (step) {
@@ -136,7 +142,7 @@ export default class Questions extends Component {
           values={values}
         />
       case 4:
-        return <InternshipInfo3
+        return <EmploymentInfo2
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
