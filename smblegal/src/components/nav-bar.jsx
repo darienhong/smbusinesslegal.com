@@ -27,13 +27,13 @@ export default class Navbar extends Component {
   }
   render() {
     return (
-      <Router>
+     
         <div class="container">
           <nav>
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/AboutUs"> Why? </Link></li>
-              <li><Link to="/Questions"> <SubMenu />  </Link> </li>
+              <li><Link to="/Solutions"> <SubMenu />  </Link> </li>
               <li><Link to="/Pricing"> Pricing </Link></li>
               <li><Link to="/SignUp"> Sign Up </Link></li>
               <li><Link to="/"> Sign In </Link></li>
@@ -41,7 +41,7 @@ export default class Navbar extends Component {
           </nav>
 
 
-          <Switch>
+       {/*  <Switch>
             <Route path="/Solutions">
               <Solutions />
             </Route>
@@ -61,8 +61,10 @@ export default class Navbar extends Component {
               <Homepage />
             </Route>
           </Switch>
+
+       */}
         </div>
-      </Router>
+   
 
     );
   }

@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import ConsultingIntro from './ConsultingIntro.jsx';
 import ConsultingInfo from './ConsultingInfo.jsx';
 import ConsultingInfo2 from './ConsultingInfo2.jsx';
+import ConsultingInfo3 from './ConsultingInfo3';
 import ConsultingPDF from './ConsultingPDF.jsx';
 
 

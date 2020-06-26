@@ -8,20 +8,25 @@ import {
     Link,
     HashRouter
   } from "react-router-dom";
-import Questions from '../internship-files/Questions.jsx';
 import DescriptionIcon from '@material-ui/icons/Description';
+import Questions from '../internship-files/Questions.jsx';
+import EmploymentQuestions from '../employment-files/EmploymentQuestions.jsx';
+import ConsultingQuestions from '../consulting-files/ConsultingQuestions.jsx';
+import Navbar from '../components/nav-bar.jsx'; 
 
 export default class Employment extends Component { 
 
     render() { 
         return (
-            <Router> 
             <div class="employment-doc-page">
+                <Navbar />
+                <br></br>
                 <br></br>
                 <br></br>
                 <div class="back-button" style={{paddingLeft: "20px", marginLeft: "20px"}}>
                 <Link to="/" style={{color: "black", textDecoration: "none"}}> <ArrowBackIosIcon className="back-button" /></Link>
                 </div>
+                <br></br>
                 <br></br>
                 <h1 style={{color: "rgb(57, 60, 126)"}}> Employment </h1>
                 <br></br>
@@ -41,16 +46,18 @@ export default class Employment extends Component {
             </Link>
             </div>
             
-            <div class="document-icon">
+            <div class="document-icon"> <Link to="/EmploymentQuestions">
             <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
             <p> Employment Agreement </p>
+            </Link>
             </div>
              </div>
              <div class="formation-documents"> 
             
-            <div class="document-icon">
+            <div class="document-icon"> <Link to="/ConsultingQuestions">
             <DescriptionIcon style={{fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px"}} />
             <p> Consulting Agreement </p>
+            </Link>
             </div>
             
             <div class="document-icon">
@@ -100,20 +107,10 @@ export default class Employment extends Component {
              Your use of this site is subject to our Terms of Service. </p>
             </footer>
 
-
-
-
-
-            <Switch>
-                <Route path="/Questions">
-                    <Questions />
-                </Route>
-
-            </Switch>
-
             </div>
-            </Router> 
 
+
+       
 
         );
     }

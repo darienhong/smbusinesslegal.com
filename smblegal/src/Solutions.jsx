@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Navbar from './components/nav-bar.jsx';
 
 
 export default class Solutions extends Component {
@@ -8,8 +9,22 @@ export default class Solutions extends Component {
     }
     render() { 
         return (
-            <h1> Solutions </h1>
-        
+            <div class="solutions-page">
+                <Navbar />
+                <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+              <h1 style={{color: "rgb(57, 60, 126)"}}> Solutions </h1>
+              <br></br>
+
+            <div style={{textAlign:"center"}}>
+                <svg height={50} width={400}>
+                    <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1}/>
+                </svg>
+            </div>
+            </div>
         );
     }
 }

@@ -7,19 +7,24 @@ import {
     Route,
     Link
   } from "react-router-dom";
-  import DescriptionIcon from '@material-ui/icons/Description';
+import DescriptionIcon from '@material-ui/icons/Description';
+import Navbar from '../components/nav-bar.jsx';
+
 
 export default class Formation extends Component { 
     
     render() { 
-        
+
         return (
             <div class="formation-doc-page">
+                <Navbar />
+                <br></br>
                 <br></br>
                 <br></br>
                 <div class="back-button" style={{paddingLeft: "20px", marginLeft: "20px"}}>
                 <Link to="/" style={{color: "black", textDecoration: "none"}}> <ArrowBackIosIcon className="back-button"/></Link>
                 </div>
+                <br></br>
                 <br></br>
                 <h1 style={{color: "rgb(57, 60, 126)"}}> Formation </h1>
                 <br></br>
