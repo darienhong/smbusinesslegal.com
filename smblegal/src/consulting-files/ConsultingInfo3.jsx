@@ -56,6 +56,15 @@ export default class ConsultingInfo3 extends Component {
           </form>
           <br />
 
+          <form>
+            <p>Enter the term: </p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('term')}
+            />
+          </form>
+          <br />
+
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>

@@ -18,31 +18,14 @@ export default class ConsultingQuestions extends Component {
     expenseList: [{ name: "" }],
     date: new Date(),
     employeeName: '[NAME]',
-    address: '[ADDRESS]',
     consultantName: '[NAME]',
     companyName: '[COMPANY NAME]',
     state: '[STATE]',
-    title: '[X]',
-    duties: '[X]',
-    relationship: '[X]',
     endDate: new Date(),
     wage: '[X – if paid must comply with minimum wage laws]',
     hours: '[X]',
-    status: '[Exempt or non-exempt]',
-    atWill: '[X]',
     expenses: '',
     liability: '[X]',
-    compete: '[X]',
-    sick: '[X]',
-    employerTitle: '[TITLE]',
-    phone: '[PHONE]',
-    email: '[EMAIL]',
-    paid: '[X]',
-    verification: '[X]',
-    restaurant: '[X]',
-    commission: '[X]',
-    comProcedure: '[X]',
-    tipping: '[X]',
     registration: '[X]',
     compensation: '[X]',
     compSched: '[X]',
@@ -106,17 +89,14 @@ export default class ConsultingQuestions extends Component {
 
   render() {
     const { step } = this.state;
-    const { date, employeeName, address, consultantName, companyName, state, title, duties, relationship, endDate,
-      wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
-      employerTitle, phone, email, paid, verification, expenseList, restaurant, commission,
-      tipping, comProcedure, registration, compensation, compSched,
+    const { date, employeeName, consultantName, companyName, state, endDate,
+      wage, hours, expenses, liability, percent,
+      expenseList, registration, compensation, compSched,
       techConfidential, nontechConfidential, insurance, other, scope, term, supervision
     } = this.state;
     const values = {
-      date, employeeName, address, consultantName, companyName, state, title, duties, relationship, endDate,
-      wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
-      phone, email, paid, verification, expenseList, restaurant, commission,
-      tipping, comProcedure, registration, compensation, compSched,
+      date, employeeName, consultantName, companyName, state, endDate,
+      wage, hours, expenses, liability, percent, expenseList, registration, compensation, compSched,
       techConfidential, nontechConfidential, insurance, other, scope, term, supervision
     };
 
