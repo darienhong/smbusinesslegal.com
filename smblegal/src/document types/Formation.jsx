@@ -10,8 +10,9 @@ import {
   import DescriptionIcon from '@material-ui/icons/Description';
 
 export default class Formation extends Component { 
-
+    
     render() { 
+        
         return (
             <div class="formation-doc-page">
                 <br></br>
