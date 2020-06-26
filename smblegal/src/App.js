@@ -14,6 +14,8 @@ import Covid_19 from './document types/COVID-19.jsx';
 import Questions from './internship-files/Questions.jsx';
 import EmploymentQuestions from './employment-files/EmploymentQuestions';
 import ConsultingQuestions from './consulting-files/ConsultingQuestions';
+import DisciplinaryQuestions from './disciplinary-files/DisciplinaryQuestions';
+
 import Solutions from './Solutions.jsx';
 import AboutUs from './aboutus.jsx';
 import SignUp from './SignUp.jsx';
@@ -48,22 +50,25 @@ export default class App extends Component {
           <Route path="/ConsultingQuestions">
             <ConsultingQuestions />
           </Route>
+          <Route path="/DisciplinaryQuestions">
+            <DisciplinaryQuestions />
+          </Route>
           <Route path="/Solutions">
-              <Solutions />
-            </Route>
-            <Route path="/Questions">
-              <Questions />
-            </Route>
-            <Route path="/Pricing">
-              <Pricing />
-            </Route>
-            <Route path="/AboutUs">
-              <AboutUs />
-            </Route>
-            <Route path="/SignUp">
-              <SignUp />
-            </Route>
-            <Route path="/">
+            <Solutions />
+          </Route>
+          <Route path="/Questions">
+            <Questions />
+          </Route>
+          <Route path="/Pricing">
+            <Pricing />
+          </Route>
+          <Route path="/AboutUs">
+            <AboutUs />
+          </Route>
+          <Route path="/SignUp">
+            <SignUp />
+          </Route>
+          <Route path="/">
             <Homepage />
           </Route>
         </Switch>
