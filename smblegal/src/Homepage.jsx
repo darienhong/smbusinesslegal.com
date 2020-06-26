@@ -72,9 +72,7 @@ export default class Homepage extends Component {
                   <br></br>
 
       
-                  <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners 
-                  who are using SMB Legal’s self-help tools to automate and power their business to run efficiently 
-                  and avoid potential legal pitfalls. </p>
+                  <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners using SMB to grow their business and avoid legal pitfalls. </p>
                   <br></br>
               </div>
                <div class='signup'>      
