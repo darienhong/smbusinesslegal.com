@@ -342,7 +342,13 @@ export default class ConsultingDocument extends Component {
           <p >Signature Blocks</p>
           <br />
           <br />
-          <p>Exhibit A</p>
+          <center>
+            <p>Exhibit A</p>
+          </center>
+          <p>1. Scope: {values.scope} </p>
+          <p>2. Work hours:  {values.hours} </p>
+          <p>3. Term: {values.term} </p>
+          <p>4. Supervision: {values.supervision} </p>
 
         </div >
       </div >
