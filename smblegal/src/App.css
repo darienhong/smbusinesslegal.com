@@ -53,6 +53,11 @@ h1 {
   font-family: 'WorkSans';
 }
 
+.logo { 
+
+  width: 700px;
+}
+
 h2 { 
   color: black;
   font-family: 'WorkSans';

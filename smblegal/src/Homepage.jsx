@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { TextField } from '@material-ui/core';
+import Logo from './assets/logo.png';
 import Button from 'react-bootstrap/Button';
 import Lottie from 'react-lottie';
 import animationData from './assets/animation.json';
@@ -59,12 +59,19 @@ export default class Homepage extends Component {
 	              options={defaultOptions}
                 height={800}
                 width={800}
-              />   
+              />  
               <div class="homepage-text">
                   <div data-aos="slide-up"  data-aos-easing="ease-in-out"  data-aos-duration="2000">
-                  <h1 class="title"> SMB Legal </h1>
+                {/* <div class="logo-section" style={{textAlign: "center"}}>
+               <img src={Logo} alt="website logo" class="logo" />
+              </div>
+
+        */}
+                <h1 class="title"> SMB Legal </h1>
                   <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
                   <br></br>
+
+      
                   <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners 
                   who are using SMB Legal’s self-help tools to automate and power their business to run efficiently 
                   and avoid potential legal pitfalls. </p>
