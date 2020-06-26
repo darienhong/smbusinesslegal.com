@@ -10,7 +10,7 @@ import ConsultingPDF from './ConsultingPDF.jsx';
 import { Alert } from 'react-alert'
 
 
-export default class Questions extends Component {
+export default class ConsultingQuestions extends Component {
   state = {
     step: 1,
     percent: 50,
@@ -48,7 +48,10 @@ export default class Questions extends Component {
     techConfidential: 'Technical data, trade secrets, know-how, research, product or service ideas or plans, software codes and designs, developments, inventions, laboratory notebooks, processes, formulas, techniques, materials, engineering designs and drawings, configurations, lists of or information or information relating to employees and consultants of the company, any intellectual property developed by the Consultant (as described above).',
     nontechConfidential: 'Non-technical information relating to products, pricing, price lists, margins, market- share data, merchandising plans and strategies, finances, financial accounting data and information, suppliers, customers, customer lists, purchasing data, sales and marketing plans, current or future business plans.',
     insurance: '[X]',
-    other: '[X]'
+    other: '[X]',
+    scope: '[X]',
+    term: '[X]',
+    supervision: '[X]'
   }
 
   nextStep = () => {
@@ -106,14 +109,14 @@ export default class Questions extends Component {
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
       employerTitle, phone, email, paid, verification, expenseList, restaurant, commission,
       tipping, comProcedure, registration, compensation, compSched,
-      techConfidential, nontechConfidential, insurance, other
+      techConfidential, nontechConfidential, insurance, other, scope, term, supervision
     } = this.state;
     const values = {
       date, employeeName, address, consultantName, companyName, state, title, duties, relationship, endDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
       phone, email, paid, verification, expenseList, restaurant, commission,
       tipping, comProcedure, registration, compensation, compSched,
-      techConfidential, nontechConfidential, insurance, other
+      techConfidential, nontechConfidential, insurance, other, scope, term, supervision
     };
 
     switch (step) {
@@ -148,28 +151,16 @@ export default class Questions extends Component {
           decreasePercentage={this.decreasePercentage}
           values={values}
         />
-      // case 4:
-      //   return <EmploymentInfo2
-      //     nextStep={this.nextStep}
-      //     prevStep={this.prevStep}
-      //     handleChange={this.handleChange}
-      //     handleExpenseChange={this.handleExpenseChange}
-      //     addExpense={this.addExpense}
-      //     // handleExpenses={this.handleExpenses}
-      //     increasePercentage={this.increasePercentage}
-      //     decreasePercentage={this.decreasePercentage}
-      //     values={values}
-      //   />
-      // case 5:
-      //   return <InternshipEmployer
-      //     nextStep={this.nextStep}
-      //     prevStep={this.prevStep}
-      //     handleChange={this.handleChange}
-      //     increasePercentage={this.increasePercentage}
-      //     decreasePercentage={this.decreasePercentage}
-      //     values={values}
-      //   />
       case 4:
+        return <ConsultingInfo3
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
+          values={values}
+        />
+      case 5:
         return <ConsultingPDF
           prevStep={this.prevStep}
           values={values} />

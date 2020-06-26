@@ -13,7 +13,7 @@ import PDF from '../internship-files/PDF.jsx';
 import { Alert } from 'react-alert'
 
 
-export default class Questions extends Component {
+export default class EmploymentQuestions extends Component {
   state = {
     step: 1,
     percent: 50,
