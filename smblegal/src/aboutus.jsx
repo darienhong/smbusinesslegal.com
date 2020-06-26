@@ -6,6 +6,7 @@ import animationData from './assets/animation.json';
 import FileImage from './assets/organize-files.png';
 import CustomerServiceImage from './assets/customer-service.png';
 import AnalyzeImage from './assets/analyze.png';
+import Navbar from './components/nav-bar.jsx';
 import { Icon } from 'semantic-ui-react';
 
 
@@ -19,6 +20,7 @@ export default class AboutUs extends Component {
     
         return (
           <div class="about-page">
+              <Navbar />
               <br></br>
               <br></br>
               <br></br>

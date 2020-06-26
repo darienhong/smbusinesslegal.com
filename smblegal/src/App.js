@@ -12,9 +12,13 @@ import Governance from './document types/Governance.jsx';
 import Employment from './document types/Employment.jsx';
 import Covid_19 from './document types/COVID-19.jsx';
 import Questions from './internship-files/Questions.jsx';
+import EmploymentQuestions from './employment-files/EmploymentQuestions';
+import ConsultingQuestions from './consulting-files/ConsultingQuestions';
+import Solutions from './Solutions.jsx';
+import AboutUs from './aboutus.jsx';
+import SignUp from './SignUp.jsx';
+import Pricing from './Pricing.jsx';
 import Homepage from './Homepage.jsx';
-
-
 
 
 
@@ -35,19 +39,34 @@ export default class App extends Component {
           <Route path="/Covid_19">
             <Covid_19 />
           </Route>
-          <Route path="/">
-            <Navbar />
-          </Route>
           <Route path="/Questions">
             <Questions />
           </Route>
+          <Route path="/EmploymentQuestions">
+            <EmploymentQuestions />
+          </Route>
+          <Route path="/ConsultingQuestions">
+            <ConsultingQuestions />
+          </Route>
+          <Route path="/Solutions">
+              <Solutions />
+            </Route>
+            <Route path="/Questions">
+              <Questions />
+            </Route>
+            <Route path="/Pricing">
+              <Pricing />
+            </Route>
+            <Route path="/AboutUs">
+              <AboutUs />
+            </Route>
+            <Route path="/SignUp">
+              <SignUp />
+            </Route>
+            <Route path="/">
+            <Homepage />
+          </Route>
         </Switch>
-
-
-
-
-
-
       </Router>
     );
   }

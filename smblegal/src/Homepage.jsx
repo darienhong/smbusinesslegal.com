@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Lottie from 'react-lottie';
 import animationData from './assets/animation.json';
 import ModalTest from './components/modal.jsx';
+import Navbar from './components/nav-bar.jsx';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {
@@ -51,8 +52,8 @@ export default class Homepage extends Component {
 
         return (
 
-          <Router>
           <div class="homepage">
+              <Navbar />
               <ModalTest />
               <Lottie 
 	              options={defaultOptions}
@@ -126,7 +127,6 @@ export default class Homepage extends Component {
 
            
        </div>
-        </Router>
         );
       
       }

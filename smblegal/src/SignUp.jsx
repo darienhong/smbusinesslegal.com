@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Navbar from './components/nav-bar.jsx';
 
 export default class SignUp extends Component {
     constructor(props){
@@ -10,6 +11,7 @@ export default class SignUp extends Component {
 
         return (
             <div class="sign-up-page">
+                <Navbar />
                 <br></br>
                 <br></br>
                 <br></br>

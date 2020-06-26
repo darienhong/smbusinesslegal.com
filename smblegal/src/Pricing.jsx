@@ -6,6 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Navbar from './components/nav-bar.jsx';
   
 
 export default class Pricing extends Component { 
@@ -15,6 +16,7 @@ export default class Pricing extends Component {
     render() {
         return (
         <div class="pricing-page">
+            <Navbar />
             <br></br>
             <br></br> 
             <br></br>
