@@ -13,12 +13,10 @@ import {
   Route, 
   Link
 } from "react-router-dom";
-import Covid_19 from './document types/COVID-19.jsx';
-import Employment from './document types/Employment.jsx';
-import Formation from './document types/Formation.jsx';
-import Governance from './document types/Governance.jsx';
-import DocumentMenu from './components/document-menu.jsx';
+import ReactGA from 'react-ga';
 
+
+ReactGA.initialize("UA-170842746-1");
 AOS.init();
 
 AOS.init({
@@ -55,22 +53,6 @@ export default class Homepage extends Component {
 
           <Router>
           <div class="homepage">
-     
-    
-     {/*      <div class="header">
-           <header>
-           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170842746-1"></script>
-            <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag(‘js’, new Date());
-            gtag(‘config’, ‘UA-170842746-1’);
-            </script>
-
-           </header>
-            </div>
-
-        */}
               <ModalTest />
               <Lottie 
 	              options={defaultOptions}
@@ -119,7 +101,6 @@ export default class Homepage extends Component {
              <p> <span class="employment">  <Link to="/Employment" style={{textDecoration: "none", color: "black"}}> Employment </Link> </span></p>
              <p><span class="covid-19">  <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}>Covid-19 </Link>  </span></p>
             </div>
-      
   
           <br></br>
           <br></br>
