@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { TextField } from '@material-ui/core';
+import Logo from './assets/logo.png';
 import Button from 'react-bootstrap/Button';
 import Lottie from 'react-lottie';
 import animationData from './assets/animation.json';
@@ -59,15 +59,20 @@ export default class Homepage extends Component {
 	              options={defaultOptions}
                 height={800}
                 width={800}
-              />   
+              />  
               <div class="homepage-text">
                   <div data-aos="slide-up"  data-aos-easing="ease-in-out"  data-aos-duration="2000">
-                  <h1 class="title"> SMB Legal </h1>
+                {/* <div class="logo-section" style={{textAlign: "center"}}>
+               <img src={Logo} alt="website logo" class="logo" />
+              </div>
+
+        */}
+                <h1 class="title"> SMB Legal </h1>
                   <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
                   <br></br>
-                  <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners 
-                  who are using SMB Legal’s self-help tools to automate and power their business to run efficiently 
-                  and avoid potential legal pitfalls. </p>
+
+      
+                  <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners using SMB to grow their business and avoid legal pitfalls. </p>
                   <br></br>
               </div>
                <div class='signup'>      
@@ -97,10 +102,18 @@ export default class Homepage extends Component {
           
          
          <div class="features">
-             <p> <span class="formation"><Link to="/Formation" style={{textDecoration: "none", color: "black"}}> Formation </Link></span></p>
-             <p> <span class="governance">  <Link to="/Governance" style={{textDecoration: "none", color: "black"}}> Governance </Link> </span></p>
-             <p> <span class="employment">  <Link to="/Employment" style={{textDecoration: "none", color: "black"}}> Employment </Link> </span></p>
-             <p><span class="covid-19">  <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}>Covid-19 </Link>  </span></p>
+           <div class="formation">
+             <p><Link to="/Formation" style={{textDecoration: "none", color: "black"}}> Formation </Link></p> 
+             </div>
+             <div class="governance">
+             <p>  <Link to="/Governance" style={{textDecoration: "none", color: "black"}}> Governance </Link> </p>
+             </div>
+             <div class="employment">
+             <p>  <Link to="/Employment" style={{textDecoration: "none", color: "black"}}> Employment </Link> </p>
+             </div>
+             <div class="covid-19">
+             <p> <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}>Covid-19 </Link> </p>
+            </div>
             </div>
   
           <br></br>

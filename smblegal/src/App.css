@@ -50,7 +50,12 @@ h1 {
 }
 
 .title { 
-  font-family: serif;
+  font-family: 'DM Sans';
+}
+
+.logo { 
+
+  width: 700px;
 }
 
 h2 { 
@@ -62,7 +67,7 @@ h2 {
 h3 {
   font-family: 'WorkSans';
   font-weight: 500;
-  color: rgb(57, 60, 126);
+  color: #245CA6;
   font-style: italic;
 }
 
@@ -148,7 +153,7 @@ nav a {
 }
 
 nav a:hover {
-  color: rgb(57, 60, 126);
+  color: #245CA6;
   text-decoration: none;
 
 }
@@ -157,7 +162,7 @@ nav a::before {
   content: '';
   display: block;
   height: 5px;
-  background-color: rgb(57, 60, 126);
+  background-color: #245CA6;
   position: absolute;
   top: 0;
   width: 0%;
@@ -233,7 +238,8 @@ nav a:hover::before {
     opacity: 1;
   }
 }
-.homepage, .about-page, .pricing-page, .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page { 
+.homepage, .about-page, .pricing-page, .sign-up-page, 
+.employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
   margin-left: 40px; 
@@ -251,7 +257,7 @@ nav a:hover::before {
 
 .svg-line-1 {
   stroke-width: 2px;
-  stroke: rgb(57, 60, 126);
+  stroke: #245CA6;
   animation: dash 1.5s linear forwards;
   animation-iteration-count: 1;
   
@@ -275,7 +281,6 @@ nav a:hover::before {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
-  padding-bottom: 10px;
   border: 1px solid black;
   line-height: 10px;
   box-shadow: 3px 3px; 
@@ -286,6 +291,10 @@ nav a:hover::before {
   color: black;
   
 }
+.employment p {
+  color: black;
+
+}
 .employment, .governance, .formation {
   margin-right: 40px;
  
@@ -293,9 +302,12 @@ nav a:hover::before {
 
 .covid-19:hover, .employment:hover, .governance:hover, .formation:hover {
  /* color: rgb(169, 172, 201); */
-  color: rgb(57, 60, 126);
+  color: #245CA6;
   /* border-color: rgb(169, 172, 201) ; */
-  border-color: rgb(57, 60, 126);
+  border-color: #245CA6;
+}
+.covid-19:hover p, .employment:hover p, .governance:hover p, .formation:hover p {
+  color: #245CA6;
 }
 
 
@@ -323,8 +335,7 @@ button {
   transition-duration: 0.4s;
 }
 .prev {
-  padding: 15
-  px 10px;
+  padding: 15px 10px;
 }
 .prev:hover {
   background-color: #FF4F64;
@@ -356,7 +367,7 @@ button {
 .mission-statement { 
   padding: 20px; 
   margin: 20px;
-  border: 2px solid rgb(57, 60, 126);
+  border: 2px solid #245CA6;
   text-align: center;
 }
 

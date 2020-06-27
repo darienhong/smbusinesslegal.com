@@ -25,7 +25,7 @@ export default class Covid_19 extends Component {
                 </div>
                 <br></br>
                 <br></br>
-                <h1 style={{color: "rgb(57, 60, 126)"}}> COVID-19 </h1>
+                <h1 style={{color: "#245CA6"}}> COVID-19 </h1>
                 <br></br>
                 <div style={{textAlign:"center"}}>
                 <svg height={50} width={400}>

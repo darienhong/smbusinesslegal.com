@@ -16,7 +16,7 @@ export default class Solutions extends Component {
               <br></br>
               <br></br>
               <br></br>
-              <h1 style={{color: "rgb(57, 60, 126)"}}> Solutions </h1>
+              <h1 style={{color: "#245CA6"}}> Solutions </h1>
               <br></br>
 
             <div style={{textAlign:"center"}}>

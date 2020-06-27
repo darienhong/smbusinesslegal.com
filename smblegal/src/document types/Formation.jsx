@@ -26,7 +26,7 @@ export default class Formation extends Component {
                 </div>
                 <br></br>
                 <br></br>
-                <h1 style={{color: "rgb(57, 60, 126)"}}> Formation </h1>
+                <h1 style={{color: "#245CA6"}}> Formation </h1>
                 <br></br>
                 <div style={{textAlign:"center"}}>
                 <svg height={50} width={400}>
