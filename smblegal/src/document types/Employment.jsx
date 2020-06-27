@@ -31,7 +31,7 @@ export default class Employment extends Component {
                 </div>
                 <br></br>
                 <br></br>
-                <h1 style={{ color: "rgb(57, 60, 126)" }}> Employment </h1>
+                <h1 style={{ color: "#245CA6" }}> Employment </h1>
                 <br></br>
                 <div style={{ textAlign: "center" }}>
                     <svg height={50} width={400}>

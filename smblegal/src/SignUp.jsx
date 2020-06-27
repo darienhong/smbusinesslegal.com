@@ -17,7 +17,7 @@ export default class SignUp extends Component {
                 <br></br>
                 <br></br>
                 <br></br>
-                <h1 style={{color: "rgb(57, 60, 126)"}}> Sign Up </h1>
+                <h1 style={{color: "#245CA6"}}> Sign Up </h1>
               <br></br>
             <div style={{textAlign:"center"}}>
                 <svg height={50} width={400}>
