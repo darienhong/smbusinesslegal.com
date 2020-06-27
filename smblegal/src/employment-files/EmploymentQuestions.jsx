@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import EmploymentDocument from './EmploymentDocument.jsx';
-import LetterIntro from '../internship-files/LetterIntro.jsx';
+import EmploymentIntro from './EmploymentIntro.jsx';
 import InternshipInfo from '../internship-files/InternshipInfo.jsx';
 import EmploymentInfo from './EmploymentInfo.jsx';
 import EmploymentInfo2 from './EmploymentInfo2.jsx';
-import InternshipEmployer from '../internship-files/InternshipEmployer.jsx';
-import PDF from '../internship-files/PDF.jsx';
+import EmploymentInfo3 from './EmploymentInfo3.jsx';
+import EmploymentEmployer from './EmploymentEmployer.jsx';
+
+import EmploymentPDF from './EmploymentPDF.jsx';
 
 
 import { Alert } from 'react-alert'
@@ -110,7 +112,7 @@ export default class EmploymentQuestions extends Component {
 
     switch (step) {
       case 1:
-        return <LetterIntro
+        return <EmploymentIntro
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
@@ -120,7 +122,7 @@ export default class EmploymentQuestions extends Component {
         />
 
       case 2:
-        return <InternshipInfo
+        return <EmploymentInfo3
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
@@ -150,7 +152,7 @@ export default class EmploymentQuestions extends Component {
           values={values}
         />
       case 5:
-        return <InternshipEmployer
+        return <EmploymentEmployer
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
@@ -159,7 +161,7 @@ export default class EmploymentQuestions extends Component {
           values={values}
         />
       case 6:
-        return <PDF
+        return <EmploymentPDF
           prevStep={this.prevStep}
           values={values} />
     }

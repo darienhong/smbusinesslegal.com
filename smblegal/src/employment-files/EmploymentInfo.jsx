@@ -23,7 +23,7 @@ export default class EmploymentInfo extends Component {
         <div class='col height'>
 
           <form>
-            <p>Enter the intern's status: </p>
+            <p>Enter the employee's status: </p>
             <input
               type='radio' id="exempt" name="exe" value="Exempt"
               onChange={this.props.handleChange('status')}
