@@ -13,6 +13,7 @@ import Questions from '../internship-files/Questions.jsx';
 import EmploymentQuestions from '../employment-files/EmploymentQuestions.jsx';
 import ConsultingQuestions from '../consulting-files/ConsultingQuestions.jsx';
 import DisciplinaryQuestions from '../disciplinary-files/DisciplinaryQuestions.jsx';
+import TerminationQuestions from '../termination-files/TerminationQuestions.jsx';
 
 
 import Navbar from '../components/nav-bar.jsx';
@@ -71,9 +72,10 @@ export default class Employment extends Component {
                 </div>
                 <div class="formation-documents">
 
-                    <div class="document-icon">
+                    <div class="document-icon"> <Link to="/TerminationQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Employment Termination </p>
+                    </Link>
                     </div>
 
                     <div class="document-icon">

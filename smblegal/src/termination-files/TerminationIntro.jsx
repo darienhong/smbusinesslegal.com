@@ -5,10 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import moment from 'moment';
-import Document from './Document.jsx';
-import { Progress } from 'semantic-ui-react'
-import { Alert } from 'react-alert'
-import EmploymentDocument from '../employment-files/EmploymentDocument.jsx';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import {
   BrowserRouter as Router,
@@ -18,10 +14,14 @@ import {
   HashRouter
 } from "react-router-dom";
 
+import DisciplinaryDocument from '../disciplinary-files/DisciplinaryDocument.jsx';
+import { Progress } from 'semantic-ui-react'
+import { Alert } from 'react-alert'
+import TerminationDocument from './TerminationDocument.jsx';
 
 
 
-export default class LetterIntro extends Component {
+export default class TerminationIntro extends Component {
 
   next = (e) => {
     e.preventDefault();
@@ -31,43 +31,19 @@ export default class LetterIntro extends Component {
 
   render() {
     const { values } = this.props;
-    // alert(values.percentage)
     return (
       <div class='ask'>
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
           <Link to="/Employment" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
-
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col left height'>
-          {/* <DayPicker showOutsideDays
-            selectedDays={values.date}
-            onDayClick={this.handleDateClick} /> */}
+
           <form>
-            <p> Enter the date: </p>
+            <p>Enter the date:</p>
             <input
-              type='date' id="letterdate" name="letterdate"
+              type='date'
               onChange={this.props.handleChange('date')}
-            />
-
-          </form>
-          <br />
-
-          <form>
-            <p>Enter your name:</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('employeeName')}
-            />
-          </form>
-          <br />
-
-
-          <form>
-            <p>Enter your address:</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('address')}
             />
           </form>
           <br />
@@ -76,14 +52,31 @@ export default class LetterIntro extends Component {
             <p>Enter employee's name:</p>
             <input
               type='text'
-              onChange={this.props.handleChange('internName')}
+              onChange={this.props.handleChange('employeeName')}
             />
           </form>
           <br />
 
+          <form>
+            <p>Enter employee's address:</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('address')}
+            />
+          </form>
+          <br />
 
           <form>
-            <p>Enter company's name:</p>
+            <p>Enter your name:</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('employerName')}
+            />
+          </form>
+          <br />
+
+          <form>
+            <p>Enter the company's name:</p>
             <input
               type='text'
               onChange={this.props.handleChange('companyName')}
@@ -91,20 +84,10 @@ export default class LetterIntro extends Component {
           </form>
           <br />
 
-
-          <form>
-            <p>Enter the state:</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('state')}
-            />
-          </form>
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          {/* <Document class='doc' values={values}
-          /> */}
-          <Document class='doc' values={values} />
+          <TerminationDocument class='doc' values={values} />
         </div>
       </div >
 

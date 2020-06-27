@@ -80,6 +80,11 @@ export default class ConsultingDocument extends Component {
 
     return (
       <div class='size'>
+        <center>
+          <h5 class='indoc'>CONSULTING AGREEMENT</h5>
+        </center>
+        <br />
+
         <p >This consulting agreement (“Agreement”) is between <span class='fill'>{values.employeeName}</span>, a <span class='fill'>{values.companyName}</span>, registration number <span class='fill'>{values.registration}</span>
         (“Company”) and <span class='fill'>{values.consultantName}</span> (“Consultant”) (collectively, the “Parties” or individually each a
         “Party”).</p>

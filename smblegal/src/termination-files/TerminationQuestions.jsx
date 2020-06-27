@@ -3,13 +3,19 @@ import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
-import DisciplinaryIntro from './DisciplinaryIntro.jsx';
-import DisciplinaryInfo from './DisciplinaryInfo.jsx';
-import DisciplinaryPDF from './DisciplinaryPDF.jsx';
+import TerminationIntro from './TerminationIntro.jsx';
+import TerminationInfo from './TerminationInfo.jsx';
+import TerminationInfo2 from './TerminationInfo2.jsx';
+import TerminationInfo3 from './TerminationInfo3.jsx';
+import TerminationPDF from './TerminationPDF.jsx';
+
+
+// import DisciplinaryInfo from './DisciplinaryInfo.jsx';
+// import DisciplinaryPDF from './DisciplinaryPDF.jsx';
 import { Alert } from 'react-alert'
 
 
-export default class DisciplinaryQuestions extends Component {
+export default class TerminationQuestions extends Component {
   state = {
     step: 1,
     percent: 50,
@@ -23,8 +29,16 @@ export default class DisciplinaryQuestions extends Component {
     companyName: '[COMPANY NAME]',
     state: '[STATE]',
     endDate: new Date(),
-    actions: '',
-    restaurant: ''
+    property: '[X]',
+    benefits: '[X]',
+    reference: '[X]',
+    cobra: '[X]',
+    forCause: '[X]',
+    cause: '[X]',
+    release: '[X]',
+    disparagement: '[X]',
+    publicity: '[X]',
+    contact: '[X]'
   }
 
   nextStep = () => {
@@ -78,39 +92,52 @@ export default class DisciplinaryQuestions extends Component {
 
   render() {
     const { step } = this.state;
-    const { percent,
-      actionList,
+    const {
+      percent,
       date,
       employerName,
       employeeName,
       address,
-      warning,
-      dateSigned,
       companyName,
       state,
       endDate,
-      actions,
-      restaurant
+      property,
+      benefits,
+      reference,
+      cobra,
+      forCause,
+      cause,
+      release,
+      disparagement,
+      publicity,
+      contact,
+      dateSigned
     } = this.state;
     const values = {
       percent,
-      actionList,
       date,
       employerName,
       employeeName,
       address,
-      warning,
-      dateSigned,
       companyName,
       state,
       endDate,
-      actions,
-      restaurant
+      property,
+      benefits,
+      reference,
+      cobra,
+      forCause,
+      cause,
+      release,
+      disparagement,
+      publicity,
+      contact,
+      dateSigned
     };
 
     switch (step) {
       case 1:
-        return <DisciplinaryIntro
+        return <TerminationIntro
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
@@ -120,19 +147,36 @@ export default class DisciplinaryQuestions extends Component {
         />
 
       case 2:
-        return <DisciplinaryInfo
+        return <TerminationInfo
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
           values={values}
-          handleActionChange={this.handleActionChange}
-          addAction={this.addAction}
-
+        // handleActionChange={this.handleActionChange}
+        // addAction={this.addAction}
         />
       case 3:
-        return <DisciplinaryPDF
+        return <TerminationInfo2
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
+          values={values}
+        />
+      case 4:
+        return <TerminationInfo3
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
+          values={values}
+        />
+      case 5:
+        return <TerminationPDF
           prevStep={this.prevStep}
           values={values} />
     }

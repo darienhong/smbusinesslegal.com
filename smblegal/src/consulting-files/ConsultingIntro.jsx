@@ -9,6 +9,15 @@ import ConsultingDocument from './ConsultingDocument.jsx';
 import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
 import EmploymentDocument from '../employment-files/EmploymentDocument.jsx';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  HashRouter
+} from "react-router-dom";
+
 
 
 
@@ -24,6 +33,10 @@ export default class ConsultingIntro extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
+        <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
+          <Link to="/Employment" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
+        </div>
+
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col left height'>
 
