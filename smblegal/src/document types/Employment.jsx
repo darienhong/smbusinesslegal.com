@@ -86,9 +86,10 @@ export default class Employment extends Component {
                 </div>
                 <div class="formation-documents">
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/RecipientNDAQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Unilateral Non-Disclosure Agreement <br></br> (Pro-Recipient) </p>
+                    </Link>
                     </div>
 
                     <div class="document-icon">

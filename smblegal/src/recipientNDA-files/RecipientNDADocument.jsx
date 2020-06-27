@@ -4,7 +4,7 @@ import moment from 'moment';
 import '../App.css';
 
 
-export default class MutualNDADocument extends Component {
+export default class RecipientNDADocument extends Component {
   constructor(props) {
     super(props);
   }
@@ -36,8 +36,8 @@ export default class MutualNDADocument extends Component {
         'with third parties, know - how, techniques, inventions, software programs, ' +
         'algorithms, software source documents, future and proposed product releases, ' +
         'pricing, margins, merchandising plans and strategies, customer lists, and trade ' +
-        'secrets.Additional Confidential Information are notes, analysis, compilations or ' +
-        'studies or documents prepared by either Party which contain or were based on ' +
+        'secrets. Additional Confidential Information are notes, analysis, compilations or ' +
+        'studies or documents prepared by the Recipient which contain or were based on ' +
         'Confidential Information.'
     }
     else {
@@ -82,73 +82,93 @@ export default class MutualNDADocument extends Component {
           <p>AGREEMENT</p>
         </center>
         <p>NOW, THEREFORE, the Parties agree to the following:</p>
-        <p>1. Mutual Non-Disclosure. The Company and the Recipient shall be bound by this
-        Agreement. The Parties shall be prohibited from sharing or releasing confidential
+        <p>1. Recipient Non-Disclosure. The Company and the Recipient shall be bound by this
+        Agreement. The Recipient shall be prohibited from sharing or releasing confidential
         information (as defined below). Any release of confidential information must be done
         in compliance and with the terms of the Agreement.</p>
+
         <p>2. Term. Subject to permitted disclosures in clause 4 and 5 the Parties agree that this
         Agreement shall be in effect for {values.term} from the date of initial disclosure of confidential
         information.</p>
 
-        <p>3. Definition of Confidential Information. “Confidential Information” shall refer to all
-        non-public information or material disclosed or provided by the Parties to another
-        Party, orally or in writing, that are proprietary to the Company or the Recipient,
-        whether or not produced or owned by the Company or the Recipient that are learned
-        over the course of the relationship between the Parties, directly or indirectly.
+        {/* <p>3. Disclosure to Representatives. Recipient is prohibited from disclosing
+        confidential information to third parties [except for X].</p> */}
+
+        {/* <p>4. Responsibility for Representatives Compliance. All affiliates of the Recipient and
+        all directors, officers, employees, agents and representatives of the Recipient or its
+        affiliates shall be included within the definition of Recipient for purposes of this
+        Agreement and shall be bound by the Agreement. The Recipient shall be responsible
+        for any breaches of this Agreement by any of its affiliates and any directors, officers,
+        employees, agents and representatives of such recipient party or its affiliates.</p> */}
+
+        <p>3. Definition of Confidential Information. “Confidential Information” shall refer to
+        all non-public information or material disclosed or provided by the Company to the
+        Recipient, orally or in writing, that are proprietary to the Company, whether or not
+        produced or owned by the Company that are learned over the course of the relationship
+        between the Parties, directly or indirectly.
         <br /><br />
           <p class='tab'>a. {cond}</p>
           <p class='tab'>b. Confidential Information does not include information publicly available through
-          no action or fault of the Party, was already known to the Party prior to
-          disclosure, provided the source was not bound by a contractual or legal fiduciary
+          no action or fault of the Recipient, was already known to the Recipient prior to
+          disclosure provided the source was not bound by a contractual or legal fiduciary
           duty of confidentiality or was obtained by a third party through no breach of a
           contractual or legal fiduciary duty of confidentiality, or was independently
-          developer by the Party without reference to Confidential Information. </p>
+          developer by the Recipient without reference to Confidential Information.</p>
         </p>
-        <p>4. Use of Confidential Information. The Parties will not disclose and will maintain the
-        confidential nature of the Confidential Information in both oral and written form. The
-        Party will only use the Confidential Information in the way that the Parties agree is
-        necessary to carry out the underlying purpose of this Agreement{condUse}. The Party will
-        only disclose Confidential Information to other parties to the extent that is it necessary
-        that they know Confidential Information in order to carry out the purpose of the
-        Agreement or as required by law. The Parties represent that they handle their own
-        confidential information with reasonable care and that they will treat the other Party’s
-        Confidential Information with the same standard of care.</p>
-        <p>5. Waiver. The Party may request to the other Party that they are able to disclose the
-        Confidential Information. In the event that the Party denies the requesting Party’s
-        request, the requesting Party shall abide by that decision. In the event that the Party
-        assents to the request, the Parties shall come to an agreement on the scope of that
-        disclosure, execute an addendum to this Agreement and limit the disclosure to the
-        extent of that addendum.</p>
 
-        <p>6. Destruction and Return. Upon termination of the relationship between the Parties,
-        both Parties shall destroy any Confidential Information and promptly return to the
-        other Party, without retaining any copies, any information or documents furnished to
-        the other Party.</p>
+        <p>4. Use of Confidential Information. The Recipient will not disclose and will maintain
+        the confidential of the Confidential Information in both oral and written form.
+        Recipient will only use the Confidential Information in the way that the Parties agree is
+        necessary to carry out the underlying purpose of this Agreement{condUse}. The Recipient
+        will only disclose Confidential Information to other parties to the extent that is it
+        necessary that they know Confidential Information in order to carry out the purpose of
+        the Agreement or as required by law. The Recipient represents that they handle their
+        own confidential information with reasonable care and that they will treat the
+        Company’s Confidential Information with the same standard of care.</p>
 
-        <p>7. Indemnification. Both Parties shall indemnify and hold harmless the other Party and
-        its affiliates and their respective directors, officers, employees, agents and
+
+        <p>5. Waiver. The Recipient may request to the Company that they are able to disclose the
+        Confidential Information. In the event that the Company denies the Recipient’s request,
+        the Recipient shall abide by that decision. In the event that the Company assents to the
+        request, the Parties shall come to an agreement on the scope of that disclosure, execute
+        an addendum to this Agreement and limit the disclosure to the extent of that
+        addendum.</p>
+
+        <p>6. Destruction and Return. Upon termination of the relationship between the
+        Parties, both Parties shall destroy any Confidential Information and promptly return to
+        the other party, without retaining any copies, any information or documents furnished
+        to the other party.
+        </p>
+
+        <p>7. Indemnification. Both Parties shall indemnify and hold harmless the other Party
+        and its affiliates and their respective directors, officers, employees, agents and
         representatives from and against any and all losses, damages, costs and expenses
         (including without limitation reasonable attorneys’ fees and expenses) caused by or
         arising out of any direct breach of this Agreement and any and all actions, suits,
-        proceedings, claims, demands or judgments incident thereto.</p>
+        proceedings, claims, demands or judgments incident thereto.
+        </p>
 
         <p>8. No Licenses, No Transfer of Rights or Interest. Neither Party is granted a license,
         right or interest to any patent, copyright, trademark, trade secret, or other rights by
-        disclosing Confidential Information under this Agreement.</p>
+        disclosing Confidential Information under this Agreement.
+        </p>
 
         <p>9. Survival. This Agreement shall govern all communications between the Parties. The
         Agreement shall survive any relationship between the Parties, specifically Clause 3 “Use
         of Confidential Information” shall survive any termination of relationship between the
-        Parties.</p>
+        Parties.
+        </p>
 
         <p>10. Governing Law. This Agreement shall be governed in all respects by the laws of the
-        United States and the state of {values.state}.</p>
+          United States and the state of {values.state}.
+        </p>
 
-        <p>11. Injunctive Relief. Irreparable damage will result in a breach of the Agreement and any
-        of the agreements or promises made herein. It is agreed that there is no adequate
-        remedy at law, and the Parties shall be entitled to injunctive relief and/or specific
-        performance of the obligations contained herein. Other relief shall be granted as is
-        determined to be proper (including monetary damages).</p>
+        <p>11. Injunctive Relief. Irreparable damage will result in a breach of the Agreement
+        and any of the agreements or promises made herein. It is agreed that there is no
+        adequate remedy at law, and the Parties shall be entitled to injunctive relief and/or
+        specific performance of the obligations contained herein. Other relief shall be granted
+        as is determined to be proper (including monetary damages).
+        </p>
 
 
         <p>12. Miscellaneous</p>
@@ -160,9 +180,10 @@ export default class MutualNDADocument extends Component {
         </h6>
         <h6 class='tab'>b. Governing Law.
           <br /><br />
-          <p class='tab'>The validity, interpretation, construction and performance of this Agreement
-          shall be governed by the laws of the State of
-            {values.state} without regard to conflicts of laws principals.</p>
+          <p class='tab'>The validity, interpretation, construction and performance of
+          this Agreement shall be governed by the laws of the State of {values.state} without
+          regard to conflicts of laws principles.
+          </p>
         </h6>
         <h6 class='tab'>c. Assignment, Successors and Assigns.
           <br /><br />

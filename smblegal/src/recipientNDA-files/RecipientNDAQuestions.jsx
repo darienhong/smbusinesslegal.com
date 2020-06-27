@@ -3,10 +3,10 @@ import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
-import MutualNDAIntro from './MutualNDAIntro.jsx';
-import MutualNDAInfo from './MutualNDAInfo.jsx';
-import MutualNDAInfo2 from './MutualNDAInfo2.jsx';
-import MutualNDAPDF from './MutualNDAPDF.jsx';
+import RecipientNDAIntro from './RecipientNDAIntro.jsx';
+import RecipientNDAInfo from './RecipientNDAInfo.jsx';
+import RecipientNDAInfo2 from './RecipientNDAInfo2.jsx';
+import RecipientNDAPDF from './RecipientNDAPDF.jsx';
 
 
 // import DisciplinaryInfo from './DisciplinaryInfo.jsx';
@@ -14,7 +14,7 @@ import MutualNDAPDF from './MutualNDAPDF.jsx';
 import { Alert } from 'react-alert'
 
 
-export default class MutualNDAQuestions extends Component {
+export default class RecipientNDAQuestions extends Component {
   state = {
     step: 1,
     percent: 50,
@@ -120,7 +120,7 @@ export default class MutualNDAQuestions extends Component {
 
     switch (step) {
       case 1:
-        return <MutualNDAIntro
+        return <RecipientNDAIntro
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
@@ -130,7 +130,7 @@ export default class MutualNDAQuestions extends Component {
         />
 
       case 2:
-        return <MutualNDAInfo
+        return <RecipientNDAInfo
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
@@ -141,7 +141,7 @@ export default class MutualNDAQuestions extends Component {
           addRecital={this.addRecital}
         />
       case 3:
-        return <MutualNDAInfo2
+        return <RecipientNDAInfo2
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
@@ -150,7 +150,7 @@ export default class MutualNDAQuestions extends Component {
           values={values}
         />
       case 4:
-        return <MutualNDAPDF
+        return <RecipientNDAPDF
           prevStep={this.prevStep}
           values={values} />
     }
