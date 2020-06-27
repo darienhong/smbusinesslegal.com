@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 import '../App.css';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import DayPicker from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
 import moment from 'moment';
-import Doc from './TerminationDocument.jsx';
+import Doc from './MutualNDADocument.jsx';
 import { Progress } from 'semantic-ui-react'
-import { Alert } from 'react-alert'
 import { PDFExport } from '@progress/kendo-react-pdf';
-import { Page, Text, View, Document, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 
 
 const ref = React.createRef();
 
 
-export default class TerminationPDF extends Component {
+export default class MutualNDAPDF extends Component {
 
   // Add this method to the React 
   exportPDF = () => {
@@ -30,24 +24,6 @@ export default class TerminationPDF extends Component {
 
   render() {
     const { values } = this.props;
-    // const creditCheck = values.credits == "True"
-    // var creditRequire = ''
-    // if (creditCheck)
-    //   creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
-
-    const styles = StyleSheet.create({
-      list: {
-        marginBottom: 8,
-        marginLeft: 6,
-      },
-      listItem: {
-        marginBottom: 4,
-      },
-      listItemText: {
-        fontSize: 10,
-        lineHeight: 1.45,
-      },
-    });
 
 
     return (

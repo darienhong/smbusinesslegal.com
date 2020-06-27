@@ -82,7 +82,7 @@ export default class TerminationInfo extends Component {
               type='radio' id="confirmation" name="ref" value="Confirmation"
               onChange={this.props.handleChange('reference')}
             />
-            <label for="no"> Confirmation </label><br />
+            <label for="confirmation"> Confirmation </label><br />
           </form>
           <br />
 

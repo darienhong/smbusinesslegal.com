@@ -16,6 +16,8 @@ import EmploymentQuestions from './employment-files/EmploymentQuestions';
 import ConsultingQuestions from './consulting-files/ConsultingQuestions';
 import DisciplinaryQuestions from './disciplinary-files/DisciplinaryQuestions';
 import TerminationQuestions from './termination-files/TerminationQuestions';
+import MutualNDAQuestions from './mutualnda-files/MutualNDAQuestions';
+
 
 import Solutions from './Solutions.jsx';
 import AboutUs from './aboutus.jsx';
@@ -56,6 +58,9 @@ export default class App extends Component {
           </Route>
           <Route path="/TerminationQuestions">
             <TerminationQuestions />
+          </Route>
+          <Route path="/MutualNDAQuestions">
+            <MutualNDAQuestions />
           </Route>
           <Route path="/Solutions">
             <Solutions />

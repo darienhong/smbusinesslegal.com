@@ -78,9 +78,10 @@ export default class Employment extends Component {
                     </Link>
                     </div>
 
-                    <div class="document-icon">
+                    <div class="document-icon"> <Link to="/MutualNDAQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Mutual Non-Disclosure Agreement </p>
+                    </Link>
                     </div>
                 </div>
                 <div class="formation-documents">
