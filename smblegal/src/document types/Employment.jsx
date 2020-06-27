@@ -92,9 +92,10 @@ export default class Employment extends Component {
                     </Link>
                     </div>
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/DisclosureNDAQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Unilateral Non-Disclosure Agreement <br></br> (Pro-Discloser) </p>
+                    </Link>
                     </div>
                 </div>
 

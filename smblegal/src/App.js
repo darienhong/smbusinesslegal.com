@@ -18,6 +18,8 @@ import DisciplinaryQuestions from './disciplinary-files/DisciplinaryQuestions';
 import TerminationQuestions from './termination-files/TerminationQuestions';
 import MutualNDAQuestions from './mutualnda-files/MutualNDAQuestions';
 import RecipientNDAQuestions from './recipientNDA-files/RecipientNDAQuestions';
+import DisclosureNDAQuestions from './disclosurenda-files/DisclosureNDAQuestions';
+
 
 
 import Solutions from './Solutions.jsx';
@@ -65,6 +67,9 @@ export default class App extends Component {
           </Route>
           <Route path="/RecipientNDAQuestions">
             <RecipientNDAQuestions />
+          </Route>
+          <Route path="/DisclosureNDAQuestions">
+            <DisclosureNDAQuestions />
           </Route>
           <Route path="/Solutions">
             <Solutions />
