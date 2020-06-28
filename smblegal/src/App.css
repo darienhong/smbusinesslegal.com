@@ -53,9 +53,14 @@ h1 {
   font-family: 'DM Sans';
 }
 
-.logo { 
+.logo {
+  float: left;
+  margin-top: 23px;
+  width: 30px;
+}
 
-  width: 700px;
+.logo:hover {
+  opacity: 0.70;
 }
 
 h2 { 
@@ -514,3 +519,5 @@ font-family: 'WorkSans';
   box-shadow: 3px 3px rgb(201, 201, 201);
   margin: 30px;
 }
+
+
