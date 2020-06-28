@@ -103,16 +103,16 @@ export default class Homepage extends Component {
          
          <div class="features">
            <div class="formation">
-             <p><Link to="/Formation" style={{textDecoration: "none", color: "black"}}> Formation </Link></p> 
+           <Link to="/Formation" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}>Formation</p> </Link>
              </div>
              <div class="governance">
-             <p>  <Link to="/Governance" style={{textDecoration: "none", color: "black"}}> Governance </Link> </p>
+             <Link to="/Governance" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}>  Governance </p></Link>
              </div>
              <div class="employment">
-             <p>  <Link to="/Employment" style={{textDecoration: "none", color: "black"}}> Employment </Link> </p>
+             <Link to="/Employment" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}> Employment</p></Link>
              </div>
              <div class="covid-19">
-             <p> <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}>Covid-19 </Link> </p>
+             <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}> Covid-19  </p></Link>
             </div>
             </div>
   

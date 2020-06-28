@@ -285,7 +285,6 @@ nav a:hover::before {
   padding-right: 50px;
   padding-top: 10px;
   border: 1px solid black;
-  line-height: 10px;
   box-shadow: 3px 3px; 
   text-transform: uppercase;
   font-weight: 580;
@@ -437,7 +436,12 @@ font-family: 'WorkSans';
 }
 
 .card-2-inside:hover { 
-  background-color: rgb(153, 177, 229);
+  background-color: #307ADD;
+  color: white;
+  opacity: 0.7;
+}
+
+.card-2-inside:hover h4, .card-2-inside:hover h2, .card-2-inside:hover p, .card-2-inside:hover button {
   color: white;
 }
 
