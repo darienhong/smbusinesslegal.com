@@ -20,6 +20,8 @@ import MutualNDAQuestions from './mutualnda-files/MutualNDAQuestions';
 import RecipientNDAQuestions from './recipientNDA-files/RecipientNDAQuestions';
 import DisclosureNDAQuestions from './disclosurenda-files/DisclosureNDAQuestions';
 import CovidRentQuestions from './covidrent-files/CovidRentQuestions';
+import FormationQuestions from './formation-files/FormationQuestions';
+
 
 
 
@@ -76,6 +78,9 @@ export default class App extends Component {
           </Route>
           <Route path="/CovidRentQuestions">
             <CovidRentQuestions />
+          </Route>
+          <Route path="/FormationQuestions">
+            <FormationQuestions />
           </Route>
 
           <Route path="/Solutions">
