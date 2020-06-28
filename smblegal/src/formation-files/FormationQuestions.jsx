@@ -118,6 +118,7 @@ export default class FormationQuestions extends Component {
       case 2:
         return <FormationInfo
           nextStep={this.nextStep}
+          prevStep={this.prevStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
