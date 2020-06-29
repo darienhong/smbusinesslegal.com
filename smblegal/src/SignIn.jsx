@@ -27,8 +27,9 @@ export default class SignIn extends Component {
                 <svg height={50} width={400}>
                     <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1}/>
                 </svg>
-            </div> 
-
+                </div>
+            <p style={{textAlign: "center"}}> Welcome back! </p>
+            <br></br>
             <div class="login-form">
                     <div class="email-input" style={{textAlign: "center"}}>
               <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
