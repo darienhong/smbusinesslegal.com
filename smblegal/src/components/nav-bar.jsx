@@ -19,6 +19,8 @@ import Governance from '../document types/Governance.jsx';
 import Employment from '../document types/Employment.jsx';
 import Covid_19 from '../document types/COVID-19.jsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import IconLogo from '../assets/icon-logo.png';
+
 // import { Grommet, Menu } from 'grommet';
 
 export default class Navbar extends Component {
@@ -29,6 +31,7 @@ export default class Navbar extends Component {
     return (
      
         <div class="container">
+          <Link to="/"><img src={IconLogo} alt="icon logo" className="logo" /></Link>
           <nav>
             <ul>
               <li><Link to="/">Home</Link></li>

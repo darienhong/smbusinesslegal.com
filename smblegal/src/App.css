@@ -53,9 +53,14 @@ h1 {
   font-family: 'DM Sans';
 }
 
-.logo { 
+.logo {
+  float: left;
+  margin-top: 23px;
+  width: 30px;
+}
 
-  width: 700px;
+.logo:hover {
+  opacity: 0.70;
 }
 
 h2 { 
@@ -285,7 +290,6 @@ nav a:hover::before {
   padding-right: 50px;
   padding-top: 10px;
   border: 1px solid black;
-  line-height: 10px;
   box-shadow: 3px 3px; 
   text-transform: uppercase;
   font-weight: 580;
@@ -437,7 +441,12 @@ font-family: 'WorkSans';
 }
 
 .card-2-inside:hover { 
-  background-color: rgb(153, 177, 229);
+  background-color: #307ADD;
+  color: white;
+  opacity: 0.7;
+}
+
+.card-2-inside:hover h4, .card-2-inside:hover h2, .card-2-inside:hover p, .card-2-inside:hover button {
   color: white;
 }
 
@@ -510,3 +519,5 @@ font-family: 'WorkSans';
   box-shadow: 3px 3px rgb(201, 201, 201);
   margin: 30px;
 }
+
+
