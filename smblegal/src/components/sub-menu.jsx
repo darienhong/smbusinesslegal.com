@@ -22,7 +22,7 @@ export default class SubMenu extends Component {
             </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item><Link to="/AutomatedDocs">  Automated Documents </Link> </Dropdown.Item>
+          <Dropdown.Item style={{margin: "2px"}}><Link to="/AutomatedDocs">  Automated Documents </Link> </Dropdown.Item>
           <Dropdown.Item><Link to="/Questions"> Governance Automation </Link></Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
