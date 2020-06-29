@@ -7,6 +7,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+import ScrollToTop from './components/scroll-top.jsx';
+
 import Formation from './document types/Formation.jsx';
 import Governance from './document types/Governance.jsx';
 import Employment from './document types/Employment.jsx';
@@ -31,94 +36,125 @@ import DirectorsQuestions from './directors-files/DirectorsQuestions';
 
 
 import Solutions from './Solutions.jsx';
+
+
+
+import AutomatedDocs from './AutomatedDocs.jsx';
+import Tools from './Tools.jsx';
 import AboutUs from './aboutus.jsx';
 import SignUp from './SignUp.jsx';
+import SignIn from './SignIn.jsx';
+import CreateAccount from './CreateAccount.jsx';
 import Pricing from './Pricing.jsx';
 import Homepage from './Homepage.jsx';
 
-
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#245CA6',
+    }
+  },
+  typography: {
+    fontFamily: [
+      'WorkSans',
+      'DM Sans'
+    ].join(','),
+  }
+});
 
 export default class App extends Component {
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route path="/Formation">
-            <Formation />
-          </Route>
-          <Route path="/Governance">
-            <Governance />
-          </Route>
-          <Route path="/Employment">
-            <Employment />
-          </Route>
-          <Route path="/Covid_19">
-            <Covid_19 />
-          </Route>
-          <Route path="/Questions">
-            <Questions />
-          </Route>
-          <Route path="/EmploymentQuestions">
-            <EmploymentQuestions />
-          </Route>
-          <Route path="/ConsultingQuestions">
-            <ConsultingQuestions />
-          </Route>
-          <Route path="/DisciplinaryQuestions">
-            <DisciplinaryQuestions />
-          </Route>
-          <Route path="/TerminationQuestions">
-            <TerminationQuestions />
-          </Route>
-          <Route path="/MutualNDAQuestions">
-            <MutualNDAQuestions />
-          </Route>
-          <Route path="/RecipientNDAQuestions">
-            <RecipientNDAQuestions />
-          </Route>
-          <Route path="/DisclosureNDAQuestions">
-            <DisclosureNDAQuestions />
-          </Route>
-          <Route path="/CovidRentQuestions">
-            <CovidRentQuestions />
-          </Route>
-          <Route path="/FormationQuestions">
-            <FormationQuestions />
-          </Route>
-          <Route path="/IncorporationQuestions">
-            <IncorporationQuestions />
-          </Route>
-          <Route path="/StatementQuestions">
-            <StatementQuestions />
-          </Route>
-          <Route path="/SecretaryQuestions">
-            <SecretaryQuestions />
-          </Route>
-          <Route path="/DirectorsQuestions">
-            <DirectorsQuestions />
-          </Route>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <ScrollToTop />
+          <Switch>
+            <Route path="/Formation">
+              <Formation />
+            </Route>
+            <Route path="/Governance">
+              <Governance />
+            </Route>
+            <Route path="/Employment">
+              <Employment />
+            </Route>
+            <Route path="/Covid_19">
+              <Covid_19 />
+            </Route>
+            <Route path="/Questions">
+              <Questions />
+            </Route>
+            <Route path="/EmploymentQuestions">
+              <EmploymentQuestions />
+            </Route>
+            <Route path="/ConsultingQuestions">
+              <ConsultingQuestions />
+            </Route>
+            <Route path="/DisciplinaryQuestions">
+              <DisciplinaryQuestions />
+            </Route>
+            <Route path="/TerminationQuestions">
+              <TerminationQuestions />
+            </Route>
+            <Route path="/MutualNDAQuestions">
+              <MutualNDAQuestions />
+            </Route>
+            <Route path="/RecipientNDAQuestions">
+              <RecipientNDAQuestions />
+            </Route>
+            <Route path="/DisclosureNDAQuestions">
+              <DisclosureNDAQuestions />
+            </Route>
+            <Route path="/CovidRentQuestions">
+              <CovidRentQuestions />
+            </Route>
+            <Route path="/FormationQuestions">
+              <FormationQuestions />
+            </Route>
+            <Route path="/IncorporationQuestions">
+              <IncorporationQuestions />
+            </Route>
+            <Route path="/StatementQuestions">
+              <StatementQuestions />
+            </Route>
+            <Route path="/SecretaryQuestions">
+              <SecretaryQuestions />
+            </Route>
+            <Route path="/DirectorsQuestions">
+              <DirectorsQuestions />
+            </Route>
 
 
-          <Route path="/Solutions">
-            <Solutions />
-          </Route>
-          <Route path="/Questions">
-            <Questions />
-          </Route>
-          <Route path="/Pricing">
-            <Pricing />
-          </Route>
-          <Route path="/AboutUs">
-            <AboutUs />
-          </Route>
-          <Route path="/SignUp">
-            <SignUp />
-          </Route>
-          <Route path="/">
-            <Homepage />
-          </Route>
-        </Switch>
-      </Router>
+            <Route path="/AutomatedDocs">
+              <AutomatedDocs />
+            </Route>
+            <Route path="/Tools">
+              <Tools />
+            </Route>
+            <Route path="/Questions">
+              <Questions />
+            </Route>
+            <Route path="/Pricing">
+              <Pricing />
+            </Route>
+            <Route path="/AboutUs">
+              <AboutUs />
+            </Route>
+            <Route path="/SignUp">
+              <SignUp />
+            </Route>
+            <Route path="/SignIn">
+              <SignIn />
+            </Route>
+            <Route path="/CreateAccount">
+              <CreateAccount />
+            </Route>
+            <Route path="/">
+              <Homepage />
+            </Route>
+          </Switch>
+        </Router>
+      </ThemeProvider>
     );
   }
 }

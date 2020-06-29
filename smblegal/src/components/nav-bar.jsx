@@ -6,18 +6,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Questions from '../internship-files/Questions.jsx'
-
-import Homepage from '../Homepage.jsx';
-import AboutUs from '../aboutus.jsx';
 import SubMenu from './sub-menu.jsx';
-import Solutions from '../Solutions.jsx';
-import Pricing from '../Pricing.jsx';
-import SignUp from '../SignUp.jsx';
-import Formation from '../document types/Formation.jsx';
-import Governance from '../document types/Governance.jsx';
-import Employment from '../document types/Employment.jsx';
-import Covid_19 from '../document types/COVID-19.jsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import IconLogo from '../assets/icon-logo.png';
 
@@ -36,36 +25,12 @@ export default class Navbar extends Component {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/AboutUs"> Why? </Link></li>
-              <li><Link to="/Solutions"> <SubMenu />  </Link> </li>
+              <li><Link to="/Tools"> <SubMenu />  </Link> </li>
               <li><Link to="/Pricing"> Pricing </Link></li>
               <li><Link to="/SignUp"> Sign Up </Link></li>
-              <li><Link to="/"> Sign In </Link></li>
+              <li><Link to="/SignIn"> Sign In </Link></li>
             </ul>
           </nav>
-
-
-       {/*  <Switch>
-            <Route path="/Solutions">
-              <Solutions />
-            </Route>
-            <Route path="/Questions">
-              <Questions />
-            </Route>
-            <Route path="/Pricing">
-              <Pricing />
-            </Route>
-            <Route path="/AboutUs">
-              <AboutUs />
-            </Route>
-            <Route path="/SignUp">
-              <SignUp />
-            </Route>
-            <Route path="/">
-              <Homepage />
-            </Route>
-          </Switch>
-
-       */}
         </div>
    
 

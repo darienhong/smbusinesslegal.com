@@ -51,10 +51,12 @@ export default class Homepage extends Component {
       };
 
         return (
-
+      
+      
+       
           <div class="homepage">
-              <Navbar />
               <ModalTest />
+              <Navbar />
               <Lottie 
 	              options={defaultOptions}
                 height={800}
@@ -162,7 +164,7 @@ export default class Homepage extends Component {
             </footer>
 
 
-           
+     
        </div>
         );
       

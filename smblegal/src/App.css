@@ -55,7 +55,7 @@ h1 {
 
 .logo {
   float: left;
-  margin-top: 23px;
+  margin-top: 20px;
   width: 30px;
 }
 
@@ -127,9 +127,14 @@ p {
 
 }
 .container {
-  width: 85%;
+  width: 100%;
+  height: 70px;
   margin: 0 auto;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: white;
+
 }
 
 nav {
@@ -147,12 +152,12 @@ nav ul {
 nav li {
   display: inline-block;
   margin-left: 70px;
-  padding-top: 23px;
+  padding-top: 20px;
   position: relative;
 }
 
 nav a {
-  color: rgb(169, 172, 201);
+  color: rgb(201, 201, 201);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 550;
@@ -246,8 +251,9 @@ nav a:hover::before {
     opacity: 1;
   }
 }
-.homepage, .about-page, .pricing-page, .sign-up-page, 
-.employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page { 
+.homepage, .about-page, .pricing-page, .sign-up-page, .tools-page,  
+.employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
+.automated-docs-page, .login-page, .create-acc-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
   margin-left: 40px; 
@@ -468,7 +474,7 @@ font-family: 'WorkSans';
 .document-icon { 
   text-align: center; 
   padding: 10px;
-  border: 2px solid rgb(57, 60, 126);
+  border: 2px solid #245CA6;
   border-radius: 25px;
   width: 300px;
   margin: 40px;
@@ -481,7 +487,7 @@ font-family: 'WorkSans';
 }
 
 .document-icon:hover { 
-  background-color: rgb(57, 60, 126);
+  background-color: #245CA6;
   opacity: 0.7;
 }
 
@@ -520,7 +526,66 @@ font-family: 'WorkSans';
   margin: 30px;
 }
 
+<<<<<<< HEAD
 .rightAlign{
   text-align: right;
 }
+=======
+.doc-block {
+  width: 800px; 
+  border: 2px solid rgb(83, 63, 63); 
+  border-radius: 25px;
+  padding: 25px;
+  margin: 20px;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'WorkSans';
+  text-decoration: none;
+  color: black;
+
+}
+
+.create-acc-button { 
+  padding-top: 10px; 
+  border: 2px solid #245CA6;
+  width: 200px;
+  color: #245CA6;
+  justify-content: center;
+}
+
+.create-acc-button p {
+  color: #245CA6;
+}
+
+.create-acc-button:hover {
+  background-color: #245CA6;
+}
+
+.create-acc-button:hover p {
+  color: white;
+}
+
+.tools-section { 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tools-block {
+  border: 2px solid #245CA6; 
+  border-radius: 25px;
+  width: 350px;
+  padding: 20px;
+  margin: 30px;
+}
+
+.tools-block:hover { 
+  background-color: #245CA6;
+}
+
+.tools-block:hover p {
+  color: white;
+}
+
+>>>>>>> 02fe32eb029b8fb02ad22f96cbe1bc959a63970a
 
