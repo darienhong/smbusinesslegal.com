@@ -3,24 +3,24 @@ import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
-import StatementIntro from './StatementIntro.jsx';
-import StatementPDF from './StatementPDF.jsx';
+import SecretaryIntro from './SecretaryIntro.jsx';
+import SecretaryPDF from './SecretaryPDF.jsx';
 
 import { Alert } from 'react-alert'
 
 
-export default class StatementQuestions extends Component {
+export default class SecretaryQuestions extends Component {
   state = {
     step: 1,
     percent: 50,
     date: new Date(),
-    companyName: '[X]',
-    directorList: [{ name: "" }],
-    state: '[X]',
+    dateAdopted: new Date(),
     name: '[X]',
-    phone: '[X]',
-    docName: 'Articles of Incorporation',
-    docNameOther: '[X]'
+    companyName: '[X]',
+    corporation: '[X]',
+    adopted: '[X]',
+
+
   }
 
   nextStep = () => {
@@ -59,16 +59,16 @@ export default class StatementQuestions extends Component {
     this.setState({ [input]: event.target.value })
   }
 
-  handleDirectorChange = (e) => {
-    let directorList = [...this.state.directorList]
-    directorList[e.target.dataset.id][e.target.className] = e.target.value
-    this.setState({ directorList }, () => console.log(this.state.directorList))
+  handleRecitalChange = (e) => {
+    let recitalList = [...this.state.recitalList]
+    recitalList[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState({ recitalList }, () => console.log(this.state.recitalList))
   }
 
-  addDirector = (e) => {
+  addRecital = (e) => {
     e.preventDefault();
     this.setState((prevState) => ({
-      directorList: [...prevState.directorList, { name: "" }],
+      recitalList: [...prevState.recitalList, { name: "" }],
     }));
   }
 
@@ -77,41 +77,37 @@ export default class StatementQuestions extends Component {
     const {
       percent,
       date,
+      dateAdopted,
       companyName,
-      directorList,
-      state,
       name,
-      phone,
-      docName,
-      docNameOther
+      corporation,
+      adopted,
+
     } = this.state;
     const values = {
       percent,
       date,
+      dateAdopted,
       companyName,
-      directorList,
-      state,
       name,
-      phone,
-      docName,
-      docNameOther
+      corporation,
+      adopted,
+
 
     };
 
     switch (step) {
       case 1:
-        return <StatementIntro
+        return <SecretaryIntro
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
           values={values}
-          handleDirectorChange={this.handleDirectorChange}
-          addDirector={this.addDirector}
         // doc={EmploymentDocument}
         />
       case 2:
-        return <StatementPDF
+        return <SecretaryPDF
           prevStep={this.prevStep}
           values={values} />
     }

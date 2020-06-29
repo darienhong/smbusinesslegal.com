@@ -28,6 +28,14 @@ import CovidRentQuestions from './covidrent-files/CovidRentQuestions';
 import FormationQuestions from './formation-files/FormationQuestions';
 import IncorporationQuestions from './incorporation-files/IncorporationQuestions';
 import StatementQuestions from './statement-files/StatementQuestions';
+import SecretaryQuestions from './secretary-files/SecretaryQuestions';
+import DirectorsQuestions from './directors-files/DirectorsQuestions';
+
+
+
+
+
+// import Solutions from './Solutions.jsx';
 
 
 
@@ -58,87 +66,94 @@ export default class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-      <Router>
-        <ScrollToTop />
-        <Switch>
-          <Route path="/Formation">
-            <Formation />
-          </Route>
-          <Route path="/Governance">
-            <Governance />
-          </Route>
-          <Route path="/Employment">
-            <Employment />
-          </Route>
-          <Route path="/Covid_19">
-            <Covid_19 />
-          </Route>
-          <Route path="/Questions">
-            <Questions />
-          </Route>
-          <Route path="/EmploymentQuestions">
-            <EmploymentQuestions />
-          </Route>
-          <Route path="/ConsultingQuestions">
-            <ConsultingQuestions />
-          </Route>
-          <Route path="/DisciplinaryQuestions">
-            <DisciplinaryQuestions />
-          </Route>
-          <Route path="/TerminationQuestions">
-            <TerminationQuestions />
-          </Route>
-          <Route path="/MutualNDAQuestions">
-            <MutualNDAQuestions />
-          </Route>
-          <Route path="/RecipientNDAQuestions">
-            <RecipientNDAQuestions />
-          </Route>
-          <Route path="/DisclosureNDAQuestions">
-            <DisclosureNDAQuestions />
-          </Route>
-          <Route path="/CovidRentQuestions">
-            <CovidRentQuestions />
-          </Route>
-          <Route path="/FormationQuestions">
-            <FormationQuestions />
-          </Route>
-          <Route path="/IncorporationQuestions">
-            <IncorporationQuestions />
-          </Route>
-          <Route path="/StatementQuestions">
-            <StatementQuestions />
-          </Route>
+        <Router>
+          <ScrollToTop />
+          <Switch>
+            <Route path="/Formation">
+              <Formation />
+            </Route>
+            <Route path="/Governance">
+              <Governance />
+            </Route>
+            <Route path="/Employment">
+              <Employment />
+            </Route>
+            <Route path="/Covid_19">
+              <Covid_19 />
+            </Route>
+            <Route path="/Questions">
+              <Questions />
+            </Route>
+            <Route path="/EmploymentQuestions">
+              <EmploymentQuestions />
+            </Route>
+            <Route path="/ConsultingQuestions">
+              <ConsultingQuestions />
+            </Route>
+            <Route path="/DisciplinaryQuestions">
+              <DisciplinaryQuestions />
+            </Route>
+            <Route path="/TerminationQuestions">
+              <TerminationQuestions />
+            </Route>
+            <Route path="/MutualNDAQuestions">
+              <MutualNDAQuestions />
+            </Route>
+            <Route path="/RecipientNDAQuestions">
+              <RecipientNDAQuestions />
+            </Route>
+            <Route path="/DisclosureNDAQuestions">
+              <DisclosureNDAQuestions />
+            </Route>
+            <Route path="/CovidRentQuestions">
+              <CovidRentQuestions />
+            </Route>
+            <Route path="/FormationQuestions">
+              <FormationQuestions />
+            </Route>
+            <Route path="/IncorporationQuestions">
+              <IncorporationQuestions />
+            </Route>
+            <Route path="/StatementQuestions">
+              <StatementQuestions />
+            </Route>
+            <Route path="/SecretaryQuestions">
+              <SecretaryQuestions />
+            </Route>
+            <Route path="/DirectorsQuestions">
+              <DirectorsQuestions />
+            </Route>
 
-          <Route path="/AutomatedDocs">
-            <AutomatedDocs />
-          </Route>
-          <Route path="/Tools">
-            <Tools />
-          </Route>
-          <Route path="/Questions">
-            <Questions />
-          </Route>
-          <Route path="/Pricing">
-            <Pricing />
-          </Route>
-          <Route path="/AboutUs">
-            <AboutUs />
-          </Route>
-          <Route path="/SignUp">
-            <SignUp />
-          </Route>
-          <Route path="/SignIn">
-            <SignIn />
-          </Route>
-          <Route path="/CreateAccount">
-            <CreateAccount />
-          </Route>
-          <Route path="/">
-            <Homepage />
-          </Route>
-        </Switch>
-      </Router>
+
+            <Route path="/AutomatedDocs">
+              <AutomatedDocs />
+            </Route>
+            <Route path="/Tools">
+              <Tools />
+            </Route>
+            <Route path="/Questions">
+              <Questions />
+            </Route>
+            <Route path="/Pricing">
+              <Pricing />
+            </Route>
+            <Route path="/AboutUs">
+              <AboutUs />
+            </Route>
+            <Route path="/SignUp">
+              <SignUp />
+            </Route>
+            <Route path="/SignIn">
+              <SignIn />
+            </Route>
+            <Route path="/CreateAccount">
+              <CreateAccount />
+            </Route>
+            <Route path="/">
+              <Homepage />
+            </Route>
+          </Switch>
+        </Router>
       </ThemeProvider>
     );
   }

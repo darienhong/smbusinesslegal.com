@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import moment from 'moment';
-import Doc from './StatementDocument.jsx';
+import Doc from './SecretaryDocument.jsx';
 import { Progress } from 'semantic-ui-react'
 import { PDFExport } from '@progress/kendo-react-pdf';
 import Navbar from '../components/nav-bar.jsx';
@@ -11,7 +11,7 @@ import Navbar from '../components/nav-bar.jsx';
 const ref = React.createRef();
 
 
-export default class StatementPDF extends Component {
+export default class SecretaryPDF extends Component {
 
   // Add this method to the React 
   exportPDF = () => {

@@ -6,8 +6,6 @@ import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import moment from 'moment';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import Navbar from '../components/nav-bar.jsx';
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,11 +16,13 @@ import {
 
 import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
-import FormationDocument from './FormationDocument.jsx';
+import DirectorsDocument from './DirectorsDocument.jsx';
+import Navbar from '../components/nav-bar.jsx';
 
 
 
-export default class FormationIntro extends Component {
+
+export default class DirectorsIntro extends Component {
 
   next = (e) => {
     e.preventDefault();
@@ -35,6 +35,7 @@ export default class FormationIntro extends Component {
     return (
       <div class='ask'>
         <Navbar />
+
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
           <Link to="/Formation" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
@@ -50,38 +51,67 @@ export default class FormationIntro extends Component {
           </form>
           <br />
 
-          <form>
-            <p>Enter your name:</p>
+          {/* <form>
+            <p>Enter the state:</p>
             <input
               type='text'
-              onChange={this.props.handleChange('name')}
+              onChange={this.props.handleChange('state')}
+            />
+          </form>
+          <br /> */}
+
+
+          <form>
+            <p>Enter the state: </p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('state')}
+            />
+          </form>
+          <br />
+
+          <form onChange={this.props.handleChange('docName')}>
+            <label for="state">Choose the document of incorporation based on your state:</label>
+            <br />
+            <select id="state" name="state">
+              {/* <option value="California" selected>California</option>
+              <option value="Delaware">Delaware</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="New York">New York</option> */}
+              <option value="Articles of Incorporation">Articles of Incorporation (CA, MA, WA)</option>
+              <option value="Certificate of Incorporation">Certificate of Incorporation (DE, NY, TX)</option>
+              <option value='Other'>Other</option>
+            </select>
+          </form>
+          <br />
+
+          {values.docName === 'Other' && (
+            <div>
+              <form>
+                <p>Enter the name of the document of incorporation: </p>
+                <input
+                  type='text'
+                  onChange={this.props.handleChange('docNameOther')}
+                />
+              </form>
+              <br />
+            </div>
+          )}
+
+          <form>
+            <p>What type of corporation is this?</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('corporation')}
             />
           </form>
           <br />
 
           <form>
-            <p>Enter your address:</p>
+            <p>How many Directors will there be?</p>
             <input
               type='text'
-              onChange={this.props.handleChange('address')}
-            />
-          </form>
-          <br />
-
-          <form>
-            <p>Enter your telephone number:</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('phone')}
-            />
-          </form>
-          <br />
-
-          <form>
-            <p>Enter your fax number (if applicable):</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('fax')}
+              onChange={this.props.handleChange('number')}
             />
           </form>
           <br />
@@ -89,7 +119,7 @@ export default class FormationIntro extends Component {
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <FormationDocument class='doc' values={values} />
+          <DirectorsDocument class='doc' values={values} />
         </div>
       </div >
 

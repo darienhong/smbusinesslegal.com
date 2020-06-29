@@ -4,12 +4,12 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import { Progress } from 'semantic-ui-react'
-import TerminationDocument from './TerminationDocument.jsx';
+import DirectorsDocument from './DirectorsDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
 
 
 
-export default class TerminationInfo2 extends Component {
+export default class DirectorsInfo extends Component {
   next = (e) => {
     e.preventDefault();
     this.props.increasePercentage();
@@ -27,57 +27,54 @@ export default class TerminationInfo2 extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        {/* <Progress percent={values.percentage} indicating /> */}
         <Navbar />
 
+        {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col height'>
 
           <form>
-            <p>Enter the date of the last payment:</p>
-            <input
-              type='date'
-              onChange={this.props.handleChange('endDate')}
-            />
-          </form>
-          <br />
-          <br />
-
-          <form>
-            <p>Enter any company property that has to be returned:</p>
+            <p>Who will be the Chief Executive Officers? </p>
             <input
               type='text'
-              onChange={this.props.handleChange('property')}
+              onChange={this.props.handleChange('ceo')}
             />
           </form>
           <br />
-          <br />
 
           <form>
-            <p>Enter the cessation of any company benefits:</p>
+            <p>Who will be the President? </p>
             <input
               type='text'
-              onChange={this.props.handleChange('benefits')}
+              onChange={this.props.handleChange('president')}
             />
           </form>
           <br />
 
           <form>
-            <p>What date was their employment agreement signed?</p>
+            <p>Who will be the Chief Financial Officers? </p>
             <input
-              type='date'
-              onChange={this.props.handleChange('dateSigned')}
+              type='text'
+              onChange={this.props.handleChange('cfo')}
             />
           </form>
           <br />
 
+          <form>
+            <p>Who will be the Secretary? </p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('secretary')}
+            />
+          </form>
+          <br />
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <TerminationDocument class='doc' values={values} />
+          <DirectorsDocument class='doc' values={values} />
         </div>
 
-      </div>
+      </div >
 
     );
   }

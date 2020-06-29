@@ -5,6 +5,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import { Progress } from 'semantic-ui-react'
 import TerminationDocument from './TerminationDocument.jsx';
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 export default class TerminationInfo extends Component {
@@ -26,6 +28,7 @@ export default class TerminationInfo extends Component {
     return (
       <div class='ask'>
         {/* <Progress percent={values.percentage} indicating /> */}
+        <Navbar />
 
         <div class='col height'>
 

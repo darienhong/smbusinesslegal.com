@@ -545,6 +545,9 @@ font-family: 'WorkSans';
   margin: 30px;
 }
 
+.rightAlign{
+  text-align: right;
+}
 .doc-block {
   width: 800px; 
   border: 2px solid rgb(83, 63, 63); 

@@ -80,7 +80,7 @@ export default class IncorporationDocument extends Component {
         <p>Name: {values.name}</p>
         <p>Address: {values.address}</p>
         <p>Telephone Number: {values.phone}</p>
-        <p>Fax Number</p>
+        <p>Fax Number: {values.fax}</p>
         <p>Thank you,</p>
         <p>{values.name}</p>
         <center className="page-break">

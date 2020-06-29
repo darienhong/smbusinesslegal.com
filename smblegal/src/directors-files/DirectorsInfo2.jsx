@@ -4,12 +4,12 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import { Progress } from 'semantic-ui-react'
-import IncorporationDocument from './IncorporationDocument.jsx';
+import DirectorsDocument from './DirectorsDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
 
 
 
-export default class IncorporationInfo2 extends Component {
+export default class DirectorsInfo2 extends Component {
   next = (e) => {
     e.preventDefault();
     this.props.increasePercentage();
@@ -33,26 +33,16 @@ export default class IncorporationInfo2 extends Component {
         <div class='col height'>
 
           <form>
-            <p>How many shares of common stock are you authorized to issue? </p>
+            <p>When was the Certificate of Incorporation filed? </p>
             <input
-              type='text'
-              onChange={this.props.handleChange('shares')}
+              type='date'
+              onChange={this.props.handleChange('date')}
             />
           </form>
           <br />
 
           <form>
-            <p>What is the value of each share of common stock? </p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('price')}
-            />
-          </form>
-          <br />
-
-
-          <form>
-            <p>Do you want to issue preferred stock?</p>
+            <p>Are you going to issue common stock to someone right away?</p>
             <input
               type='radio' id="yes" name="st" value="Yes"
               onChange={this.props.handleChange('stock')}
@@ -66,34 +56,42 @@ export default class IncorporationInfo2 extends Component {
 
           </form>
 
+
           {values.stock === 'Yes' && (
             <div>
               <form>
-                <p>How many shares of preferred stock are you authorized to issue?</p>
+                <p>How many shares of Common stock are <br />authorized to be sold and issued?</p>
                 <input
                   type='text'
-                  onChange={this.props.handleChange('preferredShares')}
+                  onChange={this.props.handleChange('shares')}
                 />
               </form>
               <br />
-              <form>
-                <p>What is the value of each share of preferred stock?</p>
-                <input
-                  type='text'
-                  onChange={this.props.handleChange('preferredPrice')}
-                />
-              </form>
             </div>
           )}
 
+          <form>
+            <p>Who will be the Chief Financial Officers? </p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('cfo')}
+            />
+          </form>
+          <br />
 
-
-
+          <form>
+            <p>Who will be the Secretary </p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('secretary')}
+            />
+          </form>
+          <br />
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <IncorporationDocument class='doc' values={values} />
+          <DirectorsDocument class='doc' values={values} />
         </div>
 
       </div >

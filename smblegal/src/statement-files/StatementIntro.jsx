@@ -17,6 +17,8 @@ import {
 import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
 import StatementDocument from './StatementDocument.jsx';
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 
@@ -32,6 +34,8 @@ export default class StatementIntro extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
+        <Navbar />
+
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
           <Link to="/Formation" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
@@ -64,6 +68,34 @@ export default class StatementIntro extends Component {
             />
           </form>
           <br />
+
+          <form onChange={this.props.handleChange('docName')}>
+            <label for="state">Choose the document of incorporation based on your state:</label>
+            <br />
+            <select id="state" name="state">
+              {/* <option value="California" selected>California</option>
+              <option value="Delaware">Delaware</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="New York">New York</option> */}
+              <option value="Articles of Incorporation">Articles of Incorporation (CA, MA, WA)</option>
+              <option value="Certificate of Incorporation">Certificate of Incorporation (DE, NY, TX)</option>
+              <option value='Other'>Other</option>
+            </select>
+          </form>
+          <br />
+
+          {values.docName === 'Other' && (
+            <div>
+              <form>
+                <p>Enter the name of the document of incorporation: </p>
+                <input
+                  type='text'
+                  onChange={this.props.handleChange('docNameOther')}
+                />
+              </form>
+              <br />
+            </div>
+          )}
 
           <form onChange={this.props.handleDirectorChange}>
             <div class='listExp'>

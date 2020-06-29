@@ -16,13 +16,13 @@ import {
 
 import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
-import MutualNDADocument from './MutualNDADocument.jsx';
+import SecretaryDocument from './SecretaryDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
 
 
 
 
-export default class MutualNDAIntro extends Component {
+export default class SecretaryIntro extends Component {
 
   next = (e) => {
     e.preventDefault();
@@ -37,46 +37,10 @@ export default class MutualNDAIntro extends Component {
         <Navbar />
 
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
-          <Link to="/Employment" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
+          <Link to="/Formation" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col left height'>
-
-          <form>
-            <p>Enter the date:</p>
-            <input
-              type='date'
-              onChange={this.props.handleChange('date')}
-            />
-          </form>
-          <br />
-
-          <form>
-            <p>Enter employee's name:</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('employeeName')}
-            />
-          </form>
-          <br />
-
-          <form>
-            <p>Enter employee's address:</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('address')}
-            />
-          </form>
-          <br />
-
-          <form>
-            <p>Enter your name:</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('employerName')}
-            />
-          </form>
-          <br />
 
           <form>
             <p>Enter the company's name:</p>
@@ -87,10 +51,58 @@ export default class MutualNDAIntro extends Component {
           </form>
           <br />
 
+          <form>
+            <p>Enter your name:</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('name')}
+            />
+          </form>
+          <br />
+
+          <form>
+            <p>Enter the date the bylaws were adopted:</p>
+            <input
+              type='date'
+              onChange={this.props.handleChange('dateAdopted')}
+            />
+          </form>
+          <br />
+
+          <form>
+            <p>How were the bylaws adopted?</p>
+            <input
+              type='radio' id="inc" name="inc" value="Incorporator"
+              onChange={this.props.handleChange('adopted')}
+            />
+            <label for="inc"> Incorporator </label><br />
+            <input
+              type='radio' id="share" name="share" value="Shareholders"
+              onChange={this.props.handleChange('adopted')}
+            />
+            <label for="share"> Shareholders </label><br />
+            <input
+              type='radio' id="board" name="board" value="Board of Directors"
+              onChange={this.props.handleChange('adopted')}
+            />
+            <label for="board"> Board of Directors </label><br />
+
+          </form>
+          <br />
+
+          <form>
+            <p>What type of corporation is this?</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('corporation')}
+            />
+          </form>
+          <br />
+
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <MutualNDADocument class='doc' values={values} />
+          <SecretaryDocument class='doc' values={values} />
         </div>
       </div >
 

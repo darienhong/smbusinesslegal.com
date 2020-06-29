@@ -10,6 +10,8 @@ import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
 import { PDFExport } from '@progress/kendo-react-pdf';
 import { Page, Text, View, Document, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 const ref = React.createRef();
@@ -52,6 +54,7 @@ export default class ConsultingPDF extends Component {
 
     return (
       <div class='generate'>
+        <Navbar />
 
         <div class='buttons'>
           <center>

@@ -8,6 +8,8 @@ import moment from 'moment';
 import EmploymentDocument from './EmploymentDocument.jsx';
 import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 
@@ -29,6 +31,8 @@ export default class EmploymentEmployer extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
+        <Navbar />
+
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col left height'>
           <form>
