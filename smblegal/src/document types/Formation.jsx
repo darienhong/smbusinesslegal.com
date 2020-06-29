@@ -59,17 +59,19 @@ export default class Formation extends Component {
                     </Link>
                     </div>
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/DirectorsQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Initial Action by the Board of Directors </p>
+                    </Link>
                     </div>
                 </div>
 
                 <div class="formation-documents">
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/SecretaryQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Certificate of the Secretary (Adoption of Bylaws) </p>
+                    </Link>
                     </div>
 
                     <div class="document-icon">

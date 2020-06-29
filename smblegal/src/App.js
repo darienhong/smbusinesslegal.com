@@ -23,9 +23,8 @@ import CovidRentQuestions from './covidrent-files/CovidRentQuestions';
 import FormationQuestions from './formation-files/FormationQuestions';
 import IncorporationQuestions from './incorporation-files/IncorporationQuestions';
 import StatementQuestions from './statement-files/StatementQuestions';
-
-
-
+import SecretaryQuestions from './secretary-files/SecretaryQuestions';
+import DirectorsQuestions from './directors-files/DirectorsQuestions';
 
 
 
@@ -92,6 +91,13 @@ export default class App extends Component {
           <Route path="/StatementQuestions">
             <StatementQuestions />
           </Route>
+          <Route path="/SecretaryQuestions">
+            <SecretaryQuestions />
+          </Route>
+          <Route path="/DirectorsQuestions">
+            <DirectorsQuestions />
+          </Route>
+
 
           <Route path="/Solutions">
             <Solutions />

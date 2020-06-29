@@ -13,6 +13,13 @@ export default class FormationDocument extends Component {
 
     var dateString = values.date.toString();
     var formattedDate = moment(dateString).format("LL");
+
+    let incorp = values.docName
+    let otherCheck = values.docName === 'Other'
+    if (otherCheck) {
+      incorp = values.docNameOther
+    }
+
     // const cobraCheck = values.cobra === 'Yes'
     // var cobraRequire = ''
     // if (cobraCheck)
@@ -25,8 +32,7 @@ export default class FormationDocument extends Component {
             {values.companyName}</h5>
         </center>
         <br />
-        <p>The undersigned, being the incorporator of {values.companyName}, who signed and filed {values.companyName}’s [Articles of
-        Incorporation – depends on state see Google Drive] with {values.state} state’s appropriate office, appoints
+        <p>The undersigned, being the incorporator of {values.companyName}, who signed and filed {values.companyName}’s {incorp} with {values.state} state’s appropriate office, appoints
         the following to serve as directors of {values.companyName} (“Initial Directors”). These Initial Directors shall serve
         as directors of {values.companyName} until the first meeting of the shareholders where directors shall be elected
         and until successors are elected and agree to serve on the board.

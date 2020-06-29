@@ -16,11 +16,11 @@ import {
 
 import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
-import StatementDocument from './StatementDocument.jsx';
+import DirectorsDocument from './DirectorsDocument.jsx';
 
 
 
-export default class StatementIntro extends Component {
+export default class DirectorsIntro extends Component {
 
   next = (e) => {
     e.preventDefault();
@@ -47,17 +47,18 @@ export default class StatementIntro extends Component {
           </form>
           <br />
 
-          <form>
-            <p>Enter your name:</p>
+          {/* <form>
+            <p>Enter the state:</p>
             <input
               type='text'
-              onChange={this.props.handleChange('name')}
+              onChange={this.props.handleChange('state')}
             />
           </form>
-          <br />
+          <br /> */}
+
 
           <form>
-            <p>Enter the state:</p>
+            <p>Enter the state: </p>
             <input
               type='text'
               onChange={this.props.handleChange('state')}
@@ -93,45 +94,28 @@ export default class StatementIntro extends Component {
             </div>
           )}
 
-          <form onChange={this.props.handleDirectorChange}>
-            <div class='listExp'>
-              <p>
-                Who are the initial directors going to be?
-              </p>
-            </div>
-            <div class='expButton'>
-              <button class='add' onClick={this.props.addDirector}>+</button>
-            </div>
-            <br />
-            <div class='listExp'>
-              {
-                (values.directorList).map((val, idx) => {
-                  let directorId = `director-${idx}`
-                  return (
-                    <div key={idx}>
-                      <label htmlFor={directorId}>{`Director #${idx + 1}`}</label>
-                      <input
-                        type="text"
-                        name={directorId}
-                        data-id={idx}
-                        id={directorId}
-                        value={(values.directorList)[idx].name}
-                        className="name"
-                      />
-                      {" "}
-                    </div>
+          <form>
+            <p>What type of corporation is this?</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('corporation')}
+            />
+          </form>
+          <br />
 
-                  )
-                })
-              }
-            </div>
+          <form>
+            <p>How many Directors will there be?</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('number')}
+            />
           </form>
           <br />
 
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <StatementDocument class='doc' values={values} />
+          <DirectorsDocument class='doc' values={values} />
         </div>
       </div >
 

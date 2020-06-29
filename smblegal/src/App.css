@@ -520,4 +520,7 @@ font-family: 'WorkSans';
   margin: 30px;
 }
 
+.rightAlign{
+  text-align: right;
+}
 
