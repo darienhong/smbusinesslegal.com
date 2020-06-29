@@ -44,9 +44,10 @@ export default class Formation extends Component {
                     </Link>
                     </div>
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/IncorporationQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Certificate of Incorporation (DE - Corp) </p>
+                    </Link>
                     </div>
                 </div>
 

@@ -21,6 +21,8 @@ import RecipientNDAQuestions from './recipientNDA-files/RecipientNDAQuestions';
 import DisclosureNDAQuestions from './disclosurenda-files/DisclosureNDAQuestions';
 import CovidRentQuestions from './covidrent-files/CovidRentQuestions';
 import FormationQuestions from './formation-files/FormationQuestions';
+import IncorporationQuestions from './incorporation-files/IncorporationQuestions';
+
 
 
 
@@ -81,6 +83,9 @@ export default class App extends Component {
           </Route>
           <Route path="/FormationQuestions">
             <FormationQuestions />
+          </Route>
+          <Route path="/IncorporationQuestions">
+            <IncorporationQuestions />
           </Route>
 
           <Route path="/Solutions">
