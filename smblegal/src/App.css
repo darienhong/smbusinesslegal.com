@@ -128,8 +128,13 @@ p {
 }
 .container {
   width: 85%;
+  height: 70px;
   margin: 0 auto;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: white;
+
 }
 
 nav {
@@ -252,6 +257,7 @@ nav a:hover::before {
   animation-iteration-count: 1;
   margin-left: 40px; 
   margin-right: 40px; 
+  margin-top: 20px;
 
 }
 
