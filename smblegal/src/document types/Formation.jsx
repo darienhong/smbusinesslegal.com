@@ -53,9 +53,10 @@ export default class Formation extends Component {
 
                 <div class="formation-documents">
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/StatementQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Statement of the Incorporator </p>
+                    </Link>
                     </div>
 
                     <div class="document-icon">

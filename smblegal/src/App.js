@@ -22,6 +22,8 @@ import DisclosureNDAQuestions from './disclosurenda-files/DisclosureNDAQuestions
 import CovidRentQuestions from './covidrent-files/CovidRentQuestions';
 import FormationQuestions from './formation-files/FormationQuestions';
 import IncorporationQuestions from './incorporation-files/IncorporationQuestions';
+import StatementQuestions from './statement-files/StatementQuestions';
+
 
 
 
@@ -86,6 +88,9 @@ export default class App extends Component {
           </Route>
           <Route path="/IncorporationQuestions">
             <IncorporationQuestions />
+          </Route>
+          <Route path="/StatementQuestions">
+            <StatementQuestions />
           </Route>
 
           <Route path="/Solutions">
