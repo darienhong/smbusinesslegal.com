@@ -32,6 +32,8 @@ import AutomatedDocs from './AutomatedDocs.jsx';
 import Solutions from './Solutions.jsx';
 import AboutUs from './aboutus.jsx';
 import SignUp from './SignUp.jsx';
+import SignIn from './SignIn.jsx';
+import CreateAccount from './CreateAccount.jsx';
 import Pricing from './Pricing.jsx';
 import Homepage from './Homepage.jsx';
 
@@ -121,6 +123,12 @@ export default class App extends Component {
           </Route>
           <Route path="/SignUp">
             <SignUp />
+          </Route>
+          <Route path="/SignIn">
+            <SignIn />
+          </Route>
+          <Route path="/CreateAccount">
+            <CreateAccount />
           </Route>
           <Route path="/">
             <Homepage />

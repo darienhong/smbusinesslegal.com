@@ -253,7 +253,7 @@ nav a:hover::before {
 }
 .homepage, .about-page, .pricing-page, .sign-up-page, 
 .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
-.automated-docs-page { 
+.automated-docs-page, .login-page, .create-acc-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
   margin-left: 40px; 
@@ -540,4 +540,21 @@ font-family: 'WorkSans';
   color: black;
 
 }
+
+.create-acc-button { 
+  padding-top: 10px; 
+  border: 2px solid #245CA6;
+  width: 200px;
+  color: #245CA6;
+  justify-content: center;
+}
+
+.create-acc-button:hover {
+  background-color: #245CA6;
+}
+
+.create-acc-button:hover p {
+  color: white;
+}
+
 
