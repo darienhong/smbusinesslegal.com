@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/nav-bar.jsx';
+import Footer from './components/footer.jsx';
 import {
     BrowserRouter as Router,
     Switch,
     Route, 
     Link
   } from "react-router-dom";
+
 
 
 export default class Tools extends Component {
@@ -57,6 +59,10 @@ export default class Tools extends Component {
                 </div>
                 </Link>
             </div>
+            <br></br>
+            <br></br>
+            
+            <Footer />
 
             </div>
         );
