@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+
+import ScrollToTop from './components/scroll-top.jsx';
+
 import Formation from './document types/Formation.jsx';
 import Governance from './document types/Governance.jsx';
 import Employment from './document types/Employment.jsx';
@@ -56,6 +59,7 @@ export default class App extends Component {
     return (
       <ThemeProvider theme={theme}>
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route path="/Formation">
             <Formation />
