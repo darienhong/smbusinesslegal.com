@@ -25,7 +25,7 @@ export default class Navbar extends Component {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/AboutUs"> Why? </Link></li>
-              <li><Link to="/Solutions"> <SubMenu />  </Link> </li>
+              <li><Link to="/Tools"> <SubMenu />  </Link> </li>
               <li><Link to="/Pricing"> Pricing </Link></li>
               <li><Link to="/SignUp"> Sign Up </Link></li>
               <li><Link to="/SignIn"> Sign In </Link></li>
