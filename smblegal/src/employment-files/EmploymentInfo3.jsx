@@ -5,6 +5,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import { Progress } from 'semantic-ui-react'
 import EmploymentDocument from './EmploymentDocument.jsx';
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 export default class EmploymentInfo3 extends Component {
@@ -25,6 +27,8 @@ export default class EmploymentInfo3 extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
+        <Navbar />
+
         {/* <Progress percent={values.percentage} indicating /> */}
 
         <div class='col height'>

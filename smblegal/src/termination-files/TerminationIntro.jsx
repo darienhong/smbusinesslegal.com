@@ -18,6 +18,8 @@ import DisciplinaryDocument from '../disciplinary-files/DisciplinaryDocument.jsx
 import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
 import TerminationDocument from './TerminationDocument.jsx';
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 
@@ -33,6 +35,8 @@ export default class TerminationIntro extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
+        <Navbar />
+
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
           <Link to="/Employment" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>

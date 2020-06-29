@@ -16,6 +16,8 @@ import {
   Link,
   HashRouter
 } from "react-router-dom";
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 
@@ -33,6 +35,8 @@ export default class EmploymentIntro extends Component {
     // alert(values.percentage)
     return (
       <div class='ask'>
+        <Navbar />
+
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
           <Link to="/Employment" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
