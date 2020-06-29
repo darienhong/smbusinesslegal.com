@@ -79,19 +79,14 @@ export default class SignUp extends Component {
             <div class="sign-up-info"> 
             <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners 
                   who are using SMB Legal’s self-help tools to automate and power their business to run efficiently 
-                  and avoid potential legal pitfalls. </p>
+                  and avoid potential legal pitfalls. <br></br> <br></br>  Sign Up for our Newsletter! </p>
             <br></br>
-            <br></br>
-            <br></br>
+        
                 <div class="sign-up-form">
                     <div class="email-input" style={{textAlign: "center"}}>
               <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
                 </div> 
                 <br></br>
-               <div class="username-input" style={{textAlign: "center"}}>
-               <TextField id="outlined-basic" label="Username" variant="outlined" style={{width: "500px"}} /> 
-               </div>
-               <br></br>
                 <div class="password-input" style={{textAlign: "center"}}>
                 <TextField
                     id="outlined-password-input"
@@ -103,9 +98,15 @@ export default class SignUp extends Component {
                     style={{width: "500px"}}
                     />
                 </div>
-
-
                 </div>
+                <br></br>
+                <br></br>
+                
+                <center>
+            <div class="create-acc-button" >
+                 <p style={{textAlign: "center"}}> Sign Up </p>
+                </div>
+            </center>
 
                 <br></br>
                 <br></br>

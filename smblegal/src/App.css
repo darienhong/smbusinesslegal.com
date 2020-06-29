@@ -549,6 +549,10 @@ font-family: 'WorkSans';
   justify-content: center;
 }
 
+.create-acc-button p {
+  color: #245CA6;
+}
+
 .create-acc-button:hover {
   background-color: #245CA6;
 }
