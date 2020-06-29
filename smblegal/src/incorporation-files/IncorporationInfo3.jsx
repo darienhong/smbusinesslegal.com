@@ -5,6 +5,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import { Progress } from 'semantic-ui-react'
 import IncorporationDocument from './IncorporationDocument.jsx';
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 export default class IncorporationInfo2 extends Component {
@@ -25,6 +27,8 @@ export default class IncorporationInfo2 extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
+        <Navbar />
+
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col height'>
 
@@ -55,7 +59,7 @@ export default class IncorporationInfo2 extends Component {
               <br />
             </div>
           )}
-
+          <br />
 
           <form>
             <p>Do you want to leave the rights and preferences of preferred stock up to the Board of Directors?</p>

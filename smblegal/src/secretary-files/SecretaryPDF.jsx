@@ -4,6 +4,8 @@ import moment from 'moment';
 import Doc from './SecretaryDocument.jsx';
 import { Progress } from 'semantic-ui-react'
 import { PDFExport } from '@progress/kendo-react-pdf';
+import Navbar from '../components/nav-bar.jsx';
+
 
 
 const ref = React.createRef();
@@ -28,6 +30,7 @@ export default class SecretaryPDF extends Component {
 
     return (
       <div class='generate'>
+        <Navbar />
 
         <div class='buttons'>
           <center>

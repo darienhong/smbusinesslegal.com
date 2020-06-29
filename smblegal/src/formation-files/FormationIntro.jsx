@@ -6,6 +6,8 @@ import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import moment from 'moment';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import Navbar from '../components/nav-bar.jsx';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,6 +34,7 @@ export default class FormationIntro extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
+        <Navbar />
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
           <Link to="/Formation" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
