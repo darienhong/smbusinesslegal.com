@@ -126,24 +126,33 @@ export default class Homepage extends Component {
           <center>
           <div class="governance-automation-block">
             <div>
-            <p style={{fontWeight: "550", padding: "10px"}}> Governance Automation  </p>
-            <p style={{fontSize: "14px"}}> Some information on governance automation </p>
+            <p style={{fontWeight: "600", padding: "10px"}}> Governance Automation  </p>
+            <p style={{fontSize: "14px", padding: "10px"}}> Automate and organize all aspects of our company's 
+            governance with the click of a button. </p>
             </div>
             </div>
           <br></br>
           <br></br>
             <div class="features-section">
             <div class="features-block">
-            <p style={{fontWeight: "550", padding: "10px"}}> Increase Operational Efficiency  </p>
-            <p style={{fontSize: "14px", fontWeight: "400"}}> Some information on operational efficiency </p>
+            <p style={{fontWeight: "600", padding: "10px"}}> Increase Operational Efficiency  </p>
+            <p style={{fontSize: "14px", fontWeight: "400", padding: "10px"}}> Interrelated documents eliminate the need for 
+            time consuming search and duplication of efforts. Artificial intelligence and machine learning 
+            powered document management removes unnecessary tasks from the hands of owners and employees. 
+            Seamless integrations put documents directly and immediately into the necessary hands. </p>
             </div>
             <div class="features-block">
-            <p style={{fontWeight: "550", padding: "10px"}}> Avoid Legal Pitfalls  </p>
-            <p style={{fontSize: "14px"}}> Some information on legal pitfalls </p>
+              <br></br>
+            <p style={{fontWeight: "600", padding: "10px"}}> Avoid Legal Pitfalls  </p>
+            <p style={{fontSize: "14px", padding: "10px"}}> Keep track of all contractual and legal obligations in one easy to use platform. 
+            Keep up with federal, state and local regulations to remain compliant. Execute documents properly 
+            to avoid conflict. </p>
             </div>
             <div class="features-block">
-            <p style={{fontWeight: "550", padding: "10px"}}> Save Money  </p>
-            <p style={{fontSize: "14px"}}> Some information on money saving </p>
+            <p style={{fontWeight: "600", padding: "10px"}}> Save Money and Drive Revenue Growth  </p>
+            <p style={{fontSize: "14px", padding: "10px"}}> Unbeatable price that will save you money now and in the long run. Increased
+            efficiency means owners and employees can spend more time driving customer growth. Seamless integration 
+            creates a delightful customer experience. </p>
             </div>
             </div>
             </center>

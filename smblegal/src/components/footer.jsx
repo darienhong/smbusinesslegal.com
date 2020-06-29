@@ -11,13 +11,13 @@ export default class Footer extends Component {
             <div class="contact-block">
           <div class="contact-icons">
           <div class="facebook">
-            <a href="https://www.facebook.com/SMB-Legal-107220167714259/"><FacebookIcon style={{color: "#245CA6"}} /></a>
+            <a href="https://www.facebook.com/SMB-Legal-107220167714259/" target="_blank"><FacebookIcon style={{color: "#245CA6"}} /></a>
           </div>
           <div class="instagram">
-            <a href="https://www.instagram.com/smbusinesslegal/"><InstagramIcon style={{color: "#245CA6"}}/> </a>
+            <a href="https://www.instagram.com/smbusinesslegal/" target="_blank"><InstagramIcon style={{color: "#245CA6"}}/> </a>
           </div>
           <div class="linkedin">
-            <a href="https://www.linkedin.com/company/smb-legal/"><LinkedInIcon style={{color: "#245CA6"}} /></a>
+            <a href="https://www.linkedin.com/company/smb-legal/" target="_blank"><LinkedInIcon style={{color: "#245CA6"}} /></a>
           </div>
           </div>
           </div>
