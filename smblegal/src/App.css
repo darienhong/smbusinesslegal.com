@@ -526,11 +526,9 @@ font-family: 'WorkSans';
   margin: 30px;
 }
 
-<<<<<<< HEAD
 .rightAlign{
   text-align: right;
 }
-=======
 .doc-block {
   width: 800px; 
   border: 2px solid rgb(83, 63, 63); 
@@ -587,5 +585,4 @@ font-family: 'WorkSans';
   color: white;
 }
 
->>>>>>> 02fe32eb029b8fb02ad22f96cbe1bc959a63970a
 

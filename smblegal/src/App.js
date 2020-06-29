@@ -35,7 +35,7 @@ import DirectorsQuestions from './directors-files/DirectorsQuestions';
 
 
 
-import Solutions from './Solutions.jsx';
+// import Solutions from './Solutions.jsx';
 
 
 
