@@ -27,7 +27,7 @@ export default class Employment extends Component {
                 <br></br>
                 <br></br>
                 <br></br>
-                <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
+                <div class="back-button" style={{ paddingLeft: "20px", paddingTop: "5px"}}>
                     <Link to="/" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
                 </div>
                 <br></br>

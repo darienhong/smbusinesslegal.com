@@ -7,6 +7,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 import Formation from './document types/Formation.jsx';
 import Governance from './document types/Governance.jsx';
 import Employment from './document types/Employment.jsx';
@@ -27,21 +29,30 @@ import StatementQuestions from './statement-files/StatementQuestions';
 
 
 
-
-
-
-
 import Solutions from './Solutions.jsx';
 import AboutUs from './aboutus.jsx';
 import SignUp from './SignUp.jsx';
 import Pricing from './Pricing.jsx';
 import Homepage from './Homepage.jsx';
 
-
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#245CA6',
+    }
+  },
+  typography: {
+    fontFamily: [
+      'WorkSans',
+      'DM Sans'
+    ].join(','),
+  }
+});
 
 export default class App extends Component {
   render() {
     return (
+      <ThemeProvider theme={theme}>
       <Router>
         <Switch>
           <Route path="/Formation">
@@ -113,6 +124,7 @@ export default class App extends Component {
           </Route>
         </Switch>
       </Router>
+      </ThemeProvider>
     );
   }
 }
