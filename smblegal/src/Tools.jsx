@@ -45,6 +45,7 @@ export default class Tools extends Component {
                     </p>
                 </div>
                 </Link>
+                <Link to="/SignIn">
                 <div class="tools-block">
                     <p style={{fontWeight: "600", textAlign: "center"}}> GOVERNANCE AUTOMATION </p>
                     <p style={{textAlign: "center"}}> We have a wide selection of automated 
@@ -54,6 +55,7 @@ export default class Tools extends Component {
                         information and a pdf will be generated for you. 
                     </p>
                 </div>
+                </Link>
             </div>
 
             </div>

@@ -171,7 +171,7 @@ nav a:hover {
 
 }
 
-nav a::before {
+.nav-bar::before {
   content: '';
   display: block;
   height: 5px;
@@ -182,7 +182,26 @@ nav a::before {
   transition: all ease-in-out 250ms;
 }
 
-nav a:hover::before {
+.nav-bar:hover::before {
+  width: 100%;
+}
+
+.nav-bar-1:hover { 
+  color: #245CA6;
+}
+
+.nav-bar-1::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #245CA6;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+.nav-bar-1:hover::before {
   width: 100%;
 }
 
@@ -581,5 +600,22 @@ font-family: 'WorkSans';
 .tools-block:hover p {
   color: white;
 }
+
+.dropdown-items:hover { 
+  color: #245CA6; 
+  text-decoration: none;
+}
+
+.contact-icons { 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.facebook, .linkedin, .instagram { 
+  margin: 30px;
+}
+
+
 
 

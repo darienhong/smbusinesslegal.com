@@ -7,6 +7,10 @@ import animationData from './assets/animation.json';
 import ModalTest from './components/modal.jsx';
 import Navbar from './components/nav-bar.jsx';
 import AOS from 'aos';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import InstagramIcon from '@material-ui/icons/Instagram';
+
 import 'aos/dist/aos.css';
 import {
   BrowserRouter as Router,
@@ -146,6 +150,20 @@ export default class Homepage extends Component {
             </div>
             </center>
           <br></br>
+          <br></br>
+          <div class="contact-block">
+          <div class="contact-icons">
+          <div class="facebook">
+            <a href="https://www.facebook.com/SMB-Legal-107220167714259/"><FacebookIcon style={{color: "#245CA6"}} /></a>
+          </div>
+          <div class="instagram">
+            <a href="https://www.instagram.com/smbusinesslegal/"><InstagramIcon style={{color: "#245CA6"}}/> </a>
+          </div>
+          <div class="linkedin">
+            <a href="https://www.linkedin.com/company/smb-legal/"><LinkedInIcon style={{color: "#245CA6"}} /></a>
+          </div>
+          </div>
+          </div>
 
             <footer class="footer">
                 <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>

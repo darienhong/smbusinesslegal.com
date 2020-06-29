@@ -86,22 +86,10 @@ export default class SignUp extends Component {
                     <div class="email-input" style={{textAlign: "center"}}>
               <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
                 </div> 
-                <br></br>
-                <div class="password-input" style={{textAlign: "center"}}>
-                <TextField
-                    id="outlined-password-input"
-                    label="Password"
-                    type="password"
-                    autoComplete="current-password"
-                    variant="outlined"
-                    color="#245CA6"
-                    style={{width: "500px"}}
-                    />
-                </div>
                 </div>
                 <br></br>
                 <br></br>
-                
+
                 <center>
             <div class="create-acc-button" >
                  <p style={{textAlign: "center"}}> Sign Up </p>

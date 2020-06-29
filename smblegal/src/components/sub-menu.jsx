@@ -22,8 +22,8 @@ export default class SubMenu extends Component {
             </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item style={{margin: "2px"}}><Link to="/AutomatedDocs">  Automated Documents </Link> </Dropdown.Item>
-          <Dropdown.Item><Link to="/Questions"> Governance Automation </Link></Dropdown.Item>
+          <Dropdown.Item><Link to="/AutomatedDocs" className="dropdown-items">  Automated Documents </Link> </Dropdown.Item>
+          <Dropdown.Item><Link to="/SignIn" className="dropdown-items"> Governance Automation </Link></Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
 

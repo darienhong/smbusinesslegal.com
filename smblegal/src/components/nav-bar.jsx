@@ -23,12 +23,12 @@ export default class Navbar extends Component {
           <Link to="/"><img src={IconLogo} alt="icon logo" className="logo" /></Link>
           <nav>
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/AboutUs"> Why? </Link></li>
-              <li><Link to="/Tools"> <SubMenu />  </Link> </li>
-              <li><Link to="/Pricing"> Pricing </Link></li>
-              <li><Link to="/SignUp"> Sign Up </Link></li>
-              <li><Link to="/SignIn"> Sign In </Link></li>
+              <li><Link to="/" className="nav-bar">Home</Link></li>
+              <li><Link to="/AboutUs" className="nav-bar"> Why? </Link></li>
+              <li ><Link to="/Tools" className="nav-bar-1"> <SubMenu />  </Link> </li>
+              <li><Link to="/Pricing" className="nav-bar"> Pricing </Link></li>
+              <li><Link to="/SignUp" className="nav-bar"> Sign Up </Link></li>
+              <li><Link to="/SignIn" className="nav-bar"> Sign In </Link></li>
             </ul>
           </nav>
         </div>
