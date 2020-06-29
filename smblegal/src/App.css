@@ -252,7 +252,8 @@ nav a:hover::before {
   }
 }
 .homepage, .about-page, .pricing-page, .sign-up-page, 
-.employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page { 
+.employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
+.automated-docs-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
   margin-left: 40px; 
@@ -525,4 +526,18 @@ font-family: 'WorkSans';
   margin: 30px;
 }
 
+.doc-block {
+  width: 800px; 
+  border: 2px solid rgb(83, 63, 63); 
+  border-radius: 25px;
+  padding: 25px;
+  margin: 20px;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'WorkSans';
+  text-decoration: none;
+  color: black;
+
+}
 

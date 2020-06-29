@@ -28,7 +28,7 @@ import StatementQuestions from './statement-files/StatementQuestions';
 
 
 
-
+import AutomatedDocs from './AutomatedDocs.jsx';
 import Solutions from './Solutions.jsx';
 import AboutUs from './aboutus.jsx';
 import SignUp from './SignUp.jsx';
@@ -104,6 +104,9 @@ export default class App extends Component {
             <StatementQuestions />
           </Route>
 
+          <Route path="/AutomatedDocs">
+            <AutomatedDocs />
+          </Route>
           <Route path="/Solutions">
             <Solutions />
           </Route>
