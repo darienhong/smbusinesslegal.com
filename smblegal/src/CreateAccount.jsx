@@ -4,6 +4,12 @@ import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, 
+    Link
+  } from "react-router-dom";
 
 export default class CreateAccount extends Component { 
     render() {
@@ -29,7 +35,7 @@ export default class CreateAccount extends Component {
             <p style={{textAlign: "center"}}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
             <br></br>
                 <div class="business-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="Business Name" variant="outlined" style={{width: "500px"}} /> 
+          <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{width: "500px"}} /> 
             </div> 
             <br></br>
            <div class="email-input" style={{textAlign: "center"}}>
@@ -48,6 +54,9 @@ export default class CreateAccount extends Component {
                 />
             </div>
             </div>
+            <br></br>
+            <br></br>
+            <p style={{textAlign: "center"}}> <Link to="/CompanyID" style={{color: "#245CA6"}}> Don't have a Company ID? </Link></p>
             <br></br>
             <br></br>
 

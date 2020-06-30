@@ -40,7 +40,7 @@ import WFHQuestions from './wfh-files/WFHQuestions';
 // import Solutions from './Solutions.jsx';
 
 
-
+import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
 import AboutUs from './aboutus.jsx';
@@ -129,7 +129,9 @@ export default class App extends Component {
               <WFHQuestions />
             </Route>
 
-
+            <Route path="/CompanyID">
+              <CompanyID />
+            </Route>
             <Route path="/AutomatedDocs">
               <AutomatedDocs />
             </Route>
