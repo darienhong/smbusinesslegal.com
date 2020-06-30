@@ -43,6 +43,12 @@ export default class DirectorsDocument extends Component {
       incorp = values.docNameOther
     }
 
+    let unanimousCheck = values.unanimous === 'Yes'
+    let undersigned = 'the directors voting in favor of the resolution(s)'
+    if (unanimousCheck) {
+      undersigned = 'all the directors'
+    }
+
     return (
       <div class='size' >
         <center>
@@ -50,8 +56,7 @@ export default class DirectorsDocument extends Component {
             <br /> A {values.state} CORPORATION</h5>
         </center>
         <br />
-        <p>The undersigned, being [all the directors] [the directors voting in favor of the
-        resolution[s]] of {values.companyName} Corporation, a {values.corporation} corporation (the “Company”), do hereby adopt the
+        <p>The undersigned, being {undersigned} of {values.companyName} Corporation, a {values.corporation} corporation (the “Company”), do hereby adopt the
         following resolutions and direct that this written resolution be filed with the minutes of the
         proceedings of the Company:
         </p>
@@ -150,9 +155,61 @@ export default class DirectorsDocument extends Component {
               the aggregate price set below, in cash or for any other form of consideration permitted by
               law:
             </p>
-            <p>
-              Name of Purchaser Number of Shares Total Purchase Price
-            </p>
+            {/* <div class='line'>
+              <p>Name of purchaser</p>
+            </div>
+            <div class='line'>
+              <p class='tab'>Number of shares</p>
+            </div>
+            <div class='line'>
+              <p class='tab'>Total purchase price</p>
+            </div>
+            <div>
+              {
+                (values.purchasersList).map((val, idx) => {
+                  let nameId = `name-${idx}`
+                  return (
+                    <div key={idx}>
+                      <div class='line'>
+                        <p>{(values.purchasersList)[idx]['name']}</p>
+                      </div>
+                      <div class='line'>
+                        <p class='tab2'>{(values.purchasersList)[idx]['shares']}</p>
+                      </div>
+                      <div class='line'>
+                        <p class='tab2'>{(values.purchasersList)[idx]['price']}</p>
+                      </div>
+
+                    </div>
+
+                  )
+                })
+              }
+            </div> */}
+            <table>
+              <tr>
+                <th>Name of purchaser</th>
+                <th>Number of shares</th>
+                <th>Total purchase price</th>
+              </tr>
+              <div>
+                {
+                  (values.purchasersList).map((val, idx) => {
+                    let nameId = `name-${idx}`
+                    return (
+                      <div key={idx}>
+                        <tr>
+                          <td>{(values.purchasersList)[idx]['name']}</td>
+                          <td>{(values.purchasersList)[idx]['shares']}</td>
+                          <td>{(values.purchasersList)[idx]['price']}</td>
+                        </tr>
+                      </div>
+
+                    )
+                  })
+                }
+              </div>
+            </table>
             <p>
               RESOLVED, that the per share purchase price is equal to or in excess of the fair
               market value of the Common Stock on the date of this consent;

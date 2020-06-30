@@ -384,8 +384,10 @@ button {
   text-align: center;
 }
 
-.tab1 { 
-  margin-left: 40px; }
+.tab2 { 
+  margin-left: 77px; }
+
+
 
 .tab { 
   margin-left: 40px;
@@ -404,7 +406,8 @@ button {
 
 .indoc {
   color:black;
-  font-style:normal;
+  font-weight: bold;
+  /* font-style:normal; */
 }
 
 .size {
@@ -585,4 +588,15 @@ font-family: 'WorkSans';
   color: white;
 }
 
+/* .line{
+  display: inline-block;
+  text-align: left;
+
+} */
+
+/* td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+} */
 

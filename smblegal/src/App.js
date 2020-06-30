@@ -30,6 +30,8 @@ import IncorporationQuestions from './incorporation-files/IncorporationQuestions
 import StatementQuestions from './statement-files/StatementQuestions';
 import SecretaryQuestions from './secretary-files/SecretaryQuestions';
 import DirectorsQuestions from './directors-files/DirectorsQuestions';
+import WFHQuestions from './wfh-files/WFHQuestions';
+
 
 
 
@@ -122,6 +124,9 @@ export default class App extends Component {
             </Route>
             <Route path="/DirectorsQuestions">
               <DirectorsQuestions />
+            </Route>
+            <Route path="/WFHQuestions">
+              <WFHQuestions />
             </Route>
 
 

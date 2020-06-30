@@ -67,25 +67,60 @@ export default class DirectorsInfo2 extends Component {
                 />
               </form>
               <br />
+              <form onChange={this.props.handlePurchasersChange} >
+                <div class='listExp'>
+                  <p>Enter a purchaser of Common stock: </p>
+                </div>
+                <div class='expButton'>
+                  <button class='add' onClick={this.props.addPurchaser}>+</button>
+                </div>
+
+                {
+                  (values.purchasersList).map((val, idx) => {
+                    let nameId = `name-${idx}`, shareId = `shares-${idx}`, priceId = `price-${idx}`
+                    return (
+                      <div key={idx}>
+                        <label htmlFor={nameId}>Name of Purchaser</label>
+                        <input
+                          type="text"
+                          name={nameId}
+                          data-id={idx}
+                          id={nameId}
+                          value={(values.purchasersList)[idx].name}
+                          className="name"
+                        />
+                        <br />
+                        <label htmlFor={shareId}>Number of Shares</label>
+                        <input
+                          type="text"
+                          name={shareId}
+                          data-id={idx}
+                          id={shareId}
+                          value={(values.purchasersList)[idx].shares}
+                          className="shares"
+                        />
+                        <br />
+                        <label htmlFor={priceId}>Total Purchase Price</label>
+                        <input
+                          type="text"
+                          name={priceId}
+                          data-id={idx}
+                          id={priceId}
+                          value={(values.purchasersList)[idx].price}
+                          className="price"
+                        />
+                      </div>
+                    )
+                  })
+                }
+                <br /><br />
+
+              </form>
+
             </div>
           )}
 
-          <form>
-            <p>Who will be the Chief Financial Officers? </p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('cfo')}
-            />
-          </form>
-          <br />
 
-          <form>
-            <p>Who will be the Secretary </p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('secretary')}
-            />
-          </form>
           <br />
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>

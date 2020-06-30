@@ -20,7 +20,7 @@ export default class Covid_19 extends Component {
                 <br></br>
                 <br></br>
                 <br></br>
-                <div class="back-button" style={{ paddingLeft: "20px", paddingTop: "5px"}}>
+                <div class="back-button" style={{ paddingLeft: "20px", paddingTop: "5px" }}>
                     <Link to="/" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
                 </div>
                 <br></br>
@@ -43,10 +43,12 @@ export default class Covid_19 extends Component {
                     </Link>
                     </div>
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/WFHQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Work From Home Policy </p>
+                    </Link>
                     </div>
+
                 </div>
 
                 <footer class="footer">

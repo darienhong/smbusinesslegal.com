@@ -33,6 +33,22 @@ export default class DirectorsInfo extends Component {
         <div class='col height'>
 
           <form>
+            <p>Is this a unanimous vote by the directors?</p>
+            <input
+              type='radio' id="yes" name="vote" value="Yes"
+              onChange={this.props.handleChange('unanimous')}
+            />
+            <label for="yes"> Yes </label><br />
+            <input
+              type='radio' id="no" name="vote" value="No"
+              onChange={this.props.handleChange('unanimous')}
+            />
+            <label for="no"> No </label><br />
+
+          </form>
+          <br />
+
+          <form>
             <p>Who will be the Chief Executive Officers? </p>
             <input
               type='text'

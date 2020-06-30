@@ -3,8 +3,11 @@ import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
-import CovidRentIntro from './CovidRentIntro.jsx';
-import CovidRentPDF from './CovidRentPDF.jsx';
+import WFHIntro from './WFHIntro.jsx';
+import WFHInfo from './WFHInfo.jsx';
+import WFHInfo2 from './WFHInfo2.jsx';
+
+import WFHPDF from './WFHPDF.jsx';
 
 
 // import DisciplinaryInfo from './DisciplinaryInfo.jsx';
@@ -19,9 +22,24 @@ export default class WFHQuestions extends Component {
     date: new Date(),
     companyName: '[X]',
     wfh: '[X]',
-    landlord: '[X]',
-    subject: '[Commercial Tenant Rental Payment]',
-    employees: '[X]'
+    schedChange: '',
+    changeList: [{ name: "" }],
+    presence: '',
+    tempCheck: '',
+    breaks: '',
+    locations: '[X]',
+    supplies: '',
+    administrator: '[X]',
+    provisions: '',
+    provisionList: [{ name: "" }],
+    prohibited: '[X]',
+    discouraged: '[X]',
+    newPolicy: '[X]'
+
+
+
+
+
   }
 
   nextStep = () => {
@@ -60,16 +78,29 @@ export default class WFHQuestions extends Component {
     this.setState({ [input]: event.target.value })
   }
 
-  handleRecitalChange = (e) => {
-    let recitalList = [...this.state.recitalList]
-    recitalList[e.target.dataset.id][e.target.className] = e.target.value
-    this.setState({ recitalList }, () => console.log(this.state.recitalList))
+  handleScheduleChange = (e) => {
+    let changeList = [...this.state.changeList]
+    changeList[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState({ changeList }, () => console.log(this.state.changeList))
   }
 
-  addRecital = (e) => {
+  addScheduleChange = (e) => {
     e.preventDefault();
     this.setState((prevState) => ({
-      recitalList: [...prevState.recitalList, { name: "" }],
+      changeList: [...prevState.changeList, { name: "" }],
+    }));
+  }
+
+  handleProvisionChange = (e) => {
+    let provisionList = [...this.state.provisionList]
+    provisionList[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState({ provisionList }, () => console.log(this.state.provisionList))
+  }
+
+  addProvision = (e) => {
+    e.preventDefault();
+    this.setState((prevState) => ({
+      provisionList: [...prevState.provisionList, { name: "" }],
     }));
   }
 
@@ -78,32 +109,80 @@ export default class WFHQuestions extends Component {
     const {
       percent,
       date,
-      tenant,
-      landlord,
-      subject,
-      employees
+      companyName,
+      wfh,
+      schedChange,
+      changeList,
+      presence,
+      tempCheck,
+      breaks,
+      locations,
+      supplies,
+      newPolicy,
+      administrator,
+      provisions,
+      provisionList,
+      prohibited,
+      discouraged
     } = this.state;
     const values = {
       percent,
       date,
-      tenant,
-      landlord,
-      subject,
-      employees
+      companyName,
+      wfh,
+      schedChange,
+      changeList,
+      presence,
+      tempCheck,
+      breaks,
+      locations,
+      supplies,
+      administrator,
+      provisions,
+      provisionList,
+      prohibited,
+      discouraged,
+      newPolicy
+
     };
 
     switch (step) {
       case 1:
-        return <CovidRentIntro
+        return <WFHIntro
           nextStep={this.nextStep}
+          handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
+          values={values}
+          handleScheduleChange={this.handleScheduleChange}
+          addScheduleChange={this.addScheduleChange}
+        // doc={EmploymentDocument}
+        />
+      case 2:
+        return <WFHInfo
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
           values={values}
         // doc={EmploymentDocument}
         />
-      case 2:
-        return <CovidRentPDF
+      case 3:
+        return <WFHInfo2
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          handleChange={this.handleChange}
+          increasePercentage={this.increasePercentage}
+          decreasePercentage={this.decreasePercentage}
+          values={values}
+          handleProvisionChange={this.handleProvisionChange}
+          addProvision={this.addProvision}
+        // doc={EmploymentDocument}
+        />
+      case 4:
+        return <WFHPDF
           prevStep={this.prevStep}
           values={values} />
     }

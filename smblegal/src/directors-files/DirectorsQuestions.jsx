@@ -34,8 +34,10 @@ export default class DirectorsQuestions extends Component {
     numberShares: '',
     price: '',
     signersList: [{ name: "[X]" }],
+    purchasersList: [{ name: "", shares: "", price: "" }],
     docName: 'Articles of Incorporation',
-    docNameOther: '[X]'
+    docNameOther: '[X]',
+    unanimous: ''
 
   }
 
@@ -88,6 +90,19 @@ export default class DirectorsQuestions extends Component {
     }));
   }
 
+  handlePurchasersChange = (e) => {
+    let purchasersList = [...this.state.purchasersList]
+    purchasersList[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState({ purchasersList }, () => console.log(this.state.purchasersList))
+  }
+
+  addPurchaser = (e) => {
+    e.preventDefault();
+    this.setState((prevState) => ({
+      purchasersList: [...prevState.purchasersList, { name: "", shares: "", price: "" }],
+    }));
+  }
+
   render() {
     const { step } = this.state;
     const {
@@ -110,7 +125,9 @@ export default class DirectorsQuestions extends Component {
       signersList,
       corporation,
       docName,
-      docNameOther
+      docNameOther,
+      unanimous,
+      purchasersList
     } = this.state;
     const values = {
       percent,
@@ -132,7 +149,9 @@ export default class DirectorsQuestions extends Component {
       signersList,
       corporation,
       docName,
-      docNameOther
+      docNameOther,
+      unanimous,
+      purchasersList
     };
 
     switch (step) {
@@ -161,6 +180,9 @@ export default class DirectorsQuestions extends Component {
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
           values={values}
+          handlePurchasersChange={this.handlePurchasersChange}
+          addPurchaser={this.addPurchaser}
+
         />
       case 4:
         return <DirectorsInfo3
