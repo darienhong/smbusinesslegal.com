@@ -107,16 +107,16 @@ export default class Homepage extends Component {
          
          <div class="features">
            <div class="formation">
-           <Link to="/Formation" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}>Formation</p> </Link>
+           <Link to="/Formation" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}>Formation</p> </Link>
              </div>
              <div class="governance">
-             <Link to="/Governance" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}>  Governance </p></Link>
+             <Link to="/Governance" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}>  Governance </p></Link>
              </div>
              <div class="employment">
-             <Link to="/Employment" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}> Employment</p></Link>
+             <Link to="/Employment" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Employment</p></Link>
              </div>
              <div class="covid-19">
-             <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}> Covid-19  </p></Link>
+             <Link to="/Covid_19" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Covid-19  </p></Link>
             </div>
             </div>
   
@@ -126,7 +126,7 @@ export default class Homepage extends Component {
           <center>
           <div class="governance-automation-block">
             <div>
-            <p style={{fontWeight: "600", padding: "10px"}}> Governance Automation  </p>
+            <p style={{fontWeight: "500", padding: "10px"}}> GOVERNANCE AUTOMATION  </p>
             <p style={{fontSize: "14px", padding: "10px"}}> Automate and organize all aspects of our company's 
             governance with the click of a button. </p>
             </div>
@@ -135,7 +135,7 @@ export default class Homepage extends Component {
           <br></br>
             <div class="features-section">
             <div class="features-block">
-            <p style={{fontWeight: "600", padding: "10px"}}> Increase Operational Efficiency  </p>
+            <p style={{fontWeight: "550", padding: "15px"}}> INCREASE OPERATIONAL EFFICIENCY  </p>
             <p style={{fontSize: "14px", fontWeight: "400", padding: "10px"}}> Interrelated documents eliminate the need for 
             time consuming search and duplication of efforts. Artificial intelligence and machine learning 
             powered document management removes unnecessary tasks from the hands of owners and employees. 
@@ -143,13 +143,13 @@ export default class Homepage extends Component {
             </div>
             <div class="features-block">
               <br></br>
-            <p style={{fontWeight: "600", padding: "10px"}}> Avoid Legal Pitfalls  </p>
+            <p style={{fontWeight: "550", padding: "15px"}}> AVOID LEGAL PITFALLS  </p>
             <p style={{fontSize: "14px", padding: "10px"}}> Keep track of all contractual and legal obligations in one easy to use platform. 
             Keep up with federal, state and local regulations to remain compliant. Execute documents properly 
             to avoid conflict. </p>
             </div>
             <div class="features-block">
-            <p style={{fontWeight: "600", padding: "10px"}}> Save Money and Drive Revenue Growth  </p>
+            <p style={{fontWeight: "550", padding: "15px"}}> SAVE MONEY AND DRIVE REVENUE GROWTH  </p>
             <p style={{fontSize: "14px", padding: "10px"}}> Unbeatable price that will save you money now and in the long run. Increased
             efficiency means owners and employees can spend more time driving customer growth. Seamless integration 
             creates a delightful customer experience. </p>

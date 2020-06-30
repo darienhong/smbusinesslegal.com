@@ -314,17 +314,16 @@ nav a:hover {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
-  border: 1px solid black;
-  box-shadow: 3px 3px; 
+  border: 0.2px solid rgb(201, 201, 201);
+  box-shadow: 3px 3px 3px rgb(201, 201, 201); 
   text-transform: uppercase;
   font-weight: 580;
   display: block;
   text-decoration: none;
-  color: black;
   
 }
-.employment p {
-  color: black;
+.employment p, .governance p, .covid-19 p, .formation p {
+  color: rgb(201, 201, 201);
 
 }
 .employment, .governance, .formation {
@@ -412,15 +411,6 @@ button {
 
 
 }
-
-.submenu-custom { 
-  font-family: 'WorkSans'; 
-  background-color: white;
-  color: rgb(169, 172, 201);
-  border-color: white;
-}
-
-
 .indoc {
   color:black;
   font-style:normal;
@@ -528,8 +518,8 @@ font-family: 'WorkSans';
   width: 300px; 
   display: flex;
   justify-content: center;
-  border: 2px solid white; 
-  box-shadow: 3px 3px rgb(201, 201, 201);
+  border: 0.2px solid rgb(201, 201, 201); 
+  box-shadow: 5px 5px 5px rgb(201, 201, 201);
 }
 
 .features-section {
@@ -539,9 +529,9 @@ font-family: 'WorkSans';
 }
 
 .features-block {
-  width: 220px;
-  border: 2px solid white;
-  box-shadow: 3px 3px rgb(201, 201, 201);
+  width: 240px;
+  border: 0.2px solid rgb(201, 201, 201);
+  box-shadow: 5px 5px 5px rgb(201, 201, 201);
   margin: 30px;
 }
 
