@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/nav-bar.jsx';
+import Footer from './components/footer.jsx';
 import {
     BrowserRouter as Router,
     Switch,
     Route, 
     Link
   } from "react-router-dom";
+
 
 
 export default class Tools extends Component {
@@ -45,6 +47,7 @@ export default class Tools extends Component {
                     </p>
                 </div>
                 </Link>
+                <Link to="/SignIn">
                 <div class="tools-block">
                     <p style={{fontWeight: "600", textAlign: "center"}}> GOVERNANCE AUTOMATION </p>
                     <p style={{textAlign: "center"}}> We have a wide selection of automated 
@@ -54,7 +57,12 @@ export default class Tools extends Component {
                         information and a pdf will be generated for you. 
                     </p>
                 </div>
+                </Link>
             </div>
+            <br></br>
+            <br></br>
+            
+            <Footer />
 
             </div>
         );

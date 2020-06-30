@@ -16,14 +16,14 @@ export default class SubMenu extends Component {
       <Dropdown style={{ fontFamily: 'WorkSans' }}>
         <Dropdown.Toggle style={{
           borderColor: "white", backgroundColor: "white",
-          color: "rgb(201, 201, 201)", fontSize: "16px", fontWeight: "600", letterSpacing: 0, padding: "2px"
+          color: "rgb(201, 201, 201)", fontSize: "15px", fontWeight: "600", letterSpacing: 0
         }}>
           TOOLS
             </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item style={{margin: "2px"}}><Link to="/AutomatedDocs">  Automated Documents </Link> </Dropdown.Item>
-          <Dropdown.Item><Link to="/Questions"> Governance Automation </Link></Dropdown.Item>
+          <Dropdown.Item><Link to="/AutomatedDocs" className="dropdown-items">  Automated Documents </Link> </Dropdown.Item>
+          <Dropdown.Item><Link to="/SignIn" className="dropdown-items"> Governance Automation </Link></Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
 

@@ -7,6 +7,8 @@ import animationData from './assets/animation.json';
 import ModalTest from './components/modal.jsx';
 import Navbar from './components/nav-bar.jsx';
 import AOS from 'aos';
+import Footer from './components/footer.jsx';
+
 import 'aos/dist/aos.css';
 import {
   BrowserRouter as Router,
@@ -105,16 +107,16 @@ export default class Homepage extends Component {
          
          <div class="features">
            <div class="formation">
-           <Link to="/Formation" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}>Formation</p> </Link>
+           <Link to="/Formation" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}>Formation</p> </Link>
              </div>
              <div class="governance">
-             <Link to="/Governance" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}>  Governance </p></Link>
+             <Link to="/Governance" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}>  Governance </p></Link>
              </div>
              <div class="employment">
-             <Link to="/Employment" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}> Employment</p></Link>
+             <Link to="/Employment" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Employment</p></Link>
              </div>
              <div class="covid-19">
-             <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}><p style={{fontWeight: "600"}}> Covid-19  </p></Link>
+             <Link to="/Covid_19" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Covid-19  </p></Link>
             </div>
             </div>
   
@@ -124,45 +126,40 @@ export default class Homepage extends Component {
           <center>
           <div class="governance-automation-block">
             <div>
-            <p style={{fontWeight: "550", padding: "10px"}}> Governance Automation  </p>
-            <p style={{fontSize: "14px"}}> Some information on governance automation </p>
+            <p style={{fontWeight: "500", padding: "10px"}}> GOVERNANCE AUTOMATION  </p>
+            <p style={{fontSize: "14px", padding: "10px"}}> Automate and organize all aspects of our company's 
+            governance with the click of a button. </p>
             </div>
             </div>
           <br></br>
           <br></br>
             <div class="features-section">
             <div class="features-block">
-            <p style={{fontWeight: "550", padding: "10px"}}> Increase Operational Efficiency  </p>
-            <p style={{fontSize: "14px", fontWeight: "400"}}> Some information on operational efficiency </p>
+            <p style={{fontWeight: "550", padding: "15px"}}> INCREASE OPERATIONAL EFFICIENCY  </p>
+            <p style={{fontSize: "14px", fontWeight: "400", padding: "10px"}}> Interrelated documents eliminate the need for 
+            time consuming search and duplication of efforts. Artificial intelligence and machine learning 
+            powered document management removes unnecessary tasks from the hands of owners and employees. 
+            Seamless integrations put documents directly and immediately into the necessary hands. </p>
             </div>
             <div class="features-block">
-            <p style={{fontWeight: "550", padding: "10px"}}> Avoid Legal Pitfalls  </p>
-            <p style={{fontSize: "14px"}}> Some information on legal pitfalls </p>
+              <br></br>
+            <p style={{fontWeight: "550", padding: "15px"}}> AVOID LEGAL PITFALLS  </p>
+            <p style={{fontSize: "14px", padding: "10px"}}> Keep track of all contractual and legal obligations in one easy to use platform. 
+            Keep up with federal, state and local regulations to remain compliant. Execute documents properly 
+            to avoid conflict. </p>
             </div>
             <div class="features-block">
-            <p style={{fontWeight: "550", padding: "10px"}}> Save Money  </p>
-            <p style={{fontSize: "14px"}}> Some information on money saving </p>
+            <p style={{fontWeight: "550", padding: "15px"}}> SAVE MONEY AND DRIVE REVENUE GROWTH  </p>
+            <p style={{fontSize: "14px", padding: "10px"}}> Unbeatable price that will save you money now and in the long run. Increased
+            efficiency means owners and employees can spend more time driving customer growth. Seamless integration 
+            creates a delightful customer experience. </p>
             </div>
             </div>
             </center>
           <br></br>
-
-            <footer class="footer">
-                <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
-                <p style={{opacity: 0.4}}> SMB Legal (Eatery Legal Corporation) is NOT a law firm, 
-             is not a substitute for an attorney or law firm and cannot provide 
-             legal advice.  SMB Legal provides access to self-help services 
-             at your specific direction.  We cannot provide any kind of advice, 
-             explanation, opinion, or recommendation about possible legal rights, 
-             remedies, defenses, options, selection of forms or strategies. 
-             Communication between you and SMB Legal is protected by our Privacy Policy 
-             and not by attorney-client privilege and it does not constitute 
-             the provision of legal advice or other professional advice by SMB Legal.  
-             By relying on these documents, you assume all risk and liability that may result.  
-             Review all documents carefully for accuracy before using them.  
-             Your use of this site is subject to our Terms of Service. </p>
-            </footer>
-
+          <br></br>
+          
+        <Footer />
 
      
        </div>
