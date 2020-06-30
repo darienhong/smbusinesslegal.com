@@ -293,7 +293,7 @@ export default class TerminationDocument extends Component {
           </div>
         )
         }
-        <p class='indoc'>{last}</p>
+        <h7 class='indoc'>{last}</h7>
         <p>{last2}</p>
 
 
