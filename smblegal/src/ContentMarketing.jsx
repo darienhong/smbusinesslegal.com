@@ -10,11 +10,76 @@ import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
 import Iframe from 'react-iframe';
 import { Document, Page, pdfjs } from 'react-pdf';
+import pdfFile from './assets/CorporateGovernance.pdf';
+
+const options = {
+    cMapUrl: 'cmaps/',
+    cMapPacked: true,
+  };
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export default class ContentMarketing extends Component { 
-    state = { 
+
+    state = {
+        file: pdfFile,
+        numPages: null,
+      }
+    
+      onFileChange = (event) => {
+        this.setState({
+          file: event.target.files[0],
+        });
+      }
+    
+      onDocumentLoadSuccess = ({ numPages }) => {
+        this.setState({ numPages });
+      }
+    
+      render() {
+        const { file, numPages } = this.state;
+    
+        return (
+          <div className="marketing">
+            <div className="marketing-container">
+              <div className="marketing-container" >
+                <Document
+                  file={file}
+                  onLoadSuccess={this.onDocumentLoadSuccess}
+                  options={options}
+                >
+                  {
+                    Array.from(
+                      new Array(numPages),
+                      (el, index) => (
+                          <center>
+                        <Page
+                          key={`page_${index + 1}`}
+                          pageNumber={index + 1}
+                          width={1000}
+
+                        />
+                        </center>
+                      ),
+                    )
+                  }
+                </Document>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+
+
+
+
+
+
+
+
+
+/*  state = { 
         numPages: null,
         pageNumber: 1,
     }
@@ -41,4 +106,6 @@ export default class ContentMarketing extends Component {
 
         );
     }
+
+*/
 }

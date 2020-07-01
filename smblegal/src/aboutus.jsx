@@ -81,13 +81,10 @@ export default class AboutUs extends Component {
                     <h3 style={{fontFamily: "WorkSans", fontSize: "16px", fontWeight: "600"}}> The SMB Legal Team </h3>
                 <div class="about-us-features"> 
                 <br></br>
-                <br></br>
-                <p>  </p>
-                <br></br>
+                <ContentMarketing />
                 <br></br>
                 </div>
             </div>
-            <ContentMarketing />
             
             <Footer />
 
