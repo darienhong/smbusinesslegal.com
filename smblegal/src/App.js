@@ -31,6 +31,10 @@ import StatementQuestions from './statement-files/StatementQuestions';
 import SecretaryQuestions from './secretary-files/SecretaryQuestions';
 import DirectorsQuestions from './directors-files/DirectorsQuestions';
 import WFHQuestions from './wfh-files/WFHQuestions';
+import BoardMinutesQuestions from './boardminutes-files/BoardMinutesQuestions';
+import BoardResolutionQuestions from './boardresolution-files/BoardResolutionQuestions';
+
+
 
 
 
@@ -49,6 +53,7 @@ import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';
 import Pricing from './Pricing.jsx';
 import Homepage from './Homepage.jsx';
+import BoardMinuteQuestions from './boardminutes-files/BoardMinutesQuestions';
 
 const theme = createMuiTheme({
   palette: {
@@ -127,6 +132,12 @@ export default class App extends Component {
             </Route>
             <Route path="/WFHQuestions">
               <WFHQuestions />
+            </Route>
+            <Route path="/BoardMinutesQuestions">
+              <BoardMinutesQuestions />
+            </Route>
+            <Route path="/BoardResolutionQuestions">
+              <BoardResolutionQuestions />
             </Route>
 
 
