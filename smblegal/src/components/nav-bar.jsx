@@ -20,7 +20,7 @@ export default class Navbar extends Component {
     return (
      
         <div class="container">
-          <Link to="/"><img src={IconLogo} alt="icon logo" className="logo" /></Link>
+          <Link to="/"><img src={IconLogo} alt="icon logo" className="logo" /></Link> 
           <nav>
             <ul>
               <li><Link to="/" className="nav-bar">Home</Link></li>

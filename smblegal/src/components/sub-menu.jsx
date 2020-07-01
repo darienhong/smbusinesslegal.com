@@ -16,7 +16,7 @@ export default class SubMenu extends Component {
       <Dropdown style={{ fontFamily: 'WorkSans' }}>
         <Dropdown.Toggle style={{
           borderColor: "white", backgroundColor: "white",
-          color: "rgb(201, 201, 201)", fontSize: "15px", fontWeight: "600", letterSpacing: 0
+          color: "rgb(201, 201, 201)", fontSize: "15px", fontWeight: "600", letterSpacing: 0, padding: "4px"
         }}>
           TOOLS
             </Dropdown.Toggle>
