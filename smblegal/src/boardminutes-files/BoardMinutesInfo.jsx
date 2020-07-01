@@ -47,10 +47,11 @@ export default class BoardMinutesInfo extends Component {
             <label for="no"> No </label><br />
 
           </form>
+          <br />
 
 
 
-          <form onChange={this.props.handleDirectorChange}>
+          <form onChange={this.props.handleDirectorsChange}>
             <div class='listExp'>
               <p>Enter the directors present at the meeting: </p>
             </div>
@@ -59,7 +60,7 @@ export default class BoardMinutesInfo extends Component {
             </div>
             {
               (values.directors).map((val, idx) => {
-                let nameId = `name-${idx}`, addressId = `address-${idx}`
+                let nameId = `name-${idx}`, addressId = `address-${idx}`, personId = `person-${idx}`
                 return (
                   <div key={idx}>
                     <label htmlFor={nameId}>Name of Director </label>
@@ -86,10 +87,29 @@ export default class BoardMinutesInfo extends Component {
                   </div>
 
                 )
+
               })
             }
           </form>
           <br />
+          {values.present === 'No' && (
+            <div>
+              <form onChange={this.props.handleChange('inPerson')}>
+                <p>List all the directors present in person: </p>
+                <textarea name="message" rows="4" cols="30"></textarea>
+
+              </form>
+              <br />
+              <br />
+              <form onChange={this.props.handleChange('electronic')}>
+                <p>List all the directors present by electronic means: </p>
+                <textarea name="message" rows="4" cols="30"></textarea>
+
+              </form>
+
+            </div>
+          )}
+
 
 
           <button class='prev' onClick={this.previous}>Previous </button>

@@ -595,11 +595,11 @@ font-family: 'WorkSans';
   color: white;
 }
 
-/* .line{
+.line{
   display: inline-block;
   text-align: left;
 
-} */
+}
 
 /* td, th {
   border: 1px solid #dddddd;

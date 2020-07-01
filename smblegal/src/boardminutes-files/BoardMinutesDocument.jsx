@@ -15,29 +15,7 @@ export default class BoardMinutesDocument extends Component {
     var formattedDate = moment(dateString).format("LL");
 
     let upper = values.type.toUpperCase();
-    // var endDateString = values.endDate.toString();
-    // var formattedEndDate = moment(endDateString).format("LL");
 
-    // var signDateString = values.dateSigned.toString();
-    // var formattedSignDate = moment(signDateString).format("LL");
-
-    // const cobraCheck = values.cobra === 'Yes'
-    // var cobraRequire = ''
-    // if (cobraCheck)
-    //   cobraRequire = 'Additionally, you will receive a second letter containing information on the Consolidated Omnibus Budget Reconciliation Act (COBRA) continuation of group coverage of your Company provided health benefits.'
-
-    // let incorp = 'Certificate of Incorporation'
-    // let articles = values.state === 'California' || values.state === 'Massachusetts' || values.state === 'Washington'
-    // let certificate = values.state === 'Delaware' || values.state === 'Texas' || values.state === 'New York'
-    // if (articles) {
-    //   incorp = 'Articles of Incorporation'
-    // }
-    // else if (certificate) {
-    //   incorp = 'Certificate of Incorporation'
-    // }
-    // else {
-    //   incorp = values.docNameOther
-    // }
 
     let incorp = values.docName
     let otherCheck = values.docName === 'Other'
@@ -51,10 +29,22 @@ export default class BoardMinutesDocument extends Component {
       undersigned = 'all the directors'
     }
 
+    let presentCheck = values.present === 'Yes'
+    let person = ''
+    let electronic = 'By Electronic Means: '
+    if (presentCheck) {
+      person = 'All'
+      electronic = ''
+    }
+    else {
+      person = values.inPerson
+      electronic = 'By Electronic Means: ' + values.electronic
+    }
+
     return (
       <div class='size' >
         <center>
-          <h5 class='indoc'>MINUTES OF {upper} MEETING <br />OF <br /> THE BOARD OF DIRECTORS
+          <h5 class='indoc'>MINUTES OF <br /> {upper}  <br /> MEETING OF <br /> THE BOARD OF DIRECTORS
             <br /> OF <br /> {values.companyName}</h5>
         </center>
         <br />
@@ -70,17 +60,67 @@ export default class BoardMinutesDocument extends Component {
               return (
                 <div key={idx}>
                   <div class='line'>
+                    <p>Name</p>
                     <p>{(values.directors)[idx]['name']}</p>
                   </div>
                   <div class='line'>
+                    <p class='tab2'>Address</p>
                     <p class='tab2'>{(values.directors)[idx]['address']}</p>
+
                   </div>
+
+                  <br /><br />
+
                 </div>
 
               )
             })
           }
         </div>
+
+        {/* <div>
+          {
+            (values.presence).map((val, idx) => {
+              let person = `person-${idx}`
+              return (
+                <div key={idx}>
+                  <p>{`${idx + 1} ` + (values.presence)[idx]['person']}</p>
+                </div>
+
+              )
+            })
+          }
+        </div> */}
+        {/* <div class='line'>
+          Name
+          </div>
+        <div class='line'>
+          <p class='tab'>Address</p>
+        </div> */}
+        <p>
+          The meeting was called to order. It was determined that a quorum was present either in
+          person and that the meeting could conduct business.
+        </p>
+        <p>
+          {values.chair}, {values.position} of the corporation acted as Chair and presided over the meeting and {values.secretary},
+          Secretary of the corporation, acted as the secretary of the meeting.
+        </p>
+        <p>
+          The following directors were present:
+        </p>
+
+        <p>In-person: {person}</p>
+        <p>{electronic}</p>
+        <center>
+          <h6 class='indoc'>Agenda</h6>
+        </center>
+        <p>{values.agenda}</p>
+        <br />
+        <center>
+          <h6 class='indoc'>Minutes</h6>
+        </center>
+        <p>{values.minutes}</p>
+
 
       </div >
 

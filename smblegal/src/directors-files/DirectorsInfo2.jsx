@@ -109,11 +109,11 @@ export default class DirectorsInfo2 extends Component {
                           value={(values.purchasersList)[idx].price}
                           className="price"
                         />
+                        <br /><br />
                       </div>
                     )
                   })
                 }
-                <br /><br />
 
               </form>
 

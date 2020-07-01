@@ -74,10 +74,6 @@ export default class DirectorsIntro extends Component {
             <label for="state">Choose the document of incorporation based on your state:</label>
             <br />
             <select id="state" name="state">
-              {/* <option value="California" selected>California</option>
-              <option value="Delaware">Delaware</option>
-              <option value="Massachusetts">Massachusetts</option>
-              <option value="New York">New York</option> */}
               <option value="Articles of Incorporation">Articles of Incorporation (CA, MA, WA)</option>
               <option value="Certificate of Incorporation">Certificate of Incorporation (DE, NY, TX)</option>
               <option value='Other'>Other</option>
