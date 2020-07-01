@@ -33,6 +33,8 @@ import DirectorsQuestions from './directors-files/DirectorsQuestions';
 import WFHQuestions from './wfh-files/WFHQuestions';
 import BoardMinutesQuestions from './boardminutes-files/BoardMinutesQuestions';
 import BoardResolutionQuestions from './boardresolution-files/BoardResolutionQuestions';
+import ShareholderResolutionQuestions from './shareholderresolution-files/ShareholderResolutionQuestions';
+
 
 
 
@@ -138,6 +140,9 @@ export default class App extends Component {
             </Route>
             <Route path="/BoardResolutionQuestions">
               <BoardResolutionQuestions />
+            </Route>
+            <Route path="/ShareholderResolutionQuestions">
+              <ShareholderResolutionQuestions />
             </Route>
 
             <Route path="/CompanyID">

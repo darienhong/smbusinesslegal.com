@@ -4,12 +4,12 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import { Progress } from 'semantic-ui-react'
-import BoardResolutionDocument from './BoardResolutionDocument.jsx';
+import ShareholderResolutionDocument from './ShareholderResolutionDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
 
 
 
-export default class BoardResolutionInfo extends Component {
+export default class ShareholderResolutionInfo extends Component {
   next = (e) => {
     e.preventDefault();
     this.props.increasePercentage();
@@ -67,7 +67,7 @@ export default class BoardResolutionInfo extends Component {
 
           <form onChange={this.props.handleResolutionChange}>
             <div class='listExp'>
-              <p>What are resolutions being adopted by the board?</p>
+              <p>What are resolutions being adopted <br /> by the shareholders?</p>
             </div>
             <div class='expButton'>
               <button class='add' onClick={this.props.addResolution}>+</button>
@@ -140,7 +140,7 @@ export default class BoardResolutionInfo extends Component {
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <BoardResolutionDocument class='doc' values={values} />
+          <ShareholderResolutionDocument class='doc' values={values} />
         </div>
 
       </div >

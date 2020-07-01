@@ -4,7 +4,7 @@ import moment from 'moment';
 import '../App.css';
 
 
-export default class BoardResolutionDocument extends Component {
+export default class ShareholderResolutionDocument extends Component {
   constructor(props) {
     super(props);
   }
@@ -19,6 +19,20 @@ export default class BoardResolutionDocument extends Component {
     if (unanimousCheck) {
       undersigned = 'all the directors'
     }
+
+    let numberCheck = values.number === 'Multiple'
+    let title = 'SOLE SHAREHOLDER'
+    let para = 'ALL'
+    let share = 'shareholder'
+    if (numberCheck) {
+      title = 'SHAREHOLDERS'
+      para = 'A QUORUM'
+      share = 'shareholders'
+      if (unanimousCheck) {
+        para = 'ALL'
+      }
+    }
+    let upperShare = share.toUpperCase()
 
     // var endDateString = values.endDate.toString();
     // var formattedEndDate = moment(endDateString).format("LL");
@@ -61,11 +75,11 @@ export default class BoardResolutionDocument extends Component {
     return (
       <div class='size' >
         <center>
-          <h5 class='indoc'>BOARD OF DIRECTORS RESOLUTION OF <br />
+          <h5 class='indoc'>{title} RESOLUTION OF <br />
             {values.companyName} <br /> A {values.state} CORPORATION</h5>
           <br />
         </center>
-        <p>The undersigned, being {undersigned} of {values.companyName} Corporation, a {values.corporation} corporation (the “Company”), do hereby adopt the
+        <p>The undersigned, being {para} of the {share} of {values.companyName} Corporation, a {values.corporation} corporation (the “Company”), do hereby adopt the
         following resolutions and direct that this written resolution be filed with the minutes of the
         proceedings of the Company:
         </p>
@@ -98,9 +112,11 @@ export default class BoardResolutionDocument extends Component {
         </div>
         <p class='tab'>
           RESOLVED, that all acts are taken above, and the resolutions are approved, ratified
-          and adopted. The undersigned, by affixing their signatures hereto, do hereby consent to,
-          vote in favor of and approve the foregoing resolutions in their capacity as members of the
-          board of directors of the Company and waive any and all requirements of notice.
+          and adopted. The undersigned, by affixing their signature hereto, does hereby determine
+          and report that notice of the meeting was properly given or waived by the shareholders
+          and that a quorum was present in accordance with the bylaws. The {upperShare} do hereby consent to, vote in favor of and approve the foregoing
+          resolutions in their capacity as {upperShare} of the Company and
+          waive any and all requirements of notice.
         </p>
         <br />
         <p>

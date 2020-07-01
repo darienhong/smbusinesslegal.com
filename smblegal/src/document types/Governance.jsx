@@ -70,9 +70,10 @@ export default class Governance extends Component {
                         <p> Shareholders Meeting Minutes </p>
                     </div>
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/ShareholderResolutionQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Shareholders Resolution </p>
+                    </Link>
                     </div>
                 </div>
                 <div class="formation-documents">
