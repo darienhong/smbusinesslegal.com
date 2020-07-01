@@ -37,6 +37,8 @@ import ShareholderResolutionQuestions from './shareholderresolution-files/Shareh
 import WaiverDirectorsQuestions from './waiverdirectors-files/WaiverDirectorsQuestions';
 import WaiverShareholdersQuestions from './waivershareholders-files/WaiverShareholdersQuestions';
 import LLCResolutionQuestions from './llcresolution-files/LLCResolutionQuestions';
+import ShareholderMinutesQuestions from './shareholderminutes-files/ShareholderMinutesQuestions';
+
 
 
 
@@ -158,6 +160,9 @@ export default class App extends Component {
             </Route>
             <Route path="/LLCResolutionQuestions">
               <LLCResolutionQuestions />
+            </Route>
+            <Route path="/ShareholderMinutesQuestions">
+              <ShareholderMinutesQuestions />
             </Route>
 
             <Route path="/CompanyID">

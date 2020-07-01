@@ -3,16 +3,16 @@ import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
-import BoardMinutesIntro from './BoardMinutesIntro.jsx';
-import BoardMinutesInfo from './BoardMinutesInfo.jsx';
-import BoardMinutesInfo2 from './BoardMinutesInfo2.jsx';
-import BoardMinutesInfo3 from './BoardMinutesInfo3.jsx';
-import BoardMinutesPDF from './BoardMinutesPDF.jsx';
+import ShareholderMinutesIntro from './ShareholderMinutesIntro.jsx';
+import ShareholderMinutesInfo from './ShareholderMinutesInfo.jsx';
+import ShareholderMinutesInfo2 from './ShareholderMinutesInfo2.jsx';
+import ShareholderMinutesInfo3 from './ShareholderMinutesInfo3.jsx';
+import ShareholderMinutesPDF from './ShareholderMinutesPDF.jsx';
 
 import { Alert } from 'react-alert'
 
 
-export default class BoardMinutesQuestions extends Component {
+export default class ShareholderMinutesQuestions extends Component {
   state = {
     step: 1,
     percent: 50,
@@ -21,8 +21,7 @@ export default class BoardMinutesQuestions extends Component {
     location: '[X]',
     chair: '[X]',
     position: '[X]',
-    // directors: [{ name: "", address: "", person: "" }],
-    directors: [{ name: "", address: "" }],
+    directors: [{ name: "" }],
     secretary: '[X]',
     companyName: '[X]',
     corporation: '[X]',
@@ -31,7 +30,11 @@ export default class BoardMinutesQuestions extends Component {
     present: '',
     presence: [{ person: "" }],
     inPerson: '',
-    electronic: ''
+    electronic: '',
+    notice: '',
+    outstanding: '[X]',
+    represented: '[X]',
+    reason: ''
 
   }
 
@@ -80,16 +83,10 @@ export default class BoardMinutesQuestions extends Component {
   addDirector = (e) => {
     e.preventDefault();
     this.setState((prevState) => ({
-      directors: [...prevState.directors, { name: "", address: "" }],
+      directors: [...prevState.directors, { name: "" }],
     }));
   }
 
-
-  handlePresenceChange = (e) => {
-    let presence = [...this.state.presence]
-    presence[e.target.dataset.id][e.target.className] = e.target.value
-    this.setState({ presence }, () => console.log(this.state.presence))
-  }
 
   render() {
     const { step } = this.state;
@@ -109,7 +106,12 @@ export default class BoardMinutesQuestions extends Component {
       directors,
       presence,
       inPerson,
-      electronic
+      electronic,
+      notice,
+      outstanding,
+      represented,
+      reason
+
 
     } = this.state;
     const values = {
@@ -128,13 +130,17 @@ export default class BoardMinutesQuestions extends Component {
       directors,
       presence,
       inPerson,
-      electronic
+      electronic,
+      notice,
+      outstanding,
+      represented,
+      reason
 
     };
 
     switch (step) {
       case 1:
-        return <BoardMinutesIntro
+        return <ShareholderMinutesIntro
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
@@ -143,7 +149,7 @@ export default class BoardMinutesQuestions extends Component {
         // doc={EmploymentDocument}
         />
       case 2:
-        return <BoardMinutesInfo
+        return <ShareholderMinutesInfo
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
@@ -158,7 +164,7 @@ export default class BoardMinutesQuestions extends Component {
         // doc={EmploymentDocument}
         />
       case 3:
-        return <BoardMinutesInfo2
+        return <ShareholderMinutesInfo2
           nextStep={this.nextStep}
           prevStep={this.prevStep}
 
@@ -171,7 +177,7 @@ export default class BoardMinutesQuestions extends Component {
         // doc={EmploymentDocument}
         />
       case 4:
-        return <BoardMinutesInfo3
+        return <ShareholderMinutesInfo3
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
@@ -183,7 +189,7 @@ export default class BoardMinutesQuestions extends Component {
         // doc={EmploymentDocument}
         />
       case 5:
-        return <BoardMinutesPDF
+        return <ShareholderMinutesPDF
           prevStep={this.prevStep}
           values={values} />
     }

@@ -102,7 +102,7 @@ export default class BoardMinutesDocument extends Component {
           person and that the meeting could conduct business.
         </p>
         <p>
-          {values.chair}, {values.position} of the corporation acted as Chair and presided over the meeting and {values.secretary},
+          {values.chair}, {values.position} of the corporation, acted as Chair and presided over the meeting and {values.secretary},
           Secretary of the corporation, acted as the secretary of the meeting.
         </p>
         <p>

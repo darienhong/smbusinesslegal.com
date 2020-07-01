@@ -49,12 +49,12 @@ export default class WaiverDirectorsInfo extends Component {
               type='radio' id="one" name="dir" value="One"
               onChange={this.props.handleChange('number')}
             />
-            <label for="yes"> One director </label><br />
+            <label for="one"> One director </label><br />
             <input
               type='radio' id="all" name="dir" value="All"
               onChange={this.props.handleChange('number')}
             />
-            <label for="no"> All </label><br />
+            <label for="all"> All </label><br />
 
           </form>
 
