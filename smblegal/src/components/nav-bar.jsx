@@ -27,7 +27,7 @@ export default class Navbar extends Component {
               <li><Link to="/AboutUs" className="nav-bar"> Why? </Link></li>
               <li ><Link to="/Tools" className="nav-bar-1"> <SubMenu />  </Link> </li>
               <li><Link to="/Pricing" className="nav-bar"> Pricing </Link></li>
-              <li><Link to="/SignUp" className="nav-bar"> Sign Up </Link></li>
+              <li><Link to="/CreateAccount" className="nav-bar"> Sign Up </Link></li>
               <li><Link to="/SignIn" className="nav-bar"> Sign In </Link></li>
             </ul>
           </nav>

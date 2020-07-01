@@ -54,7 +54,6 @@ export default class Homepage extends Component {
 
         return (
       
-      
        
           <div class="homepage">
             <Navbar />

@@ -53,7 +53,7 @@ import ShareholderMinutesQuestions from './shareholderminutes-files/ShareholderM
 
 // import Solutions from './Solutions.jsx';
 
-
+import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
@@ -165,6 +165,10 @@ export default class App extends Component {
               <ShareholderMinutesQuestions />
             </Route>
 
+
+            <Route path="/AutomateGovernance">
+              <AutomateGov />
+            </Route>
             <Route path="/CompanyID">
               <CompanyID />
             </Route>

@@ -7,6 +7,12 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, 
+    Link
+  } from "react-router-dom";
   
 
 export default class Pricing extends Component { 
@@ -34,52 +40,56 @@ export default class Pricing extends Component {
             <br></br>
             <div class="price-cards">
                 
-            <div class="price-card-1">
+        <Link to ="/CreateAccount" style={{textDecoration: "none"}}> 
+             <div class="price-card-1">
             <Card>
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 1</h4>
-                <h2 class="price-category">  Freemium </h2>
+                <h2 class="price-category">  Free Tier </h2>
                 <br></br>
-                <p> 1 document </p>
+                <p> Registration </p>
+                <p> Price: Free </p>
+                <p> 2 Automated Documents Per Month </p>
                 <Button size="small">Learn More</Button>
                 </CardContent>
             </Card>
             </div> 
+            </Link>
 
+        <Link to ="/CreateAccount" style={{textDecoration: "none"}}> 
             <div class="price-card-2">
             <Card>
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 2 </h4>
-                <h2 class="price-category">  Automated Governance </h2>
-                <p> $5 / year</p>
+                <h2 class="price-category">  Premium </h2>
+                <br />
+                <p> Subscription </p>
+                <p> $10 / Month </p>
+                <p> 15 Automated Documents Per Month </p>
+                <p> Free Formation Documents and Guides </p>
                 <Button variant="small">Learn More</Button>
                 </CardContent>
             </Card>
             </div> 
+            </Link>
 
+        <Link to ="/CreateAccount" style={{textDecoration: "none"}}> 
             <div class="price-card-3">
             <Card>
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 3 </h4>
-                <h2 class="price-category">  Subscription </h2>
+                <h2 class="price-category">  Formation Documents </h2>
                 <br></br>
-                <p> $5 for 1+ documents </p>
+                <p> Per Unit </p>
+                <p> Price: $5 / document</p>
+                <p> Automated Formation Documents </p>
+                <p> Formation Resolutions </p>
                 <Button size="small">Learn More</Button>
                 </CardContent>
             </Card>
-            </div> 
+            </div>  
+            </Link>
 
-            <div class="price-card-4">
-            <Card>
-                <CardContent className="card-2-inside">
-                <h4 class="price-option"> Option 4 </h4>
-                <h2 class="price-category">  Formation </h2>
-                <br></br>
-                <p> $5 / document </p>
-                <Button size="small">Learn More</Button>
-                </CardContent>
-            </Card>
-            </div> 
             </div>
             <br></br>
             <br></br>
