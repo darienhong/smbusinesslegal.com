@@ -60,16 +60,6 @@ export default class BoardResolutionIntro extends Component {
           </form>
           <br />
 
-
-          <form>
-            <p>What type of corporation is this?</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('corporation')}
-            />
-          </form>
-          <br />
-
           <form>
             <p>Was the resolution adopted unanimously?</p>
             <input

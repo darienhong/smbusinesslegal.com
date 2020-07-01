@@ -29,7 +29,7 @@ export default class SecretaryDocument extends Component {
         </center>
         <br />
         <p>
-          I HEREBY CERTIFY that I am the duly elected, qualified and acting Secretary of {values.companyName}, a {values.corporation} corporation (“Company”), and that the attached Bylaws were adopted as the Bylaws of the
+          I HEREBY CERTIFY that I am the duly elected, qualified and acting Secretary of {values.companyName}, a {values.state} corporation (“Company”), and that the attached Bylaws were adopted as the Bylaws of the
           Company as of {formattedDateAdopted} by the {values.adopted} of the Company and
           are presently in effect.
         </p>

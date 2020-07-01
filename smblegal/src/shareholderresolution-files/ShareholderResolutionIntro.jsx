@@ -62,15 +62,6 @@ export default class ShareholderResolutionIntro extends Component {
 
 
           <form>
-            <p>What type of corporation is this?</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('corporation')}
-            />
-          </form>
-          <br />
-
-          <form>
             <p>Is there only one shareholder or multiple shareholders?</p>
             <input
               type='radio' id="one" name="holder" value="One"

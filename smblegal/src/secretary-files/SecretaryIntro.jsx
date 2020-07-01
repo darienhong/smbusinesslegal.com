@@ -90,14 +90,6 @@ export default class SecretaryIntro extends Component {
           </form>
           <br />
 
-          <form>
-            <p>What type of corporation is this?</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('corporation')}
-            />
-          </form>
-          <br />
 
           <button class='next' onClick={this.next}>Next </button>
         </div>

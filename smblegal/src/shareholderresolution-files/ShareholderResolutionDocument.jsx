@@ -79,7 +79,7 @@ export default class ShareholderResolutionDocument extends Component {
             {values.companyName} <br /> A {values.state} CORPORATION</h5>
           <br />
         </center>
-        <p>The undersigned, being {para} of the {share} of {values.companyName} Corporation, a {values.corporation} corporation (the “Company”), do hereby adopt the
+        <p>The undersigned, being {para} of the {share} of {values.companyName} Corporation, a {values.state} corporation (the “Company”), do hereby adopt the
         following resolutions and direct that this written resolution be filed with the minutes of the
         proceedings of the Company:
         </p>

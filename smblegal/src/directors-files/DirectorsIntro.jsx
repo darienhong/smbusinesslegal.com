@@ -98,14 +98,7 @@ export default class DirectorsIntro extends Component {
             </div>
           )}
 
-          <form>
-            <p>What type of corporation is this?</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('corporation')}
-            />
-          </form>
-          <br />
+
 
           <form>
             <p>How many Directors will there be?</p>
