@@ -8,6 +8,7 @@ import CustomerServiceImage from './assets/customer-service.png';
 import AnalyzeImage from './assets/analyze.png';
 import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
+import ContentMarketing from './ContentMarketing.jsx';
 
 
 
@@ -86,6 +87,7 @@ export default class AboutUs extends Component {
                 <br></br>
                 </div>
             </div>
+            <ContentMarketing />
             
             <Footer />
 

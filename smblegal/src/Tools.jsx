@@ -37,7 +37,8 @@ export default class Tools extends Component {
             <br></br>
 
             <div class="tools-section">
-              <Link to="/AutomatedDocs"> <div class="tools-block">
+              <Link to="/AutomatedDocs" style={{textDecoration: "none"}}>
+                   <div class="tools-block">
                     <p style={{fontWeight: "600", textAlign: "center"}}> AUTOMATED DOCUMENTS </p>
                     <p style={{textAlign: "center"}}> We have a wide selection of automated 
                         documents to choose from under Formation, 
@@ -47,14 +48,13 @@ export default class Tools extends Component {
                     </p>
                 </div>
                 </Link>
-                <Link to="/SignIn">
+                <Link to="/SignIn" style={{textDecoration: "none"}}>
                 <div class="tools-block">
                     <p style={{fontWeight: "600", textAlign: "center"}}> GOVERNANCE AUTOMATION </p>
-                    <p style={{textAlign: "center"}}> We have a wide selection of automated 
-                        documents to choose from under Formation, 
-                        Governance, Employment and Covid-19. The documents have been
-                        prepared for you already, and all you need to do is fill out some
-                        information and a pdf will be generated for you. 
+                    <p style={{textAlign: "center"}}> We ensure that business users have a methogolody to understand value and risk, so they can
+                    take advantage of the right tools for the right problems. Automate and organize all aspects of 
+                    your company’s governance with the click of a button.Login to view your governance
+                    dashboard. 
                     </p>
                 </div>
                 </Link>

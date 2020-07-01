@@ -44,7 +44,7 @@ import BoardResolutionQuestions from './boardresolution-files/BoardResolutionQue
 // import Solutions from './Solutions.jsx';
 
 
-
+import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
 import AboutUs from './aboutus.jsx';
@@ -140,7 +140,9 @@ export default class App extends Component {
               <BoardResolutionQuestions />
             </Route>
 
-
+            <Route path="/CompanyID">
+              <CompanyID />
+            </Route>
             <Route path="/AutomatedDocs">
               <AutomatedDocs />
             </Route>
