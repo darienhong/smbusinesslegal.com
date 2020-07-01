@@ -11,6 +11,7 @@ import {
     Route, 
     Link
   } from "react-router-dom";
+import { ExpansionPanelActions } from '@material-ui/core';
 
 
 
@@ -24,7 +25,7 @@ const plans = [
         label: 'Automated Governance',
     }, 
     {
-        value: 'Subsciption',
+        value: 'Subscription',
         label: 'Subscription',
     }, 
     {
@@ -46,19 +47,15 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default class CreateAccount extends Component { 
+export default function CreateAccount() { 
 
-    state = {
-        plan: ' ',
+    const classes = useStyles(); 
+    const [plan, setPlan] = React.useState(); 
+
+      const handleChangePlan = (event) => {
+            setPlan(event.target.value);
     }
-
-    handleChange = (e) => {
-        this.setState({ plan: e.target.value })
-      }
-
-    render() {
-        const plan = this.state;
-     /*   const classes = useStyles(); */
+    
 
         return(
 
@@ -111,12 +108,18 @@ export default class CreateAccount extends Component {
                 id="outlined-select-plan"
                 select label="Select your plan"
                 value={plan}
-                onChange={this.handleChange}
+                onChange={handleChangePlan}
                 variant="outlined"
-                style={{width: "500px"}}
-                
+                style={{width: "500px"}}   
                 >
-            <MenuItem key="Freemium" value="Freemium">
+
+                {plans.map((option) => (
+                         <MenuItem key={option.value} value={option.value}>
+                             {option.label}
+                         </MenuItem>
+                                 ))}
+
+       {/*}     <MenuItem key="Freemium" value="Freemium">
               Freemium
             </MenuItem>
             <MenuItem key="Automated Governance" value="Automated Governance">
@@ -132,42 +135,48 @@ export default class CreateAccount extends Component {
               Existing Plan
             </MenuItem>
 
+                */}
+
         </TextField>
         </div>
+        <br />
+    
 
         { plan === 'Existing Plan' && ( 
+
             <form> 
                         <div class="companyid-input" style={{textAlign: "center"}}>
           <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{width: "500px"}} /> 
             </div> 
-            </form>
-        )}
-
-
-
-
-
-
-
-            </div>
-            <br></br>
-            <br></br>
-            <p style={{textAlign: "center"}}> <Link to="/CompanyID" style={{color: "#245CA6"}}> Create your Company ID </Link></p>
-            <br></br>
-            <br></br>
-
+            <br />
+            <br />
             <center>
             <div class="create-acc-button" >
           <p style={{textAlign: "center"}}> Create my Account </p>
           </div>
           </center>
-            <br></br>
-            <br></br>
+            </form>
+        )}
+
+        { (plan === 'Freemium' || plan === 'Subscription' || plan === 'Automated Governance' || plan === 'Formation') && ( 
+            
+            <center>
+                <br />
+            <br />
+           <Link to="/CompanyID" style={{textDecoration: "none"}}> <div class="create-acc-button" >
+          <p style={{textAlign: "center"}}> Create my Account </p>
+          </div>
+          </Link>
+          <br />
+          </center>
+        
+        )}
+
 
           <Footer />
 
         </div>
+        </div>
 
         );
     }
-}

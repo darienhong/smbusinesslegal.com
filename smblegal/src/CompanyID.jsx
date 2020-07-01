@@ -426,7 +426,7 @@ export default function CompanyID() {
                 <br />
                 <center>
                      <div class="gov-button-1" >
-                          <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
+                          <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
                </center>
 
