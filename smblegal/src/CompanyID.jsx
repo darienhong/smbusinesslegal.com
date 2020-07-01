@@ -348,6 +348,11 @@ export default function CompanyID() {
             <br></br>
             <form className={classes.root} noValidate autoComplete="off">
             <div class="login-form" style={{textAlign: "center"}}>
+
+                <div class="company-name" style={{textAlign: "center"}}>
+                        <TextField id="outlined-basic" label="Company Name" variant="outlined" style={{width: "500px"}} /> 
+                </div>
+            <br></br>
                 <div class="company-choice">
                         <TextField
                             id="outlined-select-company"

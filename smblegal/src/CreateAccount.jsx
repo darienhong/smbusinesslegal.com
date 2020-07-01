@@ -34,12 +34,16 @@ export default class CreateAccount extends Component {
 
             <p style={{textAlign: "center"}}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
             <br></br>
-                <div class="business-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{width: "500px"}} /> 
-            </div> 
-            <br></br>
            <div class="email-input" style={{textAlign: "center"}}>
           <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
+            </div> 
+            <br></br>
+            <div class="first-name-input" style={{textAlign: "center"}}>
+          <TextField id="outlined-basic" label="First Name" variant="outlined" style={{width: "500px"}} /> 
+            </div> 
+            <br></br>
+            <div class="last-name-input" style={{textAlign: "center"}}>
+          <TextField id="outlined-basic" label="Last Name" variant="outlined" style={{width: "500px"}} /> 
             </div> 
             <br></br>
             <div class="password-input" style={{textAlign: "center"}}>
@@ -53,10 +57,14 @@ export default class CreateAccount extends Component {
                 style={{width: "500px"}}
                 />
             </div>
+            <br></br>
+                <div class="companyid-input" style={{textAlign: "center"}}>
+          <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{width: "500px"}} /> 
+            </div> 
             </div>
             <br></br>
             <br></br>
-            <p style={{textAlign: "center"}}> <Link to="/CompanyID" style={{color: "#245CA6"}}> Don't have a Company ID? </Link></p>
+            <p style={{textAlign: "center"}}> <Link to="/CompanyID" style={{color: "#245CA6"}}> Create your Company ID </Link></p>
             <br></br>
             <br></br>
 
