@@ -450,9 +450,9 @@ font-family: 'WorkSans';
 }
 
 .price-card-1, .price-card-2, .price-card-3, .price-card-4 {
-  width: 220px;
-  height: 220px;
-  margin: 10px;
+  width: 300px;
+  height: 400px;
+  margin: 20px;
   font-family: 'WorkSans';
 }
 
