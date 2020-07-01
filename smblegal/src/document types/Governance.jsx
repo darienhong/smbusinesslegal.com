@@ -58,9 +58,10 @@ export default class Governance extends Component {
                     </Link>
                     </div>
 
-                    <div class="document-icon">
+                    <div class="document-icon"><Link to="/WaiverShareholdersQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Waiver of Notice of the Meeting of the Shareholders </p>
+                    </Link>
                     </div>
                 </div>
 

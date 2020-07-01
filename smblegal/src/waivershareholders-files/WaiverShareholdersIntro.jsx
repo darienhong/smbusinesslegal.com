@@ -16,13 +16,13 @@ import {
 
 import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
-import WaiverDirectorsDocument from './WaiverDirectorsDocument.jsx';
+import WaiverShareholderDocument from './WaiverShareholderDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
 
 
 
 
-export default class WaiverDirectorsIntro extends Component {
+export default class WaiverShareholdersIntro extends Component {
 
   next = (e) => {
     e.preventDefault();
@@ -61,7 +61,7 @@ export default class WaiverDirectorsIntro extends Component {
           <br />
 
           <form>
-            <p>Enter the director's name:</p>
+            <p>Enter the shareholder's name:</p>
             <input
               type='text'
               onChange={this.props.handleChange('name')}
@@ -87,12 +87,14 @@ export default class WaiverDirectorsIntro extends Component {
 
 
 
+
+
           <br />
 
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>
-          <WaiverDirectorsDocument class='doc' values={values} />
+          <WaiverShareholderDocument class='doc' values={values} />
         </div>
       </div >
 

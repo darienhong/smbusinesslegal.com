@@ -3,15 +3,15 @@ import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
-import WaiverDirectorsIntro from './WaiverDirectorsIntro.jsx';
-import WaiverDirectorsInfo from './WaiverDirectorsInfo.jsx';
+import WaiverShareholdersIntro from './WaiverShareholdersIntro.jsx';
+import WaiverShareholdersInfo from './WaiverShareholdersInfo.jsx';
 
-import WaiverDirectorsPDF from './WaiverDirectorsPDF.jsx';
+import WaiverShareholderPDF from './WaiverShareholderPDF.jsx';
 
 import { Alert } from 'react-alert'
 
 
-export default class WaiverDirectorsQuestions extends Component {
+export default class WaiverShareholdersQuestions extends Component {
   state = {
     step: 1,
     percent: 50,
@@ -23,7 +23,8 @@ export default class WaiverDirectorsQuestions extends Component {
     signerList: [{ name: "[X]" }],
     unanimous: '',
     state: '[X]',
-    number: ''
+    number: '',
+    shares: '[X]'
 
   }
 
@@ -76,7 +77,6 @@ export default class WaiverDirectorsQuestions extends Component {
     }));
   }
 
-
   render() {
     const { step } = this.state;
     const {
@@ -91,7 +91,8 @@ export default class WaiverDirectorsQuestions extends Component {
       state,
       number,
       name,
-      type
+      type,
+      shares
 
     } = this.state;
     const values = {
@@ -106,12 +107,13 @@ export default class WaiverDirectorsQuestions extends Component {
       state,
       number,
       name,
-      type
+      type,
+      shares
     };
 
     switch (step) {
       case 1:
-        return <WaiverDirectorsIntro
+        return <WaiverShareholdersIntro
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
@@ -119,7 +121,7 @@ export default class WaiverDirectorsQuestions extends Component {
           values={values}
         />
       case 2:
-        return <WaiverDirectorsInfo
+        return <WaiverShareholdersInfo
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           handleChange={this.handleChange}
@@ -135,7 +137,7 @@ export default class WaiverDirectorsQuestions extends Component {
         />
 
       case 3:
-        return <WaiverDirectorsPDF
+        return <WaiverShareholderPDF
           prevStep={this.prevStep}
           values={values} />
     }
