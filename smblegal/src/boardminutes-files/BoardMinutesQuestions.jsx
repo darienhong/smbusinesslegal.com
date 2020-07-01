@@ -21,14 +21,17 @@ export default class BoardMinuteQuestions extends Component {
     location: '[X]',
     chair: '[X]',
     position: '[X]',
+    // directors: [{ name: "", address: "", person: "" }],
     directors: [{ name: "", address: "" }],
     secretary: '[X]',
     companyName: '[X]',
     corporation: '[X]',
     agenda: '[X]',
     minutes: '[X]',
-    present: ''
-
+    present: '',
+    presence: [{ person: "" }],
+    inPerson: '',
+    electronic: ''
 
   }
 
@@ -68,19 +71,6 @@ export default class BoardMinuteQuestions extends Component {
     this.setState({ [input]: event.target.value })
   }
 
-  handleRecitalChange = (e) => {
-    let recitalList = [...this.state.recitalList]
-    recitalList[e.target.dataset.id][e.target.className] = e.target.value
-    this.setState({ recitalList }, () => console.log(this.state.recitalList))
-  }
-
-  addRecital = (e) => {
-    e.preventDefault();
-    this.setState((prevState) => ({
-      recitalList: [...prevState.recitalList, { name: "" }],
-    }));
-  }
-
   handleDirectorsChange = (e) => {
     let directors = [...this.state.directors]
     directors[e.target.dataset.id][e.target.className] = e.target.value
@@ -92,6 +82,13 @@ export default class BoardMinuteQuestions extends Component {
     this.setState((prevState) => ({
       directors: [...prevState.directors, { name: "", address: "" }],
     }));
+  }
+
+
+  handlePresenceChange = (e) => {
+    let presence = [...this.state.presence]
+    presence[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState({ presence }, () => console.log(this.state.presence))
   }
 
   render() {
@@ -109,7 +106,10 @@ export default class BoardMinuteQuestions extends Component {
       agenda,
       minutes,
       present,
-      directors
+      directors,
+      presence,
+      inPerson,
+      electronic
 
     } = this.state;
     const values = {
@@ -125,7 +125,11 @@ export default class BoardMinuteQuestions extends Component {
       agenda,
       minutes,
       present,
-      directors
+      directors,
+      presence,
+      inPerson,
+      electronic
+
     };
 
     switch (step) {
@@ -147,7 +151,10 @@ export default class BoardMinuteQuestions extends Component {
           decreasePercentage={this.decreasePercentage}
           values={values}
           handleDirectorsChange={this.handleDirectorsChange}
+          // handlePresenceChange={this.handlePresenceChange}
           addDirector={this.addDirector}
+        // addPerson={this.addPerson}
+        // addElectronic={this.addElectronic}
         // doc={EmploymentDocument}
         />
       case 3:
