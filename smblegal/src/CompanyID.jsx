@@ -5,12 +5,24 @@ import Footer from './components/footer.jsx';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
+import Button from '@material-ui/core/Button';
 import {
     BrowserRouter as Router,
     Switch,
     Route, 
     Link
   } from "react-router-dom";
+
+  const booleans = [
+      { 
+          value: 'Yes',
+          label: 'Yes',
+      },
+      {
+          value: 'No',
+          label: 'No',
+      }
+  ]
 
   const companies = [
     {
@@ -239,12 +251,75 @@ import {
     },
   }));
 
+  const newMember = (event) => {
+      return (
+        <div class="new-member">
+        <div class="name-input-llc" style={{textAlign: "center"}}>
+            <TextField id="outlined-basic" label="Name" variant="outlined" style={{width: "500px"}} /> 
+        </div> 
+        <br></br>
+        <div class="email-input-llc" style={{textAlign: "center"}}>
+            <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
+        </div> 
+        <br></br>
+        <div class="percent-ownership" style={{textAlign: "center"}}>
+           <TextField
+               id="outlined-number"
+               label="Percentage of ownership"
+               type="number"
+               InputLabelProps={{
+                   shrink: true,
+               }}
+               variant="outlined"
+               style={{width: "500px"}}
+           />
+       </div>
+       <br></br>
+       <div class="percent-profits-received" style={{textAlign: "center"}}>
+           <TextField
+               id="outlined-number"
+               label="Percent of profits received"
+               type="number"
+               InputLabelProps={{
+                   shrink: true,
+               }}
+               variant="outlined"
+               style={{width: "500px"}}
+           />
+       </div>
+       </div>
+      );
+  }
+
  
 
 export default function CompanyID() { 
     const classes = useStyles();
     const [company, setCompany] = React.useState('Corporation');
-    const [state, setState] = React.useState('AL');
+    const [USstate, setState] = React.useState('Alabama');
+    const [boolean, setBoolean] = React.useState('Yes');
+   
+    const [members, setMembers] = React.useState([]);
+
+    const handleChangeMembers = (event) => {
+        setMembers(members => [...members, <newMember />])
+    }
+
+    {/*
+    
+    const addMember = (event) => {
+        this.setState({
+            members: [...this.state.members, <newMember /> ]
+        })
+    }
+
+*/}
+
+  
+
+    const handleChangeBoolean = (event) => {
+            setBoolean(event.target.value);
+    }
 
     const handleChangeCompany = (event) => {
             setCompany(event.target.value);
@@ -294,7 +369,7 @@ export default function CompanyID() {
                          <TextField
                             id="outlined-select-state"
                             select label="What state is your business formed in?"
-                            value={state}
+                            value={USstate}
                             onChange={handleChangeState}
                             variant="outlined"
                             style={{width: "500px"}}
@@ -308,7 +383,9 @@ export default function CompanyID() {
                          </TextField>
              </div>
              <br></br>
-
+             <br></br>
+             <p style={{textAlign: "center"}}> Partnership Questions </p>
+            <br></br>
              <div class="partnership-questions">
                     <div class="quorum" style={{textAlign: "center"}}>
                         <TextField
@@ -349,10 +426,10 @@ export default function CompanyID() {
                         />
                     </div>
                     <br></br>
-                
-
              </div>
-
+             <br></br>
+             <p style={{textAlign: "center"}}> Corporation Questions </p>
+            <br></br>
 
              <div class="corporation-questions">
                  <div class="board-meeting" style={{textAlign: "center"}}>
@@ -463,42 +540,127 @@ export default function CompanyID() {
                 </div>
                 <br></br>
 
-
-
-
-
-
-
-
-
-
-
-
              </div>
-             
+             <br></br>
+             <p style={{textAlign: "center"}}> LLC Questions </p>
+            <br></br>
+
+             <div class="LLC-questions"> 
+                <div class="annual-meeting-choice">
+                        <TextField
+                            id="outlined-select-meeting"
+                            select label="Are you required to have an annual meeting?"
+                            value={boolean}
+                            onChange={handleChangeBoolean}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                         >
+                        {booleans.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                        </MenuItem>
+                            ))}
+                        </TextField>
+                </div>
                 <br></br>
+                <div class="llc-quorum" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="What is quorum in your business?"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
+                    </div>
+                    <br></br>
+                    <div class="llc-quorum-vote" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="What vote of a quorum is sufficient to pass something?"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
+                    </div>
+                    <br></br>
+                    <div class="num-members-llc" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="How many members and/or managers does your business have?"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
+                    </div>
+                    <br></br>
+                    <p style={{textAlign: "center"}}> Please enter the following information for all Members and/or Managers </p>
+                     <br></br>   
+
+                    <Button variant="outlined" onClick={handleChangeMembers}>Add Member </Button>
+                    {members}
+
+                        
+                    <br></br>
+                     <div class="new-member">
+                     <div class="name-input-llc" style={{textAlign: "center"}}>
+              <TextField id="outlined-basic" label="Name" variant="outlined" style={{width: "500px"}} /> 
+                </div> 
                 <br></br>
-
-
-
-
-
-                    <div class="email-input" style={{textAlign: "center"}}>
+                <div class="email-input-llc" style={{textAlign: "center"}}>
               <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
                 </div> 
                 <br></br>
+                <div class="percent-ownership" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="Percentage of ownership"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
+                    </div>
+                    <br></br>
+                    <div class="percent-profits-received" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="Percent of profits received"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
+                    </div>
+                    </div>
+                    <br></br>
+
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             </div>
+             
+                <br></br>
                <br></br>
-                <div class="password-input" style={{textAlign: "center"}}>
-                <TextField
-                    id="outlined-password-input"
-                    label="Password"
-                    type="password"
-                    autoComplete="current-password"
-                    variant="outlined"
-                    color="#245CA6"
-                    style={{width: "500px"}}
-                    />
-                </div>
+    
                 </div>
                 </form>
                 <br></br>
