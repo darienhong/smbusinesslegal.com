@@ -4,7 +4,7 @@ import moment from 'moment';
 import '../App.css';
 
 
-export default class ShareholderResolutionDocument extends Component {
+export default class WaiverDirectorsDocument extends Component {
   constructor(props) {
     super(props);
   }
@@ -14,25 +14,25 @@ export default class ShareholderResolutionDocument extends Component {
     var dateString = values.date.toString();
     var formattedDate = moment(dateString).format("LL");
 
-    let unanimousCheck = values.unanimous === 'Yes'
-    let undersigned = 'the directors voting in favor of the resolution(s)'
-    if (unanimousCheck) {
-      undersigned = 'all the directors'
-    }
+    // let unanimousCheck = values.unanimous === 'Yes'
+    // let undersigned = 'the directors voting in favor of the resolution(s)'
+    // if (unanimousCheck) {
+    //   undersigned = 'all the directors'
+    // }
 
-    let numberCheck = values.number === 'Multiple'
-    let title = 'SOLE SHAREHOLDER          '
-    let para = 'ALL'
-    let share = 'shareholder'
-    if (numberCheck) {
-      title = 'SHAREHOLDERS'
-      para = 'A QUORUM'
-      share = 'shareholders'
-      if (unanimousCheck) {
-        para = 'ALL'
-      }
-    }
-    let upperShare = share.toUpperCase()
+    // let numberCheck = values.number === 'Multiple'
+    // let title = 'SOLE SHAREHOLDER'
+    // let para = 'ALL'
+    // let share = 'shareholder'
+    // if (numberCheck) {
+    //   title = 'SHAREHOLDERS'
+    //   para = 'A QUORUM'
+    //   share = 'shareholders'
+    //   if (unanimousCheck) {
+    //     para = 'ALL'
+    //   }
+    // }
+    // let upperShare = share.toUpperCase()
 
     // var endDateString = values.endDate.toString();
     // var formattedEndDate = moment(endDateString).format("LL");
@@ -71,66 +71,35 @@ export default class ShareholderResolutionDocument extends Component {
     //   condUse = ' or ' + values.confidentialUse
     // }
 
+    let typeUpper = values.type.toUpperCase()
     var misc = 'Miscellaneous'
     return (
       <div class='size' >
         <center>
-          <h5 class='indoc'>{title} <br /> RESOLUTION OF <br />
+          <h5 class='indoc'>WAIVER OF NOTICE OF <br /> {typeUpper}  <br /> MEETING OF THE BOARD OF DIRECTORS OF <br />
             {values.companyName} <br /> A {values.state} CORPORATION</h5>
           <br />
         </center>
-        <p>The undersigned, being {para} of the {share} of {values.companyName} Corporation, a {values.corporation} corporation (the “Company”), do hereby adopt the
-        following resolutions and direct that this written resolution be filed with the minutes of the
-        proceedings of the Company:
+        <p>{values.name}, the undersigned and director of {values.companyName}, does hereby waive any required notice of
+        the {typeUpper} meeting of the board of directors of the company, and consents
+        to the holding of the meeting that is scheduled to be held on {formattedDate}.
         </p>
-        <div class='tab'>
-          {
-            (values.recitalList).map((val, idx) => {
-              let recitalId = `recital-${idx}`
-              return (
-                <div key={idx}>
-                  <p>{`WHEREAS, ` + (values.recitalList)[idx]['name']}</p>
-                </div>
-
-              )
-            })
-          }
-        </div>
-        <br />
-        <div class='tab'>
-          {
-            (values.resolutionList).map((val, idx) => {
-              let resolutionId = `resolution-${idx}`
-              return (
-                <div key={idx}>
-                  <p>{`RESOLVED, that ` + (values.resolutionList)[idx]['name']}</p>
-                </div>
-
-              )
-            })
-          }
-        </div>
-        <p class='tab'>
-          RESOLVED, that all acts are taken above, and the resolutions are approved, ratified
-          and adopted. The undersigned, by affixing their signature hereto, does hereby determine
-          and report that notice of the meeting was properly given or waived by the shareholders
-          and that a quorum was present in accordance with the bylaws. The {upperShare} do hereby consent to, vote in favor of and approve the foregoing
-          resolutions in their capacity as {upperShare} of the Company and
-          waive any and all requirements of notice.
+        <p>
+          {values.name} consents to the holding of the meeting and the transaction of business at the
+          meeting. {values.name} further requests that the secretary file this waiver with the minutes in the
+          corporate records.
         </p>
-        <br />
         <p>
           Approved and made effective this ________ day of __________ 20_____
         </p>
-        <br />
-        <div>
+        <div class='tab'>
           {
-            (values.voterList).map((val, idx) => {
-              let voterId = `voter-${idx}`
+            (values.signerList).map((val, idx) => {
+              let signerId = `signer-${idx}`
               return (
                 <div key={idx}>
-                  <p>{(values.voterList)[idx]['name']}</p>
-                  <p>____________________________</p>
+                  <p>{(values.signerList)[idx]['name']}</p>
+                  <p>__________________________________</p>
                 </div>
 
               )
