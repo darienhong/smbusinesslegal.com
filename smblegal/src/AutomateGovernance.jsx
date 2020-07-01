@@ -39,208 +39,6 @@ import {
     },
   ];
 
-  const states = [
-      {
-          value: 'Alabama',
-          label: 'AL'
-      }, 
-      {
-          value: 'Alaska',
-          label: 'AK',
-      }, 
-      {
-          value: 'Arizona',
-          label: 'AZ',
-      },
-      {
-          value: 'Arkansas',
-          label: 'AR',
-      },
-      {
-          value: 'California',
-          label: 'CA',
-      },
-      {
-          value: 'Colorado',
-          label: 'CO',
-      },
-      {
-          value: 'Connecticut',
-          label: 'CT',
-      },
-      {
-          value: 'Delaware',
-          label: 'DE',
-      },
-      {
-          value: 'Florida',
-          label: 'FL',
-      }, 
-      {
-        value: 'Georgia',
-        label: 'GA',
-      },
-      {
-        value: 'Hawaii',
-        label: 'HI',
-      },
-      {
-        value: 'Idaho',
-        label: 'ID',
-      },
-      {
-        value: 'Illinois',
-        label: 'IL',
-      },
-      {
-        value: 'Indiana',
-        label: 'IN',
-      },
-      {
-        value: 'Iowa',
-        label: 'IA',
-      },
-      {
-        value: 'Kansas',
-        label: 'KS',
-      },
-      {
-        value: 'Kentucky',
-        label: 'KY',
-      },
-      {
-        value: 'Louisiana',
-        label: 'LA',
-      },
-      {
-        value: 'Maine',
-        label: 'ME',
-      },
-      {
-        value: 'Maryland',
-        label: 'MD',
-      },
-      {
-        value: 'Massachusetts',
-        label: 'MA',
-      },
-      {
-        value: 'Michigan',
-        label: 'MI',
-      },
-      {
-        value: 'Minnesota',
-        label: 'MN',
-      },
-      {
-        value: 'Mississippi',
-        label: 'MS',
-      },
-      {
-        value: 'Missouri',
-        label: 'MO',
-      },
-      {
-        value: 'Montana',
-        label: 'MT',
-      },
-      {
-        value: 'Nebraska',
-        label: 'NE',
-      },
-      {
-        value: 'Nevada',
-        label: 'NV',
-      },
-      {
-        value: 'New Hampshire',
-        label: 'NH',
-      },
-      {
-        value: 'New Jersey',
-        label: 'NJ',
-      },
-      {
-        value: 'New Mexico',
-        label: 'NM',
-      },
-      {
-        value: 'New York',
-        label: 'NY',
-      },
-      {
-        value: 'North Carolina',
-        label: 'NC',
-      },
-      {
-        value: 'North Dakota',
-        label: 'ND',
-      },
-      {
-        value: 'Ohio',
-        label: 'OH',
-      },
-      {
-        value: 'Oklahoma',
-        label: 'OK',
-      },
-      {
-        value: 'Oregon',
-        label: 'OR',
-      },
-      {
-        value: 'Pennsylvania',
-        label: 'PA',
-      },
-      {
-        value: 'Rhode Island',
-        label: 'RI',
-      },
-      {
-        value: 'South Carolina',
-        label: 'SC',
-      },
-      {
-        value: 'South Dakota',
-        label: 'SD',
-      },
-      {
-        value: 'Tennessee',
-        label: 'TN',
-      },
-      {
-        value: 'Texas',
-        label: 'TX',
-      },
-      {
-        value: 'Utah',
-        label: 'UT',
-      },
-      {
-        value: 'Vermont',
-        label: 'VT',
-      },
-      {
-        value: 'Virginia',
-        label: 'VA',
-      },
-      {
-        value: 'Washington',
-        label: 'WA',
-      },
-      {
-        value: 'West Virginia',
-        label: 'WV',
-      },
-      {
-        value: 'Wisconsin',
-        label: 'WI',
-      },
-      {
-        value: 'Wyoming',
-        label: 'WY',
-      },    
-  ]
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -293,7 +91,7 @@ import {
 
  
 
-export default function CompanyID() { 
+export default function AutomateGov() { 
     const classes = useStyles();
     const [company, setCompany] = React.useState();
     const [USstate, setState] = React.useState();
@@ -351,7 +149,7 @@ export default function CompanyID() {
                 <br></br>
                 <br></br>
                 <br></br>
-                <h1 style={{color: "#245CA6"}}> Initialize Your Company </h1>
+                <h1 style={{color: "#245CA6"}}> Automate Governance </h1>
               <br></br>
             <div style={{textAlign:"center"}}>
                 <svg height={50} width={500}>
@@ -362,28 +160,6 @@ export default function CompanyID() {
             <br></br>
             <form className={classes.root} noValidate autoComplete="off">
             <div class="login-form" style={{textAlign: "center"}}>
-
-                <div class="company-name" style={{textAlign: "center"}}>
-                        <TextField id="outlined-basic" label="Company Name" variant="outlined" style={{width: "500px"}} /> 
-                </div>
-            <br></br>
-            <div class="state-choice">
-                         <TextField
-                            id="outlined-select-state"
-                            select label="What state is your business formed in?"
-                            value={USstate}
-                            onChange={handleChangeState}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                            >
-
-                         {states.map((option) => (
-                         <MenuItem key={option.value} value={option.value}>
-                             {option.label}
-                         </MenuItem>
-                                 ))}
-                         </TextField>
-             </div>
              <br></br>
                 <div class="company-choice">
                         <TextField
@@ -410,30 +186,9 @@ export default function CompanyID() {
                         </TextField>
                 </div>
                 <br></br>
-
-                <div class="zipcode-input" style={{textAlign: "center"}}>
-              <TextField id="outlined-basic" label="Zipcode" variant="outlined" style={{width: "500px"}} /> 
-                </div> 
-                <br></br>
                 <br />
 
-                <center>
-             <Link to="/AutomateGovernance" style={{textDecoration: "none"}}> <div class="gov-button" >
-                          <p style={{textAlign: "center"}}> Automate Your Governance </p>
-                      </div> </Link>  
-                 </center>
-                <br />
-                <br />
-                <center>
-                     <div class="gov-button-1" >
-                          <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
-                      </div>
-               </center>
 
-
-
-
-{/*
                 { company === 'Partnership' && (
                <form> 
              <div class="partnership-questions">
@@ -450,10 +205,6 @@ export default function CompanyID() {
                         />
                     </div>
                     <br></br>
-
-
-
-
                     <div class="quorum-vote" style={{textAlign: "center"}}>
                         <TextField
                             id="outlined-number"
@@ -482,20 +233,23 @@ export default function CompanyID() {
                     <br></br>
              </div>
              <br></br>
-             </form>
-            
+           
+             <br />
+             <br />
+             <br />
+             <center>
+                  <div class="gov-button-1" >
+                       <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
+                   </div>
+            </center>
+            </form>
            )}
            
-             <br></br>
-             <br></br>
-             
-
-          
-
-
-             <p style={{textAlign: "center"}}> Corporation Questions </p>
+            
             <br></br>
 
+            { company === 'Corporation' && ( 
+            <form>
              <div class="corporation-questions">
                  <div class="board-meeting" style={{textAlign: "center"}}>
                     <TextField
@@ -604,12 +358,25 @@ export default function CompanyID() {
                         />
                 </div>
                 <br></br>
-
              </div>
-             <br></br>
-             <p style={{textAlign: "center"}}> LLC Questions </p>
-            <br></br>
+            <br />
+            <br />
+            <br />
+            <br />
+             <center>
+                  <div class="gov-button-1" >
+                       <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
+                   </div>
+            </center>
+             </form>
+             )}
 
+
+            
+            <br />
+
+            { company === 'LLC' && ( 
+            <form>
              <div class="LLC-questions"> 
                 <div class="annual-meeting-choice">
                         <TextField
@@ -776,14 +543,26 @@ export default function CompanyID() {
              
              
              </div>
+             <br />
+             <br />
+             <br />
+             <br />
+             <center>
+                  <div class="gov-button-1" >
+                       <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
+                   </div>
+            </center>
 
-                        */}
+             </form>
+             )}
              
                 <br></br>
                <br></br>
     
                 </div>
                 </form>
+
+                
                 <br></br>
                 <br></br>
                 <br></br>
@@ -793,3 +572,5 @@ export default function CompanyID() {
             </div>
         );
     }
+
+

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
-import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,8 +12,54 @@ import {
     Link
   } from "react-router-dom";
 
+
+
+const plans = [
+    {
+        value: 'Freemium',
+        label: 'Freemium',
+    }, 
+    {
+        value: 'Automated Governance',
+        label: 'Automated Governance',
+    }, 
+    {
+        value: 'Subsciption',
+        label: 'Subscription',
+    }, 
+    {
+        value: 'Formation',
+        label: 'Formation',
+    },
+    {
+        value: 'Existing Plan',
+        label: 'Existing Plan',
+    }
+]
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: '25ch',
+      },
+    },
+  }));
+
 export default class CreateAccount extends Component { 
+
+    state = {
+        plan: ' ',
+    }
+
+    handleChange = (e) => {
+        this.setState({ plan: e.target.value })
+      }
+
     render() {
+        const plan = this.state;
+     /*   const classes = useStyles(); */
+
         return(
 
             <div class="create-acc-page">
@@ -58,9 +105,50 @@ export default class CreateAccount extends Component {
                 />
             </div>
             <br></br>
-                <div class="companyid-input" style={{textAlign: "center"}}>
+
+            <div class="select-plan" style={{textAlign: "center"}}>
+            <TextField
+                id="outlined-select-plan"
+                select label="Select your plan"
+                value={plan}
+                onChange={this.handleChange}
+                variant="outlined"
+                style={{width: "500px"}}
+                
+                >
+            <MenuItem key="Freemium" value="Freemium">
+              Freemium
+            </MenuItem>
+            <MenuItem key="Automated Governance" value="Automated Governance">
+              Automated Governance
+            </MenuItem>
+            <MenuItem key="Subscription" value="Subscription">
+              Subscription
+            </MenuItem>
+            <MenuItem key="Formation" value="Formation">
+              Formation
+            </MenuItem>
+            <MenuItem key="Existing Plan" value="Existing Plan">
+              Existing Plan
+            </MenuItem>
+
+        </TextField>
+        </div>
+
+        { plan === 'Existing Plan' && ( 
+            <form> 
+                        <div class="companyid-input" style={{textAlign: "center"}}>
           <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{width: "500px"}} /> 
             </div> 
+            </form>
+        )}
+
+
+
+
+
+
+
             </div>
             <br></br>
             <br></br>

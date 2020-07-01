@@ -7,6 +7,12 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, 
+    Link
+  } from "react-router-dom";
   
 
 export default class Pricing extends Component { 
