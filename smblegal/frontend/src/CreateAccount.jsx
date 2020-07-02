@@ -21,16 +21,12 @@ const plans = [
         label: 'Freemium',
     }, 
     {
-        value: 'Automated Governance',
-        label: 'Automated Governance',
+        value: 'Premium',
+        label: 'Premium',
     }, 
     {
-        value: 'Subscription',
-        label: 'Subscription',
-    }, 
-    {
-        value: 'Formation',
-        label: 'Formation',
+        value: 'Formation Documents',
+        label: 'Formation Documents',
     },
     {
         value: 'Existing Plan',
@@ -158,7 +154,7 @@ export default function CreateAccount() {
             </form>
         )}
 
-        { (plan === 'Freemium' || plan === 'Subscription' || plan === 'Automated Governance' || plan === 'Formation') && ( 
+        { (plan === 'Freemium' || plan === 'Premium' || plan === 'Formation Documents') && ( 
             
             <center>
                 <br />

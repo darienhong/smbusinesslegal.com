@@ -64,7 +64,8 @@ export default class Pricing extends Component {
                 <br/>
                 <p class="price"> $10 / Month </p>
                 <p> INCLUDED: <br /> &bull; 15 Automated Documents per month
-                <br /> &bull; Free Fromation Documents and Guides </p>
+                <br /> &bull; Free Fromation Documents and Guides 
+                <br /> &bull; Governance </p>
                 <Button size="small">Get Started</Button>
                 </CardContent>
             </Card>
