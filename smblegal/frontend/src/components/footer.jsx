@@ -8,6 +8,16 @@ export default class Footer extends Component {
     render() {
         return(
             <div class="block">
+
+
+           <a href="https://forms.gle/saeyHap7mxkNpvmU8" target="_blank" rel="noopener noreferrer" style={{textDecoration: "none"}}> 
+           <div class="contact-us"> 
+            <center> <div class="contact-us-button"> 
+              <p> Contact Us </p>
+              </div>
+              </center> 
+              </div>
+              </a>
             <div class="contact-block">
           <div class="contact-icons">
           <div class="facebook">

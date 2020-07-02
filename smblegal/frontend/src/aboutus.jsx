@@ -97,30 +97,25 @@ export default class AboutUs extends Component {
                 <br />
                 <br />
                 <div class="content-marketing-section">
-               <Link to="/CorporateGov">    <div class="cm-1">
-                        <img src={Feature1} class="cm-1" alt="corporate governance" />
+               <Link to="/ContentMarketing" style={{textDecoration: "none"}}>    <div class="cm-1">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                     <h4>  Corporate Governance </h4>
+                     <h4>  </h4>
                     </div>
                     </Link>
-                <Link to="/LimitedLiability">
-                    <div class="cm-1">
-                        <img src={Feature2} class="cm-1" alt="limited liability" />
+                    <Link to="/ContentMarketing2" style={{textDecoration: "none"}}>    <div class="cm-1">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                     <h4>  How to Start a Business </h4>
+                     <h4>  </h4>
                     </div>
                     </Link>
-                <Link to="/Lawsuits">
-                    <div class="cm-1">
-                        <img src={Feature3} class="cm-1" alt="lawsuits, fines, fees" />
-                    </div> 
-                    </Link>
-                <Link to="/DifficultCapital">
-                    <div class="cm-1">
-                        <img src={Feature4} class="cm-1" alt="difficult capital" />
-                    </div>
-                    </Link>
-                <Link to="/SMBAutomate">
-                    <div class="cm-1">
-                        <img src={Feature5} class="cm-1" alt="smblegal automate" />
-                    </div>
-                    </Link>
+              
 
 
                 </div>
