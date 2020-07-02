@@ -5,6 +5,7 @@ import Doc from './FormationDocument.jsx';
 import { Progress } from 'semantic-ui-react'
 import { PDFExport } from '@progress/kendo-react-pdf';
 import Navbar from '../components/nav-bar.jsx';
+import Navbar2 from '../components/nav-bar2.jsx';
 
 
 const ref = React.createRef();
@@ -29,7 +30,7 @@ export default class FormationPDF extends Component {
 
     return (
       <div class='generate'>
-        <Navbar />
+        <Navbar2 />
 
         <div class='buttons'>
           <center>
