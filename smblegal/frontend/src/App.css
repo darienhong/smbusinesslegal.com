@@ -661,10 +661,9 @@ font-family: 'WorkSans';
   margin: 20px;
 }
 
-.document { 
-  margin-top: 20px; 
-  margin-bottom: 20px;
-  text-align: center;
+.cm-1:hover {
+  opacity: 0.8;
+
 }
 
 
