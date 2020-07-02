@@ -575,7 +575,7 @@ font-family: 'WorkSans';
 
 }
 
-.create-acc-button { 
+.create-acc-button, .gov-button, .gov-button-1 { 
   padding-top: 10px; 
   border: 2px solid #245CA6;
   width: 200px;
@@ -583,16 +583,24 @@ font-family: 'WorkSans';
   justify-content: center;
 }
 
-.create-acc-button p {
+.create-acc-button p, .gov-button p, .gov-button-1 p {
   color: #245CA6;
 }
 
-.create-acc-button:hover {
+.create-acc-button:hover, .gov-button:hover, .gov-button-1:hover {
   background-color: #245CA6;
 }
 
-.create-acc-button:hover p {
+.create-acc-button:hover p, .gov-button:hover p, .gov-button-1:hover p {
   color: white;
+}
+
+.gov-button {
+  width: 250px;
+}
+
+.gov-button-1 {
+  width: 300px;
 }
 
 .tools-section { 
