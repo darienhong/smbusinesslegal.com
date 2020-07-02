@@ -80,9 +80,9 @@ export default class Homepage extends Component {
               </div>
                <div class='signup'>      
                   <div data-aos="slide-up" data-aos-easing="ease-in-out" data-aos-duration="2000">
-                      <a href="https://forms.gle/iNUd4My5DKTGHuAz8" target="_blank" rel="noopener noreferrer"> <center> <Button variant="outline-dark" 
+                      <Link to="/SignUp"><center> <Button variant="outline-dark" 
                       className="button" style={{fontFamily: 'WorkSans', fontWeight: 550,
-                      borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </a>
+                      borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </Link>
                   </div>
 
                 <br></br>

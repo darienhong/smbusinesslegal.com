@@ -16,6 +16,15 @@ import Formation from './document types/Formation.jsx';
 import Governance from './document types/Governance.jsx';
 import Employment from './document types/Employment.jsx';
 import Covid_19 from './document types/COVID-19.jsx';
+
+
+import FormationLogin from './document types (login)/Formation (login)';
+import GovernanceLogin from './document types (login)/Governance (login)';
+import EmploymentLogin from './document types (login)/Employment (login)';
+import Covid_19Login from './document types (login)/COVID-19 (login)';
+
+
+
 import Questions from './internship-files/Questions.jsx';
 import EmploymentQuestions from './employment-files/EmploymentQuestions';
 import ConsultingQuestions from './consulting-files/ConsultingQuestions';
@@ -58,6 +67,7 @@ import Lawsuits from './why-feature-subsection/Lawsuits.jsx';
 import DifficultCapital from './why-feature-subsection/DifficultCapital.jsx';
 import SMBAutomate from './why-feature-subsection/SMBAutomate.jsx';
 
+import ProductOverview from './ProductOverview.jsx';
 import AutomateGov2 from './AutomateGovernance2.jsx';
 import AutomateGov3 from './AutomateGovernance3.jsx';
 import AutomateGov from './AutomateGovernance.jsx';
@@ -190,7 +200,9 @@ export default class App extends Component {
             <SMBAutomate />
           </Route>
 
-
+          <Route path="/ProductOverview"> 
+          <ProductOverview />
+          </Route>
           <Route path="/AutomateGovernance2">
               <AutomateGov2 />
             </Route>

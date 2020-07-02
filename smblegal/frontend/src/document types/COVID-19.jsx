@@ -37,13 +37,13 @@ export default class Covid_19 extends Component {
                 <br></br>
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/CovidRentQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> California Covid-19 Notice of Inability to Pay Rent </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"><Link to="/WFHQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Work From Home Policy </p>
                     </Link>

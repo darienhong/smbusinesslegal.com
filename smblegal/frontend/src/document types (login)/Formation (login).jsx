@@ -5,24 +5,18 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    HashRouter
+    Link
 } from "react-router-dom";
 import DescriptionIcon from '@material-ui/icons/Description';
-import Questions from '../internship-files/Questions.jsx';
-import EmploymentQuestions from '../employment-files/EmploymentQuestions.jsx';
-import ConsultingQuestions from '../consulting-files/ConsultingQuestions.jsx';
-import DisciplinaryQuestions from '../disciplinary-files/DisciplinaryQuestions.jsx';
-import TerminationQuestions from '../termination-files/TerminationQuestions.jsx';
-
-
 import Navbar from '../components/nav-bar.jsx';
 
-export default class Employment extends Component {
+
+export default class FormationLogin extends Component {
 
     render() {
+
         return (
-            <div class="employment-doc-page">
+            <div class="formation-doc-page">
                 <Navbar />
                 <br></br>
                 <br></br>
@@ -32,7 +26,7 @@ export default class Employment extends Component {
                 </div>
                 <br></br>
                 <br></br>
-                <h1 style={{ color: "#245CA6" }}> Employment </h1>
+                <h1 style={{ color: "#245CA6" }}> Formation </h1>
                 <br></br>
                 <div style={{ textAlign: "center" }}>
                     <svg height={50} width={400}>
@@ -44,60 +38,48 @@ export default class Employment extends Component {
                 <br></br>
                 <div class="formation-documents">
 
-                    <div class="document-icon"> <Link to="/SignIn">
+                    <div class="document-icon"><Link to="/FormationQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Internship Agreement </p>
+                        <p> Certificate of Formation <br></br> (DE - LLC) </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"> <Link to="/SignIn">
+                    <div class="document-icon"><Link to="/IncorporationQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Employment Agreement </p>
+                        <p> Certificate of Incorporation (DE - Corp) </p>
                     </Link>
                     </div>
                 </div>
+
                 <div class="formation-documents">
 
-                    <div class="document-icon"> <Link to="/SignIn">
+                    <div class="document-icon"><Link to="/StatementQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Consulting Agreement </p>
+                        <p> Statement of the Incorporator </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"> <Link to="/SignIn">
+                    <div class="document-icon"><Link to="/DirectorsQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Disciplinary Warning </p>
+                        <p> Initial Action by the Board of Directors </p>
                     </Link>
                     </div>
                 </div>
+
                 <div class="formation-documents">
 
-                    <div class="document-icon"> <Link to="/SignIn">
+                    <div class="document-icon"><Link to="/SecretaryQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Employment Termination </p>
+                        <p> Certificate of the Secretary (Adoption of Bylaws) </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"> <Link to="/SignIn">
+                    <div class="document-icon">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Mutual Non-Disclosure Agreement </p>
-                    </Link>
+                        <p> N/A </p>
                     </div>
                 </div>
-                <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/SignIn">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Unilateral Non-Disclosure Agreement <br></br> (Pro-Recipient) </p>
-                    </Link>
-                    </div>
-
-                    <div class="document-icon"><Link to="/SignIn">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Unilateral Non-Disclosure Agreement <br></br> (Pro-Discloser) </p>
-                    </Link>
-                    </div>
-                </div>
 
                 <br></br>
                 <footer class="footer">
@@ -116,8 +98,13 @@ export default class Employment extends Component {
              Your use of this site is subject to our Terms of Service. </p>
                 </footer>
 
-            </div>
 
+
+
+
+
+
+            </div>
 
 
 

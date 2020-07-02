@@ -38,13 +38,13 @@ export default class Formation extends Component {
                 <br></br>
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/FormationQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Certificate of Formation <br></br> (DE - LLC) </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"><Link to="/IncorporationQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Certificate of Incorporation (DE - Corp) </p>
                     </Link>
@@ -53,13 +53,13 @@ export default class Formation extends Component {
 
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/StatementQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Statement of the Incorporator </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"><Link to="/DirectorsQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Initial Action by the Board of Directors </p>
                     </Link>
@@ -68,7 +68,7 @@ export default class Formation extends Component {
 
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/SecretaryQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Certificate of the Secretary (Adoption of Bylaws) </p>
                     </Link>

@@ -10,11 +10,12 @@ import {
 import DescriptionIcon from '@material-ui/icons/Description';
 import Navbar from '../components/nav-bar.jsx';
 
-export default class Governance extends Component {
+
+export default class Covid_19Login extends Component {
 
     render() {
         return (
-            <div class="governance-doc-page">
+            <div class="covid-19-doc-page">
                 <Navbar />
                 <br></br>
                 <br></br>
@@ -24,7 +25,7 @@ export default class Governance extends Component {
                 </div>
                 <br></br>
                 <br></br>
-                <h1 style={{ color: "#245CA6" }}> Governance </h1>
+                <h1 style={{ color: "#245CA6" }}> COVID-19 </h1>
                 <br></br>
                 <div style={{ textAlign: "center" }}>
                     <svg height={50} width={400}>
@@ -34,65 +35,22 @@ export default class Governance extends Component {
                 <p class="pick-document"> Choose a document to draft </p>
                 <br></br>
                 <br></br>
-
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/SignIn">
+                    <div class="document-icon"><Link to="/CovidRentQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Board of Director Meeting Minutes </p>
+                        <p> California Covid-19 Notice of Inability to Pay Rent </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"><Link to="/SignIn">
+                    <div class="document-icon"><Link to="/WFHQuestions">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Board Resolution </p>
+                        <p> Work From Home Policy </p>
                     </Link>
                     </div>
+
                 </div>
 
-                <div class="formation-documents">
-
-                    <div class="document-icon"><Link to="/SignIn">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Waiver of Notice of the Meeting of the Board of Directors </p>
-                    </Link>
-                    </div>
-
-                    <div class="document-icon"><Link to="/SignIn">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Waiver of Notice of the Meeting of the Shareholders </p>
-                    </Link>
-                    </div>
-                </div>
-
-                <div class="formation-documents">
-
-                    <div class="document-icon"><Link to="/SignIn">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Shareholders Meeting Minutes </p>
-                    </Link>
-                    </div>
-
-                    <div class="document-icon"><Link to="/SignIn">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Shareholders Resolution </p>
-                    </Link>
-                    </div>
-                </div>
-                <div class="formation-documents">
-
-                    <div class="document-icon"><Link to="/SignIn">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Member Resolution (LLC) </p>
-                    </Link>
-                    </div>
-
-                    <div class="document-icon">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> N/A </p>
-                    </div>
-                </div>
-                <br></br>
                 <footer class="footer">
                     <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
                     <p style={{ opacity: 0.4 }}> SMB Legal (Eatery Legal Corporation) is NOT a law firm,
@@ -113,9 +71,10 @@ export default class Governance extends Component {
 
 
 
-
-
             </div>
+
+
+
         );
     }
 }
