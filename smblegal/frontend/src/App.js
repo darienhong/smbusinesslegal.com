@@ -58,6 +58,8 @@ import Lawsuits from './why-feature-subsection/Lawsuits.jsx';
 import DifficultCapital from './why-feature-subsection/DifficultCapital.jsx';
 import SMBAutomate from './why-feature-subsection/SMBAutomate.jsx';
 
+import AutomateGov2 from './AutomateGovernance2.jsx';
+import AutomateGov3 from './AutomateGovernance3.jsx';
 import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
@@ -188,8 +190,13 @@ export default class App extends Component {
             <SMBAutomate />
           </Route>
 
-          
 
+          <Route path="/AutomateGovernance2">
+              <AutomateGov2 />
+            </Route>
+            <Route path="/AutomateGovernance3">
+              <AutomateGov3 />
+            </Route>
             <Route path="/AutomateGovernance">
               <AutomateGov />
             </Route>

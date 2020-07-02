@@ -43,7 +43,7 @@ export default class Pricing extends Component {
             <Card>
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 1</h4>
-                <h2 class="price-category">  Free Tier </h2>
+                <h2 class="price-category">  Starter </h2>
                 <p> Registration </p>
                 <br />
                 <p class="price"> Free </p>
