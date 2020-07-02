@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import DescriptionIcon from '@material-ui/icons/Description';
 import Navbar from '../components/nav-bar.jsx';
+import Navbar2 from '../components/nav-bar2.jsx';
 
 
 export default class Covid_19Login extends Component {
@@ -16,12 +17,12 @@ export default class Covid_19Login extends Component {
     render() {
         return (
             <div class="covid-19-doc-page">
-                <Navbar />
+                <Navbar2 />
                 <br></br>
                 <br></br>
                 <br></br>
                 <div class="back-button" style={{ paddingLeft: "20px", paddingTop: "5px" }}>
-                    <Link to="/" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
+                    <Link to="/HomepageLogin" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
                 </div>
                 <br></br>
                 <br></br>

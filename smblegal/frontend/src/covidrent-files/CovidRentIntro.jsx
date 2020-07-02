@@ -33,7 +33,7 @@ export default class CovidRentIntro extends Component {
     return (
       <div class='ask'>
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
-          <Link to="/Covid_19" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
+          <Link to="/Covid_19Login" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col left height'>

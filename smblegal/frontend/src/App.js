@@ -67,6 +67,9 @@ import Lawsuits from './why-feature-subsection/Lawsuits.jsx';
 import DifficultCapital from './why-feature-subsection/DifficultCapital.jsx';
 import SMBAutomate from './why-feature-subsection/SMBAutomate.jsx';
 
+
+import HomepageLogin from './HomepageLogin.jsx';
+
 import ContentMarketing2 from './ContentMarketing2.jsx';
 import ContentMarketing from './ContentMarketing.jsx';
 import ProductOverview from './ProductOverview.jsx';
@@ -117,6 +120,25 @@ export default class App extends Component {
             <Route path="/Covid_19">
               <Covid_19 />
             </Route>
+
+            
+
+            <Route path="/FormationLogin"> 
+            <FormationLogin />
+            </Route>
+            <Route path="/GovernanceLogin">
+              <GovernanceLogin />
+            </Route>
+            <Route path="/EmploymentLogin">
+              <EmploymentLogin /> 
+            </Route>
+            <Route path="/Covid_19Login">
+              <Covid_19Login />
+            </Route>
+
+
+
+
             <Route path="/Questions">
               <Questions />
             </Route>
@@ -201,6 +223,12 @@ export default class App extends Component {
           <Route path="/SMBAutomate">
             <SMBAutomate />
           </Route>
+
+          <Route path="/HomepageLogin"> 
+          <HomepageLogin />
+          </Route>
+
+
 
           <Route path="/ContentMarketing2"> 
           <ContentMarketing2 />

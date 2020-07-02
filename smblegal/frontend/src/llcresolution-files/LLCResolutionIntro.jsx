@@ -37,7 +37,7 @@ export default class LLCResolutionIntro extends Component {
         <Navbar />
 
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
-          <Link to="/Governance" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
+          <Link to="/GovernanceLogin" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col left height'>

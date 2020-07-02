@@ -50,10 +50,25 @@ export default class SignIn extends Component {
                 </div>
                 </div>
                 <br></br>
+                <br />
+                <center>
+                <Link to="/HomepageLogin">
+                <div class="create-acc-button" >
+                 <p style={{textAlign: "center"}}> Log In </p>
+                </div>
+                </Link>
+            </center>
+            <br />
+            <br />
+
+
+
+
                 <p style={{textAlign: "center"}}> Don't have an account? <Link to="/CreateAccount" style={{color: "#245CA6"}}> Create Account </Link></p>
 
                 <br></br>
                 <br></br>
+                <br/> 
 
                 <Footer />
 

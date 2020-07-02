@@ -8,6 +8,7 @@ import ModalTest from './components/modal.jsx';
 import Navbar from './components/nav-bar.jsx';
 import AOS from 'aos';
 import Footer from './components/footer.jsx';
+import Navbar2 from './components/nav-bar2.jsx';
 
 import 'aos/dist/aos.css';
 import {
