@@ -470,15 +470,20 @@ flex-wrap: wrap;
 font-family: 'WorkSans';
 }
 
-.price-card-1, .price-card-2, .price-card-3, .price-card-4 {
-  width: 220px;
-  height: 220px;
-  margin: 10px;
+.price-card-1, .price-card-2, .price-card-3 {
+  width: 300px;
+  margin: 20px;
   font-family: 'WorkSans';
+ /* border: 2px solid rgb(201, 201, 201); */
+
+}
+
+.price-card-1:hover, .price-card-2:hover, .price-card-3:hover { 
+  box-shadow: 5px 5px rgb(201, 201, 201);
 }
 
 .card-2-inside:hover { 
-  background-color: #307ADD;
+  background-color: #245CA6;
   color: white;
   opacity: 0.7;
 }
@@ -491,9 +496,16 @@ font-family: 'WorkSans';
   font-size: 16px;
 }
 
+.price { 
+  color:  #245CA6;
+  font-style: italic;
+  font-weight: 600;
+}
+
 .price-category {
   font-size: 25px;
   font-weight: 550;
+  text-transform: uppercase;
 }
 
 .pick-document { 
