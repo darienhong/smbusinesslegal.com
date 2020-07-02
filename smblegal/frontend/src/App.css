@@ -274,7 +274,7 @@ nav a:hover {
 }
 .homepage, .about-page, .pricing-page, .sign-up-page, .tools-page,  
 .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
-.automated-docs-page, .login-page, .create-acc-page, .company-id-page { 
+.automated-docs-page, .login-page, .create-acc-page, .company-id-page, .doc-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
   margin-left: 40px; 
@@ -650,6 +650,22 @@ font-family: 'WorkSans';
   margin: 30px;
 }
 
+.content-marketing-section {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.cm-1 { 
+  width: 300px;
+  margin: 20px;
+}
+
+.document { 
+  margin-top: 20px; 
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 
 

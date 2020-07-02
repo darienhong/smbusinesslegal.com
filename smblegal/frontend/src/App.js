@@ -52,6 +52,11 @@ import ShareholderMinutesQuestions from './shareholderminutes-files/ShareholderM
 
 
 // import Solutions from './Solutions.jsx';
+import CorporateGov from './why-feature-subsection/CorporateGov.jsx';
+import LimitedLiability from './why-feature-subsection/LimitedLiability.jsx';
+import Lawsuits from './why-feature-subsection/Lawsuits.jsx';
+import DifficultCapital from './why-feature-subsection/DifficultCapital.jsx';
+import SMBAutomate from './why-feature-subsection/SMBAutomate.jsx';
 
 import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
@@ -165,6 +170,25 @@ export default class App extends Component {
               <ShareholderMinutesQuestions />
             </Route>
 
+
+
+          <Route path="/CorporateGov">
+            <CorporateGov />
+          </Route>
+          <Route path="/LimitedLiability">
+            <LimitedLiability />
+          </Route>
+          <Route path="/Lawsuits">
+            <Lawsuits />
+          </Route>
+          <Route path="/DifficultCapital">
+            <DifficultCapital />
+          </Route>
+          <Route path="/SMBAutomate">
+            <SMBAutomate />
+          </Route>
+
+          
 
             <Route path="/AutomateGovernance">
               <AutomateGov />

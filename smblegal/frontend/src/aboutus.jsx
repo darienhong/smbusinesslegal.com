@@ -9,6 +9,17 @@ import AnalyzeImage from './assets/analyze.png';
 import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
 import ContentMarketing from './ContentMarketing.jsx';
+import Feature1 from './assets/corporate_gov.png';
+import Feature2 from './assets/limited_liability.png';
+import Feature3 from './assets/lawsuits.png';
+import Feature4 from './assets/difficult_capital.png';
+import Feature5 from './assets/smblegal.png';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, 
+    Link
+  } from "react-router-dom";
 
 
 
@@ -81,7 +92,50 @@ export default class AboutUs extends Component {
                     <h3 style={{fontFamily: "WorkSans", fontSize: "16px", fontWeight: "600"}}> The SMB Legal Team </h3>
                 <div class="about-us-features"> 
                 <br></br>
-                <ContentMarketing />
+                <br/>
+                <br />
+                <br />
+                <div class="content-marketing-section">
+               <Link to="/CorporateGov">    <div class="cm-1">
+                        <img src={Feature1} class="cm-1" alt="corporate governance" />
+                    </div>
+                    </Link>
+                <Link to="/LimitedLiability">
+                    <div class="cm-1">
+                        <img src={Feature2} class="cm-1" alt="limited liability" />
+                    </div>
+                    </Link>
+                <Link to="/Lawsuits">
+                    <div class="cm-1">
+                        <img src={Feature3} class="cm-1" alt="lawsuits, fines, fees" />
+                    </div> 
+                    </Link>
+                <Link to="/DifficultCapital">
+                    <div class="cm-1">
+                        <img src={Feature4} class="cm-1" alt="difficult capital" />
+                    </div>
+                    </Link>
+                <Link to="/SMBAutomate">
+                    <div class="cm-1">
+                        <img src={Feature5} class="cm-1" alt="smblegal automate" />
+                    </div>
+                    </Link>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+ 
+           {/*    <ContentMarketing />  */}
                 <br></br>
                 </div>
             </div>
