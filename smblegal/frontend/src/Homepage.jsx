@@ -81,7 +81,7 @@ export default class Homepage extends Component {
               </div>
                <div class='signup'>      
                   <div data-aos="slide-up" data-aos-easing="ease-in-out" data-aos-duration="2000">
-                      <Link to="/SignUp"><center> <Button variant="outline-dark" 
+                      <Link to="/CreateAccount"><center> <Button variant="outline-dark" 
                       className="button" style={{fontFamily: 'WorkSans', fontWeight: 550,
                       borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </Link>
                   </div>

@@ -23,10 +23,10 @@ export default class Navbar2 extends Component {
     return (
      
         <div class="container">
-          <Link to="/"><img src={IconLogo} alt="icon logo" className="logo" /></Link> 
+          <Link to="/HomepageLogin"><img src={IconLogo} alt="icon logo" className="logo" /></Link> 
           <nav>
             <ul>
-              <li><Link to="/" className="nav-bar">Home</Link></li>
+              <li><Link to="/HomepageLogin" className="nav-bar">Home</Link></li>
               <li className="nav-bar"> <SubMenu2 /></li>
               <li ><Link to="/Tools" className="nav-bar-1"> <SubMenu />  </Link> </li>
               <li><Link to="/Pricing" className="nav-bar"> Pricing </Link></li>

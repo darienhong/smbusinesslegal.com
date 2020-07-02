@@ -167,6 +167,9 @@ export default function CreateAccount() {
           </center>
         
         )}
+        <br />
+        <br />
+        <br />
 
 
           <Footer />
