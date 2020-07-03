@@ -81,7 +81,7 @@ import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
-import AboutUs from './AboutUs.jsx';
+import AboutUs from './aboutus.jsx';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';
@@ -123,16 +123,16 @@ export default class App extends Component {
               <Covid_19 />
             </Route>
 
-            
 
-            <Route path="/FormationLogin"> 
-            <FormationLogin />
+
+            <Route path="/FormationLogin">
+              <FormationLogin />
             </Route>
             <Route path="/GovernanceLogin">
               <GovernanceLogin />
             </Route>
             <Route path="/EmploymentLogin">
-              <EmploymentLogin /> 
+              <EmploymentLogin />
             </Route>
             <Route path="/Covid_19Login">
               <Covid_19Login />
@@ -210,44 +210,44 @@ export default class App extends Component {
 
 
 
-          <Route path="/CorporateGov">
-            <CorporateGov />
-          </Route>
-          <Route path="/LimitedLiability">
-            <LimitedLiability />
-          </Route>
-          <Route path="/Lawsuits">
-            <Lawsuits />
-          </Route>
-          <Route path="/DifficultCapital">
-            <DifficultCapital />
-          </Route>
-          <Route path="/SMBAutomate">
-            <SMBAutomate />
-          </Route>
+            <Route path="/CorporateGov">
+              <CorporateGov />
+            </Route>
+            <Route path="/LimitedLiability">
+              <LimitedLiability />
+            </Route>
+            <Route path="/Lawsuits">
+              <Lawsuits />
+            </Route>
+            <Route path="/DifficultCapital">
+              <DifficultCapital />
+            </Route>
+            <Route path="/SMBAutomate">
+              <SMBAutomate />
+            </Route>
 
-          <Route path="/HomepageLogin"> 
-          <HomepageLogin />
-          </Route>
-          <Route path="/AboutUsLogin">
-            <AboutUsLogin />
-          </Route>
-          <Route path="/ProductOverviewLogin">
-            <ProductOverviewLogin />
-          </Route>
+            <Route path="/HomepageLogin">
+              <HomepageLogin />
+            </Route>
+            <Route path="/AboutUsLogin">
+              <AboutUsLogin />
+            </Route>
+            <Route path="/ProductOverviewLogin">
+              <ProductOverviewLogin />
+            </Route>
 
 
 
-          <Route path="/ContentMarketing2"> 
-          <ContentMarketing2 />
-          </Route>
-          <Route path="/ContentMarketing"> 
-          <ContentMarketing />
-          </Route>
-          <Route path="/ProductOverview"> 
-          <ProductOverview />
-          </Route>
-          <Route path="/AutomateGovernance2">
+            <Route path="/ContentMarketing2">
+              <ContentMarketing2 />
+            </Route>
+            <Route path="/ContentMarketing">
+              <ContentMarketing />
+            </Route>
+            <Route path="/ProductOverview">
+              <ProductOverview />
+            </Route>
+            <Route path="/AutomateGovernance2">
               <AutomateGov2 />
             </Route>
             <Route path="/AutomateGovernance3">
