@@ -34,7 +34,7 @@ export default class HomepageLogin extends Component {
               <br></br>
 
             <div style={{textAlign:"center"}}>
-                <svg height={50} width={400}>
+                <svg height={50} width={500}>
                     <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1}/>
                 </svg>
             </div>
