@@ -40,7 +40,7 @@ export default class HomepageLogin extends Component {
             </div>
             <br />
 
-            <p style={{textAlign: "center", textTransform: "uppercase"}}> Documents </p>
+            <p style={{textAlign: "center", textTransform: "uppercase"}}> Automated Documents </p>
           <br></br>
           
          
