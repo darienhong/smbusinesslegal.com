@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
-import Logo from './assets/logo.png';
+import '../App.css';
+import Logo from '../assets/logo.png';
 import Button from 'react-bootstrap/Button';
 import Lottie from 'react-lottie';
-import animationData from './assets/animation.json';
-import ModalTest from './components/modal.jsx';
-import Navbar from './components/nav-bar.jsx';
-import Navbar2 from './components/nav-bar2.jsx';
+import animationData from '../assets/animation.json';
+import ModalTest from '../components/modal.jsx';
+import Navbar from '../components/nav-bar.jsx';
+import Navbar2 from '../components/nav-bar2.jsx';
 import AOS from 'aos';
-import Footer from './components/footer.jsx';
+import Footer from '../components/footer.jsx';
 
 import {
     BrowserRouter as Router,

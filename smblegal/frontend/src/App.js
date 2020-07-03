@@ -68,7 +68,9 @@ import DifficultCapital from './why-feature-subsection/DifficultCapital.jsx';
 import SMBAutomate from './why-feature-subsection/SMBAutomate.jsx';
 
 
-import HomepageLogin from './HomepageLogin.jsx';
+import HomepageLogin from './login-files/HomepageLogin.jsx';
+import AboutUsLogin from './login-files/AboutUsLogin.jsx';
+import ProductOverviewLogin from './login-files/ProductOverviewLogin.jsx';
 
 import ContentMarketing2 from './ContentMarketing2.jsx';
 import ContentMarketing from './ContentMarketing.jsx';
@@ -79,7 +81,7 @@ import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
-import AboutUs from './aboutus.jsx';
+import AboutUs from './AboutUs.jsx';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';
@@ -226,6 +228,12 @@ export default class App extends Component {
 
           <Route path="/HomepageLogin"> 
           <HomepageLogin />
+          </Route>
+          <Route path="/AboutUsLogin">
+            <AboutUsLogin />
+          </Route>
+          <Route path="/ProductOverviewLogin">
+            <ProductOverviewLogin />
           </Route>
 
 
