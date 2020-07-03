@@ -16,6 +16,15 @@ import Formation from './document types/Formation.jsx';
 import Governance from './document types/Governance.jsx';
 import Employment from './document types/Employment.jsx';
 import Covid_19 from './document types/COVID-19.jsx';
+
+
+import FormationLogin from './document types (login)/Formation (login)';
+import GovernanceLogin from './document types (login)/Governance (login)';
+import EmploymentLogin from './document types (login)/Employment (login)';
+import Covid_19Login from './document types (login)/COVID-19 (login)';
+
+
+
 import Questions from './internship-files/Questions.jsx';
 import EmploymentQuestions from './employment-files/EmploymentQuestions';
 import ConsultingQuestions from './consulting-files/ConsultingQuestions';
@@ -52,12 +61,27 @@ import ShareholderMinutesQuestions from './shareholderminutes-files/ShareholderM
 
 
 // import Solutions from './Solutions.jsx';
+import CorporateGov from './why-feature-subsection/CorporateGov.jsx';
+import LimitedLiability from './why-feature-subsection/LimitedLiability.jsx';
+import Lawsuits from './why-feature-subsection/Lawsuits.jsx';
+import DifficultCapital from './why-feature-subsection/DifficultCapital.jsx';
+import SMBAutomate from './why-feature-subsection/SMBAutomate.jsx';
 
+
+import HomepageLogin from './login-files/HomepageLogin.jsx';
+import AboutUsLogin from './login-files/AboutUsLogin.jsx';
+import ProductOverviewLogin from './login-files/ProductOverviewLogin.jsx';
+
+import ContentMarketing2 from './ContentMarketing2.jsx';
+import ContentMarketing from './ContentMarketing.jsx';
+import ProductOverview from './ProductOverview.jsx';
+import AutomateGov2 from './AutomateGovernance2.jsx';
+import AutomateGov3 from './AutomateGovernance3.jsx';
 import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
-import AboutUs from './aboutus.jsx';
+import AboutUs from './AboutUs.jsx';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';
@@ -98,6 +122,25 @@ export default class App extends Component {
             <Route path="/Covid_19">
               <Covid_19 />
             </Route>
+
+            
+
+            <Route path="/FormationLogin"> 
+            <FormationLogin />
+            </Route>
+            <Route path="/GovernanceLogin">
+              <GovernanceLogin />
+            </Route>
+            <Route path="/EmploymentLogin">
+              <EmploymentLogin /> 
+            </Route>
+            <Route path="/Covid_19Login">
+              <Covid_19Login />
+            </Route>
+
+
+
+
             <Route path="/Questions">
               <Questions />
             </Route>
@@ -166,6 +209,50 @@ export default class App extends Component {
             </Route>
 
 
+
+          <Route path="/CorporateGov">
+            <CorporateGov />
+          </Route>
+          <Route path="/LimitedLiability">
+            <LimitedLiability />
+          </Route>
+          <Route path="/Lawsuits">
+            <Lawsuits />
+          </Route>
+          <Route path="/DifficultCapital">
+            <DifficultCapital />
+          </Route>
+          <Route path="/SMBAutomate">
+            <SMBAutomate />
+          </Route>
+
+          <Route path="/HomepageLogin"> 
+          <HomepageLogin />
+          </Route>
+          <Route path="/AboutUsLogin">
+            <AboutUsLogin />
+          </Route>
+          <Route path="/ProductOverviewLogin">
+            <ProductOverviewLogin />
+          </Route>
+
+
+
+          <Route path="/ContentMarketing2"> 
+          <ContentMarketing2 />
+          </Route>
+          <Route path="/ContentMarketing"> 
+          <ContentMarketing />
+          </Route>
+          <Route path="/ProductOverview"> 
+          <ProductOverview />
+          </Route>
+          <Route path="/AutomateGovernance2">
+              <AutomateGov2 />
+            </Route>
+            <Route path="/AutomateGovernance3">
+              <AutomateGov3 />
+            </Route>
             <Route path="/AutomateGovernance">
               <AutomateGov />
             </Route>

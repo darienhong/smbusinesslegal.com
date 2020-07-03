@@ -37,13 +37,13 @@ export default class Governance extends Component {
 
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/BoardMinutesQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Board of Director Meeting Minutes </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"><Link to="/BoardResolutionQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Board Resolution </p>
                     </Link>
@@ -52,13 +52,13 @@ export default class Governance extends Component {
 
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/WaiverDirectorsQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Waiver of Notice of the Meeting of the Board of Directors </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"><Link to="/WaiverShareholdersQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Waiver of Notice of the Meeting of the Shareholders </p>
                     </Link>
@@ -67,13 +67,13 @@ export default class Governance extends Component {
 
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/ShareholderMinutesQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Shareholders Meeting Minutes </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"><Link to="/ShareholderResolutionQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Shareholders Resolution </p>
                     </Link>
@@ -81,7 +81,7 @@ export default class Governance extends Component {
                 </div>
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/LLCResolutionQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Member Resolution (LLC) </p>
                     </Link>

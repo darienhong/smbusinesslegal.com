@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import EmploymentDocument from './EmploymentDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
+import Navbar2 from '../components/nav-bar2.jsx';
 
 
 
@@ -22,7 +23,7 @@ export default class EmploymentInfo2 extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        <Navbar />
+        <Navbar2 />
 
         <div class='col height'>
 

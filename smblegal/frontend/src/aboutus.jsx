@@ -9,6 +9,17 @@ import AnalyzeImage from './assets/analyze.png';
 import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
 import ContentMarketing from './ContentMarketing.jsx';
+import Feature1 from './assets/corporate_gov.png';
+import Feature2 from './assets/limited_liability.png';
+import Feature3 from './assets/lawsuits.png';
+import Feature4 from './assets/difficult_capital.png';
+import Feature5 from './assets/smblegal.png';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, 
+    Link
+  } from "react-router-dom";
 
 
 
@@ -38,19 +49,19 @@ export default class AboutUs extends Component {
         
             <div class="about-description"> 
                 <h2> WELCOME </h2>
-                <p> We are the first and only self-help tool for small businesses to empower themselves with artificial intelligence 
-                    and machine learning to increase operational efficiency and avoid potential legal pitfalls.</p>
-                <p> In the rush to provide legal tech solutions to corporate law firms and deep pocketed corporations in-house legal departments, 
-                    small businesses have been left behind. Conceived of amidst the chaos of a pandemic, 
-                    we came to the realization that, in an ever more complex world, running a business was never going to get any simpler. </p>
-                <br></br>
-
-                    <div class="mission-statement">
-                        <p> Our <span style={{ fontWeight: "bold"}}> mission </span> is to democratize the law by powering up small businesses with 
-                            some of the same tech tools that the most sophisticated law firms and 
-                            corporations use today to run their legal functions and contracts.
+                <br />
+                <div class="mission-statement">
+                        <p> At SMB Legal our  <span style={{fontWeight: "bold"}}> mission </span> is to simplify the legal process for small business owners by providing 
+                            access to contract management and legal tools that today 
+                            are only available to sophisticated, large law firms and corporations.
                         </p>
                     </div>
+                    <br />
+                <p> We are the first and only self-help tools that leverage the power of the cloud, artificial intelligence and machine learning 
+                    to streamline small business contracts and legal processes.  By using SMB Legal’s tools small business owners and employees can spend more 
+                    time on customer acquisition and activation driving substantial growth and revenue.</p>
+                <p> SMB Legal’s automated tools ensure that small businesses will increase operational efficiency and avoid legal pitfalls.</p>
+                <br></br>
                     <br></br>
             
                     <div class="illustrations" style={{textAlign:"center"}}> 
@@ -61,27 +72,66 @@ export default class AboutUs extends Component {
                 <br></br>
                 <br></br>
 
-                <p> Our platform provides a seamless cloud based ecosystem for all of a small businesses legal documents and 
-                        contracts.  All stakeholders - owners, employees, lawyers, customers, 
-                        suppliers - can tap into our resources, making all aspects of business easier.  
-                        Business owners can leverage our artificial intelligence 
-                        and machine learning tools to systematize their contracts and workflows, 
-                        increasing business efficiency and avoiding conflicting contractual obligations.</p>
+                <p> Most contract management and legal tools have been designed to meet the needs of the deep pockets of large law firms 
+                    and corporations and not to solve the unique problems of small businesses.  Amidst a global 
+                    pandemic, our Founder, recognized that as our world is quickly becoming more complex, 
+                    running a small business will become increasingly challenging.  Trying to navigate increased risk, 
+                    employee safety concerns, payroll challenges and more complex contracts is burdensome.  
+                    That is why we founded SMB Legal, a small business partner you can trust.</p>
 
-                    <p> Additionally, our business governance automation, licensing and permitting suite, ownership task 
-                        manager and investor CRM provide a comprehensive solution for tracking and 
-                        effectively tending to those tasks which are the internal plumbing of the modern business. </p>
+                    <p> AOur team is made up of seasoned legal professionals, startup gurus and small business experts 
+                        who are all united in the goal of making small business entrepreneurship easier.  
+                        <Link to="/ProductOverview" style={{textDecoration: "none", color: "#245CA6"}}> Learn more about our product and 
+                        how we can help you get your contract and legal house in order. </Link> </p>
 
 
-                    <p> We know that running a business is hard.  Legalese and inefficient document workflows can make it infinitely harder.  
-                        Let us help you help yourself with self-help tools that do a lot of the heavy lifting.</p>
+                    <p> We know that running a business is hard.  Legalese and inefficient document workflows can make it 
+                        infinitely harder. Let us help your business with self-help tools that do a lot of the heavy lifting. </p>
 
                     <p> Thanks for coming and we’re glad to have you along for the journey. </p>
 
                     <h3 style={{fontFamily: "WorkSans", fontSize: "16px", fontWeight: "600"}}> The SMB Legal Team </h3>
                 <div class="about-us-features"> 
                 <br></br>
-                <ContentMarketing />
+                <br/>
+                <br />
+                <br />
+                <div class="content-marketing-section">
+               <Link to="/ContentMarketing" style={{textDecoration: "none"}}>    <div class="cm-1">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                     <h4>  Corporate Governance </h4>
+                     <h4>  </h4>
+                    </div>
+                    </Link>
+                    <Link to="/ContentMarketing2" style={{textDecoration: "none"}}>    <div class="cm-1">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                     <h4>  How to Start a Business </h4>
+                     <h4>  </h4>
+                    </div>
+                    </Link>
+              
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+ 
+           {/*    <ContentMarketing />  */}
                 <br></br>
                 </div>
             </div>

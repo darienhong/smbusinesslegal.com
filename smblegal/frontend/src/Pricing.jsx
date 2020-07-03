@@ -36,8 +36,6 @@ export default class Pricing extends Component {
                 </svg>
             </div>
             <br></br>
-            <p> Plan Comparison </p>
-            <br></br>
             <div class="price-cards">
                 
         <Link to ="/CreateAccount" style={{textDecoration: "none"}}> 
@@ -45,12 +43,12 @@ export default class Pricing extends Component {
             <Card>
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 1</h4>
-                <h2 class="price-category">  Free Tier </h2>
-                <br></br>
+                <h2 class="price-category">  Starter </h2>
                 <p> Registration </p>
-                <p> Price: Free </p>
-                <p> 2 Automated Documents Per Month </p>
-                <Button size="small">Learn More</Button>
+                <br />
+                <p class="price"> Free </p>
+                <p> INCLUDED: <br /> &bull; 2 Automated Documents per month </p> 
+                <Button size="small">Get Started</Button>
                 </CardContent>
             </Card>
             </div> 
@@ -62,12 +60,13 @@ export default class Pricing extends Component {
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 2 </h4>
                 <h2 class="price-category">  Premium </h2>
-                <br />
                 <p> Subscription </p>
-                <p> $10 / Month </p>
-                <p> 15 Automated Documents Per Month </p>
-                <p> Free Formation Documents and Guides </p>
-                <Button variant="small">Learn More</Button>
+                <br/>
+                <p class="price"> $10 / Month </p>
+                <p> INCLUDED: <br /> &bull; 15 Automated Documents per month
+                <br /> &bull; Free Fromation Documents and Guides 
+                <br /> &bull; Governance </p>
+                <Button size="small">Get Started</Button>
                 </CardContent>
             </Card>
             </div> 
@@ -79,22 +78,22 @@ export default class Pricing extends Component {
                 <CardContent className="card-2-inside">
                 <h4 class="price-option"> Option 3 </h4>
                 <h2 class="price-category">  Formation Documents </h2>
-                <br></br>
                 <p> Per Unit </p>
-                <p> Price: $5 / document</p>
-                <p> Automated Formation Documents </p>
-                <p> Formation Resolutions </p>
-                <Button size="small">Learn More</Button>
+                <br />
+                <p class="price"> $5 / document</p>
+                <p> INCLUDED: <br />  &bull; Automated Formation Documents
+                <br /> &bull; Formation Resolutions </p>
+                <Button size="small">Get Started</Button>
                 </CardContent>
             </Card>
             </div>  
             </Link>
 
             </div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            <br />
+            <br />
+            <br /> 
+
 
             <Footer />
        </div>

@@ -18,6 +18,7 @@ import { Progress } from 'semantic-ui-react'
 import { Alert } from 'react-alert'
 import WaiverShareholderDocument from './WaiverShareholderDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
+import Navbar2 from '../components/nav-bar2.jsx';
 
 
 
@@ -34,10 +35,10 @@ export default class WaiverShareholdersIntro extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        <Navbar />
+        <Navbar2 />
 
         <div class="back-button" style={{ paddingLeft: "20px", marginLeft: "20px" }}>
-          <Link to="/Governance" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
+          <Link to="/GovernanceLogin" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
         </div>
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col left height'>

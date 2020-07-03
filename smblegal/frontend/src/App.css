@@ -274,11 +274,12 @@ nav a:hover {
 }
 .homepage, .about-page, .pricing-page, .sign-up-page, .tools-page,  
 .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
-.automated-docs-page, .login-page, .create-acc-page, .company-id-page { 
+.automated-docs-page, .login-page, .create-acc-page, .company-id-page, .doc-page , .product-overview-page,
+ .content-marketing-page, .homepage-login { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
-  margin-left: 40px; 
-  margin-right: 40px; 
+  margin-left: 50px; 
+  margin-right: 50px; 
 
 }
 
@@ -470,15 +471,20 @@ flex-wrap: wrap;
 font-family: 'WorkSans';
 }
 
-.price-card-1, .price-card-2, .price-card-3, .price-card-4 {
-  width: 220px;
-  height: 220px;
-  margin: 10px;
+.price-card-1, .price-card-2, .price-card-3 {
+  width: 300px;
+  margin: 20px;
   font-family: 'WorkSans';
+ /* border: 2px solid rgb(201, 201, 201); */
+
+}
+
+.price-card-1:hover, .price-card-2:hover, .price-card-3:hover { 
+  box-shadow: 5px 5px rgb(201, 201, 201);
 }
 
 .card-2-inside:hover { 
-  background-color: #307ADD;
+  background-color: #245CA6;
   color: white;
   opacity: 0.7;
 }
@@ -491,9 +497,16 @@ font-family: 'WorkSans';
   font-size: 16px;
 }
 
+.price { 
+  color:  #245CA6;
+  font-style: italic;
+  font-weight: 600;
+}
+
 .price-category {
   font-size: 25px;
   font-weight: 550;
+  text-transform: uppercase;
 }
 
 .pick-document { 
@@ -575,7 +588,7 @@ font-family: 'WorkSans';
 
 }
 
-.create-acc-button { 
+.create-acc-button, .gov-button, .gov-button-1, .contact-us-button { 
   padding-top: 10px; 
   border: 2px solid #245CA6;
   width: 200px;
@@ -583,16 +596,28 @@ font-family: 'WorkSans';
   justify-content: center;
 }
 
-.create-acc-button p {
+.create-acc-button p, .gov-button p, .gov-button-1 p, .contact-us-button p {
   color: #245CA6;
 }
 
-.create-acc-button:hover {
+.create-acc-button:hover, .gov-button:hover, .gov-button-1:hover, .contact-us-button:hover  {
   background-color: #245CA6;
 }
 
-.create-acc-button:hover p {
+.create-acc-button:hover p, .gov-button:hover p, .gov-button-1:hover p, .contact-us-button:hover p {
   color: white;
+}
+
+.gov-button {
+  width: 250px;
+}
+
+.gov-button-1 {
+  width:300px;
+}
+
+.contact-us-button { 
+  width: 180px;
 }
 
 .tools-section { 
@@ -642,6 +667,39 @@ font-family: 'WorkSans';
   margin: 30px;
 }
 
+.content-marketing-section {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.cm-1 { 
+  border: 2px solid #245CA6;
+  width: 300px; 
+  height: 300px;
+  text-align: center;
+  font-family: 'DM Sans';
+  background-color: #245CA6;
+  margin: 30px;
+}
+.cm-1 h4 { 
+  color: white; 
+  font-family: 'DM Sans';
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1mm;
+  font-size: 32px;
+  padding: 10px;
+}
+
+.cm-1:hover {
+  opacity: 0.8;
+
+}
+
+.avatar-image { 
+  width: 30px;
+}
 
 
 

@@ -13,6 +13,11 @@ import {
     Link
   } from "react-router-dom";
 
+
+
+
+  /* FOR PARTNERSHIP QUESTIONS */
+
   const booleans = [
       { 
           value: 'Yes',
@@ -160,42 +165,36 @@ export default function AutomateGov() {
             <br></br>
             <form className={classes.root} noValidate autoComplete="off">
             <div class="login-form" style={{textAlign: "center"}}>
-             <br></br>
-                <div class="company-choice">
+             <div class="partnership-questions">
+
+
+             <div class="unanimous-choice">
                         <TextField
-                            id="outlined-select-company"
-                            select label="You are a"
-                            value={company}
-                            onChange={handleChangeCompany}
+                            id="outlined-select-consent"
+                            select label="Does your partnership require unanimous consent?"
+                            value={boolean}
+                            onChange={handleChangeBoolean}
                             variant="outlined"
                             style={{width: "500px"}}
                          >
-                        {/* {companies.map((option) => ( */}
-                        <MenuItem key="Corporation" value="Corporation">
-                            Corporation
+                        {booleans.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                            {option.label}
                         </MenuItem>
-                        <MenuItem key="Partnership" value="Partnership">
-                            Partnership
-                        </MenuItem>
-                        <MenuItem key="LLC" value="LLC">
-                            LLC
-                        </MenuItem>
-                       
-
-                        
+                            ))}
                         </TextField>
                 </div>
-                <br></br>
-                <br />
 
 
-                { company === 'Partnership' && (
-               <form> 
-             <div class="partnership-questions">
-                    <div class="quorum" style={{textAlign: "center"}}>
+
+              { boolean === 'No' && ( 
+
+                    <form>
+                        <br />
+                        <div class="vote-action">
                         <TextField
                             id="outlined-number"
-                            label="What is quorum in your business?"
+                            label="What is a sufficient vote to take partnership action?"
                             type="number"
                             InputLabelProps={{
                                 shrink: true,
@@ -203,20 +202,13 @@ export default function AutomateGov() {
                             variant="outlined"
                             style={{width: "500px"}}
                         />
-                    </div>
-                    <br></br>
-                    <div class="quorum-vote" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="What vote of a quorum is sufficient to pass something?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                    </div>
+
+                        </div>
+                    </form> 
+
+              )}
+
+                       
                     <br></br>
                     <div class="num-partners" style={{textAlign: "center"}}>
                         <TextField
@@ -231,285 +223,15 @@ export default function AutomateGov() {
                         />
                     </div>
                     <br></br>
-             </div>
-             <br></br>
-           
-             <br />
-             <br />
-             <br />
-             <center>
-                  <div class="gov-button-1" >
-                       <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
-                   </div>
-            </center>
-            </form>
-           )}
-           
-            
-            <br></br>
 
-            { company === 'Corporation' && ( 
-            <form>
-             <div class="corporation-questions">
-                 <div class="board-meeting" style={{textAlign: "center"}}>
-                    <TextField
-                        id="date"
-                        label="When was your last board meeting?"
-                        type="date"
-                        variant="outlined"
-                        className={classes.textField}
-                        InputLabelProps={{
-                        shrink: true,
-                    }}
-                        style={{width:"500px"}}
-                    />
+                    <p style={{textAlign: "center"}}> Please enter the following information for all Members or Managers </p>
 
-                 </div>
-                 <br></br>
-                 <div class="shareholders-meeting" style={{textAlign: "center"}}>
-                    <TextField
-                        id="date"
-                        label="When was your last Shareholder meeting?"
-                        type="date"
-                        variant="outlined"
-                        className={classes.textField}
-                        InputLabelProps={{
-                        shrink: true,
-                    }}
-                        style={{width:"500px"}}
-                    />
-                 </div>
-                 <br></br>
-                 <div class="shareholders-quorum" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="What is Shareholder quorum in your business?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                </div>
-                <br></br>
-                <div class="shareholders-quorum-vote" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="What vote of a Shareholder quorum is sufficient to pass something?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                </div>
-                <br></br>
-                <div class="board-quorum" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="What is board quorum in your business?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                </div>
-                <br></br>
-                <div class="board-quorum-vote" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="What vote of a Board quorum is sufficient to pass something?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                </div>
-                <br></br>
-                <div class="num-board-members" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="How many board members does your business have?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                </div>
-                <br></br>
-                <div class="num-shareholders" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="How many Shareholders does your business have?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                </div>
-                <br></br>
-             </div>
-            <br />
-            <br />
-            <br />
-            <br />
-             <center>
-                  <div class="gov-button-1" >
-                       <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
-                   </div>
-            </center>
-             </form>
-             )}
-
-
-            
-            <br />
-
-            { company === 'LLC' && ( 
-            <form>
-             <div class="LLC-questions"> 
-                <div class="annual-meeting-choice">
-                        <TextField
-                            id="outlined-select-meeting"
-                            select label="Are you required to have an annual meeting?"
-                            value={boolean}
-                            onChange={handleChangeBoolean}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                         >
-                        {booleans.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                        </MenuItem>
-                            ))}
-                        </TextField>
-                </div>
-                <br></br>
-                <div class="llc-quorum" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="What is quorum in your business?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                    </div>
-                    <br></br>
-                    <div class="llc-quorum-vote" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="What vote of a quorum is sufficient to pass something?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                    </div>
-                    <br></br>
-                    <div class="num-members-llc" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="How many members and/or managers does your business have?"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                    </div>
-                    <br></br>
-                    <p style={{textAlign: "center"}}> Please enter the following information for all Members and/or Managers </p>
-                     <br></br>  
-
-            <form onChange={handleMembersChange} >
-                <div class='listExp'>
-                  <p>Enter a new member: </p>
-                </div>
-                <div class='expButton'>
-                    <Button onClick={addMembers} variant="outlined"> Add Member </Button>
-                </div>
-                {
-                  (membersList).map((val, idx) => {
-                    let nameId = `name-${idx}`, emailId = `email-${idx}`, sharesID = `percentShares-${idx}`, profitID = `percentProfit-${idx}`
-                    return (
-                      <div key={idx}>
-                          <div class="name-input-llc" style={{textAlign: "center"}}>
-                            <TextField 
-                                id={nameId}
-                                label="Name" 
-                                value={(membersList)[idx].name}
-                                variant="outlined" 
-                                style={{width: "500px"}} /> 
-                            </div>
-                        <br />
-                        <div class="email-input-llc" style={{textAlign: "center"}}>
-                            <TextField 
-                                id={emailId}
-                                label="Email" 
-                                value={(membersList)[idx].email}
-                                variant="outlined" 
-                                style={{width: "500px"}} /> 
-                            </div>
-                        <br />
-                        <div class="percent-ownership" style={{textAlign: "center"}}>
-                        <TextField
-                            id={sharesID}
-                            label="Percentage of ownership"
-                            type="number"
-                            value={(membersList)[idx].percentShares}
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                    </div>
-                        <br />
-                        <div class="percent-profits-received" style={{textAlign: "center"}}>
-                        <TextField
-                            id={profitID}
-                            label="Percent of profits received"
-                            type="number"
-                            value={(membersList)[idx].percentProfit}
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                    </div>
-                        
-                        <br />
-                      </div>
-                    )
-                  })
-                }
-              </form> 
-
-                        
-                    <br></br>
-                     <div class="new-member">
-                     <div class="name-input-llc" style={{textAlign: "center"}}>
+                    <div class="new-member">
+                     <div class="name-input" style={{textAlign: "center"}}>
               <TextField id="outlined-basic" label="Name" variant="outlined" style={{width: "500px"}} /> 
                 </div> 
                 <br></br>
-                <div class="email-input-llc" style={{textAlign: "center"}}>
+                <div class="email-input" style={{textAlign: "center"}}>
               <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
                 </div> 
                 <br></br>
@@ -538,37 +260,54 @@ export default function AutomateGov() {
                             style={{width: "500px"}}
                         />
                     </div>
+                    <br /> 
+                    <div class="percent-losses-received" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="Percent of losses received"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
                     </div>
-                    <br></br>
-             
-             
+                    </div>
+
+                   
+
              </div>
-             <br />
+             <br></br>
+
+
+
+             <TextField
+             name="upload-file"
+             type="file"
+             variant="outlined"
+             helperText="upload"
+              />
+
+           
              <br />
              <br />
              <br />
              <center>
                   <div class="gov-button-1" >
-                       <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
+                       <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
                    </div>
             </center>
-
-             </form>
-             )}
-             
-                <br></br>
-               <br></br>
-    
-                </div>
-                </form>
-
+        
                 
                 <br></br>
                 <br></br>
                 <br></br>
 
                 <Footer />
-
+              
+            </div>
+            </form>
             </div>
         );
     }

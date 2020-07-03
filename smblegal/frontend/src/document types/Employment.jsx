@@ -44,13 +44,13 @@ export default class Employment extends Component {
                 <br></br>
                 <div class="formation-documents">
 
-                    <div class="document-icon"> <Link to="/Questions">
+                    <div class="document-icon"> <Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Internship Agreement </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"> <Link to="/EmploymentQuestions">
+                    <div class="document-icon"> <Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Employment Agreement </p>
                     </Link>
@@ -58,13 +58,13 @@ export default class Employment extends Component {
                 </div>
                 <div class="formation-documents">
 
-                    <div class="document-icon"> <Link to="/ConsultingQuestions">
+                    <div class="document-icon"> <Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Consulting Agreement </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"> <Link to="/DisciplinaryQuestions">
+                    <div class="document-icon"> <Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Disciplinary Warning </p>
                     </Link>
@@ -72,13 +72,13 @@ export default class Employment extends Component {
                 </div>
                 <div class="formation-documents">
 
-                    <div class="document-icon"> <Link to="/TerminationQuestions">
+                    <div class="document-icon"> <Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Employment Termination </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"> <Link to="/MutualNDAQuestions">
+                    <div class="document-icon"> <Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Mutual Non-Disclosure Agreement </p>
                     </Link>
@@ -86,13 +86,13 @@ export default class Employment extends Component {
                 </div>
                 <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/RecipientNDAQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Unilateral Non-Disclosure Agreement <br></br> (Pro-Recipient) </p>
                     </Link>
                     </div>
 
-                    <div class="document-icon"><Link to="/DisclosureNDAQuestions">
+                    <div class="document-icon"><Link to="/SignIn">
                         <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                         <p> Unilateral Non-Disclosure Agreement <br></br> (Pro-Discloser) </p>
                     </Link>

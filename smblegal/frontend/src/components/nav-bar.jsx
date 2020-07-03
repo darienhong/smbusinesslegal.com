@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import SubMenu from './sub-menu.jsx';
+import SubMenu2 from './sub_menu2.jsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import IconLogo from '../assets/icon-logo.png';
 
@@ -24,7 +25,7 @@ export default class Navbar extends Component {
           <nav>
             <ul>
               <li><Link to="/" className="nav-bar">Home</Link></li>
-              <li><Link to="/AboutUs" className="nav-bar"> Why? </Link></li>
+              <li className="nav-bar"> <SubMenu2 /></li>
               <li ><Link to="/Tools" className="nav-bar-1"> <SubMenu />  </Link> </li>
               <li><Link to="/Pricing" className="nav-bar"> Pricing </Link></li>
               <li><Link to="/CreateAccount" className="nav-bar"> Sign Up </Link></li>

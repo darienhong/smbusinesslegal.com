@@ -6,6 +6,7 @@ import moment from 'moment';
 import { Progress } from 'semantic-ui-react'
 import ConsultingDocument from './ConsultingDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
+import Navbar2 from '../components/nav-bar2.jsx';
 
 
 
@@ -28,7 +29,7 @@ export default class ConsultingInfo3 extends Component {
     return (
       <div class='ask'>
         {/* <Progress percent={values.percentage} indicating /> */}
-        <Navbar />
+        <Navbar2 />
 
         <div class='col height'>
           <form>

@@ -385,6 +385,12 @@ export default function CompanyID() {
                          </TextField>
              </div>
              <br></br>
+             
+
+                <div class="zipcode-input" style={{textAlign: "center"}}>
+                      <TextField id="outlined-basic" label="Zipcode" variant="outlined" style={{width: "500px"}} /> 
+                </div>
+                <br /> 
                 <div class="company-choice">
                         <TextField
                             id="outlined-select-company"
@@ -410,13 +416,11 @@ export default function CompanyID() {
                         </TextField>
                 </div>
                 <br></br>
-
-                <div class="zipcode-input" style={{textAlign: "center"}}>
-              <TextField id="outlined-basic" label="Zipcode" variant="outlined" style={{width: "500px"}} /> 
-                </div> 
-                <br></br>
                 <br />
 
+
+              { company === 'Partnership' && ( 
+                <div>
                 <center>
              <Link to="/AutomateGovernance" style={{textDecoration: "none"}}> <div class="gov-button" >
                           <p style={{textAlign: "center"}}> Automate Your Governance </p>
@@ -429,8 +433,48 @@ export default function CompanyID() {
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
                </center>
+               </div>
+
+                  )}
 
 
+
+
+              { company === 'Corporation' && ( 
+                <div>
+                <center>
+             <Link to="/AutomateGovernance2" style={{textDecoration: "none"}}> <div class="gov-button" >
+                          <p style={{textAlign: "center"}}> Automate Your Governance </p>
+                      </div> </Link>  
+                 </center>
+                <br />
+                <br />
+                <center>
+                     <div class="gov-button-1" >
+                          <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
+                      </div>
+               </center>
+               </div>
+
+                  )}
+
+            { company === 'LLC' && ( 
+                <div>
+                <center>
+             <Link to="/AutomateGovernance3" style={{textDecoration: "none"}}> <div class="gov-button" >
+                          <p style={{textAlign: "center"}}> Automate Your Governance </p>
+                      </div> </Link>  
+                 </center>
+                <br />
+                <br />
+                <center>
+                     <div class="gov-button-1" >
+                          <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
+                      </div>
+               </center>
+               </div>
+
+                  )}
 
 
 {/*
