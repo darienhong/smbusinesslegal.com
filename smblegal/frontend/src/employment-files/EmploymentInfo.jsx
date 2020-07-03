@@ -26,6 +26,14 @@ export default class EmploymentInfo extends Component {
 
         <div class='col height'>
 
+
+          <form onChange={this.props.handleChange('responsibilities')}>
+            <p>What are the job responsibilities?</p>
+            <textarea name="message" rows="5" cols="30"></textarea>
+
+          </form>
+          <br />
+
           <form>
             <p>Enter the employee's status: </p>
             <input

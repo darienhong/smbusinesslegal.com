@@ -46,7 +46,8 @@ export default class EmploymentQuestions extends Component {
     restaurant: '[X]',
     commission: '[X]',
     comProcedure: '[X]',
-    tipping: '[X]'
+    tipping: '[X]',
+    responsibilities: '[X]'
   }
 
   nextStep = () => {
@@ -102,12 +103,14 @@ export default class EmploymentQuestions extends Component {
     const { step } = this.state;
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
-      employerTitle, phone, email, paid, verification, expenseList, restaurant, commission, tipping, comProcedure,
+      employerTitle, phone, email, paid, verification, expenseList,
+      restaurant, commission, tipping, comProcedure, responsibilities
     } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
-      phone, email, paid, verification, expenseList, restaurant, commission, tipping, comProcedure
+      phone, email, paid, verification, expenseList, restaurant,
+      commission, tipping, comProcedure, responsibilities
     };
 
     switch (step) {

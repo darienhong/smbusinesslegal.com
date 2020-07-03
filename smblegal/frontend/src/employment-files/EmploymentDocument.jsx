@@ -188,15 +188,9 @@ export default class EmploymentDocument extends Component {
         <br /><br />
         <div id='container'>
 
-          <h5 class='indoc'>1. Internship Description. [Job Responsibilities]</h5>
-          {/* <p class='tab'>i. Educational Environment.
-          <br /><br />
-            <p class='tab'>This internship is for the educational benefit of <span class='fill'>{values.internName}</span>. {creditRequire} <span class='fill'>{values.internName}</span> will be the primary beneficiary of this internship.</p></p >
-          < p class='tab'> ii. No Expectation of Employment.
-          <br /><br />
-            < p class='tab' > By signing this agreement < span class='fill' > {values.internName}</span > acknowledges and
-    agrees that this internship is for a fixed duration and comes with no promises or
-    expectations of employment beyond the internship.</p ></p > */}
+          <h5 class='indoc'>1. Internship Description. </h5>
+          <p>{values.responsibilities}</p>
+
           <br />
 
           <h5 class='indoc'>2. Directives, Policies and Procedures. </h5>
