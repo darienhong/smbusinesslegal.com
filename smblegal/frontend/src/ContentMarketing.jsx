@@ -19,6 +19,10 @@ const options = {
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+
+/* CORPORATE GOVERNANCE PDF */ 
+
+
 export default class ContentMarketing extends Component { 
 
     state = {
@@ -72,7 +76,9 @@ export default class ContentMarketing extends Component {
                 </Document>
               </div>
             </div>
-
+            <br />
+            <br />
+            <br />
 
             <Footer />
           </div>
