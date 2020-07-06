@@ -324,8 +324,8 @@ nav a:hover {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
-  border: 1px solid #70E0CA;
-  background-color: #70E0CA; 
+  border: 1px solid #2DC4B6;
+  background-color: #2DC4B6; 
   font-weight: 580;
   display: block;
   text-decoration: none;
@@ -561,8 +561,10 @@ font-family: 'WorkSans';
   width: 300px; 
   display: flex;
   justify-content: center;
-  border: 0.2px solid rgb(201, 201, 201); 
-  box-shadow: 5px 5px 5px rgb(201, 201, 201);
+  border: 3px solid #2DC4B6;
+  padding: 20px;
+
+/*  box-shadow: 5px 5px 5px rgb(201, 201, 201); */
 }
 
 .features-section {
@@ -771,6 +773,29 @@ font-family: 'WorkSans';
   color: white;
   font-family: 'DM Sans';
 }
+
+.product { 
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-block { 
+  padding-top: 10px; 
+  border: 2px solid #2DC4B6;
+  width: 250px;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #2DC4B6;
+  font-family: "DM Sans";
+  margin: 20px;
+}
+
+.product-block p { 
+  color: white;
+  letter-spacing: 0.2mm;
+}
+
 
 
 

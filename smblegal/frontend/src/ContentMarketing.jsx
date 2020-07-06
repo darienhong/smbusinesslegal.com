@@ -44,6 +44,8 @@ export default class ContentMarketing extends Component {
         const { file, numPages } = this.state;
     
         return (
+
+          <div class="full-page">
           <div className="content-marketing-page">
             <div className="marketing-container">
               <div className="marketing-container" >
@@ -79,6 +81,7 @@ export default class ContentMarketing extends Component {
             <br />
             <br />
             <br />
+            </div>
 
             <Footer />
           </div>

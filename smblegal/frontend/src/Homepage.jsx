@@ -82,7 +82,7 @@ export default class Homepage extends Component {
                <div class='signup'>      
                   <div data-aos="slide-up" data-aos-easing="ease-in-out" data-aos-duration="2000">
                       <Link to="/CreateAccount" style={{textDecoration: "none"}}> <center> <div class="join-now-button" >
-                          <p style={{textAlign: "center"}}> Join Now </p>
+                          <p style={{textAlign: "center", fontWeight: "600"}}> Join Now </p>
                               </div> </center> </Link>
                   </div>
 
@@ -126,7 +126,7 @@ export default class Homepage extends Component {
           <center>
           <div class="governance-automation-block">
             <div>
-            <p style={{fontWeight: "500", padding: "10px"}}> GOVERNANCE AUTOMATION  </p>
+            <p class="homepage-text"> Governance Automation  </p>
             <p style={{fontSize: "14px", padding: "10px"}}> Automate and organize all aspects of our company's 
             governance with the click of a button. </p>
             </div>
@@ -135,7 +135,7 @@ export default class Homepage extends Component {
           <br></br>
             <div class="features-section">
             <div class="features-block">
-            <p style={{fontWeight: "550", padding: "15px"}}> INCREASE OPERATIONAL EFFICIENCY  </p>
+            <p class="homepage-text"> Increase Operational Efficiency  </p>
             <p style={{fontSize: "14px", fontWeight: "400", padding: "10px"}}> Interrelated documents eliminate the need for 
             time consuming search and duplication of efforts. Artificial intelligence and machine learning 
             powered document management removes unnecessary tasks from the hands of owners and employees. 
@@ -143,13 +143,13 @@ export default class Homepage extends Component {
             </div>
             <div class="features-block">
               <br></br>
-            <p style={{fontWeight: "550", padding: "15px"}}> AVOID LEGAL PITFALLS  </p>
+            <p class="homepage-text"> Avoid Legal Pitfalls  </p>
             <p style={{fontSize: "14px", padding: "10px"}}> Keep track of all contractual and legal obligations in one easy to use platform. 
             Keep up with federal, state and local regulations to remain compliant. Execute documents properly 
             to avoid conflict. </p>
             </div>
             <div class="features-block">
-            <p style={{fontWeight: "550", padding: "15px"}}> SAVE MONEY AND DRIVE REVENUE GROWTH  </p>
+            <p class="homepage-text"> Save Money and Drive Revenue Growth   </p>
             <p style={{fontSize: "14px", padding: "10px"}}> Unbeatable price that will save you money now and in the long run. Increased
             efficiency means owners and employees can spend more time driving customer growth. Seamless integration 
             creates a delightful customer experience. </p>
@@ -158,6 +158,25 @@ export default class Homepage extends Component {
             </center>
           <br></br>
           <br></br>
+
+
+          <div class="product"> 
+          <Link to="/ProductOverview" style={{textDecoration: "none"}}>   <div class="product-block" >
+                    <p style={{textAlign: "center", fontWeight: "600"}}> Artificial Intelligence </p>
+              </div></Link> 
+          <Link to="/ProductOverview" style={{textDecoration: "none"}}>  <div class="product-block" >
+                    <p style={{textAlign: "center", fontWeight: "600"}}> Machine Learning </p>
+              </div></Link>
+            
+          <Link to="/ProductOverview" style={{textDecoration: "none"}}>  <div class="product-block" >
+                    <p style={{textAlign: "center", fontWeight: "600"}}> The Cloud </p>
+              </div>
+              </Link>
+          
+          </div>
+
+          <br />
+          <br />
           </div>
           
         <Footer />

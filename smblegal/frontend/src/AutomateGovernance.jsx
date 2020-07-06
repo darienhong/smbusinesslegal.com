@@ -182,6 +182,7 @@ export default function AutomateGov() {
         
 
         return (
+            <div class="full-page">
             <div class="company-id-page">
                 <Navbar />
                 <br></br>
@@ -472,10 +473,13 @@ export default function AutomateGov() {
                 <br></br>
                 <br></br>
 
+                </div>
+            </form> 
+            </div> 
+
                 <Footer />
               
-            </div>
-            </form>
+                      
             </div>
         );
 }

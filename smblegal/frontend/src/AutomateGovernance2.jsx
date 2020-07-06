@@ -180,6 +180,8 @@ const handleChangeAutomation = (event) => {
         
 
         return (
+
+            <div class="full-page">
             <div class="company-id-page">
                 <Navbar />
                 <br></br>
@@ -441,6 +443,7 @@ const handleChangeAutomation = (event) => {
                 <br></br>
                 <br></br>
                 <br></br>
+                </div>
 
                 <Footer />
 

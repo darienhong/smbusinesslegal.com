@@ -195,6 +195,7 @@ const handleOpen = (event) => {
         
 
         return (
+            <div class="full-page">
             <div class="company-id-page">
                 <Navbar />
                 <br></br>
@@ -513,6 +514,8 @@ const handleOpen = (event) => {
                 <br></br>
                 <br></br>
                 <br></br>
+
+                </div>
 
                 <Footer />
 

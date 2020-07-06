@@ -172,11 +172,12 @@ export default function CreateAccount() {
         <br />
 
         </div>
+        </div>
 
 
           <Footer />
 
-        </div>
+        
         </div>
 
         );
