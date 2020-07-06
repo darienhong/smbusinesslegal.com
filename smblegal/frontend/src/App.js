@@ -100,8 +100,8 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: [
-      'WorkSans',
-      'DM Sans'
+      'DM Sans', 
+      
     ].join(','),
   }
 });

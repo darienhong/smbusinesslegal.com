@@ -14,6 +14,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import IconLogo from '../assets/icon-logo.png';
 import Avatar from '@material-ui/core/Avatar';
 import AvatarImage from '../assets/default-avatar.png';
+import Logo from '../assets/logo.png';
 
 // import { Grommet, Menu } from 'grommet';
 
@@ -25,7 +26,7 @@ export default class Navbar2 extends Component {
     return (
      
         <div class="container">
-          <Link to="/HomepageLogin"><img src={IconLogo} alt="icon logo" className="logo" /></Link> 
+          <Link to="/HomepageLogin"><img src={Logo} alt="icon logo" className="logo" /></Link> 
           <nav>
             <ul>
               <li><Link to="/HomepageLogin" className="nav-bar">Home</Link></li>
