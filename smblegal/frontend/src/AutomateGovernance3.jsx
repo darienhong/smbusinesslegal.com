@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
+import {DropzoneDialog, DropzoneArea} from 'material-ui-dropzone';
 import {
     BrowserRouter as Router,
     Switch,
@@ -26,6 +27,17 @@ import {
           label: 'No',
       }
   ]
+
+  const automation = [ 
+    { 
+        value: 'AI', 
+        label: 'AI Automation',
+    }, 
+    {
+        value: 'Manual',
+        label: 'Manually Input',
+    }
+    ]   
 
   const managers = [
       { 
@@ -110,8 +122,11 @@ export default function AutomateGov3() {
     const [company, setCompany] = React.useState();
     const [USstate, setState] = React.useState();
     const [boolean, setBoolean] = React.useState();
+    const [automate, setAutomation] = React.useState();
     const [membersList, setMembersList] = React.useState([{name: "", email: "", percentShares: "", percentProfit: ""}]);
     const [manager, setManager] = React.useState();
+    const [open, setOpen] = React.useState(false); 
+    const [files, setFiles] = React.useState([]); 
    
   /*  const [members, setMembers] = React.useState(0);
 
@@ -128,6 +143,26 @@ export default function AutomateGov3() {
     }
 
 */
+
+    
+const handleClose = (event) => {
+    setOpen(false);
+
+}
+
+function handleChange(files) {
+    setFiles(files); 
+}
+
+const handleOpen = (event) => { 
+    setOpen(true);
+}
+
+
+    const handleChangeAutomation = (event) => { 
+        setAutomation(event.target.value);
+    }
+
     const handleChangeManager = (event) => {
         setManager(event.target.value);
     }
@@ -179,7 +214,90 @@ export default function AutomateGov3() {
             <form className={classes.root} noValidate autoComplete="off">
             <div class="login-form" style={{textAlign: "center"}}>
              <br></br>
-    
+
+             <div class="upload-formation">
+            <p style={{textAlign: "center"}}> Please upload formation documents </p>
+
+             <DropzoneArea
+                    onChange={handleChange.bind(this)}
+                    filesLimit={10}
+                    />
+
+                    </div> 
+
+                    <br />
+                    <br />
+
+            <div class="upload-governance">
+            <p style={{textAlign: "center"}}> Please upload governance documents </p>
+
+             <DropzoneArea
+                    onChange={handleChange.bind(this)}
+                    filesLimit={10}
+                    />
+
+                    </div> 
+                    <br />
+                    <br />
+
+
+            <div class="upload-company-minutes">
+            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes </p>
+
+             <DropzoneArea
+                    onChange={handleChange.bind(this)}
+                    filesLimit={10}
+                    />
+
+                    </div> 
+
+
+            <br />
+            <br />
+
+
+            <div class="automate-choice">
+                        <TextField
+                            id="outlined-select-consent"
+                            select label="How would you like to Automate your Governance?"
+                            value={automate}
+                            onChange={handleChangeAutomation}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                         >
+                        {automation.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                        </MenuItem>
+                            ))}
+                        </TextField>
+                        < br/>
+                </div>
+               
+
+
+                { automate === 'AI' && ( 
+                    <form> 
+            <br />
+             <br />
+             <center>
+                  <div class="gov-button-1" >
+                       <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
+                   </div>
+            </center>
+
+
+                    </form>
+
+
+            )}
+
+
+            { automate === 'Manual' && ( 
+
+                <form> 
+                    < br/>
+
              <div class="LLC-questions"> 
              <div class="manager-choice">
                         <TextField
@@ -386,6 +504,8 @@ export default function AutomateGov3() {
                    </div>
             </center>
     
+    </form>
+      )}
                 </div>
                 </form>
 

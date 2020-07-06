@@ -44,7 +44,7 @@
 h1 {
   color: black;
   text-align: center; 
-  font-family: 'WorkSans';
+  font-family: 'DM Sans';
   font-style: bold;
   padding: 0%;
 }
@@ -56,7 +56,8 @@ h1 {
 .logo {
   float: left;
   margin-top: 20px;
-  width: 30px;
+  padding: 10px;
+  width: 200px;
 }
 
 .logo:hover {
@@ -65,19 +66,19 @@ h1 {
 
 h2 { 
   color: black;
-  font-family: 'WorkSans';
+  font-family: 'DM Sans';
   font-weight: 500;
 } 
 
 h3 {
-  font-family: 'WorkSans';
+  font-family: 'DM Sans';
   font-weight: 500;
   color: #245CA6;
   font-style: italic;
 }
 
 h4 { 
-  font-family: 'WorkSans';
+  font-family: 'DM Sans';
   font-weight: 400;
   color: black;
   font-size: 10px;
@@ -85,7 +86,7 @@ h4 {
 
 p {
   color: black; 
-  font-family: 'WorkSans';
+  font-family: 'DM Sans';
   font-weight: 300;
 
 }
@@ -155,14 +156,28 @@ nav li {
 }
 
 nav a {
-  color: rgb(201, 201, 201);
+  color: #245CA6;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 550;
+  font-family: 'DM Sans';
+  font-weight: 600;
   font-size: 14px;
 
 }
 
+.dropdown-nav { 
+  color: #245CA6;
+  font-family: 'DM Sans';
+  font-weight: 600;
+  font-size: 14px;
+  border-color: white;
+  background-color: white;
+  padding: 4px;
+}
+
+.dropdown-nav:hover { 
+
+  color: grey;
+}
 nav a:hover {
   color: #245CA6;
   text-decoration: none;
@@ -240,14 +255,6 @@ nav a:hover {
   background-color: #dedede;
 }
 
-.footer { 
-  text-align: center; 
-  padding: 20px; 
-  font-size: 12px;
-  font-weight: lighter;
-  letter-spacing: 0.5mm;
-  opacity: 0.5;
-}
 
 .title { 
   font-weight: bold;
@@ -317,16 +324,17 @@ nav a:hover {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
-  border: 0.2px solid rgb(201, 201, 201);
-  box-shadow: 3px 3px 3px rgb(201, 201, 201); 
-  text-transform: uppercase;
+  border: 1px solid #70E0CA;
+  background-color: #70E0CA; 
   font-weight: 580;
   display: block;
   text-decoration: none;
+  letter-spacing: 0.2mm;
   
 }
 .employment p, .governance p, .covid-19 p, .formation p {
-  color: rgb(201, 201, 201);
+  color: white;
+  font-family: 'DM Sans';
 
 }
 .employment, .governance, .formation {
@@ -336,12 +344,12 @@ nav a:hover {
 
 .covid-19:hover, .employment:hover, .governance:hover, .formation:hover {
  /* color: rgb(169, 172, 201); */
-  color: #245CA6;
+  background-color: white;
   /* border-color: rgb(169, 172, 201) ; */
-  border-color: #245CA6;
+  border-color: white;
 }
 .covid-19:hover p, .employment:hover p, .governance:hover p, .formation:hover p {
-  color: #245CA6;
+  color: #70E0CA;
 }
 
 
@@ -588,7 +596,7 @@ font-family: 'WorkSans';
 
 }
 
-.create-acc-button, .gov-button, .gov-button-1, .contact-us-button { 
+.create-acc-button, .gov-button, .gov-button-1 { 
   padding-top: 10px; 
   border: 2px solid #245CA6;
   width: 200px;
@@ -596,16 +604,32 @@ font-family: 'WorkSans';
   justify-content: center;
 }
 
-.create-acc-button p, .gov-button p, .gov-button-1 p, .contact-us-button p {
+.create-acc-button p, .gov-button p, .gov-button-1 p {
   color: #245CA6;
 }
 
-.create-acc-button:hover, .gov-button:hover, .gov-button-1:hover, .contact-us-button:hover  {
+.create-acc-button:hover, .gov-button:hover, .gov-button-1:hover {
   background-color: #245CA6;
 }
 
-.create-acc-button:hover p, .gov-button:hover p, .gov-button-1:hover p, .contact-us-button:hover p {
+.create-acc-button:hover p, .gov-button:hover p, .gov-button-1:hover p {
   color: white;
+}
+
+.contact-us-button { 
+  padding-top: 10px; 
+  border: 2px solid white; 
+  width: 200px;
+  color: white;
+}
+
+.contact-us-button p { 
+  color: white; 
+  font-family: 'DM Sans';
+}
+
+.contact-us-button:hover { 
+  opacity: 0.7;
 }
 
 .gov-button {
@@ -700,6 +724,55 @@ font-family: 'WorkSans';
 .avatar-image { 
   width: 30px;
 }
+
+.join-now-button { 
+  padding-top: 10px; 
+  border: 2px solid #2DC4B6;
+  width: 200px;
+  color: #2DC4B6;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #2DC4B6;
+  font-family: "DM Sans";
+}
+
+.join-now-button p { 
+  color: white;
+}
+
+.join-now-button:hover { 
+  opacity: 0.7;
+}
+
+.homepage-text { 
+  text-align: center; 
+  color: #245CA6; 
+  font-family: 'DM Sans';
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.3mm;
+}
+
+.footer-block { 
+  background-color: #245CA6;
+  color: white; 
+}
+
+.footer { 
+  text-align: center; 
+  padding: 20px; 
+  font-size: 12px;
+  color: white;
+  letter-spacing: 0.5mm;
+  margin: 0;
+}
+
+.footer-text {
+  color: white;
+  font-family: 'DM Sans';
+}
+
+
 
 
 

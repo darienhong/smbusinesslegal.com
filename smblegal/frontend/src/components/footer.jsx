@@ -7,7 +7,9 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 export default class Footer extends Component { 
     render() {
         return(
-            <div class="block">
+            <div class="footer-block">
+              <br />
+             <br />
 
 
            <a href="https://forms.gle/saeyHap7mxkNpvmU8" target="_blank" rel="noopener noreferrer" style={{textDecoration: "none"}}> 
@@ -21,20 +23,20 @@ export default class Footer extends Component {
             <div class="contact-block">
           <div class="contact-icons">
           <div class="facebook">
-            <a href="https://www.facebook.com/SMB-Legal-107220167714259/" target="_blank" rel="noopener noreferrer"><FacebookIcon style={{color: "#245CA6"}} /></a>
+            <a href="https://www.facebook.com/SMB-Legal-107220167714259/" target="_blank" rel="noopener noreferrer"><FacebookIcon style={{color: "white"}} /></a>
           </div>
           <div class="instagram">
-            <a href="https://www.instagram.com/smbusinesslegal/" target="_blank" rel="noopener noreferrer"><InstagramIcon style={{color: "#245CA6"}}/> </a>
+            <a href="https://www.instagram.com/smbusinesslegal/" target="_blank" rel="noopener noreferrer"><InstagramIcon style={{color: "white"}}/> </a>
           </div>
           <div class="linkedin">
-            <a href="https://www.linkedin.com/company/smb-legal/" target="_blank" rel="noopener noreferrer"><LinkedInIcon style={{color: "#245CA6"}} /></a>
+            <a href="https://www.linkedin.com/company/smb-legal/" target="_blank" rel="noopener noreferrer"><LinkedInIcon style={{color: "white"}} /></a>
           </div>
           </div>
           </div>
 
             <footer class="footer">
-                <p> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
-                <p style={{opacity: 0.4}}> SMB Legal (Eatery Legal Corporation) is NOT a law firm, 
+                <p class="footer-text"> COPYRIGHT &copy; 2020 SMBUSINESSLEGAL.COM - ALL RIGHTS RESERVED </p>
+                <p class="footer-text" style={{opacity: 0.4}}> SMB Legal (Eatery Legal Corporation) is NOT a law firm, 
              is not a substitute for an attorney or law firm and cannot provide 
              legal advice.  SMB Legal provides access to self-help services 
              at your specific direction.  We cannot provide any kind of advice, 

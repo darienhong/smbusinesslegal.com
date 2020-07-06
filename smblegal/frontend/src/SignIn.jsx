@@ -15,6 +15,7 @@ export default class SignIn extends Component {
 
     render(){
         return (
+            <div class="full-page"> 
             <div class="login-page">
                 <Navbar />
                 <br></br>
@@ -69,7 +70,7 @@ export default class SignIn extends Component {
                 <br></br>
                 <br></br>
                 <br/> 
-
+                </div>
                 <Footer />
 
             </div>

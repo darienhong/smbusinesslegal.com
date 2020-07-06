@@ -54,7 +54,7 @@ export default function CreateAccount() {
     
 
         return(
-
+          <div class="full-page"> 
             <div class="create-acc-page">
             <Navbar />
             <br></br>
@@ -170,6 +170,8 @@ export default function CreateAccount() {
         <br />
         <br />
         <br />
+
+        </div>
 
 
           <Footer />

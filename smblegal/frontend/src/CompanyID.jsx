@@ -344,6 +344,8 @@ export default function CompanyID() {
         
 
         return (
+
+          <div class="full-page"> 
             <div class="company-id-page">
                 <Navbar />
                 <br></br>
@@ -831,6 +833,8 @@ export default function CompanyID() {
                 <br></br>
                 <br></br>
                 <br></br>
+
+                </div>
 
                 <Footer />
 

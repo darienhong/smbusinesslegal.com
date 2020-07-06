@@ -14,11 +14,9 @@ export default class SubMenu2 extends Component {
   render() {
     return (
       <Dropdown style={{ fontFamily: 'WorkSans' }}>
-        <Dropdown.Toggle style={{
-          borderColor: "white", backgroundColor: "white",
-          color: "rgb(201, 201, 201)", fontSize: "15px", fontWeight: "600", letterSpacing: 0, padding: "4px"
-        }}>
-          WHY?
+        <Dropdown.Toggle style={{backgroundColor: "white", borderColor: "white", color: "#245CA6",
+      fontWeight: "600", fontSize: "14.5px", fontFamily: "DM Sans"}} className="dropdown-nav" >
+          Why?
             </Dropdown.Toggle>
 
         <Dropdown.Menu>

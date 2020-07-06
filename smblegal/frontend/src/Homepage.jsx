@@ -55,7 +55,7 @@ export default class Homepage extends Component {
 
         return (
       
-       
+          <div class="full-page">
           <div class="homepage">
             <Navbar /> 
            {/*  <ModalTest /> */}
@@ -81,9 +81,9 @@ export default class Homepage extends Component {
               </div>
                <div class='signup'>      
                   <div data-aos="slide-up" data-aos-easing="ease-in-out" data-aos-duration="2000">
-                      <Link to="/CreateAccount"><center> <Button variant="outline-dark" 
-                      className="button" style={{fontFamily: 'WorkSans', fontWeight: 550,
-                      borderRadius: 0, padding: 10, width: 200}}> JOIN NOW </Button>{' '} </center> </Link>
+                      <Link to="/CreateAccount" style={{textDecoration: "none"}}> <center> <div class="join-now-button" >
+                          <p style={{textAlign: "center"}}> Join Now </p>
+                              </div> </center> </Link>
                   </div>
 
                 <br></br>
@@ -101,7 +101,7 @@ export default class Homepage extends Component {
            <br></br>
 
           
-          <p style={{textAlign: "center", textTransform: "uppercase"}}> Documents </p>
+          <p class="homepage-text"> Documents </p>
           <br></br>
           
          
@@ -158,10 +158,12 @@ export default class Homepage extends Component {
             </center>
           <br></br>
           <br></br>
+          </div>
           
         <Footer />
 
      
+       
        </div>
         );
       

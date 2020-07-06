@@ -12,12 +12,11 @@ export default class SubMenu extends Component {
   render() {
     return (
       <Dropdown style={{ fontFamily: 'WorkSans' }}>
-        <Dropdown.Toggle style={{
-          borderColor: "white", backgroundColor: "white",
-          color: "rgb(201, 201, 201)", fontSize: "15px", fontWeight: "600", letterSpacing: 0, padding: "4px"
-        }}>
-          TOOLS
-            </Dropdown.Toggle>
+        <Dropdown.Toggle style={{backgroundColor: "white", borderColor: "white", color: "#245CA6",
+      fontWeight: "600", fontSize: "15px", fontFamily: "DM Sans"}} 
+        >
+          Tools
+    </Dropdown.Toggle>
 
         <Dropdown.Menu>
           <Dropdown.Item><Link to="/AutomatedDocsLogin" className="dropdown-items">  Automated Documents </Link> </Dropdown.Item>

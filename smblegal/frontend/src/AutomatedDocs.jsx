@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/nav-bar.jsx';
+import Footer from './components/footer.jsx';
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,6 +14,7 @@ export default class AutomatedDocs extends Component {
 
     render() {
         return (
+            <div class="full-page"> 
             <div class="automated-docs-page">
             <Navbar />
               <br></br>
@@ -50,6 +52,9 @@ export default class AutomatedDocs extends Component {
             <br></br>
             <br></br>
 
+
+            </div>
+            <Footer />
 
 
             </div>
