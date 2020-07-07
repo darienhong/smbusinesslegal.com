@@ -138,7 +138,7 @@ export default class TermsOfUse extends Component {
             <p> The Customer represents and warrants that they have the legal right to use the credit cars and the information provided is true and correct.</p>
             <p>Third parties may be used to enhance the Customer experience and process payments.  In an effort to do this they may be granted access to your information which is subject to our <Link to ="/PrivacyPolicy" style={{color: "#245CA6" }}> Privacy Policy. </Link></p> 
            <br />
-            <h4> 9.PROMOTIONS AND REFERRALS </h4>
+            <h4> 9. PROMOTIONS AND REFERRALS </h4>
             <p> Referrals and promotions (collectively, “Promotions”) may be made available by SMB Legal and can be governed by rules separate from these Terms.  Please review applicable terms for such Promotions should you participate in them. </p>
             <br />
             <h4>10. FEE CHANGES  </h4>

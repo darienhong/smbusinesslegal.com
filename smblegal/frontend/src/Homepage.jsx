@@ -9,6 +9,7 @@ import Navbar from './components/nav-bar.jsx';
 import AOS from 'aos';
 import Footer from './components/footer.jsx';
 import Navbar2 from './components/nav-bar2.jsx';
+import HeroImage from './assets/smb-hero-image.png';
 
 import 'aos/dist/aos.css';
 import {
@@ -58,12 +59,21 @@ export default class Homepage extends Component {
           <div class="full-page">
           <div class="homepage">
             <Navbar /> 
-           {/*  <ModalTest /> */}
+            {/* <ModalTest /> 
               <Lottie 
 	              options={defaultOptions}
                 height={800}
                 width={800}
               />  
+
+            */} 
+            < br/> 
+            < br/>
+            < br/> 
+            <img src={HeroImage} alt="Hero Image" class="hero-image" /> 
+
+
+
               <div class="homepage-text">
                   <div data-aos="slide-up"  data-aos-easing="ease-in-out"  data-aos-duration="2000">
                 {/* <div class="logo-section" style={{textAlign: "center"}}>
@@ -72,11 +82,10 @@ export default class Homepage extends Component {
 
         */}
                 <h1 class="title"> SMB Legal </h1>
-                  <h2 style={{ textAlign: "center"}}> Small Business Lifecycle Management </h2>
+                  <h2 style={{ textAlign: "center", color: "#245CA6"}}> Small Business Lifecycle Management </h2>
                   <br></br>
 
-      
-                  <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners using SMB Legal to 
+                  <p style={{ textAlign: "center", fontWeight: 500, color: "#245CA6"}}> Join the thousands of small business owners using SMB Legal to 
                   grow their business by increasing operational efficiency and avoiding legal pitfalls. </p>
                   <br></br>
               </div>
@@ -92,7 +101,7 @@ export default class Homepage extends Component {
 
                <div style={{textAlign: "center"}}>
                 <svg height={50} width={400}>
-                    <line class="svg-line" x1={1} x2={700} y1={1} y2={1} stroke="black" />
+                    <line class="svg-line" x1={1} x2={700} y1={1} y2={1} stroke="#245CA6" strokeWidth="4px" />
                 </svg>
               </div>
               </div>

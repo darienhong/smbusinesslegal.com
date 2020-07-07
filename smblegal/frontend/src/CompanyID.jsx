@@ -5,6 +5,7 @@ import Footer from './components/footer.jsx';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
+import ModalTest from './components/modal.jsx';
 import Button from '@material-ui/core/Button';
 import {
     BrowserRouter as Router,
@@ -348,6 +349,7 @@ export default function CompanyID() {
           <div class="full-page"> 
             <div class="company-id-page">
                 <Navbar />
+                <ModalTest />
                 <br></br>
                 <br></br>
                 <br></br>
@@ -431,9 +433,11 @@ export default function CompanyID() {
                 <br />
                 <br />
                 <center>
+                  <Link to="/HomepageLogin">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
+                      </Link>
                </center>
                </div>
 
@@ -452,9 +456,11 @@ export default function CompanyID() {
                 <br />
                 <br />
                 <center>
+                <Link to="/HomepageLogin">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
+                      </Link>
                </center>
                </div>
 
@@ -470,9 +476,11 @@ export default function CompanyID() {
                 <br />
                 <br />
                 <center>
+                <Link to="/HomepageLogin">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
+                      </Link>
                </center>
                </div>
 
