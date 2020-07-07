@@ -331,6 +331,35 @@ export default function CreateAccount() {
 
   }
 
+  const handleClickPremium = (event) => {
+    event.preventDefault();
+    console.log('went in to the button press!');
+
+    const data = {
+      firstName: state.firstName,
+      lastName: state.lastName,
+      email: state.email,
+      password: state.password,
+      plan: plan,
+      companyName: state.companyName,
+      zipCode: state.zipcode,
+      company: company,
+      USstate: USstate
+    }
+    fetch('/createAccount', {
+      method: 'POST',
+      body: JSON.stringify(data), // data can be `string` or {object}!
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+      .then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
+
+    document.location = "/DashboardPremium"
+
+  }
+
 
   const handleChangeCompany = (event) => {
     setCompany(event.target.value);
@@ -529,10 +558,11 @@ export default function CreateAccount() {
     <br />
     <br />
     <center>
-      <Link to="/DashboardPremium">
-        <div class="create-acc-button" >
-          <p style={{ textAlign: "center" }}> Create your Account </p>
-        </div> </Link>
+     {/* <Link to="/DashboardPremium"> */}
+      <div class="create-acc-button" onClick={handleClickPremium}>
+        <p style={{ textAlign: "center" }} > Create your Account </p>
+      </div> 
+      {/*  </Link> */}
     </center>
   </div>
 
@@ -556,7 +586,7 @@ export default function CreateAccount() {
     <br />
     <center>
       {/* <Link to="/Dashboard"> */}
-      <div class="create-acc-button" onClick={handleClick}>
+      <div class="create-acc-button" onClick={handleClickPremium}>
         <p style={{ textAlign: "center" }} > Create your Account </p>
       </div>
       {/* </Link> */}
@@ -575,10 +605,11 @@ export default function CreateAccount() {
     <br />
     <br />
     <center>
-      <Link to="/DashboardPremium">
-        <div class="create-acc-button" >
-          <p style={{ textAlign: "center" }}> Create your Account </p>
-        </div> </Link>
+       {/* <Link to="/DashboardPremium"> */}
+       <div class="create-acc-button" onClick={handleClickPremium}>
+        <p style={{ textAlign: "center" }} > Create your Account </p>
+      </div> 
+      {/*  </Link> */}
     </center>
   </div>
 
@@ -693,10 +724,11 @@ export default function CreateAccount() {
                     <br />
                     <br />
                     <center>
-                      <Link to="/Dashboard">
-                        <div class="create-acc-button" >
-                          <p style={{ textAlign: "center" }}> Create your Account </p>
-                        </div> </Link>
+                         {/* <Link to="/Dashboard"> */}
+                         <div class="create-acc-button" onClick={handleClick}>
+                        <p style={{ textAlign: "center" }} > Create your Account </p>
+                      </div>
+                      {/* </Link> */}
                     </center>
                   </div>
 
@@ -739,10 +771,11 @@ export default function CreateAccount() {
                     <br />
                     <br />
                     <center>
-                      <Link to="/Dashboard">
-                        <div class="create-acc-button" >
-                          <p style={{ textAlign: "center" }}> Create your Account </p>
-                        </div> </Link>
+                          {/* <Link to="/Dashboard"> */}
+                          <div class="create-acc-button" onClick={handleClick}>
+                        <p style={{ textAlign: "center" }} > Create your Account </p>
+                      </div>
+                      {/* </Link> */}
                     </center>
                   </div>
 
