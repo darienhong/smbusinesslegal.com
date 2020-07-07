@@ -426,7 +426,7 @@ export default function CompanyID() {
               { company === 'Partnership' && ( 
                 <div>
                 <center>
-             <Link to="/AutomateGovernance" style={{textDecoration: "none"}}> <div class="gov-button" >
+             <Link to="/InitializePartnership" style={{textDecoration: "none"}}> <div class="gov-button" >
                           <p style={{textAlign: "center"}}> Automate Your Governance </p>
                       </div> </Link>  
                  </center>
@@ -449,7 +449,7 @@ export default function CompanyID() {
               { company === 'Corporation' && ( 
                 <div>
                 <center>
-             <Link to="/AutomateGovernance2" style={{textDecoration: "none"}}> <div class="gov-button" >
+             <Link to="/InitializeCorporation" style={{textDecoration: "none"}}> <div class="gov-button" >
                           <p style={{textAlign: "center"}}> Automate Your Governance </p>
                       </div> </Link>  
                  </center>
@@ -469,7 +469,7 @@ export default function CompanyID() {
             { company === 'LLC' && ( 
                 <div>
                 <center>
-             <Link to="/AutomateGovernance3" style={{textDecoration: "none"}}> <div class="gov-button" >
+             <Link to="/InitializeLLC" style={{textDecoration: "none"}}> <div class="gov-button" >
                           <p style={{textAlign: "center"}}> Automate Your Governance </p>
                       </div> </Link>  
                  </center>

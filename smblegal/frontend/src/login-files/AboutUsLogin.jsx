@@ -8,7 +8,7 @@ import CustomerServiceImage from '../assets/customer-service.png';
 import AnalyzeImage from '../assets/analyze.png';
 import Navbar from '../components/nav-bar.jsx';
 import Footer from '../components/footer.jsx';
-import ContentMarketing from '../ContentMarketing.jsx';
+import ContentMarketing from '../CorporateGovernance.jsx';
 import {
     BrowserRouter as Router,
     Switch,

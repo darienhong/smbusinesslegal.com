@@ -77,8 +77,8 @@ import AutomatedDocsLogin from './login-files/AutomatedDocsLogin.jsx';
 
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsOfUse from './TermsOfUse.jsx';
-import ContentMarketing2 from './ContentMarketing2.jsx';
-import ContentMarketing from './ContentMarketing.jsx';
+import ContentMarketing2 from './StartABusiness.jsx';
+import ContentMarketing from './CorporateGovernance.jsx';
 import ProductOverview from './ProductOverview.jsx';
 import AutomateGov2 from './AutomateGovernance2.jsx';
 import AutomateGov3 from './AutomateGovernance3.jsx';
@@ -254,22 +254,22 @@ export default class App extends Component {
             <PrivacyPolicy />
           </Route>
 
-            <Route path="/ContentMarketing2">
+            <Route path="/HowToStartABusiness">
               <ContentMarketing2 />
             </Route>
-            <Route path="/ContentMarketing">
+            <Route path="/CorporateGovernance">
               <ContentMarketing />
             </Route>
             <Route path="/ProductOverview">
               <ProductOverview />
             </Route>
-            <Route path="/AutomateGovernance2">
+            <Route path="/InitializeCorporation">
               <AutomateGov2 />
             </Route>
-            <Route path="/AutomateGovernance3">
+            <Route path="/InitializeLLC">
               <AutomateGov3 />
             </Route>
-            <Route path="/AutomateGovernance">
+            <Route path="/InitializePartnership">
               <AutomateGov />
             </Route>
             <Route path="/CompanyID">
