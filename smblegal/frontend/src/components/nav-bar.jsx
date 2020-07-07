@@ -10,6 +10,7 @@ import SubMenu from './sub-menu.jsx';
 import SubMenu2 from './sub_menu2.jsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import IconLogo from '../assets/icon-logo.png';
+import Logo from '../assets/logo.png';
 
 // import { Grommet, Menu } from 'grommet';
 
@@ -21,7 +22,7 @@ export default class Navbar extends Component {
     return (
      
         <div class="container">
-          <Link to="/"><img src={IconLogo} alt="icon logo" className="logo" /></Link> 
+          <Link to="/"><img src={Logo} alt="icon logo" className="logo" /></Link> 
           <nav>
             <ul>
               <li><Link to="/" className="nav-bar">Home</Link></li>

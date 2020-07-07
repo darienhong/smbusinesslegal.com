@@ -62,6 +62,7 @@ export default class SignUp extends Component {
         */}
   
         return (
+          <div class="full-page"> 
             <div class="sign-up-page">
                 <Navbar />
                 <br></br>
@@ -100,6 +101,7 @@ export default class SignUp extends Component {
                 <br></br>
                 <br></br>
             
+            </div>
             </div>
                 <Footer />
 

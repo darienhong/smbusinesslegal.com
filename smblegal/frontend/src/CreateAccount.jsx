@@ -43,10 +43,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function CreateAccount() {
 
   const classes = useStyles();
   const [plan, setPlan] = React.useState();
+  const [firstName] = React.useState();
+  const [email] = React.useState();
+  const [lastName] = React.useState();
+  const [password] = React.useState();
 
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
@@ -54,68 +59,69 @@ export default function CreateAccount() {
 
 
   return (
-
-    <div class="create-acc-page">
-      <Navbar />
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <h1 style={{ color: "#245CA6" }}> Create an Account </h1>
-      <br></br>
-      <div style={{ textAlign: "center" }}>
-        <svg height={50} width={400}>
-          <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
-        </svg>
-      </div>
-
-      <div class="create-acc-form">
-
-        <p style={{ textAlign: "center" }}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
+    <div class="full-page">
+      <div class="create-acc-page">
+        <Navbar />
         <br></br>
-        <div class="email-input" style={{ textAlign: "center" }}>
-          <TextField id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h1 style={{ color: "#245CA6" }}> Create an Account </h1>
+        <br></br>
+        <div style={{ textAlign: "center" }}>
+          <svg height={50} width={400}>
+            <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
+          </svg>
         </div>
-        <br></br>
-        <div class="first-name-input" style={{ textAlign: "center" }}>
-          <TextField id="outlined-basic" label="First Name" variant="outlined" style={{ width: "500px" }} />
-        </div>
-        <br></br>
-        <div class="last-name-input" style={{ textAlign: "center" }}>
-          <TextField id="outlined-basic" label="Last Name" variant="outlined" style={{ width: "500px" }} />
-        </div>
-        <br></br>
-        <div class="password-input" style={{ textAlign: "center" }}>
-          <TextField
-            id="outlined-password-input"
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-            variant="outlined"
-            color="#245CA6"
-            style={{ width: "500px" }}
-          />
-        </div>
-        <br></br>
 
-        <div class="select-plan" style={{ textAlign: "center" }}>
-          <TextField
-            id="outlined-select-plan"
-            select label="Select your plan"
-            value={plan}
-            onChange={handleChangePlan}
-            variant="outlined"
-            style={{ width: "500px" }}
-          >
+        <div class="create-acc-form">
 
-            {plans.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
+          <p style={{ textAlign: "center" }}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
+          <br></br>
+          <div class="email-input" style={{ textAlign: "center" }}>
+            <TextField value={email} id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
+          </div>
+          <br></br>
+          <div class="first-name-input" style={{ textAlign: "center" }}>
+            <TextField value={firstName} id="outlined-basic" label="First Name" variant="outlined" style={{ width: "500px" }} />
+          </div>
+          <br></br>
+          <div class="last-name-input" style={{ textAlign: "center" }}>
+            <TextField value={lastName} id="outlined-basic" label="Last Name" variant="outlined" style={{ width: "500px" }} />
+          </div>
+          <br></br>
+          <div class="password-input" style={{ textAlign: "center" }}>
+            <TextField
+              id="outlined-password-input"
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              variant="outlined"
+              color="#245CA6"
+              value={password}
+              style={{ width: "500px" }}
+            />
+          </div>
+          <br></br>
 
-            {/*}     <MenuItem key="Freemium" value="Freemium">
+          <div class="select-plan" style={{ textAlign: "center" }}>
+            <TextField
+              id="outlined-select-plan"
+              select label="Select your plan"
+              value={plan}
+              onChange={handleChangePlan}
+              variant="outlined"
+              style={{ width: "500px" }}
+            >
+
+              {plans.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+
+              {/*}     <MenuItem key="Freemium" value="Freemium">
               Freemium
             </MenuItem>
             <MenuItem key="Automated Governance" value="Automated Governance">
@@ -133,48 +139,51 @@ export default function CreateAccount() {
 
                 */}
 
-          </TextField>
-        </div>
-        <br />
+            </TextField>
+          </div>
+          <br />
 
 
-        {plan === 'Existing Plan' && (
+          {plan === 'Existing Plan' && (
 
-          <form>
-            <div class="companyid-input" style={{ textAlign: "center" }}>
-              <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{ width: "500px" }} />
-            </div>
-            <br />
-            <br />
+            <form>
+              <div class="companyid-input" style={{ textAlign: "center" }}>
+                <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{ width: "500px" }} />
+              </div>
+              <br />
+              <br />
+              <center>
+                <div class="create-acc-button" >
+                  <p style={{ textAlign: "center" }}> Create my Account </p>
+                </div>
+              </center>
+            </form>
+          )}
+
+          {(plan === 'Freemium' || plan === 'Premium' || plan === 'Formation Documents') && (
+
             <center>
-              <div class="create-acc-button" >
+              <br />
+              <br />
+              <Link to="/CompanyID" style={{ textDecoration: "none" }}> <div class="create-acc-button" >
                 <p style={{ textAlign: "center" }}> Create my Account </p>
               </div>
+              </Link>
+              <br />
             </center>
-          </form>
-        )}
 
-        {(plan === 'Freemium' || plan === 'Premium' || plan === 'Formation Documents') && (
+          )}
+          <br />
+          <br />
+          <br />
 
-          <center>
-            <br />
-            <br />
-            <Link to="/CompanyID" style={{ textDecoration: "none" }}> <div class="create-acc-button" >
-              <p style={{ textAlign: "center" }}> Create my Account </p>
-            </div>
-            </Link>
-            <br />
-          </center>
-
-        )}
-        <br />
-        <br />
-        <br />
-
-
-        <Footer />
-
+        </div>
       </div>
+
+
+      <Footer />
+
+
     </div>
 
   );

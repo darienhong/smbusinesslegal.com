@@ -68,9 +68,12 @@ import DifficultCapital from './why-feature-subsection/DifficultCapital.jsx';
 import SMBAutomate from './why-feature-subsection/SMBAutomate.jsx';
 
 
+// pages after logging in
 import HomepageLogin from './login-files/HomepageLogin.jsx';
 import AboutUsLogin from './login-files/AboutUsLogin.jsx';
 import ProductOverviewLogin from './login-files/ProductOverviewLogin.jsx';
+import ToolsLogin from './login-files/ToolsLogin.jsx';
+import AutomatedDocsLogin from './login-files/AutomatedDocsLogin.jsx';
 
 import ContentMarketing2 from './ContentMarketing2.jsx';
 import ContentMarketing from './ContentMarketing.jsx';
@@ -81,7 +84,7 @@ import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
-import AboutUs from './aboutus.jsx';
+import AboutUs from './AboutUs.jsx';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';
@@ -97,8 +100,8 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: [
-      'WorkSans',
-      'DM Sans'
+      'DM Sans', 
+      
     ].join(','),
   }
 });
@@ -235,7 +238,13 @@ export default class App extends Component {
             <Route path="/ProductOverviewLogin">
               <ProductOverviewLogin />
             </Route>
-
+            <Route path="/ToolsLogin">
+              <ToolsLogin />
+            </Route>
+            <Route path="/AutomatedDocsLogin">
+              <AutomatedDocsLogin />
+            </Route>
+          
 
 
             <Route path="/ContentMarketing2">

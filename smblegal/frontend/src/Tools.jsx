@@ -17,6 +17,7 @@ export default class Tools extends Component {
     }
     render() { 
         return (
+            <div class="full-page"> 
             <div class="tools-page">
                 <Navbar />
                 <br></br>
@@ -61,6 +62,8 @@ export default class Tools extends Component {
             </div>
             <br></br>
             <br></br>
+
+            </div>
             
             <Footer />
 

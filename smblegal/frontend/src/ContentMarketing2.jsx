@@ -10,7 +10,7 @@ import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
 import Iframe from 'react-iframe';
 import { Document, Page, pdfjs } from 'react-pdf';
-import pdfFile from './assets/HowtoStartaBusiness.pdf';
+import pdfFile from './assets/Business.pdf';
 
 const options = {
     cMapUrl: 'cmaps/',
@@ -18,6 +18,9 @@ const options = {
   };
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+
+/* HOW TO START A BUSINESS PDF */ 
 
 export default class ContentMarketing2 extends Component { 
 
@@ -40,6 +43,7 @@ export default class ContentMarketing2 extends Component {
         const { file, numPages } = this.state;
     
         return (
+          <div class="full-page">
           <div className="content-marketing-page">
             <div className="marketing-container">
               <div className="marketing-container" >
@@ -72,8 +76,12 @@ export default class ContentMarketing2 extends Component {
                 </Document>
               </div>
             </div>
+            <br /> 
+            <br />
+            <br />
+            
 
-
+                  </div>
             <Footer />
           </div>
         );
