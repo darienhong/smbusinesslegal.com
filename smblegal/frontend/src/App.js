@@ -74,6 +74,7 @@ import AboutUsLogin from './login-files/AboutUsLogin.jsx';
 import ProductOverviewLogin from './login-files/ProductOverviewLogin.jsx';
 import ToolsLogin from './login-files/ToolsLogin.jsx';
 import AutomatedDocsLogin from './login-files/AutomatedDocsLogin.jsx';
+import PremiumLogin from './login-files/PremiumLogin.jsx';
 
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsOfUse from './TermsOfUse.jsx';
@@ -86,7 +87,7 @@ import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
-import AboutUs from './aboutus.jsx';
+import AboutUs from './AboutUs.jsx';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';
@@ -245,6 +246,10 @@ export default class App extends Component {
             </Route>
             <Route path="/AutomatedDocsLogin">
               <AutomatedDocsLogin />
+            </Route>
+
+            <Route path="/DashboardPremium">
+              <PremiumLogin />
             </Route>
 
             <Route path="/TermsOfUse">

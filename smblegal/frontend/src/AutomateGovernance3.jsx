@@ -185,12 +185,9 @@ const handleOpen = (event) => {
             const list = [...membersList]
             list[index][name] = value;
             setMembersList(list)
-        //    membersList[e.target.dataset.id][e.target.className] = e.target.value
-        //    setMembersList({ membersList }, () => console.log(membersList))
           }
 
     const handleAddMembers = () => { 
-
         setMembersList([...membersList, { name: "", email: "", percentShares: "", percentProfit: ""}]);
     }
 
@@ -470,6 +467,7 @@ const handleOpen = (event) => {
 
                         <div class="name-input-llc" style={{textAlign: "center"}}>
                             < br/>
+                            < br/> 
                             <TextField 
                             //    id={nameId}
                                 label="Name" 
