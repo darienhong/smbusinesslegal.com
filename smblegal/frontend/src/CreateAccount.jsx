@@ -80,20 +80,20 @@ export default function CreateAccount() {
           <p style={{ textAlign: "center" }}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
           <br></br>
           <div class="email-input" style={{ textAlign: "center" }}>
-            <TextField value={email} id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
+            <TextField value={email} required id="outlined-required" label="Email" variant="outlined" style={{ width: "500px" }} />
           </div>
           <br></br>
           <div class="first-name-input" style={{ textAlign: "center" }}>
-            <TextField value={firstName} id="outlined-basic" label="First Name" variant="outlined" style={{ width: "500px" }} />
+            <TextField value={firstName} required id="outlined-required" label="First Name" variant="outlined" style={{ width: "500px" }} />
           </div>
           <br></br>
           <div class="last-name-input" style={{ textAlign: "center" }}>
-            <TextField value={lastName} id="outlined-basic" label="Last Name" variant="outlined" style={{ width: "500px" }} />
+            <TextField value={lastName} required id="outlined-required" label="Last Name" variant="outlined" style={{ width: "500px" }} />
           </div>
           <br></br>
           <div class="password-input" style={{ textAlign: "center" }}>
             <TextField
-              id="outlined-password-input"
+              required id="outlined-required"
               label="Password"
               type="password"
               autoComplete="current-password"
@@ -107,7 +107,7 @@ export default function CreateAccount() {
 
           <div class="select-plan" style={{ textAlign: "center" }}>
             <TextField
-              id="outlined-select-plan"
+              required id="outlined-required"
               select label="Select your plan"
               value={plan}
               onChange={handleChangePlan}
