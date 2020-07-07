@@ -180,13 +180,21 @@ const handleOpen = (event) => {
             setState(event.target.value);
           };
 
-    const  handleMembersChange = (e) => {
-            let membersList = [...membersList]
-            membersList[e.target.dataset.id][e.target.className] = e.target.value
-            setMembersList({ membersList }, () => console.log(membersList))
+    const  handleMembersChange = (e, index) => {
+            const { name, value } = e.target;
+            const list = [...membersList]
+            list[index][name] = value;
+            setMembersList(list)
+        //    membersList[e.target.dataset.id][e.target.className] = e.target.value
+        //    setMembersList({ membersList }, () => console.log(membersList))
           }
 
-    const  addMembers = (e) => {
+    const handleAddMembers = () => { 
+
+        setMembersList([...membersList, { name: "", email: "", percentShares: "", percentProfit: ""}]);
+    }
+
+  /*  const  addMembers = (e) => {
             e.preventDefault();
             membersList.push({
                 name: "",
@@ -202,7 +210,7 @@ const handleOpen = (event) => {
               membersList: [...prevState.membersList, { name: "", email: "", percentShares: "", percentProfit: "" }],
             }));
             */ 
-          }
+          
 
         
 
@@ -450,111 +458,82 @@ const handleOpen = (event) => {
                     <p style={{textAlign: "center"}}> Please enter the following information for all Members and/or Managers </p>
                      <br></br>  
 
-            <form onChange={handleMembersChange} >
-                <div class='listExp'>
-                  <p>Enter a new member: </p>
-                </div>
-                <div class='expButton'>
-                    <Button onClick={addMembers} variant="outlined"> Add Member </Button>
-                </div>
-                {
-                  (membersList).map((val, idx) => {
-                    let nameId = `name-${idx}`, emailId = `email-${idx}`, sharesID = `percentShares-${idx}`, profitID = `percentProfit-${idx}`
-                    return (
-                      <div key={idx}>
-                          <div class="name-input-llc" style={{textAlign: "center"}}>
+                    <div class="members-form"> 
+
+                    <div class="button-add">
+
+                        <Button onClick={handleAddMembers}> Add Member</Button>
+                        </div>
+                    {membersList.map((x, i) => { 
+                        return (
+                            <div class="members-form-box">
+
+                        <div class="name-input-llc" style={{textAlign: "center"}}>
+                            < br/>
                             <TextField 
-                                id={nameId}
+                            //    id={nameId}
                                 label="Name" 
-                                value={(membersList)[idx].name}
+                                value={x.name}
                                 variant="outlined" 
-                                style={{width: "500px"}} /> 
+                                style={{width: "500px"}}
+                                onChange={e => handleMembersChange(e, i)}
+                                 /> 
+                                
                             </div>
-                        <br />
-                        <div class="email-input-llc" style={{textAlign: "center"}}>
+                            < br/> 
+                            <div class="email-input-llc" style={{textAlign: "center"}}>
                             <TextField 
-                                id={emailId}
+                             //   id={emailId}
                                 label="Email" 
-                                value={(membersList)[idx].email}
+                                value={x.email}
                                 variant="outlined" 
-                                style={{width: "500px"}} /> 
+                                onChange={e => handleMembersChange(e, i)}
+                                style={{width: "500px"}} 
+                                /> 
                             </div>
                         <br />
                         <div class="percent-ownership" style={{textAlign: "center"}}>
                         <TextField
-                            id={sharesID}
+                        //    id={sharesID}
                             label="Percentage of ownership"
                             type="number"
-                            value={(membersList)[idx].percentShares}
+                            value={x.percentShares}
                             InputLabelProps={{
                                 shrink: true,
                             }}
                             variant="outlined"
+                            onChange={e => handleMembersChange(e, i)}
                             style={{width: "500px"}}
                         />
                     </div>
-                        <br />
-                        <div class="percent-profits-received" style={{textAlign: "center"}}>
-                        <TextField
-                            id={profitID}
-                            label="Percent of profits received"
-                            type="number"
-                            value={(membersList)[idx].percentProfit}
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                    </div>
-                        
-                        <br />
-                      </div>
-                    )
-                  })
-                }
-              </form> 
-
-                        
-                    <br></br>
-                     <div class="new-member">
-                     <div class="name-input-llc" style={{textAlign: "center"}}>
-              <TextField id="outlined-basic" label="Name" variant="outlined" style={{width: "500px"}} /> 
-                </div> 
-                <br></br>
-                <div class="email-input-llc" style={{textAlign: "center"}}>
-              <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
-                </div> 
-                <br></br>
-                <div class="percent-ownership" style={{textAlign: "center"}}>
-                        <TextField
-                            id="outlined-number"
-                            label="Percentage of ownership"
-                            type="number"
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                        />
-                    </div>
-                    <br></br>
+                    <br />
                     <div class="percent-profits-received" style={{textAlign: "center"}}>
                         <TextField
-                            id="outlined-number"
+                        //  id={profitID}
                             label="Percent of profits received"
                             type="number"
+                            value={x.percentProfit}
                             InputLabelProps={{
                                 shrink: true,
                             }}
+                            onChange={e => handleMembersChange(e, i)}
+                           
                             variant="outlined"
                             style={{width: "500px"}}
                         />
                     </div>
+                            </div>
+
+                        );
+                    })}
+                    
+                    
+                    
+                    
+    
+                    
                     </div>
-                    <br></br>
-             
-             
+
              </div>
              <br />
              <br />
