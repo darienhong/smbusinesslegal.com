@@ -65,7 +65,7 @@ export default class Pricing extends Component {
                 <br/>
                 <p class="price"> $10 / Month </p>
                 <p> INCLUDED: <br /> &bull; 15 Automated Documents per month
-                <br /> &bull; Free Fromation Documents and Guides 
+                <br /> &bull; Free Formation Documents and Guides (only Delaware documents are available now)
                 <br /> &bull; Governance </p>
                 <Button size="small">Get Started</Button>
                 </CardContent>
@@ -81,7 +81,7 @@ export default class Pricing extends Component {
                 <h2 class="price-category">  Formation Documents </h2>
                 <p> Per Unit </p>
                 <br />
-                <p class="price"> $5 / document</p>
+                <p class="price"> $5 / package</p>
                 <p> INCLUDED: <br />  &bull; Automated Formation Documents
                 <br /> &bull; Formation Resolutions </p>
                 <Button size="small">Get Started</Button>

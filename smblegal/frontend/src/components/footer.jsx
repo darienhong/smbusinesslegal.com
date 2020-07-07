@@ -1,8 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Button } from 'react';
 import '../App.css';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 export default class Footer extends Component { 
     render() {
@@ -11,15 +17,10 @@ export default class Footer extends Component {
               <br />
              <br />
 
-
-           <a href="https://forms.gle/saeyHap7mxkNpvmU8" target="_blank" rel="noopener noreferrer" style={{textDecoration: "none"}}> 
-           <div class="contact-us"> 
-            <center> <div class="contact-us-button"> 
-              <p> Contact Us </p>
-              </div>
-              </center> 
-              </div>
-              </a>
+             <a href="https://forms.gle/saeyHap7mxkNpvmU8" target="_blank" rel="noopener noreferrer" style={{textDecoration: "none"}}> 
+           <center>  <button class="contact-us"> Contact Us </button> </center> </a>
+             <br />
+              
             <div class="contact-block">
           <div class="contact-icons">
           <div class="facebook">
@@ -47,7 +48,7 @@ export default class Footer extends Component {
              the provision of legal advice or other professional advice by SMB Legal.  
              By relying on these documents, you assume all risk and liability that may result.  
              Review all documents carefully for accuracy before using them.  
-             Your use of this site is subject to our Terms of Service. </p>
+             Your use of this site is subject to our <Link to="/TermsOfUse" style={{textDecoration: "none", color: "white"}}> Terms of Service </Link> </p>
             </footer>
             </div>
 

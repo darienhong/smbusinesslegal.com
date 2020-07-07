@@ -8,7 +8,7 @@ import CustomerServiceImage from './assets/customer-service.png';
 import AnalyzeImage from './assets/analyze.png';
 import Navbar from './components/nav-bar.jsx';
 import Footer from './components/footer.jsx';
-import ContentMarketing from './ContentMarketing.jsx';
+import ContentMarketing from './CorporateGovernance.jsx';
 import Feature1 from './assets/corporate_gov.png';
 import Feature2 from './assets/limited_liability.png';
 import Feature3 from './assets/lawsuits.png';
@@ -58,7 +58,7 @@ export default class AboutUs extends Component {
                         </p>
                     </div>
                     <br />
-                <p> We are the first and only self-help tools that leverage the power of the cloud, artificial intelligence and machine learning 
+                <p> We provide the first and only self-help tools that leverage the power of the cloud, artificial intelligence and machine learning 
                     to streamline small business contracts and legal processes.  By using SMB Legal’s tools small business owners and employees can spend more 
                     time on customer acquisition and activation driving substantial growth and revenue.</p>
                 <p> SMB Legal’s automated tools ensure that small businesses will increase operational efficiency and avoid legal pitfalls.</p>
@@ -80,7 +80,7 @@ export default class AboutUs extends Component {
                     employee safety concerns, payroll challenges and more complex contracts is burdensome.  
                     That is why we founded SMB Legal, a small business partner you can trust.</p>
 
-                    <p> AOur team is made up of seasoned legal professionals, startup gurus and small business experts 
+                    <p> Our team is made up of seasoned legal professionals, startup gurus and small business experts 
                         who are all united in the goal of making small business entrepreneurship easier.  
                         <Link to="/ProductOverview" style={{textDecoration: "none", color: "#245CA6"}}> Learn more about our product and 
                         how we can help you get your contract and legal house in order. </Link> </p>
@@ -98,7 +98,7 @@ export default class AboutUs extends Component {
                 <br />
                 <br />
                 <div class="content-marketing-section">
-               <Link to="/ContentMarketing" style={{textDecoration: "none"}}>    <div class="cm-1">
+               <Link to="/CorporateGovernance" style={{textDecoration: "none"}}>    <div class="cm-1">
                         <br />
                         <br />
                         <br />
@@ -107,7 +107,7 @@ export default class AboutUs extends Component {
                      <h4>  </h4>
                     </div>
                     </Link>
-                    <Link to="/ContentMarketing2" style={{textDecoration: "none"}}>    <div class="cm-1">
+                    <Link to="/HowToStartABusiness" style={{textDecoration: "none"}}>    <div class="cm-1">
                         <br />
                         <br />
                         <br />
@@ -116,24 +116,10 @@ export default class AboutUs extends Component {
                      <h4>  </h4>
                     </div>
                     </Link>
-              
-
-
                 </div>
-
-
-
-
-
-
-
-
-
-
-
- 
-           {/*    <ContentMarketing />  */}
-                <br></br>
+                <br /> 
+                <br />
+                < br/> 
                 </div>
             </div>
 

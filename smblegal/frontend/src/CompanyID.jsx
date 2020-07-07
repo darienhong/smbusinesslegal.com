@@ -5,6 +5,7 @@ import Footer from './components/footer.jsx';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
+import ModalTest from './components/modal.jsx';
 import Button from '@material-ui/core/Button';
 import {
     BrowserRouter as Router,
@@ -348,6 +349,7 @@ export default function CompanyID() {
           <div class="full-page"> 
             <div class="company-id-page">
                 <Navbar />
+                <ModalTest />
                 <br></br>
                 <br></br>
                 <br></br>
@@ -424,16 +426,18 @@ export default function CompanyID() {
               { company === 'Partnership' && ( 
                 <div>
                 <center>
-             <Link to="/AutomateGovernance" style={{textDecoration: "none"}}> <div class="gov-button" >
+             <Link to="/InitializePartnership" style={{textDecoration: "none"}}> <div class="gov-button" >
                           <p style={{textAlign: "center"}}> Automate Your Governance </p>
                       </div> </Link>  
                  </center>
                 <br />
                 <br />
                 <center>
+                  <Link to="/Dashboard">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
+                      </Link>
                </center>
                </div>
 
@@ -445,16 +449,18 @@ export default function CompanyID() {
               { company === 'Corporation' && ( 
                 <div>
                 <center>
-             <Link to="/AutomateGovernance2" style={{textDecoration: "none"}}> <div class="gov-button" >
+             <Link to="/InitializeCorporation" style={{textDecoration: "none"}}> <div class="gov-button" >
                           <p style={{textAlign: "center"}}> Automate Your Governance </p>
                       </div> </Link>  
                  </center>
                 <br />
                 <br />
                 <center>
+                <Link to="/Dashboard">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
+                      </Link>
                </center>
                </div>
 
@@ -463,16 +469,18 @@ export default function CompanyID() {
             { company === 'LLC' && ( 
                 <div>
                 <center>
-             <Link to="/AutomateGovernance3" style={{textDecoration: "none"}}> <div class="gov-button" >
+             <Link to="/InitializeLLC" style={{textDecoration: "none"}}> <div class="gov-button" >
                           <p style={{textAlign: "center"}}> Automate Your Governance </p>
                       </div> </Link>  
                  </center>
                 <br />
                 <br />
                 <center>
+                <Link to="/Dashboard">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
+                      </Link>
                </center>
                </div>
 

@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
+import ModalTest from './components/modal.jsx';
 import {DropzoneDialog, DropzoneArea} from 'material-ui-dropzone';
 import {
     BrowserRouter as Router,
@@ -187,9 +188,20 @@ const handleOpen = (event) => {
 
     const  addMembers = (e) => {
             e.preventDefault();
-            setMembersList((prevState) => ({
+            membersList.push({
+                name: "",
+                email: "",
+                percentShares: "",
+                percentProfit: ""
+            });
+            setMembersList({ 
+                membersList: membersList,
+            });
+
+          /*  setMembersList((prevState) => ({
               membersList: [...prevState.membersList, { name: "", email: "", percentShares: "", percentProfit: "" }],
             }));
+            */ 
           }
 
         
@@ -198,6 +210,7 @@ const handleOpen = (event) => {
             <div class="full-page">
             <div class="company-id-page">
                 <Navbar />
+             
                 <br></br>
                 <br></br>
                 <br></br>
@@ -215,6 +228,99 @@ const handleOpen = (event) => {
             <form className={classes.root} noValidate autoComplete="off">
             <div class="login-form" style={{textAlign: "center"}}>
              <br></br>
+
+
+             <div class="automate-choice">
+                        <TextField
+                            id="outlined-select-consent"
+                            select label="How would you like to Automate your Governance?"
+                            value={automate}
+                            onChange={handleChangeAutomation}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                         >
+                        {automation.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                        </MenuItem>
+                            ))}
+                        </TextField>
+                        < br/>
+                </div>
+               
+
+
+                { automate === 'AI' && ( 
+                    <form> 
+            <br />
+
+
+
+            <div class="upload-formation">
+            <p style={{textAlign: "center"}}> Please upload formation documents </p>
+
+             <DropzoneArea
+                    onChange={handleChange.bind(this)}
+                    filesLimit={10}
+                    />
+
+                    </div> 
+
+                    <br />
+                    <br />
+
+            <div class="upload-governance">
+            <p style={{textAlign: "center"}}> Please upload governance documents </p>
+
+             <DropzoneArea
+                    onChange={handleChange.bind(this)}
+                    filesLimit={10}
+                    />
+
+                    </div> 
+                    <br />
+                    <br />
+
+
+            <div class="upload-company-minutes">
+            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes </p>
+
+             <DropzoneArea
+                    onChange={handleChange.bind(this)}
+                    filesLimit={10}
+                    />
+
+                    </div> 
+             <br />
+             <br />
+             <center>
+             <Link to="/Dashboard">
+                     <div class="gov-button-1" >
+                          <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
+                      </div>
+                      </Link>
+            </center>
+
+
+                    </form>
+
+
+            )}
+
+
+
+            <br />
+            <br />
+
+
+
+
+            { automate === 'Manual' && ( 
+
+                <form> 
+                    < br/>
+
+
 
              <div class="upload-formation">
             <p style={{textAlign: "center"}}> Please upload formation documents </p>
@@ -251,53 +357,8 @@ const handleOpen = (event) => {
                     />
 
                     </div> 
-
-
-            <br />
-            <br />
-
-
-            <div class="automate-choice">
-                        <TextField
-                            id="outlined-select-consent"
-                            select label="How would you like to Automate your Governance?"
-                            value={automate}
-                            onChange={handleChangeAutomation}
-                            variant="outlined"
-                            style={{width: "500px"}}
-                         >
-                        {automation.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                            {option.label}
-                        </MenuItem>
-                            ))}
-                        </TextField>
-                        < br/>
-                </div>
-               
-
-
-                { automate === 'AI' && ( 
-                    <form> 
-            <br />
-             <br />
-             <center>
-                  <div class="gov-button-1" >
-                       <p style={{textAlign: "center"}}> Finish Intializing Your Company </p>
-                   </div>
-            </center>
-
-
-                    </form>
-
-
-            )}
-
-
-            { automate === 'Manual' && ( 
-
-                <form> 
-                    < br/>
+                    <br /> 
+                    < br/> 
 
              <div class="LLC-questions"> 
              <div class="manager-choice">
@@ -500,9 +561,11 @@ const handleOpen = (event) => {
              <br />
              <br />
              <center>
-                  <div class="gov-button-1" >
-                       <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
-                   </div>
+             <Link to="/Dashboard">
+                     <div class="gov-button-1" >
+                          <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
+                      </div>
+                      </Link>
             </center>
     
     </form>

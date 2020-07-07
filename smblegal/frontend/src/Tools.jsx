@@ -52,7 +52,7 @@ export default class Tools extends Component {
                 <Link to="/SignIn" style={{textDecoration: "none"}}>
                 <div class="tools-block">
                     <p style={{fontWeight: "600", textAlign: "center"}}> GOVERNANCE AUTOMATION </p>
-                    <p style={{textAlign: "center"}}> We ensure that business users have a methogolody to understand value and risk, so they can
+                    <p style={{textAlign: "center"}}> We ensure that business users have a methodology to understand value and risk, so they can
                     take advantage of the right tools for the right problems. Automate and organize all aspects of 
                     your company’s governance with the click of a button. Login to view your governance
                     dashboard. 

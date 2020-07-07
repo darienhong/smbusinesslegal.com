@@ -53,7 +53,7 @@ export default class SignIn extends Component {
                 <br></br>
                 <br />
                 <center>
-                <Link to="/HomepageLogin">
+                <Link to="/Dashboard">
                 <div class="create-acc-button" >
                  <p style={{textAlign: "center"}}> Log In </p>
                 </div>
@@ -61,8 +61,6 @@ export default class SignIn extends Component {
             </center>
             <br />
             <br />
-
-
 
 
                 <p style={{textAlign: "center"}}> Don't have an account? <Link to="/CreateAccount" style={{color: "#245CA6"}}> Create Account </Link></p>

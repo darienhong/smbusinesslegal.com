@@ -8,7 +8,7 @@ import CustomerServiceImage from '../assets/customer-service.png';
 import AnalyzeImage from '../assets/analyze.png';
 import Navbar from '../components/nav-bar.jsx';
 import Footer from '../components/footer.jsx';
-import ContentMarketing from '../ContentMarketing.jsx';
+import ContentMarketing from '../CorporateGovernance.jsx';
 import {
     BrowserRouter as Router,
     Switch,
@@ -27,6 +27,7 @@ export default class AboutUsLogin extends Component {
     render() {
     
         return (
+        <div class="full-page">
           <div class="about-page">
               <Navbar2 />
               <br></br>
@@ -130,6 +131,7 @@ export default class AboutUsLogin extends Component {
            {/*    <ContentMarketing />  */}
                 <br></br>
                 </div>
+            </div>
             </div>
             
             <Footer />

@@ -8,12 +8,14 @@ import {
     Link
   } from "react-router-dom";
 import Navbar2 from '../components/nav-bar2.jsx';
+import Footer from '../components/footer.jsx';
 
 
 export default class AutomatedDocsLogin extends Component { 
 
     render() {
         return (
+            <div class="full-page">
             <div class="automated-docs-page">
             <Navbar2 />
               <br></br>
@@ -51,6 +53,8 @@ export default class AutomatedDocsLogin extends Component {
             <br></br>
             <br></br>
 
+            </div> 
+            <Footer />
 
 
             </div>

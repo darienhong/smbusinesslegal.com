@@ -23,6 +23,7 @@ export default class HomepageLogin extends Component {
     render() {
 
         return (
+          <div class="full-page">
             <div class="homepage-login"> 
             <Navbar2 />
             <br /> 
@@ -40,7 +41,7 @@ export default class HomepageLogin extends Component {
             </div>
             <br />
 
-            <p style={{textAlign: "center", textTransform: "uppercase"}}> Automated Documents </p>
+            <p class="homepage-text"> Automated Documents </p>
           <br></br>
           
          
@@ -66,7 +67,7 @@ export default class HomepageLogin extends Component {
           <br />
           <br />
 
-
+          </div> 
           <Footer />
             </div> 
 

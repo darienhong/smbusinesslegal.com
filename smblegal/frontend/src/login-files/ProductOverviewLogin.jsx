@@ -10,6 +10,8 @@ export default class ProductOverviewLogin extends Component {
     render() {
 
         return ( 
+
+            <div class="full-page">
             <div class="product-overview-page">
             <Navbar2 />
               <br></br>
@@ -77,6 +79,8 @@ export default class ProductOverviewLogin extends Component {
             <br />
             <br />
             <br />
+
+            </div> 
 
             <Footer />
             </div>
