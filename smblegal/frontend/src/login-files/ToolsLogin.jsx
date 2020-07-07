@@ -17,6 +17,7 @@ export default class ToolsLogin extends Component {
     }
     render() { 
         return (
+            <div class="full-page">
             <div class="tools-page">
                 <Navbar2 />
                 <br></br>
@@ -61,7 +62,7 @@ export default class ToolsLogin extends Component {
             </div>
             <br></br>
             <br></br>
-            
+            </div> 
             <Footer />
 
             </div>

@@ -27,6 +27,7 @@ export default class AboutUsLogin extends Component {
     render() {
     
         return (
+        <div class="full-page">
           <div class="about-page">
               <Navbar2 />
               <br></br>
@@ -130,6 +131,7 @@ export default class AboutUsLogin extends Component {
            {/*    <ContentMarketing />  */}
                 <br></br>
                 </div>
+            </div>
             </div>
             
             <Footer />
