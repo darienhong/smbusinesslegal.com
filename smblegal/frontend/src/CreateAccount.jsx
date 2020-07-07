@@ -47,6 +47,10 @@ export default function CreateAccount() {
 
     const classes = useStyles(); 
     const [plan, setPlan] = React.useState(); 
+    const [firstName] = React.useState(); 
+    const [email] = React.useState();
+    const [lastName] = React.useState();
+    const [password] = React.useState();
 
       const handleChangePlan = (event) => {
             setPlan(event.target.value);
@@ -75,15 +79,15 @@ export default function CreateAccount() {
             <p style={{textAlign: "center"}}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
             <br></br>
            <div class="email-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
+          <TextField  value={email} id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
             </div> 
             <br></br>
             <div class="first-name-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="First Name" variant="outlined" style={{width: "500px"}} /> 
+          <TextField value={firstName} id="outlined-basic" label="First Name" variant="outlined" style={{width: "500px"}} /> 
             </div> 
             <br></br>
             <div class="last-name-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="Last Name" variant="outlined" style={{width: "500px"}} /> 
+          <TextField value={lastName} id="outlined-basic" label="Last Name" variant="outlined" style={{width: "500px"}} /> 
             </div> 
             <br></br>
             <div class="password-input" style={{textAlign: "center"}}>
@@ -94,6 +98,7 @@ export default function CreateAccount() {
                 autoComplete="current-password"
                 variant="outlined"
                 color="#245CA6"
+                value={password}
                 style={{width: "500px"}}
                 />
             </div>
