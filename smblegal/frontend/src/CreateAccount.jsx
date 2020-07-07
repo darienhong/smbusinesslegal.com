@@ -6,116 +6,116 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route, 
-    Link
-  } from "react-router-dom";
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import { ExpansionPanelActions } from '@material-ui/core';
 
 
 
 const plans = [
-    {
-        value: 'Freemium',
-        label: 'Freemium',
-    }, 
-    {
-        value: 'Premium',
-        label: 'Premium',
-    }, 
-    {
-        value: 'Formation Documents',
-        label: 'Formation Documents',
-    },
-    {
-        value: 'Existing Plan',
-        label: 'Existing Plan',
-    }
+  {
+    value: 'Freemium',
+    label: 'Freemium',
+  },
+  {
+    value: 'Premium',
+    label: 'Premium',
+  },
+  {
+    value: 'Formation Documents',
+    label: 'Formation Documents',
+  },
+  {
+    value: 'Existing Plan',
+    label: 'Existing Plan',
+  }
 ]
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
     },
-  }));
+  },
+}));
 
-export default function CreateAccount() { 
+export default function CreateAccount() {
 
-    const classes = useStyles(); 
-    const [plan, setPlan] = React.useState(); 
+  const classes = useStyles();
+  const [plan, setPlan] = React.useState();
 
-      const handleChangePlan = (event) => {
-            setPlan(event.target.value);
-    }
-    
+  const handleChangePlan = (event) => {
+    setPlan(event.target.value);
+  }
 
-        return(
 
-            <div class="create-acc-page">
-            <Navbar />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <h1 style={{color: "#245CA6"}}> Create an Account </h1>
-          <br></br>
-        <div style={{textAlign:"center"}}>
-            <svg height={50} width={400}>
-                <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1}/>
-            </svg>
-        </div> 
+  return (
 
-        <div class="create-acc-form">
+    <div class="create-acc-page">
+      <Navbar />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h1 style={{ color: "#245CA6" }}> Create an Account </h1>
+      <br></br>
+      <div style={{ textAlign: "center" }}>
+        <svg height={50} width={400}>
+          <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
+        </svg>
+      </div>
 
-            <p style={{textAlign: "center"}}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
-            <br></br>
-           <div class="email-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
-            </div> 
-            <br></br>
-            <div class="first-name-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="First Name" variant="outlined" style={{width: "500px"}} /> 
-            </div> 
-            <br></br>
-            <div class="last-name-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="Last Name" variant="outlined" style={{width: "500px"}} /> 
-            </div> 
-            <br></br>
-            <div class="password-input" style={{textAlign: "center"}}>
-            <TextField
-                id="outlined-password-input"
-                label="Password"
-                type="password"
-                autoComplete="current-password"
-                variant="outlined"
-                color="#245CA6"
-                style={{width: "500px"}}
-                />
-            </div>
-            <br></br>
+      <div class="create-acc-form">
 
-            <div class="select-plan" style={{textAlign: "center"}}>
-            <TextField
-                id="outlined-select-plan"
-                select label="Select your plan"
-                value={plan}
-                onChange={handleChangePlan}
-                variant="outlined"
-                style={{width: "500px"}}   
-                >
+        <p style={{ textAlign: "center" }}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
+        <br></br>
+        <div class="email-input" style={{ textAlign: "center" }}>
+          <TextField id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
+        </div>
+        <br></br>
+        <div class="first-name-input" style={{ textAlign: "center" }}>
+          <TextField id="outlined-basic" label="First Name" variant="outlined" style={{ width: "500px" }} />
+        </div>
+        <br></br>
+        <div class="last-name-input" style={{ textAlign: "center" }}>
+          <TextField id="outlined-basic" label="Last Name" variant="outlined" style={{ width: "500px" }} />
+        </div>
+        <br></br>
+        <div class="password-input" style={{ textAlign: "center" }}>
+          <TextField
+            id="outlined-password-input"
+            label="Password"
+            type="password"
+            autoComplete="current-password"
+            variant="outlined"
+            color="#245CA6"
+            style={{ width: "500px" }}
+          />
+        </div>
+        <br></br>
 
-                {plans.map((option) => (
-                         <MenuItem key={option.value} value={option.value}>
-                             {option.label}
-                         </MenuItem>
-                                 ))}
+        <div class="select-plan" style={{ textAlign: "center" }}>
+          <TextField
+            id="outlined-select-plan"
+            select label="Select your plan"
+            value={plan}
+            onChange={handleChangePlan}
+            variant="outlined"
+            style={{ width: "500px" }}
+          >
 
-       {/*}     <MenuItem key="Freemium" value="Freemium">
+            {plans.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+
+            {/*}     <MenuItem key="Freemium" value="Freemium">
               Freemium
             </MenuItem>
             <MenuItem key="Automated Governance" value="Automated Governance">
@@ -133,49 +133,49 @@ export default function CreateAccount() {
 
                 */}
 
-        </TextField>
+          </TextField>
         </div>
         <br />
-    
 
-        { plan === 'Existing Plan' && ( 
 
-            <form> 
-                        <div class="companyid-input" style={{textAlign: "center"}}>
-          <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{width: "500px"}} /> 
-            </div> 
+        {plan === 'Existing Plan' && (
+
+          <form>
+            <div class="companyid-input" style={{ textAlign: "center" }}>
+              <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{ width: "500px" }} />
+            </div>
             <br />
             <br />
             <center>
-            <div class="create-acc-button" >
-          <p style={{textAlign: "center"}}> Create my Account </p>
-          </div>
-          </center>
-            </form>
+              <div class="create-acc-button" >
+                <p style={{ textAlign: "center" }}> Create my Account </p>
+              </div>
+            </center>
+          </form>
         )}
 
-        { (plan === 'Freemium' || plan === 'Premium' || plan === 'Formation Documents') && ( 
-            
-            <center>
-                <br />
+        {(plan === 'Freemium' || plan === 'Premium' || plan === 'Formation Documents') && (
+
+          <center>
             <br />
-           <Link to="/CompanyID" style={{textDecoration: "none"}}> <div class="create-acc-button" >
-          <p style={{textAlign: "center"}}> Create my Account </p>
-          </div>
-          </Link>
-          <br />
+            <br />
+            <Link to="/CompanyID" style={{ textDecoration: "none" }}> <div class="create-acc-button" >
+              <p style={{ textAlign: "center" }}> Create my Account </p>
+            </div>
+            </Link>
+            <br />
           </center>
-        
+
         )}
         <br />
         <br />
         <br />
 
 
-          <Footer />
+        <Footer />
 
-        </div>
-        </div>
+      </div>
+    </div>
 
-        );
-    }
+  );
+}
