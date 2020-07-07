@@ -165,18 +165,16 @@ const handleChangeAutomation = (event) => {
             setState(event.target.value);
           };
 
-    const  handleMembersChange = (e) => {
-            let membersList = [...membersList]
-            membersList[e.target.dataset.id][e.target.className] = e.target.value
-            setMembersList({ membersList }, () => console.log(membersList))
+    const  handleMembersChange = (e, index) => {
+            const { name, value } = e.target;
+            const list = [...membersList]
+            list[index][name] = value;
+            setMembersList(list)
           }
 
-    const  addMembers = (e) => {
-            e.preventDefault();
-            setMembersList((prevState) => ({
-              membersList: [...prevState.membersList, { name: "", email: "", percentShares: "", percentProfit: "" }],
-            }));
-          }
+    const handleAddMembers = () => { 
+        setMembersList([...membersList, { name: "", email: "", percentShares: "", percentProfit: ""}]);
+    }
 
         
 

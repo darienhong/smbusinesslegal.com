@@ -115,7 +115,7 @@ export default function AutomateGov() {
     const [company, setCompany] = React.useState();
     const [USstate, setState] = React.useState();
     const [boolean, setBoolean] = React.useState();
-    const [membersList, setMembersList] = React.useState([{name: "", email: "", percentShares: "", percentProfit: ""}]);
+    const [membersList, setMembersList] = React.useState([{name: "", email: "", percentShares: "", percentProfit: "", percentLosses: ""}]);
     const [automate, setAutomation] = React.useState();
     const [open, setOpen] = React.useState(false); 
     const [files, setFiles] = React.useState([]); 
@@ -167,18 +167,16 @@ export default function AutomateGov() {
             setState(event.target.value);
           };
 
-    const  handleMembersChange = (e) => {
-            let membersList = [...membersList]
-            membersList[e.target.dataset.id][e.target.className] = e.target.value
-            setMembersList({ membersList }, () => console.log(membersList))
+    const  handleMembersChange = (e, index) => {
+            const { name, value } = e.target;
+            const list = [...membersList]
+            list[index][name] = value;
+            setMembersList(list)
           }
 
-    const  addMembers = (e) => {
-            e.preventDefault();
-            setMembersList((prevState) => ({
-              membersList: [...prevState.membersList, { name: "", email: "", percentShares: "", percentProfit: "" }],
-            }));
-          }
+    const handleAddMembers = () => { 
+        setMembersList([...membersList, { name: "", email: "", percentShares: "", percentProfit: "", percentLosses: ""}]);
+    }
 
         
 
@@ -393,53 +391,99 @@ export default function AutomateGov() {
 
                     <p style={{textAlign: "center"}}> Please enter the following information for all Members or Managers </p>
 
-                    <div class="new-member">
-                     <div class="name-input" style={{textAlign: "center"}}>
-              <TextField id="outlined-basic" label="Name" variant="outlined" style={{width: "500px"}} /> 
-                </div> 
-                <br></br>
-                <div class="email-input" style={{textAlign: "center"}}>
-              <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
-                </div> 
-                <br></br>
-                <div class="percent-ownership" style={{textAlign: "center"}}>
+                    <div class="members-form"> 
+
+                    <div class="button-add">
+
+                        <Button onClick={handleAddMembers}> Add Member</Button>
+                        </div>
+                    {membersList.map((x, i) => { 
+                        return (
+                            <div class="members-form-box">
+
+                        <div class="name-input-p" style={{textAlign: "center"}}>
+                            < br/>
+                            <br /> 
+                            < br/> 
+                            <TextField 
+                            //    id={nameId}
+                                label="Name" 
+                                value={x.name}
+                                variant="outlined" 
+                                style={{width: "500px"}}
+                                onChange={e => handleMembersChange(e, i)}
+                                 /> 
+                                
+                            </div>
+                            < br/> 
+                            <div class="email-input-p" style={{textAlign: "center"}}>
+                            <TextField 
+                             //   id={emailId}
+                                label="Email" 
+                                value={x.email}
+                                variant="outlined" 
+                                onChange={e => handleMembersChange(e, i)}
+                                style={{width: "500px"}} 
+                                /> 
+                            </div>
+                        <br />
+                        <div class="percent-ownership" style={{textAlign: "center"}}>
                         <TextField
-                            id="outlined-number"
+                        //    id={sharesID}
                             label="Percentage of ownership"
                             type="number"
+                            value={x.percentShares}
                             InputLabelProps={{
                                 shrink: true,
                             }}
                             variant="outlined"
+                            onChange={e => handleMembersChange(e, i)}
                             style={{width: "500px"}}
                         />
                     </div>
-                    <br></br>
+                    <br />
                     <div class="percent-profits-received" style={{textAlign: "center"}}>
                         <TextField
-                            id="outlined-number"
+                        //  id={profitID}
                             label="Percent of profits received"
                             type="number"
+                            value={x.percentProfit}
                             InputLabelProps={{
                                 shrink: true,
                             }}
+                            onChange={e => handleMembersChange(e, i)}
+                           
                             variant="outlined"
                             style={{width: "500px"}}
                         />
                     </div>
-                    <br /> 
+                    < br /> 
+
                     <div class="percent-losses-received" style={{textAlign: "center"}}>
                         <TextField
-                            id="outlined-number"
+                        //  id={profitID}
                             label="Percent of losses received"
                             type="number"
+                            value={x.percentLosses}
                             InputLabelProps={{
                                 shrink: true,
                             }}
+                            onChange={e => handleMembersChange(e, i)}
+                           
                             variant="outlined"
                             style={{width: "500px"}}
                         />
                     </div>
+                            </div>
+
+                        );
+                    })}
+                    
+                    
+                    
+                    
+    
+                    
                     </div>
 
                    
