@@ -269,7 +269,7 @@ export default function AutomateGov() {
              <br />
              < br/>
              <center>
-             <Link to="/HomepageLogin">
+             <Link to="/Dashboard">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
@@ -504,7 +504,7 @@ export default function AutomateGov() {
              <br />
              <br />
              <center>
-             <Link to="/HomepageLogin">
+             <Link to="/Dashboard">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>

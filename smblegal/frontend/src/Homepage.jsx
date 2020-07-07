@@ -85,7 +85,7 @@ export default class Homepage extends Component {
                   <h2 style={{ textAlign: "center", color: "#245CA6"}}> Small Business Lifecycle Management </h2>
                   <br></br>
 
-                  <p style={{ textAlign: "center", fontWeight: 500, color: "#245CA6"}}> Join the thousands of small business owners using SMB Legal to 
+                  <p style={{ textAlign: "center", fontWeight: 500, color: "#245CA6", letterSpacing: "0mm"}}> Join the thousands of small business owners using SMB Legal to 
                   grow their business by increasing operational efficiency and avoiding legal pitfalls. </p>
                   <br></br>
               </div>

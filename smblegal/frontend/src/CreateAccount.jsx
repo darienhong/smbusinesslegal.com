@@ -34,6 +34,235 @@ const plans = [
   }
 ]
 
+const booleans = [
+  { 
+      value: 'Yes',
+      label: 'Yes',
+  },
+  {
+      value: 'No',
+      label: 'No',
+  }
+]
+
+const companies = [
+{
+  value: 'Corporation',
+  label: 'Corporation',
+},
+{
+  value: 'LLC',
+  label: 'LLC',
+},
+{
+  value: 'Parternship',
+  label: 'Partnership',
+},
+];
+
+const states = [
+  {
+      value: 'Alabama',
+      label: 'AL'
+  }, 
+  {
+      value: 'Alaska',
+      label: 'AK',
+  }, 
+  {
+      value: 'Arizona',
+      label: 'AZ',
+  },
+  {
+      value: 'Arkansas',
+      label: 'AR',
+  },
+  {
+      value: 'California',
+      label: 'CA',
+  },
+  {
+      value: 'Colorado',
+      label: 'CO',
+  },
+  {
+      value: 'Connecticut',
+      label: 'CT',
+  },
+  {
+      value: 'Delaware',
+      label: 'DE',
+  },
+  {
+      value: 'Florida',
+      label: 'FL',
+  }, 
+  {
+    value: 'Georgia',
+    label: 'GA',
+  },
+  {
+    value: 'Hawaii',
+    label: 'HI',
+  },
+  {
+    value: 'Idaho',
+    label: 'ID',
+  },
+  {
+    value: 'Illinois',
+    label: 'IL',
+  },
+  {
+    value: 'Indiana',
+    label: 'IN',
+  },
+  {
+    value: 'Iowa',
+    label: 'IA',
+  },
+  {
+    value: 'Kansas',
+    label: 'KS',
+  },
+  {
+    value: 'Kentucky',
+    label: 'KY',
+  },
+  {
+    value: 'Louisiana',
+    label: 'LA',
+  },
+  {
+    value: 'Maine',
+    label: 'ME',
+  },
+  {
+    value: 'Maryland',
+    label: 'MD',
+  },
+  {
+    value: 'Massachusetts',
+    label: 'MA',
+  },
+  {
+    value: 'Michigan',
+    label: 'MI',
+  },
+  {
+    value: 'Minnesota',
+    label: 'MN',
+  },
+  {
+    value: 'Mississippi',
+    label: 'MS',
+  },
+  {
+    value: 'Missouri',
+    label: 'MO',
+  },
+  {
+    value: 'Montana',
+    label: 'MT',
+  },
+  {
+    value: 'Nebraska',
+    label: 'NE',
+  },
+  {
+    value: 'Nevada',
+    label: 'NV',
+  },
+  {
+    value: 'New Hampshire',
+    label: 'NH',
+  },
+  {
+    value: 'New Jersey',
+    label: 'NJ',
+  },
+  {
+    value: 'New Mexico',
+    label: 'NM',
+  },
+  {
+    value: 'New York',
+    label: 'NY',
+  },
+  {
+    value: 'North Carolina',
+    label: 'NC',
+  },
+  {
+    value: 'North Dakota',
+    label: 'ND',
+  },
+  {
+    value: 'Ohio',
+    label: 'OH',
+  },
+  {
+    value: 'Oklahoma',
+    label: 'OK',
+  },
+  {
+    value: 'Oregon',
+    label: 'OR',
+  },
+  {
+    value: 'Pennsylvania',
+    label: 'PA',
+  },
+  {
+    value: 'Rhode Island',
+    label: 'RI',
+  },
+  {
+    value: 'South Carolina',
+    label: 'SC',
+  },
+  {
+    value: 'South Dakota',
+    label: 'SD',
+  },
+  {
+    value: 'Tennessee',
+    label: 'TN',
+  },
+  {
+    value: 'Texas',
+    label: 'TX',
+  },
+  {
+    value: 'Utah',
+    label: 'UT',
+  },
+  {
+    value: 'Vermont',
+    label: 'VT',
+  },
+  {
+    value: 'Virginia',
+    label: 'VA',
+  },
+  {
+    value: 'Washington',
+    label: 'WA',
+  },
+  {
+    value: 'West Virginia',
+    label: 'WV',
+  },
+  {
+    value: 'Wisconsin',
+    label: 'WI',
+  },
+  {
+    value: 'Wyoming',
+    label: 'WY',
+  },    
+]
+
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
@@ -47,15 +276,27 @@ const useStyles = makeStyles((theme) => ({
 export default function CreateAccount() {
 
   const classes = useStyles();
+  const [company, setCompany] = React.useState();
+  const [USstate, setState] = React.useState();
   const [plan, setPlan] = React.useState();
   const [firstName] = React.useState();
   const [email] = React.useState();
   const [lastName] = React.useState();
   const [password] = React.useState();
+  const [companyName] = React.useState();
+  const [zipcode] = React.useState();
 
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
   }
+
+const handleChangeCompany = (event) => {
+    setCompany(event.target.value);
+  };
+
+const handleChangeState = (event) => {
+    setState(event.target.value);
+  };
 
 
   return (
@@ -130,31 +371,161 @@ export default function CreateAccount() {
 
             <form>
               <div class="companyid-input" style={{ textAlign: "center" }}>
-                <TextField id="outlined-basic" label="Company ID" variant="outlined" style={{ width: "500px" }} />
+                <TextField required id="outlined-required" label="Company ID" variant="outlined" style={{ width: "500px" }} />
               </div>
               <br />
               <br />
               <center>
+                <Link to="/Dashboard">
                 <div class="create-acc-button" >
-                  <p style={{ textAlign: "center" }}> Create my Account </p>
-                </div>
+                  <p style={{ textAlign: "center" }}> Create your Account </p>
+                </div> </Link>
               </center>
             </form>
           )}
 
           {(plan === 'Freemium' || plan === 'Premium' || plan === 'Formation Documents') && (
 
-            <center>
-              <br />
-              <br />
-              <Link to="/CompanyID" style={{ textDecoration: "none" }}> <div class="create-acc-button" >
-                <p style={{ textAlign: "center" }}> Create my Account </p>
+              <form>  
+                <div class="login-form" style={{textAlign: "center"}}>
+
+              <div class="company-name" style={{textAlign: "center"}}>
+                      <TextField 
+                      required id="outlined-required"
+                      value={companyName} 
+                      label="Company Name" 
+                      variant="outlined" 
+                      style={{width: "500px"}} /> 
               </div>
-              </Link>
+          <br></br>
+          <div class="state-choice">
+                       <TextField
+                          required id="outlined-required"
+                          select label="What state is your business formed in?"
+                          value={USstate}
+                          onChange={handleChangeState}
+                          variant="outlined"
+                          style={{width: "500px"}}
+                          >
+
+                       {states.map((option) => (
+                       <MenuItem key={option.value} value={option.value}>
+                           {option.label}
+                       </MenuItem>
+                               ))}
+                       </TextField>
+           </div>
+           <br></br>
+           
+
+              <div class="zipcode-input" style={{textAlign: "center"}}>
+                    <TextField 
+                    required id="outlined-required" 
+                    value={zipcode}
+                    label="Zipcode" 
+                    variant="outlined" 
+                    style={{width: "500px"}} /> 
+              </div>
+              <br /> 
+              <div class="company-choice">
+                      <TextField
+                          required id="outlined-required"
+                          select label="You are a"
+                          value={company}
+                          onChange={handleChangeCompany}
+                          variant="outlined"
+                          style={{width: "500px"}}
+                       >
+                      {/* {companies.map((option) => ( */}
+                      <MenuItem key="Corporation" value="Corporation">
+                          Corporation
+                      </MenuItem>
+                      <MenuItem key="Partnership" value="Partnership">
+                          Partnership
+                      </MenuItem>
+                      <MenuItem key="LLC" value="LLC">
+                          LLC
+                      </MenuItem>
+                     
+
+                      
+                      </TextField>
+              </div>
+              <br></br>
               <br />
-            </center>
+
+
+            { company === 'Partnership' && ( 
+              <div>
+              <center>
+           <Link to="/InitializePartnership" style={{textDecoration: "none"}}> <div class="gov-button" >
+                        <p style={{textAlign: "center"}}> Automate Your Governance </p>
+                    </div> </Link>  
+               </center>
+              <br />
+              <br />
+              <center>
+              <Link to="/Dashboard">
+                <div class="create-acc-button" >
+                  <p style={{ textAlign: "center" }}> Create your Account </p>
+                </div> </Link>
+             </center>
+             </div>
+
+                )}
+
+
+
+
+            { company === 'Corporation' && ( 
+              <div>
+              <center>
+           <Link to="/InitializeCorporation" style={{textDecoration: "none"}}> <div class="gov-button" >
+                        <p style={{textAlign: "center"}}> Automate Your Governance </p>
+                    </div> </Link>  
+               </center>
+              <br />
+              <br />
+              <center>
+              <Link to="/Dashboard">
+                <div class="create-acc-button" >
+                  <p style={{ textAlign: "center" }}> Create your Account </p>
+                </div> </Link>
+             </center>
+             </div>
+
+                )}
+
+          { company === 'LLC' && ( 
+              <div>
+              <center>
+           <Link to="/InitializeLLC" style={{textDecoration: "none"}}> <div class="gov-button" >
+                        <p style={{textAlign: "center"}}> Automate Your Governance </p>
+                    </div> </Link>  
+               </center>
+              <br />
+              <br />
+              <center>
+              <Link to="/Dashboard">
+                <div class="create-acc-button" >
+                  <p style={{ textAlign: "center" }}> Create your Account </p>
+                </div> </Link>
+             </center>
+             </div>
+
+                )}
+
+
+
+            </div>
+
+              </form>
 
           )}
+
+
+
+
           <br />
           <br />
           <br />

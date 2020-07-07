@@ -58,37 +58,38 @@ export default class PrivacyPolicy extends Component {
 
             < br/> 
             <h4> 3. DEFINITIONS  </h4>
-            <p>   a. “PERSONAL DATA”: Data about a living individual who can be identified from those data. </p>
-            <p> b. “DOCUMENTS DATA”: Data collected from users while generating or editing a document on the site.</p>
-            <p> c. “USAGE DATA”: Data collected via use of the site, automatically.</p>
-            <p> d. “COOKIES”: Pieces of data stored on a Customer’s device.</p>
-            <p> e. “DATA CONTROLLER”: A natural or legal person who determines the purpose in which any data is or are able to be processed.  
+            <p> a. <span style={{fontWeight: "bold"}}> “PERSONAL DATA”: </span>   Data about a living individual who can be identified from those data. </p>
+            <p> b. <span style={{fontWeight: "bold"}}> “DOCUMENTS DATA”: </span> Data collected from users while generating or editing a document on the site.</p>
+            <p> c. <span style={{fontWeight: "bold"}}> “USAGE DATA”: </span> Data collected via use of the site, automatically.</p>
+            <p> d. <span style={{fontWeight: "bold"}}> “COOKIES”: </span> Pieces of data stored on a Customer’s device.</p>
+            <p> e. <span style={{fontWeight: "bold"}}> “DATA CONTROLLER”: </span> A natural or legal person who determines the purpose in which any data is or are able to be processed.  
                 For this purpose SMB Legal is the Data Controller of the Customer’s data.</p>
-            <p> f. “DATA PROCESSOR” (SERVICE PROVIDERS): Any natural or legal person who processes the data on behalf of the Data Controller.</p>
-            <p> g. “DATA SUBJECT”: Any living person who is the subject of Personal Data.</p>
-            <p> h. “USER”: Any individual using the site.  The User corresponds to Data Subject, who is the subject of Personal Data.</p>
+            <p> f. <span style={{fontWeight: "bold"}}> “DATA PROCESSOR" (SERVICE PROVIDERS): </span> Any natural or legal person who processes the data on behalf of the Data Controller.</p>
+            <p> g. <span style={{fontWeight: "bold"}}> “DATA SUBJECT”: </span>  Any living person who is the subject of Personal Data.</p>
+            <p> h. <span style={{fontWeight: "bold"}}> “USER”: </span> : Any individual using the site.  The User corresponds to Data Subject, who is the subject of Personal Data.</p>
 
             < br/> 
             <h4> 4. INFORMATIONS WE COLLECT ABOUT CUSTOMERS </h4>
             <p> SMB Legal collects different types of information from the Customer for various purposes to maintain the site and provide the Customer with the best level of services. </p>
-            <p> a. PERSONAL DATA </p>
+            <p> a. <span style={{fontWeight: "bold"}}> PERSONAL DATA </span>  </p>
             <p> <span style={{fontWeight: "bold"}}> Personal Information. </span> Personal information, such as the name, address, e-mail address, phone number, username, password and any other personal information through the site.  This includes registration information.
                 < br/> 
                 <span style={{fontWeight: "bold"}}> Email Correspondences. </span>  Records and copies of email messages if the Customer chooses to correspond with us via email.
                 < br/> 
                 <span style={{fontWeight: "bold"}}> Transaction Information. </span>  Information about purchases or transactions made on the site.  Including payment information – such as a credit card number or other payment method – billing details and other authentication information.
                 < br /> 
+                <br /> 
                 Personal Data may be used to contact you with newsletters, promotional or marketing materials.  These all may be opted out of by clicking the unsubscribe link.
 
             </p>
-            <p> b. DOCUMENTS DATA </p>
+            <p> b. <span style={{fontWeight: "bold"}}> DOCUMENTS DATA </span>  </p>
             <p> Information that is entered on the site for the purpose of generating the documents and achieving the purposes of the site.  We may collect Documents Data and analyze it to provide additional benefits for the site.</p>
-            <p> c. USAGE DATA </p>
+            <p> c. <span style={{fontWeight: "bold"}}> USAGE DATA </span>  </p>
             <p> While using the site we may collect information and analyze it to determine how the site is being used.</p>
-            <p> d. TRACKING AND COOKIES DATA </p>
+            <p> d. <span style={{fontWeight: "bold"}}> TRACKING AND COOKIES DATA </span>  </p>
             <p> Customers will be subject to Cookies to help enhance and personalize their experience with SMB Legal.  Cookies are personal to that Customer.  Customers have the ability to accept or decline Cookies.
 </p>
-            <p> e. OTHER INFORMATION</p>
+            <p> e. <span style={{fontWeight: "bold"}}> OTHER INFORMATION </span> </p>
             <p> Other information may be collected on the Customer while using the site.  This may be information and content that the Customer gives to SMB Legal directly or information that is automatically collected.</p>
 
             <br /> 
@@ -112,9 +113,9 @@ Usage Data will be retained for internal analysis.
                 < br/> 
 
                 <h4> 8. DISCLOSURE OF CUSTOMER INFORMATION </h4>
-                <p> a. LAW ENFORCEMENT </p>
+                <p> a. <span style={{fontWeight: "bold"}}> LAW ENFORCEMENT </span>  </p>
                 <p> SMB Legal will disclose Personal Data to law enforcement if required to do so by law or comply with our own obligations.</p>
-                <p> b. OTHER CASES </p>
+                <p> b. <span style={{fontWeight: "bold"}}> OTHER CASES </span>  </p>
                 <p> SMB Legal will disclose Personal Data to fulfill the purposes for which it was provided by the Customer, including to subsidiaries, contractors or service providers or third parties that support SMB Legal.</p>
 
                 <br /> 
@@ -134,12 +135,12 @@ Usage Data will be retained for internal analysis.
 
                 <h4> 11. DATA PROTECTION UNDER CALIFORNIA CONSUMER PRIVACY ACT (CCPA)</h4>
                 <p> As a resident of California, the Customer is able to learn what data has been collected and ask to delete that data and not sell it.  The Customer can make these requests:</p>
-                <p> a. PERSONAL INFORMATION</p>
+                <p> a. <span style={{fontWeight: "bold"}}> PERSONAL INFORMATION </span> </p>
                 <p> Upon a request to exercise a Customer’s rights under the CCPA SMB Legal will return all statutorily required information under the CCPA.  
                     A Customer is entitled to ask to provide this information two-times on a rolling basis within 12 months.</p>
-                <p> B. DELETION </p>
+                <p> B. <span style={{fontWeight: "bold"}}> DELETION </span> </p>
                 <p> Upon a request to exercise a Customer’s rights under the CCPA SMB Legal will delete all statutorily required information under the CCPA.</p>
-                <p> C. SALE OF PERSONAL INFORMATION </p>
+                <p> C. <span style={{fontWeight: "bold"}}> SALE OF PERSONAL INFORMATION </span>  </p>
                 <p>  Upon a request to exercise a Customer’s rights under the CCPA SMB Legal will not sell all statutorily required information under the CCPA.
 </p>
                 < br/> 

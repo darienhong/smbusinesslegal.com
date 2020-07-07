@@ -188,9 +188,20 @@ const handleOpen = (event) => {
 
     const  addMembers = (e) => {
             e.preventDefault();
-            setMembersList((prevState) => ({
+            membersList.push({
+                name: "",
+                email: "",
+                percentShares: "",
+                percentProfit: ""
+            });
+            setMembersList({ 
+                membersList: membersList,
+            });
+
+          /*  setMembersList((prevState) => ({
               membersList: [...prevState.membersList, { name: "", email: "", percentShares: "", percentProfit: "" }],
             }));
+            */ 
           }
 
         
@@ -283,7 +294,7 @@ const handleOpen = (event) => {
              <br />
              <br />
              <center>
-             <Link to="/HomepageLogin">
+             <Link to="/Dashboard">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>
@@ -550,7 +561,7 @@ const handleOpen = (event) => {
              <br />
              <br />
              <center>
-             <Link to="/HomepageLogin">
+             <Link to="/Dashboard">
                      <div class="gov-button-1" >
                           <p style={{textAlign: "center"}}> Finish Initializing Your Company </p>
                       </div>

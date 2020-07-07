@@ -53,7 +53,7 @@ export default class SignIn extends Component {
                 <br></br>
                 <br />
                 <center>
-                <Link to="/HomepageLogin">
+                <Link to="/Dashboard">
                 <div class="create-acc-button" >
                  <p style={{textAlign: "center"}}> Log In </p>
                 </div>

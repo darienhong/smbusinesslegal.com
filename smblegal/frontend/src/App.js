@@ -231,7 +231,7 @@ export default class App extends Component {
               <SMBAutomate />
             </Route>
 
-            <Route path="/HomepageLogin">
+            <Route path="/Dashboard">
               <HomepageLogin />
             </Route>
             <Route path="/AboutUsLogin">

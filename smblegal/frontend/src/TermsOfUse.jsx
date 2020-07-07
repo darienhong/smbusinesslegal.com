@@ -67,24 +67,24 @@ export default class TermsOfUse extends Component {
                     You the Customer have read and agree that:
                         </p>
 
-            <p> i. SMB LEGAL IS NOT A LAW FIRM AND MAY NOT PERFORM SERVICES PERFORMED BY AN ATTORNEY. 
+            <p> <span style={{fontWeight: "bold"}}> i. </span> SMB LEGAL IS NOT A LAW FIRM AND MAY NOT PERFORM SERVICES PERFORMED BY AN ATTORNEY. 
                 Information that is housed on the site is for self-help and informational purposes only.</p>
             
-            <p> ii. INSTRUCTIONS ON THE PLATFORM ARE NOT LEGAL ADVICE OR LEGAL SERVICES.  The platform includes Q&A forms and there may be suggestions or 
+            <p> <span style={{fontWeight: "bold"}}> ii. </span> INSTRUCTIONS ON THE PLATFORM ARE NOT LEGAL ADVICE OR LEGAL SERVICES.  The platform includes Q&A forms and there may be suggestions or 
                 instructions on completing these forms and any suggestions or instructions are not legal advice or legal services</p>
             
-            <p>  iii.   SMB LEGAL DOES NOT REVIEW YOUR ANSWERS FOR LEGAL SUFFICIENCY.</p>
-            <p> iv. SMB LEGAL DOES NOT GUARANTEE ANY DOCUMENTS LISTED ON THE PLATFORM.  SMB Legal does not guarantee that any legal form provided is suitable 
+            <p>  <span style={{fontWeight: "bold"}}> iii. </span>   SMB LEGAL DOES NOT REVIEW YOUR ANSWERS FOR LEGAL SUFFICIENCY.</p>
+            <p> <span style={{fontWeight: "bold"}}> iv. </span> SMB LEGAL DOES NOT GUARANTEE ANY DOCUMENTS LISTED ON THE PLATFORM.  SMB Legal does not guarantee that any legal form provided is suitable 
                 for a particular purpose, or that any legal form provided is accurate, reliable, complete or timely.  
                 The documents are for informational purposes only and should not be relied upon as legal advice.</p>
-            <p> v. NO ATTORNEY CLIENT RELATIONSHIP IS CREATED BETWEEN YOU AND SMB LEGAL WHEN YOU USE THE SITE.</p>
-            <p> vi. NO RESULTS OR OUTCOMES ARE GUARANTEED BY CUSTOMER USE OF THE SITE.</p>
-            <p> vii. SMB LEGAL DOES NOT REGULATE YOUR ACTIONS ON THE SITE.  The Customer agrees that they are solely responsible for the 
+            <p> <span style={{fontWeight: "bold"}}> v. </span> NO ATTORNEY CLIENT RELATIONSHIP IS CREATED BETWEEN YOU AND SMB LEGAL WHEN YOU USE THE SITE.</p>
+            <p> <span style={{fontWeight: "bold"}}> vi. </span> NO RESULTS OR OUTCOMES ARE GUARANTEED BY CUSTOMER USE OF THE SITE.</p>
+            <p> <span style={{fontWeight: "bold"}}> vii. </span> SMB LEGAL DOES NOT REGULATE YOUR ACTIONS ON THE SITE.  The Customer agrees that they are solely responsible for the 
                 sufficiency of their actions on the site, including the unauthorized practice of law, 
                 communications PRC and confidentiality PRC. The Company is not liable for any violations of these laws.</p>
-            <p> viii. YOU UNDERSTAND AND AGREE THAT SMB LEGAL IS NOT A LAW FIRM OR AN ATTORNEY, WE MAY NOT PERFORM SERVICES PERFORMED BY AN 
+            <p> <span style={{fontWeight: "bold"}}> viii. </span> YOU UNDERSTAND AND AGREE THAT SMB LEGAL IS NOT A LAW FIRM OR AN ATTORNEY, WE MAY NOT PERFORM SERVICES PERFORMED BY AN 
                 ATTORNEY OR LAWYERS AND WE ARE NOT A SUBSTITUTE FOR THE ADVICE OR SERVICES OF AN ATTORNEY OR LAWYER.</p>
-            <p> ix. YOU UNDERSTAND AND AGREE THAT NO ATTORNEY-CLIENT RELATIONSHIP OR PRIVILEGE HAS BEEN OR WILL BE CREATED BETWEEN THE CUSTOMER AND SMB LEGAL.</p>
+            <p> <span style={{fontWeight: "bold"}}> ix. </span> YOU UNDERSTAND AND AGREE THAT NO ATTORNEY-CLIENT RELATIONSHIP OR PRIVILEGE HAS BEEN OR WILL BE CREATED BETWEEN THE CUSTOMER AND SMB LEGAL.</p>
 
             <br /> 
 
