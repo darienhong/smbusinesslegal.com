@@ -48,13 +48,46 @@ export default function CreateAccount() {
 
   const classes = useStyles();
   const [plan, setPlan] = React.useState();
-  const [firstName] = React.useState();
-  const [email] = React.useState();
-  const [lastName] = React.useState();
-  const [password] = React.useState();
+
+  const [state, setState] = React.useState({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: ""
+  })
+
+  const handleChange = e => {
+    const { name, value } = e.target
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
 
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
+  }
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    console.log('went in to the button press!');
+
+    const data = {
+      firstName: state.firstName,
+      lastName: state.lastName,
+      email: state.email,
+      password: state.password,
+      plan: plan
+    }
+    fetch('/createAccount', {
+      method: 'POST',
+      body: JSON.stringify(data), // data can be `string` or {object}!
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+      .then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
   }
 
 
@@ -80,26 +113,29 @@ export default function CreateAccount() {
           <p style={{ textAlign: "center" }}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
           <br></br>
           <div class="email-input" style={{ textAlign: "center" }}>
-            <TextField value={email} id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
+            <TextField value={state.email} name="email" onChange={handleChange} id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
+
           </div>
           <br></br>
           <div class="first-name-input" style={{ textAlign: "center" }}>
-            <TextField value={firstName} id="outlined-basic" label="First Name" variant="outlined" style={{ width: "500px" }} />
+            <TextField value={state.firstName} name="firstName" onChange={handleChange} id="outlined-basic" label="First Name" variant="outlined" style={{ width: "500px" }} />
           </div>
           <br></br>
           <div class="last-name-input" style={{ textAlign: "center" }}>
-            <TextField value={lastName} id="outlined-basic" label="Last Name" variant="outlined" style={{ width: "500px" }} />
+            <TextField value={state.lastName} name="lastName" onChange={handleChange} id="outlined-basic" label="Last Name" variant="outlined" style={{ width: "500px" }} />
           </div>
           <br></br>
           <div class="password-input" style={{ textAlign: "center" }}>
             <TextField
               id="outlined-password-input"
+              value={state.password}
+              name="password"
+              onChange={handleChange}
               label="Password"
               type="password"
               autoComplete="current-password"
               variant="outlined"
               color="#245CA6"
-              value={password}
               style={{ width: "500px" }}
             />
           </div>
@@ -153,8 +189,8 @@ export default function CreateAccount() {
               <br />
               <br />
               <center>
-                <div class="create-acc-button" >
-                  <p style={{ textAlign: "center" }}> Create my Account </p>
+                <div class="create-acc-button" onClick={handleClick}>
+                  <p style={{ textAlign: "center" }}  > Create my Account </p>
                 </div>
               </center>
             </form>
@@ -165,8 +201,8 @@ export default function CreateAccount() {
             <center>
               <br />
               <br />
-              <Link to="/CompanyID" style={{ textDecoration: "none" }}> <div class="create-acc-button" >
-                <p style={{ textAlign: "center" }}> Create my Account </p>
+              <Link to="/CompanyID" style={{ textDecoration: "none" }}> <div class="create-acc-button" onClick={handleClick}>
+                <p style={{ textAlign: "center" }} > Create my Account </p>
               </div>
               </Link>
               <br />
