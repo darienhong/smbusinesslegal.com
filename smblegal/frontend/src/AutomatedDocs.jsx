@@ -30,22 +30,22 @@ export default class AutomatedDocs extends Component {
                 </svg>
             </div>
 
-            <center><div class="doc-block"> <Link to="/Formation" style={{textDecoration: "none", color: "black"}}>
+            <center><div class="doc-block"> <Link to="/Formation" style={{textDecoration: "none", color: "#245CA6"}}>
             Formation </Link>
             </div>
             </center>
 
-            <center><div class="doc-block"> <Link to="/Governance" style={{textDecoration: "none", color: "black"}}>
+            <center><div class="doc-block"> <Link to="/Governance" style={{textDecoration: "none", color: "#245CA6"}}>
             Governance </Link>
             </div>
             </center>
 
-             <center><div class="doc-block"> <Link to="/Employment" style={{textDecoration: "none", color: "black"}}>
+             <center><div class="doc-block"> <Link to="/Employment" style={{textDecoration: "none", color: "#245CA6"}}>
             Employment </Link>
             </div>
             </center>
 
-           <center><div class="doc-block"> <Link to="/Covid_19" style={{textDecoration: "none", color: "black"}}>
+           <center><div class="doc-block"> <Link to="/Covid_19" style={{textDecoration: "none", color: "#245CA6"}}>
             Covid-19 </Link>
             </div>
             </center>

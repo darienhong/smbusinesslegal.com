@@ -76,10 +76,7 @@ export default class FormationLogin extends Component {
                     </Link>
                     </div>
 
-                    <div class="document-icon">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> N/A </p>
-                    </div>
+                   
                 </div>
 
 

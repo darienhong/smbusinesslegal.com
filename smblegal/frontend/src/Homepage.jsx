@@ -76,7 +76,8 @@ export default class Homepage extends Component {
                   <br></br>
 
       
-                  <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners using SMB to grow their business and avoid legal pitfalls. </p>
+                  <p style={{ textAlign: "center", fontWeight: 500}}> Join the thousands of small business owners using SMB Legal to 
+                  grow their business by increasing operational efficiency and avoiding legal pitfalls. </p>
                   <br></br>
               </div>
                <div class='signup'>      
@@ -127,7 +128,7 @@ export default class Homepage extends Component {
           <div class="governance-automation-block">
             <div>
             <p class="homepage-text"> Governance Automation  </p>
-            <p style={{fontSize: "14px", padding: "10px", color: "#245CA6"}}> Automate and organize all aspects of our company's 
+            <p style={{fontSize: "14px", padding: "10px", color: "#245CA6"}}> Automate and organize all aspects of your company's 
             governance with the click of a button. </p>
             </div>
             </div>

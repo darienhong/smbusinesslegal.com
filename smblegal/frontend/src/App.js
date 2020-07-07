@@ -75,6 +75,8 @@ import ProductOverviewLogin from './login-files/ProductOverviewLogin.jsx';
 import ToolsLogin from './login-files/ToolsLogin.jsx';
 import AutomatedDocsLogin from './login-files/AutomatedDocsLogin.jsx';
 
+import PrivacyPolicy from './PrivacyPolicy.jsx';
+import TermsOfUse from './TermsOfUse.jsx';
 import ContentMarketing2 from './ContentMarketing2.jsx';
 import ContentMarketing from './ContentMarketing.jsx';
 import ProductOverview from './ProductOverview.jsx';
@@ -101,7 +103,7 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: [
       'DM Sans', 
-      
+
     ].join(','),
   }
 });
@@ -245,7 +247,12 @@ export default class App extends Component {
               <AutomatedDocsLogin />
             </Route>
           
-
+          <Route path="/TermsOfUse">
+            <TermsOfUse />
+          </Route>
+          <Route path="/PrivacyPolicy">
+            <PrivacyPolicy />
+          </Route>
 
             <Route path="/ContentMarketing2">
               <ContentMarketing2 />

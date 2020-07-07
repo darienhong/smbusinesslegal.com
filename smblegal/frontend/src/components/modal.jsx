@@ -35,7 +35,7 @@ export default class ModalTest extends Component {
                     <ModalBody style={{fontFamily: 'WorkSans'}}> 
                     <br></br>
                     <br></br>
-                    <center> <h1 style={{ fontSize: 30, fontWeight: 800}}> Launching soon! </h1></center>
+                    <center> <h1 style={{ fontSize: 30, fontWeight: 800}}> Please Accept our Terms and Conditions </h1></center>
                     <br></br>
                      <center> <p style={{padding: 10}} >Welcome! At <span style={{ fontWeight: 700}}> SMB Legal </span>
                      we are as excited as you are that soon all the legal and document management 

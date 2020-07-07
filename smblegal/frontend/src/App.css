@@ -282,7 +282,7 @@ nav a:hover {
 .homepage, .about-page, .pricing-page, .sign-up-page, .tools-page,  
 .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
 .automated-docs-page, .login-page, .create-acc-page, .company-id-page, .doc-page , .product-overview-page,
- .content-marketing-page, .homepage-login { 
+ .content-marketing-page, .homepage-login, .terms-of-use-page, .policy-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
   margin-left: 50px; 
@@ -585,18 +585,24 @@ font-family: 'WorkSans';
 }
 .doc-block {
   width: 800px; 
-  border: 2px solid rgb(83, 63, 63); 
+  border: 2px solid #245CA6; 
   border-radius: 25px;
   padding: 25px;
   margin: 20px;
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
-  font-family: 'WorkSans';
+  font-weight: 600;
+  font-family: 'DM Sans';
   text-decoration: none;
-  color: black;
+  color: #245CA6;
 
 }
+
+.doc-block:hover { 
+  opacity: 0.7;
+}
+
 
 .create-acc-button, .gov-button, .gov-button-1 { 
   padding-top: 10px; 
@@ -795,6 +801,16 @@ font-family: 'WorkSans';
 .product-block p { 
   color: white;
   letter-spacing: 0.2mm;
+}
+
+.contact-us { 
+  background-color: #245CA6;
+  color: white; 
+  width: 200px; 
+  justify-content: center;
+  border: 2px solid white;
+  font-family: 'DM Sans';
+
 }
 
 
