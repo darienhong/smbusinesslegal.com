@@ -63,8 +63,6 @@ export default class SignIn extends Component {
             <br />
 
 
-
-
                 <p style={{textAlign: "center"}}> Don't have an account? <Link to="/CreateAccount" style={{color: "#245CA6"}}> Create Account </Link></p>
 
                 <br></br>

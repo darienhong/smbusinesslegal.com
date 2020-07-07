@@ -121,24 +121,6 @@ export default function CreateAccount() {
                 </MenuItem>
               ))}
 
-              {/*}     <MenuItem key="Freemium" value="Freemium">
-              Freemium
-            </MenuItem>
-            <MenuItem key="Automated Governance" value="Automated Governance">
-              Automated Governance
-            </MenuItem>
-            <MenuItem key="Subscription" value="Subscription">
-              Subscription
-            </MenuItem>
-            <MenuItem key="Formation" value="Formation">
-              Formation
-            </MenuItem>
-            <MenuItem key="Existing Plan" value="Existing Plan">
-              Existing Plan
-            </MenuItem>
-
-                */}
-
             </TextField>
           </div>
           <br />
