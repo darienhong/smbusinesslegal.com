@@ -16,20 +16,6 @@ export default class EmploymentDocument extends Component {
     var formattedDate = moment(dateString).format("LL");
     var startDateString = values.startDate.toString();
     var formattedStartDate = moment(startDateString).format("LL");
-    // // const stateCheck = values.state == 'California'
-    // // var stateRequire = 'No Food Handler Card.'
-    // // if (stateCheck)
-    // //   stateRequire = 'California Food Handler Card. This offer of employment is contingent upon you successfully completing the courses for and obtaining a California Food Handler Card within thirty(30) days from the date of hire, if not already obtained prior to working with the Company.This offer may be revoked, and you will not be allowed to work if a California Food Handler Card is not obtained within thirty(30) days.'
-    // const creditCheck = values.credits == "True"
-    // var creditRequire = ''
-    // if (creditCheck)
-    //   creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
-
-
-    // const competeCheck = values.compete == 'Yes'
-    // var competeRequire = 'No Non-Compete Clause.'
-    // if (competeCheck)
-    //   competeRequire = 'Non-Compete. ' + values.internName + ' agrees that as a condition of employment, ' + values.internName + ' will not engage in a directly competing enterprise for [X months or years] following the termination of the employment relationship between ' + values.internName + ' and the Company.'
 
     const sickCheck = values.state == 'California'
     var sickRequire = ''
@@ -65,7 +51,7 @@ export default class EmploymentDocument extends Component {
     var competeRequire2 = ''
 
     var breach = '5. No Breach.'
-    var atwill = '6. At-Will Internship.'
+    var atwill = '6. At-Will Employment.'
     var conf = '7. Confidentiality, Non-Solicitation and Return of Property.'
     var inv = '8. Invention Assignment.'
     var misc = '9. Miscellaneous'
@@ -75,25 +61,25 @@ export default class EmploymentDocument extends Component {
       handlerRequire2 = 'This offer of employment is contingent upon you successfully completing the courses for and obtaining a California Food Handler Card within thirty (30) days from the date of hire, if not already obtained prior to working with the Company. This offer may be revoked, and you will not be allowed to work if a California Food Handler Card is not obtained within thirty (30) days.'
       background = '5. Background and Reference Check.'
       breach = '6. No Breach'
-      var atwill = '7. At-Will Internship.'
+      var atwill = '7. At-Will Employment.'
       var conf = '8. Confidentiality, Non-Solicitation and Return of Property.'
       var inv = '9. Invention Assignment.'
       var misc = '10. Miscellaneous'
 
       if (expensesCheck) {
         expensesRequire = '6. Expenses'
-        expensesRequire2 = 'The Company shall reimburse Intern for reasonable expenses approved by the Company, in writing, and incurred by Intern which is necessary for the performance of your duties under this letter. Such expenses shall include:'
+        expensesRequire2 = 'The Company shall reimburse Employee for reasonable expenses approved by the Company, in writing, and incurred by Employee which is necessary for the performance of your duties under this letter. Such expenses shall include:'
         breach = '7. No Breach'
-        var atwill = '8. At-Will Internship.'
+        var atwill = '8. At-Will Employment.'
         var conf = '9. Confidentiality, Non-Solicitation and Return of Property.'
         var inv = '10. Invention Assignment.'
         var misc = '11. Miscellaneous'
 
         if (liablilityCheck) {
           liabilityRequire = '7. Professional Liability'
-          liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Intern from any threatened or actual demands, claims, suits, actions or legal proceedings against Intern caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
+          liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Employee from any threatened or actual demands, claims, suits, actions or legal proceedings against Employee caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
           breach = '8. No Breach'
-          var atwill = '9. At-Will Internship.'
+          var atwill = '9. At-Will Employment.'
           var conf = '10. Confidentiality, Non-Solicitation and Return of Property.'
           var inv = '11. Invention Assignment.'
           var misc = '12. Miscellaneous'
@@ -110,17 +96,17 @@ export default class EmploymentDocument extends Component {
 
     else if (expensesCheck) {
       expensesRequire = '5. Expenses'
-      expensesRequire2 = 'The Company shall reimburse Intern for reasonable expenses approved by the Company, in writing, and incurred by Intern which is necessary for the performance of your duties under this letter. Such expenses shall include:'
+      expensesRequire2 = 'The Company shall reimburse Employee for reasonable expenses approved by the Company, in writing, and incurred by Employee which is necessary for the performance of your duties under this letter. Such expenses shall include:'
       breach = '6. No Breach'
-      var atwill = '7. At-Will Internship.'
+      var atwill = '7. At-Will Employment.'
       var conf = '8. Confidentiality, Non-Solicitation and Return of Property.'
       var inv = '9. Invention Assignment.'
       var misc = '10. Miscellaneous'
       if (liablilityCheck) {
         liabilityRequire = '6. Professional Liability'
-        liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Intern from any threatened or actual demands, claims, suits, actions or legal proceedings against Intern caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
+        liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Employee from any threatened or actual demands, claims, suits, actions or legal proceedings against Employee caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
         breach = '7. No Breach'
-        var atwill = '8. At-Will Internship.'
+        var atwill = '8. At-Will Employment.'
         var conf = '9. Confidentiality, Non-Solicitation and Return of Property.'
         var inv = '10. Invention Assignment.'
         var misc = '11. Miscellaneous'
@@ -135,9 +121,9 @@ export default class EmploymentDocument extends Component {
 
     else if (liablilityCheck) {
       liabilityRequire = '5. Professional Liability'
-      liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Intern from any threatened or actual demands, claims, suits, actions or legal proceedings against Intern caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
+      liabilityRequire2 = 'The Company agrees that it will defend, hold harmless, and indemnify Employee from any threatened or actual demands, claims, suits, actions or legal proceedings against Employee caused by their official capacity with the Company, except where threatened or actual demands, claims, suits, actions or legal proceedings are the result of intentional or criminal acts or other acts not performed in good faith.'
       breach = '6. No Breach'
-      var atwill = '7. At-Will Internship.'
+      var atwill = '7. At-Will Employment.'
       var conf = '8. Confidentiality, Non-Solicitation and Return of Property.'
       var inv = '9. Invention Assignment.'
       var misc = '10. Miscellaneous'
@@ -188,7 +174,7 @@ export default class EmploymentDocument extends Component {
         <br /><br />
         <div id='container'>
 
-          <h5 class='indoc'>1. Internship Description. </h5>
+          <h5 class='indoc'>1. Employment Description. </h5>
           <p>{values.responsibilities}</p>
 
           <br />
