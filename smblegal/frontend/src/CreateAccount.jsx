@@ -310,7 +310,11 @@ export default function CreateAccount() {
       lastName: state.lastName,
       email: state.email,
       password: state.password,
-      plan: plan
+      plan: plan,
+      companyName: state.companyName,
+      zipCode: state.zipcode,
+      company: company,
+      USstate: USstate
     }
     fetch('/createAccount', {
       method: 'POST',
@@ -321,7 +325,13 @@ export default function CreateAccount() {
       .then(res => res.json())
       .catch(error => console.error('Error:', error))
       .then(response => console.log('Success:', response));
+
+    document.location = "/Dashboard"
+
+
   }
+
+
   const handleChangeCompany = (event) => {
     setCompany(event.target.value);
   };
@@ -541,10 +551,11 @@ export default function CreateAccount() {
                     </Link> */}
                     <br />
                     <center>
-                      <Link to="/Dashboard">
-                        <div class="create-acc-button" >
-                          <p style={{ textAlign: "center" }}> Create your Account </p>
-                        </div> </Link>
+                      {/* <Link to="/Dashboard"> */}
+                      <div class="create-acc-button" onClick={handleClick}>
+                        <p style={{ textAlign: "center" }} > Create your Account </p>
+                      </div>
+                      {/* </Link> */}
                     </center>
                   </div>
 
