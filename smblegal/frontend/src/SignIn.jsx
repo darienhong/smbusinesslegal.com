@@ -18,7 +18,9 @@ export default function SignIn() {
         email: "",
         password: "",
     })
-    const [status, setStatus] = React.useState('');
+    const [emailStatus, setEmailStatus] = React.useState('');
+    const [passwordStatus, setPasswordStatus] = React.useState('');
+
 
 
 
@@ -31,37 +33,56 @@ export default function SignIn() {
         }))
     }
 
-    const handleStatusChange = value => {
-        setStatus(prev => ({
-            ...prev,
-            status: value
-        }))
+    const handleEmailStatusChange = (value) => {
+        setEmailStatus(value);
     }
 
+    const handlePasswordStatusChange = value => {
+        setPasswordStatus(value);
+    }
+
+
     const switchPage = code => {
+        const checkPassword = state.password.length === 0
+        const checkEmail = state.email.length === 0
         if (code === 200) {
+            handleEmailStatusChange('')
+            handlePasswordStatusChange('')
             document.location = "/Dashboard"
         }
         else if (code === 206) {
             console.log(code);
-            const checkEmail = state.email.length === 0
             if (checkEmail) {
-                handleStatusChange('Enter your email')
+                handleEmailStatusChange('')
+                handleEmailStatusChange('Enter your email')
             }
-            const checkPassword = state.password.length === 0
+            else {
+                handleEmailStatusChange('')
+                handleEmailStatusChange('This email does not exist.');
+            }
             if (checkPassword) {
-                handleStatusChange('Enter your password')
+                handlePasswordStatusChange('')
+                handlePasswordStatusChange('Enter your password')
             }
-            handleStatusChange('This email does not exist.');
-            console.log('Status: ' + status);
-            console.log('this: ' + status);
+            else {
+                handlePasswordStatusChange('')
+                handlePasswordStatusChange('The password is incorrect')
+
+            }
 
         }
         else if (code === 204) {
-            console.log(code);
-            setStatus('This password is incorrect.');
-            console.log(status);
+            if (checkPassword) {
+                handleEmailStatusChange('')
+                handlePasswordStatusChange('')
+                handlePasswordStatusChange('Enter your password')
+            }
+            else {
+                handleEmailStatusChange('')
+                handlePasswordStatusChange('')
+                handlePasswordStatusChange('The password is incorrect')
 
+            }
         }
 
     }
@@ -87,11 +108,6 @@ export default function SignIn() {
             .then(response => switchPage(response.code));
 
 
-        console.log('switching locations');
-        // document.location = "/Dashboard"
-
-
-
     }
     return (
         <div class="full-page">
@@ -115,6 +131,13 @@ export default function SignIn() {
                     <div class="email-input" style={{ textAlign: "center" }}>
                         <TextField value={state.email} name="email" onChange={handleChange} id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
                     </div>
+                    <br />
+                    <center>
+                        <div class='error'>
+                            {emailStatus}
+                        </div>
+                    </center>
+
                     <br></br>
                     <br></br>
                     <div class="password-input" style={{ textAlign: "center" }}>
@@ -131,6 +154,13 @@ export default function SignIn() {
                             style={{ width: "500px" }}
                         />
                     </div>
+                    <br />
+                    <center>
+                        <div class='error'>
+                            {passwordStatus}
+                        </div>
+                    </center>
+
                 </div>
                 <br></br>
                 <br />

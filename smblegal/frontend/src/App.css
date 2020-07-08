@@ -821,6 +821,11 @@ font-family: 'WorkSans';
   width: 200px;
 }
 
+.error{
+  color: red;
+  font-family: 'DM Sans';
+}
+
 
 
 
