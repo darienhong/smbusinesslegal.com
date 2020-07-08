@@ -54,7 +54,7 @@ export default class ProductOverviewLogin extends Component {
             <br />
             <h4> ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING </h4>
             <p> Our accessible artificial intelligence and machine learning tools enable the small business owner to
-                 get better and quicker insight into all related business documents.  The SMB platform 
+                 get better and quicker insights into all related business documents.  The SMB Legal platform 
                 allows small business stakeholders to analyze incoming documents, systematize contracts, 
                 avoid duplicative or conflicting contracts and reduce friction in workflows.  </p>
 

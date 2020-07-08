@@ -59,9 +59,15 @@ export default class HomepageLogin extends Component {
              <Link to="/Covid_19Login" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Covid-19  </p></Link>
             </div>
             </div>
-  
-          <br></br>
-          <br></br>
+
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
+
+         <center> <Link to="/InitializePartnership"> <button class="upgrade-plan"> Upgrade Plan </button> </Link> </center>
           <br />
           <br />
           <br />
