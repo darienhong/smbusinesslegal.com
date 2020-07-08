@@ -533,13 +533,13 @@ export default function CreateAccount() {
                     {/* {companies.map((option) => ( */}
                     <MenuItem key="Corporation" value="Corporation">
                       Corporation
-      </MenuItem>
+                    </MenuItem>
                     <MenuItem key="Partnership" value="Partnership">
                       Partnership
-      </MenuItem>
+                    </MenuItem>
                     <MenuItem key="LLC" value="LLC">
                       LLC
-      </MenuItem>
+                    </MenuItem>
 
 
 
@@ -559,11 +559,12 @@ export default function CreateAccount() {
                     <br />
                     <br />
                     <center>
-                      {/* <Link to="/DashboardPremium"> */}
+                      {/*}
+                       <Link to="/DashboardPremium"> 
                       <div class="create-acc-button" onClick={handleClickPremium}>
                         <p style={{ textAlign: "center" }} > Create your Account </p>
                       </div>
-                      {/*  </Link> */}
+                </Link> */}
                     </center>
                   </div>
 
@@ -586,11 +587,12 @@ export default function CreateAccount() {
     </Link> */}
                     <br />
                     <center>
-                      {/* <Link to="/Dashboard"> */}
+                      {/*
+                       <Link to="/Dashboard"> 
                       <div class="create-acc-button" onClick={handleClickPremium}>
                         <p style={{ textAlign: "center" }} > Create your Account </p>
                       </div>
-                      {/* </Link> */}
+                      </Link>*/}
                     </center>
                   </div>
 
@@ -606,11 +608,12 @@ export default function CreateAccount() {
                     <br />
                     <br />
                     <center>
-                      {/* <Link to="/DashboardPremium"> */}
+                      {/*
+                       <Link to="/DashboardPremium"> 
                       <div class="create-acc-button" onClick={handleClickPremium}>
                         <p style={{ textAlign: "center" }} > Create your Account </p>
                       </div>
-                      {/*  </Link> */}
+                      </Link> */}
                     </center>
                   </div>
 
@@ -725,11 +728,12 @@ export default function CreateAccount() {
                     <br />
                     <br />
                     <center>
+                      
                       {/* <Link to="/Dashboard"> */}
                       <div class="create-acc-button" onClick={handleClick}>
                         <p style={{ textAlign: "center" }} > Create your Account </p>
                       </div>
-                      {/* </Link> */}
+                      {/* </Link> */} 
                     </center>
                   </div>
 
