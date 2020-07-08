@@ -821,7 +821,6 @@ font-family: 'WorkSans';
   width: 200px;
 }
 
-<<<<<<< HEAD
 .terms-button { 
   width: 300px;
 }
@@ -832,11 +831,16 @@ font-family: 'WorkSans';
 
 .terms-button:hover p { 
   color: black; 
-=======
+
+}
+
+.terms-button-1 p { 
+  color: #245CA6; 
+}
+
 .error{
   color: red;
   font-family: 'DM Sans';
->>>>>>> 709823a67b05b506ce2e106a5992e491fe6bf52f
 }
 
 

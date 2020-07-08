@@ -763,7 +763,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
-                    <center>   <div class="terms-button" >
+                    <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
                       )}
@@ -862,7 +862,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
-                    <center>   <div class="terms-button" >
+                    <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
                       )}
@@ -889,7 +889,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
-                    <center>   <div class="terms-button" >
+                    <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
                       )}
@@ -915,7 +915,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
-                    <center>   <div class="terms-button" >
+                    <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
                       )}
@@ -929,14 +929,6 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     </center>
                     <br />
                     <br />
-                    <center>
-                      {/*
-                       <Link to="/DashboardPremium"> 
-                      <div class="create-acc-button" onClick={handleClickPremium}>
-                        <p style={{ textAlign: "center" }} > Create your Account </p>
-                      </div>
-                      </Link> */}
-                    </center>
                   </div>
 
                 )}
@@ -1024,7 +1016,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
-                    <center>   <div class="terms-button" >
+                    <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
                       )}
@@ -1061,7 +1053,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
-                    <center>   <div class="terms-button" >
+                    <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
                       )}
@@ -1095,7 +1087,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
-                    <center>   <div class="terms-button" >
+                    <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
                       )}
