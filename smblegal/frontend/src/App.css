@@ -821,6 +821,18 @@ font-family: 'WorkSans';
   width: 200px;
 }
 
+.terms-button { 
+  width: 300px;
+}
+
+.terms-button p { 
+  color: #245CA6;
+}
+
+.terms-button:hover p { 
+  color: black; 
+}
+
 
 
 

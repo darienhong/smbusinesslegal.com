@@ -260,7 +260,6 @@ const handleOpen = (event) => {
             <br />
 
 
-
             <div class="upload-formation">
             <p style={{textAlign: "center"}}> Please upload formation documents </p>
 
@@ -288,7 +287,7 @@ const handleOpen = (event) => {
 
 
             <div class="upload-company-minutes">
-            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes </p>
+            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes (if any) </p>
 
              <DropzoneArea
                     onChange={handleChange.bind(this)}
@@ -305,10 +304,7 @@ const handleOpen = (event) => {
                       </div>
                       </Link>
             </center>
-
-
                     </form>
-
 
             )}
 
@@ -354,7 +350,7 @@ const handleOpen = (event) => {
 
 
             <div class="upload-company-minutes">
-            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes </p>
+            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes (if any) </p>
 
              <DropzoneArea
                     onChange={handleChange.bind(this)}

@@ -255,7 +255,7 @@ export default function AutomateGov() {
 
 
             <div class="upload-company-minutes">
-            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes </p>
+            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes (if any) </p>
 
              <DropzoneArea
                     onChange={handleChange.bind(this)}
@@ -321,7 +321,7 @@ export default function AutomateGov() {
 
 
             <div class="upload-company-minutes">
-            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes </p>
+            <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes (if any) </p>
 
              <DropzoneArea
                     onChange={handleChange.bind(this)}
