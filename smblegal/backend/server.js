@@ -65,25 +65,89 @@ app.post('/createAccount', function (req, res) {
   const password = req.body.password;
   const email = req.body.email;
   const plan = req.body.plan;
-  const compId = 111
+  const comp = req.body.companyName;
+  const zip = req.body.zipCode;
+  const company = req.body.company;
+  const usstate = req.body.USstate;
+  const compId = req.body.id
   const dateCreated = new Date();
   console.log('plan ' + plan);
   console.log('firstName ' + firstName);
   console.log('lastName ' + lastName);
   console.log('email ' + email);
   console.log('password ' + password);
+  console.log('zipcode: ' + zip);
+  console.log('compId' + compId);
+  console.log('usState' + usstate);
 
 
-  client.query('INSERT INTO "public"."user_table" ("company_id", "first_name","last_name","email","password","plan_type", "date_created") VALUES($1, $2, $3, $4, $5, $6, $7)',
-    [compId, firstName, lastName, email, password, plan, dateCreated], function (err, result) {
-      if (err) throw err;
-      res.send('successfully');
+  let users = 0;
+  let no_users = 0;
+  if (plan === 'Existing Plan') {
+    console.log('went into if');
+    client.query('SELECT no_users from public.company_table where company_id=$1',
+      [compId], function (err, result) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        }
+        users = (result.rows[0].no_users);
+        no_users = users + 1;
+        return res.send('successfully');
+      });
+    client.query('INSERT INTO "public"."user_table" ("company_id", "first_name","last_name","email","password","plan_type", "date_created") VALUES($1, $2, $3, $4, $5, $6, $7)',
+      [compId, firstName, lastName, email, password, plan, dateCreated], function (err, result) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        }
+        return res.json(result);
+      });
+
+    // client.query('INSERT INTO "public"."company_table" ("no_users") VALUES($1)',
+    //   [(no_users)], function (err, result) {
+    //     if (err) {
+    //       console.log(err);
+    //       res.sendStatus(500);
+    //       return;
+    //     }
+    //     return res.json(result);
+    //   });
+
+  }
+
+  // client.query("SELECT setval('user_table_user_id_seq', (SELECT MAX(user_id) FROM user_table)+1)");
+
+  client.query('INSERT INTO "public"."company_table" ("company_name", "company_type","state","no_docs_used","company_zip","no_users") VALUES($1, $2, $3, $4, $5, $6)',
+    [comp, company, usstate, 0, zip, (no_users + 1)], function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      return res.json(result);
     });
+
+  client.query('INSERT INTO "public"."user_table" ("first_name","last_name","email","password","plan_type", "date_created") VALUES($1, $2, $3, $4, $5, $6)',
+    [firstName, lastName, email, password, plan, dateCreated], function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      return res.json(result);
+    });
+
+
 });
 
-app.get('/getUser', function (req, res) {
+app.post('/getUser', function (req, res) {
   const email = req.body.email;
+  console.log('email:' + email);
   const password = req.body.password;
+  console.log('password: ' + password);
   console.log(email)
   client.query('SELECT * from public.user_table where email=$1',
     [email], function (error, results, fields) {
@@ -94,8 +158,9 @@ app.get('/getUser', function (req, res) {
         //   "failed": "error ocurred"
         // })
       } else {
-        if (results.length > 0) {
-          const comparison = password.localCompare(results[0].password);
+        console.log(results);
+        if (results.rowCount > 0) {
+          const comparison = password === (results.rows[0].password);
           if (comparison) {
             res.send({
               "code": 200,
