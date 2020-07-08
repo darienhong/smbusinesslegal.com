@@ -117,8 +117,8 @@ export default function AutomateGov2() {
     const [membersList, setMembersList] = React.useState([{name: "", email: "", percentShares: "", percentProfit: ""}]);
     const [open, setOpen] = React.useState(false); 
     const [files, setFiles] = React.useState([]); 
-    const [boardMembersList, setBoardMembersList] = React.useState([{name: "", email: ""}]);
-    const [shareholdersList, setShareholdersList] = React.useState([{name: "", email: ""}]); 
+    const [boardMembersList, setBoardMembersList] = React.useState([{name: "", email: "", sharesOwned: ""}]);
+    const [shareholdersList, setShareholdersList] = React.useState([{name: "", email: "", sharesOwned: ""}]); 
 
 
     const handleClose = (event) => {
@@ -169,7 +169,7 @@ export default function AutomateGov2() {
           }
 
     const handleAddBM = () => { 
-        setBoardMembersList([...boardMembersList, { name: "", email: ""}]);
+        setBoardMembersList([...boardMembersList, { name: "", email: "", sharesOwned: ""}]);
     }
 
     const  handleSHChange = (e, index) => {
@@ -180,7 +180,7 @@ export default function AutomateGov2() {
       }
 
     const handleAddSH = () => { 
-    setShareholdersList([...shareholdersList, { name: "", email: ""}]);
+    setShareholdersList([...shareholdersList, { name: "", email: "", sharesOwned: ""}]);
     }
 
     
@@ -447,7 +447,34 @@ export default function AutomateGov2() {
                         />
                 </div>
                 <br></br>
-                
+                <div class="num-authorized-shares" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="What is the total number of authorized shares of your company?"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
+                </div>
+                <br/> 
+                <div class="num-issues" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="What is the total number of issued shares of your company?"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
+                </div>
+                < br/>
+                <br />
+
                 <div> 
                 <p style={{textAlign: "center"}}> Please upload the names and email address of all Board Members that your business has </p>
                         
@@ -488,6 +515,20 @@ export default function AutomateGov2() {
                                 /> 
                             </div>
                         <br />
+                        <div class="num-shares" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="Number of Shares owned"
+                            type="number"
+                            value={x.sharesOwned}
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            variant="outlined"
+                            onChange={e => handleBMChange(e, i)}
+                            style={{width: "500px"}}
+                        />
+                </div>
                         
                             </div>
 
@@ -512,7 +553,7 @@ export default function AutomateGov2() {
                         return (
                             <div class="members-form-box">
 
-                        <div class="name-input-llc" style={{textAlign: "center"}}>
+                        <div class="name-input-c" style={{textAlign: "center"}}>
                             < br/>
                             < br/> 
                             <TextField 
@@ -526,7 +567,7 @@ export default function AutomateGov2() {
                                 
                             </div>
                             < br/> 
-                            <div class="email-input-llc" style={{textAlign: "center"}}>
+                            <div class="email-input-c" style={{textAlign: "center"}}>
                             <TextField 
                              //   id={emailId}
                                 label="Email" 
@@ -537,6 +578,20 @@ export default function AutomateGov2() {
                                 /> 
                             </div>
                         <br />
+                        <div class="num-shares" style={{textAlign: "center"}}>
+                        <TextField
+                            id="outlined-number"
+                            label="Number of Shares owned"
+                            type="number"
+                            value={x.sharesOwned}
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            onChange={e => handleSHChange(e, i)}
+                            variant="outlined"
+                            style={{width: "500px"}}
+                        />
+                </div>
                     
                             </div>
 

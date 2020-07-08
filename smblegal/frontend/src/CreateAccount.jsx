@@ -863,19 +863,22 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
               )}
 
               {agree === true && (
-                <center>   <div class="terms-button" >
-                  <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
-                </div> </center>
+                <form>
+                  <center>   <div class="terms-button-1" >
+                    <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
+                  </div> </center>
+
+                  < br />
+                  <br />
+                  <center>
+                    {/* <Link to="/Dashboard"> */}
+                    <div class="create-acc-button" onClick={handleClick}>
+                      <p style={{ textAlign: "center" }}> Create your Account </p>
+                    </div>
+                    {/* </Link> */}
+                  </center>
+                </form>
               )}
-              < br />
-              <br />
-              <center>
-                {/* <Link to="/Dashboard"> */}
-                <div class="create-acc-button" onClick={handleClick}>
-                  <p style={{ textAlign: "center" }}> Create your Account </p>
-                </div>
-                {/* </Link> */}
-              </center>
             </form>
           )}
 
@@ -962,20 +965,24 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     )}
 
                     {agree === true && (
-                      <center>   <div class="terms-button" >
-                        <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
-                      </div> </center>
-                    )}
-                    < br />
-                    <br />
+                      <form>
+                        <center>   <div class="terms-button-1" >
+                          <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
+                        </div> </center>
 
-                    <center>
-                      {/* <Link to="/InitializePartnership" style={{ textDecoration: "none" }}>  */}
-                      <div class="gov-button" >
-                        <p style={{ textAlign: "center" }} onClick={handleClickParternship}>  Automate Your Governance </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
+                        < br />
+                        <br />
+
+                        <center>
+                          {/* <Link to="/InitializePartnership" style={{ textDecoration: "none" }}>  */}
+                          <div class="gov-button" >
+                            <p style={{ textAlign: "center" }} onClick={handleClickParternship}>  Automate Your Governance </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+
+                      </form>
+                    )}
                     <br />
                     <br />
                   </div>
@@ -991,19 +998,22 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     )}
 
                     {agree === true && (
-                      <center>   <div class="terms-button" >
-                        <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
-                      </div> </center>
+                      <form>
+                        <center>   <div class="terms-button-1" >
+                          <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
+                        </div> </center>
+
+                        < br />
+                        <br />
+                        <center>
+                          {/* <Link to="/InitializeCorporation" style={{ textDecoration: "none" }}>  */}
+                          <div class="gov-button" >
+                            <p style={{ textAlign: "center" }} onClick={handleClickCorporation}> Automate Your Governance </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+                      </form>
                     )}
-                    < br />
-                    <br />
-                    <center>
-                      {/* <Link to="/InitializeCorporation" style={{ textDecoration: "none" }}>  */}
-                      <div class="gov-button" >
-                        <p style={{ textAlign: "center" }} onClick={handleClickCorporation}> Automate Your Governance </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
                     <br />
                     <br />
                   </div>
@@ -1019,30 +1029,25 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     )}
 
                     {agree === true && (
-                      <center>   <div class="terms-button" >
-                        <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
-                      </div> </center>
-                    )}
-                    < br />
-                    < br />
+                      <form>
+                        <center>   <div class="terms-button-1" >
+                          <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
+                        </div> </center>
 
-                    <center>
-                      {/* <Link to="/InitializeLLC" style={{ textDecoration: "none" }}>  */}
-                      <div class="gov-button" >
-                        <p style={{ textAlign: "center" }} onClick={handleClickLLC}> Automate Your Governance </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
+                        < br />
+                        < br />
+
+                        <center>
+                          {/* <Link to="/InitializeLLC" style={{ textDecoration: "none" }}>  */}
+                          <div class="gov-button" >
+                            <p style={{ textAlign: "center" }} onClick={handleClickLLC}> Automate Your Governance </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+                      </form>
+                    )}
                     <br />
                     <br />
-                    <center>
-                      {/*
-                       <Link to="/DashboardPremium"> 
-                      <div class="create-acc-button" onClick={handleClickPremium}>
-                        <p style={{ textAlign: "center" }} > Create your Account </p>
-                      </div>
-                      </Link> */}
-                    </center>
                   </div>
 
                 )}
@@ -1130,31 +1135,34 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     )}
 
                     {agree === true && (
-                      <center>   <div class="terms-button" >
-                        <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
-                      </div> </center>
+                      <form>
+                        <center>   <div class="terms-button-1" >
+                          <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
+                        </div> </center>
+
+
+                        < br />
+                        <br />
+
+                        <center>
+                          {/* <Link to="/InitializePartnership" style={{ textDecoration: "none" }}>  */}
+                          <div class="gov-button" onClick={handleClickParternship}>
+                            <p style={{ textAlign: "center" }}> Automate Your Governance </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+                        <br />
+                        <br />
+                        <center>
+
+                          {/* <Link to="/Dashboard"> */}
+                          <div class="create-acc-button" onClick={handleClick}>
+                            <p style={{ textAlign: "center" }} > Create your Account </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+                      </form>
                     )}
-
-                    < br />
-                    <br />
-
-                    <center>
-                      {/* <Link to="/InitializePartnership" style={{ textDecoration: "none" }}>  */}
-                      <div class="gov-button" onClick={handleClickParternship}>
-                        <p style={{ textAlign: "center" }}> Automate Your Governance </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
-                    <br />
-                    <br />
-                    <center>
-
-                      {/* <Link to="/Dashboard"> */}
-                      <div class="create-acc-button" onClick={handleClick}>
-                        <p style={{ textAlign: "center" }} > Create your Account </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
                   </div>
 
                 )}
@@ -1169,28 +1177,31 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     )}
 
                     {agree === true && (
-                      <center>   <div class="terms-button" >
-                        <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
-                      </div> </center>
+                      <form>
+                        <center>   <div class="terms-button-1" >
+                          <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
+                        </div> </center>
+
+                        < br />
+                        <br />
+                        <center>
+                          {/* <Link to="/InitializeCorporation" style={{ textDecoration: "none" }}>  */}
+                          <div class="gov-button" >
+                            <p style={{ textAlign: "center" }} onClick={handleClickCorporation}> Automate Your Governance </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+                        <br />
+                        <br />
+                        <center>
+                          {/* <Link to="/Dashboard"> */}
+                          <div class="create-acc-button" onClick={handleClick}>
+                            <p style={{ textAlign: "center" }} > Create your Account </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+                      </form>
                     )}
-                    < br />
-                    <br />
-                    <center>
-                      {/* <Link to="/InitializeCorporation" style={{ textDecoration: "none" }}>  */}
-                      <div class="gov-button" >
-                        <p style={{ textAlign: "center" }} onClick={handleClickCorporation}> Automate Your Governance </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
-                    <br />
-                    <br />
-                    <center>
-                      {/* <Link to="/Dashboard"> */}
-                      <div class="create-acc-button" onClick={handleClick}>
-                        <p style={{ textAlign: "center" }} > Create your Account </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
                   </div>
 
                 )}
@@ -1205,28 +1216,32 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     )}
 
                     {agree === true && (
-                      <center>   <div class="terms-button" >
-                        <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
-                      </div> </center>
-                    )}
-                    < br />
-                    <br />
-                    <center>
-                      {/* <Link to="/InitializeLLC" style={{ textDecoration: "none" }}>  */}
-                      <div class="gov-button" >
-                        <p style={{ textAlign: "center" }} onClick={handleClickLLC}> Automate Your Governance </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
-                    <br />
-                    <br />
-                    <center>
-                      {/* <Link to="/Dashboard"> */}
-                      <div class="create-acc-button" onClick={handleClick}>
-                        <p style={{ textAlign: "center" }} > Create your Account </p>
-                      </div>
-                      {/* </Link> */}
-                    </center>
+                      <form>
+                        <center>   <div class="terms-button-1" >
+                          <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
+                        </div> </center>
+
+                        < br />
+                        <br />
+                        <center>
+                          {/* <Link to="/InitializeLLC" style={{ textDecoration: "none" }}>  */}
+                          <div class="gov-button" >
+                            <p style={{ textAlign: "center" }} onClick={handleClickLLC}> Automate Your Governance </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+                        <br />
+                        <br />
+                        <center>
+                          {/* <Link to="/Dashboard"> */}
+                          <div class="create-acc-button" onClick={handleClick}>
+                            <p style={{ textAlign: "center" }} > Create your Account </p>
+                          </div>
+                          {/* </Link> */}
+                        </center>
+
+                      </form>)}
+
                   </div>
 
                 )}

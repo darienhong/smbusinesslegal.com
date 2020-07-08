@@ -20,7 +20,26 @@ import {
 
 
 export default class HomepageLogin extends Component { 
+
+
+  state = {
+    companyName: "[COMPANY NAME PLACEHOLDER]",
+    users: "[USERS PLACEHOLDER]", 
+    lastMeeting: "[LAST MEETING PLACEHOLDER]", 
+    nextMeeting: "[NEXT MEETING PLACEHOLDER]",
+
+  }
+
+
     render() {
+
+
+      const { 
+        companyName, 
+        users, 
+        lastMeeting, 
+        nextMeeting
+      } = this.state
 
         return (
           <div class="full-page">
@@ -40,25 +59,64 @@ export default class HomepageLogin extends Component {
                 </svg>
             </div>
             <br />
-
-            <p class="homepage-text"> Automated Documents </p>
+          <br /> 
+          <br />
+    <div style={{width: "1000px", height: "800px"}}> 
+          <div class="company-info" style={{width: "400px", float: "left"}}> 
+              <div class="name"> 
+                  {companyName}
+              </div>
+              <br />
+              <div class="users"> 
+                  {users}
+              </div>
+              < br/>
+               <div class="lastmeeting"> 
+                  {lastMeeting}
+              </div>
+              <br />
+              <div class="nextmeeting">
+                  {nextMeeting}
+              </div>
+          </div>
+          <div class="automated-docs" style={{width: "300px", float: "right"}} >
+          <div class="features-1">
+          <p class="homepage-text" style={{left: "20px"}}> Automated Documents </p>
           <br></br>
           
-         
-         <div class="features">
-           <div class="formation">
-           <Link to="/FormationLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}>Formation</p> </Link>
+  
+     
+
+           <center>
+           <div class="formation1">
+           <Link to="/FormationLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}>Formation</p> </Link>
              </div>
-             <div class="governance">
-             <Link to="/GovernanceLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}>  Governance </p></Link>
+             < br/>
+           
+             <div class="governance1">
+             <Link to="/GovernanceLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}>  Governance </p></Link>
              </div>
-             <div class="employment">
-             <Link to="/EmploymentLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Employment</p></Link>
+             <br />
+            
+             <div class="employment1">
+             <Link to="/EmploymentLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}> Employment</p></Link>
              </div>
-             <div class="covid-19">
-             <Link to="/Covid_19Login" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Covid-19  </p></Link>
+            < br/> 
+          
+             <div class="covid-191">
+             <Link to="/Covid_19Login" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}> Covid-19  </p></Link>
             </div>
+          </center>
+           
+          
+           
             </div>
+        
+ 
+          </div>
+        
+
+          </div> 
 
           <br />
           <br />

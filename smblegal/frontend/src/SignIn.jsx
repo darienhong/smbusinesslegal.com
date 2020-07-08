@@ -45,6 +45,7 @@ export default function SignIn() {
     const switchPage = code => {
         const checkPassword = state.password.length === 0
         const checkEmail = state.email.length === 0
+        console.log('code: ' + code);
         if (code === 200) {
             handleEmailStatusChange('')
             handlePasswordStatusChange('')
@@ -94,9 +95,10 @@ export default function SignIn() {
         const data = {
             email: state.email,
             password: state.password
-
         }
-        fetch('/checkUser', {
+        console.log('email' + state.email);
+        console.log('password:  ' + state.password);
+        fetch('/getUser', {
             method: 'POST',
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: { 'Content-Type': 'application/json' }
