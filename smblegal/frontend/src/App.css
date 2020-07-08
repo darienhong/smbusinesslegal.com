@@ -321,6 +321,13 @@ nav a:hover {
   flex-grow: 3;
 }
 
+.features-1 {
+  justify-content: center;
+  display: inline;
+}
+
+
+
 .governance, .employment, .covid-19, .formation {
   padding-left: 50px;
   padding-right: 50px;
@@ -331,6 +338,21 @@ nav a:hover {
   display: block;
   text-decoration: none;
   letter-spacing: 0.2mm;
+  width: 250px;
+  
+}
+
+.governance1, .employment1, .covid-191, .formation1 {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  border: 1px solid #2DC4B6;
+  background-color: #2DC4B6; 
+  font-weight: 580;
+  display: block;
+  text-decoration: none;
+  letter-spacing: 0.2mm;
+  width: 250px;
   
 }
 .employment p, .governance p, .covid-19 p, .formation p {
@@ -338,8 +360,15 @@ nav a:hover {
   font-family: 'DM Sans';
 
 }
+
+.employment1 p, .governance1 p, .covid-191 p, .formation1 p {
+  color: white;
+  font-family: 'DM Sans';
+
+}
+
 .employment, .governance, .formation {
-  margin-right: 40px;
+ margin-right: 40px;
  
 }
 
@@ -352,6 +381,16 @@ nav a:hover {
 .covid-19:hover p, .employment:hover p, .governance:hover p, .formation:hover p {
   color: #70E0CA;
 }
+
+.covid-191:hover, .employment1:hover, .governance1:hover, .formation1:hover {
+  /* color: rgb(169, 172, 201); */
+   background-color: white;
+   /* border-color: rgb(169, 172, 201) ; */
+   border-color: white;
+ }
+ .covid-191:hover p, .employment1:hover p, .governance1:hover p, .formation1:hover p {
+   color: #70E0CA;
+ }
 
 
 ol.details {
@@ -841,6 +880,14 @@ font-family: 'WorkSans';
 .error{
   color: red;
   font-family: 'DM Sans';
+}
+
+.company-info { 
+  font-family: 'DM Sans'; 
+  font-weight: 600;
+  font-size: 20px;
+  padding: 20px; 
+  margin-left: 40px;
 }
 
 

@@ -763,10 +763,11 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
+                        <form>
                     <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
-                      )}
+                      
                       < br/> 
                       <br />
               <center>
@@ -776,6 +777,8 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                 </div>
                 {/* </Link> */}
               </center>
+              </form> 
+                      )}
             </form>
           )}
 
@@ -862,10 +865,11 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
+                        <form>
                     <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
-                      )}
+                      
                       < br/> 
                       <br />
 
@@ -874,6 +878,9 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                         <p style={{ textAlign: "center" }}> Automate Your Governance </p>
                       </div> </Link>
                     </center>
+
+                    </form> 
+                      )}
                     <br />
                     <br />
                   </div>
@@ -889,10 +896,11 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
+                        <form> 
                     <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
-                      )}
+                      
                       < br/>
                       <br />
                     <center>
@@ -900,6 +908,8 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                         <p style={{ textAlign: "center" }}> Automate Your Governance </p>
                       </div> </Link>
                     </center>
+                    </form> 
+                      )} 
                     <br />
                     <br />
                   </div>
@@ -915,10 +925,11 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
+                        <form> 
                     <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
-                      )}
+                      
                        < br />
                        < br/>
 
@@ -927,6 +938,8 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                         <p style={{ textAlign: "center" }}> Automate Your Governance </p>
                       </div> </Link>
                     </center>
+                   </form> 
+                      )}
                     <br />
                     <br />
                   </div>
@@ -1016,10 +1029,11 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
+                        <form>
                     <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
-                      )}
+                      
 
                       < br/>
                       <br />
@@ -1039,6 +1053,8 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       </div>
                       {/* </Link> */} 
                     </center>
+                    </form> 
+                      )}
                   </div>
 
                 )}
@@ -1053,10 +1069,11 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
+                        <form> 
                     <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
-                      )}
+                      
                       < br/>
                       <br />
                     <center>
@@ -1073,6 +1090,8 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       </div>
                       {/* </Link> */}
                     </center>
+                    </form>
+                      )}
                   </div>
 
                 )}
@@ -1087,10 +1106,11 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       )}
 
                       {agree === true && ( 
+                        <form> 
                     <center>   <div class="terms-button-1" >
                         <p style={{ textAlign: "center" }}> Agreed to Terms and Conditions <CheckBoxIcon /> </p>
                       </div> </center>
-                      )}
+                      
                       < br/>
                       <br />
                     <center>
@@ -1107,6 +1127,9 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                       </div>
                       {/* </Link> */}
                     </center>
+
+                    </form> )} 
+
                   </div>
 
                 )}
