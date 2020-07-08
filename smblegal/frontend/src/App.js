@@ -75,6 +75,8 @@ import ProductOverviewLogin from './login-files/ProductOverviewLogin.jsx';
 import ToolsLogin from './login-files/ToolsLogin.jsx';
 import AutomatedDocsLogin from './login-files/AutomatedDocsLogin.jsx';
 import PremiumLogin from './login-files/PremiumLogin.jsx';
+import ContentMarketingLogin1 from './login-files/ContentMarketingLogin.jsx';
+import ContentMarketingLogin2 from './login-files/ContentMarketingLogin2.jsx';
 
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsOfUse from './TermsOfUse.jsx';
@@ -94,6 +96,7 @@ import CreateAccount from './CreateAccount.jsx';
 import Pricing from './Pricing.jsx';
 import Homepage from './Homepage.jsx';
 import BoardMinuteQuestions from './boardminutes-files/BoardMinutesQuestions';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -246,6 +249,12 @@ export default class App extends Component {
             </Route>
             <Route path="/AutomatedDocsLogin">
               <AutomatedDocsLogin />
+            </Route>
+            <Route path="/CorporateGovernanceLogin"> 
+            <ContentMarketingLogin1 /> 
+            </Route>
+            <Route path="/StartABusinessLogin">
+              <ContentMarketingLogin2 />
             </Route>
 
             <Route path="/DashboardPremium">

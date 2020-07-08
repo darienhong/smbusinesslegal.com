@@ -70,7 +70,7 @@ export default class Homepage extends Component {
             < br/> 
             < br/>
             < br/> 
-            <img src={HeroImage} alt="Hero Image" class="hero-image" /> 
+         <center> <img src={HeroImage} alt="Hero Image" class="hero-image" /> </center>
 
 
 

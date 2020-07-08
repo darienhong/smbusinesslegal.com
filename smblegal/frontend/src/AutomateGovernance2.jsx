@@ -117,8 +117,8 @@ export default function AutomateGov2() {
     const [membersList, setMembersList] = React.useState([{name: "", email: "", percentShares: "", percentProfit: ""}]);
     const [open, setOpen] = React.useState(false); 
     const [files, setFiles] = React.useState([]); 
-
-
+    const [boardMembersList, setBoardMembersList] = React.useState([{name: "", email: ""}]);
+    const [shareholdersList, setShareholdersList] = React.useState([{name: "", email: ""}]); 
 
 
     const handleClose = (event) => {
@@ -134,22 +134,7 @@ export default function AutomateGov2() {
         setOpen(true);
     }
 
-  /*  const [members, setMembers] = React.useState(0);
-
-  {/*  const handleChangeMembers = (event) => {
-        setMembers(members => [...members, <newMember />])
-    }
-
-    {/*
-    
-    const addMember = (event) => {
-        this.setState({
-            members: [...this.state.members, <newMember /> ]
-        })
-    }
-
-*/
-const handleChangeAutomation = (event) => { 
+    const handleChangeAutomation = (event) => { 
     setAutomation(event.target.value);
 }
   
@@ -175,6 +160,30 @@ const handleChangeAutomation = (event) => {
     const handleAddMembers = () => { 
         setMembersList([...membersList, { name: "", email: "", percentShares: "", percentProfit: ""}]);
     }
+
+     const  handleBMChange = (e, index) => {
+            const { name, value } = e.target;
+            const list = [...boardMembersList]
+            list[index][name] = value;
+            setBoardMembersList(list)
+          }
+
+    const handleAddBM = () => { 
+        setBoardMembersList([...boardMembersList, { name: "", email: ""}]);
+    }
+
+    const  handleSHChange = (e, index) => {
+        const { name, value } = e.target;
+        const list = [...shareholdersList]
+        list[index][name] = value;
+        setShareholdersList(list)
+      }
+
+    const handleAddSH = () => { 
+    setShareholdersList([...shareholdersList, { name: "", email: ""}]);
+    }
+
+    
 
         
 
@@ -280,8 +289,6 @@ const handleChangeAutomation = (event) => {
 
 
             )}
-
-
 
         
             <br />
@@ -443,11 +450,51 @@ const handleChangeAutomation = (event) => {
                 
                 <div> 
                 <p style={{textAlign: "center"}}> Please upload the names and email address of all Board Members that your business has </p>
-                <DropzoneArea
-                    onChange={handleChange.bind(this)}
-                    filesLimit={10}
-                    />
+                        
 
+
+                         <div class="members-form"> 
+
+                    <div class="button-add">
+
+                        <Button onClick={handleAddBM}> Add Member</Button>
+                        </div>
+                    {boardMembersList.map((x, i) => { 
+                        return (
+                            <div class="members-form-box">
+
+                        <div class="name-input-c" style={{textAlign: "center"}}>
+                            < br/>
+                            < br/> 
+                            <TextField 
+                            //    id={nameId}
+                                label="Name" 
+                                value={x.name}
+                                variant="outlined" 
+                                style={{width: "500px"}}
+                                onChange={e => handleBMChange(e, i)}
+                                 /> 
+                                
+                            </div>
+                            < br/> 
+                            <div class="email-input-c" style={{textAlign: "center"}}>
+                            <TextField 
+                             //   id={emailId}
+                                label="Email" 
+                                value={x.email}
+                                variant="outlined" 
+                                onChange={e => handleBMChange(e, i)}
+                                style={{width: "500px"}} 
+                                /> 
+                            </div>
+                        <br />
+                        
+                            </div>
+
+                        );
+                    })}
+                
+                    </div>
                     </div> 
             
                 
@@ -455,10 +502,54 @@ const handleChangeAutomation = (event) => {
 
                 <div> 
                 <p style={{textAlign: "center"}}> Please upload the names and email address of all Shareholders that your business has </p>
-                <DropzoneArea
-                    onChange={handleChange.bind(this)}
-                    filesLimit={10}
-                    /> 
+                     <div class="members-form"> 
+
+                    <div class="button-add">
+
+                        <Button onClick={handleAddSH}> Add Member</Button>
+                        </div>
+                    {shareholdersList.map((x, i) => { 
+                        return (
+                            <div class="members-form-box">
+
+                        <div class="name-input-llc" style={{textAlign: "center"}}>
+                            < br/>
+                            < br/> 
+                            <TextField 
+                            //    id={nameId}
+                                label="Name" 
+                                value={x.name}
+                                variant="outlined" 
+                                style={{width: "500px"}}
+                                onChange={e => handleSHChange(e, i)}
+                                 /> 
+                                
+                            </div>
+                            < br/> 
+                            <div class="email-input-llc" style={{textAlign: "center"}}>
+                            <TextField 
+                             //   id={emailId}
+                                label="Email" 
+                                value={x.email}
+                                variant="outlined" 
+                                onChange={e => handleSHChange(e, i)}
+                                style={{width: "500px"}} 
+                                /> 
+                            </div>
+                        <br />
+                    
+                            </div>
+
+                        );
+                    })}
+                    
+                    
+                    
+                    
+    
+                    
+                    </div>
+
                 
                 </div> 
              
