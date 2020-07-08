@@ -461,163 +461,164 @@ export default function CreateAccount() {
               <br />
               <br />
               <center>
-                <Link to="/Dashboard">
-                  <div class="create-acc-button" >
-                    <p style={{ textAlign: "center" }}> Create your Account </p>
-                  </div> </Link>
+                {/* <Link to="/Dashboard"> */}
+                <div class="create-acc-button" onClick={handleClick}>
+                  <p style={{ textAlign: "center" }}> Create your Account </p>
+                </div>
+                {/* </Link> */}
               </center>
             </form>
           )}
 
 
 
-          {plan === 'Premium' && ( 
-            <form> 
+          {plan === 'Premium' && (
+            <form>
 
 
 
-<div class="login-form" style={{ textAlign: "center" }}>
+              <div class="login-form" style={{ textAlign: "center" }}>
 
-<div class="company-name" style={{ textAlign: "center" }}>
-  <TextField
-    required id="outlined-required"
-    value={state.companyName}
-    name="companyName"
-    onChange={handleChange}
-    label="Company Name"
-    variant="outlined"
-    style={{ width: "500px" }} />
-</div>
-<br></br>
-<div class="state-choice">
-  <TextField
-    required id="outlined-required"
-    select label="What state is your business formed in?"
-    value={USstate}
-    onChange={handleChangeState}
-    variant="outlined"
-    style={{ width: "500px" }}
-  >
+                <div class="company-name" style={{ textAlign: "center" }}>
+                  <TextField
+                    required id="outlined-required"
+                    value={state.companyName}
+                    name="companyName"
+                    onChange={handleChange}
+                    label="Company Name"
+                    variant="outlined"
+                    style={{ width: "500px" }} />
+                </div>
+                <br></br>
+                <div class="state-choice">
+                  <TextField
+                    required id="outlined-required"
+                    select label="What state is your business formed in?"
+                    value={USstate}
+                    onChange={handleChangeState}
+                    variant="outlined"
+                    style={{ width: "500px" }}
+                  >
 
-    {states.map((option) => (
-      <MenuItem key={option.value} value={option.value}>
-        {option.label}
+                    {states.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </div>
+                <br></br>
+
+
+                <div class="zipcode-input" style={{ textAlign: "center" }}>
+                  <TextField
+                    required id="outlined-required"
+                    value={state.zipcode}
+                    name="zipcode"
+                    onChange={handleChange}
+                    label="Zipcode"
+                    variant="outlined"
+                    style={{ width: "500px" }} />
+                </div>
+                <br />
+                <div class="company-choice">
+                  <TextField
+                    required id="outlined-required"
+                    select label="You are a"
+                    value={company}
+                    onChange={handleChangeCompany}
+                    variant="outlined"
+                    style={{ width: "500px" }}
+                  >
+                    {/* {companies.map((option) => ( */}
+                    <MenuItem key="Corporation" value="Corporation">
+                      Corporation
       </MenuItem>
-    ))}
-  </TextField>
-</div>
-<br></br>
-
-
-<div class="zipcode-input" style={{ textAlign: "center" }}>
-  <TextField
-    required id="outlined-required"
-    value={state.zipcode}
-    name="zipcode"
-    onChange={handleChange}
-    label="Zipcode"
-    variant="outlined"
-    style={{ width: "500px" }} />
-</div>
-<br />
-<div class="company-choice">
-  <TextField
-    required id="outlined-required"
-    select label="You are a"
-    value={company}
-    onChange={handleChangeCompany}
-    variant="outlined"
-    style={{ width: "500px" }}
-  >
-    {/* {companies.map((option) => ( */}
-    <MenuItem key="Corporation" value="Corporation">
-      Corporation
+                    <MenuItem key="Partnership" value="Partnership">
+                      Partnership
       </MenuItem>
-    <MenuItem key="Partnership" value="Partnership">
-      Partnership
-      </MenuItem>
-    <MenuItem key="LLC" value="LLC">
-      LLC
+                    <MenuItem key="LLC" value="LLC">
+                      LLC
       </MenuItem>
 
 
 
-  </TextField>
-</div>
-<br></br>
-<br />
+                  </TextField>
+                </div>
+                <br></br>
+                <br />
 
 
-{company === 'Partnership' && (
-  <div>
-    <center>
-      <Link to="/InitializePartnership" style={{ textDecoration: "none" }}> <div class="gov-button" >
-        <p style={{ textAlign: "center" }}> Automate Your Governance </p>
-      </div> </Link>
-    </center>
-    <br />
-    <br />
-    <center>
-     {/* <Link to="/DashboardPremium"> */}
-      <div class="create-acc-button" onClick={handleClickPremium}>
-        <p style={{ textAlign: "center" }} > Create your Account </p>
-      </div> 
-      {/*  </Link> */}
-    </center>
-  </div>
+                {company === 'Partnership' && (
+                  <div>
+                    <center>
+                      <Link to="/InitializePartnership" style={{ textDecoration: "none" }}> <div class="gov-button" >
+                        <p style={{ textAlign: "center" }}> Automate Your Governance </p>
+                      </div> </Link>
+                    </center>
+                    <br />
+                    <br />
+                    <center>
+                      {/* <Link to="/DashboardPremium"> */}
+                      <div class="create-acc-button" onClick={handleClickPremium}>
+                        <p style={{ textAlign: "center" }} > Create your Account </p>
+                      </div>
+                      {/*  </Link> */}
+                    </center>
+                  </div>
 
-)}
-
-
+                )}
 
 
-{company === 'Corporation' && (
-  <div>
-    <center>
-      <Link to="/InitializeCorporation" style={{ textDecoration: "none" }}> <div class="gov-button" >
-        <p style={{ textAlign: "center" }}> Automate Your Governance </p>
-      </div> </Link>
-    </center>
-    <br />
-    {/* <Link to="/CompanyID" style={{ textDecoration: "none" }}> <div class="create-acc-button" onClick={handleClick}>
+
+
+                {company === 'Corporation' && (
+                  <div>
+                    <center>
+                      <Link to="/InitializeCorporation" style={{ textDecoration: "none" }}> <div class="gov-button" >
+                        <p style={{ textAlign: "center" }}> Automate Your Governance </p>
+                      </div> </Link>
+                    </center>
+                    <br />
+                    {/* <Link to="/CompanyID" style={{ textDecoration: "none" }}> <div class="create-acc-button" onClick={handleClick}>
       <p style={{ textAlign: "center" }} > Create my Account </p>
     </div>
     </Link> */}
-    <br />
-    <center>
-      {/* <Link to="/Dashboard"> */}
-      <div class="create-acc-button" onClick={handleClickPremium}>
-        <p style={{ textAlign: "center" }} > Create your Account </p>
-      </div>
-      {/* </Link> */}
-    </center>
-  </div>
+                    <br />
+                    <center>
+                      {/* <Link to="/Dashboard"> */}
+                      <div class="create-acc-button" onClick={handleClickPremium}>
+                        <p style={{ textAlign: "center" }} > Create your Account </p>
+                      </div>
+                      {/* </Link> */}
+                    </center>
+                  </div>
 
-)}
+                )}
 
-{company === 'LLC' && (
-  <div>
-    <center>
-      <Link to="/InitializeLLC" style={{ textDecoration: "none" }}> <div class="gov-button" >
-        <p style={{ textAlign: "center" }}> Automate Your Governance </p>
-      </div> </Link>
-    </center>
-    <br />
-    <br />
-    <center>
-       {/* <Link to="/DashboardPremium"> */}
-       <div class="create-acc-button" onClick={handleClickPremium}>
-        <p style={{ textAlign: "center" }} > Create your Account </p>
-      </div> 
-      {/*  </Link> */}
-    </center>
-  </div>
+                {company === 'LLC' && (
+                  <div>
+                    <center>
+                      <Link to="/InitializeLLC" style={{ textDecoration: "none" }}> <div class="gov-button" >
+                        <p style={{ textAlign: "center" }}> Automate Your Governance </p>
+                      </div> </Link>
+                    </center>
+                    <br />
+                    <br />
+                    <center>
+                      {/* <Link to="/DashboardPremium"> */}
+                      <div class="create-acc-button" onClick={handleClickPremium}>
+                        <p style={{ textAlign: "center" }} > Create your Account </p>
+                      </div>
+                      {/*  </Link> */}
+                    </center>
+                  </div>
 
-)}
+                )}
 
 
 
-</div>
+              </div>
 
             </form>
 
@@ -724,8 +725,8 @@ export default function CreateAccount() {
                     <br />
                     <br />
                     <center>
-                         {/* <Link to="/Dashboard"> */}
-                         <div class="create-acc-button" onClick={handleClick}>
+                      {/* <Link to="/Dashboard"> */}
+                      <div class="create-acc-button" onClick={handleClick}>
                         <p style={{ textAlign: "center" }} > Create your Account </p>
                       </div>
                       {/* </Link> */}
@@ -771,8 +772,8 @@ export default function CreateAccount() {
                     <br />
                     <br />
                     <center>
-                          {/* <Link to="/Dashboard"> */}
-                          <div class="create-acc-button" onClick={handleClick}>
+                      {/* <Link to="/Dashboard"> */}
+                      <div class="create-acc-button" onClick={handleClick}>
                         <p style={{ textAlign: "center" }} > Create your Account </p>
                       </div>
                       {/* </Link> */}
