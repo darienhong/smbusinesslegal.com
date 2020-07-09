@@ -482,9 +482,6 @@ export default function CreateAccount() {
 
   }
 
-
-
-
   const handleChangeCompany = (event) => {
     setCompany(event.target.value);
   };
@@ -492,8 +489,6 @@ export default function CreateAccount() {
   const handleChangeState = (event) => {
     setState(event.target.value);
   };
-
-
 
   return (
     <div class="full-page">
