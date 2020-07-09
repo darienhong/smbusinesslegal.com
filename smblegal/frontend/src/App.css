@@ -865,7 +865,17 @@ font-family: 'WorkSans';
   color: white;
   font-family: 'DM Sans';
   border: 2px solid #245CA6;
-  width: 300px;
+  width: 350px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.dashboard-button:hover { 
+  background-color: white; 
+  border-color: white;
+  color: #245CA6;
+
+
 }
 
 .terms-button { 
