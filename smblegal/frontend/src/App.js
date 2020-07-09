@@ -77,6 +77,7 @@ import AutomatedDocsLogin from './login-files/AutomatedDocsLogin.jsx';
 import PremiumLogin from './login-files/PremiumLogin.jsx';
 import ContentMarketingLogin1 from './login-files/ContentMarketingLogin.jsx';
 import ContentMarketingLogin2 from './login-files/ContentMarketingLogin2.jsx';
+import GovernanceDashboard from './login-files/GovernanceDashboard.jsx';
 
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsOfUse from './TermsOfUse.jsx';
@@ -256,9 +257,11 @@ export default class App extends Component {
             <Route path="/StartABusinessLogin">
               <ContentMarketingLogin2 />
             </Route>
-
             <Route path="/DashboardPremium">
               <PremiumLogin />
+            </Route>
+            <Route path="/GovernanceDashboard">
+              <GovernanceDashboard />
             </Route>
 
             <Route path="/TermsOfUse">

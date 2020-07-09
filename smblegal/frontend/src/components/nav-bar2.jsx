@@ -25,7 +25,7 @@ export default class Navbar2 extends Component {
   render() {
     return (
      
-        <div class="container">
+        <div class="container" style={{width: "100%"}}>
           <Link to="/Dashboard"><img src={Logo} alt="icon logo" className="logo" /></Link> 
           <nav>
             <ul>

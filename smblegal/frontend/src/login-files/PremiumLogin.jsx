@@ -20,7 +20,26 @@ import {
 
 
 export default class PremiumLogin extends Component { 
+
+
+  state = {
+    companyName: "[COMPANY NAME PLACEHOLDER]",
+    users: "[USERS PLACEHOLDER]", 
+    lastMeeting: "[LAST MEETING PLACEHOLDER]", 
+    nextMeeting: "[NEXT MEETING PLACEHOLDER]",
+
+  }
+
+
     render() {
+
+
+      const { 
+        companyName, 
+        users, 
+        lastMeeting, 
+        nextMeeting
+      } = this.state
 
         return (
           <div class="full-page">
@@ -31,37 +50,74 @@ export default class PremiumLogin extends Component {
             <br /> 
             <br />
             <br></br>
-              <h1 style={{color: "#245CA6"}}> Governance Dashboard </h1>
+              <h1 style={{color: "#245CA6"}}> Welcome </h1>
               <br></br>
 
             <div style={{textAlign:"center"}}>
-                <svg height={50} width={500}>
+                <svg height={50} width={400}>
                     <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1}/>
                 </svg>
             </div>
             <br />
-
-            <p class="homepage-text"> Automated Documents </p>
+          <br /> 
+          <br />
+          <center> 
+    <div style={{width: "80%", height: "400px", justifyContent: "center"}}> 
+          <div class="company-info" style={{width: "400px", float: "left", textAlign: "left"}}> 
+              <div class="name"> 
+                  {companyName}
+              </div>
+              <br />
+              <div class="users"> 
+                  {users}
+              </div>
+              < br/>
+               <div class="lastmeeting"> 
+                  {lastMeeting}
+              </div>
+              <br />
+              <div class="nextmeeting">
+                  {nextMeeting}
+              </div>
+          </div>
+          <div class="automated-docs" style={{width: "300px", float: "right"}} >
+          <div class="features-1">
+          <p class="homepage-text" style={{left: "20px"}}> Automated Documents </p>
           <br></br>
+           <center>
+           <div class="formation1">
+           <Link to="/FormationLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}>Formation</p> </Link>
+             </div>
+             < br/>
+           
+             <div class="governance1">
+             <Link to="/GovernanceLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}>  Governance </p></Link>
+             </div>
+             <br />
+            
+             <div class="employment1">
+             <Link to="/EmploymentLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}> Employment</p></Link>
+             </div>
+            < br/> 
           
-         
-         <div class="features">
-           <div class="formation">
-           <Link to="/FormationLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}>Formation</p> </Link>
-             </div>
-             <div class="governance">
-             <Link to="/GovernanceLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}>  Governance </p></Link>
-             </div>
-             <div class="employment">
-             <Link to="/EmploymentLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Employment</p></Link>
-             </div>
-             <div class="covid-19">
-             <Link to="/Covid_19Login" style={{textDecoration: "none"}}><p style={{fontWeight: "600"}}> Covid-19  </p></Link>
+             <div class="covid-191">
+             <Link to="/Covid_19Login" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}> Covid-19  </p></Link>
             </div>
+          </center>
             </div>
-  
-          <br></br>
-          <br></br>
+     </div>
+
+          </div> 
+          </center>
+          <br />
+          < br/>
+          
+
+          <center> <Link to="/GovernanceDashboard"> <button class="dashboard-button"> Governance Dashboard </button> </Link> </center>
+
+          <br />
+          <br />
+
           <br />
           <br />
           <br />

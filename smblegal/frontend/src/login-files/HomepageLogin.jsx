@@ -61,8 +61,9 @@ export default class HomepageLogin extends Component {
             <br />
           <br /> 
           <br />
-    <div style={{width: "1000px", height: "800px"}}> 
-          <div class="company-info" style={{width: "400px", float: "left"}}> 
+          <center> 
+    <div style={{width: "80%", height: "400px", justifyContent: "center"}}> 
+          <div class="company-info" style={{width: "400px", float: "left", textAlign: "left"}}> 
               <div class="name"> 
                   {companyName}
               </div>
@@ -83,10 +84,6 @@ export default class HomepageLogin extends Component {
           <div class="features-1">
           <p class="homepage-text" style={{left: "20px"}}> Automated Documents </p>
           <br></br>
-          
-  
-     
-
            <center>
            <div class="formation1">
            <Link to="/FormationLogin" style={{textDecoration: "none"}}><p style={{fontWeight: "600", textAlign: "center"}}>Formation</p> </Link>
@@ -111,12 +108,15 @@ export default class HomepageLogin extends Component {
           
            
             </div>
+            
         
  
           </div>
         
+        
 
           </div> 
+          </center>
 
           <br />
           <br />
