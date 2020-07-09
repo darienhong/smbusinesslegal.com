@@ -20,23 +20,26 @@ export default class ConsultingDocument extends Component {
       expensesRequire = 'Notwithstanding the foregoing, the Company has agreed to reimburse the Consultant for the following expenses: '
     }
 
-    const techConfidentialCheck = values.techConfidential === ''
-    let techRequire = ''
-    if (techConfidentialCheck) {
-      techRequire = 'Technical data, trade secrets, know-how, research, product or service ideas or plans, software codes and designs, developments, inventions, laboratory notebooks, processes, formulas, techniques, materials, engineering designs and drawings, configurations, lists of or information or information relating to employees and consultants of the company, any intellectual property developed by the Consultant (as described above).'
-    }
-    else {
-      techRequire = values.techConfidential
-    }
+    // const techConfidentialCheck = values.techConfidential === ''
+    // let techRequire = ''
+    // if (techConfidentialCheck) {
+    //   techRequire = 'Technical data, trade secrets, know-how, research, product or service ideas or plans, software codes and designs, developments, inventions, laboratory notebooks, processes, formulas, techniques, materials, engineering designs and drawings, configurations, lists of or information or information relating to employees and consultants of the company, any intellectual property developed by the Consultant (as described above).'
+    // }
+    // else {
+    //   techRequire += values.techConfidential
+    // }
 
-    const nontechConfidentialCheck = values.nontechConfidential === ''
-    let nontechRequire = ''
-    if (nontechConfidentialCheck) {
-      nontechRequire = 'Non-technical information relating to products, pricing, price lists, margins, market-share data, merchandising plans and strategies, finances, financial accounting data and information, suppliers, customers, customer lists, purchasing data, sales and marketing plans, current or future business plans.'
-    }
-    else {
-      nontechRequire = values.nontechConfidential
-    }
+    // let techRequire = 'Technical data, trade secrets, know-how, research, product or service ideas or plans, software codes and designs, developments, inventions, laboratory notebooks, processes, formulas, techniques, materials, engineering designs and drawings, configurations, lists of or information or information relating to employees and consultants of the company, any intellectual property developed by the Consultant (as described above).'
+
+
+    // const nontechConfidentialCheck = values.nontechConfidential === ''
+    // let nontechRequire = ''
+    // if (nontechConfidentialCheck) {
+    //   nontechRequire = 'Non-technical information relating to products, pricing, price lists, margins, market-share data, merchandising plans and strategies, finances, financial accounting data and information, suppliers, customers, customer lists, purchasing data, sales and marketing plans, current or future business plans.'
+    // }
+    // else {
+    //   nontechRequire += values.nontechConfidential
+    // }
 
 
     const insuranceCheck = values.insurance === 'Yes'
@@ -190,9 +193,9 @@ export default class ConsultingDocument extends Component {
           which the Consultant could not do the job as described in Exhibit A. Consultant
           understands that confidential information includes, but is not limited to the following
           (“Confidential Information”):</p>
-          <p class='tab'>i. {techRequire}
+          <p class='tab'>i. {values.techConfidential}
           </p>
-          <p class='tab'>ii. {nontechRequire}</p>
+          <p class='tab'>ii. {values.nontechConfidential}</p>
           <p>Consultant will not disclose and will maintain the confidence of the Confidential
           information in both oral and written form. Confidential Information will only be
           disclosed to employees to the extent necessary, or with the written consent of the

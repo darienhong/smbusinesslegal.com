@@ -25,23 +25,20 @@ export default class MutualNDADocument extends Component {
     //   cobraRequire = 'Additionally, you will receive a second letter containing information on the Consolidated Omnibus Budget Reconciliation Act (COBRA) continuation of group coverage of your Company provided health benefits.'
 
     let condCheck = values.confidential === ''
-    let cond = ''
-    if (condCheck) {
-      cond = 'Confidential Information includes, but is not limited to information pertaining' +
-        'to products, technical information, formula, specifications, designs, processes, ' +
-        'plans, policies, procedures, employees, work conditions, legal and regulatory ' +
-        'affairs, assets, inventory, discoveries, trademarks, parents, manufacturing, ' +
-        'packaging, distribution, sales, marketing, expenses, financial statements and ' +
-        'data, customer and supplier lists, raw materials, costs of goods and relationships ' +
-        'with third parties, know - how, techniques, inventions, software programs, ' +
-        'algorithms, software source documents, future and proposed product releases, ' +
-        'pricing, margins, merchandising plans and strategies, customer lists, and trade ' +
-        'secrets.Additional Confidential Information are notes, analysis, compilations or ' +
-        'studies or documents prepared by either Party which contain or were based on ' +
-        'Confidential Information.'
-    }
-    else {
-      cond = values.confidential
+    let cond = 'Confidential Information includes, but is not limited to information pertaining ' +
+      'to products, technical information, formula, specifications, designs, processes, ' +
+      'plans, policies, procedures, employees, work conditions, legal and regulatory ' +
+      'affairs, assets, inventory, discoveries, trademarks, parents, manufacturing, ' +
+      'packaging, distribution, sales, marketing, expenses, financial statements and ' +
+      'data, customer and supplier lists, raw materials, costs of goods and relationships ' +
+      'with third parties, know - how, techniques, inventions, software programs, ' +
+      'algorithms, software source documents, future and proposed product releases, ' +
+      'pricing, margins, merchandising plans and strategies, customer lists, and trade ' +
+      'secrets.Additional Confidential Information are notes, analysis, compilations or ' +
+      'studies or documents prepared by either Party which contain or were based on ' +
+      'Confidential Information. '
+    if (!condCheck) {
+      cond = cond + values.confidential
     }
 
     let condUseCheck = values.confidentialUseCheck === 'Yes'
@@ -82,15 +79,16 @@ export default class MutualNDADocument extends Component {
           <p>AGREEMENT</p>
         </center>
         <p>NOW, THEREFORE, the Parties agree to the following:</p>
-        <p>1. Mutual Non-Disclosure. The Company and the Recipient shall be bound by this
+        <h7 class='indoc'>1. Mutual Non-Disclosure.</h7>
+        <p>The Company and the Recipient shall be bound by this
         Agreement. The Parties shall be prohibited from sharing or releasing confidential
         information (as defined below). Any release of confidential information must be done
         in compliance and with the terms of the Agreement.</p>
-        <p>2. Term. Subject to permitted disclosures in clause 4 and 5 the Parties agree that this
+        <h7 class='indoc'>2. Term. </h7><p>Subject to permitted disclosures in clause 4 and 5 the Parties agree that this
         Agreement shall be in effect for {values.term} from the date of initial disclosure of confidential
         information.</p>
 
-        <p>3. Definition of Confidential Information. “Confidential Information” shall refer to all
+        <h7 class='indoc'>3. Definition of Confidential Information. </h7><p>“Confidential Information” shall refer to all
         non-public information or material disclosed or provided by the Parties to another
         Party, orally or in writing, that are proprietary to the Company or the Recipient,
         whether or not produced or owned by the Company or the Recipient that are learned
@@ -104,7 +102,7 @@ export default class MutualNDADocument extends Component {
           contractual or legal fiduciary duty of confidentiality, or was independently
           developer by the Party without reference to Confidential Information. </p>
         </p>
-        <p>4. Use of Confidential Information. The Parties will not disclose and will maintain the
+        <h7 class='indoc'>4. Use of Confidential Information. </h7><p>The Parties will not disclose and will maintain the
         confidential nature of the Confidential Information in both oral and written form. The
         Party will only use the Confidential Information in the way that the Parties agree is
         necessary to carry out the underlying purpose of this Agreement{condUse}. The Party will
@@ -113,45 +111,46 @@ export default class MutualNDADocument extends Component {
         Agreement or as required by law. The Parties represent that they handle their own
         confidential information with reasonable care and that they will treat the other Party’s
         Confidential Information with the same standard of care.</p>
-        <p>5. Waiver. The Party may request to the other Party that they are able to disclose the
+
+        <h7 class='indoc'>5. Waiver. </h7><p>The Party may request to the other Party that they are able to disclose the
         Confidential Information. In the event that the Party denies the requesting Party’s
         request, the requesting Party shall abide by that decision. In the event that the Party
         assents to the request, the Parties shall come to an agreement on the scope of that
         disclosure, execute an addendum to this Agreement and limit the disclosure to the
         extent of that addendum.</p>
 
-        <p>6. Destruction and Return. Upon termination of the relationship between the Parties,
+        <h7 class='indoc'>6. Destruction and Return. </h7><p>Upon termination of the relationship between the Parties,
         both Parties shall destroy any Confidential Information and promptly return to the
         other Party, without retaining any copies, any information or documents furnished to
         the other Party.</p>
 
-        <p>7. Indemnification. Both Parties shall indemnify and hold harmless the other Party and
+        <h7 class='indoc'>7. Indemnification. </h7><p>Both Parties shall indemnify and hold harmless the other Party and
         its affiliates and their respective directors, officers, employees, agents and
         representatives from and against any and all losses, damages, costs and expenses
         (including without limitation reasonable attorneys’ fees and expenses) caused by or
         arising out of any direct breach of this Agreement and any and all actions, suits,
         proceedings, claims, demands or judgments incident thereto.</p>
 
-        <p>8. No Licenses, No Transfer of Rights or Interest. Neither Party is granted a license,
+        <h7 class='indoc'>8. No Licenses, No Transfer of Rights or Interest. </h7> <p>Neither Party is granted a license,
         right or interest to any patent, copyright, trademark, trade secret, or other rights by
         disclosing Confidential Information under this Agreement.</p>
 
-        <p>9. Survival. This Agreement shall govern all communications between the Parties. The
+        <h7 class='indoc'>9. Survival. </h7><p>This Agreement shall govern all communications between the Parties. The
         Agreement shall survive any relationship between the Parties, specifically Clause 3 “Use
         of Confidential Information” shall survive any termination of relationship between the
         Parties.</p>
 
-        <p>10. Governing Law. This Agreement shall be governed in all respects by the laws of the
+        <h7 class='indoc'>10. Governing Law. </h7><p>This Agreement shall be governed in all respects by the laws of the
         United States and the state of {values.state}.</p>
 
-        <p>11. Injunctive Relief. Irreparable damage will result in a breach of the Agreement and any
+        <h7 class='indoc'>11. Injunctive Relief. </h7><p>Irreparable damage will result in a breach of the Agreement and any
         of the agreements or promises made herein. It is agreed that there is no adequate
         remedy at law, and the Parties shall be entitled to injunctive relief and/or specific
         performance of the obligations contained herein. Other relief shall be granted as is
         determined to be proper (including monetary damages).</p>
 
 
-        <p>12. Miscellaneous</p>
+        <h7 class='indoc'>12. Miscellaneous</h7>
         <h6 class='tab'>a. Integration.
           <br /><br />
           <p class='tab'>This Agreement contains the entire understanding between the

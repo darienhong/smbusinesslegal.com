@@ -66,12 +66,10 @@ export default class MutualNDAInfo extends Component {
           </form>
           <br />
 
-          <form>
-            <p>What is the Company's definition of <br />Confidential Information?</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('confidential')}
-            />
+          <form onChange={this.props.handleChange('confidential')}>
+            <p>Please review the document’s definition of confidential information.
+              If the company has any additional definitions, please enter them here:</p>
+            <textarea value={values.confidential} name="message" rows="8" cols="30"></textarea>
           </form>
           <br />
 
@@ -89,6 +87,7 @@ export default class MutualNDAInfo extends Component {
             <label for="no"> No </label><br />
 
           </form>
+          <br />
 
 
           {values.confidentialUseCheck === 'Yes' && (

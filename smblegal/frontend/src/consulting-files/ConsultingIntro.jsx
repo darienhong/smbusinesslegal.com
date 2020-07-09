@@ -63,7 +63,7 @@ export default class ConsultingIntro extends Component {
           <br />
 
           <form>
-            <p>Enter the company registration number:</p>
+            <p>Enter the Company’s EIN Number: </p>
             <input
               type='text'
               onChange={this.props.handleChange('registration')}

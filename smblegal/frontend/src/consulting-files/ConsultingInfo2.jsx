@@ -32,21 +32,25 @@ export default class ConsultingInfo extends Component {
         <Navbar2 />
 
         <div class='col height'>
-          <form>
-            <p>What is the Company's definition of technical Confidential Information?</p>
+          {/* <form>
+            <p>Please review the document’s definition of technical confidential information.
+              If the company has any additional definition, please enter them here:</p>
             <input
               type='text'
               onChange={this.props.handleChange('techConfidential')}
             />
+          </form> */}
+          <form onChange={this.props.handleChange('techConfidential')}>
+            <p>Please review the document’s definition of technical confidential information.
+              If the company has any additional definitions, please enter them here:</p>
+            <textarea value={values.techConfidential} name="message" rows="12" cols="40"></textarea>
           </form>
           <br />
 
-          <form>
-            <p>What is the Company's definition of nontechnical Confidential Information?</p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('nontechConfidential')}
-            />
+          <form onChange={this.props.handleChange('nontechConfidential')}>
+            <p>Please review the document’s definition of nontechnical confidential information.
+              If the company has any additional definitions, please enter them here:</p>
+            <textarea value={values.nontechConfidential} name="message" rows="10" cols="40"></textarea>
           </form>
           <br />
 

@@ -68,12 +68,12 @@ export default class LLCResolutionIntro extends Component {
               type='radio' id="one" name="holder" value="One"
               onChange={this.props.handleChange('number')}
             />
-            <label for="yes"> One Shareholder </label><br />
+            <label for="yes"> One Member </label><br />
             <input
               type='radio' id="multiple" name="holder" value="Multiple"
               onChange={this.props.handleChange('number')}
             />
-            <label for="no"> Multiple Shareholders </label><br />
+            <label for="no"> Multiple Members </label><br />
 
           </form>
           <br />

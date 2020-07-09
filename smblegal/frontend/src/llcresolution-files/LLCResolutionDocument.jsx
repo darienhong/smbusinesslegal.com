@@ -39,8 +39,7 @@ export default class LLCResolutionDocument extends Component {
             {values.companyName} <br /> A {values.state} LIMITED LIABILITY COMPANY</h5>
           <br /><br />
         </center>
-        <p>The undersigned, being the {para} of the {values.companyName} LLC, a {values.state}
-        limited liability company (the “Company”), do hereby adopt the following resolutions and
+        <p>The undersigned, being the {para} of the {values.companyName} LLC, a {values.state} limited liability company (the “Company”), do hereby adopt the following resolutions and
         direct that this written resolution be filed with the minutes of the proceedings of the
         Company:
         </p>
