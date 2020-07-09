@@ -330,15 +330,17 @@ nav a:hover {
 
 .governance, .employment, .covid-19, .formation {
   padding-left: 50px;
-  padding-right: 50px;
   padding-top: 10px;
+  padding-right: 50px;
   border: 1px solid #2DC4B6;
   background-color: #2DC4B6; 
   font-weight: 580;
   display: block;
   text-decoration: none;
+  text-align: center;
   letter-spacing: 0.2mm;
-  width: 250px;
+  width: 200px;
+  margin-left: 30px;
   
 }
 

@@ -99,12 +99,6 @@ export default class HomepageLogin extends Component {
           <br /> 
           <br />
 
-
-          <div>
-           {JSON.stringify(company)}
-           {company.map(comp =>  <li> {comp.company_name} {comp.state} {comp.company_type} </li>  )}
-            </div> 
-
           <center> 
     <div style={{width: "80%", height: "400px", justifyContent: "center"}}> 
           <div class="company-info" style={{width: "400px", float: "left", textAlign: "left"}}> 
