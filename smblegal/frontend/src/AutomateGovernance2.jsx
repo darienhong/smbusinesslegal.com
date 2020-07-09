@@ -495,7 +495,7 @@ export default function AutomateGov2() {
                         <div class="name-input-c" style={{textAlign: "center"}}>
                             
                             <TextField 
-                            //    id={nameId}
+                                name="name"
                                 label="Name" 
                                 value={x.name}
                                 variant="outlined" 
@@ -507,7 +507,7 @@ export default function AutomateGov2() {
                             < br/> 
                             <div class="email-input-c" style={{textAlign: "center"}}>
                             <TextField 
-                             //   id={emailId}
+                                name="email"
                                 label="Email" 
                                 value={x.email}
                                 variant="outlined" 
@@ -518,6 +518,7 @@ export default function AutomateGov2() {
                         <br />
                         <div class="num-shares" style={{textAlign: "center"}}>
                         <TextField
+                            name="sharesOwned"
                             id="outlined-number"
                             label="Number of Shares owned"
                             type="number"
@@ -559,7 +560,7 @@ export default function AutomateGov2() {
                         <div class="name-input-c" style={{textAlign: "center"}}>
                           
                             <TextField 
-                            //    id={nameId}
+                                name="name"
                                 label="Name" 
                                 value={x.name}
                                 variant="outlined" 
@@ -571,7 +572,7 @@ export default function AutomateGov2() {
                             < br/> 
                             <div class="email-input-c" style={{textAlign: "center"}}>
                             <TextField 
-                             //   id={emailId}
+                                name="email"
                                 label="Email" 
                                 value={x.email}
                                 variant="outlined" 
@@ -582,6 +583,7 @@ export default function AutomateGov2() {
                         <br />
                         <div class="num-shares" style={{textAlign: "center"}}>
                         <TextField
+                            name="sharesOwned"
                             id="outlined-number"
                             label="Number of Shares owned"
                             type="number"

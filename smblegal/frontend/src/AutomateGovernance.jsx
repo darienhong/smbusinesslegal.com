@@ -68,45 +68,7 @@ import {
     },
   }));
 
-  const newMember = () => {
-      return (
-        <div class="new-member">
-        <div class="name-input-llc" style={{textAlign: "center"}}>
-            <TextField id="outlined-basic" label="Name" variant="outlined" style={{width: "500px"}} /> 
-        </div> 
-        <br></br>
-        <div class="email-input-llc" style={{textAlign: "center"}}>
-            <TextField id="outlined-basic" label="Email" variant="outlined" style={{width: "500px"}} /> 
-        </div> 
-        <br></br>
-        <div class="percent-ownership" style={{textAlign: "center"}}>
-           <TextField
-               id="outlined-number"
-               label="Percentage of ownership"
-               type="number"
-               InputLabelProps={{
-                   shrink: true,
-               }}
-               variant="outlined"
-               style={{width: "500px"}}
-           />
-       </div>
-       <br></br>
-       <div class="percent-profits-received" style={{textAlign: "center"}}>
-           <TextField
-               id="outlined-number"
-               label="Percent of profits received"
-               type="number"
-               InputLabelProps={{
-                   shrink: true,
-               }}
-               variant="outlined"
-               style={{width: "500px"}}
-           />
-       </div>
-       </div>
-      );
-  }
+
 
  
 
@@ -134,22 +96,6 @@ export default function AutomateGov() {
     const handleOpen = (event) => { 
         setOpen(true);
     }
-    
-  /*  const [members, setMembers] = React.useState(0);
-
-  {/*  const handleChangeMembers = (event) => {
-        setMembers(members => [...members, <newMember />])
-    }
-
-    {/*
-    
-    const addMember = (event) => {
-        this.setState({
-            members: [...this.state.members, <newMember /> ]
-        })
-    }
-
-*/
 
     const handleChangeAutomation = (event) => { 
         setAutomation(event.target.value);
@@ -406,7 +352,7 @@ export default function AutomateGov() {
                         <div class="name-input-p" style={{textAlign: "center"}}>
                            
                             <TextField 
-                            //    id={nameId}
+                                name="name"
                                 label="Name" 
                                 value={x.name}
                                 variant="outlined" 
@@ -418,7 +364,7 @@ export default function AutomateGov() {
                             < br/> 
                             <div class="email-input-p" style={{textAlign: "center"}}>
                             <TextField 
-                             //   id={emailId}
+                                name="email"
                                 label="Email" 
                                 value={x.email}
                                 variant="outlined" 
@@ -429,7 +375,7 @@ export default function AutomateGov() {
                         <br />
                         <div class="percent-ownership" style={{textAlign: "center"}}>
                         <TextField
-                        //    id={sharesID}
+                            name="percentShares"
                             label="Percentage of ownership"
                             type="number"
                             value={x.percentShares}
@@ -444,7 +390,7 @@ export default function AutomateGov() {
                     <br />
                     <div class="percent-profits-received" style={{textAlign: "center"}}>
                         <TextField
-                        //  id={profitID}
+                            name="percentProfit"
                             label="Percent of profits received"
                             type="number"
                             value={x.percentProfit}
@@ -461,7 +407,7 @@ export default function AutomateGov() {
 
                     <div class="percent-losses-received" style={{textAlign: "center"}}>
                         <TextField
-                        //  id={profitID}
+                            name="percentLosses"
                             label="Percent of losses received"
                             type="number"
                             value={x.percentLosses}

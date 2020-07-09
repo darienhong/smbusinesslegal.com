@@ -307,14 +307,8 @@ const handleOpen = (event) => {
                     </form>
 
             )}
-
-
-
             <br />
             <br />
-
-
-
 
             { automate === 'Manual' && ( 
 
@@ -343,11 +337,9 @@ const handleOpen = (event) => {
                     onChange={handleChange.bind(this)}
                     filesLimit={10}
                     />
-
                     </div> 
                     <br />
                     <br />
-
 
             <div class="upload-company-minutes">
             <p style={{textAlign: "center"}}> Please upload company's form of resolutions and meeting minutes (if any) </p>
@@ -466,7 +458,7 @@ const handleOpen = (event) => {
                         <div class="name-input-llc" style={{textAlign: "center"}}>
                     
                             <TextField 
-                            //    id={nameId}
+                                name="name"
                                 label="Name" 
                                 value={x.name}
                                 variant="outlined" 
@@ -478,7 +470,7 @@ const handleOpen = (event) => {
                             < br/> 
                             <div class="email-input-llc" style={{textAlign: "center"}}>
                             <TextField 
-                             //   id={emailId}
+                                name="email"
                                 label="Email" 
                                 value={x.email}
                                 variant="outlined" 
@@ -489,7 +481,7 @@ const handleOpen = (event) => {
                         <br />
                         <div class="percent-ownership" style={{textAlign: "center"}}>
                         <TextField
-                        //    id={sharesID}
+                            name="percentShares"
                             label="Percentage of ownership"
                             type="number"
                             value={x.percentShares}
@@ -504,7 +496,7 @@ const handleOpen = (event) => {
                     <br />
                     <div class="percent-profits-received" style={{textAlign: "center"}}>
                         <TextField
-                        //  id={profitID}
+                            name="percentProfit"
                             label="Percent of profits received"
                             type="number"
                             value={x.percentProfit}
@@ -520,13 +512,7 @@ const handleOpen = (event) => {
                             </div>
 
                         );
-                    })}
-                    
-                    
-                    
-                    
-    
-                    
+                    })}              
                     </div>
 
              </div>
