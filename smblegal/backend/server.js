@@ -230,7 +230,7 @@ app.get('/getCompanyInfo', function(req, res) {
     } else {
       console.log(table);
       res.send(table.rows);
-      res.send()
+    //  res.send()
     }
   });
 
