@@ -457,19 +457,20 @@ const handleOpen = (event) => {
 
                         <Button onClick={handleAddMembers}> Add Member</Button>
                         </div>
+                        < br/>
+                        <br />
                     {membersList.map((x, i) => { 
                         return (
                             <div class="members-form-box">
 
                         <div class="name-input-llc" style={{textAlign: "center"}}>
-                            < br/>
-                            < br/> 
+                    
                             <TextField 
                             //    id={nameId}
                                 label="Name" 
                                 value={x.name}
                                 variant="outlined" 
-                                style={{width: "500px"}}
+                                style={{width: "200px"}}
                                 onChange={e => handleMembersChange(e, i)}
                                  /> 
                                 
@@ -482,7 +483,7 @@ const handleOpen = (event) => {
                                 value={x.email}
                                 variant="outlined" 
                                 onChange={e => handleMembersChange(e, i)}
-                                style={{width: "500px"}} 
+                                style={{width: "200px"}} 
                                 /> 
                             </div>
                         <br />
@@ -497,7 +498,7 @@ const handleOpen = (event) => {
                             }}
                             variant="outlined"
                             onChange={e => handleMembersChange(e, i)}
-                            style={{width: "500px"}}
+                            style={{width: "200px"}}
                         />
                     </div>
                     <br />
@@ -513,7 +514,7 @@ const handleOpen = (event) => {
                             onChange={e => handleMembersChange(e, i)}
                            
                             variant="outlined"
-                            style={{width: "500px"}}
+                            style={{width: "200px"}}
                         />
                     </div>
                             </div>

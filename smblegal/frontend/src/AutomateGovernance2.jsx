@@ -166,7 +166,7 @@ export default function AutomateGov2() {
             const list = [...boardMembersList]
             list[index][name] = value;
             setBoardMembersList(list)
-          }
+    }
 
     const handleAddBM = () => { 
         setBoardMembersList([...boardMembersList, { name: "", email: "", sharesOwned: ""}]);
@@ -486,19 +486,20 @@ export default function AutomateGov2() {
 
                         <Button onClick={handleAddBM}> Add Member</Button>
                         </div>
+                        < br/>
+                        < br/>
                     {boardMembersList.map((x, i) => { 
                         return (
                             <div class="members-form-box">
 
                         <div class="name-input-c" style={{textAlign: "center"}}>
-                            < br/>
-                            < br/> 
+                            
                             <TextField 
                             //    id={nameId}
                                 label="Name" 
                                 value={x.name}
                                 variant="outlined" 
-                                style={{width: "500px"}}
+                                style={{width: "300px"}}
                                 onChange={e => handleBMChange(e, i)}
                                  /> 
                                 
@@ -511,7 +512,7 @@ export default function AutomateGov2() {
                                 value={x.email}
                                 variant="outlined" 
                                 onChange={e => handleBMChange(e, i)}
-                                style={{width: "500px"}} 
+                                style={{width: "300px"}} 
                                 /> 
                             </div>
                         <br />
@@ -526,7 +527,7 @@ export default function AutomateGov2() {
                             }}
                             variant="outlined"
                             onChange={e => handleBMChange(e, i)}
-                            style={{width: "500px"}}
+                            style={{width: "300px"}}
                         />
                 </div>
                         
@@ -549,19 +550,20 @@ export default function AutomateGov2() {
 
                         <Button onClick={handleAddSH}> Add Member</Button>
                         </div>
+                        < br/>
+                        <br />
                     {shareholdersList.map((x, i) => { 
                         return (
                             <div class="members-form-box">
 
                         <div class="name-input-c" style={{textAlign: "center"}}>
-                            < br/>
-                            < br/> 
+                          
                             <TextField 
                             //    id={nameId}
                                 label="Name" 
                                 value={x.name}
                                 variant="outlined" 
-                                style={{width: "500px"}}
+                                style={{width: "300px"}}
                                 onChange={e => handleSHChange(e, i)}
                                  /> 
                                 
@@ -574,7 +576,7 @@ export default function AutomateGov2() {
                                 value={x.email}
                                 variant="outlined" 
                                 onChange={e => handleSHChange(e, i)}
-                                style={{width: "500px"}} 
+                                style={{width: "300px"}} 
                                 /> 
                             </div>
                         <br />
@@ -589,7 +591,7 @@ export default function AutomateGov2() {
                             }}
                             onChange={e => handleSHChange(e, i)}
                             variant="outlined"
-                            style={{width: "500px"}}
+                            style={{width: "300px"}}
                         />
                 </div>
                     

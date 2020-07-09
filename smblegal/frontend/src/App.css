@@ -913,6 +913,13 @@ font-family: 'WorkSans';
  
 }
 
+.members-form-box { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
 
 
 

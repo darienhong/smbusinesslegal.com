@@ -394,23 +394,23 @@ export default function AutomateGov() {
                     <div class="members-form"> 
 
                     <div class="button-add">
-
                         <Button onClick={handleAddMembers}> Add Member</Button>
                         </div>
+                        < br/>
+                        <br />
+
                     {membersList.map((x, i) => { 
                         return (
                             <div class="members-form-box">
 
                         <div class="name-input-p" style={{textAlign: "center"}}>
-                            < br/>
-                            <br /> 
-                            < br/> 
+                           
                             <TextField 
                             //    id={nameId}
                                 label="Name" 
                                 value={x.name}
                                 variant="outlined" 
-                                style={{width: "500px"}}
+                                style={{width: "200px"}}
                                 onChange={e => handleMembersChange(e, i)}
                                  /> 
                                 
@@ -423,7 +423,7 @@ export default function AutomateGov() {
                                 value={x.email}
                                 variant="outlined" 
                                 onChange={e => handleMembersChange(e, i)}
-                                style={{width: "500px"}} 
+                                style={{width: "200px"}} 
                                 /> 
                             </div>
                         <br />
@@ -438,7 +438,7 @@ export default function AutomateGov() {
                             }}
                             variant="outlined"
                             onChange={e => handleMembersChange(e, i)}
-                            style={{width: "500px"}}
+                            style={{width: "200px"}}
                         />
                     </div>
                     <br />
@@ -454,7 +454,7 @@ export default function AutomateGov() {
                             onChange={e => handleMembersChange(e, i)}
                            
                             variant="outlined"
-                            style={{width: "500px"}}
+                            style={{width: "200px"}}
                         />
                     </div>
                     < br /> 
@@ -471,7 +471,7 @@ export default function AutomateGov() {
                             onChange={e => handleMembersChange(e, i)}
                            
                             variant="outlined"
-                            style={{width: "500px"}}
+                            style={{width: "200px"}}
                         />
                     </div>
                             </div>
