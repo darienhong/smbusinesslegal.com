@@ -32,7 +32,7 @@ export default class InternshipInfo extends Component {
 
         <div class='col height'>
           <form>
-            <p>Enter employee's title:</p>
+            <p>Enter intern's title:</p>
             <input
               type='text'
               onChange={this.props.handleChange('title')}
@@ -41,7 +41,7 @@ export default class InternshipInfo extends Component {
           <br />
 
           <form>
-            <p>Enter employee's duties:</p>
+            <p>Enter intern's duties:</p>
             <input
               type='text'
               onChange={this.props.handleChange('duties')}
@@ -69,7 +69,7 @@ export default class InternshipInfo extends Component {
           </form>
           <br />
           <form>
-            <p>Enter employee's hours:</p>
+            <p>Enter intern's hours:</p>
             <input
               type='number'
               onChange={this.props.handleChange('hours')}
