@@ -60,6 +60,41 @@ export default class IncorporationIntro extends Component {
           </form>
           <br />
 
+          <form onChange={this.props.handleIncorpChange}>
+            <div class='listExp'>
+              <p>Enter the incorporators:</p>
+            </div>
+            <div class='expButton'>
+              <button class='add' onClick={this.props.addIncorp}>+</button>
+            </div>
+            <br />
+            <div class='listExp'>
+              {
+                (values.incorpList).map((val, idx) => {
+                  let incorpId = `incorp-${idx}`
+                  return (
+                    <div key={idx}>
+                      <label htmlFor={incorpId}>{`Incorporator #${idx + 1}`}</label>
+                      <input
+                        type="text"
+                        name={incorpId}
+                        data-id={idx}
+                        id={incorpId}
+                        value={(values.incorpList)[idx].name}
+                        className="name"
+                      />
+                      {" "}
+                    </div>
+
+                  )
+                })
+              }
+            </div>
+          </form>
+          <br />
+
+
+
           <form>
             <p>Enter your address:</p>
             <input
@@ -79,13 +114,33 @@ export default class IncorporationIntro extends Component {
           <br />
 
           <form>
-            <p>Enter your fax number (if applicable):</p>
+            <p>Do you have a fax number?</p>
             <input
-              type='text'
-              onChange={this.props.handleChange('fax')}
+              type='radio' id="yes" name="fax" value="Yes"
+              onChange={this.props.handleChange('checkFax')}
             />
+            <label for="yes"> Yes </label><br />
+            <input
+              type='radio' id="no" name="fax" value="No"
+              onChange={this.props.handleChange('checkFax')}
+            />
+            <label for="no"> No </label><br />
+
           </form>
           <br />
+
+          {values.checkFax === 'Yes' && (
+            <div>
+              <form>
+                <p>Enter your fax number:</p>
+                <input
+                  type='text'
+                  onChange={this.props.handleChange('fax')}
+                />
+              </form>
+              <br />
+            </div>
+          )}
 
           <button class='next' onClick={this.next}>Next </button>
         </div>

@@ -43,7 +43,7 @@ export default class IncorporationInfo2 extends Component {
           <br />
 
           <form>
-            <p>What is the value of each share of common stock? </p>
+            <p>What is the par value of each share of common stock? </p>
             <input
               type='text'
               onChange={this.props.handleChange('price')}
@@ -78,7 +78,7 @@ export default class IncorporationInfo2 extends Component {
               </form>
               <br />
               <form>
-                <p>What is the value of each share of preferred stock?</p>
+                <p>What is the par value of each share of preferred stock?</p>
                 <input
                   type='text'
                   onChange={this.props.handleChange('preferredPrice')}

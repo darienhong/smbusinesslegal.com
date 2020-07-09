@@ -15,7 +15,7 @@ export default class IncorporationDocument extends Component {
     var formattedDate = moment(dateString).format("LL");
 
     const purposeCheck = values.purpose === 'Specify'
-    let purposeRequire = 'engage in any lawful act or activity for which corporations may be organized under the General Corporation Law of Delaware.'
+    let purposeRequire = 'engage in any lawful act or activity for which corporations may be organized under the General Corporation Law of Delaware'
     if (purposeCheck) {
       purposeRequire = values.specifyPurpose
     }
@@ -38,6 +38,18 @@ export default class IncorporationDocument extends Component {
           values.specifyRights
       }
     }
+
+    let len = values.incorpList.length;
+    let title = 'Incorporator'
+    if (len > 1) {
+      title = 'Incorporators'
+    }
+
+    let fax = ''
+    if (values.checkFax == 'Yes') {
+      fax = 'Fax Number: ' + values.fax
+    }
+
 
     return (
       <div class='size' >
@@ -80,7 +92,7 @@ export default class IncorporationDocument extends Component {
         <p>Name: {values.name}</p>
         <p>Address: {values.address}</p>
         <p>Telephone Number: {values.phone}</p>
-        <p>Fax Number: {values.fax}</p>
+        <p>{fax}</p>
         <p>Thank you,</p>
         <p>{values.name}</p>
         <center className="page-break">
@@ -88,7 +100,7 @@ export default class IncorporationDocument extends Component {
           A STOCK CORPORATION</h5>
         </center>
         <br />
-        <p>The undersigned Incorporator[s], desiring to form a corporation pursuant to the General
+        <p>The undersigned {title}, desiring to form a corporation pursuant to the General
         Corporation Law of the State of Delaware, hereby certifies as follows:
         </p>
         <p>1. The name of the Corporation is {values.companyName}.</p>
@@ -97,7 +109,7 @@ export default class IncorporationDocument extends Component {
         </p>
         <p>
           3. The name of the Registered Agent at such address upon whom process against this
-          corporation may be served is {values.name}.
+          corporation may be served is {values.registered}.
         </p>
         <p>
           4. The purpose of this corporation is to {purposeRequire}.
@@ -110,8 +122,19 @@ export default class IncorporationDocument extends Component {
         <p>{incorporator}</p>
         <p></p>
         <br /><br />
-        <p>By: ______________________________</p>
-        <p>Authorized Person</p>
+        <div>
+          {
+            (values.incorpList).map((val, idx) => {
+              let incorpId = `incorp-${idx}`
+              return (
+                <div key={idx}>
+                  <p>By: _________________________</p>
+                  <p>Authorized Person</p>
+                </div>
+              )
+            })
+          }
+        </div>
 
 
       </div >

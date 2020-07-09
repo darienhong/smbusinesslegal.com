@@ -23,6 +23,18 @@ export default class FormationDocument extends Component {
     // var cobraRequire = ''
     // if (cobraCheck)
     //   cobraRequire = 'Additionally, you will receive a second letter containing information on the Consolidated Omnibus Budget Reconciliation Act (COBRA) continuation of group coverage of your Company provided health benefits.'
+
+    let len = values.incorpList.length;
+    let title = 'Incorporator'
+    if (len > 1) {
+      title = 'Incorporators'
+    }
+
+    let fax = ''
+    if (values.checkFax == 'Yes') {
+      fax = 'Fax Number: ' + values.fax
+    }
+
     return (
       <div class='size' >
         <center>
@@ -61,7 +73,7 @@ export default class FormationDocument extends Component {
         <p>Name: {values.name}</p>
         <p>Address: {values.address}</p>
         <p>Telephone Number: {values.phone}</p>
-        <p>Fax Number: {values.fax}</p>
+        <p>{fax}</p>
         <p>Thank you,</p>
         <p>{values.name}</p>
         <center className="page-break">
@@ -69,7 +81,7 @@ export default class FormationDocument extends Component {
           OF A LIMITED LIABILITY COMPANY</h5>
         </center>
         <br />
-        <p>The undersigned Incorporator[s], desiring to form a corporation pursuant to the Limited
+        <p>The undersigned {title}, desiring to form a corporation pursuant to the Limited
         Liability Company Act of the State of Delaware, hereby certifies as follows:
         </p>
         <p>1. The name of the limited liability company is {values.companyName}.</p>
@@ -78,11 +90,24 @@ export default class FormationDocument extends Component {
         </p>
         <p>
           3. The name of the Registered Agent at such address upon whom process against this
-          corporation may be served is {values.name}.
+          corporation may be served is {values.registered}.
         </p>
         <br /><br />
-        <p>By: ______________________________</p>
-        <p>Authorized Person</p>
+
+        <div>
+          {
+            (values.incorpList).map((val, idx) => {
+              let incorpId = `incorp-${idx}`
+              return (
+                <div key={idx}>
+                  <p>By: _________________________</p>
+                  <p>Authorized Person</p>
+                </div>
+              )
+            })
+          }
+        </div>
+
 
 
       </div >

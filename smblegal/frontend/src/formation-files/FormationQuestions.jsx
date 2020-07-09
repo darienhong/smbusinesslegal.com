@@ -24,7 +24,10 @@ export default class FormationQuestions extends Component {
     companyAddress: '[X]',
     companyCity: '[X]',
     companyCounty: '[X]',
-    companyZip: '[X]'
+    companyZip: '[X]',
+    incorpList: [{ name: "" }],
+    checkFax: "",
+    registered: "[X]"
   }
 
   nextStep = () => {
@@ -63,16 +66,16 @@ export default class FormationQuestions extends Component {
     this.setState({ [input]: event.target.value })
   }
 
-  handleRecitalChange = (e) => {
-    let recitalList = [...this.state.recitalList]
-    recitalList[e.target.dataset.id][e.target.className] = e.target.value
-    this.setState({ recitalList }, () => console.log(this.state.recitalList))
+  handleIncorpChange = (e) => {
+    let incorpList = [...this.state.incorpList]
+    incorpList[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState({ incorpList }, () => console.log(this.state.incorpList))
   }
 
-  addRecital = (e) => {
+  addIncorp = (e) => {
     e.preventDefault();
     this.setState((prevState) => ({
-      recitalList: [...prevState.recitalList, { name: "" }],
+      incorpList: [...prevState.incorpList, { name: "" }],
     }));
   }
 
@@ -89,7 +92,10 @@ export default class FormationQuestions extends Component {
       companyAddress,
       companyCity,
       companyCounty,
-      companyZip
+      companyZip,
+      incorpList,
+      checkFax,
+      registered
     } = this.state;
     const values = {
       percent,
@@ -102,7 +108,10 @@ export default class FormationQuestions extends Component {
       companyAddress,
       companyCity,
       companyCounty,
-      companyZip
+      companyZip,
+      incorpList,
+      checkFax,
+      registered
     };
 
     switch (step) {
@@ -112,6 +121,8 @@ export default class FormationQuestions extends Component {
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
+          handleIncorpChange={this.handleIncorpChange}
+          addIncorp={this.addIncorp}
           values={values}
         // doc={EmploymentDocument}
         />

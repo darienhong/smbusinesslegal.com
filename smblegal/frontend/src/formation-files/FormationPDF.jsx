@@ -40,7 +40,7 @@ export default class FormationPDF extends Component {
         </div>
         <PDFExport paperSize="Letter"
           forcePageBreak=".page-break"
-          fileName="legal-document.pdf"
+          fileName="certificate-of-formation.pdf"
           title=""
           subject=""
           keywords=""

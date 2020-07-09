@@ -70,6 +70,16 @@ export default class IncorporationInfo extends Component {
           </form>
           <br />
 
+          <form>
+            <p>Enter the name of the Registered Agent: </p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('registered')}
+            />
+          </form>
+          <br />
+
+
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>

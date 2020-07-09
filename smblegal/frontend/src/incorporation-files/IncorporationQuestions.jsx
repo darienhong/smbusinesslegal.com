@@ -35,7 +35,11 @@ export default class IncorporationQuestions extends Component {
     shares: '[X]',
     price: '[X]',
     preferredShares: '[X]',
-    preferredPrice: '[X]'
+    preferredPrice: '[X]',
+    incorpList: [{ name: "" }],
+    checkFax: "",
+    registered: "[X]"
+
   }
 
   nextStep = () => {
@@ -74,16 +78,16 @@ export default class IncorporationQuestions extends Component {
     this.setState({ [input]: event.target.value })
   }
 
-  handleRecitalChange = (e) => {
-    let recitalList = [...this.state.recitalList]
-    recitalList[e.target.dataset.id][e.target.className] = e.target.value
-    this.setState({ recitalList }, () => console.log(this.state.recitalList))
+  handleIncorpChange = (e) => {
+    let incorpList = [...this.state.incorpList]
+    incorpList[e.target.dataset.id][e.target.className] = e.target.value
+    this.setState({ incorpList }, () => console.log(this.state.incorpList))
   }
 
-  addRecital = (e) => {
+  addIncorp = (e) => {
     e.preventDefault();
     this.setState((prevState) => ({
-      recitalList: [...prevState.recitalList, { name: "" }],
+      incorpList: [...prevState.incorpList, { name: "" }],
     }));
   }
 
@@ -109,7 +113,10 @@ export default class IncorporationQuestions extends Component {
       shares,
       price,
       preferredShares,
-      preferredPrice
+      preferredPrice,
+      incorpList,
+      checkFax,
+      registered
 
     } = this.state;
     const values = {
@@ -132,7 +139,10 @@ export default class IncorporationQuestions extends Component {
       shares,
       price,
       preferredShares,
-      preferredPrice
+      preferredPrice,
+      incorpList,
+      checkFax,
+      registered
 
     };
 
@@ -143,6 +153,8 @@ export default class IncorporationQuestions extends Component {
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
+          handleIncorpChange={this.handleIncorpChange}
+          addIncorp={this.addIncorp}
           values={values}
         />
       case 2:
