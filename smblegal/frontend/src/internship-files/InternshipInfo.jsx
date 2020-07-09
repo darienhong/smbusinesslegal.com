@@ -75,6 +75,7 @@ export default class InternshipInfo extends Component {
               onChange={this.props.handleChange('hours')}
             />
           </form>
+          <br />
 
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>

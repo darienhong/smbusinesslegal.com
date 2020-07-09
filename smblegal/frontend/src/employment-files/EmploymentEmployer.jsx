@@ -59,6 +59,8 @@ export default class EmploymentEmployer extends Component {
               onChange={this.props.handleChange('email')}
             />
           </form>
+          <br />
+
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>

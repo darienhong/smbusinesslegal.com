@@ -45,6 +45,7 @@ export default class Questions extends Component {
     email: '[EMAIL]',
     paid: '[X]',
     verification: '[X]',
+    responsibilities: '[JOB RESPONSIBILITIES]'
   }
 
   nextStep = () => {
@@ -107,12 +108,12 @@ export default class Questions extends Component {
     const { step } = this.state;
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
-      employerTitle, phone, email, paid, verification, expenseList
+      employerTitle, phone, email, paid, verification, expenseList, responsibilities
     } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
-      phone, email, paid, verification, expenseList
+      phone, email, paid, verification, expenseList, responsibilities
     };
 
     switch (step) {

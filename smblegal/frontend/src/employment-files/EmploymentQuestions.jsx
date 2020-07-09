@@ -30,7 +30,7 @@ export default class EmploymentQuestions extends Component {
     duties: '[X]',
     relationship: '[X]',
     startDate: new Date(),
-    wage: '[X – if paid must comply with minimum wage laws]',
+    wage: '[X]',
     hours: '[X]',
     status: '[Exempt or non-exempt]',
     atWill: '[X]',
@@ -47,7 +47,8 @@ export default class EmploymentQuestions extends Component {
     commission: '[X]',
     comProcedure: '[X]',
     tipping: '[X]',
-    responsibilities: '[X]'
+    responsibilities: '[X]',
+    competeTime: '[X months or years]'
   }
 
   nextStep = () => {
@@ -104,13 +105,13 @@ export default class EmploymentQuestions extends Component {
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
       employerTitle, phone, email, paid, verification, expenseList,
-      restaurant, commission, tipping, comProcedure, responsibilities
+      restaurant, commission, tipping, comProcedure, responsibilities, competeTime
     } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
       phone, email, paid, verification, expenseList, restaurant,
-      commission, tipping, comProcedure, responsibilities
+      commission, tipping, comProcedure, responsibilities, competeTime
     };
 
     switch (step) {

@@ -104,6 +104,7 @@ export default class LetterIntro extends Component {
               onChange={this.props.handleChange('state')}
             />
           </form>
+          <br />
           <button class='next' onClick={this.next}>Next </button>
         </div>
         <div class='col right'>

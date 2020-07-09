@@ -27,6 +27,13 @@ export default class InternshipInfo2 extends Component {
 
         <div class='col height'>
 
+          <form onChange={this.props.handleChange('responsibilities')}>
+            <p>What are the job responsibilities?</p>
+            <textarea name="message" rows="5" cols="30"></textarea>
+
+          </form>
+          <br />
+
           <form>
             <p>Enter the intern's status: </p>
             <input
@@ -45,12 +52,12 @@ export default class InternshipInfo2 extends Component {
           <form>
             <p>Is this a paid internship?</p>
             <input
-              type='radio' id="yes" name="pay" value="Yes"
+              type='radio' id="yes" name="pay" value="Yes" checked={values.paid === 'Yes'}
               onChange={this.props.handleChange('paid')}
             />
             <label for="yes"> Yes </label><br />
             <input
-              type='radio' id="no" name="not" value="No"
+              type='radio' id="no" name="not" value="No" checked={values.paid === 'No'}
               onChange={this.props.handleChange('paid')}
             />
             <label for="no"> No </label><br />
@@ -89,14 +96,15 @@ export default class InternshipInfo2 extends Component {
               type='radio' id="true" name="cred" value="True"
               onChange={this.props.handleChange('credits')}
             />
-            <label for="true"> True </label><br />
+            <label for="true"> Yes </label><br />
             <input
               type='radio' id="false" name="cred" value="False"
               onChange={this.props.handleChange('credits')}
             />
-            <label for="false"> False </label><br />
+            <label for="false"> No </label><br />
 
           </form>
+          <br />
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>

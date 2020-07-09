@@ -26,6 +26,12 @@ export default class Document extends Component {
       creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
 
 
+    const paidCheck = values.paid === 'Yes'
+    let wageRequire = ''
+    if (paidCheck) {
+      wageRequire = 'Base Wage: ' + values.wage
+    }
+
     const competeCheck = values.compete == 'Yes'
     var competeRequire = 'No Non-Compete Clause.'
     if (competeCheck)
@@ -33,7 +39,7 @@ export default class Document extends Component {
 
     const sickCheck = values.state == 'California'
     var sickRequire = ''
-    if (sickCheck)
+    if (sickCheck && paidCheck)
       sickRequire = 'California Notice of Required Pay and Sick Leave: ' + values.sick
 
     const verify = values.verification == 'Yes'
@@ -115,18 +121,19 @@ export default class Document extends Component {
         <p><span class='fill'>{values.address}</span></p>
         <p> Dear <span class='fill'>{values.internName}</span>,</p>
         <p>Welcome to the team!</p>
-        <p>It is our pleasure to extend the following offer of internship to you on behalf of <span class='fill'>{values.companyName}</span> (the “Company”).
-        As explained below, this offer of internship with the Company is as an at-will internship and it is conditioned upon
-        the satisfactory completion of certain requirements.  Internship with the Company is conditioned upon the terms and
-        conditions in this letter.  You also agree that you are relying on no prior representations or agreements, written or
-        oral, other than those expressly contained in this letter.  The validity, interpretation, construction and performance of
-        this offer letter shall be governed by the laws of the State of <span class='fill'>{values.state}</span>  without regard to conflicts of laws
-        principals.</p>
+        <p>It is our pleasure to extend the following offer of internship to you on behalf of <span class='fill'>{values.companyName}</span> (the “Company”) and <span class='fill'>{values.internName}</span> (“Intern”).
+        As explained below, this offer of internship with the Company is as an at-will internship and is conditioned upon
+        the satisfactory completion of certain requirements.  Internship with the Company is conditioned upon
+        the terms and conditions in this letter.  You also agree that you are relying on no prior
+        representations or agreements, written or oral, other than those expressly contained in this letter.
+         The validity, interpretation, construction and performance of this offer letter shall be governed by
+         the laws of the State of <span class='fill'>{values.state}</span>  without regard to conflicts of laws principles.
+        </p>
         <p> Title:  <span class='fill'>{values.title}</span> </p>
         <p> Duties:  <span class='fill'>{values.duties} </span></p>
         <p> Reporting Relationship: <span class='fill'>{values.relationship}</span> </p>
         <p>Start Date: <span class='fill'>{formattedStartDate}</span></p>
-        <p>Base Wage: <span class='fill'>{values.wage}</span>  </p>
+        <p>{wageRequire}</p>
         <p>Hours: <span class='fill'>{values.hours}</span></p>
         <p>Status: <span class='fill'>{values.status}</span> </p>
         <p>At-Will Employment: Yes </p>
@@ -138,7 +145,8 @@ export default class Document extends Component {
         <br /><br />
         <div id='container'>
 
-          <h5 class='indoc'>1. Internship Description. [Job Responsibilities]</h5>
+          <h5 class='indoc'>1. Internship Description.</h5>
+          <p>{values.responsibilities}</p>
           <p class='tab'>i. Educational Environment.
           <br /><br />
             <p class='tab'>This internship is for the educational benefit of <span class='fill'>{values.internName}</span>. {creditRequire} <span class='fill'>{values.internName}</span> will be the primary beneficiary of this internship.</p></p >
@@ -151,9 +159,9 @@ export default class Document extends Component {
 
           <h5 class='indoc'>2. Directives, Policies and Procedures. </h5>
           <p>Employment is conditioned upon continued adherence to the directives, policies and procedures of the Company.
-          As an employee you are expected to comply with the directives of your Manager as well as the policies and procedures that the
-          Company puts in place.  Policies and procedures can include, but are not limited to, the contents of an employee handbook or
-              employee training manual.  These policies and procedures may be modified at any time.</p>
+          As an intern you are expected to comply with the directives of your Manager as well as the policies and procedures that the
+          Company puts in place.  Policies and procedures can include, but are not limited to, the contents of anemployee or intern handbook or employee or intern training manual.
+          These policies and procedures may be modified at any time.</p>
 
           <h5 class='indoc'>{verifyRequire} </h5>
           <p>{verifyRequire2}</p>
@@ -184,21 +192,21 @@ export default class Document extends Component {
           <p>{liabilityRequire2}</p>
 
           <h5 class='indoc'>{breach} </h5>
-          <p><span class='fill'>{values.internName}</span> by signing this agreement, represents and warrants to Company that by
-            accepting employment with the Company <span class='fill'>{values.internName}</span> will not breach their continuing obligations to a
-            former employee and that they have not removed any confidential or proprietary information from
+          <p>Intern, by signing this agreement, represents and warrants to Company that by
+          accepting employment with the Company, Intern will not breach their continuing obligations to a
+          former employee and that they have not removed any confidential or proprietary information from
             their former employee and will not use such information at the Company.</p>
 
           <h5 class='indoc'>{atwill}</h5>
-          <p>All interns are “employees at will”.  This means that an intern may terminate
+          <p>All interns are :interns at will”.  This means that an intern may terminate
           internship at any time, for any reason.  The Company may also terminate the intern,
               with or without cause, for any reason.</p>
 
           <h5 class='indoc'>{conf} </h5>
-          <p>As a condition of employment <span class='fill'>{values.internName}</span> must refrain from using or disclosing trade-secrets or confidential information of the Company or
-             its clients.  This includes files and information of both the client and Company, marketing
-             data, financial information, forms and samples and any other materials related to the Company or
-             its clients. <br /><br />After the employment relationship between <span class='fill'>{values.internName}</span> and the Company has ended, <span class='fill'>{values.internName}</span> agrees that trade secrets will not be used to solicit any clients or employees of the Company.
+          <p>As a condition of internship, Intern must refrain from using or disclosing trade-secrets or confidential information of the Company or
+          its clients.  This includes files and information of both the client and Company, marketing
+          data, financial information, forms and samples and any other materials related to the Company or
+             its clients. <br /><br />After the employment relationship between Intern and the Company has ended, <span class='fill'>{values.internName}</span> agrees that trade secrets will not be used to solicit any clients or employees of the Company.
              <br /><br />All Company trade secrets and confidential information will be returned upon the termination of the
              employment relationship.</p>
 
@@ -212,7 +220,7 @@ export default class Document extends Component {
           <p class='tab'>i. INTEGRATION.
           <br /><br />
             <p class='tab'>This offer letter contains the entire understanding between the Company
-                  and  <span class='fill'>{values.internName}</span>.  This letter supersedes any prior representations or understandings, written or oral.</p>
+                  and Intern.  This letter supersedes any prior representations or understandings, written or oral.</p>
           </p>
           <p class='tab'>ii. GOVERNING LAW.
           <br /><br />
@@ -222,14 +230,14 @@ export default class Document extends Component {
           <p class='tab'>iii. ASSIGNMENT, SUCCESSORS AND ASSIGNS.
           <br /><br />
             <p class='tab'>  The rights bestowed upon <span class='fill'>{values.internName}</span> in this agreement are personal
-                to <span class='fill'>{values.internName}</span> and shall not be effective upon any assignment or successors in interest.  Any
+                to Intern and shall not be effective upon any assignment or successors in interest.  Any
                 attempted assignment of this agreement shall be null and void.
                 </p>
           </p>
           <p class='tab'>iv. SEVERABILITY.
           <br /><br />
             <p class='tab'>If one or more provisions of this agreement are deemed void or
-            unenforceable such provision shall nevertheless be enforced to the fullest extent
+            unenforceable, such provision shall nevertheless be enforced to the fullest extent
             possible by law and the force and validity of the remainder of the agreement shall still be in effect.
           </p>
           </p>
