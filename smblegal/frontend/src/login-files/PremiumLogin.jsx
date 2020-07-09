@@ -27,6 +27,7 @@ export default class PremiumLogin extends Component {
     users: "[USERS PLACEHOLDER]", 
     lastMeeting: "[LAST MEETING PLACEHOLDER]", 
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
+    companyType: "[COMPANY TYPE]",
 
   }
 
@@ -38,7 +39,8 @@ export default class PremiumLogin extends Component {
         companyName, 
         users, 
         lastMeeting, 
-        nextMeeting
+        nextMeeting, 
+        companyType
       } = this.state
 
         return (
@@ -111,9 +113,9 @@ export default class PremiumLogin extends Component {
           </center>
           <br />
           < br/>
-          
 
-          <center> <Link to="/GovernanceDashboard"> <button class="dashboard-button"> Governance Dashboard </button> </Link> </center>
+
+          <center> <Link to="/GovernanceDashboard"> <button class="dashboard-button"> GOVERNANCE DASHBOARD </button> </Link> </center>
 
           <br />
           <br />

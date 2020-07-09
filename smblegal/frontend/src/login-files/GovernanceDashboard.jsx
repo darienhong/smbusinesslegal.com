@@ -98,6 +98,7 @@ export default class GovernanceDashboard extends Component {
 
       } = this.state
 
+
         return (
           <div class="full-page">
             <div class="homepage-login"> 

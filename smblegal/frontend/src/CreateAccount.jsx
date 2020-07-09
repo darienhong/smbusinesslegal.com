@@ -298,14 +298,6 @@ export default function CreateAccount() {
     companyId: 0
   })
 
-  const handleAgree = e => {
-    setAgree(true);
-  }
-
-  const handleDisagree = e => {
-    setAgree(false);
-  }
-
   const showModal = e => {
     setShow(true);
   }
@@ -1240,8 +1232,6 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                   </div>
 
                 )}
-
-
 
               </div>
 
