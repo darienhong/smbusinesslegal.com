@@ -22,17 +22,20 @@ export default class ShareholderResolutionDocument extends Component {
 
     let numberCheck = values.number === 'Multiple'
     let title = 'SOLE SHAREHOLDER          '
-    let para = 'ALL'
+    let para = 'the sole '
     let share = 'shareholder'
+    let share2 = 'does'
     if (numberCheck) {
       title = 'SHAREHOLDERS'
-      para = 'A QUORUM'
+      para = 'A QUORUM of the '
       share = 'shareholders'
+      share2 = 'do'
       if (unanimousCheck) {
-        para = 'ALL'
+        para = 'ALL of the '
       }
     }
     let upperShare = share.toUpperCase()
+
 
     var misc = 'Miscellaneous'
     return (
@@ -42,7 +45,7 @@ export default class ShareholderResolutionDocument extends Component {
             {values.companyName} <br /> A {values.state} CORPORATION</h5>
           <br />
         </center>
-        <p>The undersigned, being {para} of the {share} of {values.companyName} Corporation, a {values.state} corporation (the “Company”), do hereby adopt the
+        <p>The undersigned, being {para} {share} of {values.companyName} Corporation, a {values.state} corporation (the “Company”), do hereby adopt the
         following resolutions and direct that this written resolution be filed with the minutes of the
         proceedings of the Company:
         </p>
@@ -77,7 +80,7 @@ export default class ShareholderResolutionDocument extends Component {
           RESOLVED, that all acts are taken above, and the resolutions are approved, ratified
           and adopted. The undersigned, by affixing their signature hereto, does hereby determine
           and report that notice of the meeting was properly given or waived by the shareholders
-          and that a quorum was present in accordance with the bylaws. The {upperShare} do hereby consent to, vote in favor of and approve the foregoing
+          and that a quorum was present in accordance with the bylaws. The {upperShare} {share2} hereby consent to, vote in favor of and approve the foregoing
           resolutions in their capacity as {upperShare} of the Company and
           waive any and all requirements of notice.
         </p>

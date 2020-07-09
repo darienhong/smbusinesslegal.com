@@ -74,8 +74,7 @@ export default class ShareholderMinutesDocument extends Component {
 
         </center>
         <p>
-          {values.chair}, {values.position} of the corporation, acted as Chair and presided over the meeting and {values.secretary},
-          Secretary of the corporation, acted as the secretary of the meeting.
+          {values.chair}, {values.position} of the corporation, acted as Chair and presided over the meeting and {values.secretary}, {values.secPosition} of the corporation, acted as the secretary of the meeting.
         </p>
         <center>
           <h6 class='indoc'>Notice</h6>

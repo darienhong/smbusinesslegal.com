@@ -31,7 +31,8 @@ export default class BoardMinutesQuestions extends Component {
     present: '',
     presence: [{ person: "" }],
     inPerson: '',
-    electronic: ''
+    electronic: '',
+    secPosition: '[X]'
 
   }
 
@@ -109,7 +110,8 @@ export default class BoardMinutesQuestions extends Component {
       directors,
       presence,
       inPerson,
-      electronic
+      electronic,
+      secPosition
 
     } = this.state;
     const values = {
@@ -128,7 +130,8 @@ export default class BoardMinutesQuestions extends Component {
       directors,
       presence,
       inPerson,
-      electronic
+      electronic,
+      secPosition
 
     };
 

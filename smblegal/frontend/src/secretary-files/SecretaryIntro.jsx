@@ -73,17 +73,17 @@ export default class SecretaryIntro extends Component {
           <form>
             <p>How were the bylaws adopted?</p>
             <input
-              type='radio' id="inc" name="inc" value="Incorporator"
+              type='radio' id="inc" name="inc" value="Incorporator" checked={values.adopted === 'Incorporator'}
               onChange={this.props.handleChange('adopted')}
             />
             <label for="inc"> Incorporator </label><br />
             <input
-              type='radio' id="share" name="share" value="Shareholders"
+              type='radio' id="share" name="share" value="Shareholders" checked={values.adopted === 'Shareholders'}
               onChange={this.props.handleChange('adopted')}
             />
             <label for="share"> Shareholders </label><br />
             <input
-              type='radio' id="board" name="board" value="Board of Directors"
+              type='radio' id="board" name="board" value="Board of Directors" checked={values.adopted === 'Board of Directors'}
               onChange={this.props.handleChange('adopted')}
             />
             <label for="board"> Board of Directors </label><br />

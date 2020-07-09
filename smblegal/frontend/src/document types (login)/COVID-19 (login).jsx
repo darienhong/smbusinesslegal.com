@@ -18,46 +18,46 @@ export default class Covid_19Login extends Component {
     render() {
         return (
             <div class="full-page">
-            <div class="covid-19-doc-page">
-                <Navbar2 />
-                <br></br>
-                <br></br>
-                <br></br>
-                <div class="back-button" style={{ paddingLeft: "20px", paddingTop: "5px" }}>
-                    <Link to="/HomepageLogin" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
-                </div>
-                <br></br>
-                <br></br>
-                <h1 style={{ color: "#245CA6" }}> COVID-19 </h1>
-                <br></br>
-                <div style={{ textAlign: "center" }}>
-                    <svg height={50} width={400}>
-                        <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
-                    </svg>
-                </div>
-                <p class="pick-document"> Choose a document to draft </p>
-                <br></br>
-                <br></br>
-                <div class="formation-documents">
+                <div class="covid-19-doc-page">
+                    <Navbar2 />
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div class="back-button" style={{ paddingLeft: "20px", paddingTop: "5px" }}>
+                        <Link to="/Dashboard" style={{ color: "black", textDecoration: "none" }}> <ArrowBackIosIcon className="back-button" /></Link>
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <h1 style={{ color: "#245CA6" }}> COVID-19 </h1>
+                    <br></br>
+                    <div style={{ textAlign: "center" }}>
+                        <svg height={50} width={400}>
+                            <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
+                        </svg>
+                    </div>
+                    <p class="pick-document"> Choose a document to draft </p>
+                    <br></br>
+                    <br></br>
+                    <div class="formation-documents">
 
-                    <div class="document-icon"><Link to="/CovidRentQuestions">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> California Covid-19 Notice of Inability to Pay Rent </p>
-                    </Link>
+                        <div class="document-icon"><Link to="/CovidRentQuestions">
+                            <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
+                            <p> California Covid-19 Notice of Inability to Pay Rent </p>
+                        </Link>
+                        </div>
+
+                        <div class="document-icon"><Link to="/WFHQuestions">
+                            <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
+                            <p> Work From Home Policy </p>
+                        </Link>
+                        </div>
+
                     </div>
 
-                    <div class="document-icon"><Link to="/WFHQuestions">
-                        <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
-                        <p> Work From Home Policy </p>
-                    </Link>
-                    </div>
-
+                    <br />
+                    <br />
+                    <br />
                 </div>
-
-                <br />
-                <br />
-                <br />
-                </div> 
                 <Footer />
 
 

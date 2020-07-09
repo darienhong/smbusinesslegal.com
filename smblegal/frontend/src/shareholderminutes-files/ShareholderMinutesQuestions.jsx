@@ -34,7 +34,8 @@ export default class ShareholderMinutesQuestions extends Component {
     notice: '',
     outstanding: '[X]',
     represented: '[X]',
-    reason: ''
+    reason: '',
+    secPosition: '[X]'
 
   }
 
@@ -110,7 +111,8 @@ export default class ShareholderMinutesQuestions extends Component {
       notice,
       outstanding,
       represented,
-      reason
+      reason,
+      secPosition
 
 
     } = this.state;
@@ -134,7 +136,8 @@ export default class ShareholderMinutesQuestions extends Component {
       notice,
       outstanding,
       represented,
-      reason
+      reason,
+      secPosition
 
     };
 

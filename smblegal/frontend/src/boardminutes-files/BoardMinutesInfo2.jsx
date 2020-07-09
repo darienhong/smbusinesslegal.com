@@ -52,10 +52,18 @@ export default class BoardMinutesInfo2 extends Component {
           <br />
 
           <form>
-            <p>Who is the secretary?</p>
+            <p>Who acted as the secretary?</p>
             <input
               type='text'
               onChange={this.props.handleChange('secretary')}
+            />
+          </form>
+          <br />
+          <form>
+            <p>What is their position in the company?</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('secPosition')}
             />
           </form>
           <br />

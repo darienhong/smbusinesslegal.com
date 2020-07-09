@@ -55,12 +55,12 @@ export default class BoardMinutesIntro extends Component {
           <form>
             <p>Is this an annual or special meeting?</p>
             <input
-              type='radio' id="annual" name="annual" value="Annual"
+              type='radio' id="annual" name="annual" value="Annual" checked={values.type === 'Annual'}
               onChange={this.props.handleChange('type')}
             />
             <label for="inc"> Annual </label><br />
             <input
-              type='radio' id="special" name="special" value="Special"
+              type='radio' id="special" name="special" value="Special" checked={values.type === 'Special'}
               onChange={this.props.handleChange('type')}
             />
             <label for="share"> Special </label><br />

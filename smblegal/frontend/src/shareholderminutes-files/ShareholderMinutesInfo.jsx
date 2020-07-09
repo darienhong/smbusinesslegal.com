@@ -28,7 +28,7 @@ export default class ShareholderMinutesInfo extends Component {
     const { values } = this.props;
     return (
       <div class='ask'>
-        <Navbar2/>
+        <Navbar2 />
 
         {/* <Progress percent={values.percentage} indicating /> */}
         <div class='col height'>
@@ -64,7 +64,7 @@ export default class ShareholderMinutesInfo extends Component {
                 let nameId = `name-${idx}`
                 return (
                   <div key={idx}>
-                    <label htmlFor={nameId}>Name of Director </label>
+                    <label htmlFor={nameId}>Name of Shareholder </label>
                     <input
                       type="text"
                       name={nameId}
