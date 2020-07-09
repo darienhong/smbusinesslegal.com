@@ -85,17 +85,7 @@ app.post('/createAccount', function (req, res) {
   let no_users = 0;
   if (plan === 'Existing Plan') {
     console.log('went into if');
-    client.query('SELECT no_users from public.company_table where company_id=$1',
-      [compId], function (err, result) {
-        if (err) {
-          console.log(err);
-          res.sendStatus(500);
-          return;
-        }
-        users = (result.rows[0].no_users);
-        no_users = users + 1;
-        return res.send('successfully');
-      });
+
     client.query('INSERT INTO "public"."user_table" ("company_id", "first_name","last_name","email","password","plan_type", "date_created") VALUES($1, $2, $3, $4, $5, $6, $7)',
       [compId, firstName, lastName, email, password, plan, dateCreated], function (err, result) {
         if (err) {
@@ -103,43 +93,63 @@ app.post('/createAccount', function (req, res) {
           res.sendStatus(500);
           return;
         }
-        return res.json(result);
+        console.log('adding user');
+        // return res.json(result);
       });
 
-    // client.query('INSERT INTO "public"."company_table" ("no_users") VALUES($1)',
-    //   [(no_users)], function (err, result) {
-    //     if (err) {
-    //       console.log(err);
-    //       res.sendStatus(500);
-    //       return;
-    //     }
-    //     return res.json(result);
-    //   });
-
+    client.query('UPDATE "public"."company_table" SET no_users = no_users + 1 WHERE company_id = $1', [compId],
+      function (err, result) {
+        if (err) {
+          console.log('there is an error');
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        }
+        console.log('updating users');
+        console.log(result);
+        // return res.send('successfully');
+      });
   }
+  else {
 
-  // client.query("SELECT setval('user_table_user_id_seq', (SELECT MAX(user_id) FROM user_table)+1)");
+    client.query('INSERT INTO "public"."company_table" ("company_name", "company_type","state","no_docs_used","company_zip","no_users") VALUES($1, $2, $3, $4, $5, $6)',
+      [comp, company, usstate, 0, zip, (no_users + 1)], function (err, result) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        }
+        // return res.json(result);
+      });
 
-  client.query('INSERT INTO "public"."company_table" ("company_name", "company_type","state","no_docs_used","company_zip","no_users") VALUES($1, $2, $3, $4, $5, $6)',
-    [comp, company, usstate, 0, zip, (no_users + 1)], function (err, result) {
-      if (err) {
-        console.log(err);
-        res.sendStatus(500);
-        return;
-      }
-      return res.json(result);
-    });
 
-  client.query('INSERT INTO "public"."user_table" ("first_name","last_name","email","password","plan_type", "date_created") VALUES($1, $2, $3, $4, $5, $6)',
-    [firstName, lastName, email, password, plan, dateCreated], function (err, result) {
-      if (err) {
-        console.log(err);
-        res.sendStatus(500);
-        return;
-      }
-      return res.json(result);
-    });
 
+    client.query('SELECT company_id from "public"."company_table" where company_name = $1',
+      [comp], function (err, result) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        }
+        console.log(result);
+        let get_id = (result.rows[0].company_id);
+        console.log(get_id);
+        client.query('INSERT INTO "public"."user_table" ("company_id", "first_name","last_name","email","password","plan_type", "date_created") VALUES($1, $2, $3, $4, $5, $6, $7)',
+          [get_id,
+
+            firstName, lastName, email, password, plan, dateCreated], function (err, result) {
+              if (err) {
+                console.log(err);
+                res.sendStatus(500);
+                return;
+              }
+              console.log('in here!');
+              // return res.json(result);
+            });
+        // return res.send('successfully');
+
+      })
+  }
 
 });
 
@@ -158,7 +168,6 @@ app.post('/getUser', function (req, res) {
         //   "failed": "error ocurred"
         // })
       } else {
-        console.log(results);
         if (results.rowCount > 0) {
           const comparison = password === (results.rows[0].password);
           if (comparison) {

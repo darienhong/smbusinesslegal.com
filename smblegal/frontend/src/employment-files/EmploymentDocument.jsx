@@ -260,18 +260,18 @@ export default class EmploymentDocument extends Component {
           </p>
 
           <h5 class='indoc'>{misc}</h5>
-          <p class='tab'>i. INTEGRATION.
+          <p class='tab'>a. INTEGRATION.
           <br /><br />
             <p class='tab'>This offer letter contains the entire understanding between the
             Company and Employee. This letter supersedes any prior representations or
             understandings, written or oral.</p>
           </p>
-          <p class='tab'>ii. GOVERNING LAW.
+          <p class='tab'>b. GOVERNING LAW.
           <br /><br />
             <p class='tab'>The validity, interpretation, construction and performance of this offer
             letter shall be governed by the laws of the State of <span class='fill'>{values.state}</span> without regard to conflicts of laws principals.</p>
           </p>
-          <p class='tab'>iii. ASSIGNMENT, SUCCESSORS AND ASSIGNS.
+          <p class='tab'>c. ASSIGNMENT, SUCCESSORS AND ASSIGNS.
           <br /><br />
             <p class='tab'>  The rights bestowed upon
             Employee in this agreement are personal to Employee and shall not be effective
@@ -279,7 +279,7 @@ export default class EmploymentDocument extends Component {
             this agreement shall be null and void.
                 </p>
           </p>
-          <p class='tab'>iv. SEVERABILITY.
+          <p class='tab'>d. SEVERABILITY.
           <br /><br />
             <p class='tab'>If one or more provisions of this agreement are deemed void or
             unenforceable such provision shall nevertheless be enforced to the fullest extent
@@ -287,7 +287,7 @@ export default class EmploymentDocument extends Component {
             shall still be in effect.
           </p>
           </p>
-          <p class='tab'> v. COUNTERPARTS.
+          <p class='tab'> e. COUNTERPARTS.
           <br /><br />
             <p class='tab'>
               This agreement may be executed in counterparts each of
