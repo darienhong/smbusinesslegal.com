@@ -32,17 +32,22 @@ export default class HomepageLogin extends Component {
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     USState: "[STATE PLACEHOLDER]",
     company: [],
+    email: localStorage.getItem('email'),
 
   }
 
  componentDidMount() {
+
+ // const data = {
+   // email: this.state.email,
+ // }
+
     var that = this;
       fetch('/getcompanyInfo', {
         method: 'GET',
-   //     body: JSON.stringify(data), // data can be `string` or {object}!
+     //   body: JSON.stringify(data), // data can be `string` or {object}!
       //  headers: { 'Content-Type': 'application/json' }
       })
-
         .then(function(response){
           response.json()
             .then(function(data) {
@@ -56,20 +61,11 @@ export default class HomepageLogin extends Component {
               })
             })
         })
-
- 
         .then(res => res.json())
-     
-        .then(company => console.warn(company))
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
   
     }
-
-   
-
-    
-
 
     render() {
       const { 
