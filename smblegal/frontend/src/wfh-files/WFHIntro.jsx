@@ -56,7 +56,7 @@ export default class WFHIntro extends Component {
 
 
           <form>
-            <p>What is your position of working from home?</p>
+            <p>Please describe your company’s <br /> work from home policy: </p>
             <input
               type='text'
               onChange={this.props.handleChange('wfh')}

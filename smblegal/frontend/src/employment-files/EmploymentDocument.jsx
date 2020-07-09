@@ -38,15 +38,15 @@ export default class EmploymentDocument extends Component {
 
     var background = '4. Background and Reference Check.'
 
-    const expensesCheck = values.expenses == 'Yes'
+    const expensesCheck = values.expenses === 'Yes'
     var expensesRequire = ''
     var expensesRequire2 = ''
 
-    const liablilityCheck = values.liability == 'Yes'
+    const liablilityCheck = values.liability === 'Yes'
     var liabilityRequire = ''
     var liabilityRequire2 = ''
 
-    const competeCheck = values.compete == 'Yes'
+    const competeCheck = values.compete === 'Yes'
     var competeRequire = ''
     var competeRequire2 = ''
 
@@ -86,7 +86,7 @@ export default class EmploymentDocument extends Component {
 
           if (competeCheck) {
             competeRequire = '11. Non-Compete'
-            competeRequire2 = 'Employee agrees that as a condition of employment Employee will not engage in a directly competing enterprise for [X months or years] following the termination of the employment relationship between Employee and the Company.'
+            competeRequire2 = 'Employee agrees that as a condition of employment Employee will not engage in a directly competing enterprise for ' + values.competeTime + ' following the termination of the employment relationship between Employee and the Company.'
             var inv = '12. Invention Assignment.'
             var misc = '13. Miscellaneous'
           }
@@ -112,7 +112,7 @@ export default class EmploymentDocument extends Component {
         var misc = '11. Miscellaneous'
         if (competeCheck) {
           competeRequire = '10. Non-Compete'
-          competeRequire2 = 'Employee agrees that as a condition of employment Employee will not engage in a directly competing enterprise for [X months or years] following the termination of the employment relationship between Employee and the Company.'
+          competeRequire2 = 'Employee agrees that as a condition of employment Employee will not engage in a directly competing enterprise for ' + values.competeTime + ' following the termination of the employment relationship between Employee and the Company.'
           var inv = '11. Invention Assignment.'
           var misc = '12. Miscellaneous'
         }
@@ -129,14 +129,15 @@ export default class EmploymentDocument extends Component {
       var misc = '10. Miscellaneous'
       if (competeCheck) {
         competeRequire = '9. Non-Compete'
-        competeRequire2 = 'Employee agrees that as a condition of employment Employee will not engage in a directly competing enterprise for [X months or years] following the termination of the employment relationship between Employee and the Company.'
+        competeRequire2 = 'Employee agrees that as a condition of employment Employee will not engage in a directly competing enterprise for ' + values.competeTime + ' following the termination of the employment relationship between Employee and the Company.'
         var inv = '10. Invention Assignment.'
         var misc = '11. Miscellaneous'
       }
     }
     else if (competeCheck) {
+      console.log(values.competeTime);
       competeRequire = '8. Non-Compete'
-      competeRequire2 = 'Employee agrees that as a condition of employment Employee will not engage in a directly competing enterprise for [X months or years] following the termination of the employment relationship between Employee and the Company.'
+      competeRequire2 = 'Employee agrees that as a condition of employment Employee will not engage in a directly competing enterprise for ' + values.competeTime + ' following the termination of the employment relationship between Employee and the Company.'
       var inv = '9. Invention Assignment.'
       var misc = '10. Miscellaneous'
     }
@@ -174,7 +175,7 @@ export default class EmploymentDocument extends Component {
         <br /><br />
         <div id='container'>
 
-          <h5 class='indoc'>1. Employment Description. </h5>
+          <h5 class='indoc'>1. Employee Job Description. </h5>
           <p>{values.responsibilities}</p>
 
           <br />
@@ -268,8 +269,7 @@ export default class EmploymentDocument extends Component {
           <p class='tab'>ii. GOVERNING LAW.
           <br /><br />
             <p class='tab'>The validity, interpretation, construction and performance of this offer
-            letter shall be governed by the laws of the State of
-            <span class='fill'>{values.state}</span> without regard to conflicts of laws principals.</p>
+            letter shall be governed by the laws of the State of <span class='fill'>{values.state}</span> without regard to conflicts of laws principals.</p>
           </p>
           <p class='tab'>iii. ASSIGNMENT, SUCCESSORS AND ASSIGNS.
           <br /><br />

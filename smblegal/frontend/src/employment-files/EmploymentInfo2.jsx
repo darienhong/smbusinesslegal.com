@@ -139,6 +139,20 @@ export default class EmploymentInfo2 extends Component {
             <label for="no"> No </label><br />
 
           </form>
+          <br />
+
+          {(values.compete === 'Yes') && (
+            <div>
+              <form>
+                <p>How long should the non-compete provision last?</p>
+                <input
+                  type='text'
+                  onChange={this.props.handleChange('competeTime')}
+                />
+              </form>
+              <br />
+            </div>
+          )}
 
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
