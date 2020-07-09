@@ -194,6 +194,23 @@ app.post('/getUser', function (req, res) {
 
 });
 
+
+app.get('/getCompanyInfo', function(req, res) {
+  client.query('SELECT * FROM public.company_table where company_id=1', function(error, table) {
+
+    if (error){
+      throw error;
+    } else {
+      console.log(table);
+      res.send(table.rows);
+      res.send()
+    }
+  });
+
+});
+
+
+
 // client.end();
 // client.query('SELECT NOW()', (err, res) => {
 //   console.log(err, res)

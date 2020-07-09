@@ -1228,15 +1228,10 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                         </center>
 
                       </form>)}
-
                   </div>
-
                 )}
-
               </div>
-
             </form>
-
           )}
 
           <br />

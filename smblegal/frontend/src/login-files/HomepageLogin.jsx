@@ -9,6 +9,7 @@ import Navbar from '../components/nav-bar.jsx';
 import Navbar2 from '../components/nav-bar2.jsx';
 import AOS from 'aos';
 import Footer from '../components/footer.jsx';
+import axios from 'axios';
 
 import {
     BrowserRouter as Router,
@@ -17,28 +18,68 @@ import {
     Link
   } from "react-router-dom";
   import ReactGA from 'react-ga';
+import { ResponsiveEmbed } from 'react-bootstrap';
+import { SearchResults } from 'semantic-ui-react';
 
 
 export default class HomepageLogin extends Component { 
 
-
   state = {
     companyName: "[COMPANY NAME PLACEHOLDER]",
+    companyType: "[COMPANY TYPE PLACEHOLDER]",
     users: "[USERS PLACEHOLDER]", 
     lastMeeting: "[LAST MEETING PLACEHOLDER]", 
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
+    USState: "[STATE PLACEHOLDER]",
+    company: [],
 
   }
 
+ componentDidMount() {
+    var that = this;
+      fetch('/getcompanyInfo', {
+        method: 'GET',
+   //     body: JSON.stringify(data), // data can be `string` or {object}!
+      //  headers: { 'Content-Type': 'application/json' }
+      })
+
+        .then(function(response){
+          response.json()
+            .then(function(data) {
+              console.log(data);
+              that.setState({
+                company: data,
+                companyName: data[0].company_name,
+                companyType: data[0].company_type,
+                USState: data[0].state,
+
+              })
+            })
+        })
+
+ 
+        .then(res => res.json())
+     
+        .then(company => console.warn(company))
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+  
+    }
+
+   
+
+    
+
 
     render() {
-
-
       const { 
         companyName, 
         users, 
         lastMeeting, 
-        nextMeeting
+        nextMeeting,
+        company,
+        companyType,
+        USState
       } = this.state
 
         return (
@@ -61,11 +102,26 @@ export default class HomepageLogin extends Component {
             <br />
           <br /> 
           <br />
+
+
+          <div>
+           {JSON.stringify(company)}
+           {company.map(comp =>  <li> {comp.company_name} {comp.state} {comp.company_type} </li>  )}
+            </div> 
+
           <center> 
     <div style={{width: "80%", height: "400px", justifyContent: "center"}}> 
           <div class="company-info" style={{width: "400px", float: "left", textAlign: "left"}}> 
               <div class="name"> 
                   {companyName}
+              </div>
+              <br />
+              <div class="type">
+                {companyType}
+              </div>
+              < br/>
+              <div class="US State"> 
+              {USState}
               </div>
               <br />
               <div class="users"> 
