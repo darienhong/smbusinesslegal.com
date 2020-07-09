@@ -47,7 +47,7 @@ export default class EmploymentQuestions extends Component {
     commission: '[X]',
     comProcedure: '[X]',
     tipping: '[X]',
-    responsibilities: '[X]',
+    responsibilities: '[JOB RESPONSIBILITIES]',
     competeTime: '[X months or years]'
   }
 
