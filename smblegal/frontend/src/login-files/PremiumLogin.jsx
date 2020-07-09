@@ -28,8 +28,42 @@ export default class PremiumLogin extends Component {
     lastMeeting: "[LAST MEETING PLACEHOLDER]", 
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     companyType: "[COMPANY TYPE]",
+    USState: "[STATE PLACEHOLDER]",
 
   }
+
+  componentDidMount() {
+    var that = this;
+      fetch('/getcompanyInfo', {
+        method: 'GET',
+   //     body: JSON.stringify(data), // data can be `string` or {object}!
+      //  headers: { 'Content-Type': 'application/json' }
+      })
+
+        .then(function(response){
+          response.json()
+            .then(function(data) {
+              console.log(data);
+              that.setState({
+                company: data,
+                companyName: data[0].company_name,
+                companyType: data[0].company_type,
+                USState: data[0].state,
+
+              })
+            })
+        })
+
+ 
+        .then(res => res.json())
+     
+        .then(company => console.warn(company))
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+  
+    }
+
+   
 
 
     render() {
@@ -40,7 +74,8 @@ export default class PremiumLogin extends Component {
         users, 
         lastMeeting, 
         nextMeeting, 
-        companyType
+        companyType,
+        USState
       } = this.state
 
         return (
@@ -70,6 +105,14 @@ export default class PremiumLogin extends Component {
                   {companyName}
               </div>
               <br />
+              <div class="type">
+                {companyType}
+              </div>
+              < br/>
+              <div class="US State"> 
+              {USState}
+              </div>
+              < br/>
               <div class="users"> 
                   {users}
               </div>

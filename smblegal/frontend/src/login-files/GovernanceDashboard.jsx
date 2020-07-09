@@ -24,7 +24,7 @@ export default class GovernanceDashboard extends Component {
 
   state = {
     companyName: "[COMPANY NAME]",
-    companyType: "Corporation",
+    companyType: "[COMPANY TYPE]",
     companyID: "[COMPANY ID]",
     USstate: "[STATE]", 
     //partnership questions
@@ -60,6 +60,38 @@ export default class GovernanceDashboard extends Component {
 
 
   }
+
+
+  componentDidMount() {
+    var that = this;
+      fetch('/getcompanyInfo', {
+        method: 'GET',
+   //     body: JSON.stringify(data), // data can be `string` or {object}!
+      //  headers: { 'Content-Type': 'application/json' }
+      })
+
+        .then(function(response){
+          response.json()
+            .then(function(data) {
+              console.log(data);
+              that.setState({
+                company: data,
+                companyName: data[0].company_name,
+                companyType: data[0].company_type,
+                USstate: data[0].state,
+
+              })
+            })
+        })
+
+ 
+        .then(res => res.json())
+     
+        .then(company => console.warn(company))
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+  
+    }
 
 
     render() {
