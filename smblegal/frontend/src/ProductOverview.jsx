@@ -39,7 +39,7 @@ export default class ProductOverview extends Component {
             <br /> 
             <br />
 
-            <h4> AUTOMATION </h4>
+            <h4 style={{color: "#245CA6" }}> AUTOMATION </h4>
             <p> Our platform allows a small business to set up a robust apparatus to automate many of their governance, contracting and legal needs.  SMB Legal’s 
                 proprietary set of contracts and automated processes allow small businesses to spend more time on 
                 increasing growth and revenue and less money on lawyers, law firms or expensive software.</p>
@@ -48,7 +48,7 @@ export default class ProductOverview extends Component {
                 Automate the most frustrating parts of your business by using SMB Legal.</p>
             <br /> 
             <br /> 
-            <h4> THE CLOUD </h4>
+            <h4 style={{color: "#245CA6" }}> THE CLOUD </h4>
             <p> Our platform provides a seamless cloud based ecosystem for all of a business's contracts and legal documents.  
                 All stakeholders - owners, employees, lawyers, customers and suppliers - can tap into our resources. </p>
             <p> Studies show that <span style={{color: "#245CA6"}}> 45% </span> of companies wait a week or more to get a document signed and 
@@ -56,7 +56,7 @@ export default class ProductOverview extends Component {
                 Eliminate these problems by bringing your small business into the SMB Legal ecosystem.</p>
             <br />
             <br />
-            <h4> ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING </h4>
+            <h4 style={{color: "#245CA6" }}> ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING </h4>
             <p> Our accessible artificial intelligence and machine learning tools enable the small business owner to
                  get better and quicker insights into all related business documents.  The SMB Legal platform 
                 allows small business stakeholders to analyze incoming documents, systematize contracts, 
