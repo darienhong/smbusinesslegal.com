@@ -298,6 +298,12 @@ export default function CreateAccount() {
     companyId: 0
   })
 
+  React.useEffect(() => { 
+    localStorage.setItem('email', state.email); }, [state.email]);
+  
+
+
+
   const showModal = e => {
     setShow(true);
   }
