@@ -19,15 +19,13 @@ import { Alert } from 'react-alert'
 import StatementDocument from './StatementDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
 import Navbar2 from '../components/nav-bar2.jsx';
+import StripeCheckout from "react-stripe-checkout";
 
 
 
 
 export default class StatementIntro extends Component {
 
-  state = {
-    pay: false,
-  }
 
   next = (e) => {
     e.preventDefault();
@@ -35,14 +33,31 @@ export default class StatementIntro extends Component {
     this.props.nextStep();
   }
 
-  handleClick = (e) => {
-    this.state.pay = true;
+
+  state = {
+    pay: false
   }
 
+  handleClick = (e) => {
+    this.setState({pay: true});
+  }
+
+   onToken = (token) => {
+    fetch('/save-stripe-token', {
+      method: 'POST',
+      body: JSON.stringify(token),
+    }).then(response => {
+      response.json().then(data => {
+        alert(`We are in business, ${data.email}`);
+      });
+    });
+    }
+
+
+
+
   render() {
-    const { 
-      pay
-    } = this.state
+ 
 
     const { values } = this.props;
     return (
@@ -145,7 +160,21 @@ export default class StatementIntro extends Component {
           </form>
           <br />
 
-          <button class='next' onClick={this.next}>Next </button>
+             {/* PAYMENTS BELOW */}
+             <br />          
+          <StripeCheckout 
+            stripeKey={process.env.REACT_APP_PUBLIC_KEY}
+            token={this.onToken}
+            name="Premium Subscription"
+            amount={5 * 100}
+            billingAddress
+            closed = {this.handleClick}
+          />
+          <br />
+          {this.state.pay === true && (<button class='next' onClick={this.next}>Next </button>)}
+        {/* PAYMENTS ABOVE */}
+
+   
         </div>
         <div class='col right'>
           <StatementDocument class='doc' values={values} />
