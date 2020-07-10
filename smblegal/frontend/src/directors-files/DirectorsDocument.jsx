@@ -164,52 +164,32 @@ export default class DirectorsDocument extends Component {
             <div class='line'>
               <p class='tab'>Total purchase price</p>
             </div>
-            <div>
-              {
-                (values.purchasersList).map((val, idx) => {
-                  let nameId = `name-${idx}`
-                  return (
-                    <div key={idx}>
-                      <div class='line'>
-                        <p>{(values.purchasersList)[idx]['name']}</p>
-                      </div>
-                      <div class='line'>
-                        <p class='tab2'>{(values.purchasersList)[idx]['shares']}</p>
-                      </div>
-                      <div class='line'>
-                        <p class='tab2'>{(values.purchasersList)[idx]['price']}</p>
-                      </div>
+            <div> */}
+            {
+              (values.purchasersList).map((val, idx) => {
+                let nameId = `name-${idx}`
+                return (
+                  <div key={idx}>
+                    <div class='line'>
+                      <p>Name of Purchaser</p>
 
+                      <p>{(values.purchasersList)[idx]['name']}</p>
+                    </div>
+                    <div class='line'>
+                      <p class='tab3'>Number of shares</p>
+                      <p class='tab3'>{(values.purchasersList)[idx]['shares']}</p>
+                    </div>
+                    <div class='line'>
+                      <p class='tab3'>Total purchase price</p>
+                      <p class='tab3'>{(values.purchasersList)[idx]['price']}</p>
                     </div>
 
-                  )
-                })
-              }
-            </div> */}
-            <table>
-              <tr>
-                <th>Name of purchaser</th>
-                <th>Number of shares</th>
-                <th>Total purchase price</th>
-              </tr>
-              <div>
-                {
-                  (values.purchasersList).map((val, idx) => {
-                    let nameId = `name-${idx}`
-                    return (
-                      <div key={idx}>
-                        <tr>
-                          <td>{(values.purchasersList)[idx]['name']}</td>
-                          <td>{(values.purchasersList)[idx]['shares']}</td>
-                          <td>{(values.purchasersList)[idx]['price']}</td>
-                        </tr>
-                      </div>
+                  </div>
 
-                    )
-                  })
-                }
-              </div>
-            </table>
+                )
+              })
+            }
+
             <p>
               RESOLVED, that the per share purchase price is equal to or in excess of the fair
               market value of the Common Stock on the date of this consent;
@@ -225,7 +205,8 @@ export default class DirectorsDocument extends Component {
               sale of common stock.
             </p>
           </div>
-        )}
+        )
+        }
         <h6 class='indoc'>INCORPORATION EXPENSES</h6>
         <p>
           RESOLVED, that the sole incorporator shall be reimbursed for any expenses

@@ -56,6 +56,7 @@ export default class DirectorsInfo2 extends Component {
             <label for="no"> No </label><br />
 
           </form>
+          <br />
 
 
           {values.stock === 'Yes' && (
