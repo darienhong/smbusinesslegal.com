@@ -194,6 +194,25 @@ app.post('/getUser', function (req, res) {
 
 });
 
+app.post('/addDoc', function (req, res) {
+  console.log('went in!');
+  const type = req.body.type;
+  const file = req.body.file;
+  console.log(type);
+  console.log(file);
+  const dateCreated = new Date();
+  client.query('INSERT INTO "public"."document_table" ( "doc_type", "company_id", "doc") VALUES ($1, $2, $3)',
+    [type, 1, client.pg_read_file(file)], function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log('in here!');
+    });
+
+});
+
 /*
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.body.email;
@@ -223,21 +242,21 @@ app.get('/getCompanyInfo', function(req, res) {
 */
 
 
-app.get('/getCompanyInfo', function(req, res) {
-  client.query('SELECT * FROM public.company_table where company_id=1', function(error, table) {
-    if (error){
+app.get('/getCompanyInfo', function (req, res) {
+  client.query('SELECT * FROM public.company_table where company_id=1', function (error, table) {
+    if (error) {
       throw error;
     } else {
       console.log(table);
       res.send(table.rows);
-    //  res.send()
+      //  res.send()
     }
   });
 
 });
 
-app.get('/getListUsers', function(req, res) {
-  client.query('SELECT * FROM public.user_table where company_id=1', function(error, table){
+app.get('/getListUsers', function (req, res) {
+  client.query('SELECT * FROM public.user_table where company_id=1', function (error, table) {
     if (error) {
       res.sendStatus(500);
       return;
