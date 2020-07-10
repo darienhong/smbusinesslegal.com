@@ -249,9 +249,9 @@ export default class GovernanceDashboard extends Component {
             <br /> 
 
 
-       {/*   {annualMeeting === false && (
-                this.state.tempAnnualMeeting = 'No'
-       )} */}
+          {annualMeeting === false && (
+              this.state.tempAnnualMeeting = 'No'        
+       )} 
 
             {annualMeeting === true && (
                 this.state.tempAnnualMeeting = 'Yes'
