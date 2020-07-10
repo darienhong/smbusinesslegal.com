@@ -499,7 +499,6 @@ app.post('/addCorporationGovernance', function (req, res) {
 });
 
 
-<<<<<<< HEAD
 app.get('/getPlan', function (req, res) {
   const email = req.query.email;
   console.log(email)
@@ -552,9 +551,7 @@ app.get('/getPlan', function (req, res) {
 });
 
 
-/*
-=======
->>>>>>> 9f6c00b7826cb9592432dbd2827451a56280615a
+
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
