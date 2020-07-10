@@ -470,6 +470,9 @@ button {
 .tab2 { 
   margin-left: 77px; }
 
+  .tab3 { 
+    margin-left: 50px; }
+  
 
 
 .tab { 
@@ -546,7 +549,7 @@ font-family: 'WorkSans';
   font-size: 16px;
 }
 
-.price { 
+.price2 { 
   color:  #245CA6;
   font-style: italic;
   font-weight: 600;
