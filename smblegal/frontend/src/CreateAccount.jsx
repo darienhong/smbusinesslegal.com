@@ -22,7 +22,7 @@ import { ExpansionPanelActions } from '@material-ui/core';
 //for payment (phil)
 //npm install react-stripe-checkout
 import StripeCheckout from "react-stripe-checkout"
-import React1, {useState} from 'react';
+import React1, { useState } from 'react';
 
 
 
@@ -288,9 +288,9 @@ export default function CreateAccount() {
 
   //Payments below
   const [premium_subscription, setPremSub] = useState({
-  name: "Premium Subscription",
-  price: 10,
-  productBy: "SMBLegal"
+    name: "Premium Subscription",
+    price: 10,
+    productBy: "SMBLegal"
   });
 
   const makePayment = token => {
@@ -302,17 +302,17 @@ export default function CreateAccount() {
       "Content-Type": "application/json"
     };
 
-  return fetch('http://localhost:8282/payment',{
-    method: "POST",
-    headers,
-    body: JSON.stringify(body)
-  })
-  .then(response => {
-    console.log("RESPONSE ", response)
-    const {status} = response;
-    console.log("STATUS", status)
-  })
-  .catch(error => console.log(error));
+    return fetch('http://localhost:8282/payment', {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body)
+    })
+      .then(response => {
+        console.log("RESPONSE ", response)
+        const { status } = response;
+        console.log("STATUS", status)
+      })
+      .catch(error => console.log(error));
   };
   //Payments above
 
@@ -333,9 +333,15 @@ export default function CreateAccount() {
     companyId: 0
   })
 
-  React.useEffect(() => { 
-    localStorage.setItem('email', state.email); }, [state.email]);
-  
+  React.useEffect(() => {
+    localStorage.setItem('email', state.email);
+  }, [state.email]);
+
+  React.useEffect(() => {
+    localStorage.setItem('plan', plan);
+  }, [plan]);
+
+
 
 
 
@@ -386,6 +392,8 @@ export default function CreateAccount() {
       .then(res => res.json())
       .catch(error => console.error('Error:', error))
       .then(response => console.log('Success:', response));
+
+
 
     document.location = "/Dashboard"
 
@@ -812,7 +820,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
         <div class="create-acc-form">
 
           {/* PHIL WORKING HERE */}
-          <StripeCheckout 
+          <StripeCheckout
             stripeKey={process.env.REACT_APP_PUBLIC_KEY}
             token={makePayment}
             name="Premium Subscription"
@@ -1018,14 +1026,14 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           {/* </Link> */}
                         </center>
 
-                            {/* PHIL WORKING HERE */}
-                            <StripeCheckout 
-                              stripeKey={process.env.REACT_APP_PUBLIC_KEY}
-                              token={makePayment}
-                              name="Premium Subscription"
-                              amount={premium_subscription.price * 100}
-                              billingAddress
-                            />
+                        {/* PHIL WORKING HERE */}
+                        <StripeCheckout
+                          stripeKey={process.env.REACT_APP_PUBLIC_KEY}
+                          token={makePayment}
+                          name="Premium Subscription"
+                          amount={premium_subscription.price * 100}
+                          billingAddress
+                        />
 
                       </form>
                     )}
@@ -1059,14 +1067,14 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           {/* </Link> */}
                         </center>
 
-                            {/* PHIL WORKING HERE */}
-                            <StripeCheckout 
-                              stripeKey={process.env.REACT_APP_PUBLIC_KEY}
-                              token={makePayment}
-                              name="Premium Subscription"
-                              amount={premium_subscription.price * 100}
-                              billingAddress
-                            />
+                        {/* PHIL WORKING HERE */}
+                        <StripeCheckout
+                          stripeKey={process.env.REACT_APP_PUBLIC_KEY}
+                          token={makePayment}
+                          name="Premium Subscription"
+                          amount={premium_subscription.price * 100}
+                          billingAddress
+                        />
                       </form>
                     )}
                     <br />
@@ -1099,26 +1107,26 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           </div>
                           {/* </Link> */}
                         </center>
-                            {/* PHIL WORKING HERE */}
-                            <StripeCheckout 
-                              stripeKey={process.env.REACT_APP_PUBLIC_KEY}
-                              token={makePayment}
-                              name="Premium Subscription"
-                              amount={premium_subscription.price * 100}
-                              billingAddress
-                            />
+                        {/* PHIL WORKING HERE */}
+                        <StripeCheckout
+                          stripeKey={process.env.REACT_APP_PUBLIC_KEY}
+                          token={makePayment}
+                          name="Premium Subscription"
+                          amount={premium_subscription.price * 100}
+                          billingAddress
+                        />
                       </form>
                     )}
                     <br />
                     <br />
-                            {/* PHIL WORKING HERE */}
-                            <StripeCheckout 
-                              stripeKey={process.env.REACT_APP_PUBLIC_KEY}
-                              token={makePayment}
-                              name="Premium Subscription"
-                              amount={premium_subscription.price * 100}
-                              billingAddress
-                            />
+                    {/* PHIL WORKING HERE */}
+                    <StripeCheckout
+                      stripeKey={process.env.REACT_APP_PUBLIC_KEY}
+                      token={makePayment}
+                      name="Premium Subscription"
+                      amount={premium_subscription.price * 100}
+                      billingAddress
+                    />
                   </div>
 
                 )}

@@ -387,7 +387,6 @@ app.post('/addPartnershipGovernance', function (req, res) {
 });
 
 
-<<<<<<< HEAD
 
 app.post('/addCorporationGovernance', function (req, res) {
   console.log('went in!');
@@ -499,9 +498,60 @@ app.post('/addCorporationGovernance', function (req, res) {
     });
 });
 
+
+app.get('/getPlan', function (req, res) {
+  const email = req.query.email;
+  console.log(email)
+  client.query('SELECT plan_type FROM public.user_table where email=$1', [email],
+    function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log(result);
+      console.log(result.rows);
+      let rows = result.rows
+      let p = ""
+      for (var i = 0; i < rows.length; i++) {
+        p = rows[i].plan_type;
+      }
+      console.log(p);
+      // let row = result.rows[0];
+      // console.log(row);
+      // let test = { plan_type: 'Freemium' };
+      // console.log(test.plan_type);
+      // let row = result.rows[0];
+      // let x = (JSON.stringify(row));
+      // console.log(typeof row);
+      // console.log(JSON.parse(row).plan_type);
+      // console.log(x);
+      // console.log(row["first_name"]);
+      // let row = result.rows[0];
+      // const obj = JSON.parse(row);
+      // console.log(obj);
+      // let test = { plan_type: 'Freemium' };
+      // let get_row = (result.rows[0]);
+      // let str = (JSON.stringify(get_row));
+      // let par = JSON.parse(str);
+      // console.log(par.plan_type);
+
+
+      // let get_row2 = test.plan_type;
+      // let get_field = result.fields[0].name;
+      // console.log(get_field);
+      // let get_plan = get_row.plan_type
+      // console.log(get_row);
+      // console.log(get_row2);
+      // console.log(get_plan)
+      res.send(p);
+      // let get_id = (result.rows[0].company_id);
+      // console.log(get_id)
+    })
+});
+
+
 /*
-=======
->>>>>>> 9490825f784405ddef90eea05131e52779d2c7cb
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
@@ -590,8 +640,6 @@ app.get('/getListUsers', function (req, res) {
 // client.query('SELECT NOW()', (err, res) => {
 //   console.log(err, res)
 //   client.end()
-<<<<<<< HEAD
-=======
 // })
 
 
@@ -616,28 +664,28 @@ app.use(express.json())
 
 //routes
 app.get("/", (req, res) => {
-    res.send("IT WORKS")
+  res.send("IT WORKS")
 })
 
 app.post("/payment", (req, res) => {
 
-    const {product, token} = req.body;
-    console.log("PRODUCT", product);
-    console.log("PRICE", product.price);
-    const idempontencyKey = uuid()
+  const { product, token } = req.body;
+  console.log("PRODUCT", product);
+  console.log("PRICE", product.price);
+  const idempontencyKey = uuid()
 
-    return stripe.customers.create({
-        email: token.email,
-        source: token.id
-    }).then(customer => {
-        stripe.charges.create({
-            amount: product.price * 100,
-            currency: 'usd',
-            customer: customer.id,
-            receipt_email: token.email,
-            description: 'purchase of ${product.name}'
-        }, {idempontencyKey})
-    })
+  return stripe.customers.create({
+    email: token.email,
+    source: token.id
+  }).then(customer => {
+    stripe.charges.create({
+      amount: product.price * 100,
+      currency: 'usd',
+      customer: customer.id,
+      receipt_email: token.email,
+      description: 'purchase of ${product.name}'
+    }, { idempontencyKey })
+  })
     .then(result => res.status(200).json(result))
     .catch(err => console.log(err))
 
@@ -648,5 +696,4 @@ app.post("/payment", (req, res) => {
 
 
 
->>>>>>> 9490825f784405ddef90eea05131e52779d2c7cb
 

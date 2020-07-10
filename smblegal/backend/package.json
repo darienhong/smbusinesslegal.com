@@ -7,13 +7,15 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "pg": "^7.18.2",
-    "ejs": "latest",
     "aws-sdk": "latest",
-    "express": "latest",
     "body-parser": "latest",
-    "mysql": "latest"
+    "cors": "^2.8.5",
+    "ejs": "latest",
+    "express": "^4.17.1",
+    "mysql": "latest",
+    "pg": "^7.18.2",
+    "stripe": "^8.69.0",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",

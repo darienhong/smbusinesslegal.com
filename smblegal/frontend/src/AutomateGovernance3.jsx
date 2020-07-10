@@ -149,7 +149,8 @@ export default function AutomateGov3() {
         quorum_vote: 0,
         managers: 0,
         members: 0,
-        email: localStorage.getItem('email')
+        email: localStorage.getItem('email'),
+        plan: localStorage.getItem('plan')
     })
 
 
@@ -248,7 +249,12 @@ export default function AutomateGov3() {
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', response));
 
-        document.location = "/Dashboard"
+        if (state.plan === 'Premium') {
+            document.location = "/DashboardPremium"
+        }
+        else {
+            document.location = "/Dashboard"
+        }
 
 
 
@@ -340,13 +346,27 @@ export default function AutomateGov3() {
                                 </div>
                                 <br />
                                 <br />
-                                <center>
-                                    <Link to="/Dashboard">
-                                        <div class="gov-button-1" >
-                                            <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
-                                        </div>
-                                    </Link>
-                                </center>
+                                {state.plan === 'Premium' && (
+
+                                    <center>
+                                        <Link to="/DashboardPremium">
+                                            <div class="gov-button-1" >
+                                                <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
+                                            </div>
+                                        </Link>
+                                    </center>
+                                )}
+
+                                {state.plan != 'Premium' && (
+
+                                    <center>
+                                        <Link to="/Dashboard">
+                                            <div class="gov-button-1" >
+                                                <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
+                                            </div>
+                                        </Link>
+                                    </center>
+                                )}
                             </form>
 
                         )}
