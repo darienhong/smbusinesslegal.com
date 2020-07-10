@@ -116,6 +116,12 @@ export default class WaiverDirectorsQuestions extends Component {
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
           decreasePercentage={this.decreasePercentage}
+          handleSignerChange={this.handleSignerChange}
+          handleResolutionChange={this.handleResolutionChange}
+          handleVoterChange={this.handleVoterChange}
+          addSigner={this.addSigner}
+          addResolution={this.addResolution}
+          addVoter={this.addVoter}
           values={values}
         />
       case 2:

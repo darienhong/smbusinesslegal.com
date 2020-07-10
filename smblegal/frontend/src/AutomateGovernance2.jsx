@@ -120,8 +120,60 @@ export default function AutomateGov2() {
     const [boardMembersList, setBoardMembersList] = React.useState([{ name: "", email: "", sharesOwned: "" }]);
     const [shareholdersList, setShareholdersList] = React.useState([{ name: "", email: "", sharesOwned: "" }]);
     const [state, setStates] = React.useState({
+        boardDate: new Date(),
+        shareholderDate: new Date(),
+        quorum_share: 0,
+        vote_share: 0,
+        quorum_board: 0,
+        vote_board: 0,
+        members: 0,
+        shareholders: 0,
+        authorized: 0,
+        issued: 0,
         email: localStorage.getItem('email')
     })
+
+    const handleStateChange = e => {
+        const { name, value } = e.target
+        setStates(prevState => ({
+            ...prevState,
+            [name]: value
+        }))
+    }
+
+    const handleClick = (event) => {
+        event.preventDefault();
+
+        const data = {
+            boardDate: state.boardDate,
+            shareholderDate: state.shareholderDate,
+            quorum_share: state.quorum_share,
+            vote_share: state.vote_share,
+            quorum_board: state.quorum_board,
+            vote_board: state.vote_board,
+            members: state.members,
+            shareholders: state.shareholders,
+            authorized: state.authorized,
+            issued: state.issued,
+            boardMembersList: boardMembersList,
+            shareholdersList: shareholdersList,
+            email: state.email
+        }
+        fetch('/addCorporationGovernance', {
+            method: 'POST',
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: { 'Content-Type': 'application/json' }
+        })
+
+            .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));
+
+        document.location = "/Dashboard"
+
+
+
+    }
 
 
     const handleClose = (event) => {
@@ -373,6 +425,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="date"
                                             label="When was your last board meeting?"
+                                            name="boardDate" onChange={handleStateChange}
                                             type="date"
                                             variant="outlined"
                                             className={classes.textField}
@@ -388,6 +441,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="date"
                                             label="When was your last Shareholder meeting?"
+                                            name="shareholderDate" onChange={handleStateChange}
                                             type="date"
                                             variant="outlined"
                                             className={classes.textField}
@@ -402,6 +456,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="outlined-number"
                                             label="What is a quorum of Shareholders of your business?"
+                                            name="quorum_share" onChange={handleStateChange}
                                             type="number"
                                             InputLabelProps={{
                                                 shrink: true,
@@ -415,6 +470,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="outlined-number"
                                             label="What is a sufficient vote of Shareholders to pass something in your business?"
+                                            name="vote_share" onChange={handleStateChange}
                                             type="number"
                                             InputLabelProps={{
                                                 shrink: true,
@@ -428,6 +484,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="outlined-number"
                                             label="What is a quorum of Board in your business?"
+                                            name="quorum_board" onChange={handleStateChange}
                                             type="number"
                                             InputLabelProps={{
                                                 shrink: true,
@@ -441,6 +498,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="outlined-number"
                                             label="What is a sufficient vote of the Board to pass something in your business?"
+                                            name="vote_board" onChange={handleStateChange}
                                             type="number"
                                             InputLabelProps={{
                                                 shrink: true,
@@ -454,6 +512,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="outlined-number"
                                             label="How many board members does your business have?"
+                                            name="members" onChange={handleStateChange}
                                             type="number"
                                             InputLabelProps={{
                                                 shrink: true,
@@ -466,7 +525,8 @@ export default function AutomateGov2() {
                                     <div class="num-shareholders" style={{ textAlign: "center" }}>
                                         <TextField
                                             id="outlined-number"
-                                            label="How many Shareholders does your business have?"
+                                            label="How many Shareholders does your business have?" name="boardDate" onChange={handleStateChange}
+                                            name="shareholders" onChange={handleStateChange}
                                             type="number"
                                             InputLabelProps={{
                                                 shrink: true,
@@ -480,6 +540,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="outlined-number"
                                             label="What is the total number of authorized shares of your company?"
+                                            name="authorized" onChange={handleStateChange}
                                             type="number"
                                             InputLabelProps={{
                                                 shrink: true,
@@ -493,6 +554,7 @@ export default function AutomateGov2() {
                                         <TextField
                                             id="outlined-number"
                                             label="What is the total number of issued shares of your company?"
+                                            name="issued" onChange={handleStateChange}
                                             type="number"
                                             InputLabelProps={{
                                                 shrink: true,
@@ -651,11 +713,11 @@ export default function AutomateGov2() {
                                 <br />
                                 <br />
                                 <center>
-                                    <Link to="/Dashboard">
-                                        <div class="gov-button-1" >
-                                            <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
-                                        </div>
-                                    </Link>
+                                    {/* <Link to="/Dashboard"> */}
+                                    <div class="gov-button-1" onClick={handleClick}>
+                                        <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
+                                    </div>
+                                    {/* </Link> */}
                                 </center>
 
                             </form>
