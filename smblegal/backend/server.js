@@ -387,6 +387,7 @@ app.post('/addPartnershipGovernance', function (req, res) {
 });
 
 
+<<<<<<< HEAD
 
 app.post('/addCorporationGovernance', function (req, res) {
   console.log('went in!');
@@ -499,6 +500,8 @@ app.post('/addCorporationGovernance', function (req, res) {
 });
 
 /*
+=======
+>>>>>>> 9490825f784405ddef90eea05131e52779d2c7cb
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
@@ -512,8 +515,8 @@ app.get('/getCompanyInfo', function(req, res) {
     console.log(result);
     let get_id = (result.rows[0].company_id);
     console.log(get_id)
-    client.query('SELECT * FROM public.company_table where company_id=$1', [get_id], function(error, table) {
-      if (error){
+    client.query('SELECT * FROM public.company_table where company_id=$1', [get_id], function(err, table) {
+      if (err){
         console.log(err);
         res.sendStatus(500);
         return;
@@ -524,6 +527,32 @@ app.get('/getCompanyInfo', function(req, res) {
     });
   })
 });
+
+app.get('/getUserList', function(req, res) {
+  const email = req.query.email;
+  console.log(email)
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email],
+  function(err, result) {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return; 
+    } 
+    console.log(result);
+    let get_id = (result.rows[0].company_id);
+    console.log(get_id)
+    client.query('SELECT first_name, last_name FROM public.user_table where company_id=$1', [get_id], function(err, table) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      } else {
+        console.log(table);
+        res.send(table.rows);
+      }
+    })
+  })
+})
 
 
 /*
@@ -561,4 +590,63 @@ app.get('/getListUsers', function (req, res) {
 // client.query('SELECT NOW()', (err, res) => {
 //   console.log(err, res)
 //   client.end()
+<<<<<<< HEAD
+=======
+// })
+
+
+
+
+
+
+//BELOW HERE IS PAYMENT CODE
+//npm i cors express stripe uuid nodemon
+
+//const cors = require("cors")
+//const express = require("express")
+//const app = express();
+//app.use(cors())
+
+const stripe = require("stripe")(process.env.REACT_APP_PRIVATE_KEY)
+const uuid = require("uuid")
+
+//middleware
+app.use(express.json())
+
+
+//routes
+app.get("/", (req, res) => {
+    res.send("IT WORKS")
+})
+
+app.post("/payment", (req, res) => {
+
+    const {product, token} = req.body;
+    console.log("PRODUCT", product);
+    console.log("PRICE", product.price);
+    const idempontencyKey = uuid()
+
+    return stripe.customers.create({
+        email: token.email,
+        source: token.id
+    }).then(customer => {
+        stripe.charges.create({
+            amount: product.price * 100,
+            currency: 'usd',
+            customer: customer.id,
+            receipt_email: token.email,
+            description: 'purchase of ${product.name}'
+        }, {idempontencyKey})
+    })
+    .then(result => res.status(200).json(result))
+    .catch(err => console.log(err))
+
+})
+
+
+//ABOVE HERE IS PAYMENT CODE
+
+
+
+>>>>>>> 9490825f784405ddef90eea05131e52779d2c7cb
 

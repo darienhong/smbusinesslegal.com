@@ -25,13 +25,25 @@ import Navbar2 from '../components/nav-bar2.jsx';
 
 export default class StatementIntro extends Component {
 
+  state = {
+    pay: false,
+  }
+
   next = (e) => {
     e.preventDefault();
     this.props.increasePercentage();
     this.props.nextStep();
   }
 
+  handleClick = (e) => {
+    this.state.pay = true;
+  }
+
   render() {
+    const { 
+      pay
+    } = this.state
+
     const { values } = this.props;
     return (
       <div class='ask'>

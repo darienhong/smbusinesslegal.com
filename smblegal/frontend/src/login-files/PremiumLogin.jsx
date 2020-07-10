@@ -29,39 +29,38 @@ export default class PremiumLogin extends Component {
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     companyType: "[COMPANY TYPE]",
     USState: "[STATE PLACEHOLDER]",
+    email: localStorage.getItem('email'),
 
   }
 
   componentDidMount() {
-    var that = this;
-      fetch('/getcompanyInfo', {
-        method: 'GET',
-   //     body: JSON.stringify(data), // data can be `string` or {object}!
-      //  headers: { 'Content-Type': 'application/json' }
-      })
 
-        .then(function(response){
-          response.json()
-            .then(function(data) {
-              console.log(data);
-              that.setState({
-                company: data,
-                companyName: data[0].company_name,
-                companyType: data[0].company_type,
-                USState: data[0].state,
-
-              })
-            })
-        })
-
- 
-        .then(res => res.json())
-     
-        .then(company => console.warn(company))
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
-  
+    const data = {
+      email: this.state.email,
     }
+    console.log(this.state.email);
+      var that = this;
+        fetch(`/getCompanyInfo?email=${this.state.email}`, {
+          method: 'GET',
+        })
+          .then(function(response){
+            response.json()
+              .then(function(data) {
+                console.log(data);
+                that.setState({
+                  company: data,
+                  companyName: data[0].company_name,
+                  companyType: data[0].company_type,
+                  USState: data[0].state,
+  
+                })
+              })
+          })
+          .then(res => res.json())
+          .catch(error => console.error('Error:', error))
+          .then(response => console.log('Success:', response));
+    
+      }
 
    
 
