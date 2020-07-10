@@ -32,21 +32,19 @@ export default class HomepageLogin extends Component {
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     USState: "[STATE PLACEHOLDER]",
     company: [],
-    email: localStorage.getItem('email'),
+    email: localStorage.getItem('email'), 
 
   }
 
  componentDidMount() {
 
- // const data = {
-   // email: this.state.email,
- // }
-
+  const data = {
+    email: this.state.email,
+  }
+  console.log(this.state.email);
     var that = this;
-      fetch('/getcompanyInfo', {
+      fetch(`/getCompanyInfo?email=${this.state.email}`, {
         method: 'GET',
-     //   body: JSON.stringify(data), // data can be `string` or {object}!
-      //  headers: { 'Content-Type': 'application/json' }
       })
         .then(function(response){
           response.json()
@@ -75,7 +73,8 @@ export default class HomepageLogin extends Component {
         nextMeeting,
         company,
         companyType,
-        USState
+        USState, 
+        email
       } = this.state
 
         return (

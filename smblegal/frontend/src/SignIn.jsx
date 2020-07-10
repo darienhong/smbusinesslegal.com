@@ -21,9 +21,9 @@ export default function SignIn() {
     const [emailStatus, setEmailStatus] = React.useState('');
     const [passwordStatus, setPasswordStatus] = React.useState('');
 
-
-
-
+    React.useEffect(() => {
+        localStorage.setItem('email', state.email); }, [state.email]);
+    
     const handleChange = e => {
         console.log('changing');
         const { name, value } = e.target

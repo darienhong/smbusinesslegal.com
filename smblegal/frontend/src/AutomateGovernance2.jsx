@@ -119,6 +119,9 @@ export default function AutomateGov2() {
     const [files, setFiles] = React.useState([]);
     const [boardMembersList, setBoardMembersList] = React.useState([{ name: "", email: "", sharesOwned: "" }]);
     const [shareholdersList, setShareholdersList] = React.useState([{ name: "", email: "", sharesOwned: "" }]);
+    const [state, setStates] = React.useState({
+        email: localStorage.getItem('email')
+    })
 
 
     const handleClose = (event) => {
@@ -139,7 +142,8 @@ export default function AutomateGov2() {
         console.log(acceptedFiles);
         const data = {
             type: 'formation',
-            file: acceptedFiles
+            file: acceptedFiles,
+            email: state.email
         }
         fetch('/addDoc', {
             method: 'POST',
