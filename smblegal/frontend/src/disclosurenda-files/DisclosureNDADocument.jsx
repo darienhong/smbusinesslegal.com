@@ -93,20 +93,25 @@ export default class DisclosureNDADocument extends Component {
           <p>AGREEMENT</p>
         </center>
         <p>NOW, THEREFORE, the Parties agree to the following:</p>
-        <p>1. The Company and the Recipient shall be bound by this
+        <h7 class='indoc'>1. Recipient Non-Disclosure.</h7>
+        <p>The Company and the Recipient shall be bound by this
         Agreement. The Recipient shall be prohibited from sharing or releasing confidential
         information (as defined below). Any release of confidential information must be done
         in compliance and with the terms of the Agreement.
         </p>
 
-        <p>2. Term. Subject to permitted disclosures in clause 4 and 5 the Parties agree that this
+        <h7 class='indoc'>2. Term. </h7>
+        <p>
+          Subject to permitted disclosures in clause 4 and 5 the Parties agree that this
         Agreement shall be in effect for {values.term} from the date of initial disclosure of confidential
         information.</p>
 
-        <p>3. Disclosure to Representatives. Recipient is prohibited from disclosing
+        <h7 class='indoc'>3. Disclosure to Representatives. </h7>
+        <p>Recipient is prohibited from disclosing
         confidential information to third parties{auth}.</p>
 
-        <p>4. Responsibility for Representatives Compliance. All affiliates of the Recipient and
+        <h7 class='indoc'>4. Responsibility for Representatives Compliance.</h7>
+        <p>All affiliates of the Recipient and
         all directors, officers, employees, agents and representatives of the Recipient or its
         affiliates shall be included within the definition of Recipient for purposes of this
         Agreement and shall be bound by the Agreement. The Recipient shall be responsible
@@ -114,7 +119,8 @@ export default class DisclosureNDADocument extends Component {
         employees, agents and representatives of such recipient party or its affiliates.
         </p>
 
-        <p>Definition of Confidential Information. “Confidential Information” shall refer to
+        <h7 class='indoc'>5. Definition of Confidential Information. </h7>
+        <p>“Confidential Information” shall refer to
         all non-public information or material disclosed or provided by the Company to the
         Recipient, orally or in writing, that are proprietary to the Company, whether or not
         produced or owned by the Company that are learned over the course of the relationship
@@ -130,7 +136,8 @@ export default class DisclosureNDADocument extends Component {
           </p>
         </p>
 
-        <p>6. Use of Confidential Information. The Recipient will not disclose and will maintain
+        <h7 class='indoc'>6. Use of Confidential Information. </h7>
+        <p>The Recipient will not disclose and will maintain
         the confidential of the Confidential Information in both oral and written form.
         Recipient will only use the Confidential Information in the way that the Parties agree is
         necessary to carry out the underlying purpose of this Agreement{condUse}. {party}
@@ -139,7 +146,8 @@ export default class DisclosureNDADocument extends Component {
         Company’s Confidential Information with the same standard of care.</p>
 
 
-        <p>7. Waiver. The Recipient may request to the Company that they are able to disclose the
+        <h7 class='indoc'>7. Waiver. </h7>
+        <p>The Recipient may request to the Company that they are able to disclose the
         Confidential Information. In the event that the Company denies the Recipient’s request,
         the Recipient shall abide by that decision. In the event that the Company assents to the
         request, the Parties shall come to an agreement on the scope of that disclosure, execute
@@ -147,13 +155,15 @@ export default class DisclosureNDADocument extends Component {
         addendum.
         </p>
 
-        <p>8. Destruction and Return. Upon termination of any relationship between the
+        <h7 class='indoc'>8. Destruction and Return. </h7>
+        <p>Upon termination of any relationship between the
         Parties, the Recipient shall destroy any Confidential Information and promptly return to
         the other party, without retaining any copies, any information or documents furnished
         to the other party.
         </p>
 
-        <p>9. Indemnification. Recipient shall indemnify and hold harmless the other Party
+        <h7 class='indoc'>9. Indemnification. </h7>
+        <p>Recipient shall indemnify and hold harmless the other Party
         and its affiliates and their respective directors, officers, employees, agents and
         representatives from and against any and all losses, damages, costs and expenses
         (including without limitation reasonable attorneys’ fees and expenses) caused by or
@@ -161,22 +171,26 @@ export default class DisclosureNDADocument extends Component {
         proceedings, claims, demands or judgments incident thereto.
         </p>
 
-        <p>10. No Licenses, No Transfer of Rights or Interest. Neither Party is granted a license,
+        <h7 class='indoc'>10. No Licenses, No Transfer of Rights or Interest. </h7>
+        <p>Neither Party is granted a license,
         right or interest to any patent, copyright, trademark, trade secret, or other rights by
         disclosing Confidential Information under this Agreement.
         </p>
 
-        <p>11. Survival. This Agreement shall govern all communications between the Parties. The
+        <h7 class='indoc'>11. Survival. </h7>
+        <p>This Agreement shall govern all communications between the Parties. The
         Agreement shall survive any relationship between the Parties, specifically Clause 3 “Use
         of Confidential Information” shall survive any termination of relationship between the
         Parties.
         </p>
 
-        <p>12. Governing Law. This Agreement shall be governed in all respects by the laws of the
+        <h7 class='indoc'>12. Governing Law. </h7>
+        <p>This Agreement shall be governed in all respects by the laws of the
           United States and the state of {values.state}.
         </p>
 
-        <p>13. Injunctive Relief. Irreparable damage will result in a breach of the Agreement
+        <h7 class='indoc'>13. Injunctive Relief. </h7>
+        <p>Irreparable damage will result in a breach of the Agreement
         and any of the agreements or promises made herein. It is agreed that there is no
         adequate remedy at law, and the Parties shall be entitled to injunctive relief and/or
         specific performance of the obligations contained herein. Other relief shall be granted
@@ -184,7 +198,7 @@ export default class DisclosureNDADocument extends Component {
         </p>
 
 
-        <p>14. Miscellaneous</p>
+        <h7 class='indoc'>14. Miscellaneous</h7>
         <h6 class='tab'>a. Integration.
           <br /><br />
           <p class='tab'>This Agreement contains the entire understanding between the

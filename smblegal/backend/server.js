@@ -246,15 +246,7 @@ app.post('/addLLCGovernance', function (req, res) {
   const members = req.body.members
   const membersList = req.body.membersList
   const email = req.body.email
-  console.log(manager);
-  console.log(boolean);
-  console.log(quorum);
-  console.log(quorum_vote);
-  console.log(managers);
-  console.log(members);
-  console.log(membersList);
 
-  console.log('email: ' + email)
 
   const annual = boolean === 'Yes'
   client.query('SELECT company_id from "public"."user_table" where email = $1',
@@ -264,9 +256,7 @@ app.post('/addLLCGovernance', function (req, res) {
         res.sendStatus(500);
         return;
       }
-      console.log(result);
       let get_id = (result.rows[0].company_id);
-      console.log(get_id);
 
       var vals = []
 
@@ -279,10 +269,10 @@ app.post('/addLLCGovernance', function (req, res) {
         delete mem.name;
         mem["first_name"] = first
         mem["last_name"] = last
-        vals.push([mem["email"], mem['percentShares'], mem['percentProfit'], mem['percentLosses'], mem["first_name"], mem["last_name"], "llc member"])
+        vals.push([mem["email"], mem['percentShares'], mem['percentProfit'], mem['percentLosses'], mem["first_name"], mem["last_name"], "llc member", get_id])
       }
       console.log(vals)
-      const query = 'INSERT INTO "public"."people_table" ("email", "share_of_ownership", "share_of_profit", "share_of_losses", "first_name", "last_name", "position") VALUES ($1, $2, $3, $4, $5, $6, $7)';
+      const query = 'INSERT INTO "public"."people_table" ("email", "share_of_ownership", "share_of_profit", "share_of_losses", "first_name", "last_name", "position", "company_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8)';
 
       try {
         vals.forEach(row => {
@@ -318,7 +308,200 @@ app.post('/addLLCGovernance', function (req, res) {
 
 });
 
+app.post('/addPartnershipGovernance', function (req, res) {
+  console.log('went in!');
+  let vote = req.body.vote
+  const boolean = req.body.boolean
+  const partners = req.body.partners
+  const membersList = req.body.membersList
+  const email = req.body.email
+  console.log(vote);
+  console.log(boolean);
+  console.log(membersList);
 
+  console.log('email: ' + email)
+
+  const check = boolean === 'Yes'
+  if (check) {
+    vote = 100
+  }
+  client.query('SELECT company_id from "public"."user_table" where email = $1',
+    [email], function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log(result);
+      let get_id = (result.rows[0].company_id);
+      console.log(get_id);
+
+      var vals = []
+
+      for (var i = 0; i < membersList.length; i++) {
+        console.log(membersList[i])
+        var mem = membersList[i]
+        var space = mem.name.indexOf(" ")
+        var first = mem.name.substring(0, space)
+        var last = mem.name.substring(space + 1)
+        delete mem.name;
+        mem["first_name"] = first
+        mem["last_name"] = last
+        vals.push([mem["email"], mem['percentShares'], mem['percentProfit'], mem['percentLosses'], mem["first_name"], mem["last_name"], "partner", get_id])
+      }
+      console.log(vals)
+      const query = 'INSERT INTO "public"."people_table" ("email", "share_of_ownership", "share_of_profit", "share_of_losses", "first_name", "last_name", "position", "company_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8)';
+
+      try {
+        vals.forEach(row => {
+          console.log(row.length);
+          client.query(query, row, (err, res) => {
+            if (err) {
+              console.log('Error: ' + err.stack);
+            } else {
+              console.log("inserted " + res.rowCount + " row:", row);
+            }
+          });
+        });
+
+      } finally {
+        console.log('done')
+      }
+
+
+      client.query('UPDATE "public"."company_table" SET partner_action_vote = $1, no_partners = $2 WHERE company_id = $3',
+        [vote, partners, get_id],
+        function (err, result) {
+          if (err) {
+            console.log('there is an error');
+            console.log(err);
+            res.sendStatus(500);
+            return;
+          }
+          console.log('updating users');
+          console.log(result);
+          // return res.send('successfully');
+        });
+    });
+
+});
+
+
+<<<<<<< HEAD
+
+app.post('/addCorporationGovernance', function (req, res) {
+  console.log('went in!');
+  const boardDate = req.body.boardDate
+  const shareholderDate = req.body.shareholderDate
+  const quorum_share = req.body.quorum_share
+  const vote_share = req.body.vote_share
+  const quorum_board = req.body.quorum_board
+  const vote_board = req.body.vote_board
+  const members = req.body.members
+  const shareholders = req.body.shareholders
+  const authorized = req.body.authorized
+  const issued = req.body.issued
+  const boardMembersList = req.body.boardMembersList
+  const shareholdersList = req.body.shareholdersList
+  const email = req.body.email
+
+  console.log('email: ' + email)
+
+  client.query('SELECT company_id from "public"."user_table" where email = $1',
+    [email], function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log(result);
+      let get_id = (result.rows[0].company_id);
+      console.log(get_id);
+
+      var vals = []
+
+      for (var i = 0; i < boardMembersList.length; i++) {
+        console.log(boardMembersList[i])
+        var mem = boardMembersList[i]
+        var space = mem.name.indexOf(" ")
+        var first = mem.name.substring(0, space)
+        var last = mem.name.substring(space + 1)
+        delete mem.name;
+        mem["first_name"] = first
+        mem["last_name"] = last
+        vals.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "board member", get_id])
+      }
+      console.log(vals)
+      const query = 'INSERT INTO "public"."people_table" ("email", "no_shares", "first_name", "last_name", "position", "company_id") VALUES ($1, $2, $3, $4, $5, $6)';
+
+      try {
+        vals.forEach(row => {
+          console.log(row.length);
+          client.query(query, row, (err, res) => {
+            if (err) {
+              console.log('Error: ' + err.stack);
+            } else {
+              console.log("inserted " + res.rowCount + " row:", row);
+            }
+          });
+        });
+
+      } finally {
+        console.log('done')
+      }
+
+      var vals2 = []
+
+      for (var i = 0; i < shareholdersList.length; i++) {
+        console.log(shareholdersList[i])
+        var mem = shareholdersList[i]
+        var space = mem.name.indexOf(" ")
+        var first = mem.name.substring(0, space)
+        var last = mem.name.substring(space + 1)
+        delete mem.name;
+        mem["first_name"] = first
+        mem["last_name"] = last
+        vals2.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "shareholder", get_id])
+      }
+      console.log(vals)
+
+      try {
+        vals2.forEach(row => {
+          console.log(row.length);
+          client.query(query, row, (err, res) => {
+            if (err) {
+              console.log('Error: ' + err.stack);
+            } else {
+              console.log("inserted " + res.rowCount + " row:", row);
+            }
+          });
+        });
+
+      } finally {
+        console.log('done')
+      }
+
+
+      client.query('UPDATE "public"."company_table" SET board_meetings = $1, shareholder_meetings = $2, quorum_shareholders = $3, quorum_board = $4, quorum_vote_shareholders = $5, quorum_vote_board = $6, no_board_members = $7, no_shareholders = $8, no_auth_shares = $9, no_issued_shares = $10 WHERE company_id = $11',
+        [boardDate, shareholderDate, quorum_share, vote_share,
+          quorum_board, vote_board, members, shareholders, authorized, issued, get_id],
+        function (err, result) {
+          if (err) {
+            console.log('there is an error');
+            console.log(err);
+            res.sendStatus(500);
+            return;
+          }
+          console.log('updating users');
+          console.log(result);
+          // return res.send('successfully');
+        });
+    });
+});
+
+/*
+=======
+>>>>>>> 9490825f784405ddef90eea05131e52779d2c7cb
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
@@ -407,6 +590,8 @@ app.get('/getListUsers', function (req, res) {
 // client.query('SELECT NOW()', (err, res) => {
 //   console.log(err, res)
 //   client.end()
+<<<<<<< HEAD
+=======
 // })
 
 
@@ -463,4 +648,5 @@ app.post("/payment", (req, res) => {
 
 
 
+>>>>>>> 9490825f784405ddef90eea05131e52779d2c7cb
 
