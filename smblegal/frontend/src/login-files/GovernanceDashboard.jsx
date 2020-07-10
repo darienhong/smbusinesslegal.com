@@ -27,6 +27,7 @@ export default class GovernanceDashboard extends Component {
     companyType: "[COMPANY TYPE]",
     companyID: "[COMPANY ID]",
     USstate: "[STATE]", 
+    email: localStorage.getItem('email'),
     //partnership questions
     partnershipUnanimousConsent: "No", 
     partnershipSufficientVote: "[VOTE]", 
@@ -44,10 +45,13 @@ export default class GovernanceDashboard extends Component {
     numShareholders: "[NUM SHAREHOLDERS]", 
     totalAuthorizedShares: "[TOTAL AUTHORIZED SHARES]", 
     totalIssuedShares: "[TOTAL ISSUED SHARES]",
+    boardMeetings: [], 
+    shareholdersMeetings: [],
 
     //LLC questions
     manager: "[MEMBER OR MANAGER MANAGED]", 
-    annualMeeting: "No" ,
+    annualMeeting: false,
+    tempAnnualMeeting: "No",
     sufficientMembers: "[SUFFICIENT NUM OF MEMBERS]", 
     membersVote: "[VOTE OF MEMBERS]", 
     numManagers: 0, 
@@ -61,37 +65,60 @@ export default class GovernanceDashboard extends Component {
 
   }
 
-
   componentDidMount() {
-    var that = this;
-      fetch('/getcompanyInfo', {
-        method: 'GET',
-   //     body: JSON.stringify(data), // data can be `string` or {object}!
-      //  headers: { 'Content-Type': 'application/json' }
-      })
 
-        .then(function(response){
-          response.json()
-            .then(function(data) {
-              console.log(data);
-              that.setState({
-                company: data,
-                companyName: data[0].company_name,
-                companyType: data[0].company_type,
-                USstate: data[0].state,
-
-              })
-            })
-        })
-
- 
-        .then(res => res.json())
-     
-        .then(company => console.warn(company))
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
-  
+    const data = {
+      email: this.state.email,
     }
+    console.log(this.state.email);
+      var that = this;
+        fetch(`/getCompanyInfo?email=${this.state.email}`, {
+          method: 'GET',
+        })
+          .then(function(response){
+            response.json()
+              .then(function(data) {
+                console.log(data);
+                that.setState({
+                  company: data,
+                  companyID: data[0].company_id,
+                  companyName: data[0].company_name,
+                  companyType: data[0].company_type,
+                  USState: data[0].state,
+
+                  //partnership variables
+                  partnershipSufficientVote: data[0].partner_action_vote, 
+                  numPartners: data[0].no_partners, 
+
+                  //corporation variables
+                  shareholdersQuorum: data[0].quorum_shareholders, 
+                  shareholdersVote: data[0].quorum_vote_shareholders, 
+                  boardQuorum: data[0].quorum_board, 
+                  boardVote: data[0].quorum_vote_board, 
+                  boardMeetings: data[0].board_meetings, 
+                  shareholdersMeetings: data[0].shareholder_meetings, 
+                  numBoardMembers: data[0].no_board_members, 
+                  numShareholders: data[0].no_shareholders, 
+                  totalAuthorizedShares: data[0].no_auth_shares, 
+                  totalIssuedShares: data[0].no_issued_shares, 
+
+                  //LLC variables 
+                  numManagers: data[0].no_managers, 
+                  numMembers: data[0].no_members,
+                  sufficientMembers: data[0].quorum_members, 
+                  membersVote: data[0].quorum_vote_members, 
+                  manager: data[0].managed_by, 
+                  annualMeeting: data[0].annual_meetings,
+
+  
+                })
+              })
+          })
+          .then(res => res.json())
+          .catch(error => console.error('Error:', error))
+          .then(response => console.log('Success:', response));
+    
+      }
 
 
     render() {
@@ -117,6 +144,8 @@ export default class GovernanceDashboard extends Component {
         totalAuthorizedShares, 
         totalIssuedShares, 
         manager, 
+        boardMeetings, 
+        shareholdersMeetings,
         annualMeeting, 
         sufficientMembers, 
         membersVote, 
@@ -126,6 +155,7 @@ export default class GovernanceDashboard extends Component {
         boardMembers, 
         shareholders,
         LLCMembers,
+        tempAnnualMeeting,
        
 
       } = this.state
@@ -138,6 +168,16 @@ export default class GovernanceDashboard extends Component {
             <br /> 
             <br /> 
             <br /> 
+
+
+            {annualMeeting === false && (
+                this.state.tempAnnualMeeting = 'No'
+            )}
+
+            {annualMeeting === true && (
+                this.state.tempAnnualMeeting = 'Yes'
+            )}
+
             <br />
             <br></br>
               <h1 style={{color: "#245CA6"}}> Governance Dashboard </h1>
@@ -152,16 +192,16 @@ export default class GovernanceDashboard extends Component {
 
             <center>
           <div class="all-company-info"> 
-          {companyName} 
+         <span style={{fontWeight: "600"}}> {companyName} </span> 
           <br /> 
           < br/>
-          {companyID}
+          <span style={{fontWeight: "600"}}> ID:  {companyID} </span> 
           <br /> 
           <br />
-           {companyType}
+          <span style={{fontWeight: "600"}}> {companyType} </span> 
           < br/> 
           <br />
-           {USstate}    
+          <span style={{fontWeight: "600"}}> {USstate} </span> 
           <br />
           <br />
           </div>
@@ -231,6 +271,11 @@ export default class GovernanceDashboard extends Component {
             <span style={{fontWeight: "bold"}}> Number of Shareholders: </span> {numShareholders}
             <br />
             <br />
+            <span style={{fontWeight: "bold"}}>Total Authorized Shares: </span> {totalAuthorizedShares}
+            <br />
+            <br />
+            <span style={{fontWeight: "bold"}}> Total Issued Shares: </span> {totalIssuedShares}
+            < br/>
             <br />
             <br />
 
@@ -268,7 +313,7 @@ export default class GovernanceDashboard extends Component {
             <span style={{fontWeight: "bold"}}> Is your business Member managed or Manager managed: </span> {manager}
             <br />
             <br />
-            <span style={{fontWeight: "bold"}}> Are you required to have an annual meeting?: </span>{annualMeeting}
+            <span style={{fontWeight: "bold"}}> Are you required to have an annual meeting?: </span>{tempAnnualMeeting}
             <br />
             <br />
             <span style={{fontWeight: "bold"}}>Sufficient number of members to call a meeting to order: </span> {sufficientMembers}

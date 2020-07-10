@@ -194,22 +194,146 @@ app.post('/getUser', function (req, res) {
 
 });
 
+app.post('/addDoc', function (req, res) {
+  console.log('went in!');
+  const type = req.body.type;
+  const file = req.body.file;
+  const email = req.body.email;
+  console.log(type);
+  console.log(file);
+  console.log('email: ' + email)
+  const dateCreated = new Date();
+  // client.query('INSERT INTO "public"."document_table" ( "doc_type", "company_id", "doc") VALUES ($1, $2, $3)',
+  //   [type, 1, file], function (err, result) {
+  //     if (err) {
+  //       console.log(err);
+  //       res.sendStatus(500);
+  //       return;
+  //     }
+  //     console.log('in here!');
+  //   });
+  client.query('SELECT company_id from "public"."user_table" where email = $1',
+    [email], function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log(result);
+      let get_id = (result.rows[0].company_id);
+      console.log(get_id);
+      client.query('INSERT INTO "public"."document_table" ( "doc_type", "company_id", "doc") VALUES ($1, $2, $3)',
+        [type, 1, file], function (err, result) {
+          if (err) {
+            console.log(err);
+            res.sendStatus(500);
+            return;
+          }
+          console.log('in here!');
+        });
+
+    })
+
+});
+
+app.post('/addLLCGovernance', function (req, res) {
+  console.log('went in!');
+  const manager = req.body.manager
+  const boolean = req.body.boolean
+  const quorum = req.body.quorum
+  const quorum_vote = req.body.quorum_vote
+  const managers = req.body.managers
+  const members = req.body.members
+  const membersList = req.body.membersList
+  const email = req.body.email
+  console.log(manager);
+  console.log(boolean);
+  console.log(quorum);
+  console.log(quorum_vote);
+  console.log(managers);
+  console.log(members);
+  console.log(membersList);
+
+  console.log('email: ' + email)
+
+  const annual = boolean === 'Yes'
+  client.query('SELECT company_id from "public"."user_table" where email = $1',
+    [email], function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log(result);
+      let get_id = (result.rows[0].company_id);
+      console.log(get_id);
+
+      var vals = []
+
+      for (var i = 0; i < membersList.length; i++) {
+        console.log(membersList[i])
+        var mem = membersList[i]
+        var space = mem.name.indexOf(" ")
+        var first = mem.name.substring(0, space)
+        var last = mem.name.substring(space + 1)
+        delete mem.name;
+        mem["first_name"] = first
+        mem["last_name"] = last
+        vals.push([mem["email"], mem['percentShares'], mem['percentProfit'], mem['percentLosses'], mem["first_name"], mem["last_name"], "llc member"])
+      }
+      console.log(vals)
+      const query = 'INSERT INTO "public"."people_table" ("email", "share_of_ownership", "share_of_profit", "share_of_losses", "first_name", "last_name", "position") VALUES ($1, $2, $3, $4, $5, $6, $7)';
+
+      try {
+        vals.forEach(row => {
+          console.log(row.length);
+          client.query(query, row, (err, res) => {
+            if (err) {
+              console.log('Error: ' + err.stack);
+            } else {
+              console.log("inserted " + res.rowCount + " row:", row);
+            }
+          });
+        });
+
+      } finally {
+        console.log('done')
+      }
+
+
+      client.query('UPDATE "public"."company_table" SET annual_meetings = $1, managed_by = $2, quorum_members = $3, quorum_vote_members = $4, no_managers = $5, no_members = $6 WHERE company_id = $7',
+        [annual, manager, quorum, quorum_vote, managers, members, get_id],
+        function (err, result) {
+          if (err) {
+            console.log('there is an error');
+            console.log(err);
+            res.sendStatus(500);
+            return;
+          }
+          console.log('updating users');
+          console.log(result);
+          // return res.send('successfully');
+        });
+    });
+
+});
+
 
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
-  client.query('SELECT company_id FROM public.user_table where email=$1', [email], 
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email],
   function(err, result){
     if (err) {
       console.log(err);
       res.sendStatus(500);
       return;
-    } 
+    }
     console.log(result);
     let get_id = (result.rows[0].company_id);
     console.log(get_id)
-    client.query('SELECT * FROM public.company_table where company_id=$1', [get_id], function(error, table) {
-      if (error){
+    client.query('SELECT * FROM public.company_table where company_id=$1', [get_id], function(err, table) {
+      if (err){
         console.log(err);
         res.sendStatus(500);
         return;
@@ -221,6 +345,32 @@ app.get('/getCompanyInfo', function(req, res) {
   })
 });
 
+app.get('/getUserList', function(req, res) {
+  const email = req.query.email;
+  console.log(email)
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email],
+  function(err, result) {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return; 
+    } 
+    console.log(result);
+    let get_id = (result.rows[0].company_id);
+    console.log(get_id)
+    client.query('SELECT first_name, last_name FROM public.user_table where company_id=$1', [get_id], function(err, table) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      } else {
+        console.log(table);
+        res.send(table.rows);
+      }
+    })
+  })
+})
+
 
 /*
 app.get('/getCompanyInfo', function(req, res) {
@@ -230,14 +380,14 @@ app.get('/getCompanyInfo', function(req, res) {
     } else {
       console.log(table);
       res.send(table.rows);
-    //  res.send()
+      //  res.send()
     }
   });
 
 });
 
-app.get('/getListUsers', function(req, res) {
-  client.query('SELECT * FROM public.user_table where company_id=1', function(error, table){
+app.get('/getListUsers', function (req, res) {
+  client.query('SELECT * FROM public.user_table where company_id=1', function (error, table) {
     if (error) {
       res.sendStatus(500);
       return;
