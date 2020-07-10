@@ -135,6 +135,7 @@ export default class PremiumLogin extends Component {
               </div>
               < br/>
               <div class="users"> 
+              Users:
               {users.map(user => <li>  {user.first_name} {user.last_name} </li>)}
               </div>
               < br/>

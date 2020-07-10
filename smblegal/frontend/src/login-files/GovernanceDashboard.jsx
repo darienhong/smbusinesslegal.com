@@ -89,6 +89,7 @@ export default class GovernanceDashboard extends Component {
         USstate: data1[0][0].state, 
         companyName: data1[0][0].company_name, 
         companyType: data1[0][0].company_type,
+        companyID: data1[0][0].company_id,
         users: data1[1],
         
         //partnership variables
@@ -268,7 +269,9 @@ export default class GovernanceDashboard extends Component {
             </div>
             <br />
 
-            {JSON.stringify(company)}
+       {/*   {JSON.stringify(company)}
+            {JSON.stringify(users)}
+            */}
 
             <center>
           <div class="all-company-info"> 
@@ -311,7 +314,7 @@ export default class GovernanceDashboard extends Component {
           <br />
           <div class="list"> 
           <span style={{fontWeight: "bold"}}>List of Members and Managers: </span>
-          {users.map(user => <li>  {user.first_name} {user.last_name} </li>)}
+          {users.map(user => <li> {user.first_name} {user.last_name}: {user.position} </li>)}
           <br />
           <br />
 
@@ -356,31 +359,12 @@ export default class GovernanceDashboard extends Component {
             < br/>
             <br />
             <br />
-
-      
-            <center>
-            <div style={{width: "80%", height: "400px"}}>
-            <div class="list" style={{float: "left"}}> 
-            <span style={{fontWeight: "bold"}}> List of Board Members: </span>
+            <div class="list" style={{textTransform: "none"}}> 
+            <span style={{fontWeight: "bold"}}> List of BoardMembers and Shareholders: </span> 
+            {users.map(user => <li>  {user.first_name} {user.last_name}: {user.position} </li>)}
           <br />
           <br />
-
-          {boardMembers}
           </div>
-          <div class="list" style={{float: "right"}}> 
-          <span style={{fontWeight: "bold"}}> List of Shareholders: </span>
-          <br />
-          <br />
-
-          {shareholders}
-          </div>
-          </div>
-          </center>
-         
-         
-
-
-
              </div>
              </center>
           )}
@@ -406,12 +390,11 @@ export default class GovernanceDashboard extends Component {
             <span style={{fontWeight: "bold"}}>Number of members: </span> {numMembers}
             < br/>
             <br />
-            <div class="list"> 
+            <div class="list" style={{textTransform: "none"}}> 
             <span style={{fontWeight: "bold"}}> List of Members and Managers: </span> 
+            {users.map(user => <li>  {user.first_name} {user.last_name}: {user.position} </li>)}
           <br />
           <br />
-
-          {LLCMembers}
           </div>
             </div>
             </center>
