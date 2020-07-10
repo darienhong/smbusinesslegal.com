@@ -258,3 +258,59 @@ app.get('/getListUsers', function(req, res) {
 //   console.log(err, res)
 //   client.end()
 // })
+
+
+
+
+
+
+//BELOW HERE IS PAYMENT CODE
+//npm i cors express stripe uuid nodemon
+
+//const cors = require("cors")
+//const express = require("express")
+//const app = express();
+//app.use(cors())
+
+const stripe = require("stripe")(process.env.REACT_APP_PRIVATE_KEY)
+const uuid = require("uuid")
+
+//middleware
+app.use(express.json())
+
+
+//routes
+app.get("/", (req, res) => {
+    res.send("IT WORKS")
+})
+
+app.post("/payment", (req, res) => {
+
+    const {product, token} = req.body;
+    console.log("PRODUCT", product);
+    console.log("PRICE", product.price);
+    const idempontencyKey = uuid()
+
+    return stripe.customers.create({
+        email: token.email,
+        source: token.id
+    }).then(customer => {
+        stripe.charges.create({
+            amount: product.price * 100,
+            currency: 'usd',
+            customer: customer.id,
+            receipt_email: token.email,
+            description: 'purchase of ${product.name}'
+        }, {idempontencyKey})
+    })
+    .then(result => res.status(200).json(result))
+    .catch(err => console.log(err))
+
+})
+
+
+//ABOVE HERE IS PAYMENT CODE
+
+
+
+
