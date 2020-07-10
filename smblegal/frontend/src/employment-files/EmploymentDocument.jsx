@@ -164,7 +164,7 @@ export default class EmploymentDocument extends Component {
         <p>Base Wage: <span class='fill'>{values.wage}</span>  </p>
         <p>{tipRequire}</p>
         <p>{commRequire}</p>
-        <p>Hours: <span class='fill'>{values.hours}</span></p>
+        <p>Hours: <span class='fill'>{values.hours}</span> <span class='fill'>{values.hourType}</span></p>
         <p>Status: <span class='fill'>{values.status}</span> </p>
         <p>At-Will Employment: Yes </p>
         <p>{sickRequire} </p>

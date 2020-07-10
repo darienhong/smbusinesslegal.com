@@ -17,13 +17,17 @@ export default function SignIn() {
     const [state, setStates] = React.useState({
         email: "",
         password: "",
+        plan: {}
     })
     const [emailStatus, setEmailStatus] = React.useState('');
     const [passwordStatus, setPasswordStatus] = React.useState('');
+    const [plan, setPlan] = React.useState({});
+
 
     React.useEffect(() => {
-        localStorage.setItem('email', state.email); }, [state.email]);
-    
+        localStorage.setItem('email', state.email);
+    }, [state.email]);
+
     const handleChange = e => {
         console.log('changing');
         const { name, value } = e.target
@@ -41,15 +45,53 @@ export default function SignIn() {
         setPasswordStatus(value);
     }
 
+    const handlePlanChange = value => {
+        setPlan(value);
+    }
+
+
+
+    React.useEffect(() => {
+        fetch(`/getPlan?email=${state.email}`, {
+            method: 'GET'
+        })
+            .then(response => {
+                response.json()
+                    .then((data) => {
+                        console.log('went in!');
+                        console.log(data);
+                        let rows = data.rows
+                        let p = ""
+                        for (var i = 0; i < rows.length; i++) {
+                            p = rows[i].plan_type;
+                        }
+                        console.log("p: " + p);
+                        handlePlanChange(p)
+                        console.log(plan);
+                    })
+            })
+            .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', plan));
+        console.log(plan);
+    });
+
+
 
     const switchPage = code => {
         const checkPassword = state.password.length === 0
         const checkEmail = state.email.length === 0
         console.log('code: ' + code);
+        console.log(plan);
         if (code === 200) {
             handleEmailStatusChange('')
             handlePasswordStatusChange('')
-            document.location = "/Dashboard"
+            if (plan === 'Premium') {
+                document.location = "/DashboardPremium"
+            }
+            else {
+                document.location = "/Dashboard"
+            }
         }
         else if (code === 206) {
             console.log(code);
@@ -108,7 +150,6 @@ export default function SignIn() {
             .catch(error => console.error('Error:', error))
             // .then(response => console.log('Success:', response.code));
             .then(response => switchPage(response.code));
-
 
     }
     return (

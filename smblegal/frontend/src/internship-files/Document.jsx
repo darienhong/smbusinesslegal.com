@@ -134,7 +134,7 @@ export default class Document extends Component {
         <p> Reporting Relationship: <span class='fill'>{values.relationship}</span> </p>
         <p>Start Date: <span class='fill'>{formattedStartDate}</span></p>
         <p>{wageRequire}</p>
-        <p>Hours: <span class='fill'>{values.hours}</span></p>
+        <p>Hours: <span class='fill'>{values.hours}</span> <span class='fill'>{values.hourType}</span></p>
         <p>Status: <span class='fill'>{values.status}</span> </p>
         <p>At-Will Employment: Yes </p>
         <p>{sickRequire} </p>

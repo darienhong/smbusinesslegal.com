@@ -48,7 +48,8 @@ export default class EmploymentQuestions extends Component {
     comProcedure: '[X]',
     tipping: '[X]',
     responsibilities: '[JOB RESPONSIBILITIES]',
-    competeTime: '[X months or years]'
+    competeTime: '[X months or years]',
+    hourType: '[X]'
   }
 
   nextStep = () => {
@@ -105,13 +106,13 @@ export default class EmploymentQuestions extends Component {
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
       employerTitle, phone, email, paid, verification, expenseList,
-      restaurant, commission, tipping, comProcedure, responsibilities, competeTime
+      restaurant, commission, tipping, comProcedure, responsibilities, competeTime, hourType
     } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick, employerTitle,
       phone, email, paid, verification, expenseList, restaurant,
-      commission, tipping, comProcedure, responsibilities, competeTime
+      commission, tipping, comProcedure, responsibilities, competeTime, hourType
     };
 
     switch (step) {
