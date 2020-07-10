@@ -7,6 +7,7 @@ import { Progress } from 'semantic-ui-react'
 import WaiverShareholderDocument from './WaiverShareholderDocument.jsx';
 import Navbar from '../components/nav-bar.jsx';
 import Navbar2 from '../components/nav-bar2.jsx';
+import StripeCheckout from "react-stripe-checkout";
 
 
 
@@ -23,6 +24,26 @@ export default class WaiverShareholdersInfo extends Component {
     this.props.decreasePercentage();
 
   }
+
+  state = {
+    pay: false
+  }
+
+  handleClick = (e) => {
+    this.setState({pay: true});
+  }
+
+   onToken = (token) => {
+    fetch('/save-stripe-token', {
+      method: 'POST',
+      body: JSON.stringify(token),
+    }).then(response => {
+      response.json().then(data => {
+        alert(`We are in business, ${data.email}`);
+      });
+    });
+    }
+
 
   render() {
     const { values } = this.props;
@@ -113,7 +134,23 @@ export default class WaiverShareholdersInfo extends Component {
 
 
           <button class='prev' onClick={this.previous}>Previous </button>
-          <button class='next' onClick={this.next}>Next </button>
+
+
+     {/* PAYMENTS BELOW */}
+     <br />          
+          <StripeCheckout 
+            stripeKey={process.env.REACT_APP_PUBLIC_KEY}
+            token={this.onToken}
+            name="Premium Subscription"
+            amount={5 * 100}
+            billingAddress
+            closed = {this.handleClick}
+          />
+          <br />
+          {this.state.pay === true && (<button class='next' onClick={this.next}>Next </button>)}
+        {/* PAYMENTS ABOVE */}
+
+        
         </div>
         <div class='col right'>
           <WaiverShareholderDocument class='doc' values={values} />
