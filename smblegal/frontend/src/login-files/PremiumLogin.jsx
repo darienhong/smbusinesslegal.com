@@ -29,39 +29,61 @@ export default class PremiumLogin extends Component {
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     companyType: "[COMPANY TYPE]",
     USState: "[STATE PLACEHOLDER]",
+    users: [],
     email: localStorage.getItem('email'),
 
   }
 
   componentDidMount() {
 
-    const data = {
-      email: this.state.email,
-    }
     console.log(this.state.email);
       var that = this;
+      Promise.all([
         fetch(`/getCompanyInfo?email=${this.state.email}`, {
           method: 'GET',
-        })
-          .then(function(response){
-            response.json()
-              .then(function(data) {
-                console.log(data);
-                that.setState({
-                  company: data,
-                  companyName: data[0].company_name,
-                  companyType: data[0].company_type,
-                  USState: data[0].state,
+        }), 
+        fetch(`/getUserList?email=${this.state.email}`, {
+          method: 'GET',
+        }) ])
   
-                })
-              })
-          })
-          .then(res => res.json())
-          .catch(error => console.error('Error:', error))
-          .then(response => console.log('Success:', response));
-    
+  
+        .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+     //   .then(data1 => console.log(data1[0]))
+        .then((data1, data2) => this.setState ({
+          company: data1[0][0].company_name, 
+          USState: data1[0][0].state, 
+          companyName: data1[0][0].company_name, 
+          companyType: data1[0][0].company_type,
+          users: data1[1],
+     //     users: [data1[1][0].first_name, data1[1][0].last_name]
+  
+  
+  
+  
+          
+         // companyName: data1[0][0].company_name, 
+       //   companyType: data1[0][0],
+       //   USState: data1[0][0].state
+       //   USState: data1[0].state, 
+        //   users: data1[1]
+        }))
+  
+      //  .then(data2 => console.log(data2))
+     /*   .then(([data1, data2]) => 
+        this.setState ({
+          company: data1,
+          companyName: data1[0].company_name,
+          companyType: data1[0].company_type,
+          USState: data1[0].state,
+          users: data2
+  
+        }))
+        */
+  
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response))
+  
       }
-
    
 
 
@@ -113,7 +135,7 @@ export default class PremiumLogin extends Component {
               </div>
               < br/>
               <div class="users"> 
-                  {users}
+              {users.map(user => <li>  {user.first_name} {user.last_name} </li>)}
               </div>
               < br/>
                <div class="lastmeeting"> 

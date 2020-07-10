@@ -552,6 +552,33 @@ app.get('/getUserList', function(req, res) {
 })
 
 
+app.get('/getMemberList', function(req, res) {
+  const email = req.query.email;
+  console.log(email)
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email],
+  function(err, result) {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return; 
+    } 
+    console.log(result);
+    let get_id = (result.rows[0].company_id);
+    console.log(get_id)
+    client.query('SELECT first_name, last_name FROM public.people_table where company_id=$1', [get_id], function(err, table) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      } else {
+        console.log(table);
+        res.send(table.rows);
+      }
+    })
+  })
+})
+
+
 /*
 app.get('/getCompanyInfo', function(req, res) {
   client.query('SELECT * FROM public.company_table where company_id=1', function(error, table) {
@@ -587,8 +614,6 @@ app.get('/getListUsers', function (req, res) {
 // client.query('SELECT NOW()', (err, res) => {
 //   console.log(err, res)
 //   client.end()
-<<<<<<< HEAD
-=======
 // })
 
 
@@ -645,5 +670,4 @@ app.post("/payment", (req, res) => {
 
 
 
->>>>>>> 9490825f784405ddef90eea05131e52779d2c7cb
 

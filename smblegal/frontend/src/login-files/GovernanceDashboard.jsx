@@ -25,6 +25,8 @@ export default class GovernanceDashboard extends Component {
   state = {
     companyName: "[COMPANY NAME]",
     companyType: "[COMPANY TYPE]",
+    users: [],
+    company: [],
     companyID: "[COMPANY ID]",
     USstate: "[STATE]", 
     email: localStorage.getItem('email'),
@@ -72,9 +74,82 @@ export default class GovernanceDashboard extends Component {
     }
     console.log(this.state.email);
       var that = this;
+      Promise.all([
         fetch(`/getCompanyInfo?email=${this.state.email}`, {
           method: 'GET',
-        })
+        }), 
+        fetch(`/getMemberList?email=${this.state.email}`, {
+          method: 'GET',
+        }) ])
+
+     .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+  //   .then(data1 => console.log(data1))
+     .then((data1, data2) => this.setState ({
+        company: data1[0][0].company_name, 
+        USstate: data1[0][0].state, 
+        companyName: data1[0][0].company_name, 
+        companyType: data1[0][0].company_type,
+        users: data1[1],
+        
+        //partnership variables
+        partnershipSufficientVote: data1[0][0].partner_action_vote, 
+        numPartners: data1[0][0].no_partners, 
+
+        //corporation questions
+        shareholdersQuorum: data1[0][0].quorum_shareholders, 
+        shareholdersVote: data1[0][0].quorum_vote_shareholders, 
+        boardQuorum: data1[0][0].quorum_board, 
+        boardVote: data1[0][0].quorum_vote_board, 
+        boardMeetings: data1[0][0].board_meetings, 
+        shareholdersMeetings: data1[0][0].shareholder_meetings, 
+        numBoardMembers: data1[0][0].no_board_members, 
+        numShareholders: data1[0][0].no_shareholders, 
+        totalAuthorizedShares: data1[0][0].no_auth_shares, 
+        totalIssuedShares: data1[0][0].no_issued_shares, 
+   //     users: [data1[1][0].first_name, data1[1][0].last_name]
+
+        //LLC variables 
+        numManagers: data1[0][0].no_managers, 
+        numMembers: data1[0][0].no_members,
+        sufficientMembers: data1[0][0].quorum_members, 
+        membersVote: data1[0][0].quorum_vote_members, 
+        manager: data1[0][0].managed_by, 
+        annualMeeting: data1[0][0].annual_meetings,
+
+
+
+
+        
+       // companyName: data1[0][0].company_name, 
+     //   companyType: data1[0][0],
+     //   USState: data1[0][0].state
+     //   USState: data1[0].state, 
+      //   users: data1[1]
+      }))
+
+    //  .then(data2 => console.log(data2))
+   /*   .then(([data1, data2]) => 
+      this.setState ({
+        company: data1,
+        companyName: data1[0].company_name,
+        companyType: data1[0].company_type,
+        USState: data1[0].state,
+        users: data2
+
+      }))
+      */
+
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response))
+
+    
+
+
+    }
+
+
+
+/*
           .then(function(response){
             response.json()
               .then(function(data) {
@@ -84,7 +159,7 @@ export default class GovernanceDashboard extends Component {
                   companyID: data[0].company_id,
                   companyName: data[0].company_name,
                   companyType: data[0].company_type,
-                  USState: data[0].state,
+                  USstate: data[0].state,
 
                   //partnership variables
                   partnershipSufficientVote: data[0].partner_action_vote, 
@@ -120,11 +195,14 @@ export default class GovernanceDashboard extends Component {
     
       }
 
+      */
+
 
     render() {
       const { 
         companyName, 
         users, 
+        company,
         companyID, 
         lastMeeting, 
         nextMeeting,
@@ -190,6 +268,8 @@ export default class GovernanceDashboard extends Component {
             </div>
             <br />
 
+            {JSON.stringify(company)}
+
             <center>
           <div class="all-company-info"> 
          <span style={{fontWeight: "600"}}> {companyName} </span> 
@@ -231,14 +311,12 @@ export default class GovernanceDashboard extends Component {
           <br />
           <div class="list"> 
           <span style={{fontWeight: "bold"}}>List of Members and Managers: </span>
+          {users.map(user => <li>  {user.first_name} {user.last_name} </li>)}
           <br />
           <br />
 
           {partnershipMembers}
           </div>
-
-
-
 
          </div> 
          </center>
