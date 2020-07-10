@@ -318,7 +318,7 @@ app.post('/addLLCGovernance', function (req, res) {
 
 });
 
-/*
+
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
