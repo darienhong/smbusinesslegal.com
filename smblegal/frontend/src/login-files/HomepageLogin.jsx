@@ -45,8 +45,6 @@ export default class HomepageLogin extends Component {
     var that = this;
       fetch(`/getCompanyInfo?email=${this.state.email}`, {
         method: 'GET',
-      //  body: JSON.stringify(data), // data can be `string` or {object}!
-      //  headers: { 'Content-Type': 'application/json' }
       })
         .then(function(response){
           response.json()
