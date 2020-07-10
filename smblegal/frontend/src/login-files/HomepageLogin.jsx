@@ -27,11 +27,11 @@ export default class HomepageLogin extends Component {
   state = {
     companyName: "[COMPANY NAME PLACEHOLDER]",
     companyType: "[COMPANY TYPE PLACEHOLDER]",
-    users:[], 
     lastMeeting: "[LAST MEETING PLACEHOLDER]", 
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     USState: "[STATE PLACEHOLDER]",
     company: [],
+    users: [], 
     email: localStorage.getItem('email'), 
 
   }
@@ -50,9 +50,24 @@ export default class HomepageLogin extends Component {
 
 
       .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+   //   .then(data1 => console.log(data1[0]))
       .then((data1, data2) => this.setState ({
-        company: data1, 
-        users: data2
+        company: data1[0][0].company_name, 
+        USState: data1[0][0].state, 
+        companyName: data1[0][0].company_name, 
+        companyType: data1[0][0].company_type,
+        users: data1[1],
+   //     users: [data1[1][0].first_name, data1[1][0].last_name]
+
+
+
+
+        
+       // companyName: data1[0][0].company_name, 
+     //   companyType: data1[0][0],
+     //   USState: data1[0][0].state
+     //   USState: data1[0].state, 
+      //   users: data1[1]
       }))
 
     //  .then(data2 => console.log(data2))
@@ -128,8 +143,6 @@ export default class HomepageLogin extends Component {
           <br />
 
 
-          {JSON.stringify(company)}
-
           <center> 
     <div style={{width: "80%", height: "400px", justifyContent: "center"}}> 
           <div class="company-info" style={{width: "400px", float: "left", textAlign: "left"}}> 
@@ -146,7 +159,8 @@ export default class HomepageLogin extends Component {
               </div>
               <br />
               <div class="users"> 
-                  {users}
+              Users: 
+                  {users.map(user => <li>  {user.first_name} {user.last_name} </li>)}
               </div>
               < br/>
                <div class="lastmeeting"> 

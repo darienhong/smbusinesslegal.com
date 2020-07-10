@@ -15,8 +15,11 @@
     "aos": "^3.0.0-beta.6",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "material-ui-dropzone": "^3.3.0",
     "moment": "^2.26.0",
+    "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-alert": "^7.0.1",
     "react-animations": "^1.0.0",
@@ -33,7 +36,9 @@
     "react-stripe-checkout": "^2.6.3",
     "react-to-pdf": "0.0.11",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.2"
+    "semantic-ui-react": "^0.88.2",
+    "stripe": "^8.69.0",
+    "uuid": "^8.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

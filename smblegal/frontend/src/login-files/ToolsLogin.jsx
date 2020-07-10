@@ -49,7 +49,7 @@ export default class ToolsLogin extends Component {
                     </p>
                 </div>
                 </Link>
-                <Link to="/SignIn" style={{textDecoration: "none"}}>
+                <Link to="/GovernanceDashboard" style={{textDecoration: "none"}}>
                 <div class="tools-block">
                     <p style={{fontWeight: "600", textAlign: "center"}}> GOVERNANCE AUTOMATION </p>
                     <p style={{textAlign: "center"}}> We ensure that business users have a methogolody to understand value and risk, so they can

@@ -269,7 +269,7 @@ app.post('/addLLCGovernance', function (req, res) {
         delete mem.name;
         mem["first_name"] = first
         mem["last_name"] = last
-        vals.push([mem["email"], mem['percentShares'], mem['percentProfit'], mem['percentLosses'], mem["first_name"], mem["last_name"], "llc member", get_id])
+        vals.push([mem["email"], mem['percentShares'], mem['percentProfit'], mem['percentLosses'], mem["first_name"], mem["last_name"], "LLC member", get_id])
       }
       console.log(vals)
       const query = 'INSERT INTO "public"."people_table" ("email", "share_of_ownership", "share_of_profit", "share_of_losses", "first_name", "last_name", "position", "company_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8)';
@@ -428,7 +428,7 @@ app.post('/addCorporationGovernance', function (req, res) {
         delete mem.name;
         mem["first_name"] = first
         mem["last_name"] = last
-        vals.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "board member", get_id])
+        vals.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "Board Member", get_id])
       }
       console.log(vals)
       const query = 'INSERT INTO "public"."people_table" ("email", "no_shares", "first_name", "last_name", "position", "company_id") VALUES ($1, $2, $3, $4, $5, $6)';
@@ -460,7 +460,7 @@ app.post('/addCorporationGovernance', function (req, res) {
         delete mem.name;
         mem["first_name"] = first
         mem["last_name"] = last
-        vals2.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "shareholder", get_id])
+        vals2.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "Shareholder", get_id])
       }
       console.log(vals)
 
@@ -499,6 +499,7 @@ app.post('/addCorporationGovernance', function (req, res) {
 });
 
 
+<<<<<<< HEAD
 app.get('/getPlan', function (req, res) {
   const email = req.query.email;
   console.log(email)
@@ -552,6 +553,8 @@ app.get('/getPlan', function (req, res) {
 
 
 /*
+=======
+>>>>>>> 9f6c00b7826cb9592432dbd2827451a56280615a
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
@@ -592,6 +595,33 @@ app.get('/getUserList', function(req, res) {
     let get_id = (result.rows[0].company_id);
     console.log(get_id)
     client.query('SELECT first_name, last_name FROM public.user_table where company_id=$1', [get_id], function(err, table) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      } else {
+        console.log(table);
+        res.send(table.rows);
+      }
+    })
+  })
+})
+
+
+app.get('/getMemberList', function(req, res) {
+  const email = req.query.email;
+  console.log(email)
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email],
+  function(err, result) {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return; 
+    } 
+    console.log(result);
+    let get_id = (result.rows[0].company_id);
+    console.log(get_id)
+    client.query('SELECT first_name, last_name, position FROM public.people_table where company_id=$1', [get_id], function(err, table) {
       if (err) {
         console.log(err);
         res.sendStatus(500);
