@@ -387,7 +387,6 @@ app.post('/addPartnershipGovernance', function (req, res) {
 });
 
 
-<<<<<<< HEAD
 
 app.post('/addCorporationGovernance', function (req, res) {
   console.log('went in!');
@@ -499,9 +498,7 @@ app.post('/addCorporationGovernance', function (req, res) {
     });
 });
 
-/*
-=======
->>>>>>> 9490825f784405ddef90eea05131e52779d2c7cb
+
 app.get('/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
