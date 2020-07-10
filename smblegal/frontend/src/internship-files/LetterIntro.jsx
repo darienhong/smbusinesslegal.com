@@ -78,7 +78,7 @@ export default class LetterIntro extends Component {
           <br />
 
           <form>
-            <p>Enter employee's name:</p>
+            <p>Enter intern's name:</p>
             <input
               type='text'
               onChange={this.props.handleChange('internName')}
