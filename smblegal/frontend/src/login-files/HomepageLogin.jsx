@@ -27,7 +27,7 @@ export default class HomepageLogin extends Component {
   state = {
     companyName: "[COMPANY NAME PLACEHOLDER]",
     companyType: "[COMPANY TYPE PLACEHOLDER]",
-    users: "[USERS PLACEHOLDER]", 
+    users:[], 
     lastMeeting: "[LAST MEETING PLACEHOLDER]", 
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     USState: "[STATE PLACEHOLDER]",
@@ -38,32 +38,61 @@ export default class HomepageLogin extends Component {
 
  componentDidMount() {
 
-  const data = {
-    email: this.state.email,
-  }
   console.log(this.state.email);
     var that = this;
+    Promise.all([
       fetch(`/getCompanyInfo?email=${this.state.email}`, {
         method: 'GET',
-      })
-        .then(function(response){
-          response.json()
-            .then(function(data) {
-              console.log(data);
-              that.setState({
-                company: data,
-                companyName: data[0].company_name,
-                companyType: data[0].company_type,
-                USState: data[0].state,
+      }), 
+      fetch(`/getUserList?email=${this.state.email}`, {
+        method: 'GET',
+      }) ])
 
+
+      .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+      .then((data1, data2) => this.setState ({
+        company: data1, 
+        users: data2
+      }))
+
+    //  .then(data2 => console.log(data2))
+   /*   .then(([data1, data2]) => 
+      this.setState ({
+        company: data1,
+        companyName: data1[0].company_name,
+        companyType: data1[0].company_type,
+        USState: data1[0].state,
+        users: data2
+
+      }))
+      */
+
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response))
+
+    }
+
+     /*   .then(function(response1, response2){
+          Promise.all([response1.json(),
+          response2.json() ])
+            .then(function(data1, data2) {
+              console.log(data1);
+              console.log(data2);
+              that.setState({
+                company: data1,
+                companyName: data1[0].company_name,
+                companyType: data1[0].company_type,
+                USState: data1[0].state,
+                users: data2
               })
             })
-        })
-        .then(res => res.json())
+          })
+            
+      
         .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
+        .then(response => console.log('Success:', response)) */
   
-    }
+    
 
     render() {
       const { 
@@ -97,6 +126,9 @@ export default class HomepageLogin extends Component {
             <br />
           <br /> 
           <br />
+
+
+          {JSON.stringify(company)}
 
           <center> 
     <div style={{width: "80%", height: "400px", justifyContent: "center"}}> 
