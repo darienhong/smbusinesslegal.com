@@ -49,17 +49,6 @@ import LLCResolutionQuestions from './llcresolution-files/LLCResolutionQuestions
 import ShareholderMinutesQuestions from './shareholderminutes-files/ShareholderMinutesQuestions';
 
 
-
-
-
-
-
-
-
-
-
-
-
 // import Solutions from './Solutions.jsx';
 import CorporateGov from './why-feature-subsection/CorporateGov.jsx';
 import LimitedLiability from './why-feature-subsection/LimitedLiability.jsx';
@@ -90,7 +79,7 @@ import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
-import AboutUs from './aboutus.jsx';
+import AboutUs from './AboutUs.jsx';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';

@@ -315,7 +315,7 @@ export default class GovernanceDashboard extends Component {
           <br /> 
           <br />
           <div class="list"> 
-          <span style={{fontWeight: "bold"}}>List of Members and Managers: </span>
+          <span style={{fontWeight: "bold"}}>List of Partners: </span>
           {users.map(user => <li> {user.first_name} {user.last_name}: {user.position} </li>)}
           <br />
           <br />
