@@ -19,8 +19,12 @@ export default class EmploymentDocument extends Component {
 
     const sickCheck = values.state == 'California'
     var sickRequire = ''
-    if (sickCheck)
+    var benefitRequire = ''
+    if (sickCheck) {
       sickRequire = 'California Notice of Required Pay and Sick Leave: ' + values.sick
+      benefitRequire = 'Benefits: ' + values.benefits
+
+    }
 
     const tipCheck = values.restaurant == 'Yes'
     var tipRequire = ''
@@ -167,6 +171,7 @@ export default class EmploymentDocument extends Component {
         <p>Hours: <span class='fill'>{values.hours}</span> <span class='fill'>{values.hourType}</span></p>
         <p>Status: <span class='fill'>{values.status}</span> </p>
         <p>At-Will Employment: Yes </p>
+        <p>{benefitRequire}</p>
         <p>{sickRequire} </p>
         <br /><br />
         <p>Compensation or benefits may be adjusted based on performance or other relevant matters,

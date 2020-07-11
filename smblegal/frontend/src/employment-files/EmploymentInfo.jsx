@@ -94,7 +94,7 @@ export default class EmploymentInfo extends Component {
           {(values.state === 'California') && (
             <div>
               <form>
-                <p>Please make your statement of California required pay and sick leave:</p>
+                <p>Please make your statement of California <br />required pay and sick leave:</p>
                 <input
                   type='text'
                   onChange={this.props.handleChange('sick')}
@@ -103,6 +103,20 @@ export default class EmploymentInfo extends Component {
               <br />
             </div>
           )}
+
+          {(values.state === 'California') && (
+            <div>
+              <form>
+                <p>Please make your statement of California <br />required statement of benefits :</p>
+                <input
+                  type='text'
+                  onChange={this.props.handleChange('benefits')}
+                />
+              </form>
+              <br />
+            </div>
+          )}
+
 
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
