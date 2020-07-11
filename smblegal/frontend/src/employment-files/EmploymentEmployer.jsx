@@ -33,10 +33,10 @@ export default class EmploymentEmployer extends Component {
   }
 
   handleClick = (e) => {
-    this.setState({pay: true});
+    this.setState({ pay: true });
   }
 
-   onToken = (token) => {
+  onToken = (token) => {
     fetch('/save-stripe-token', {
       method: 'POST',
       body: JSON.stringify(token),
@@ -45,7 +45,7 @@ export default class EmploymentEmployer extends Component {
         alert(`We are in business, ${data.email}`);
       });
     });
-    }
+  }
 
 
 
@@ -83,10 +83,11 @@ export default class EmploymentEmployer extends Component {
           <br />
 
           <button class='prev' onClick={this.previous}>Previous </button>
+          <button class='next' onClick={this.next}>Next </button>
 
-     {/* PAYMENTS BELOW */}
-     <br />          
-          <StripeCheckout 
+          {/* PAYMENTS BELOW */}
+          <br />
+          {/* <StripeCheckout 
             stripeKey={process.env.REACT_APP_PUBLIC_KEY}
             token={this.onToken}
             name="Premium Subscription"
@@ -95,9 +96,9 @@ export default class EmploymentEmployer extends Component {
             closed = {this.handleClick}
           />
           <br />
-          {this.state.pay === true && (<button class='next' onClick={this.next}>Next </button>)}
-        {/* PAYMENTS ABOVE */}
-        
+          {this.state.pay === true && (<button class='next' onClick={this.next}>Next </button>)} */}
+          {/* PAYMENTS ABOVE */}
+
         </div>
         <div class='col right'>
           <EmploymentDocument class='doc' values={values}

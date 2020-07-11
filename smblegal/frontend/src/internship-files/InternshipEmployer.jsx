@@ -13,7 +13,7 @@ import Navbar2 from '../components/nav-bar2.jsx';
 
 /* PAYMENTS BELOW */
 import StripeCheckout from "react-stripe-checkout"
-import React1, {useState} from 'react';
+import React1, { useState } from 'react';
 /* PAYMENTS ABOVE */
 
 export default class InternshipEmployer extends Component {
@@ -35,10 +35,10 @@ export default class InternshipEmployer extends Component {
   }
 
   handleClick = (e) => {
-    this.setState({pay: true});
+    this.setState({ pay: true });
   }
 
-   onToken = (token) => {
+  onToken = (token) => {
     fetch('/save-stripe-token', {
       method: 'POST',
       body: JSON.stringify(token),
@@ -47,7 +47,7 @@ export default class InternshipEmployer extends Component {
         alert(`We are in business, ${data.email}`);
       });
     });
-    }
+  }
   /* PAYMENTS ABOVE */
 
 
@@ -85,10 +85,11 @@ export default class InternshipEmployer extends Component {
           </form>
           <br />
           <button class='prev' onClick={this.previous}>Previous </button>
-          
+          <button class='next' onClick={this.next}>Next </button>
+
           {/* PAYMENTS BELOW */}
-          <br />          
-          <StripeCheckout 
+          <br />
+          {/* <StripeCheckout 
             stripeKey={process.env.REACT_APP_PUBLIC_KEY}
             token={this.onToken}
             name="Premium Subscription"
@@ -97,8 +98,8 @@ export default class InternshipEmployer extends Component {
             closed = {this.handleClick}
           />
           <br />
-          {this.state.pay === true && (<button class='next' onClick={this.next}>Next </button>)}
-        {/* PAYMENTS ABOVE */}
+          {this.state.pay === true && (<button class='next' onClick={this.next}>Next </button>)} */}
+          {/* PAYMENTS ABOVE */}
 
         </div>
         <div class='col right'>
