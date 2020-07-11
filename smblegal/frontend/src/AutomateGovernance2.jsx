@@ -300,7 +300,7 @@ export default function AutomateGov2() {
 
 
 
-                        <div class="automate-choice">
+                        {/* <div class="automate-choice">
                             <TextField
                                 id="outlined-select-consent"
                                 select label="How would you like to Automate your Governance?"
@@ -316,10 +316,10 @@ export default function AutomateGov2() {
                                 ))}
                             </TextField>
                             < br />
-                        </div>
+                        </div> */}
 
 
-                        {automate === 'AI' && (
+                        {/* {automate === 'AI' && (
                             <form>
                                 <br />
 
@@ -394,15 +394,15 @@ export default function AutomateGov2() {
 
 
                         <br />
-                        <br />
+                        <br /> */}
 
 
-                        {automate === 'Manual' && (
+                        {/* {automate === 'Manual' && ( */}
 
 
-                            <form>
-                                < br />
-                                <div class="upload-formation">
+                        <form>
+                            < br />
+                            {/* <div class="upload-formation">
                                     <p style={{ textAlign: "center" }}> Please upload formation documents </p>
 
                                     <DropzoneArea
@@ -413,9 +413,9 @@ export default function AutomateGov2() {
                                 </div>
 
                                 <br />
-                                <br />
+                                <br /> */}
 
-                                <div class="upload-governance">
+                            {/* <div class="upload-governance">
                                     <p style={{ textAlign: "center" }}> Please upload governance documents </p>
 
                                     <DropzoneArea
@@ -425,10 +425,10 @@ export default function AutomateGov2() {
 
                                 </div>
                                 <br />
-                                <br />
+                                <br /> */}
 
 
-                                <div class="upload-company-minutes">
+                            {/* <div class="upload-company-minutes">
                                     <p style={{ textAlign: "center" }}> Please upload company's form of resolutions and meeting minutes (if any) </p>
 
                                     <DropzoneArea
@@ -439,311 +439,311 @@ export default function AutomateGov2() {
                                 </div>
 
                                 <br />
+                                <br /> */}
+
+                            <div class="corporation-questions">
+                                <div class="board-meeting" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="date"
+                                        label="When was your last board meeting?"
+                                        name="boardDate" onChange={handleStateChange}
+                                        type="date"
+                                        variant="outlined"
+                                        className={classes.textField}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        style={{ width: "500px" }}
+                                    />
+
+                                </div>
+                                <br></br>
+                                <div class="shareholders-meeting" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="date"
+                                        label="When was your last Shareholder meeting?"
+                                        name="shareholderDate" onChange={handleStateChange}
+                                        type="date"
+                                        variant="outlined"
+                                        className={classes.textField}
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="shareholders-quorum" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="What is a quorum of Shareholders of your business?"
+                                        name="quorum_share" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="shareholders-quorum-vote" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="What is a sufficient vote of Shareholders to pass something in your business?"
+                                        name="vote_share" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="board-quorum" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="What is a quorum of Board in your business?"
+                                        name="quorum_board" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="board-quorum-vote" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="What is a sufficient vote of the Board to pass something in your business?"
+                                        name="vote_board" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="num-board-members" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="How many board members does your business have?"
+                                        name="members" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="num-shareholders" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="How many Shareholders does your business have?" name="boardDate" onChange={handleStateChange}
+                                        name="shareholders" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="num-authorized-shares" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="What is the total number of authorized shares of your company?"
+                                        name="authorized" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br />
+                                <div class="num-issues" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="What is the total number of issued shares of your company?"
+                                        name="issued" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                < br />
                                 <br />
 
-                                <div class="corporation-questions">
-                                    <div class="board-meeting" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="date"
-                                            label="When was your last board meeting?"
-                                            name="boardDate" onChange={handleStateChange}
-                                            type="date"
-                                            variant="outlined"
-                                            className={classes.textField}
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            style={{ width: "500px" }}
-                                        />
-
-                                    </div>
-                                    <br></br>
-                                    <div class="shareholders-meeting" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="date"
-                                            label="When was your last Shareholder meeting?"
-                                            name="shareholderDate" onChange={handleStateChange}
-                                            type="date"
-                                            variant="outlined"
-                                            className={classes.textField}
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="shareholders-quorum" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="What is a quorum of Shareholders of your business?"
-                                            name="quorum_share" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="shareholders-quorum-vote" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="What is a sufficient vote of Shareholders to pass something in your business?"
-                                            name="vote_share" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="board-quorum" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="What is a quorum of Board in your business?"
-                                            name="quorum_board" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="board-quorum-vote" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="What is a sufficient vote of the Board to pass something in your business?"
-                                            name="vote_board" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="num-board-members" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="How many board members does your business have?"
-                                            name="members" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="num-shareholders" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="How many Shareholders does your business have?" name="boardDate" onChange={handleStateChange}
-                                            name="shareholders" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="num-authorized-shares" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="What is the total number of authorized shares of your company?"
-                                            name="authorized" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br />
-                                    <div class="num-issues" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="What is the total number of issued shares of your company?"
-                                            name="issued" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    < br />
-                                    <br />
-
-                                    <div>
-                                        <p style={{ textAlign: "center" }}> Please upload the names and email address of all Board Members that your business has </p>
+                                <div>
+                                    <p style={{ textAlign: "center" }}> Please upload the names and email address of all Board Members that your business has </p>
 
 
 
-                                        <div class="members-form">
+                                    <div class="members-form">
 
-                                            <div class="button-add">
+                                        <div class="button-add">
 
-                                                <Button onClick={handleAddBM}> Add Member</Button>
-                                            </div>
-                                            < br />
-                                            < br />
-                                            {boardMembersList.map((x, i) => {
-                                                return (
-                                                    <div class="members-form-box">
+                                            <Button onClick={handleAddBM}> Add Member</Button>
+                                        </div>
+                                        < br />
+                                        < br />
+                                        {boardMembersList.map((x, i) => {
+                                            return (
+                                                <div class="members-form-box">
 
-                                                        <div class="name-input-c" style={{ textAlign: "center" }}>
+                                                    <div class="name-input-c" style={{ textAlign: "center" }}>
 
-                                                            <TextField
-                                                                name="name"
-                                                                label="Name"
-                                                                value={x.name}
-                                                                variant="outlined"
-                                                                style={{ width: "300px" }}
-                                                                onChange={e => handleBMChange(e, i)}
-                                                            />
-
-                                                        </div>
-                                                        < br />
-                                                        <div class="email-input-c" style={{ textAlign: "center" }}>
-                                                            <TextField
-                                                                name="email"
-                                                                label="Email"
-                                                                value={x.email}
-                                                                variant="outlined"
-                                                                onChange={e => handleBMChange(e, i)}
-                                                                style={{ width: "300px" }}
-                                                            />
-                                                        </div>
-                                                        <br />
-                                                        <div class="num-shares" style={{ textAlign: "center" }}>
-                                                            <TextField
-                                                                name="sharesOwned"
-                                                                id="outlined-number"
-                                                                label="Number of Shares owned"
-                                                                type="number"
-                                                                value={x.sharesOwned}
-                                                                InputLabelProps={{
-                                                                    shrink: true,
-                                                                }}
-                                                                variant="outlined"
-                                                                onChange={e => handleBMChange(e, i)}
-                                                                style={{ width: "300px" }}
-                                                            />
-                                                        </div>
+                                                        <TextField
+                                                            name="name"
+                                                            label="Name"
+                                                            value={x.name}
+                                                            variant="outlined"
+                                                            style={{ width: "300px" }}
+                                                            onChange={e => handleBMChange(e, i)}
+                                                        />
 
                                                     </div>
-
-                                                );
-                                            })}
-
-                                        </div>
-                                    </div>
-
-
-                                    <br />
-
-                                    <div>
-                                        <p style={{ textAlign: "center" }}> Please upload the names and email address of all Shareholders that your business has </p>
-                                        <div class="members-form">
-
-                                            <div class="button-add">
-
-                                                <Button onClick={handleAddSH}> Add Member</Button>
-                                            </div>
-                                            < br />
-                                            <br />
-                                            {shareholdersList.map((x, i) => {
-                                                return (
-                                                    <div class="members-form-box">
-
-                                                        <div class="name-input-c" style={{ textAlign: "center" }}>
-
-                                                            <TextField
-                                                                name="name"
-                                                                label="Name"
-                                                                value={x.name}
-                                                                variant="outlined"
-                                                                style={{ width: "300px" }}
-                                                                onChange={e => handleSHChange(e, i)}
-                                                            />
-
-                                                        </div>
-                                                        < br />
-                                                        <div class="email-input-c" style={{ textAlign: "center" }}>
-                                                            <TextField
-                                                                name="email"
-                                                                label="Email"
-                                                                value={x.email}
-                                                                variant="outlined"
-                                                                onChange={e => handleSHChange(e, i)}
-                                                                style={{ width: "300px" }}
-                                                            />
-                                                        </div>
-                                                        <br />
-                                                        <div class="num-shares" style={{ textAlign: "center" }}>
-                                                            <TextField
-                                                                name="sharesOwned"
-                                                                id="outlined-number"
-                                                                label="Number of Shares owned"
-                                                                type="number"
-                                                                value={x.sharesOwned}
-                                                                InputLabelProps={{
-                                                                    shrink: true,
-                                                                }}
-                                                                onChange={e => handleSHChange(e, i)}
-                                                                variant="outlined"
-                                                                style={{ width: "300px" }}
-                                                            />
-                                                        </div>
-
+                                                    < br />
+                                                    <div class="email-input-c" style={{ textAlign: "center" }}>
+                                                        <TextField
+                                                            name="email"
+                                                            label="Email"
+                                                            value={x.email}
+                                                            variant="outlined"
+                                                            onChange={e => handleBMChange(e, i)}
+                                                            style={{ width: "300px" }}
+                                                        />
+                                                    </div>
+                                                    <br />
+                                                    <div class="num-shares" style={{ textAlign: "center" }}>
+                                                        <TextField
+                                                            name="sharesOwned"
+                                                            id="outlined-number"
+                                                            label="Number of Shares owned"
+                                                            type="number"
+                                                            value={x.sharesOwned}
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }}
+                                                            variant="outlined"
+                                                            onChange={e => handleBMChange(e, i)}
+                                                            style={{ width: "300px" }}
+                                                        />
                                                     </div>
 
-                                                );
-                                            })}
+                                                </div>
 
-
-
-
-
-
-                                        </div>
-
+                                            );
+                                        })}
 
                                     </div>
-
                                 </div>
 
 
                                 <br />
-                                <br />
+
+                                <div>
+                                    <p style={{ textAlign: "center" }}> Please upload the names and email address of all Shareholders that your business has </p>
+                                    <div class="members-form">
+
+                                        <div class="button-add">
+
+                                            <Button onClick={handleAddSH}> Add Member</Button>
+                                        </div>
+                                        < br />
+                                        <br />
+                                        {shareholdersList.map((x, i) => {
+                                            return (
+                                                <div class="members-form-box">
+
+                                                    <div class="name-input-c" style={{ textAlign: "center" }}>
+
+                                                        <TextField
+                                                            name="name"
+                                                            label="Name"
+                                                            value={x.name}
+                                                            variant="outlined"
+                                                            style={{ width: "300px" }}
+                                                            onChange={e => handleSHChange(e, i)}
+                                                        />
+
+                                                    </div>
+                                                    < br />
+                                                    <div class="email-input-c" style={{ textAlign: "center" }}>
+                                                        <TextField
+                                                            name="email"
+                                                            label="Email"
+                                                            value={x.email}
+                                                            variant="outlined"
+                                                            onChange={e => handleSHChange(e, i)}
+                                                            style={{ width: "300px" }}
+                                                        />
+                                                    </div>
+                                                    <br />
+                                                    <div class="num-shares" style={{ textAlign: "center" }}>
+                                                        <TextField
+                                                            name="sharesOwned"
+                                                            id="outlined-number"
+                                                            label="Number of Shares owned"
+                                                            type="number"
+                                                            value={x.sharesOwned}
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }}
+                                                            onChange={e => handleSHChange(e, i)}
+                                                            variant="outlined"
+                                                            style={{ width: "300px" }}
+                                                        />
+                                                    </div>
+
+                                                </div>
+
+                                            );
+                                        })}
 
 
-                                <br />
-                                <br />
-                                <center>
-                                    {/* <Link to="/Dashboard"> */}
-                                    <div class="gov-button-1" onClick={handleClick}>
-                                        <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
+
+
+
+
                                     </div>
-                                    {/* </Link> */}
-                                </center>
 
-                            </form>
 
-                        )}
+                                </div>
+
+                            </div>
+
+
+                            <br />
+                            <br />
+
+
+                            <br />
+                            <br />
+                            <center>
+                                {/* <Link to="/Dashboard"> */}
+                                <div class="gov-button-1" onClick={handleClick}>
+                                    <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
+                                </div>
+                                {/* </Link> */}
+                            </center>
+
+                        </form>
+
+                        {/* )} */}
 
                     </div>
                 </form>

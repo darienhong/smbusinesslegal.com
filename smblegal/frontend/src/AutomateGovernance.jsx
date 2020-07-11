@@ -196,7 +196,7 @@ export default function AutomateGov() {
 
 
 
-                            <div class="automate-choice">
+                            {/* <div class="automate-choice">
                                 <TextField
                                     id="outlined-select-consent"
                                     select label="How would you like to Automate your Governance?"
@@ -212,11 +212,11 @@ export default function AutomateGov() {
                                     ))}
                                 </TextField>
                                 < br />
-                            </div>
+                            </div> */}
 
 
 
-                            {automate === 'AI' && (
+                            {/* {automate === 'AI' && (
                                 <form>
                                     <br />
                                     <div class="upload-formation">
@@ -290,216 +290,216 @@ export default function AutomateGov() {
 
 
                             <br />
-                            <br />
+                            <br /> */}
 
                         </div>
 
 
-                        {automate === 'Manual' && (
+                        {/* {automate === 'Manual' && ( */}
 
-                            <form>
+                        <form>
 
-                                <div class="upload-formation">
-                                    <p style={{ textAlign: "center" }}> Please upload formation documents </p>
+                            {/* <div class="upload-formation">
+                                <p style={{ textAlign: "center" }}> Please upload formation documents </p>
 
-                                    <DropzoneArea
-                                        onChange={handleChange.bind(this)}
-                                        filesLimit={10}
-                                    />
+                                <DropzoneArea
+                                    onChange={handleChange.bind(this)}
+                                    filesLimit={10}
+                                />
 
-                                </div>
+                            </div>
 
-                                <br />
-                                <br />
+                            <br />
+                            <br />
 
-                                <div class="upload-governance">
-                                    <p style={{ textAlign: "center" }}> Please upload governance documents </p>
+                            <div class="upload-governance">
+                                <p style={{ textAlign: "center" }}> Please upload governance documents </p>
 
-                                    <DropzoneArea
-                                        onChange={handleChange.bind(this)}
-                                        filesLimit={10}
-                                    />
+                                <DropzoneArea
+                                    onChange={handleChange.bind(this)}
+                                    filesLimit={10}
+                                />
 
-                                </div>
-                                <br />
-                                <br />
-
-
-                                <div class="upload-company-minutes">
-                                    <p style={{ textAlign: "center" }}> Please upload company's form of resolutions and meeting minutes (if any) </p>
-
-                                    <DropzoneArea
-                                        onChange={handleChange.bind(this)}
-                                        filesLimit={10}
-                                    />
-
-                                </div>
+                            </div>
+                            <br />
+                            <br />
 
 
-                                <br />
-                                < br />
-                                <div class="unanimous-choice">
-                                    <TextField
-                                        id="outlined-select-consent"
-                                        select label="Does your partnership require unanimous consent?"
-                                        value={boolean}
-                                        onChange={handleChangeBoolean}
-                                        variant="outlined"
-                                        style={{ width: "500px" }}
-                                    >
-                                        {booleans.map((option) => (
-                                            <MenuItem key={option.value} value={option.value}>
-                                                {option.label}
-                                            </MenuItem>
-                                        ))}
-                                    </TextField>
-                                </div>
+                            <div class="upload-company-minutes">
+                                <p style={{ textAlign: "center" }}> Please upload company's form of resolutions and meeting minutes (if any) </p>
+
+                                <DropzoneArea
+                                    onChange={handleChange.bind(this)}
+                                    filesLimit={10}
+                                />
+
+                            </div>
+
+
+                            <br />
+                            < br /> */}
+                            <div class="unanimous-choice">
+                                <TextField
+                                    id="outlined-select-consent"
+                                    select label="Does your partnership require unanimous consent?"
+                                    value={boolean}
+                                    onChange={handleChangeBoolean}
+                                    variant="outlined"
+                                    style={{ width: "500px" }}
+                                >
+                                    {booleans.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </div>
 
 
 
-                                {boolean === 'No' && (
+                            {boolean === 'No' && (
 
-                                    <form>
-                                        <br />
-                                        <div class="vote-action">
-                                            <TextField
-                                                id="outlined-number"
-                                                label="What is a sufficient vote to take partnership action?"
-                                                name="vote" onChange={handleStateChange}
-                                                type="number"
-                                                InputLabelProps={{
-                                                    shrink: true,
-                                                }}
-                                                variant="outlined"
-                                                style={{ width: "500px" }}
-                                            />
-
-                                        </div>
-                                    </form>
-
-                                )}
-
-
-                                <br></br>
-                                <div class="num-partners" style={{ textAlign: "center" }}>
-                                    <TextField
-                                        id="outlined-number"
-                                        label="How many partners does your business have?"
-                                        name="partners" onChange={handleStateChange}
-                                        type="number"
-                                        InputLabelProps={{
-                                            shrink: true,
-                                        }}
-                                        variant="outlined"
-                                        style={{ width: "500px" }}
-                                    />
-                                </div>
-                                <br></br>
-
-                                <p style={{ textAlign: "center" }}> Please enter the following information for all Members or Managers </p>
-
-                                <div class="members-form">
-
-                                    <div class="button-add">
-                                        <Button onClick={handleAddMembers}> Add Member</Button>
-                                    </div>
-                                    < br />
+                                <form>
                                     <br />
+                                    <div class="vote-action">
+                                        <TextField
+                                            id="outlined-number"
+                                            label="What is a sufficient vote to take partnership action?"
+                                            name="vote" onChange={handleStateChange}
+                                            type="number"
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            variant="outlined"
+                                            style={{ width: "500px" }}
+                                        />
 
-                                    {membersList.map((x, i) => {
-                                        return (
-                                            <div class="members-form-box">
+                                    </div>
+                                </form>
 
-                                                <div class="name-input-p" style={{ textAlign: "center" }}>
-
-                                                    <TextField
-                                                        name="name"
-                                                        label="Name"
-                                                        value={x.name}
-                                                        variant="outlined"
-                                                        style={{ width: "200px" }}
-                                                        onChange={e => handleMembersChange(e, i)}
-                                                    />
-
-                                                </div>
-                                                < br />
-                                                <div class="email-input-p" style={{ textAlign: "center" }}>
-                                                    <TextField
-                                                        name="email"
-                                                        label="Email"
-                                                        value={x.email}
-                                                        variant="outlined"
-                                                        onChange={e => handleMembersChange(e, i)}
-                                                        style={{ width: "200px" }}
-                                                    />
-                                                </div>
-                                                <br />
-                                                <div class="percent-ownership" style={{ textAlign: "center" }}>
-                                                    <TextField
-                                                        name="percentShares"
-                                                        label="Percentage of ownership"
-                                                        type="number"
-                                                        value={x.percentShares}
-                                                        InputLabelProps={{
-                                                            shrink: true,
-                                                        }}
-                                                        variant="outlined"
-                                                        onChange={e => handleMembersChange(e, i)}
-                                                        style={{ width: "200px" }}
-                                                    />
-                                                </div>
-                                                <br />
-                                                <div class="percent-profits-received" style={{ textAlign: "center" }}>
-                                                    <TextField
-                                                        name="percentProfit"
-                                                        label="Percent of profits received"
-                                                        type="number"
-                                                        value={x.percentProfit}
-                                                        InputLabelProps={{
-                                                            shrink: true,
-                                                        }}
-                                                        onChange={e => handleMembersChange(e, i)}
-
-                                                        variant="outlined"
-                                                        style={{ width: "200px" }}
-                                                    />
-                                                </div>
-                                                < br />
-
-                                                <div class="percent-losses-received" style={{ textAlign: "center" }}>
-                                                    <TextField
-                                                        name="percentLosses"
-                                                        label="Percent of losses received"
-                                                        type="number"
-                                                        value={x.percentLosses}
-                                                        InputLabelProps={{
-                                                            shrink: true,
-                                                        }}
-                                                        onChange={e => handleMembersChange(e, i)}
-
-                                                        variant="outlined"
-                                                        style={{ width: "200px" }}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                        );
-                                    })}
+                            )}
 
 
+                            <br></br>
+                            <div class="num-partners" style={{ textAlign: "center" }}>
+                                <TextField
+                                    id="outlined-number"
+                                    label="How many partners does your business have?"
+                                    name="partners" onChange={handleStateChange}
+                                    type="number"
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
+                                    variant="outlined"
+                                    style={{ width: "500px" }}
+                                />
+                            </div>
+                            <br></br>
 
+                            <p style={{ textAlign: "center" }}> Please enter the following information for all Members or Managers </p>
 
+                            <div class="members-form">
 
-
+                                <div class="button-add">
+                                    <Button onClick={handleAddMembers}> Add Member</Button>
                                 </div>
+                                < br />
+                                <br />
+
+                                {membersList.map((x, i) => {
+                                    return (
+                                        <div class="members-form-box">
+
+                                            <div class="name-input-p" style={{ textAlign: "center" }}>
+
+                                                <TextField
+                                                    name="name"
+                                                    label="Name"
+                                                    value={x.name}
+                                                    variant="outlined"
+                                                    style={{ width: "200px" }}
+                                                    onChange={e => handleMembersChange(e, i)}
+                                                />
+
+                                            </div>
+                                            < br />
+                                            <div class="email-input-p" style={{ textAlign: "center" }}>
+                                                <TextField
+                                                    name="email"
+                                                    label="Email"
+                                                    value={x.email}
+                                                    variant="outlined"
+                                                    onChange={e => handleMembersChange(e, i)}
+                                                    style={{ width: "200px" }}
+                                                />
+                                            </div>
+                                            <br />
+                                            <div class="percent-ownership" style={{ textAlign: "center" }}>
+                                                <TextField
+                                                    name="percentShares"
+                                                    label="Percentage of ownership"
+                                                    type="number"
+                                                    value={x.percentShares}
+                                                    InputLabelProps={{
+                                                        shrink: true,
+                                                    }}
+                                                    variant="outlined"
+                                                    onChange={e => handleMembersChange(e, i)}
+                                                    style={{ width: "200px" }}
+                                                />
+                                            </div>
+                                            <br />
+                                            <div class="percent-profits-received" style={{ textAlign: "center" }}>
+                                                <TextField
+                                                    name="percentProfit"
+                                                    label="Percent of profits received"
+                                                    type="number"
+                                                    value={x.percentProfit}
+                                                    InputLabelProps={{
+                                                        shrink: true,
+                                                    }}
+                                                    onChange={e => handleMembersChange(e, i)}
+
+                                                    variant="outlined"
+                                                    style={{ width: "200px" }}
+                                                />
+                                            </div>
+                                            < br />
+
+                                            <div class="percent-losses-received" style={{ textAlign: "center" }}>
+                                                <TextField
+                                                    name="percentLosses"
+                                                    label="Percent of losses received"
+                                                    type="number"
+                                                    value={x.percentLosses}
+                                                    InputLabelProps={{
+                                                        shrink: true,
+                                                    }}
+                                                    onChange={e => handleMembersChange(e, i)}
+
+                                                    variant="outlined"
+                                                    style={{ width: "200px" }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                    );
+                                })}
 
 
 
 
-                                <br></br>
 
 
-                                {/*}
+                            </div>
+
+
+
+
+                            <br></br>
+
+
+                            {/*}
 
              <p style={{textAlign: "center"}}> Please upload formation documents </p>
             
@@ -551,20 +551,20 @@ export default function AutomateGov() {
 
 
 
-                                <br />
-                                <br />
-                                <br />
-                                <center>
-                                    {/* <Link to="/Dashboard"> */}
-                                    <div class="gov-button-1" onClick={handleClick}>
-                                        <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
-                                    </div>
-                                    {/* </Link> */}
-                                </center>
+                            <br />
+                            <br />
+                            <br />
+                            <center>
+                                {/* <Link to="/Dashboard"> */}
+                                <div class="gov-button-1" onClick={handleClick}>
+                                    <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
+                                </div>
+                                {/* </Link> */}
+                            </center>
 
-                            </form>
+                        </form>
 
-                        )}
+                        {/* )} */}
 
 
                         <br></br>

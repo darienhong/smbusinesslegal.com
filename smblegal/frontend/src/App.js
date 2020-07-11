@@ -90,7 +90,7 @@ import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
-import AboutUs from './AboutUs.jsx';
+import AboutUs from './aboutus.jsx';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';

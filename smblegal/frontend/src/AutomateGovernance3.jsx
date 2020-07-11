@@ -284,7 +284,7 @@ export default function AutomateGov3() {
                         <br></br>
 
 
-                        <div class="automate-choice">
+                        {/* <div class="automate-choice">
                             <TextField
                                 id="outlined-select-consent"
                                 select label="How would you like to Automate your Governance?"
@@ -300,11 +300,11 @@ export default function AutomateGov3() {
                                 ))}
                             </TextField>
                             < br />
-                        </div>
+                        </div> */}
 
 
 
-                        {automate === 'AI' && (
+                        {/* {automate === 'AI' && (
                             <form>
                                 <br />
 
@@ -371,16 +371,16 @@ export default function AutomateGov3() {
 
                         )}
                         <br />
-                        <br />
+                        <br /> */}
 
-                        {automate === 'Manual' && (
+                        {/* {automate === 'Manual' && ( */}
 
-                            <form>
-                                < br />
+                        <form>
+                            < br />
 
 
 
-                                <div class="upload-formation">
+                            {/* <div class="upload-formation">
                                     <p style={{ textAlign: "center" }}> Please upload formation documents </p>
 
                                     <DropzoneArea
@@ -414,207 +414,207 @@ export default function AutomateGov3() {
 
                                 </div>
                                 <br />
-                                < br />
+                                < br /> */}
 
-                                <div class="LLC-questions">
-                                    <div class="manager-choice">
-                                        <TextField
-                                            id="outlined-select-meeting"
-                                            select label="Is your Business Member managed or Manager managed?"
-                                            value={manager}
-                                            onChange={handleChangeManager}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        >
-                                            {managers.map((option) => (
-                                                <MenuItem key={option.value} value={option.value}>
-                                                    {option.label}
-                                                </MenuItem>
-                                            ))}
-                                        </TextField>
-                                    </div>
-                                    <br />
-                                    <div class="annual-meeting-choice">
-                                        <TextField
-                                            id="outlined-select-meeting"
-                                            select label="Are you required to have an annual meeting?"
-                                            value={boolean}
-                                            onChange={handleChangeBoolean}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        >
-                                            {booleans.map((option) => (
-                                                <MenuItem key={option.value} value={option.value}>
-                                                    {option.label}
-                                                </MenuItem>
-                                            ))}
-                                        </TextField>
-                                    </div>
-                                    <br></br>
-                                    <div class="llc-quorum" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="What is a sufficient number of members to call a meeting to order for your business?"
-                                            name="quorum" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="llc-quorum-vote" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="What vote of members is needed to take action?"
-                                            name="quorum_vote" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="num-members-llc" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-
-                                            label="How many members does your business have?"
-                                            name="members" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br></br>
-                                    <div class="num-members-llc" style={{ textAlign: "center" }}>
-                                        <TextField
-                                            id="outlined-number"
-                                            label="How many managers does your business have?"
-                                            name="managers" onChange={handleStateChange}
-                                            type="number"
-                                            InputLabelProps={{
-                                                shrink: true,
-                                            }}
-                                            variant="outlined"
-                                            style={{ width: "500px" }}
-                                        />
-                                    </div>
-                                    <br />
-                                    <p style={{ textAlign: "center" }}> Please enter the following information for all Members and/or Managers </p>
-                                    <br></br>
-
-                                    <div class="members-form">
-
-                                        <div class="button-add">
-
-                                            <Button onClick={handleAddMembers}> Add Member</Button>
-                                        </div>
-                                        < br />
-                                        <br />
-                                        {membersList.map((x, i) => {
-                                            return (
-                                                <div class="members-form-box">
-
-                                                    <div class="name-input-llc" style={{ textAlign: "center" }}>
-
-                                                        <TextField
-                                                            name="name"
-                                                            label="Name"
-                                                            value={x.name}
-                                                            variant="outlined"
-                                                            style={{ width: "200px" }}
-                                                            onChange={e => handleMembersChange(e, i)}
-                                                        />
-
-                                                    </div>
-                                                    < br />
-                                                    <div class="email-input-llc" style={{ textAlign: "center" }}>
-                                                        <TextField
-                                                            name="email"
-                                                            label="Email"
-                                                            value={x.email}
-                                                            variant="outlined"
-                                                            onChange={e => handleMembersChange(e, i)}
-                                                            style={{ width: "200px" }}
-                                                        />
-                                                    </div>
-                                                    <br />
-                                                    <div class="percent-ownership" style={{ textAlign: "center" }}>
-                                                        <TextField
-                                                            name="percentShares"
-                                                            label="Percentage of ownership"
-                                                            type="number"
-                                                            value={x.percentShares}
-                                                            InputLabelProps={{
-                                                                shrink: true,
-                                                            }}
-                                                            variant="outlined"
-                                                            onChange={e => handleMembersChange(e, i)}
-                                                            style={{ width: "200px" }}
-                                                        />
-                                                    </div>
-                                                    <br />
-                                                    <div class="percent-profits-received" style={{ textAlign: "center" }}>
-                                                        <TextField
-                                                            name="percentProfit"
-                                                            label="Percent of profits received"
-                                                            type="number"
-                                                            value={x.percentProfit}
-                                                            InputLabelProps={{
-                                                                shrink: true,
-                                                            }}
-                                                            onChange={e => handleMembersChange(e, i)}
-
-                                                            variant="outlined"
-                                                            style={{ width: "200px" }}
-                                                        />
-                                                    </div>
-                                                    <br />
-                                                    <div class="percent-losses-received" style={{ textAlign: "center" }}>
-                                                        <TextField
-                                                            name="percentLosses"
-                                                            label="Percent of losses received"
-                                                            type="number"
-                                                            value={x.percentLosses}
-                                                            InputLabelProps={{
-                                                                shrink: true,
-                                                            }}
-                                                            onChange={e => handleMembersChange(e, i)}
-
-                                                            variant="outlined"
-                                                            style={{ width: "200px" }}
-                                                        />
-                                                    </div>
-
-                                                </div>
-
-                                            );
-                                        })}
-                                    </div>
-
+                            <div class="LLC-questions">
+                                <div class="manager-choice">
+                                    <TextField
+                                        id="outlined-select-meeting"
+                                        select label="Is your Business Member managed or Manager managed?"
+                                        value={manager}
+                                        onChange={handleChangeManager}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    >
+                                        {managers.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </TextField>
                                 </div>
                                 <br />
-                                <br />
-                                <br />
-                                <br />
-                                <center>
-                                    {/* <Link to="/Dashboard"> */}
-                                    <div class="gov-button-1" onClick={handleClick}>
-                                        <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
-                                    </div>
-                                    {/* </Link> */}
-                                </center>
+                                <div class="annual-meeting-choice">
+                                    <TextField
+                                        id="outlined-select-meeting"
+                                        select label="Are you required to have an annual meeting?"
+                                        value={boolean}
+                                        onChange={handleChangeBoolean}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    >
+                                        {booleans.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                            </MenuItem>
+                                        ))}
+                                    </TextField>
+                                </div>
+                                <br></br>
+                                <div class="llc-quorum" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="What is a sufficient number of members to call a meeting to order for your business?"
+                                        name="quorum" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="llc-quorum-vote" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="What vote of members is needed to take action?"
+                                        name="quorum_vote" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="num-members-llc" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
 
-                            </form>
-                        )}
+                                        label="How many members does your business have?"
+                                        name="members" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br></br>
+                                <div class="num-members-llc" style={{ textAlign: "center" }}>
+                                    <TextField
+                                        id="outlined-number"
+                                        label="How many managers does your business have?"
+                                        name="managers" onChange={handleStateChange}
+                                        type="number"
+                                        InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                        variant="outlined"
+                                        style={{ width: "500px" }}
+                                    />
+                                </div>
+                                <br />
+                                <p style={{ textAlign: "center" }}> Please enter the following information for all Members and/or Managers </p>
+                                <br></br>
+
+                                <div class="members-form">
+
+                                    <div class="button-add">
+
+                                        <Button onClick={handleAddMembers}> Add Member</Button>
+                                    </div>
+                                    < br />
+                                    <br />
+                                    {membersList.map((x, i) => {
+                                        return (
+                                            <div class="members-form-box">
+
+                                                <div class="name-input-llc" style={{ textAlign: "center" }}>
+
+                                                    <TextField
+                                                        name="name"
+                                                        label="Name"
+                                                        value={x.name}
+                                                        variant="outlined"
+                                                        style={{ width: "200px" }}
+                                                        onChange={e => handleMembersChange(e, i)}
+                                                    />
+
+                                                </div>
+                                                < br />
+                                                <div class="email-input-llc" style={{ textAlign: "center" }}>
+                                                    <TextField
+                                                        name="email"
+                                                        label="Email"
+                                                        value={x.email}
+                                                        variant="outlined"
+                                                        onChange={e => handleMembersChange(e, i)}
+                                                        style={{ width: "200px" }}
+                                                    />
+                                                </div>
+                                                <br />
+                                                <div class="percent-ownership" style={{ textAlign: "center" }}>
+                                                    <TextField
+                                                        name="percentShares"
+                                                        label="Percentage of ownership"
+                                                        type="number"
+                                                        value={x.percentShares}
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        variant="outlined"
+                                                        onChange={e => handleMembersChange(e, i)}
+                                                        style={{ width: "200px" }}
+                                                    />
+                                                </div>
+                                                <br />
+                                                <div class="percent-profits-received" style={{ textAlign: "center" }}>
+                                                    <TextField
+                                                        name="percentProfit"
+                                                        label="Percent of profits received"
+                                                        type="number"
+                                                        value={x.percentProfit}
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        onChange={e => handleMembersChange(e, i)}
+
+                                                        variant="outlined"
+                                                        style={{ width: "200px" }}
+                                                    />
+                                                </div>
+                                                <br />
+                                                <div class="percent-losses-received" style={{ textAlign: "center" }}>
+                                                    <TextField
+                                                        name="percentLosses"
+                                                        label="Percent of losses received"
+                                                        type="number"
+                                                        value={x.percentLosses}
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        onChange={e => handleMembersChange(e, i)}
+
+                                                        variant="outlined"
+                                                        style={{ width: "200px" }}
+                                                    />
+                                                </div>
+
+                                            </div>
+
+                                        );
+                                    })}
+                                </div>
+
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <center>
+                                {/* <Link to="/Dashboard"> */}
+                                <div class="gov-button-1" onClick={handleClick}>
+                                    <p style={{ textAlign: "center" }}> Finish Initializing Your Company </p>
+                                </div>
+                                {/* </Link> */}
+                            </center>
+
+                        </form>
+                        {/* )} */}
                     </div>
                 </form>
 
