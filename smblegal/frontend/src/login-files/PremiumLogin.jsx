@@ -139,13 +139,14 @@ export default class PremiumLogin extends Component {
               {users.map(user => <li>  {user.first_name} {user.last_name} </li>)}
               </div>
               < br/>
-               <div class="lastmeeting"> 
+           {/*    <div class="lastmeeting"> 
                   {lastMeeting}
               </div>
               <br />
               <div class="nextmeeting">
                   {nextMeeting}
               </div>
+        */}
           </div>
           <div class="automated-docs" style={{width: "300px", float: "right"}} >
           <div class="features-1">

@@ -97,6 +97,8 @@ export default class GovernanceDashboard extends Component {
         numPartners: data1[0][0].no_partners, 
 
         //corporation questions
+        lastBoardMeeting: data1[0][0].board_meetings, 
+        lastShareholdersMeeting: data1[0][0].shareholder_meetings,
         shareholdersQuorum: data1[0][0].quorum_shareholders, 
         shareholdersVote: data1[0][0].quorum_vote_shareholders, 
         boardQuorum: data1[0][0].quorum_board, 
@@ -360,7 +362,7 @@ export default class GovernanceDashboard extends Component {
             <br />
             <br />
             <div class="list" style={{textTransform: "none"}}> 
-            <span style={{fontWeight: "bold"}}> List of BoardMembers and Shareholders: </span> 
+            <span style={{fontWeight: "bold"}}> List of Board Members and Shareholders: </span> 
             {users.map(user => <li>  {user.first_name} {user.last_name}: {user.position} </li>)}
           <br />
           <br />
