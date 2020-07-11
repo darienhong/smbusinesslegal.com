@@ -819,7 +819,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
 
         <div class="create-acc-form">
 
-          {/* PHIL WORKING HERE */}
+       {/*    PHIL WORKING HERE 
           <StripeCheckout
             stripeKey={process.env.REACT_APP_PUBLIC_KEY}
             token={makePayment}
@@ -827,6 +827,10 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
             amount={premium_subscription.price * 100}
             billingAddress
           />
+          
+       */}
+
+        
 
           <p style={{ textAlign: "center" }}> Welcome to SMB Legal! Thanks for coming and we're glad to have you along for the journey. </p>
           <br></br>
@@ -1026,7 +1030,9 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           {/* </Link> */}
                         </center>
 
-                        {/* PHIL WORKING HERE */}
+
+                      {/*
+                        PHIL WORKING HERE 
                         <StripeCheckout
                           stripeKey={process.env.REACT_APP_PUBLIC_KEY}
                           token={makePayment}
@@ -1034,6 +1040,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           amount={premium_subscription.price * 100}
                           billingAddress
                         />
+                      */}
 
                       </form>
                     )}
@@ -1067,7 +1074,8 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           {/* </Link> */}
                         </center>
 
-                        {/* PHIL WORKING HERE */}
+                      {/*
+                         PHIL WORKING HERE 
                         <StripeCheckout
                           stripeKey={process.env.REACT_APP_PUBLIC_KEY}
                           token={makePayment}
@@ -1075,6 +1083,8 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           amount={premium_subscription.price * 100}
                           billingAddress
                         />
+
+                      */}
                       </form>
                     )}
                     <br />
@@ -1107,7 +1117,9 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           </div>
                           {/* </Link> */}
                         </center>
-                        {/* PHIL WORKING HERE */}
+
+                        {/*
+                         PHIL WORKING HERE 
                         <StripeCheckout
                           stripeKey={process.env.REACT_APP_PUBLIC_KEY}
                           token={makePayment}
@@ -1115,6 +1127,8 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                           amount={premium_subscription.price * 100}
                           billingAddress
                         />
+
+                        */}
                       </form>
                     )}
                     <br />
