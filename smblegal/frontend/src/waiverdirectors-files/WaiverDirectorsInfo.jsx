@@ -125,7 +125,7 @@ export default class WaiverDirectorsInfo extends Component {
           <button class='prev' onClick={this.previous}>Previous </button>
 
 
-     {/* PAYMENTS BELOW */}
+     {/* PAYMENTS BELOW 
      <br />          
           <StripeCheckout 
             stripeKey={process.env.REACT_APP_PUBLIC_KEY}
@@ -138,6 +138,7 @@ export default class WaiverDirectorsInfo extends Component {
           <br />
           {this.state.pay === true && (<button class='next' onClick={this.next}>Next </button>)}
         {/* PAYMENTS ABOVE */}
+        <button class='next' onClick={this.next}>Next </button>
 
 
         </div>
