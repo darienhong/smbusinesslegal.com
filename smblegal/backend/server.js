@@ -47,7 +47,7 @@ app.use(cors())
 
 
 // Start server
-const PORT = process.env.PORT || 80;
+const PORT = 5000;
 var server = app.listen(PORT, function () {
   console.log(`API is running on Port ${PORT}`);
 });
