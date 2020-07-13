@@ -50,7 +50,7 @@ export default function SignIn() {
     }
 
 
-
+/*
     React.useEffect(() => {
         fetch(`/getPlan?email=${state.email}`, {
             method: 'GET'
@@ -76,9 +76,36 @@ export default function SignIn() {
         console.log(plan);
     });
 
+    */
+
+
 
 
     const switchPage = code => {
+        fetch(`/getPlan?email=${state.email}`, {
+            method: 'GET'
+        })
+            .then(response => {
+                response.json()
+            })
+            .then((data) => {
+                console.log('went in!');
+                console.log(data);
+                let rows = data.rows
+                console.log(rows);
+                let p = ""
+                for (var i = 0; i < rows.length; i++) {
+                    p = rows[i].plan_type;
+                }
+                console.log("p: " + p);
+                handlePlanChange(p)
+                console.log(plan);
+            })
+            // .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', plan));
+        console.log(plan);
+        
         const checkPassword = state.password.length === 0
         const checkEmail = state.email.length === 0
         console.log('code: ' + code);
