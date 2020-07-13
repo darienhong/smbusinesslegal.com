@@ -51,30 +51,30 @@ export default function SignIn() {
 
 
 
-    React.useEffect(() => {
-        // fetch(`/getPlan?email=${state.email}`, {
-        //     method: 'GET'
-        // })
-        //     .then(response => {
-        //         response.json()
-        //             .then((data) => {
-        //                 console.log('went in!');
-        //                 console.log(data);
-        //                 let rows = data.rows
-        //                 let p = ""
-        //                 for (var i = 0; i < rows.length; i++) {
-        //                     p = rows[i].plan_type;
-        //                 }
-        //                 console.log("p: " + p);
-        //                 handlePlanChange(p)
-        //                 console.log(plan);
-        //             })
-        //     })
-        //     .then(res => res.json())
-        //     .catch(error => console.error('Error:', error))
-        //     .then(response => console.log('Success:', plan));
-        // console.log(plan);
-    });
+    // React.useEffect(() => {
+    // fetch(`/getPlan?email=${state.email}`, {
+    //     method: 'GET'
+    // })
+    //     .then(response => {
+    //         response.json()
+    //             .then((data) => {
+    //                 console.log('went in!');
+    //                 console.log(data);
+    //                 let rows = data.rows
+    //                 let p = ""
+    //                 for (var i = 0; i < rows.length; i++) {
+    //                     p = rows[i].plan_type;
+    //                 }
+    //                 console.log("p: " + p);
+    //                 handlePlanChange(p)
+    //                 console.log(plan);
+    //             })
+    //     })
+    //     .then(res => res.json())
+    //     .catch(error => console.error('Error:', error))
+    //     .then(response => console.log('Success:', plan));
+    // console.log(plan);
+    // });
 
 
 

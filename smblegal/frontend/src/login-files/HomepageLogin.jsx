@@ -86,26 +86,6 @@ export default class HomepageLogin extends Component {
       .then(response => console.log('Success:', response))
 
     }
-
-     /*   .then(function(response1, response2){
-          Promise.all([response1.json(),
-          response2.json() ])
-            .then(function(data1, data2) {
-              console.log(data1);
-              console.log(data2);
-              that.setState({
-                company: data1,
-                companyName: data1[0].company_name,
-                companyType: data1[0].company_type,
-                USState: data1[0].state,
-                users: data2
-              })
-            })
-          })
-            
-      
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response)) */
   
     
 
