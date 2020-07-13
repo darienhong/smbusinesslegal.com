@@ -52,37 +52,66 @@ export default function SignIn() {
 
 
     React.useEffect(() => {
-        fetch(`/getPlan?email=${state.email}`, {
-            method: 'GET'
-        })
-            .then(response => {
-                response.json()
-                    .then((data) => {
-                        console.log('went in!');
-                        console.log(data);
-                        let rows = data.rows
-                        let p = ""
-                        for (var i = 0; i < rows.length; i++) {
-                            p = rows[i].plan_type;
-                        }
-                        console.log("p: " + p);
-                        handlePlanChange(p)
-                        console.log(plan);
-                    })
-            })
-            .then(res => res.json())
-            .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', plan));
-        console.log(plan);
+        // fetch(`/getPlan?email=${state.email}`, {
+        //     method: 'GET'
+        // })
+        //     .then(response => {
+        //         response.json()
+        //             .then((data) => {
+        //                 console.log('went in!');
+        //                 console.log(data);
+        //                 let rows = data.rows
+        //                 let p = ""
+        //                 for (var i = 0; i < rows.length; i++) {
+        //                     p = rows[i].plan_type;
+        //                 }
+        //                 console.log("p: " + p);
+        //                 handlePlanChange(p)
+        //                 console.log(plan);
+        //             })
+        //     })
+        //     .then(res => res.json())
+        //     .catch(error => console.error('Error:', error))
+        //     .then(response => console.log('Success:', plan));
+        // console.log(plan);
     });
 
 
 
     const switchPage = code => {
+        console.log('hi');
+        fetch(`/getPlan?email=${state.email}`, {
+            method: 'GET'
+        })
+            .then(response => {
+                response.json()
+            })
+            .then((data) => {
+                console.log('went in!');
+                console.log(data);
+                let rows = data.rows
+                console.log(rows);
+                let p = ""
+                for (var i = 0; i < rows.length; i++) {
+                    p = rows[i].plan_type;
+                }
+                console.log("p: " + p);
+                handlePlanChange(p)
+                console.log(plan);
+            })
+
+            // .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+
+            .then(response => console.log('Success:', plan));
+        console.log(plan);
+
+
         const checkPassword = state.password.length === 0
         const checkEmail = state.email.length === 0
         console.log('code: ' + code);
         console.log(plan);
+
         if (code === 200) {
             handleEmailStatusChange('')
             handlePasswordStatusChange('')
@@ -138,8 +167,8 @@ export default function SignIn() {
             email: state.email,
             password: state.password
         }
-        console.log('email' + state.email);
-        console.log('password:  ' + state.password);
+        // console.log('email' + state.email);
+        // console.log('password:  ' + state.password);
         fetch('/getUser', {
             method: 'POST',
             body: JSON.stringify(data), // data can be `string` or {object}!
