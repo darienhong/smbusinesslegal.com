@@ -47,9 +47,13 @@ app.use(cors())
 
 
 // Start server
-const PORT = 5000;
+const PORT = process.env.PORT || 80;
 var server = app.listen(PORT, function () {
   console.log(`API is running on Port ${PORT}`);
+});
+
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "frontend/build", "frontend/index.html"));
 });
 
 app.get('/getPort', function (req, res) {
