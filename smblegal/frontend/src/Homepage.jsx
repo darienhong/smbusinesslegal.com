@@ -20,8 +20,14 @@ import {
 } from "react-router-dom";
 import ReactGA from 'react-ga';
 
-
+const trackingId = "UA-170842746-1";
 ReactGA.initialize("UA-170842746-1");
+
+ReactGA.event({
+  category: "sign-up",
+  action: "User pressed the join now button",
+});
+
 AOS.init();
 
 AOS.init({
