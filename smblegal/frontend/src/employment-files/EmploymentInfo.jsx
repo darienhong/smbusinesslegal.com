@@ -117,6 +117,12 @@ export default class EmploymentInfo extends Component {
             </div>
           )}
 
+          <form onChange={this.props.handleChange('vacation')}>
+            <p>Please outline, generally, the vacation policy associated with this employee: </p>
+            <textarea name="message" rows="2" cols="30"></textarea>
+          </form>
+          <br />
+
 
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>

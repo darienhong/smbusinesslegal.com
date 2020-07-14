@@ -86,6 +86,17 @@ export default class ConsultingInfo extends Component {
           </form>
           <br />
 
+          <form>
+            <p>How long does the Consultant have to agree to not use trade secrets
+            or Confidential Information to solicit any clients or employees of the
+              Company?</p>
+            <input
+              type='text'
+              onChange={this.props.handleChange('secrets')}
+            />
+          </form>
+          <br />
+
           <button class='prev' onClick={this.previous}>Previous </button>
           <button class='next' onClick={this.next}>Next </button>
         </div>

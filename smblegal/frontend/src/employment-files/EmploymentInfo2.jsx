@@ -45,12 +45,9 @@ export default class EmploymentInfo2 extends Component {
 
           {(values.commission === 'Yes') && (
             <div>
-              <form>
+              <form onChange={this.props.handleChange('comProcedure')}>
                 <p>Enter the commission procedure:</p>
-                <input
-                  type='text'
-                  onChange={this.props.handleChange('comProcedure')}
-                />
+                <textarea name="message" rows="2" cols="30"></textarea>
               </form>
               <br />
             </div>

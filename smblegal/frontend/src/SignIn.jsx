@@ -88,6 +88,7 @@ export default function SignIn() {
             method: 'GET'
         })
             .then(response => {
+                console.log(response);
                 response.json()
             })
             .then((data) => {
@@ -117,10 +118,10 @@ export default function SignIn() {
             handleEmailStatusChange('')
             handlePasswordStatusChange('')
             if (plan === 'Premium') {
-                document.location = "/DashboardPremium"
+                // document.location = "/DashboardPremium"
             }
             else {
-                document.location = "/Dashboard"
+                // document.location = "/Dashboard"
             }
         }
         else if (code === 206) {

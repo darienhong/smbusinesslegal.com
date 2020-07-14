@@ -152,10 +152,11 @@ export default class EmploymentDocument extends Component {
         <p ><span class='fill'>{formattedDate}</span></p>
         <p ><span class='fill'>{values.employeeName}</span></p>
         <p><span class='fill'>{values.address}</span></p>
+        <br />
         <p> Dear <span class='fill'>{values.internName}</span>,</p>
         <p>Welcome to the team!</p>
         <p>It is our pleasure to extend the following offer of employment to you on behalf of <span class='fill'>{values.companyName}</span> (the “Company”) to <span class='fill'>{values.internName}</span> (“Employee”).
-        As explained below, this offer of employment with the Company is as an at-will employee and it is conditioned upon
+        As explained below, this offer of employment with the Company is as an at-will employee and is conditioned upon
         the satisfactory completion of certain requirements.  Employment with the Company is conditioned upon the terms and
         conditions of this letter.  You also agree that you are relying on no prior representations or agreements, written or
         oral, other than those expressly contained in this letter.  The validity, interpretation, construction and performance of
@@ -171,6 +172,7 @@ export default class EmploymentDocument extends Component {
         <p>Hours: <span class='fill'>{values.hours}</span> <span class='fill'>{values.hourType}</span></p>
         <p>Status: <span class='fill'>{values.status}</span> </p>
         <p>At-Will Employment: Yes </p>
+        <p>Vacation: <span class='fill'>{values.vacation}</span> </p>
         <p>{benefitRequire}</p>
         <p>{sickRequire} </p>
         <br /><br />
@@ -180,33 +182,38 @@ export default class EmploymentDocument extends Component {
         <br /><br />
         <div id='container'>
 
-          <h5 class='indoc'>1. Employee Job Description. </h5>
+          <h6 class='indoc'>1. Employment Description. </h6>
           <p>{values.responsibilities}</p>
 
           <br />
 
-          <h5 class='indoc'>2. Directives, Policies and Procedures. </h5>
-          <p>Employment is conditioned upon continued adherence to the directives, policies and procedures of the Company.
-          As an employee you are expected to comply with the directives of your Manager as well as the policies and procedures that the
-          Company puts in place.  Policies and procedures can include, but are not limited to, the contents of an employee handbook or
-              employee training manual.  These policies and procedures may be modified at any time.</p>
+          <h6 class='indoc'>2. Directives, Policies and Procedures. </h6>
+          <p>Employment is conditioned upon continued
+          adherence to the directives, policies and procedures of the Company. As an employee
+          you are expected to comply with the directives of your Manager as well as the policies
+          and procedures that the Company puts in place. Policies and procedures can include,
+          but are not limited to, the contents of an employee handbook or employee training
+          manual. These policies and procedures may be modified at any time.
+                        
+              </p>
 
           {/* <h5 class='indoc'>{verifyRequire} </h5>
           <p>{verifyRequire2}</p> */}
-          <h5 class='indoc'>3. Employment Eligibility Verification. </h5>
+          <h6 class='indoc'>3. Employment Eligibility Verification. </h6>
           <p>This offer of employment is contingent upon you
           showing documentation showing your right to work in the United States within three
           (3) days of being hired. This offer may be revoked, and you will not be allowed to work
-          for the Company, if this documentation is not provided within three (3) days.</p>
+          for the Company, if this documentation is not provided within three (3) days.
+          </p>
 
-          <h5 class='indoc'>{handlerRequire}</h5>
+          <h6 class='indoc'>{handlerRequire}</h6>
           <p>{handlerRequire2}</p>
 
-          <h5 class='indoc'>{background} </h5>
+          <h6 class='indoc'>{background} </h6>
           <p>The Company has the right to, if they so choose, check the
               education and professional background of its prospective or actual employees.</p>
 
-          <h5 class='indoc'>{expensesRequire}</h5>
+          <h6 class='indoc'>{expensesRequire}</h6>
           <p>{expensesRequire2}</p>
 
           {values.expenses === 'Yes' && (
@@ -224,22 +231,22 @@ export default class EmploymentDocument extends Component {
               }
             </div>
           )}
-          <h5 class='indoc'>{liabilityRequire}</h5>
+          <h6 class='indoc'>{liabilityRequire}</h6>
           <p>{liabilityRequire2}</p>
 
-          <h5 class='indoc'>{breach} </h5>
+          <h6 class='indoc'>{breach} </h6>
           <p>By signing this agreement, Employee represents and warrants to the
           Company that by accepting employment with the Company Employee will not breach
           their continuing obligations to a former employer and that they have not removed any
           confidential or proprietary information from their former employer and will not use
           such information at the Company.</p>
 
-          <h5 class='indoc'>{atwill}</h5>
+          <h6 class='indoc'>{atwill}</h6>
           <p>All employees are “employees at will”. This means that an
           employee may terminate employment at any time, for any reason. The Company may
           also terminate the employee, with or without cause, for any reason.</p>
 
-          <h5 class='indoc'>{conf} </h5>
+          <h6 class='indoc'>{conf} </h6>
           <p>As a condition of
           employment Employee must refrain from using or disclosing trade-secrets or
           confidential information of the Company or its clients. This includes files and
@@ -249,13 +256,13 @@ export default class EmploymentDocument extends Component {
           Employee agrees that trade secrets will not be used to solicit any clients or employees
           of the Company.
           <br /><br />All Company trade secrets, and confidential information will be returned upon the
-          termination of the employment relationship..</p>
+          termination of the employment relationship.</p>
 
-          <h5 class='indoc'>{competeRequire}</h5>
+          <h6 class='indoc'>{competeRequire}</h6>
           <p>{competeRequire2}</p>
 
 
-          <h5 class='indoc'>{inv} </h5>
+          <h6 class='indoc'>{inv} </h6>
           <p>All ideas, inventions, improvements, methods, processes,
           works of authorship and other forms of intellectual property, conceived of, reduced to
           practice or developed by Employee during or related to the employment relationship
@@ -264,7 +271,7 @@ export default class EmploymentDocument extends Component {
           rights to the Company.
           </p>
 
-          <h5 class='indoc'>{misc}</h5>
+          <h6 class='indoc'>{misc}</h6>
           <p class='tab'>a. INTEGRATION.
           <br /><br />
             <p class='tab'>This offer letter contains the entire understanding between the
@@ -310,7 +317,9 @@ export default class EmploymentDocument extends Component {
           </p>
           <br />
           <br />
-
+          <p>
+            <span class='fill'>{values.employeeName}</span>
+          </p>
           <br />
           <br />
           <p>
@@ -326,6 +335,9 @@ export default class EmploymentDocument extends Component {
           <p ><span class='fill'>{values.phone}</span></p>
           <br />
           <br />
+          <br />
+          <br />
+          <br /><br />
           <p>
             I ______________ accept the job described above under the terms of this letter.
           </p>

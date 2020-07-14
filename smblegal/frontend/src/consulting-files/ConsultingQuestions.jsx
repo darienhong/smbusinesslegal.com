@@ -31,12 +31,14 @@ export default class ConsultingQuestions extends Component {
     compensation: '[X]',
     compSched: '[X]',
     techConfidential: 'Technical data, trade secrets, know-how, research, product or service ideas or plans, software codes and designs, developments, inventions, laboratory notebooks, processes, formulas, techniques, materials, engineering designs and drawings, configurations, lists of or information or information relating to employees and consultants of the company, any intellectual property developed by the Consultant (as described above).',
-    nontechConfidential: 'Non-technical information relating to products, pricing, price lists, margins, market- share data, merchandising plans and strategies, finances, financial accounting data and information, suppliers, customers, customer lists, purchasing data, sales and marketing plans, current or future business plans.',
+    nontechConfidential: 'Non-technical information relating to products, pricing, price lists, margins, market-share data, merchandising plans and strategies, finances, financial accounting data and information, suppliers, customers, customer lists, purchasing data, sales and marketing plans, current or future business plans.',
     insurance: '[X]',
     other: '[X]',
     scope: '[X]',
     term: '[X]',
-    supervision: '[X]'
+    supervision: '[X]',
+    secrets: '[X]',
+    type: '[LLC]'
   }
 
   nextStep = () => {
@@ -93,12 +95,12 @@ export default class ConsultingQuestions extends Component {
     const { date, employeeName, consultantName, companyName, state, endDate,
       wage, hours, expenses, liability, percent,
       expenseList, registration, compensation, compSched,
-      techConfidential, nontechConfidential, insurance, other, scope, term, supervision
+      techConfidential, nontechConfidential, insurance, other, scope, term, supervision, secrets, type
     } = this.state;
     const values = {
       date, employeeName, consultantName, companyName, state, endDate,
       wage, hours, expenses, liability, percent, expenseList, registration, compensation, compSched,
-      techConfidential, nontechConfidential, insurance, other, scope, term, supervision
+      techConfidential, nontechConfidential, insurance, other, scope, term, supervision, secrets, type
     };
 
     switch (step) {

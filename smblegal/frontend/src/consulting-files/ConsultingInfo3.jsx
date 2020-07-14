@@ -52,12 +52,10 @@ export default class ConsultingInfo3 extends Component {
         <Navbar2 />
 
         <div class='col height'>
-          <form>
+
+          <form onChange={this.props.handleChange('scope')}>
             <p>Enter the scope of the services rendered by the consultant: </p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('scope')}
-            />
+            <textarea name="message" rows="3" cols="30"></textarea>
           </form>
           <br />
 
@@ -70,13 +68,9 @@ export default class ConsultingInfo3 extends Component {
           </form>
           <br />
 
-
-          <form>
+          <form onChange={this.props.handleChange('supervision')}>
             <p>How will the consultant be supervised? </p>
-            <input
-              type='text'
-              onChange={this.props.handleChange('supervision')}
-            />
+            <textarea name="message" rows="2" cols="30"></textarea>
           </form>
           <br />
 
