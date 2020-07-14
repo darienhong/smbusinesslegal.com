@@ -11,7 +11,7 @@ import SubMenu2 from './sub_menu2.jsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import IconLogo from '../assets/icon-logo.png';
 import Logo from '../assets/logo.png';
-import Image from '../assets/image-2.png';
+import Image from '../assets/top-logo.png';
 
 // import { Grommet, Menu } from 'grommet';
 

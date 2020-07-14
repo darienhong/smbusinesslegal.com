@@ -128,17 +128,21 @@ p {
 }
 
 .container {
+  
   height: 70px; 
   top: 0;
   z-index: 9999; 
   position: fixed;
+  float: left; 
+  width: 100%;
+ /* position: fixed; */
   background-color: rgb(255, 255, 255);
 
 }
 
 nav {
   float: right;
-  position: sticky;
+/*  position: sticky; */
 
 }
 
