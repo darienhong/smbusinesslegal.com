@@ -39,6 +39,8 @@ client.connect((err) => {
 });
 
 var app = express();
+const express = require('express');
+const path = require('path');
 app.use(express.static(path.join(__dirname, './frontend/build')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
