@@ -39,6 +39,7 @@ client.connect((err) => {
 });
 
 var app = express();
+app.use(express.static(path.join(__dirname, './frontend/build')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -53,7 +54,7 @@ var server = app.listen(PORT, function () {
 });
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "frontend/build", "frontend/index.html"));
+  res.sendFile(path.join(__dirname, './frontend/build', './frontend/index.html'));
 });
 
 app.get('/getPort', function (req, res) {
