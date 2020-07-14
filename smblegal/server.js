@@ -58,13 +58,13 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, './frontend/build', './frontend/index.html'));
 });
 
-app.get('/getPort', function (req, res) {
+app.get('/api/getPort', function (req, res) {
   console.log("reached get port");
   console.log("PORT = " + PORT);
   res.send(`${PORT}`);
 });
 
-app.post('/createAccount', function (req, res) {
+app.post('/api/createAccount', function (req, res) {
   console.log('went in!');
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
@@ -159,7 +159,7 @@ app.post('/createAccount', function (req, res) {
 
 });
 
-app.post('/getUser', function (req, res) {
+app.post('/api/getUser', function (req, res) {
   const email = req.body.email;
   console.log('email:' + email);
   const password = req.body.password;
@@ -200,7 +200,7 @@ app.post('/getUser', function (req, res) {
 
 });
 
-app.post('/addDoc', function (req, res) {
+app.post('/api/addDoc', function (req, res) {
   console.log('went in!');
   const type = req.body.type;
   const file = req.body.file;
@@ -242,7 +242,7 @@ app.post('/addDoc', function (req, res) {
 
 });
 
-app.post('/addLLCGovernance', function (req, res) {
+app.post('/api/addLLCGovernance', function (req, res) {
   console.log('went in!');
   const manager = req.body.manager
   const boolean = req.body.boolean
@@ -314,7 +314,7 @@ app.post('/addLLCGovernance', function (req, res) {
 
 });
 
-app.post('/addPartnershipGovernance', function (req, res) {
+app.post('/api/addPartnershipGovernance', function (req, res) {
   console.log('went in!');
   let vote = req.body.vote
   const boolean = req.body.boolean
@@ -394,7 +394,7 @@ app.post('/addPartnershipGovernance', function (req, res) {
 
 
 
-app.post('/addCorporationGovernance', function (req, res) {
+app.post('/api/addCorporationGovernance', function (req, res) {
   console.log('went in!');
   const boardDate = req.body.boardDate
   const shareholderDate = req.body.shareholderDate
@@ -505,7 +505,7 @@ app.post('/addCorporationGovernance', function (req, res) {
 });
 
 
-app.get('/getPlan', function (req, res) {
+app.get('/api/getPlan', function (req, res) {
   const email = req.query.email;
   console.log(email)
   client.query('SELECT plan_type FROM public.user_table where email=$1', [email],
@@ -558,7 +558,7 @@ app.get('/getPlan', function (req, res) {
 
 
 
-app.get('/getCompanyInfo', function(req, res) {
+app.get('/api/getCompanyInfo', function(req, res) {
   const email = req.query.email;
   console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
@@ -584,7 +584,7 @@ app.get('/getCompanyInfo', function(req, res) {
   })
 });
 
-app.get('/getUserList', function(req, res) {
+app.get('/api/getUserList', function(req, res) {
   const email = req.query.email;
   console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
@@ -611,7 +611,7 @@ app.get('/getUserList', function(req, res) {
 })
 
 
-app.get('/getMemberList', function(req, res) {
+app.get('/api/getMemberList', function(req, res) {
   const email = req.query.email;
   console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
@@ -700,7 +700,7 @@ app.get("/", (req, res) => {
   res.send("IT WORKS")
 })
 
-app.post("/payment", (req, res) => {
+app.post("/api/payment", (req, res) => {
 
   const { product, token } = req.body;
   console.log("PRODUCT", product);

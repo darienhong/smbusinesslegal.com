@@ -84,7 +84,7 @@ export default function SignIn() {
 
 
     const switchPage = code => {
-        fetch(`/getPlan?email=${state.email}`, {
+        fetch(`/api/getPlan?email=${state.email}`, {
             method: 'GET'
         })
             .then(response => {
@@ -170,7 +170,7 @@ export default function SignIn() {
         }
         // console.log('email' + state.email);
         // console.log('password:  ' + state.password);
-        fetch('/getUser', {
+        fetch('/api/getUser', {
             method: 'POST',
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: { 'Content-Type': 'application/json' }

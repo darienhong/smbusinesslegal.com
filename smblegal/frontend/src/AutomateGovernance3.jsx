@@ -239,7 +239,7 @@ export default function AutomateGov3() {
             email: state.email
 
         }
-        fetch('/addLLCGovernance', {
+        fetch('/api/addLLCGovernance', {
             method: 'POST',
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: { 'Content-Type': 'application/json' }

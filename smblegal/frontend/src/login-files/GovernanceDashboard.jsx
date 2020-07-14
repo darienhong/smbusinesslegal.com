@@ -75,10 +75,10 @@ export default class GovernanceDashboard extends Component {
     console.log(this.state.email);
       var that = this;
       Promise.all([
-        fetch(`/getCompanyInfo?email=${this.state.email}`, {
+        fetch(`/api/getCompanyInfo?email=${this.state.email}`, {
           method: 'GET',
         }), 
-        fetch(`/getMemberList?email=${this.state.email}`, {
+        fetch(`/api/getMemberList?email=${this.state.email}`, {
           method: 'GET',
         }) ])
 
