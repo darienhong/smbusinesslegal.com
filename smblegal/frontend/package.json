@@ -1,6 +1,7 @@
 {
   "name": "smblegal",
   "proxy": "http://localhost:5000",
+  "secure": false,
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,7 +43,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node --max_old_space_size=4096 node_modules/react-scripts/scripts/build.js --prod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

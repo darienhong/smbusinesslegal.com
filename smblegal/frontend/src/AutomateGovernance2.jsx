@@ -160,7 +160,7 @@ export default function AutomateGov2() {
             shareholdersList: shareholdersList,
             email: state.email
         }
-        fetch('/addCorporationGovernance', {
+        fetch('/api/addCorporationGovernance', {
             method: 'POST',
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: { 'Content-Type': 'application/json' }

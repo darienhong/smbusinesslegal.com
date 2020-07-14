@@ -39,10 +39,10 @@ export default class PremiumLogin extends Component {
     console.log(this.state.email);
       var that = this;
       Promise.all([
-        fetch(`/getCompanyInfo?email=${this.state.email}`, {
+        fetch(`/api/getCompanyInfo?email=${this.state.email}`, {
           method: 'GET',
         }), 
-        fetch(`/getUserList?email=${this.state.email}`, {
+        fetch(`/api/getUserList?email=${this.state.email}`, {
           method: 'GET',
         }) ])
   

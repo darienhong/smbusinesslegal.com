@@ -107,7 +107,7 @@ export default function AutomateGov() {
             membersList: membersList,
             email: state.email
         }
-        fetch('/addPartnershipGovernance', {
+        fetch('/api/addPartnershipGovernance', {
             method: 'POST',
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: { 'Content-Type': 'application/json' }

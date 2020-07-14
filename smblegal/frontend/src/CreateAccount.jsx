@@ -302,7 +302,7 @@ export default function CreateAccount() {
       "Content-Type": "application/json"
     };
 
-    return fetch('http://localhost:8282/payment', {
+    return fetch('http://localhost:8282/api/payment', {
       method: "POST",
       headers,
       body: JSON.stringify(body)
@@ -383,7 +383,7 @@ export default function CreateAccount() {
       USstate: USstate,
       id: state.companyId
     }
-    fetch('/createAccount', {
+    fetch('/api/createAccount', {
       method: 'POST',
       body: JSON.stringify(data), // data can be `string` or {object}!
       headers: { 'Content-Type': 'application/json' }
@@ -417,7 +417,7 @@ export default function CreateAccount() {
       id: state.companyId
 
     }
-    fetch('/createAccount', {
+    fetch('/api/createAccount', {
       method: 'POST',
       body: JSON.stringify(data), // data can be `string` or {object}!
       headers: { 'Content-Type': 'application/json' }
@@ -448,7 +448,7 @@ export default function CreateAccount() {
       id: state.companyId
 
     }
-    fetch('/createAccount', {
+    fetch('/api/createAccount', {
       method: 'POST',
       body: JSON.stringify(data), // data can be `string` or {object}!
       headers: { 'Content-Type': 'application/json' }
@@ -479,7 +479,7 @@ export default function CreateAccount() {
       id: state.companyId
 
     }
-    fetch('/createAccount', {
+    fetch('/api/createAccount', {
       method: 'POST',
       body: JSON.stringify(data), // data can be `string` or {object}!
       headers: { 'Content-Type': 'application/json' }
@@ -509,7 +509,7 @@ export default function CreateAccount() {
       id: state.companyId
 
     }
-    fetch('/createAccount', {
+    fetch('/api/createAccount', {
       method: 'POST',
       body: JSON.stringify(data), // data can be `string` or {object}!
       headers: { 'Content-Type': 'application/json' }
