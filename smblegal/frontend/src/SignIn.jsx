@@ -89,33 +89,32 @@ export default function SignIn() {
             method: 'GET'
         })
             .then(response => {
-                console.log(response);
                 response.json()
 
-            .then((data) => {
-                console.log('went in!');
-                console.log(data);
-                let p = data[0].plan_type;
-                console.log(p);
-              //  handlePlanChange(p);
-              //  console.log(plan);
-              //  let rows = data.rows
-             //   console.log(rows);
-             //   let p = ""
-            /*    for (var i = 0; i < rows.length; i++) {
-                    p = rows[i].plan_type;
-                }
-                console.log("p: " + p);
-                handlePlanChange(p)
-                */
-              //  console.log(plan);
+                    .then((data) => {
+                        console.log('went in!');
+                        console.log(data);
+                        let p = data[0].plan_type;
+                        console.log(p);
+                        //  handlePlanChange(p);
+                        //  console.log(plan);
+                        //  let rows = data.rows
+                        //   console.log(rows);
+                        //   let p = ""
+                        /*    for (var i = 0; i < rows.length; i++) {
+                                p = rows[i].plan_type;
+                            }
+                            console.log("p: " + p);
+                            handlePlanChange(p)
+                            */
+                        //  console.log(plan);
+                    })
+
             })
 
-        })
-            
             // .then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', plan));
+        // .then(response => console.log('Success:', plan));
         console.log(plan);
 
         const checkPassword = state.password.length === 0
@@ -188,7 +187,7 @@ export default function SignIn() {
 
             .then(res => res.json())
             .catch(error => console.error('Error:', error))
-            // .then(response => console.log('Success:', response.code));
+            // .then(response => console.log('Success:', response));
             .then(response => switchPage(response.code));
 
     }
