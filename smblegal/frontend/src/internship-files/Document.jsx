@@ -23,7 +23,7 @@ export default class Document extends Component {
     const creditCheck = values.credits == "True"
     var creditRequire = ''
     if (creditCheck)
-      creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
+      creditRequire = 'Intern will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by Intern in the event that Intern’s academic institution asks for such verification.'
 
 
     const paidCheck = values.paid === 'Yes'
@@ -119,6 +119,7 @@ export default class Document extends Component {
         <p ><span class='fill'>{formattedDate}</span></p>
         <p ><span class='fill'>{values.employeeName}</span></p>
         <p><span class='fill'>{values.address}</span></p>
+        <br />
         <p> Dear <span class='fill'>{values.internName}</span>,</p>
         <p>Welcome to the team!</p>
         <p>It is our pleasure to extend the following offer of internship to you on behalf of <span class='fill'>{values.companyName}</span> (the “Company”) and <span class='fill'>{values.internName}</span> (“Intern”).
@@ -140,37 +141,42 @@ export default class Document extends Component {
         <p>{sickRequire} </p>
         <br /><br />
         <p>Compensation or benefits may be adjusted based on performance or other relevant matters,
-        including business conditions, at the Company’s sole discretion.  Legally mandated benefits are
-        provided according to applicable law.</p>
+        including business conditions, at the Company’s sole discretion.  Legally mandated
+        benefits are provided according to applicable law.
+        </p>
         <br /><br />
         <div id='container'>
 
-          <h5 class='indoc'>1. Internship Description.</h5>
+          <h6 class='indoc'>1. Internship Description.</h6>
           <p>{values.responsibilities}</p>
           <p class='tab'>i. Educational Environment.
           <br /><br />
-            <p class='tab'>This internship is for the educational benefit of <span class='fill'>{values.internName}</span>. {creditRequire} <span class='fill'>{values.internName}</span> will be the primary beneficiary of this internship.</p></p >
+            <p class='tab'>This internship is for the educational benefit of Intern. {creditRequire} Intern will be the primary beneficiary of this internship.</p></p >
           < p class='tab'> ii. No Expectation of Employment.
           <br /><br />
-            < p class='tab' > By signing this agreement < span class='fill' > {values.internName}</span > acknowledges and
-    agrees that this internship is for a fixed duration and comes with no promises or
+            < p class='tab' > By signing this agreement, Intern acknowledges and
+            agrees that this internship is for a fixed duration and comes with no promises or
     expectations of employment beyond the internship.</p ></p >
           <br />
 
-          <h5 class='indoc'>2. Directives, Policies and Procedures. </h5>
-          <p>Employment is conditioned upon continued adherence to the directives, policies and procedures of the Company.
-          As an intern you are expected to comply with the directives of your Manager as well as the policies and procedures that the
-          Company puts in place.  Policies and procedures can include, but are not limited to, the contents of anemployee or intern handbook or employee or intern training manual.
-          These policies and procedures may be modified at any time.</p>
+          <h6 class='indoc'>2. Directives, Policies and Procedures. </h6>
+          <p>
+            Internship is conditioned upon continued adherence to the directives, policies
+            and procedures of the Company.  As an intern you are expected to comply
+            with the directives of your Manager as well as the policies and procedures
+            that the Company puts in place.  Policies and procedures can include, but are
+            not limited to, the contents of an employee or intern handbook or employee or
+            intern training manual.  These policies and procedures may be modified at any time.
+          </p>
 
-          <h5 class='indoc'>{verifyRequire} </h5>
+          <h6 class='indoc'>{verifyRequire} </h6>
           <p>{verifyRequire2}</p>
 
-          <h5 class='indoc'>{background} </h5>
+          <h6 class='indoc'>{background} </h6>
           <p>The Company has the right to, if they so choose, check the
-              education and professional background of its prospective or actual employees.</p>
+              education and professional background of its prospective or actual interns.</p>
 
-          <h5 class='indoc'>{expensesRequire}</h5>
+          <h6 class='indoc'>{expensesRequire}</h6>
           <p>{expensesRequire2}</p>
 
           {values.expenses === 'Yes' && (
@@ -188,63 +194,73 @@ export default class Document extends Component {
               }
             </div>
           )}
-          <h5 class='indoc'>{liabilityRequire}</h5>
+          <h6 class='indoc'>{liabilityRequire}</h6>
           <p>{liabilityRequire2}</p>
 
-          <h5 class='indoc'>{breach} </h5>
-          <p>Intern, by signing this agreement, represents and warrants to Company that by
-          accepting employment with the Company, Intern will not breach their continuing obligations to a
-          former employee and that they have not removed any confidential or proprietary information from
-            their former employee and will not use such information at the Company.</p>
+          <h6 class='indoc'>{breach} </h6>
+          <p>Intern by signing this agreement, represents and warrants to Company that
+          by accepting internship with the Company Intern will not breach their
+          continuing obligations to a former employer and that they have not
+          removed any confidential or proprietary information from their former
+          employer and will not use such information at the Company.
+            </p>
 
-          <h5 class='indoc'>{atwill}</h5>
-          <p>All interns are :interns at will”.  This means that an intern may terminate
-          internship at any time, for any reason.  The Company may also terminate the intern,
-              with or without cause, for any reason.</p>
+          <h6 class='indoc'>{atwill}</h6>
+          <p>All interns are “interns at will”. This means that an intern
+          may terminate internship at any time, for any reason. The Company
+          may also terminate the intern, with or without cause, for any reason.
+              </p>
 
-          <h5 class='indoc'>{conf} </h5>
-          <p>As a condition of internship, Intern must refrain from using or disclosing trade-secrets or confidential information of the Company or
-          its clients.  This includes files and information of both the client and Company, marketing
-          data, financial information, forms and samples and any other materials related to the Company or
-             its clients. <br /><br />After the employment relationship between Intern and the Company has ended, <span class='fill'>{values.internName}</span> agrees that trade secrets will not be used to solicit any clients or employees of the Company.
+          <h6 class='indoc'>{conf} </h6>
+          <p>As a condition of internship Intern must refrain from using or 
+            disclosing trade-secrets or confidential information of the Company or its clients.  
+            This includes files and information of both the client and Company, marketing 
+            data, financial information, forms and samples and any other materials related to the Company or its clients.
+             
+             <br /><br />After the internship relationship between Intern and the Company 
+             has ended, Intern agrees that trade secrets will not be used to solicit any clients or employees of the Company. 
+             
              <br /><br />All Company trade secrets and confidential information will be returned upon the termination of the
              employment relationship.</p>
 
-          <h5 class='indoc'>{inv} </h5>
-          <p>All ideas, inventions, improvements, methods, processes, works of authorship and other
-          forms of intellectual property, conceived of, reduced to practice or developed by Intern
-          during or related to the internship relationship will be the sole and exclusive property of the Company.
+          <h6 class='indoc'>{inv} </h6>
+          <p>All ideas, inventions, improvements, methods, processes, 
+            works of authorship and other forms of intellectual property, conceived of, 
+            reduced to practice or developed by Intern during or related to the internship 
+            relationship will be the sole and exclusive property of the Company.
           </p>
 
-          <h5 class='indoc'>{misc}</h5>
-          <p class='tab'>i. INTEGRATION.
+          <h6 class='indoc'>{misc}</h6>
+          <p class='tab'>a. INTEGRATION.
           <br /><br />
-            <p class='tab'>This offer letter contains the entire understanding between the Company
-                  and Intern.  This letter supersedes any prior representations or understandings, written or oral.</p>
+            <p class='tab'>This offer letter contains the entire understanding between the Company and Intern.  
+            This letter supersedes any prior representations or understandings, written or oral.
+                  </p>
           </p>
-          <p class='tab'>ii. GOVERNING LAW.
+          <p class='tab'>b. GOVERNING LAW.
           <br /><br />
             <p class='tab'>The validity, interpretation, construction and performance of this offer
-                  letter shall be governed by the laws of the State of <span class='fill'>{values.state}</span> without regard to conflicts of laws principals.</p>
+                  letter shall be governed by the laws of the State of <span class='fill'>{values.state}</span> 
+                  without regard to conflicts of laws principles.</p>
           </p>
-          <p class='tab'>iii. ASSIGNMENT, SUCCESSORS AND ASSIGNS.
+          <p class='tab'>c. ASSIGNMENT, SUCCESSORS AND ASSIGNS.
           <br /><br />
-            <p class='tab'>  The rights bestowed upon <span class='fill'>{values.internName}</span> in this agreement are personal
-                to Intern and shall not be effective upon any assignment or successors in interest.  Any
-                attempted assignment of this agreement shall be null and void.
+            <p class='tab'>  The rights bestowed upon Intern in this agreement are personal to Intern and 
+            shall not be effective upon any assignment or successors in interest.  Any attempted 
+            assignment of this agreement shall be null and void.
                 </p>
           </p>
-          <p class='tab'>iv. SEVERABILITY.
+          <p class='tab'>d. SEVERABILITY.
           <br /><br />
-            <p class='tab'>If one or more provisions of this agreement are deemed void or
-            unenforceable, such provision shall nevertheless be enforced to the fullest extent
+            <p class='tab'>If one or more provisions of this agreement are deemed void or 
+            unenforceable such provision shall nevertheless be enforced to the fullest extent 
             possible by law and the force and validity of the remainder of the agreement shall still be in effect.
           </p>
           </p>
-          <p class='tab'> v. COUNTERPARTS.
+          <p class='tab'> e. COUNTERPARTS.
           <br /><br />
             <p class='tab'>
-              This agreement may be executed in counterparts each of
+              This agreement may be executed in counterparts, each of
               which shall be deemed an original and which together shall constitute
               one and the same agreement.
                  </p>
@@ -252,13 +268,16 @@ export default class Document extends Component {
 
           <br /><br />
           <p>
-            Please indicate, by signing below and returning the signed copy to <span class='fill'>{values.employeeName}</span>, that you accept this offer of employment by <span class='fill'>{values.employeeName}</span>.
+            Please indicate, by signing below and returning the signed copy to <span class='fill'>{values.employeeName}</span>, that 
+            you accept this offer of employment by <span class='fill'>{values.employeeName}</span>.
           </p>
           <p>
-            We look forward to seeing you at <span class='fill'>{values.companyName}</span>. Please call <span class='fill'>{values.employeeName}</span> if you have any questions.
+            We look forward to seeing you at <span class='fill'>{values.companyName}</span>. Please 
+            call <span class='fill'>{values.employeeName}</span> if you have any questions.
           </p>
           <br />
           <br />
+          <p><span class='fill'>{values.employeeName}</span></p>
 
           <br />
           <br />
@@ -275,6 +294,9 @@ export default class Document extends Component {
           <p ><span class='fill'>{values.phone}</span></p>
           <br />
           <br />
+          <br />
+          <br />
+          <br /><br />
           <p>
             I ______________ accept the job described above under the terms of this letter.
           </p>

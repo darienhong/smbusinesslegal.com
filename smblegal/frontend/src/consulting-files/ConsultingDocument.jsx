@@ -88,25 +88,25 @@ export default class ConsultingDocument extends Component {
         </center>
         <br />
 
-        <p >This consulting agreement (“Agreement”) is between <span class='fill'>{values.employeeName}</span>, a <span class='fill'>{values.companyName}</span>, registration number <span class='fill'>{values.registration}</span>
-        (“Company”) and <span class='fill'>{values.consultantName}</span> (“Consultant”) (collectively, the “Parties” or individually each a
+        <p >This consulting agreement (“Agreement”) is between <span class='fill'>{values.companyName}</span>, a <span class='fill'>{values.type}</span>, registration number <span class='fill'>{values.registration}</span> (“Company”)
+        and <span class='fill'>{values.consultantName}</span> (“Consultant”) (collectively, the “Parties” or individually each a
         “Party”).</p>
 
         <div id='container'>
 
-          <h5 class='indoc'>1. SCOPE.</h5>
+          <h6 class='indoc'>1. SCOPE.</h6>
           <p >The services rendered by the Consultant shall be carried out in accordance with
           the description in Exhibit A attached hereto.</p >
 
-          <h5 class='indoc'>2. TERM. </h5>
+          <h6 class='indoc'>2. TERM. </h6>
           <p>The Agreement shall last until <span class='fill'>{formattedEndDate}</span>.</p>
 
-          <h5 class='indoc'>3. COMPENSATION. </h5>
+          <h6 class='indoc'>3. COMPENSATION. </h6>
           <p>The Company shall pay Consultant <span class='fill'>{values.compensation}</span> as total compensation for
           completion of the project as described in Exhibit A. Payment shall be made in the
           following manner <span class='fill'>{values.compSched}</span>.</p>
 
-          <h5 class='indoc'>4. FEES AND EXPENSES. </h5>
+          <h6 class='indoc'>4. FEES AND EXPENSES. </h6>
           <p>Consultant shall not be reimbursed for expenses or fees incurred
           in the course of performing the obligations under this Agreement. {expensesRequire}</p>
           {values.expenses === 'Yes' && (
@@ -124,14 +124,16 @@ export default class ConsultingDocument extends Component {
               }
             </div>
           )}
-          <h5 class='indoc'>5. RELATIONSHIP OF THE PARTIES AND INDEPENDENT CONTRACTOR.</h5>
+          <h6 class='indoc'>5. RELATIONSHIP OF THE PARTIES AND INDEPENDENT CONTRACTOR.</h6>
           <p>The
           Consultant is an independent contractor to the Company. The relationship is that of an
           independent contractor and not that of an employee. No part of the compensation shall
-          be subject to withholding for payment of required payroll taxes and fees.</p>
+          be subject to withholding for payment of required payroll taxes and fees.
+          </p>
           <p>In no event shall anything in this Agreement or otherwise be construed to create any
           type of relationship between Contractor and Company other than that of an
-          independent contractor.</p>
+          independent contractor.
+          </p>
           <p class='tab'> a. METHOD.
             <br />
             <br />
@@ -161,10 +163,11 @@ export default class ConsultingDocument extends Component {
             requirements that arise in the course of completing this Agreement. Consultant
             agrees to indemnify, defend and hold Company harmless from any liability with
             respect to any third parties engaged pursuant to this Agreement or any binding
-            contracts entered into by the Consultant in breach of this Agreement.</p>
+            contracts entered into by the Consultant in breach of this Agreement.
+            </p>
           </p>
 
-          <h5 class='indoc'>6. INTELLECTUAL PROPERTY RIGHTS.</h5>
+          <h6 class='indoc'>6. INTELLECTUAL PROPERTY RIGHTS.</h6>
           <p>Consultant irrevocably assigns to the Company
           all right, title and interest worldwide in and to the intellectual property (as described
           below) and all rights therein. Consultant agrees that all ideas, inventions,
@@ -173,26 +176,32 @@ export default class ConsultingDocument extends Component {
           during this Agreement or pursuant to this Agreement, whether alone or in conjunction,
           including, but not limited to design, data, code, ideas, inventions, know-how, materials,
           marks, memorandum, methods, procedures, interfaces or other forms of technology or
-          intellectual property, will be the sole and exclusive property of the Company.</p>
+          intellectual property, will be the sole and exclusive property of the Company.
+          </p>
           <p>Any patentable inventions or processes shall be disclosed promptly by the Consultant
           to the Company. The Consultant agrees that other than the disclosure to the Company
-          the Consultant will keep such information confidential.</p>
+          the Consultant will keep such information confidential.
+          </p>
           <p>Any intellectual property that are works of authorship eligible to be “works made for
           hire” under U.S. Copyright Act must have the Company as “author” and the work must
           be considered to be works made for hire or inventions made for hire to the extent
-          permitted by applicable law.</p>
+          permitted by applicable law.
+          </p>
           <p>The Consultant has secured or agrees to secure all necessary rights to intellectual
           property created from any third parties the Consultant contracts with to complete the
-          deliverables as described in Exhibit A.</p>
+          deliverables as described in Exhibit A.
+          </p>
           <p>Consultant agrees to assist the Company in securing any intellectual property rights as
-          described above.</p>
+          described above.
+          </p>
 
-          <h5 class='indoc'>7. CONFIDENTIALITY. </h5>
+          <h6 class='indoc'>7. CONFIDENTIALITY. </h6>
           <p>Consultant understands and agrees that during the Agreement, the
           Company intends to provide the Consultant with confidential information without
           which the Consultant could not do the job as described in Exhibit A. Consultant
           understands that confidential information includes, but is not limited to the following
-          (“Confidential Information”):</p>
+          (“Confidential Information”):
+          </p>
           <p class='tab'>i. {values.techConfidential}
           </p>
           <p class='tab'>ii. {values.nontechConfidential}</p>
@@ -201,14 +210,17 @@ export default class ConsultingDocument extends Component {
           disclosed to employees to the extent necessary, or with the written consent of the
           Company to the Consultant. Consultant represents that they will handle Confidential
           Information with the same reasonable care that they represent they treat their own
-          confidential information with.</p>
+          confidential information with.
+          </p>
           <p>Consultant understands and agrees at all times to not use the Confidential Information
           except for the benefit of the Company. Confidential Information shall not be copied
-          except for the extent necessary to complete the job or in the ordinary course.</p>
+          except for the extent necessary to complete the job or in the ordinary course.
+          </p>
           <p>This Agreement supplements any rights the Company has in law or equity with respect
-          to the protection of trade secrets, confidential or proprietary information.</p>
+          to the protection of trade secrets, confidential or proprietary information.
+          </p>
 
-          <h5 class='indoc'>8. CONSULTANT REPRESENTATIONS AND WARRANTIES</h5>
+          <h6 class='indoc'>8. CONSULTANT REPRESENTATIONS AND WARRANTIES</h6>
           <p class='tab'>i. RIGHT TO ENTER AGREEMENT.
           <br /><br />
             <p class='tab'>Consultant represents and warrants
@@ -236,7 +248,8 @@ export default class ConsultingDocument extends Component {
             product created in the course of this Agreement will be transferred into
             the good and valid title of the Company. In the event that this does not
             happen the Consultant will transfer good and valid title as soon as
-          discovered and pursue all legal remedies on behalf of the Company.</p></p>
+            discovered and pursue all legal remedies on behalf of the Company.
+          </p></p>
 
           <p class='tab'>v. ORIGINAL WORK.
           <br /><br />
@@ -244,9 +257,10 @@ export default class ConsultingDocument extends Component {
             developed under this Agreement will be original work and will not
             infringe on other’s rights. In the event the work produced by the
             Consultant infringes on other’s rights the Consultant will indemnify and
-          hold harmless the Company.</p></p>
+            hold harmless the Company.
+          </p></p>
 
-          <h5 class='indoc'>9. INDEMNIFICATION. </h5>
+          <h6 class='indoc'>9. INDEMNIFICATION. </h6>
           <p>Consultant agrees to indemnify and hold the Company harmless
           as well as directors, officers and employees against all claims (threatened or actual),
           demands, taxes, losses, damages, liabilities, costs and expenses, including attorneys’
@@ -255,9 +269,10 @@ export default class ConsultingDocument extends Component {
           breach of the covenants in this agreement, a breach of the representations and
           warranties in this agreement, any failure of services under applicable laws and
           regulations, or any violation of a third party’s rights coming from the use of deliverables
-          from the Consultant.</p>
+          from the Consultant.
+          </p>
 
-          <h5 class='indoc'>10. LIMITATION OF LIABILITY. </h5>
+          <h6 class='indoc'>10. LIMITATION OF LIABILITY. </h6>
           <p>EXCEPT AS PROHIBITED BY LAW, THE COMPANY SHALL
           NOT BE HELD LIABLE TO CONSULTANT FOR ANY OTHER INDIRECT, INCIDENTAL,
           SPECIAL OR CONSEQUENTIAL DAMAGES, OR DAMAGES FOR LOST PROFITS OR LOSS
@@ -271,40 +286,42 @@ export default class ConsultingDocument extends Component {
           PAID TO THE CONSULTANT UNDER THIS AGREEMENT.
           </p>
 
-          <h5 class='indoc'>{insuranceRequire}</h5>
+          <h6 class='indoc'>{insuranceRequire}</h6>
           <p>{insuranceRequire2}</p>
 
-          <h5 class='indoc'>{termination}</h5>
+          <h6 class='indoc'>{termination}</h6>
           <p>Termination of the consulting relationship may be done by Consultant
           with 14 (fourteen) days written notice. Company may terminate the consulting
           relationship at any time.</p>
           <p>Clauses 6, 7, 9 and 10 shall survive the termination of this Agreement.</p>
 
-          <h5 class='indoc'>{otherRequire}</h5>
+          <h6 class='indoc'>{otherRequire}</h6>
           <p>{otherRequire2}</p>
 
-          <h5 class='indoc'>{solicitation}</h5>
+          <h6 class='indoc'>{solicitation}</h6>
           <p>During and after the consulting
           relationship between Consultant and the Company, Consultant agrees that trade secrets
           or Confidential Information will not be used to solicit any clients or employees of the
-          Company for [X] amount of time.</p>
+          Company for <span class='fill'>{values.secrets}</span>.</p>
           <p>All Company trade secrets, and Confidential Information will be returned upon the
           termination of the consulting relationship.</p>
 
-          <h5 class='indoc'>{assignment}</h5>
+          <h6 class='indoc'>{assignment}</h6>
           <p>The rights bestowed upon Consultant in
           this Agreement are personal to Consultant and shall not be effective upon any
           assignment or successors in interest. Any attempted assignment of this Agreement
           shall be null and void. However, to the extent that rights in intellectual property are
           assigned by the Consultant to successors or assigns the Consultant agrees to help the
-          Company enforce any rights they may have to that intellectual property.</p>
+          Company enforce any rights they may have to that intellectual property.
+          </p>
 
-          <h5 class='indoc'>{remedies}</h5>
+          <h6 class='indoc'>{remedies}</h6>
           <p>Violation of the Agreement may cause harm, and Consultant agrees and
-          understands that the Company may seek extraordinary relief in court.</p>
+          understands that the Company may seek extraordinary relief in court.
+          </p>
 
 
-          <h5 class='indoc'>{misc}</h5>
+          <h6 class='indoc'>{misc}</h6>
           <p class='tab'>i. GOVERNING LAW.
           <br /><br />
             <p class='tab'> The validity, interpretation, construction and
@@ -347,7 +364,12 @@ export default class ConsultingDocument extends Component {
           <br />
           <br />
 
-          <p >Signature Blocks</p>
+          <p>NAME:   _____________________   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            _____________________</p>
+          <p>ADDRESS:   __________________   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            _____________________</p>
+          <p>PHONE NUMBER:   _____________   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            _____________________</p>
+          <p>SIGNATURE:</p>
+          <br />
+          <br />
           <br />
           <br />
           <center>

@@ -71,6 +71,17 @@ export default class ConsultingIntro extends Component {
           </form>
           <br />
 
+          <form onChange={this.props.handleChange('type')}>
+            <label for="type">Please select the type of the company:</label>
+            <br />
+            <select id="type" name="type">
+              <option value="LLC">LLC</option>
+              <option value="Corporation">Corporation</option>
+              <option value='Partnership'>Partnership</option>
+            </select>
+          </form>
+          <br />
+
           <form>
             <p>Enter your name:</p>
             <input
@@ -97,6 +108,7 @@ export default class ConsultingIntro extends Component {
               onChange={this.props.handleChange('state')}
             />
           </form>
+          <br />
 
           <button class='next' onClick={this.next}>Next </button>
         </div>

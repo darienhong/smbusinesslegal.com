@@ -54,7 +54,7 @@ var server = app.listen(PORT, function () {
   console.log(`API is running on Port ${PORT}`);
 });
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, './frontend/build', './frontend/index.html'));
 });
 
@@ -512,8 +512,8 @@ app.get('/api/getPlan', function (req, res) {
     function (err, result) {
       if (err) {
         console.log(err);
-        res.sendStatus(500);
-        return;
+        // res.sendStatus(500);
+        // return;
       }
       console.log(result);
       console.log(result.rows);
@@ -558,83 +558,83 @@ app.get('/api/getPlan', function (req, res) {
 
 
 
-app.get('/api/getCompanyInfo', function(req, res) {
+app.get('/api/getCompanyInfo', function (req, res) {
   const email = req.query.email;
   console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
-  function(err, result){
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-      return;
-    }
-    console.log(result);
-    let get_id = (result.rows[0].company_id);
-    console.log(get_id)
-    client.query('SELECT * FROM public.company_table where company_id=$1', [get_id], function(err, table) {
-      if (err){
+    function (err, result) {
+      if (err) {
         console.log(err);
-        res.sendStatus(500);
-        return;
-      } else {
-        console.log(table);
-        res.send(table.rows);
+        // res.sendStatus(500);
+        // return;
       }
-    });
-  })
+      console.log(result);
+      let get_id = (result.rows[0].company_id);
+      console.log(get_id)
+      client.query('SELECT * FROM public.company_table where company_id=$1', [get_id], function (err, table) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        } else {
+          console.log(table);
+          res.send(table.rows);
+        }
+      });
+    })
 });
 
-app.get('/api/getUserList', function(req, res) {
+app.get('/api/getUserList', function (req, res) {
   const email = req.query.email;
   console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
-  function(err, result) {
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-      return; 
-    } 
-    console.log(result);
-    let get_id = (result.rows[0].company_id);
-    console.log(get_id)
-    client.query('SELECT first_name, last_name FROM public.user_table where company_id=$1', [get_id], function(err, table) {
+    function (err, result) {
       if (err) {
         console.log(err);
         res.sendStatus(500);
         return;
-      } else {
-        console.log(table);
-        res.send(table.rows);
       }
+      console.log(result);
+      let get_id = (result.rows[0].company_id);
+      console.log(get_id)
+      client.query('SELECT first_name, last_name FROM public.user_table where company_id=$1', [get_id], function (err, table) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        } else {
+          console.log(table);
+          res.send(table.rows);
+        }
+      })
     })
-  })
 })
 
 
-app.get('/api/getMemberList', function(req, res) {
+app.get('/api/getMemberList', function (req, res) {
   const email = req.query.email;
   console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
-  function(err, result) {
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-      return; 
-    } 
-    console.log(result);
-    let get_id = (result.rows[0].company_id);
-    console.log(get_id)
-    client.query('SELECT first_name, last_name, position FROM public.people_table where company_id=$1', [get_id], function(err, table) {
+    function (err, result) {
       if (err) {
         console.log(err);
         res.sendStatus(500);
         return;
-      } else {
-        console.log(table);
-        res.send(table.rows);
       }
+      console.log(result);
+      let get_id = (result.rows[0].company_id);
+      console.log(get_id)
+      client.query('SELECT first_name, last_name, position FROM public.people_table where company_id=$1', [get_id], function (err, table) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        } else {
+          console.log(table);
+          res.send(table.rows);
+        }
+      })
     })
-  })
 })
 
 
