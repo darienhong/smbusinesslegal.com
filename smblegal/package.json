@@ -14,8 +14,11 @@
     "cors": "^2.8.5",
     "ejs": "latest",
     "express": "^4.17.1",
+    "forever": "^3.0.0",
+    "forever-monitor": "^3.0.1",
     "mysql": "latest",
     "pg": "^7.18.2",
+    "split": "^1.0.1",
     "stripe": "^8.69.0",
     "uuid": "^8.2.0"
   },

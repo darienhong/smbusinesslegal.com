@@ -514,15 +514,19 @@ app.get('/api/getPlan', function (req, res) {
         console.log(err);
         // res.sendStatus(500);
         // return;
-      }
+      } 
       console.log(result);
+      console.log("here");
       console.log(result.rows);
+      console.log("here1");
       let rows = result.rows
       let p = ""
       for (var i = 0; i < rows.length; i++) {
         p = rows[i].plan_type;
       }
+      console.log("here2");
       console.log(p);
+    
       // let row = result.rows[0];
       // console.log(row);
       // let test = { plan_type: 'Freemium' };
@@ -550,7 +554,8 @@ app.get('/api/getPlan', function (req, res) {
       // console.log(get_row);
       // console.log(get_row2);
       // console.log(get_plan)
-      res.send(p);
+     
+      res.send(result.rows);
       // let get_id = (result.rows[0].company_id);
       // console.log(get_id)
     })

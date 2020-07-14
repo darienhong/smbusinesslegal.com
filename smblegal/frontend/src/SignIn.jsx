@@ -17,11 +17,11 @@ export default function SignIn() {
     const [state, setStates] = React.useState({
         email: "",
         password: "",
-        plan: {}
+        plan: "",
     })
     const [emailStatus, setEmailStatus] = React.useState('');
     const [passwordStatus, setPasswordStatus] = React.useState('');
-    const [plan, setPlan] = React.useState({});
+    const [plan, setPlan] = React.useState("");
 
 
     React.useEffect(() => {
@@ -45,7 +45,7 @@ export default function SignIn() {
         setPasswordStatus(value);
     }
 
-    const handlePlanChange = value => {
+    const handlePlanChange = (value) => {
         setPlan(value);
     }
 
@@ -84,26 +84,35 @@ export default function SignIn() {
 
 
     const switchPage = code => {
+
         fetch(`/api/getPlan?email=${state.email}`, {
             method: 'GET'
         })
             .then(response => {
                 console.log(response);
                 response.json()
-            })
+
             .then((data) => {
                 console.log('went in!');
                 console.log(data);
-                let rows = data.rows
-                console.log(rows);
-                let p = ""
-                for (var i = 0; i < rows.length; i++) {
+                let p = data[0].plan_type;
+                console.log(p);
+              //  handlePlanChange(p);
+              //  console.log(plan);
+              //  let rows = data.rows
+             //   console.log(rows);
+             //   let p = ""
+            /*    for (var i = 0; i < rows.length; i++) {
                     p = rows[i].plan_type;
                 }
                 console.log("p: " + p);
                 handlePlanChange(p)
-                console.log(plan);
+                */
+              //  console.log(plan);
             })
+
+        })
+            
             // .then(res => res.json())
             .catch(error => console.error('Error:', error))
             .then(response => console.log('Success:', plan));
