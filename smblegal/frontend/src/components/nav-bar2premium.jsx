@@ -26,7 +26,7 @@ export default class Navbar2Premium extends Component {
   render() {
     return (
      
-        <div class="container" style={{width: "150%"}}>
+        <div class="nav-bar-container">
           <Link to="/DashboardPremium"><img src={Logo} alt="icon logo" className="logo" /></Link> 
           <nav>
             <ul>
