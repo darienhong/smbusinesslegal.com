@@ -25,6 +25,7 @@ export default class PremiumLogin extends Component {
   state = {
     companyName: "[COMPANY NAME PLACEHOLDER]",
     users: "[USERS PLACEHOLDER]", 
+    company_id: 0,
     lastMeeting: "[LAST MEETING PLACEHOLDER]", 
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     companyType: "[COMPANY TYPE]",
@@ -54,6 +55,7 @@ export default class PremiumLogin extends Component {
           USState: data1[0][0].state, 
           companyName: data1[0][0].company_name, 
           companyType: data1[0][0].company_type,
+          company_id: data1[0][0].company_id,
           users: data1[1],
      //     users: [data1[1][0].first_name, data1[1][0].last_name]
   
@@ -66,7 +68,13 @@ export default class PremiumLogin extends Component {
        //   USState: data1[0][0].state
        //   USState: data1[0].state, 
         //   users: data1[1]
-        }))
+        })
+        
+        
+        
+        
+        
+        )
   
       //  .then(data2 => console.log(data2))
      /*   .then(([data1, data2]) => 
@@ -81,7 +89,12 @@ export default class PremiumLogin extends Component {
         */
   
         .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response))
+        .then(response => console.log('Success:', response));
+
+     //   console.log(this.state.company_id);
+     //   localStorage.setItem('company_id', this.state.company_id);
+     
+      
   
       }
    
@@ -93,6 +106,7 @@ export default class PremiumLogin extends Component {
       const { 
         companyName, 
         users, 
+        company_id,
         lastMeeting, 
         nextMeeting, 
         companyType,

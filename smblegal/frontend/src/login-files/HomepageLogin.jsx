@@ -30,10 +30,10 @@ export default class HomepageLogin extends Component {
     lastMeeting: "[LAST MEETING PLACEHOLDER]", 
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     USState: "[STATE PLACEHOLDER]",
+    company_id: 0,
     company: [],
     users: [], 
     email: localStorage.getItem('email'), 
-
   }
 
  componentDidMount() {
@@ -56,6 +56,7 @@ export default class HomepageLogin extends Component {
         USState: data1[0][0].state, 
         companyName: data1[0][0].company_name, 
         companyType: data1[0][0].company_type,
+        company_id: data1[0][0].company_id,
         users: data1[1],
    //     users: [data1[1][0].first_name, data1[1][0].last_name]
 
@@ -83,16 +84,18 @@ export default class HomepageLogin extends Component {
       */
 
       .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response))
+      .then(response => console.log('Success:', response));
+
+      localStorage.setItem('company_id', this.state.company_id);
 
     }
-  
     
 
     render() {
       const { 
         companyName, 
         users, 
+        company_id,
         lastMeeting, 
         nextMeeting,
         company,
