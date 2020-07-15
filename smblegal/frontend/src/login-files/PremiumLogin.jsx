@@ -7,6 +7,7 @@ import animationData from '../assets/animation.json';
 import ModalTest from '../components/modal.jsx';
 import Navbar from '../components/nav-bar.jsx';
 import Navbar2 from '../components/nav-bar2.jsx';
+import Navbar2Premium from '../components/nav-bar2premium.jsx';
 import AOS from 'aos';
 import Footer from '../components/footer.jsx';
 
@@ -116,7 +117,7 @@ export default class PremiumLogin extends Component {
         return (
           <div class="full-page">
             <div class="homepage-login"> 
-            <Navbar2 />
+            <Navbar2Premium />
             <br /> 
             <br /> 
             <br /> 

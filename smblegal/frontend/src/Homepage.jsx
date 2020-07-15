@@ -63,8 +63,9 @@ export default class Homepage extends Component {
         return (
       
           <div class="full-page">
+            <Navbar /> 
           <div class="homepage">
-            <Navbar style={{width: "100%"}}/> 
+           
             {/* <ModalTest /> 
               <Lottie 
 	              options={defaultOptions}

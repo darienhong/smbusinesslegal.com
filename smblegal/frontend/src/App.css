@@ -127,7 +127,7 @@ p {
   padding: 10px;
 }
 
-.container {
+.nav-bar-container {
   
   height: 70px; 
   top: 0;
@@ -284,6 +284,7 @@ nav a:hover {
     opacity: 1;
   }
 }
+
 .homepage, .about-page, .pricing-page, .sign-up-page, .tools-page,  
 .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
 .automated-docs-page, .login-page, .create-acc-page, .company-id-page, .doc-page , .product-overview-page,
