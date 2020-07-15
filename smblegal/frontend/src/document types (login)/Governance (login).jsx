@@ -14,7 +14,38 @@ import Footer from '../components/footer.jsx';
 
 export default class GovernanceLogin extends Component {
 
+    state = {
+        docs_used: 7,
+        limited_docs: false,
+        email: localStorage.getItem('email'),
+
+    }
+
+    componentDidMount(){
+        console.log(this.state.email);
+        fetch(`/api/getNumDocs?email=${this.state.email}`, {
+            method: 'GET',
+          })
+          
+        .then(response => response.json()
+        .then(data => this.setState({
+              docs_used: data[0].no_docs_used,
+          }))
+        )
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+
+       
+    } 
+
     render() {
+        
+        const {
+            docs_used, 
+            email,
+            limited_docs
+        } = this.state
+
         return (
             <div class="full-page">
                   <Navbar2 />
@@ -35,6 +66,7 @@ export default class GovernanceLogin extends Component {
                             <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
                         </svg>
                     </div>
+                    {docs_used}
                     <p class="pick-document"> Choose a document to draft </p>
                     <br></br>
                     <br></br>
