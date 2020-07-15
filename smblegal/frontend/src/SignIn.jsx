@@ -17,11 +17,10 @@ export default function SignIn() {
     const [state, setStates] = React.useState({
         email: "",
         password: "",
-        plan: "",
     })
     const [emailStatus, setEmailStatus] = React.useState('');
     const [passwordStatus, setPasswordStatus] = React.useState('');
-    const [plan, setPlan] = React.useState("");
+    const [plan, setPlan] = React.useState('');
 
 
     React.useEffect(() => {
@@ -29,7 +28,6 @@ export default function SignIn() {
     }, [state.email]);
 
     const handleChange = e => {
-        console.log('changing');
         const { name, value } = e.target
         setStates(prevState => ({
             ...prevState,
@@ -49,129 +47,87 @@ export default function SignIn() {
         setPlan(value);
     }
 
-
-    /*
-        React.useEffect(() => {
-            fetch(`/getPlan?email=${state.email}`, {
-                method: 'GET'
-            })
-                .then(response => {
-                    response.json()
-                })
-                .then((data) => {
-                    console.log('went in!');
-                    console.log(data);
-                    let rows = data.rows
-                    console.log(rows);
-                    let p = ""
-                    for (var i = 0; i < rows.length; i++) {
-                        p = rows[i].plan_type;
-                    }
-                    console.log("p: " + p);
-                    handlePlanChange(p)
-                    console.log(plan);
-                })
-    
-                // .then(res => res.json())
-                .catch(error => console.error('Error:', error))
-    
-                .then(response => console.log('Success:', plan));
-            console.log(plan);
-    
-        */
-
-
-
-
-    const switchPage = code => {
-
-        fetch(`/api/getPlan?email=${state.email}`, {
+    const changingPlan = async () => {
+        const response = await fetch(`/api/getPlan?email=${state.email}`, {
             method: 'GET'
         })
-            .then(response => {
-                response.json()
+        // console.log(response);
+        const data = await response.json();
+        // console.log('went in!');
+        // console.log(data);
+        let p = data[0].plan_type;
+        // console.log('p: ' + p);
+        handlePlanChange(p);
+        return p;
+    }
 
-                    .then((data) => {
-                        console.log('went in!');
-                        console.log(data);
-                        let p = data[0].plan_type;
-                        console.log(p);
-                        //  handlePlanChange(p);
-                        //  console.log(plan);
-                        //  let rows = data.rows
-                        //   console.log(rows);
-                        //   let p = ""
-                        /*    for (var i = 0; i < rows.length; i++) {
-                                p = rows[i].plan_type;
-                            }
-                            console.log("p: " + p);
-                            handlePlanChange(p)
-                            */
-                        //  console.log(plan);
-                    })
+    const switchPage = code => {
+        let p = changingPlan();
+        // console.log(p);
+        let getP = ''
+        p.then((value) => {
+            getP = value
+            // console.log("get p: " + getP);
 
-            })
 
-            // .then(res => res.json())
-            .catch(error => console.error('Error:', error))
-        // .then(response => console.log('Success:', plan));
-        console.log(plan);
+            const checkPassword = state.password.length === 0
+            const checkEmail = state.email.length === 0
+            // console.log('code: ' + code);
+            // console.log("Plan now: " + getP);
 
-        const checkPassword = state.password.length === 0
-        const checkEmail = state.email.length === 0
-        console.log('code: ' + code);
-        console.log(plan);
 
-        if (code === 200) {
-            handleEmailStatusChange('')
-            handlePasswordStatusChange('')
-            if (plan === 'Premium') {
-                // document.location = "/DashboardPremium"
-            }
-            else {
-                // document.location = "/Dashboard"
-            }
-        }
-        else if (code === 206) {
-            console.log(code);
-            if (checkEmail) {
-                handleEmailStatusChange('')
-                handleEmailStatusChange('Enter your email')
-            }
-            else {
-                handleEmailStatusChange('')
-                handleEmailStatusChange('This email does not exist.');
-            }
-            if (checkPassword) {
-                handlePasswordStatusChange('')
-                handlePasswordStatusChange('Enter your password')
-            }
-            else {
-                handlePasswordStatusChange('')
-                handlePasswordStatusChange('The password is incorrect')
+            if (code === 200) {
 
-            }
-
-        }
-        else if (code === 204) {
-            if (checkPassword) {
                 handleEmailStatusChange('')
                 handlePasswordStatusChange('')
-                handlePasswordStatusChange('Enter your password')
+                if (getP === 'Premium') {
+                    document.location = "/DashboardPremium"
+                }
+                else {
+                    document.location = "/Dashboard"
+                }
             }
-            else {
-                handleEmailStatusChange('')
-                handlePasswordStatusChange('')
-                handlePasswordStatusChange('The password is incorrect')
+            else if (code === 206) {
+
+                console.log(code);
+                if (checkEmail) {
+                    handleEmailStatusChange('')
+                    handleEmailStatusChange('Enter your email')
+                }
+                else {
+                    handleEmailStatusChange('')
+                    handleEmailStatusChange('This email does not exist.');
+                }
+                if (checkPassword) {
+                    handlePasswordStatusChange('')
+                    handlePasswordStatusChange('Enter your password')
+                }
+                else {
+                    handlePasswordStatusChange('')
+                    handlePasswordStatusChange('The password is incorrect')
+
+                }
 
             }
-        }
+            else if (code === 204) {
 
+                if (checkPassword) {
+                    handleEmailStatusChange('')
+                    handlePasswordStatusChange('')
+                    handlePasswordStatusChange('Enter your password')
+                }
+                else {
+                    handleEmailStatusChange('')
+                    handlePasswordStatusChange('')
+                    handlePasswordStatusChange('The password is incorrect')
+
+                }
+            }
+        })
     }
 
     const handleClick = (event) => {
         event.preventDefault();
-        console.log('went in to check user press!');
 
         const data = {
             email: state.email,
@@ -179,6 +135,25 @@ export default function SignIn() {
         }
         // console.log('email' + state.email);
         // console.log('password:  ' + state.password);
+        // fetch(`/api/getPlan?email=${state.email}`, {
+        //     method: 'GET'
+        // })
+        //     .then(response => {
+        //         response.json()
+        //             .then((data) => {
+        //                 console.log('went in!');
+        //                 console.log(data);
+        //                 let p = data[0].plan_type;
+        //                 console.log(p);
+        //                 handlePlanChange(p);
+        //             })
+
+        //     })
+
+        //     // .then(res => res.json())
+        //     .catch(error => console.error('Error:', error))
+        // // .then(response => console.log('Success:', plan));
+
         fetch('/api/getUser', {
             method: 'POST',
             body: JSON.stringify(data), // data can be `string` or {object}!
@@ -187,7 +162,6 @@ export default function SignIn() {
 
             .then(res => res.json())
             .catch(error => console.error('Error:', error))
-            // .then(response => console.log('Success:', response));
             .then(response => switchPage(response.code));
 
     }
