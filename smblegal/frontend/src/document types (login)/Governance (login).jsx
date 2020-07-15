@@ -17,8 +17,9 @@ export default class GovernanceLogin extends Component {
     render() {
         return (
             <div class="full-page">
+                  <Navbar2 />
                 <div class="governance-doc-page">
-                    <Navbar2 />
+                
                     <br></br>
                     <br></br>
                     <br></br>

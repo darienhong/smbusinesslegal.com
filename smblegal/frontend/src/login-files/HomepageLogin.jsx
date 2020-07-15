@@ -106,8 +106,9 @@ export default class HomepageLogin extends Component {
 
         return (
           <div class="full-page">
+              <Navbar2 />
             <div class="homepage-login"> 
-            <Navbar2 />
+          
             <br /> 
             <br /> 
             <br /> 

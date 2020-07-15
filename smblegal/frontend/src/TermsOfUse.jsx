@@ -15,9 +15,10 @@ export default class TermsOfUse extends Component {
         return (
 
             <div class="full-page"> 
+              <Navbar />
             <div class="terms-of-use-page">
 
-                <Navbar />
+             
                 <br></br>
             <br></br> 
             <br></br>

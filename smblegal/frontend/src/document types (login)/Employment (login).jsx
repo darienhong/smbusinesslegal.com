@@ -25,8 +25,9 @@ export default class EmploymentLogin extends Component {
     render() {
         return (
             <div class="full-page">
+                  <Navbar2 />
                 <div class="employment-doc-page">
-                    <Navbar2 />
+               
                     <br></br>
                     <br></br>
                     <br></br>

@@ -276,8 +276,9 @@ export default function AutomateGov2() {
     return (
 
         <div class="full-page">
+              <Navbar />
             <div class="company-id-page">
-                <Navbar />
+               
 
                 <br></br>
                 <br></br>

@@ -18,8 +18,9 @@ export default class Tools extends Component {
     render() { 
         return (
             <div class="full-page"> 
+              <Navbar />
             <div class="tools-page">
-                <Navbar />
+                
                 <br></br>
               <br></br>
               <br></br>

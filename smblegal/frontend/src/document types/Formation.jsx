@@ -17,8 +17,9 @@ export default class Formation extends Component {
 
         return (
             <div class="full-page">
+                  <Navbar />
             <div class="formation-doc-page">
-                <Navbar />
+            
                 <br></br>
                 <br></br>
                 <br></br>

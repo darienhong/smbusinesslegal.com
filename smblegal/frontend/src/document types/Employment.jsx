@@ -24,8 +24,9 @@ export default class Employment extends Component {
     render() {
         return (
             <div class="full-page">
+                  <Navbar />
             <div class="employment-doc-page">
-                <Navbar />
+              
                 <br></br>
                 <br></br>
                 <br></br>

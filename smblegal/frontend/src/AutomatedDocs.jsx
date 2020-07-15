@@ -15,8 +15,9 @@ export default class AutomatedDocs extends Component {
     render() {
         return (
             <div class="full-page"> 
+             <Navbar />
             <div class="automated-docs-page">
-            <Navbar />
+          
               <br></br>
               <br></br>
               <br></br>

@@ -22,8 +22,9 @@ export default class Pricing extends Component {
     render() {
         return (
             <div class="full-page">
+                  <Navbar />
                 <div class="pricing-page">
-                    <Navbar />
+                  
                     <br></br>
                     <br></br>
                     <br></br>

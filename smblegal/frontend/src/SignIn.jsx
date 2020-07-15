@@ -167,8 +167,9 @@ export default function SignIn() {
     }
     return (
         <div class="full-page">
+              <Navbar />
             <div class="login-page">
-                <Navbar />
+           
                 <br></br>
                 <br></br>
                 <br></br>

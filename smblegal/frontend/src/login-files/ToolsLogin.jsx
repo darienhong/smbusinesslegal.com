@@ -18,8 +18,9 @@ export default class ToolsLogin extends Component {
     render() { 
         return (
             <div class="full-page">
+                 <Navbar2 />
             <div class="tools-page">
-                <Navbar2 />
+            
                 <br></br>
               <br></br>
               <br></br>

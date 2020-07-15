@@ -16,8 +16,9 @@ export default class AutomatedDocsLogin extends Component {
     render() {
         return (
             <div class="full-page">
+                  <Navbar2 />
             <div class="automated-docs-page">
-            <Navbar2 />
+            
               <br></br>
               <br></br>
               <br></br>

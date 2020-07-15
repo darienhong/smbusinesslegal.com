@@ -15,9 +15,10 @@ export default class PrivacyPolicy extends Component {
         return (
 
             <div class="full-page"> 
+              <Navbar />
             <div class="policy-page">
 
-                <Navbar />
+           
                 <br></br>
             <br></br> 
             <br></br>

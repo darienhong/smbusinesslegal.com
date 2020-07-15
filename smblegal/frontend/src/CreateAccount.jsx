@@ -533,8 +533,9 @@ export default function CreateAccount() {
 
   return (
     <div class="full-page">
-      <div class="create-acc-page">
         <Navbar />
+      <div class="create-acc-page">
+   
         <br></br>
         <br></br>
 

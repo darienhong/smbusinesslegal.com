@@ -116,8 +116,9 @@ export default class PremiumLogin extends Component {
 
         return (
           <div class="full-page">
+              <Navbar2Premium />
             <div class="homepage-login"> 
-            <Navbar2Premium />
+           
             <br /> 
             <br /> 
             <br /> 

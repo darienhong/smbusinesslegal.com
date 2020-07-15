@@ -53,8 +53,9 @@ export default class FormationLogin extends Component {
 
         return (
             <div class="full-page">
+                  <Navbar2 />
                 <div class="formation-doc-page">
-                    <Navbar2 />
+                   
                     <br></br>
                     <br></br>
                     <br></br>

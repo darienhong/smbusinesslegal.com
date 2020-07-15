@@ -29,8 +29,9 @@ export default class AboutUsPremium extends Component {
     
         return (
         <div class="full-page">
-          <div class="about-page">
               <Navbar2Premium />
+          <div class="about-page">
+          
               <br></br>
               <br></br>
               <br></br>

@@ -44,10 +44,11 @@ export default class ContentMarketing2 extends Component {
     
         return (
           <div class="full-page">
+              <Navbar />
           <div className="content-marketing-page">
             <div className="marketing-container">
               <div className="marketing-container" >
-                <Navbar />
+           
             <br />
             <br />
             <br />

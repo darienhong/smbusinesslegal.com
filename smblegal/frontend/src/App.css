@@ -94,7 +94,7 @@ p {
 
 .ask {
   padding-top: 80px;
-  padding-left: 100px;
+ /* padding-left: 100px; */
   display: flex;
   width: 90vw;
   height: 80vh;
@@ -138,8 +138,8 @@ p {
  /* position: fixed; */
   background-color: rgb(255, 255, 255);
   padding-left: 30px;
-  padding-right: 20px;
-  
+  padding-right: 30px;
+
 
 }
 

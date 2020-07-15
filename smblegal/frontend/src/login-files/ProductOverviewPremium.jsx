@@ -13,8 +13,9 @@ export default class ProductOverviewPremium extends Component {
         return ( 
 
             <div class="full-page">
+                   <Navbar2Premium />
             <div class="product-overview-page">
-            <Navbar2Premium />
+            
               <br></br>
               <br></br>
               <br></br>

@@ -9,6 +9,7 @@ import Navbar from '../components/nav-bar.jsx';
 import Navbar2 from '../components/nav-bar2.jsx';
 import AOS from 'aos';
 import Footer from '../components/footer.jsx';
+import Navbar2Premium from '../components/nav-bar2premium.jsx';
 
 import {
     BrowserRouter as Router,
@@ -244,8 +245,9 @@ export default class GovernanceDashboard extends Component {
 
         return (
           <div class="full-page">
+              <Navbar2Premium />
             <div class="homepage-login"> 
-            <Navbar2 />
+          
             <br /> 
             <br /> 
             <br /> 

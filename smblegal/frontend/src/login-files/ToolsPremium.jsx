@@ -19,8 +19,9 @@ export default class ToolsPremium extends Component {
     render() { 
         return (
             <div class="full-page">
+                 <Navbar2Premium />
             <div class="tools-page">
-                <Navbar2Premium />
+               
                 <br></br>
               <br></br>
               <br></br>

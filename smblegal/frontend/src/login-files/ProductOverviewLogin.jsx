@@ -12,8 +12,9 @@ export default class ProductOverviewLogin extends Component {
         return ( 
 
             <div class="full-page">
+                <Navbar2 />
             <div class="product-overview-page">
-            <Navbar2 />
+         
               <br></br>
               <br></br>
               <br></br>

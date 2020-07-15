@@ -32,8 +32,9 @@ export default class AboutUs extends Component {
     
         return (
             <div class="full-page"> 
-          <div class="about-page">
               <Navbar />
+          <div class="about-page">
+             
               <br></br>
               <br></br>
               <br></br>
