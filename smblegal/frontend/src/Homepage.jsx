@@ -9,7 +9,7 @@ import Navbar from './components/nav-bar.jsx';
 import AOS from 'aos';
 import Footer from './components/footer.jsx';
 import Navbar2 from './components/nav-bar2.jsx';
-import HeroImage from './assets/smb-hero-image.png';
+import HeroImage from './assets/hero-image.png';
 
 import 'aos/dist/aos.css';
 import {
@@ -64,7 +64,7 @@ export default class Homepage extends Component {
       
           <div class="full-page">
           <div class="homepage">
-            <Navbar /> 
+            <Navbar style={{width: "100%"}}/> 
             {/* <ModalTest /> 
               <Lottie 
 	              options={defaultOptions}
@@ -76,17 +76,17 @@ export default class Homepage extends Component {
             < br/> 
             < br/>
             < br/> 
-         <center> <img src={HeroImage} alt="Hero Image" class="hero-image" /> </center>
+         <Link to="/CreateAccount"><center> <img src={HeroImage} alt="Hero Image" class="hero-image" /> </center></Link>
 
 
 
-              <div class="homepage-text">
+        {/*     <div class="homepage-text">
                   <div data-aos="slide-up"  data-aos-easing="ease-in-out"  data-aos-duration="2000">
                 {/* <div class="logo-section" style={{textAlign: "center"}}>
                <img src={Logo} alt="website logo" class="logo" />
               </div>
 
-        */}
+        
                 <h1 class="title"> SMB Legal </h1>
                   <h2 style={{ textAlign: "center", color: "#245CA6"}}> Small Business Lifecycle Management </h2>
                   <br></br>
@@ -115,6 +115,18 @@ export default class Homepage extends Component {
            <br></br>
            <br></br>
            <br></br>
+
+
+          */}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
 
           
           <p class="homepage-text"> Documents </p>

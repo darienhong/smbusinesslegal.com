@@ -14,7 +14,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import IconLogo from '../assets/icon-logo.png';
 import Avatar from '@material-ui/core/Avatar';
 import AvatarImage from '../assets/default-avatar.png';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/top-logo.png';
 
 // import { Grommet, Menu } from 'grommet';
 
