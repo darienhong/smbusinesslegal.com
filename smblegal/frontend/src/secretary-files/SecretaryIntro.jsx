@@ -26,15 +26,38 @@ import StripeCheckout from "react-stripe-checkout"
 
 export default class SecretaryIntro extends Component {
 
+  state = {
+    pay: false,
+    docs_used: localStorage.getItem('docs_used'),
+    email: localStorage.getItem('email'),
+  }
+
+
   next = (e) => {
     e.preventDefault();
     this.props.increasePercentage();
     this.props.nextStep();
-  }
+    console.log(this.state.email);
+    console.log(this.state.docs_used);
 
-  state = {
-    pay: false
+    const data = {
+      docs_used: this.state.docs_used,
+      email: this.state.email,
+    }
+    
+    fetch('/api/updateNumDocs', {
+      method: 'POST',
+      body: JSON.stringify(data), // data can be `string` or {object}!
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+      .then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
+
   }
+  
+
 
   handleClick = (e) => {
     this.setState({pay: true});
