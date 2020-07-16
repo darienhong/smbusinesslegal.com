@@ -146,7 +146,6 @@ export default class HomepageLogin extends Component {
                   {companyName}
               </div>
               <br />
-              {max_docs}
               <div class="type">
                 {companyType}
               </div>
