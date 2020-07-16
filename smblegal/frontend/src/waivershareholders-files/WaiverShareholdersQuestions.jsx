@@ -24,7 +24,8 @@ export default class WaiverShareholdersQuestions extends Component {
     unanimous: '',
     state: '[X]',
     number: '',
-    shares: '[X]'
+    shares: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -92,7 +93,8 @@ export default class WaiverShareholdersQuestions extends Component {
       number,
       name,
       type,
-      shares
+      shares,
+      docs_used
 
     } = this.state;
     const values = {

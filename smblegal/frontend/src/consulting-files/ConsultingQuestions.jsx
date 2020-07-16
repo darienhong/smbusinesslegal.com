@@ -38,7 +38,8 @@ export default class ConsultingQuestions extends Component {
     term: '[X]',
     supervision: '[X]',
     secrets: '[X]',
-    type: '[LLC]'
+    type: '[LLC]',
+    docs_used: localStorage.getItem('docs_used'),
   }
 
   nextStep = () => {
@@ -95,7 +96,7 @@ export default class ConsultingQuestions extends Component {
     const { date, employeeName, consultantName, companyName, state, endDate,
       wage, hours, expenses, liability, percent,
       expenseList, registration, compensation, compSched,
-      techConfidential, nontechConfidential, insurance, other, scope, term, supervision, secrets, type
+      techConfidential, nontechConfidential, insurance, other, scope, term, supervision, secrets, type, docs_used
     } = this.state;
     const values = {
       date, employeeName, consultantName, companyName, state, endDate,

@@ -32,7 +32,8 @@ export default class BoardMinutesQuestions extends Component {
     presence: [{ person: "" }],
     inPerson: '',
     electronic: '',
-    secPosition: '[X]'
+    secPosition: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -111,7 +112,8 @@ export default class BoardMinutesQuestions extends Component {
       presence,
       inPerson,
       electronic,
-      secPosition
+      secPosition,
+      docs_used
 
     } = this.state;
     const values = {

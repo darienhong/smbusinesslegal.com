@@ -39,6 +39,10 @@ export default class Covid_19Login extends Component {
        
     }
 
+    saveData = () => {
+        localStorage.setItem('docs_used', this.state.docs_used);
+    }
+
     render() {
         const {
             docs_used, 
@@ -50,7 +54,7 @@ export default class Covid_19Login extends Component {
             <div class="full-page">
                   <Navbar2 />
                 <div class="covid-19-doc-page">
-                  
+                  {this.saveData()}
                     <br></br>
                     <br></br>
                     <br></br>

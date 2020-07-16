@@ -38,6 +38,10 @@ export default class GovernanceLogin extends Component {
        
     } 
 
+    saveData = () => {
+        localStorage.setItem('docs_used', this.state.docs_used);
+    }
+
     render() {
         
         const {
@@ -50,7 +54,7 @@ export default class GovernanceLogin extends Component {
             <div class="full-page">
                   <Navbar2 />
                 <div class="governance-doc-page">
-                
+                    {this.saveData()}
                     <br></br>
                     <br></br>
                     <br></br>

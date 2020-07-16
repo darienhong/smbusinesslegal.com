@@ -34,9 +34,31 @@ export default class FormationLogin extends Component {
         )
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
-
-       
+ 
     }
+
+    saveData = () => { 
+        localStorage.setItem('docs_used', this.state.docs_used);
+    }
+
+/*
+    handleClickFormation = () => {
+        console.log("hello");
+        console.log(this.state.docs_used);
+        localStorage.setItem('docs_used', this.state.docs_used);
+        document.location = "/FormationQuestions"
+    }
+
+    handleClickIncorporation = () => {
+        console.log("hello");
+        console.log(this.state.docs_used);
+        localStorage.setItem('docs_used', this.state.docs_used);
+     //   document.location = "/IncorporationQuestions"
+    }
+
+    */
+
+  
 
     render() {
         const {
@@ -49,12 +71,16 @@ export default class FormationLogin extends Component {
     
      //       console.log(limited_docs);
      //       console.log("hello");
+
+
         
 
         return (
             <div class="full-page">
                   <Navbar2 />
                 <div class="formation-doc-page">
+                
+                {this.saveData()} 
                    
                     <br></br>
                     <br></br>
@@ -71,22 +97,23 @@ export default class FormationLogin extends Component {
                             <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
                         </svg>
                     </div>
+                    {docs_used}
               
                     <p class="pick-document"> Choose a document to draft </p>
                     <br></br>
                     <br></br>
                     <div class="formation-documents">
 
-                        <div class="document-icon"><Link to="/FormationQuestions">
+                        <div class="document-icon"> <Link to={{ pathname: "/FormationQuestions", state: docs_used }}> 
                             <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                             <p> Certificate of Formation <br></br> (DE - LLC) </p>
-                        </Link>
+                       </Link> 
                         </div>
 
-                        <div class="document-icon"><Link to="/IncorporationQuestions">
+                        <div class="document-icon" > <Link to="/IncorporationQuestions"> 
                             <DescriptionIcon style={{ fontSize: 120, color: "rgb(201, 201, 201)", padding: "10px" }} />
                             <p> Certificate of Incorporation (DE - Corp) </p>
-                        </Link>
+                        </Link> 
                         </div>
                     </div>
 

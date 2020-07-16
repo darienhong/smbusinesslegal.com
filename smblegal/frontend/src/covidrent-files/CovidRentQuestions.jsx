@@ -20,7 +20,8 @@ export default class CovidRentQuestions extends Component {
     tenant: '[X]',
     landlord: '[X]',
     subject: '[Commercial Tenant Rental Payment]',
-    employees: '[X]'
+    employees: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
   }
 
   nextStep = () => {
@@ -80,7 +81,8 @@ export default class CovidRentQuestions extends Component {
       tenant,
       landlord,
       subject,
-      employees
+      employees,
+      docs_used
     } = this.state;
     const values = {
       percent,

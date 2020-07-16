@@ -46,6 +46,10 @@ export default class EmploymentLogin extends Component {
        
     }
 
+    saveData = () => {
+        localStorage.setItem('docs_used', this.state.docs_used);
+    }
+
     render() {
         const {
             docs_used, 
@@ -57,6 +61,8 @@ export default class EmploymentLogin extends Component {
             <div class="full-page">
                   <Navbar2 />
                 <div class="employment-doc-page">
+                    
+                    {this.saveData()}
                
                     <br></br>
                     <br></br>

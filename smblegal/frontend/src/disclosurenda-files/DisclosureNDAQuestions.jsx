@@ -33,7 +33,8 @@ export default class DisclosureNDAQuestions extends Component {
     confidentialUseCheck: '',
     partyCheck: '',
     parties: '',
-    authorized: ' '
+    authorized: ' ',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -105,7 +106,8 @@ export default class DisclosureNDAQuestions extends Component {
       confidentialUseCheck,
       partyCheck,
       parties,
-      authorized
+      authorized,
+      docs_used
     } = this.state;
     const values = {
       percent,

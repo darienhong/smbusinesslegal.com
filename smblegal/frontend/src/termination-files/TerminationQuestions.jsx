@@ -38,7 +38,8 @@ export default class TerminationQuestions extends Component {
     release: '[X]',
     disparagement: '[X]',
     publicity: '[X]',
-    contact: '[X]'
+    contact: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
   }
 
   nextStep = () => {
@@ -111,7 +112,8 @@ export default class TerminationQuestions extends Component {
       disparagement,
       publicity,
       contact,
-      dateSigned
+      dateSigned,
+      docs_used
     } = this.state;
     const values = {
       percent,

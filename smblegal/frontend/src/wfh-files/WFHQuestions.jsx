@@ -34,7 +34,8 @@ export default class WFHQuestions extends Component {
     provisionList: [{ name: "" }],
     prohibited: '[X]',
     discouraged: '[X]',
-    newPolicy: '[X]'
+    newPolicy: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
 
 
 
@@ -123,7 +124,8 @@ export default class WFHQuestions extends Component {
       provisions,
       provisionList,
       prohibited,
-      discouraged
+      discouraged,
+      docs_used
     } = this.state;
     const values = {
       percent,

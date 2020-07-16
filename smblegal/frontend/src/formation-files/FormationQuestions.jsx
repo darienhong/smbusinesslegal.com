@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import '../App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import FormationIntro from './FormationIntro.jsx';
 import FormationInfo from './FormationInfo.jsx';
@@ -27,7 +33,8 @@ export default class FormationQuestions extends Component {
     companyZip: '[X]',
     incorpList: [{ name: "" }],
     checkFax: "",
-    registered: "[X]"
+    registered: "[X]",
+    docs_used: localStorage.getItem('docs_used'),
   }
 
   nextStep = () => {
@@ -95,7 +102,8 @@ export default class FormationQuestions extends Component {
       companyZip,
       incorpList,
       checkFax,
-      registered
+      registered,
+      docs_used
     } = this.state;
     const values = {
       percent,
@@ -114,9 +122,11 @@ export default class FormationQuestions extends Component {
       registered
     };
 
-    switch (step) {
+  
+
+   switch (step) {
       case 1:
-        return <FormationIntro
+        return  <FormationIntro
           nextStep={this.nextStep}
           handleChange={this.handleChange}
           increasePercentage={this.increasePercentage}
@@ -126,6 +136,8 @@ export default class FormationQuestions extends Component {
           values={values}
         // doc={EmploymentDocument}
         />
+      
+        
       case 2:
         return <FormationInfo
           nextStep={this.nextStep}
@@ -141,6 +153,8 @@ export default class FormationQuestions extends Component {
           prevStep={this.prevStep}
           values={values} />
     }
+
+    
   }
 
 

@@ -35,7 +35,8 @@ export default class ShareholderMinutesQuestions extends Component {
     outstanding: '[X]',
     represented: '[X]',
     reason: '',
-    secPosition: '[X]'
+    secPosition: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -112,7 +113,8 @@ export default class ShareholderMinutesQuestions extends Component {
       outstanding,
       represented,
       reason,
-      secPosition
+      secPosition,
+      docs_used
 
 
     } = this.state;

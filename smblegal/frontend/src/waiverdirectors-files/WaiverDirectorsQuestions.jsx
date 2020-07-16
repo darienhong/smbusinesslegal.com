@@ -23,7 +23,8 @@ export default class WaiverDirectorsQuestions extends Component {
     signerList: [{ name: "[X]" }],
     unanimous: '',
     state: '[X]',
-    number: ''
+    number: '',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -91,7 +92,8 @@ export default class WaiverDirectorsQuestions extends Component {
       state,
       number,
       name,
-      type
+      type,
+      docs_used
 
     } = this.state;
     const values = {

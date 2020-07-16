@@ -20,7 +20,8 @@ export default class StatementQuestions extends Component {
     name: '[X]',
     phone: '[X]',
     docName: 'Articles of Incorporation',
-    docNameOther: '[X]'
+    docNameOther: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
   }
 
   nextStep = () => {
@@ -83,7 +84,8 @@ export default class StatementQuestions extends Component {
       name,
       phone,
       docName,
-      docNameOther
+      docNameOther,
+      docs_used
     } = this.state;
     const values = {
       percent,

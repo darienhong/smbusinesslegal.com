@@ -24,7 +24,8 @@ export default class DisciplinaryQuestions extends Component {
     state: '[STATE]',
     endDate: new Date(),
     actions: '',
-    restaurant: ''
+    restaurant: '',
+    docs_used: localStorage.getItem('docs_used'),
   }
 
   nextStep = () => {
@@ -90,7 +91,8 @@ export default class DisciplinaryQuestions extends Component {
       state,
       endDate,
       actions,
-      restaurant
+      restaurant,
+      docs_used
     } = this.state;
     const values = {
       percent,
