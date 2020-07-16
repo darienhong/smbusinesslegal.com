@@ -15,8 +15,19 @@ export default class BoardResolutionInfo extends Component {
 
   state = {
     pay: false,
+    shouldPay: true,
     docs_used: localStorage.getItem('docs_used'),
     email: localStorage.getItem('email'),
+    max_docs: localStorage.getItem('max_docs'),
+  }
+
+
+  componentDidMount(){
+    if (this.state.docs_used <= this.state.max__docs){
+      this.setState({
+        shouldPay: false,
+      })
+    }
   }
 
 

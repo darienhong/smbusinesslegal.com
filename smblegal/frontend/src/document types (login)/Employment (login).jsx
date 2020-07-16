@@ -22,12 +22,18 @@ import Footer from '../components/footer.jsx';
 
 export default class EmploymentLogin extends Component {
 
-    state = {
+    constructor(){
+        var today = new Date(),
+            dateToday = today.getDate();
+    
+
+    this.state = {
         docs_used: 7,
         limited_docs: false,
         email: localStorage.getItem('email'),
-
+        date: dateToday,
     }
+}
 
     componentDidMount(){
         console.log(this.state.email);
@@ -42,6 +48,29 @@ export default class EmploymentLogin extends Component {
         )
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
+
+        if (this.state.date === 1){
+            this.setState({ 
+                docs_used: 0,
+            }) 
+
+            const data = {
+                docs_used: this.state.docs_used,
+                email: this.state.email,
+              }
+              
+              fetch('/api/resetDocs', {
+                method: 'POST',
+                body: JSON.stringify(data), // data can be `string` or {object}!
+                headers: { 'Content-Type': 'application/json' }
+              })
+          
+                .then(res => res.json())
+                .catch(error => console.error('Error:', error))
+                .then(response => console.log('Success:', response));
+
+
+        }
 
        
     }
