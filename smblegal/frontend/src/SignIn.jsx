@@ -70,7 +70,6 @@ export default function SignIn() {
             localStorage.setItem('plan', getP);
             // console.log("get p: " + getP);
 
-
             const checkPassword = state.password.length === 0
             const checkEmail = state.email.length === 0
             // console.log('code: ' + code);

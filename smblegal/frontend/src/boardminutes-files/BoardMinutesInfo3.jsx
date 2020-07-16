@@ -16,8 +16,20 @@ export default class BoardMinutesInfo3 extends Component {
 
   state = {
     pay: false,
+    shouldPay: true,
     docs_used: localStorage.getItem('docs_used'),
     email: localStorage.getItem('email'),
+    max_docs: localStorage.getItem('max_docs'),
+  }
+
+
+  componentDidMount(){
+
+    if (docs_used <= max__docs){
+      this.setState({
+        shouldPay: false,
+      })
+    }
   }
 
 

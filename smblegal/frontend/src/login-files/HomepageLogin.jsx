@@ -34,6 +34,8 @@ export default class HomepageLogin extends Component {
     company: [],
     users: [], 
     email: localStorage.getItem('email'), 
+    plan: localStorage.getItem('plan'),
+    max_docs: 0,
   }
 
  componentDidMount() {
@@ -86,8 +88,16 @@ export default class HomepageLogin extends Component {
       .catch(error => console.error('Error:', error))
       .then(response => console.log('Success:', response));
 
-      localStorage.setItem('company_id', this.state.company_id);
+      if (this.state.plan === 'Freemium'){
+        this.setState({ max_docs: 2 })
+      } else if (this.state.plan === 'Premium'){
+        this.setState({ max_docs: 15})
+      }
 
+    }
+
+    saveData = () => {
+      localStorage.setItem('max_docs', this.state.max_docs);
     }
     
 
@@ -101,14 +111,16 @@ export default class HomepageLogin extends Component {
         company,
         companyType,
         USState, 
-        email
+        email,
+        plan,
+        max_docs
       } = this.state
 
         return (
           <div class="full-page">
               <Navbar2 />
             <div class="homepage-login"> 
-          
+            {this.saveData()}
             <br /> 
             <br /> 
             <br /> 
@@ -134,6 +146,7 @@ export default class HomepageLogin extends Component {
                   {companyName}
               </div>
               <br />
+              {max_docs}
               <div class="type">
                 {companyType}
               </div>
