@@ -23,6 +23,7 @@ import Footer from '../components/footer.jsx';
 export default class EmploymentLogin extends Component {
 
     constructor(){
+        super();
         var today = new Date(),
             dateToday = today.getDate();
     

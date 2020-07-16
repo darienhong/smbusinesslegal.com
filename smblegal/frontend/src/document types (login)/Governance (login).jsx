@@ -15,6 +15,7 @@ import Footer from '../components/footer.jsx';
 export default class GovernanceLogin extends Component {
 
     constructor(){
+        super();
         var today = new Date(),
             dateToday = today.getDate();
     

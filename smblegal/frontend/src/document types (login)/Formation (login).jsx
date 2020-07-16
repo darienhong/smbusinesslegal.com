@@ -14,6 +14,7 @@ import Footer from '../components/footer.jsx';
 
 export default class FormationLogin extends Component {
     constructor(){
+        super();
         var today = new Date(),
             dateToday = today.getDate();
     
@@ -49,7 +50,7 @@ export default class FormationLogin extends Component {
                 docs_used: this.state.docs_used,
                 email: this.state.email,
               }
-              
+
               fetch('/api/resetDocs', {
                 method: 'POST',
                 body: JSON.stringify(data), // data can be `string` or {object}!

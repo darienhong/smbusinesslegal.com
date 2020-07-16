@@ -16,6 +16,7 @@ import Footer from '../components/footer.jsx';
 export default class Covid_19Login extends Component {
 
     constructor(){
+        super();
         var today = new Date(),
             dateToday = today.getDate();
     
@@ -76,7 +77,8 @@ export default class Covid_19Login extends Component {
         const {
             docs_used, 
             email,
-            limited_docs
+            limited_docs,
+            date
         } = this.state
 
         return (
