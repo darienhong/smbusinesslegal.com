@@ -22,6 +22,7 @@ export default class SubMenu2 extends Component {
         <Dropdown.Menu>
           <Dropdown.Item><Link to="/AboutUs" className="dropdown-items">  About Us </Link> </Dropdown.Item>
           <Dropdown.Item><Link to="/ProductOverview" className="dropdown-items"> Product Overview </Link></Dropdown.Item>
+          <Dropdown.Item><Link to="/ProBono" className="dropdown-items"> Pro Bono </Link></Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
 

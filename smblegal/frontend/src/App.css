@@ -138,7 +138,7 @@ p {
  /* position: fixed; */
   background-color: rgb(255, 255, 255);
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 50px;
 
 
 }
@@ -291,7 +291,7 @@ nav a:hover {
 .homepage, .about-page, .pricing-page, .sign-up-page, .tools-page,  
 .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
 .automated-docs-page, .login-page, .create-acc-page, .company-id-page, .doc-page , .product-overview-page,
- .content-marketing-page, .homepage-login, .terms-of-use-page, .policy-page { 
+ .content-marketing-page, .homepage-login, .terms-of-use-page, .policy-page, .pro-bono-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
   margin-left: 50px; 
@@ -610,8 +610,8 @@ font-family: 'WorkSans';
 }
 
 .governance-automation-block{ 
-  width: 300px; 
-  display: flex;
+  width: 850px; 
+/*  display: flex; */
   justify-content: center;
   border: 3px solid #2DC4B6;
   padding: 20px;

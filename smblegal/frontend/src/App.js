@@ -70,7 +70,9 @@ import GovernanceDashboard from './login-files/GovernanceDashboard.jsx';
 import ProductOverviewPremium from './login-files/ProductOverviewPremium.jsx';
 import AboutUsPremium from './login-files/AboutUsPremium.jsx';
 import ToolsPremium from './login-files/ToolsPremium.jsx';
+import ProBonoLogin from './login-files/ProBonoLogin.jsx';
 
+import ProBono from './ProBono.jsx';
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsOfUse from './TermsOfUse.jsx';
 import ContentMarketing2 from './StartABusiness.jsx';
@@ -264,8 +266,18 @@ export default class App extends Component {
             <Route path="/ToolsPremium">
               <ToolsPremium />
             </Route>
+            <Route path ="/ProBonoLogin">
+              <ProBonoLogin />
+            </Route>
 
 
+
+
+
+
+            <Route path="/ProBono">
+              <ProBono />
+            </Route>
             <Route path="/TermsOfUse">
               <TermsOfUse />
             </Route>

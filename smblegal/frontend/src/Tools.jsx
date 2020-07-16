@@ -60,6 +60,35 @@ export default class Tools extends Component {
                     </p>
                 </div>
                 </Link>
+                </div>
+                <div class="tools-section">
+                <div class="tools-block">
+                    <p style={{fontWeight: "600", textAlign: "center"}}> DOCUMENT MANAGEMENT SYSTEM <br/> (Coming August) </p>
+                    < br/>
+                    <br />
+                    <br />
+                    <p style={{textAlign: "center"}}> We provide an industry leading legal document and contract management system.  
+                    Upload your documents to our platform and allow all stake holders to have easy access.
+                    </p>
+                </div>
+                <div class="tools-block">
+                    <p style={{fontWeight: "600", textAlign: "center"}}> CONTRACT TEMPLATE CREATOR <br /> (Coming August) </p>
+                    < br/>
+                    <p style={{textAlign: "center"}}> We provide companies the opportunity to extinguish document duplication, loss and recreation.  
+                    Upload your documents to our platform and create an interactive template.  With the click of a button execute documents 
+                    from the template and easily augment them by 
+                    adding clauses, deleting clauses or anything in between all at the click of a button. 
+                    </p>
+                </div>
+                <div class="tools-block">
+                    <p style={{fontWeight: "600", textAlign: "center"}}> INTERACTIVE, INTEGRATED, AND ITERATIVE DOCUMENTS <br /> (Coming August) </p>
+                    <p style={{textAlign: "center"}}> We provide a first of its kind software enabling businesses to quickly amend, terminate or 
+                    duplicate their documents.  With the click of 
+                    a button any document – either a SMB Legal automated document or one uploaded by the business – can be changed 
+                    with the click of a button.  Seamless integrations allow for those documents to be signed immediately, 
+                    cutting down on time wasted waiting for documents to be signed.
+                    </p>
+                </div>
             </div>
             <br></br>
             <br></br>

@@ -101,7 +101,7 @@ export default class Covid_19Login extends Component {
                             <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
                         </svg>
                     </div>
-                    {docs_used}
+                 {/* {docs_used} */}
                     <p class="pick-document"> Choose a document to draft </p>
                     <br></br>
                     <br></br>

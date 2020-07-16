@@ -22,6 +22,7 @@ export default class SubMenu2Login extends Component {
         <Dropdown.Menu>
           <Dropdown.Item><Link to="/AboutUsLogin" className="dropdown-items">  About Us </Link> </Dropdown.Item>
           <Dropdown.Item><Link to="/ProductOverviewLogin" className="dropdown-items"> Product Overview </Link></Dropdown.Item>
+          <Dropdown.Item><Link to="/ProBonoLogin" className="dropdown-items"> Pro Bono </Link></Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
 
