@@ -67,6 +67,7 @@ export default function SignIn() {
         let getP = ''
         p.then((value) => {
             getP = value
+            localStorage.setItem('plan', getP);
             // console.log("get p: " + getP);
 
 
