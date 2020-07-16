@@ -25,7 +25,7 @@ export default class BoardMinutesInfo3 extends Component {
 
   componentDidMount(){
 
-    if (docs_used <= max__docs){
+    if (this.state.docs_used <= this.state.max__docs){
       this.setState({
         shouldPay: false,
       })
