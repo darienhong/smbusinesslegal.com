@@ -63,27 +63,7 @@ export default class HomepageLogin extends Component {
    //     users: [data1[1][0].first_name, data1[1][0].last_name]
 
 
-
-
-        
-       // companyName: data1[0][0].company_name, 
-     //   companyType: data1[0][0],
-     //   USState: data1[0][0].state
-     //   USState: data1[0].state, 
-      //   users: data1[1]
       }))
-
-    //  .then(data2 => console.log(data2))
-   /*   .then(([data1, data2]) => 
-      this.setState ({
-        company: data1,
-        companyName: data1[0].company_name,
-        companyType: data1[0].company_type,
-        USState: data1[0].state,
-        users: data2
-
-      }))
-      */
 
       .catch(error => console.error('Error:', error))
       .then(response => console.log('Success:', response));

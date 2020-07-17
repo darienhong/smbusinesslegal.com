@@ -71,6 +71,7 @@ import ProductOverviewPremium from './login-files/ProductOverviewPremium.jsx';
 import AboutUsPremium from './login-files/AboutUsPremium.jsx';
 import ToolsPremium from './login-files/ToolsPremium.jsx';
 import ProBonoLogin from './login-files/ProBonoLogin.jsx';
+import ProBonoPremium from './login-files/ProBonoPremium.jsx';
 
 import ProBono from './ProBono.jsx';
 import PrivacyPolicy from './PrivacyPolicy.jsx';
@@ -268,6 +269,9 @@ export default class App extends Component {
             </Route>
             <Route path ="/ProBonoLogin">
               <ProBonoLogin />
+            </Route>
+            <Route path="/ProBonoPremium">
+              <ProBonoPremium />
             </Route>
 
 
