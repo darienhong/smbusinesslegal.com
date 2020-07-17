@@ -134,8 +134,7 @@ p {
   position: fixed;
   float: left; 
   width: 100%;
- /* position: fixed; */
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255); 
   padding-left: 30px;
   padding-right: 50px;
 
@@ -176,8 +175,8 @@ nav a {
   font-family: 'DM Sans';
   font-weight: 600;
   font-size: 14px;
-  border-color: white;
-  background-color: white;
+  border-color: white; 
+  background-color: white; 
   padding: 4px;
 }
 

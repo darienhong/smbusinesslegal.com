@@ -20,6 +20,9 @@ import {
   import ReactGA from 'react-ga';
 import { ResponsiveEmbed } from 'react-bootstrap';
 import { SearchResults } from 'semantic-ui-react';
+import Modal from 'react-bootstrap/Modal';
+import ModalBody from 'react-bootstrap/ModalBody';
+import ModalFooter from 'react-bootstrap/ModalFooter';
 
 
 export default class HomepageLogin extends Component { 
@@ -36,6 +39,8 @@ export default class HomepageLogin extends Component {
     email: localStorage.getItem('email'), 
     plan: localStorage.getItem('plan'),
     max_docs: 0,
+    show: false,
+    pay: false,
   }
 
  componentDidMount() {
@@ -76,6 +81,19 @@ export default class HomepageLogin extends Component {
 
     }
 
+   showModal = () => {
+      this.setState({
+        show: true,
+      })
+    }
+  
+  hideModal = () => {
+      this.setState({
+        show: false,
+        pay: true,
+      })
+    }
+
     saveData = () => {
       localStorage.setItem('max_docs', this.state.max_docs);
     }
@@ -98,9 +116,36 @@ export default class HomepageLogin extends Component {
 
         return (
           <div class="full-page">
+            
               <Navbar2 />
+              
             <div class="homepage-login"> 
             {this.saveData()}
+            <div>
+
+<Modal show={this.state.show} onHide={this.hideModal} dialogClassName="modal-custom" scrollable={true}>
+  <ModalBody style={{ maxHeight: 'calc(80vh - 180px)', overflowY: 'auto', fontSize: "14px" }} >
+    <br></br>
+    <br></br>
+    <center> <h1 style={{ fontSize: 30, fontWeight: 800 }}> Upgrade Your Plan </h1></center>
+    <br></br>
+    <h4 style={{color: "#245CA6", fontSize: "20px"}}> OUR PREMIUM PLAN INCLUDES: </h4>
+    < br/>
+    <p style={{fontSize: "18px"}}> &bull; 15 Automated Documents per month </p>
+    <p style={{fontSize: "18px"}}> &bull; Free Formation Documents and Guides (only Delaware documents are available now </p>
+    <p style={{fontSize: "18px"}}> &bull; Governance Dashboard </p>
+    <center> <p style={{color: "#245CA6", fontSize: "20px"}}> PRICE: $10 / Month </p></center>
+
+    <br></br>
+  </ModalBody>
+  <ModalFooter>
+
+    <Button variant="light" onClick={this.hideModal} style={{ fontFamily: "DM Sans" }}> UPGRADE NOW </Button>
+  </ModalFooter>
+</Modal>
+</div>
+
+           
             <br /> 
             <br /> 
             <br /> 
@@ -193,7 +238,7 @@ export default class HomepageLogin extends Component {
           <br />
 
 
-         <center> <Link to="/InitializePartnership"> <button class="upgrade-plan"> Upgrade Plan </button> </Link> </center>
+         <center>  <button class="upgrade-plan" onClick={this.showModal}> Upgrade Plan </button>  </center>
           <br />
           <br />
           <br />

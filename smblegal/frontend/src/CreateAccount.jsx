@@ -542,7 +542,7 @@ export default function CreateAccount() {
 
         <div>
 
-          <Modal show={show} onHide={hideModal} dialogClassName="modal-custom" scrollabl={true}>
+          <Modal show={show} onHide={hideModal} dialogClassName="modal-custom" scrollable={true}>
             <ModalBody style={{ maxHeight: 'calc(80vh - 180px)', overflowY: 'auto', fontSize: "14px" }} >
               <br></br>
               <br></br>
