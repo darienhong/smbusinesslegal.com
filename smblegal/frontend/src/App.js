@@ -16,12 +16,16 @@ import Formation from './document types/Formation.jsx';
 import Governance from './document types/Governance.jsx';
 import Employment from './document types/Employment.jsx';
 import Covid_19 from './document types/COVID-19.jsx';
+import Operational from './document types/Operational.jsx';
+
 
 
 import FormationLogin from './document types (login)/Formation (login)';
 import GovernanceLogin from './document types (login)/Governance (login)';
 import EmploymentLogin from './document types (login)/Employment (login)';
 import Covid_19Login from './document types (login)/COVID-19 (login)';
+import OperationalLogin from './document types (login)/Operational (login)';
+
 
 
 
@@ -47,6 +51,8 @@ import WaiverDirectorsQuestions from './waiverdirectors-files/WaiverDirectorsQue
 import WaiverShareholdersQuestions from './waivershareholders-files/WaiverShareholdersQuestions';
 import LLCResolutionQuestions from './llcresolution-files/LLCResolutionQuestions';
 import ShareholderMinutesQuestions from './shareholderminutes-files/ShareholderMinutesQuestions';
+import SaleQuestions from './sale-files/SaleQuestions';
+
 
 
 // import Solutions from './Solutions.jsx';
@@ -79,7 +85,7 @@ import AutomateGov from './AutomateGovernance.jsx';
 import CompanyID from './CompanyID.jsx';
 import AutomatedDocs from './AutomatedDocs.jsx';
 import Tools from './Tools.jsx';
-import AboutUs from './AboutUs.jsx';
+import AboutUs from './aboutus.jsx';
 import SignUp from './SignUp.jsx';
 import SignIn from './SignIn.jsx';
 import CreateAccount from './CreateAccount.jsx';
@@ -121,6 +127,9 @@ export default class App extends Component {
             <Route path="/Covid_19">
               <Covid_19 />
             </Route>
+            <Route path="/Operational">
+              <Operational />
+            </Route>
 
 
 
@@ -135,6 +144,9 @@ export default class App extends Component {
             </Route>
             <Route path="/Covid_19Login">
               <Covid_19Login />
+            </Route>
+            <Route path="/OperationalLogin">
+              <OperationalLogin />
             </Route>
 
 
@@ -205,6 +217,9 @@ export default class App extends Component {
             </Route>
             <Route path="/ShareholderMinutesQuestions">
               <ShareholderMinutesQuestions />
+            </Route>
+            <Route path="/SaleQuestions">
+              <SaleQuestions />
             </Route>
 
 

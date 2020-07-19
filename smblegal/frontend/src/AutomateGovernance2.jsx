@@ -197,13 +197,14 @@ export default function AutomateGov2() {
     }
 
     const onDrop = (acceptedFiles) => {
+        console.log('in heree');
         console.log(acceptedFiles);
         const data = {
             type: 'formation',
             file: acceptedFiles,
             email: state.email
         }
-        fetch('/addDoc', {
+        fetch('/api/addDoc', {
             method: 'POST',
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: { 'Content-Type': 'application/json' }
@@ -299,8 +300,8 @@ export default function AutomateGov2() {
 
 
 
-
-                        {/* <div class="automate-choice">
+                        {/* 
+                        <div class="automate-choice">
                             <TextField
                                 id="outlined-select-consent"
                                 select label="How would you like to Automate your Governance?"
@@ -390,10 +391,10 @@ export default function AutomateGov2() {
                             </form>
 
 
-                        )}
+                        )} */}
 
 
-                        <br />
+                        {/* <br />
                         <br /> */}
 
 

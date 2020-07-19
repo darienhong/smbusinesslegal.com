@@ -22,6 +22,8 @@ const { Pool, Client } = require('pg')
 const connectionString = 'postgres://dbmasteruser:08B97M28v8MXjtTcg9TTG@ls-3ac7a30ccbf1cb6f6b71a06b8245912da6a0d4a3.cgg9z13knhkq.us-west-2.rds.amazonaws.com:5432/dbmaster'
 var express = require('express');
 var bodyParser = require('body-parser');
+var fs = require('fs');
+
 
 // const pool = new Pool({
 //   connectionString: connectionString,
@@ -208,7 +210,11 @@ app.post('/api/addDoc', function (req, res) {
   console.log(type);
   console.log(file);
   console.log('email: ' + email)
-  const dateCreated = new Date();
+  // console.log('File: ', file[0].path);
+  let p = file[0].path
+  console.log('Path: ', p);
+  console.log(typeof p);
+
   // client.query('INSERT INTO "public"."document_table" ( "doc_type", "company_id", "doc") VALUES ($1, $2, $3)',
   //   [type, 1, file], function (err, result) {
   //     if (err) {
@@ -228,16 +234,33 @@ app.post('/api/addDoc', function (req, res) {
       console.log(result);
       let get_id = (result.rows[0].company_id);
       console.log(get_id);
-      client.query('INSERT INTO "public"."document_table" ( "doc_type", "company_id", "doc") VALUES ($1, $2, $3)',
-        [type, 1, file], function (err, result) {
-          if (err) {
-            console.log(err);
-            res.sendStatus(500);
-            return;
-          }
-          console.log('in here!');
-        });
 
+      // fs.readFile(p, function (err, data) {
+      //   console.log('Data: ', data);
+      // });
+
+
+
+
+
+      // fs.readFile(p, 'hex', function (err, imgData) {
+      //   console.log('imgData', imgData);
+      //   imgData = '\\x' + imgData;
+      //   // app.pgClient.query('insert into image_table (image) values ($1)',
+      //   //   [imgData],
+      //   //   function (err, writeResult) {
+      //   //     console.log('err', err, 'pg writeResult', writeResult);
+      //   //   });
+      //   client.query('INSERT INTO "public"."document_table" ( "doc_type", "company_id", "doc") VALUES ($1, $2, $3)',
+      //     [type, 1, imgData], function (err, result) {
+      //       if (err) {
+      //         console.log(err);
+      //         res.sendStatus(500);
+      //         return;
+      //       }
+      //       console.log('in here!');
+      //     });
+      // });
     })
 
 });
@@ -514,7 +537,7 @@ app.get('/api/getPlan', function (req, res) {
         console.log(err);
         // res.sendStatus(500);
         // return;
-      } 
+      }
       console.log(result);
       console.log("here");
       console.log(result.rows);
@@ -526,7 +549,7 @@ app.get('/api/getPlan', function (req, res) {
       }
       console.log("here2");
       console.log(p);
-    
+
       // let row = result.rows[0];
       // console.log(row);
       // let test = { plan_type: 'Freemium' };
@@ -554,7 +577,7 @@ app.get('/api/getPlan', function (req, res) {
       // console.log(get_row);
       // console.log(get_row2);
       // console.log(get_plan)
-     
+
       res.send(result.rows);
       // let get_id = (result.rows[0].company_id);
       // console.log(get_id)
@@ -654,9 +677,9 @@ app.get('/getCompanyInfo', function(req, res) {
       //  res.send()
     }
   });
-
+ 
 });
-
+ 
 app.get('/getListUsers', function (req, res) {
   client.query('SELECT * FROM public.user_table where company_id=1', function (error, table) {
     if (error) {
@@ -668,7 +691,7 @@ app.get('/getListUsers', function (req, res) {
     }
   })
 })
-
+ 
 */
 
 
@@ -731,7 +754,5 @@ app.post("/api/payment", (req, res) => {
 
 
 //ABOVE HERE IS PAYMENT CODE
-
-
 
 
