@@ -84,7 +84,7 @@ export default function AutomateGov3() {
     const [USstate, setState] = React.useState();
     const [boolean, setBoolean] = React.useState();
     const [automate, setAutomation] = React.useState();
-    const [membersList, setMembersList] = React.useState([{ name: "", email: "", percentShares: "", percentProfit: "", percentLosses: "" }]);
+    const [membersList, setMembersList] = React.useState([{ name: "", email: "", percentShares: "", percentProfit: "", percentLosses: "", title: "" }]);
     const [manager, setManager] = React.useState();
     const [open, setOpen] = React.useState(false);
     const [files, setFiles] = React.useState([]);
@@ -150,7 +150,7 @@ export default function AutomateGov3() {
     }
 
     const handleAddMembers = () => {
-        setMembersList([...membersList, { name: "", email: "", percentShares: "", percentProfit: "", percentLosses: "" }]);
+        setMembersList([...membersList, { name: "", email: "", percentShares: "", percentProfit: "", percentLosses: "", title: "" }]);
     }
 
     /*  const  addMembers = (e) => {
@@ -539,6 +539,19 @@ export default function AutomateGov3() {
                                                         variant="outlined"
                                                         style={{ width: "200px" }}
                                                     />
+                                                </div>
+                                                <br />
+                                                 <div class="title-input-llc" style={{ textAlign: "center" }}>
+
+                                                    <TextField
+                                                        name="title"
+                                                        label="Title"
+                                                        value={x.title}
+                                                        variant="outlined"
+                                                        style={{ width: "200px" }}
+                                                        onChange={e => handleMembersChange(e, i)}
+                                                    />
+
                                                 </div>
 
                                             </div>
