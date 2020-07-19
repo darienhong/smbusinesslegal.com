@@ -37,21 +37,10 @@ export default class TerminationPDF extends Component {
     // var creditRequire = ''
     // if (creditCheck)
     //   creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
-
-    const styles = StyleSheet.create({
-      list: {
-        marginBottom: 8,
-        marginLeft: 6,
-      },
-      listItem: {
-        marginBottom: 4,
-      },
-      listItemText: {
-        fontSize: 10,
-        lineHeight: 1.45,
-      },
-    });
-
+    const newDate = new Date();
+    var dateString = newDate.toString();
+    var formattedDate = moment(dateString).format('MM.DD.YY');
+    const fileName = 'Board_Meeting_Minutes_' + formattedDate + '.pdf'
 
     return (
       <div class='generate'>
@@ -65,7 +54,7 @@ export default class TerminationPDF extends Component {
         </div>
         <PDFExport paperSize="Letter"
           forcePageBreak=".page-break"
-          fileName="legal-document.pdf"
+          fileName={fileName}
           title=""
           subject=""
           keywords=""

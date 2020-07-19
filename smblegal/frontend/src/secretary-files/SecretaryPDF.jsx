@@ -27,6 +27,10 @@ export default class SecretaryPDF extends Component {
 
   render() {
     const { values } = this.props;
+    const newDate = new Date();
+    var dateString = newDate.toString();
+    var formattedDate = moment(dateString).format('MM.DD.YY');
+    const fileName = 'Board_Meeting_Minutes_' + formattedDate + '.pdf'
 
 
     return (
@@ -41,7 +45,7 @@ export default class SecretaryPDF extends Component {
         </div>
         <PDFExport paperSize="Letter"
           forcePageBreak=".page-break"
-          fileName="legal-document.pdf"
+          fileName={fileName}
           title=""
           subject=""
           keywords=""

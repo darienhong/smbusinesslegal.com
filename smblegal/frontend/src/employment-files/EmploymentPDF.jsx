@@ -35,6 +35,10 @@ export default class EmploymentPDF extends Component {
     // var creditRequire = ''
     // if (creditCheck)
     //   creditRequire = values.internName + ' will be receiving academic credit upon successful completion of this internship. The Company agrees to verify successful completion of this internship by ' + values.internName + ' in the event that ' + values.internName + '’s academic institution asks for such verification.'
+    const newDate = new Date();
+    var dateString = newDate.toString();
+    var formattedDate = moment(dateString).format('MM.DD.YY');
+    const fileName = 'Board_Meeting_Minutes_' + formattedDate + '.pdf'
 
 
     return (
@@ -48,7 +52,7 @@ export default class EmploymentPDF extends Component {
           </center>
         </div>
         <PDFExport paperSize="Letter"
-          fileName="legal-document.pdf"
+          fileName={fileName}
           title=""
           subject=""
           keywords=""
