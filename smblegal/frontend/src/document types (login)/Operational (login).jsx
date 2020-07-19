@@ -18,8 +18,9 @@ export default class OperationalLogin extends Component {
   render() {
     return (
       <div class="full-page">
+           <Navbar2 />
         <div class="covid-19-doc-page">
-          <Navbar2 />
+       
           <br></br>
           <br></br>
           <br></br>

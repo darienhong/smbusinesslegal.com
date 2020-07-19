@@ -17,8 +17,9 @@ export default class Operational extends Component {
   render() {
     return (
       <div class="full-page">
+           <Navbar />
         <div class="covid-19-doc-page">
-          <Navbar />
+       
           <br></br>
           <br></br>
           <br></br>
