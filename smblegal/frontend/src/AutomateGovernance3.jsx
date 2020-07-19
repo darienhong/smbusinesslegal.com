@@ -74,61 +74,7 @@ const useStyles = makeStyles((theme) => ({
             width: '25ch',
         },
     },
-}));
-
-const newMember = () => {
-    return (
-        <div class="new-member">
-            <div class="name-input-llc" style={{ textAlign: "center" }}>
-                <TextField id="outlined-basic" label="Name" variant="outlined" style={{ width: "500px" }} />
-            </div>
-            <br></br>
-            <div class="email-input-llc" style={{ textAlign: "center" }}>
-                <TextField id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
-            </div>
-            <br></br>
-            <div class="percent-ownership" style={{ textAlign: "center" }}>
-                <TextField
-                    id="outlined-number"
-                    label="Percentage of ownership"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    variant="outlined"
-                    style={{ width: "500px" }}
-                />
-            </div>
-            <br></br>
-            <div class="percent-profits-received" style={{ textAlign: "center" }}>
-                <TextField
-                    id="outlined-number"
-                    label="Percent of profits received"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    variant="outlined"
-                    style={{ width: "500px" }}
-                />
-            </div>
-            <br></br>
-            <div class="percent-losses-received" style={{ textAlign: "center" }}>
-                <TextField
-                    id="outlined-number"
-                    label="Percent of losses received"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    variant="outlined"
-                    style={{ width: "500px" }}
-                />
-            </div>
-
-        </div>
-    );
-}
+}))
 
 
 

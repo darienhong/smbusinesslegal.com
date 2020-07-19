@@ -56,6 +56,17 @@ const companies = [
     },
 ];
 
+const titles = [
+    {
+        value: 'Board Member',
+        label: 'Board Member',
+    },
+    {
+        value: 'Shareholder',
+        value: 'Shareholder',
+    }
+]
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,47 +76,6 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
-
-const newMember = () => {
-    return (
-        <div class="new-member">
-            <div class="name-input-llc" style={{ textAlign: "center" }}>
-                <TextField id="outlined-basic" label="Name" variant="outlined" style={{ width: "500px" }} />
-            </div>
-            <br></br>
-            <div class="email-input-llc" style={{ textAlign: "center" }}>
-                <TextField id="outlined-basic" label="Email" variant="outlined" style={{ width: "500px" }} />
-            </div>
-            <br></br>
-            <div class="percent-ownership" style={{ textAlign: "center" }}>
-                <TextField
-                    id="outlined-number"
-                    label="Percentage of ownership"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    variant="outlined"
-                    style={{ width: "500px" }}
-                />
-            </div>
-            <br></br>
-            <div class="percent-profits-received" style={{ textAlign: "center" }}>
-                <TextField
-                    id="outlined-number"
-                    label="Percent of profits received"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    variant="outlined"
-                    style={{ width: "500px" }}
-                />
-            </div>
-        </div>
-    );
-}
-
 
 
 export default function AutomateGov2() {
@@ -119,6 +89,9 @@ export default function AutomateGov2() {
     const [files, setFiles] = React.useState([]);
     const [boardMembersList, setBoardMembersList] = React.useState([{ name: "", email: "", sharesOwned: "" }]);
     const [shareholdersList, setShareholdersList] = React.useState([{ name: "", email: "", sharesOwned: "" }]);
+
+    const [companyList, setCompanyList] = React.useState([{ name: "", email: "", sharesOwned: "", title: ""}]);
+
     const [state, setStates] = React.useState({
         boardDate: new Date(),
         shareholderDate: new Date(),
@@ -237,17 +210,6 @@ export default function AutomateGov2() {
         setState(event.target.value);
     };
 
-    const handleMembersChange = (e, index) => {
-        const { name, value } = e.target;
-        const list = [...membersList]
-        list[index][name] = value;
-        setMembersList(list)
-    }
-
-    const handleAddMembers = () => {
-        setMembersList([...membersList, { name: "", email: "", percentShares: "", percentProfit: "" }]);
-    }
-
     const handleBMChange = (e, index) => {
         const { name, value } = e.target;
         const list = [...boardMembersList]
@@ -270,6 +232,16 @@ export default function AutomateGov2() {
         setShareholdersList([...shareholdersList, { name: "", email: "", sharesOwned: "" }]);
     }
 
+    const handleCompanyListChange = (e, index) => {
+        const { name, value } = e.target;
+        const list = [...companyList]
+        list[index][name] = value;
+        setCompanyList(list)
+
+    }
+    const handleAddCompanyList = () => {
+        setCompanyList([...companyList, {name: "", email: "", sharesOwned: "", title: ""}]);;
+    }
 
 
 
@@ -589,11 +561,126 @@ export default function AutomateGov2() {
                                 < br />
                                 <br />
 
-                                <div>
-                                    <p style={{ textAlign: "center" }}> Please upload the names and email address of all Board Members that your business has </p>
+                                    <div>
+                                    <p style={{ textAlign: "center" }}> Please upload the names and email address of all BoardMembers and Shareholders that your business has </p>
+                                    <div class="members-form">
+
+                                        <div class="button-add">
+
+                                            <Button onClick={handleAddCompanyList}> Add Member</Button>
+                                        </div>
+                                        < br />
+                                        <br />
+                                        {companyList.map((x, i) => {
+                                            return (
+                                                <div class="members-form-box">
+
+                                                    <div class="name-input-c" style={{ textAlign: "center" }}>
+
+                                                        <TextField
+                                                            name="name"
+                                                            label="Name"
+                                                            value={x.name}
+                                                            variant="outlined"
+                                                            style={{ width: "300px" }}
+                                                            onChange={e => handleCompanyListChange(e, i)}
+                                                        />
+
+                                                    </div>
+                                                    < br />
+                                                    <div class="email-input-c" style={{ textAlign: "center" }}>
+                                                        <TextField
+                                                            name="email"
+                                                            label="Email"
+                                                            value={x.email}
+                                                            variant="outlined"
+                                                            onChange={e => handleCompanyListChange(e, i)}
+                                                            style={{ width: "300px" }}
+                                                        />
+                                                    </div>
+                                                    <br />
+                                                    <div class="num-shares" style={{ textAlign: "center" }}>
+                                                        <TextField
+                                                            name="sharesOwned"
+                                                            id="outlined-number"
+                                                            label="Number of Shares owned"
+                                                            type="number"
+                                                            value={x.sharesOwned}
+                                                            InputLabelProps={{
+                                                                shrink: true,
+                                                            }}
+                                                            onChange={e => handleCompanyListChange(e, i)}
+                                                            variant="outlined"
+                                                            style={{ width: "300px" }}
+                                                        />
+                                                    </div>
+                                                    < br/>
+                                                    <div class="title-input-c" style={{ textAlign: "center" }}>
+
+                                                    <TextField
+                                                            name="title"
+                                                            label="Title (BoardMember / Shareholder)"
+                                                            value={x.title}
+                                                            variant="outlined"
+                                                            style={{ width: "300px" }}
+                                                            onChange={e => handleCompanyListChange(e, i)}
+                                                        />
+               
+               
+               
+               
+               
+               
+               
+               
+               
+                 {/*                             <TextField
+                                                    name="title"
+                                                    id="outlined"
+                                                    select label="What is your title?"
+                                                    value={x.title}
+                                                    onChange={e => handleCompanyListChange(e, i)}
+                                                    variant="outlined"
+                                                    style={{ width: "300px" }}
+                                                    >
+
+                                                {titles.map((option) => (
+                                            <MenuItem key={option.value} value={option.value}>
+                                                {option.label}
+                                                    </MenuItem>
+                                                    ))}
+                                                    </TextField>
+
+
+                                                */}
+              
+
+                                                    </div>
+                                                    
+
+                                                </div>
+
+                                            );
+                                        })}
 
 
 
+
+
+
+                                    </div>
+                                        
+
+                                        <br />
+                                        <br />
+
+
+
+
+
+
+
+{/*
                                     <div class="members-form">
 
                                         <div class="button-add">
@@ -722,6 +809,8 @@ export default function AutomateGov2() {
 
 
                                     </div>
+
+                                    */}
 
 
                                 </div>

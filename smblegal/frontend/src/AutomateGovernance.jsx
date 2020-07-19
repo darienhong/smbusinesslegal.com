@@ -397,12 +397,12 @@ export default function AutomateGov() {
                             </div>
                             <br></br>
 
-                            <p style={{ textAlign: "center" }}> Please enter the following information for all Members or Managers </p>
+                            <p style={{ textAlign: "center" }}> Please enter the following information for all Partners </p>
 
                             <div class="members-form">
 
                                 <div class="button-add">
-                                    <Button onClick={handleAddMembers}> Add Member</Button>
+                                    <Button onClick={handleAddMembers}> Add Partner </Button>
                                 </div>
                                 < br />
                                 <br />
