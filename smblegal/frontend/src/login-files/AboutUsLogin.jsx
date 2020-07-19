@@ -28,8 +28,9 @@ export default class AboutUsLogin extends Component {
     
         return (
         <div class="full-page">
-          <div class="about-page">
               <Navbar2 />
+          <div class="about-page">
+             
               <br></br>
               <br></br>
               <br></br>

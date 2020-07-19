@@ -27,6 +27,7 @@ export default class BoardMinutesInfo extends Component {
   render() {
     const { values } = this.props;
     return (
+    
       <div class='ask'>
         <Navbar2 />
 

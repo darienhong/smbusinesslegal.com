@@ -38,7 +38,8 @@ export default class IncorporationQuestions extends Component {
     preferredPrice: '[X]',
     incorpList: [{ name: "" }],
     checkFax: "",
-    registered: "[X]"
+    registered: "[X]",
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -116,7 +117,8 @@ export default class IncorporationQuestions extends Component {
       preferredPrice,
       incorpList,
       checkFax,
-      registered
+      registered,
+      docs_used
 
     } = this.state;
     const values = {
@@ -146,6 +148,8 @@ export default class IncorporationQuestions extends Component {
 
     };
 
+
+    
     switch (step) {
       case 1:
         return <IncorporationIntro
@@ -189,7 +193,11 @@ export default class IncorporationQuestions extends Component {
           prevStep={this.prevStep}
           values={values} />
     }
+
+  
+    
   }
+    
 
 
 }

@@ -73,7 +73,13 @@ import PremiumLogin from './login-files/PremiumLogin.jsx';
 import ContentMarketingLogin1 from './login-files/ContentMarketingLogin.jsx';
 import ContentMarketingLogin2 from './login-files/ContentMarketingLogin2.jsx';
 import GovernanceDashboard from './login-files/GovernanceDashboard.jsx';
+import ProductOverviewPremium from './login-files/ProductOverviewPremium.jsx';
+import AboutUsPremium from './login-files/AboutUsPremium.jsx';
+import ToolsPremium from './login-files/ToolsPremium.jsx';
+import ProBonoLogin from './login-files/ProBonoLogin.jsx';
+import ProBonoPremium from './login-files/ProBonoPremium.jsx';
 
+import ProBono from './ProBono.jsx';
 import PrivacyPolicy from './PrivacyPolicy.jsx';
 import TermsOfUse from './TermsOfUse.jsx';
 import ContentMarketing2 from './StartABusiness.jsx';
@@ -267,7 +273,30 @@ export default class App extends Component {
             <Route path="/GovernanceDashboard">
               <GovernanceDashboard />
             </Route>
+            <Route path="/ProductOverviewPremium">
+              <ProductOverviewPremium />
+            </Route>
+            <Route path="/AboutUsPremium">
+              <AboutUsPremium />
+            </Route>
+            <Route path="/ToolsPremium">
+              <ToolsPremium />
+            </Route>
+            <Route path ="/ProBonoLogin">
+              <ProBonoLogin />
+            </Route>
+            <Route path="/ProBonoPremium">
+              <ProBonoPremium />
+            </Route>
 
+
+
+
+
+
+            <Route path="/ProBono">
+              <ProBono />
+            </Route>
             <Route path="/TermsOfUse">
               <TermsOfUse />
             </Route>

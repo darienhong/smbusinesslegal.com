@@ -666,6 +666,98 @@ app.get('/api/getMemberList', function (req, res) {
 })
 
 
+app.get('/api/getNumDocs', function(req, res) {
+  const email = req.query.email;
+  console.log(email)
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email],
+  function(err, result) {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    } 
+    console.log(result);
+    let get_id = (result.rows[0].company_id);
+    console.log(get_id)
+    client.query('SELECT no_docs_used FROM public.company_table where company_id=$1', [get_id], function(err, table) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      } else {
+        console.log(table);
+        res.send(table.rows);
+      }
+    })
+    
+  })
+
+})
+
+
+
+app.post('/api/updateNumDocs', function(req, res) {
+  const docs_used = req.body.docs_used;
+  const email = req.body.email;
+  console.log("docs used" + docs_used);
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email], 
+  function(err, result) {
+    if (err){
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    } 
+    console.log(result);
+    let get_id = (result.rows[0].company_id);
+    console.log(get_id);
+    client.query('UPDATE "public"."company_table" SET no_docs_used = no_docs_used + 1 WHERE company_id = $1', [get_id], 
+    function(err, result){
+      if (err) {
+        console.log('there is an error');
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log('updating docs');
+      console.log(result);
+
+    })
+  })
+  
+})
+
+
+app.post('/api/resetDocs', function(req, res) {
+  const docs_used = req.body.docs_used;
+  const email = req.body.email;
+  console.log("docs used" + docs_used);
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email], 
+  function(err, result) {
+    if (err){
+      console.log(err);
+      res.sendStatus(500);
+      return;
+    } 
+    console.log(result);
+    let get_id = (result.rows[0].company_id);
+    console.log(get_id);
+    client.query('UPDATE "public"."company_table" SET no_docs_used = 0 WHERE company_id = $1', [get_id], 
+    function(err, result){
+      if (err) {
+        console.log('there is an error');
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log('updating docs');
+      console.log(result);
+
+    })
+  })
+  
+})
+
+
 /*
 app.get('/getCompanyInfo', function(req, res) {
   client.query('SELECT * FROM public.company_table where company_id=1', function(error, table) {

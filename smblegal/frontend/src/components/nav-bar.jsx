@@ -22,7 +22,7 @@ export default class Navbar extends Component {
   render() {
     return (
      
-        <div class="container">
+        <div class="nav-bar-container">
           <Link to="/"><img src={Image} alt="icon logo" className="logo" /></Link> 
           <nav>
             <ul>

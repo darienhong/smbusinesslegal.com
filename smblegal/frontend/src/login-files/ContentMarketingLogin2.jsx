@@ -39,10 +39,11 @@ export default class ContentMarketingLogin2 extends Component {
     
         return (
           <div class="full-page">
+              <Navbar2 />
           <div className="content-marketing-page">
             <div className="marketing-container">
               <div className="marketing-container" >
-                <Navbar2 />
+              
             <br />
             <br />
             <br />

@@ -46,6 +46,7 @@ AOS.init({
 
 
 export default class Homepage extends Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props);
   }
@@ -66,6 +67,29 @@ export default class Homepage extends Component {
         <div class="homepage">
           <Navbar style={{ width: "100%" }} />
           {/* <ModalTest /> 
+=======
+    constructor(props) {
+        super(props);
+    }
+  
+    render() {
+      const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid slice"
+        }
+      };
+
+        return (
+      
+          <div class="full-page">
+            <Navbar /> 
+          <div class="homepage">
+           
+            {/* <ModalTest /> 
+>>>>>>> 47a58a2151e6562acc0c837e70ad1df5aa67edb3
               <Lottie 
 	              options={defaultOptions}
                 height={800}
@@ -155,12 +179,36 @@ export default class Homepage extends Component {
           <br></br>
           <br></br>
           <center>
+<<<<<<< HEAD
             <div class="governance-automation-block">
               <div>
                 <p class="homepage-text"> Governance Automation  </p>
                 <p style={{ fontSize: "14px", padding: "10px", color: "#245CA6" }}> Automate and organize all aspects of your company's
             governance with the click of a button. </p>
               </div>
+=======
+          <div class="governance-automation-block">
+            <div>
+            <p class="homepage-text"> Document Management System (Coming August)  </p>
+            <p style={{fontSize: "14px", padding: "10px", color: "#245CA6"}}> Store all of your businesses documents on 
+            SMB Legal’s system and allow all stakeholders to have easy access. </p>
+            </div>
+            </div>
+            <br />
+            <div class="governance-automation-block">
+            <div>
+            <p class="homepage-text"> Contract Template Creator (Coming August)  </p>
+            <p style={{fontSize: "14px", padding: "10px", color: "#245CA6"}}> Create complex contract templates from prior documents and execute them as 
+            many times as you want by uploading them onto our system.</p>
+            </div>
+            </div>
+            <br />
+            <div class="governance-automation-block">
+            <div>
+            <p class="homepage-text"> Interactive, Integrated and Iterative Documents (Coming August)  </p>
+            <p style={{fontSize: "14px", padding: "10px", color: "#245CA6"}}> Amend, terminate and duplicate automated 
+            or uploaded documents with the click of a button.</p>
+>>>>>>> 47a58a2151e6562acc0c837e70ad1df5aa67edb3
             </div>
             <br></br>
             <br></br>

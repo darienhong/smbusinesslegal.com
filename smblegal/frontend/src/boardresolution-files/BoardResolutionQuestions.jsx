@@ -23,6 +23,7 @@ export default class BoardResolutionQuestions extends Component {
     voterList: [{ name: "[X]" }],
     unanimous: '',
     state: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -113,7 +114,8 @@ export default class BoardResolutionQuestions extends Component {
       resolutionList,
       voterList,
       unanimous,
-      state
+      state,
+      docs_used
     } = this.state;
     const values = {
       percent,

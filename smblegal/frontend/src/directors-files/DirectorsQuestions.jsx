@@ -37,7 +37,8 @@ export default class DirectorsQuestions extends Component {
     purchasersList: [{ name: "", shares: "", price: "" }],
     docName: 'Articles of Incorporation',
     docNameOther: '[X]',
-    unanimous: ''
+    unanimous: '',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -127,7 +128,8 @@ export default class DirectorsQuestions extends Component {
       docName,
       docNameOther,
       unanimous,
-      purchasersList
+      purchasersList,
+      docs_used
     } = this.state;
     const values = {
       percent,

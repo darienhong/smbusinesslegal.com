@@ -46,7 +46,8 @@ export default class Questions extends Component {
     paid: '[X]',
     verification: '[X]',
     responsibilities: '[JOB RESPONSIBILITIES]',
-    hourType: '[X]'
+    hourType: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
   }
 
   nextStep = () => {
@@ -109,7 +110,7 @@ export default class Questions extends Component {
     const { step } = this.state;
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
-      employerTitle, phone, email, paid, verification, expenseList, responsibilities, hourType
+      employerTitle, phone, email, paid, verification, expenseList, responsibilities, hourType, docs_used
     } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
@@ -117,6 +118,8 @@ export default class Questions extends Component {
       phone, email, paid, verification, expenseList, responsibilities, hourType
     };
 
+ 
+    
     switch (step) {
       case 1:
         return <LetterIntro
@@ -172,6 +175,8 @@ export default class Questions extends Component {
           prevStep={this.prevStep}
           values={values} />
     }
+
+    
   }
 
 

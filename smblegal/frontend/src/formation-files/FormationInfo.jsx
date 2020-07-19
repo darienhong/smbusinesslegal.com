@@ -12,20 +12,54 @@ import StripeCheckout from "react-stripe-checkout";
 
 
 export default class FormationInfo extends Component {
+
+  state = {
+    pay: false,
+    shouldPay: true,
+    docs_used: localStorage.getItem('docs_used'),
+    email: localStorage.getItem('email'),
+    max_docs: localStorage.getItem('max_docs'),
+  }
+
+
+  componentDidMount(){
+    if (this.state.docs_used <= this.state.max__docs){
+      this.setState({
+        shouldPay: false,
+      })
+    }
+  }
+
+
   next = (e) => {
     e.preventDefault();
     this.props.increasePercentage();
     this.props.nextStep();
+    console.log(this.state.email);
+    console.log(this.state.docs_used);
+
+    const data = {
+      docs_used: this.state.docs_used,
+      email: this.state.email,
+    }
+    
+    fetch('/api/updateNumDocs', {
+      method: 'POST',
+      body: JSON.stringify(data), // data can be `string` or {object}!
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+      .then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
 
   }
+
   previous = (e) => {
     e.preventDefault();
     this.props.prevStep();
     this.props.decreasePercentage();
 
-  }
-  state = {
-    pay: false
   }
 
   handleClick = (e) => {

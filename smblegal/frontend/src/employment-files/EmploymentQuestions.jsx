@@ -51,7 +51,8 @@ export default class EmploymentQuestions extends Component {
     competeTime: '[X months or years]',
     hourType: '[X]',
     benefits: '[X]',
-    vacation: '[X]'
+    vacation: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
   }
 
   nextStep = () => {
@@ -108,7 +109,8 @@ export default class EmploymentQuestions extends Component {
     const { date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,
       wage, hours, status, atWill, credits, expenses, liability, compete, percent, sick,
       employerTitle, phone, email, paid, verification, expenseList,
-      restaurant, commission, tipping, comProcedure, responsibilities, competeTime, hourType, benefits, vacation
+      restaurant, commission, tipping, comProcedure, responsibilities, competeTime, hourType, benefits, vacation, 
+      docs_used
     } = this.state;
     const values = {
       date, employeeName, address, internName, companyName, state, title, duties, relationship, startDate,

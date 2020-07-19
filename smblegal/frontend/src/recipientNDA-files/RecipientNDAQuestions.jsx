@@ -30,7 +30,8 @@ export default class RecipientNDAQuestions extends Component {
     term: '[X]',
     confidential: '',
     confidentialUse: '',
-    confidentialUseCheck: ''
+    confidentialUseCheck: '',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -99,7 +100,8 @@ export default class RecipientNDAQuestions extends Component {
       term,
       confidential,
       confidentialUse,
-      confidentialUseCheck
+      confidentialUseCheck,
+      docs_used
     } = this.state;
     const values = {
       percent,

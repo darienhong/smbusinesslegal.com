@@ -32,8 +32,9 @@ export default class AboutUs extends Component {
     
         return (
             <div class="full-page"> 
-          <div class="about-page">
               <Navbar />
+          <div class="about-page">
+             
               <br></br>
               <br></br>
               <br></br>
@@ -91,7 +92,7 @@ export default class AboutUs extends Component {
 
                     <p> Thanks for coming and we’re glad to have you along for the journey. </p>
 
-                    <h3 style={{fontFamily: "WorkSans", fontSize: "16px", fontWeight: "600"}}> The SMB Legal Team </h3>
+                    <h3 style={{fontFamily: "DM Sans", fontSize: "16px", fontWeight: "600"}}> The SMB Legal Team </h3>
                 <div class="about-us-features"> 
                 <br></br>
                 <br/>

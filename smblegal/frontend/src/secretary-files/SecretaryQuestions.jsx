@@ -19,6 +19,7 @@ export default class SecretaryQuestions extends Component {
     companyName: '[X]',
     corporation: '[X]',
     adopted: '[X]',
+    docs_used: localStorage.getItem('docs_used'),
 
 
   }
@@ -82,6 +83,7 @@ export default class SecretaryQuestions extends Component {
       name,
       corporation,
       adopted,
+      docs_used
 
     } = this.state;
     const values = {

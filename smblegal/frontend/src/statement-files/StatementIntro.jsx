@@ -27,15 +27,46 @@ import StripeCheckout from "react-stripe-checkout";
 export default class StatementIntro extends Component {
 
 
+  state = {
+    pay: false,
+    shouldPay: true,
+    docs_used: localStorage.getItem('docs_used'),
+    email: localStorage.getItem('email'),
+    max_docs: localStorage.getItem('max_docs'),
+  }
+
+
+  componentDidMount(){
+    if (this.state.docs_used <= this.state.max__docs){
+      this.setState({
+        shouldPay: false,
+      })
+    }
+  }
+
+
   next = (e) => {
     e.preventDefault();
     this.props.increasePercentage();
     this.props.nextStep();
-  }
+    console.log(this.state.email);
+    console.log(this.state.docs_used);
 
+    const data = {
+      docs_used: this.state.docs_used,
+      email: this.state.email,
+    }
+    
+    fetch('/api/updateNumDocs', {
+      method: 'POST',
+      body: JSON.stringify(data), // data can be `string` or {object}!
+      headers: { 'Content-Type': 'application/json' }
+    })
 
-  state = {
-    pay: false
+      .then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response));
+
   }
 
   handleClick = (e) => {

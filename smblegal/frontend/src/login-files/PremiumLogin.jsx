@@ -7,6 +7,7 @@ import animationData from '../assets/animation.json';
 import ModalTest from '../components/modal.jsx';
 import Navbar from '../components/nav-bar.jsx';
 import Navbar2 from '../components/nav-bar2.jsx';
+import Navbar2Premium from '../components/nav-bar2premium.jsx';
 import AOS from 'aos';
 import Footer from '../components/footer.jsx';
 
@@ -25,6 +26,7 @@ export default class PremiumLogin extends Component {
   state = {
     companyName: "[COMPANY NAME PLACEHOLDER]",
     users: "[USERS PLACEHOLDER]",
+    company_id: 0,
     lastMeeting: "[LAST MEETING PLACEHOLDER]",
     nextMeeting: "[NEXT MEETING PLACEHOLDER]",
     companyType: "[COMPANY TYPE]",
@@ -54,6 +56,7 @@ export default class PremiumLogin extends Component {
         USState: data1[0][0].state,
         companyName: data1[0][0].company_name,
         companyType: data1[0][0].company_type,
+        company_id: data1[0][0].company_id,
         users: data1[1],
         //     users: [data1[1][0].first_name, data1[1][0].last_name]
 
@@ -66,7 +69,13 @@ export default class PremiumLogin extends Component {
         //   USState: data1[0][0].state
         //   USState: data1[0].state, 
         //   users: data1[1]
-      }))
+      })
+
+
+
+
+
+      )
 
       //  .then(data2 => console.log(data2))
       /*   .then(([data1, data2]) => 
@@ -81,10 +90,14 @@ export default class PremiumLogin extends Component {
          */
 
       .catch(error => console.error('Error:', error))
-      .then(response => console.log('Success:', response))
+      .then(response => console.log('Success:', response));
+
+    //   console.log(this.state.company_id);
+    //   localStorage.setItem('company_id', this.state.company_id);
+
+
 
   }
-
 
 
   render() {
@@ -93,6 +106,7 @@ export default class PremiumLogin extends Component {
     const {
       companyName,
       users,
+      company_id,
       lastMeeting,
       nextMeeting,
       companyType,
@@ -101,8 +115,9 @@ export default class PremiumLogin extends Component {
 
     return (
       <div class="full-page">
+        <Navbar2Premium />
         <div class="homepage-login">
-          <Navbar2 />
+
           <br />
           <br />
           <br />
@@ -116,6 +131,7 @@ export default class PremiumLogin extends Component {
               <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
             </svg>
           </div>
+          <br />
           <br />
           <br />
           <br />

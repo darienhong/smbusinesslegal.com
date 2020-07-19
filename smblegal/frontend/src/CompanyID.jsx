@@ -347,8 +347,9 @@ export default function CompanyID() {
         return (
 
           <div class="full-page"> 
+            <Navbar />
             <div class="company-id-page">
-                <Navbar />
+             
                 <ModalTest />
                 <br></br>
                 <br></br>

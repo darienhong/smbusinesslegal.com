@@ -23,7 +23,8 @@ export default class LLCResolutionQuestions extends Component {
     voterList: [{ name: "[X]" }],
     unanimous: '',
     state: '[X]',
-    number: ''
+    number: '',
+    docs_used: localStorage.getItem('docs_used'),
 
   }
 
@@ -115,7 +116,8 @@ export default class LLCResolutionQuestions extends Component {
       voterList,
       unanimous,
       state,
-      number
+      number,
+      docs_used
     } = this.state;
     const values = {
       percent,

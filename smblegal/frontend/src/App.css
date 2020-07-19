@@ -82,7 +82,6 @@ h4 {
   font-family: 'DM Sans';
   font-weight: 400;
   color: black;
-  font-size: 10px;
 }
 
 p {
@@ -94,7 +93,7 @@ p {
 
 .ask {
   padding-top: 80px;
-  padding-left: 100px;
+ /* padding-left: 100px;  */
   display: flex;
   width: 90vw;
   height: 80vh;
@@ -127,7 +126,7 @@ p {
   padding: 10px;
 }
 
-.container {
+.nav-bar-container {
   
   height: 70px; 
   top: 0;
@@ -135,13 +134,15 @@ p {
   position: fixed;
   float: left; 
   width: 100%;
- /* position: fixed; */
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255); 
+  padding-left: 30px;
+  padding-right: 50px;
+
 
 }
 
 nav {
-  float: right;
+  float: right; 
 /*  position: sticky; */
 
 }
@@ -174,8 +175,8 @@ nav a {
   font-family: 'DM Sans';
   font-weight: 600;
   font-size: 14px;
-  border-color: white;
-  background-color: white;
+  border-color: white; 
+  background-color: white; 
   padding: 4px;
 }
 
@@ -284,10 +285,11 @@ nav a:hover {
     opacity: 1;
   }
 }
+
 .homepage, .about-page, .pricing-page, .sign-up-page, .tools-page,  
 .employment-doc-page, .formation-doc-page, .governance-doc-page, .covid-19-doc-page, 
 .automated-docs-page, .login-page, .create-acc-page, .company-id-page, .doc-page , .product-overview-page,
- .content-marketing-page, .homepage-login, .terms-of-use-page, .policy-page { 
+ .content-marketing-page, .homepage-login, .terms-of-use-page, .policy-page, .pro-bono-page { 
   animation: fadeInAnimation 3s ease-in-out;
   animation-iteration-count: 1;
   margin-left: 50px; 
@@ -607,8 +609,8 @@ font-family: 'WorkSans';
 }
 
 .governance-automation-block{ 
-  width: 300px; 
-  display: flex;
+  width: 850px; 
+/*  display: flex; */
   justify-content: center;
   border: 3px solid #2DC4B6;
   padding: 20px;

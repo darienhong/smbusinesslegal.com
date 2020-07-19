@@ -67,8 +67,8 @@ export default function SignIn() {
         let getP = ''
         p.then((value) => {
             getP = value
+            localStorage.setItem('plan', getP);
             // console.log("get p: " + getP);
-
 
             const checkPassword = state.password.length === 0
             const checkEmail = state.email.length === 0
@@ -167,8 +167,9 @@ export default function SignIn() {
     }
     return (
         <div class="full-page">
+              <Navbar />
             <div class="login-page">
-                <Navbar />
+           
                 <br></br>
                 <br></br>
                 <br></br>
