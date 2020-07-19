@@ -14,10 +14,10 @@ export default class AutomatedDocs extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
             <div class="full-page">
+                <Navbar />
                 <div class="automated-docs-page">
-                    <Navbar />
+
                     <br></br>
                     <br></br>
                     <br></br>
@@ -30,24 +30,6 @@ export default class AutomatedDocs extends Component {
                             <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1} />
                         </svg>
                     </div>
-=======
-            <div class="full-page"> 
-             <Navbar />
-            <div class="automated-docs-page">
-          
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <h1 style={{color: "#245CA6"}}> Automated Documents </h1>
-              <br></br>
-            <div style={{textAlign:"center"}}>
-                <svg height={50} width={500}>
-                    <line class="svg-line-1" x1={1} x2={500} y1={1} y2={1}/>
-                </svg>
-            </div>
->>>>>>> 47a58a2151e6562acc0c837e70ad1df5aa67edb3
 
                     <center><div class="doc-block"> <Link to="/Formation" style={{ textDecoration: "none", color: "#245CA6" }}>
                         Formation </Link>
