@@ -11,7 +11,6 @@ import Modal from 'react-bootstrap/Modal';
 import ModalBody from 'react-bootstrap/ModalBody';
 import ModalFooter from 'react-bootstrap/ModalFooter';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import { FormErrors } from './FormErrors';
 import {
   BrowserRouter as Router,
   Switch,
@@ -287,7 +286,7 @@ const useStyles = makeStyles((theme) => ({
 const validEmailRegex = 
   RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
-const zipcodeRegex = RegExp(/^[0-9\b]+$/);
+const zipcodeRegex = RegExp(/(^\d{5}$)|(^\d{5}-\d{4}$)/);
 
 const passwordRegex = RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/);
 
@@ -339,10 +338,7 @@ export default function CreateAccount() {
     zipcode: "",
     companyName: "",
     companyId: 0,
-    emailValid: false, 
-    passwordValid: false, 
-    formValid: false,
-    errors: {email: "", password: "", zipcode: ""},
+    errors: {email: "", password: "", zipcode: "", companyId: ""},
   })
 
   React.useEffect(() => {
@@ -352,9 +348,6 @@ export default function CreateAccount() {
   React.useEffect(() => {
     localStorage.setItem('plan', plan);
   }, [plan]);
-
-
-
 
 
   const showModal = e => {
@@ -388,19 +381,33 @@ export default function CreateAccount() {
         : 'Password must be 8 characters long, contain 1 special character and 1 number';
         break; 
       case 'zipcode': 
-        errors.zipcode = value.length >= 5 && zipcodeRegex.test(value)
+        errors.zipcode = zipcodeRegex.test(value)
         ? ''
         : 'Zipcode is not valid!';
         break;
+      case 'companyId': 
+        
+        fetch(`/api/getCompany?id=${value}`, {
+                 method: 'GET'
+        })
+
+        .then(response => response.json() 
+        .then(function(data){
+            console.log(data);
+            errors.companyId = data && data.length
+            ? ''
+            : 'company ID is not valid';
+        }))
+        break; 
       default: 
-        break;
+        break; 
     }
     setStates(prevState => ({
       ...prevState,
       errors,
       [name]: value
     }))
-    
+
     console.log(errors);
   }
 
@@ -421,10 +428,6 @@ export default function CreateAccount() {
     return valid;
   }
 
-
-  function errorClass(error) {
-    return(error.length === 0 ? '' : 'has-error');
-  }
 
   const handleChangePlan = (event) => {
     setPlan(event.target.value);
@@ -915,17 +918,6 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
 
         */}
 
-        
-
-      
-
-
-
-
-
-
-
-
 
 
           <div class="email-input" style={{ textAlign: "center" }}>
@@ -935,6 +927,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
           </div>
 
           {state.errors.email.length > 0 && <center> <span class="error"> {state.errors.email} </span> </center>}
+         
           <br></br>
           <div class="first-name-input" style={{ textAlign: "center" }}>
             <TextField value={state.firstName} name="firstName" onChange={handleChange} required id="outlined-required" label="First Name" variant="outlined" style={{ width: "500px" }} />
@@ -991,6 +984,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                   name="companyId"
                   onChange={handleChange} required id="outlined-required" label="Company ID" variant="outlined" style={{ width: "500px" }} />
               </div>
+              {state.errors.companyId.length > 0 && <center> <span class="error"> {state.errors.companyId} </span> </center>}
               <br />
               <br />
               {agree === false && (
@@ -1283,6 +1277,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     variant="outlined"
                     style={{ width: "500px" }} />
                 </div>
+                {state.errors.zipcode.length > 0 && <center> <span class="error"> {state.errors.zipcode} </span> </center>}
                 <br />
                 <div class="company-choice">
                   <TextField

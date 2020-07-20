@@ -761,6 +761,25 @@ app.post('/api/resetDocs', function (req, res) {
 })
 
 
+app.get('/api/getCompany', function (req, res) {
+  const id = req.query.id;
+  // console.log(email)
+  client.query('SELECT * FROM public.company_table where company_id=$1', [id],
+    function (err, result) {
+      if (err) {
+        console.log(err);
+        res.sendStatus(500);
+        return;
+      } else {
+        console.log(result.rows);
+        res.send(result.rows);
+      }
+
+    })
+
+})
+
+
 /*
 app.get('/getCompanyInfo', function(req, res) {
   client.query('SELECT * FROM public.company_table where company_id=1', function(error, table) {
