@@ -407,8 +407,6 @@ export default function CreateAccount() {
       errors,
       [name]: value
     }))
-
-    console.log(errors);
   }
 
   const handleSubmit = (event) => {
