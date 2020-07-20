@@ -114,7 +114,7 @@ app.post('/api/createAccount', function (req, res) {
           return;
         }
         console.log('updating users');
-        console.log(result);
+        // console.log(result);
         // return res.send('successfully');
       });
   }
@@ -139,7 +139,7 @@ app.post('/api/createAccount', function (req, res) {
           res.sendStatus(500);
           return;
         }
-        console.log(result);
+        // console.log(result);
         let get_id = (result.rows[0].company_id);
         console.log(get_id);
         client.query('INSERT INTO "public"."user_table" ("company_id", "first_name","last_name","email","password","plan_type", "date_created") VALUES($1, $2, $3, $4, $5, $6, $7)',
@@ -231,9 +231,9 @@ app.post('/api/addDoc', function (req, res) {
         res.sendStatus(500);
         return;
       }
-      console.log(result);
+      // console.log(result);
       let get_id = (result.rows[0].company_id);
-      console.log(get_id);
+      // console.log(get_id);
 
       // fs.readFile(p, function (err, data) {
       //   console.log('Data: ', data);
@@ -298,11 +298,11 @@ app.post('/api/addLLCGovernance', function (req, res) {
         delete mem.name;
         mem["first_name"] = first
         mem["last_name"] = last
-        vals.push([mem["email"], mem['percentShares'], mem['percentProfit'], mem['percentLosses'], mem["first_name"], mem["last_name"], "LLC member", get_id])
+        vals.push([mem["email"], mem['percentShares'], mem['percentProfit'], mem['percentLosses'], mem["first_name"], mem["last_name"], mem["title"], get_id])
       }
       console.log(vals)
       const query = 'INSERT INTO "public"."people_table" ("email", "share_of_ownership", "share_of_profit", "share_of_losses", "first_name", "last_name", "position", "company_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8)';
-
+      console.log(query);
       try {
         vals.forEach(row => {
           console.log(row.length);
@@ -330,7 +330,7 @@ app.post('/api/addLLCGovernance', function (req, res) {
             return;
           }
           console.log('updating users');
-          console.log(result);
+          // console.log(result);
           // return res.send('successfully');
         });
     });
@@ -361,7 +361,7 @@ app.post('/api/addPartnershipGovernance', function (req, res) {
         res.sendStatus(500);
         return;
       }
-      console.log(result);
+      // console.log(result);
       let get_id = (result.rows[0].company_id);
       console.log(get_id);
 
@@ -408,7 +408,7 @@ app.post('/api/addPartnershipGovernance', function (req, res) {
             return;
           }
           console.log('updating users');
-          console.log(result);
+          // console.log(result);
           // return res.send('successfully');
         });
     });
@@ -431,6 +431,7 @@ app.post('/api/addCorporationGovernance', function (req, res) {
   const issued = req.body.issued
   const boardMembersList = req.body.boardMembersList
   const shareholdersList = req.body.shareholdersList
+  const companyList = req.body.companyList
   const email = req.body.email
 
   console.log('email: ' + email)
@@ -442,26 +443,28 @@ app.post('/api/addCorporationGovernance', function (req, res) {
         res.sendStatus(500);
         return;
       }
-      console.log(result);
+      // console.log(result);
       let get_id = (result.rows[0].company_id);
-      console.log(get_id);
+      console.log('Id: ', get_id);
 
       var vals = []
 
-      for (var i = 0; i < boardMembersList.length; i++) {
-        console.log(boardMembersList[i])
-        var mem = boardMembersList[i]
+      for (var i = 0; i < companyList.length; i++) {
+        console.log('going into for loop');
+        // console.log(companyList[i])
+        var mem = companyList[i]
+        console.log('mem', mem);
         var space = mem.name.indexOf(" ")
         var first = mem.name.substring(0, space)
         var last = mem.name.substring(space + 1)
         delete mem.name;
         mem["first_name"] = first
         mem["last_name"] = last
-        vals.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "Board Member", get_id])
+        vals.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], mem["title"], get_id])
       }
       console.log(vals)
       const query = 'INSERT INTO "public"."people_table" ("email", "no_shares", "first_name", "last_name", "position", "company_id") VALUES ($1, $2, $3, $4, $5, $6)';
-
+      console.log(query);
       try {
         vals.forEach(row => {
           console.log(row.length);
@@ -478,59 +481,59 @@ app.post('/api/addCorporationGovernance', function (req, res) {
         console.log('done')
       }
 
-      var vals2 = []
+      // var vals2 = []
 
-      for (var i = 0; i < shareholdersList.length; i++) {
-        console.log(shareholdersList[i])
-        var mem = shareholdersList[i]
-        var space = mem.name.indexOf(" ")
-        var first = mem.name.substring(0, space)
-        var last = mem.name.substring(space + 1)
-        delete mem.name;
-        mem["first_name"] = first
-        mem["last_name"] = last
-        vals2.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "Shareholder", get_id])
-      }
-      console.log(vals)
+      // for (var i = 0; i < shareholdersList.length; i++) {
+      //   console.log(shareholdersList[i])
+      //   var mem = shareholdersList[i]
+      //   var space = mem.name.indexOf(" ")
+      //   var first = mem.name.substring(0, space)
+      //   var last = mem.name.substring(space + 1)
+      //   delete mem.name;
+      //   mem["first_name"] = first
+      //   mem["last_name"] = last
+      //   vals2.push([mem["email"], mem['sharesOwned'], mem["first_name"], mem["last_name"], "Shareholder", get_id])
+      // }
+      // console.log(vals)
 
-      try {
-        vals2.forEach(row => {
-          console.log(row.length);
-          client.query(query, row, (err, res) => {
-            if (err) {
-              console.log('Error: ' + err.stack);
-            } else {
-              console.log("inserted " + res.rowCount + " row:", row);
-            }
-          });
-        });
+      // try {
+      //   vals2.forEach(row => {
+      //     console.log(row.length);
+      //     client.query(query, row, (err, res) => {
+      //       if (err) {
+      //         console.log('Error: ' + err.stack);
+      //       } else {
+      //         console.log("inserted " + res.rowCount + " row:", row);
+      //       }
+      //     });
+      //   });
 
-      } finally {
-        console.log('done')
-      }
+      // } finally {
+      //   console.log('done')
+      // }
 
 
-      client.query('UPDATE "public"."company_table" SET board_meetings = $1, shareholder_meetings = $2, quorum_shareholders = $3, quorum_board = $4, quorum_vote_shareholders = $5, quorum_vote_board = $6, no_board_members = $7, no_shareholders = $8, no_auth_shares = $9, no_issued_shares = $10 WHERE company_id = $11',
-        [boardDate, shareholderDate, quorum_share, vote_share,
-          quorum_board, vote_board, members, shareholders, authorized, issued, get_id],
-        function (err, result) {
-          if (err) {
-            console.log('there is an error');
-            console.log(err);
-            res.sendStatus(500);
-            return;
-          }
-          console.log('updating users');
-          console.log(result);
-          // return res.send('successfully');
-        });
+      // client.query('UPDATE "public"."company_table" SET board_meetings = $1, shareholder_meetings = $2, quorum_shareholders = $3, quorum_board = $4, quorum_vote_shareholders = $5, quorum_vote_board = $6, no_board_members = $7, no_shareholders = $8, no_auth_shares = $9, no_issued_shares = $10 WHERE company_id = $11',
+      //   [boardDate, shareholderDate, quorum_share, vote_share,
+      //     quorum_board, vote_board, members, shareholders, authorized, issued, get_id],
+      //   function (err, result) {
+      //     if (err) {
+      //       console.log('there is an error');
+      //       console.log(err);
+      //       res.sendStatus(500);
+      //       return;
+      //     }
+      //     console.log('updating users');
+      //     // console.log(result);
+      //     // return res.send('successfully');
+      //   });
     });
 });
 
 
 app.get('/api/getPlan', function (req, res) {
   const email = req.query.email;
-  console.log(email)
+  // console.log(email)
   client.query('SELECT plan_type FROM public.user_table where email=$1', [email],
     function (err, result) {
       if (err) {
@@ -588,7 +591,7 @@ app.get('/api/getPlan', function (req, res) {
 
 app.get('/api/getCompanyInfo', function (req, res) {
   const email = req.query.email;
-  console.log(email)
+  // console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
     function (err, result) {
       if (err) {
@@ -596,7 +599,7 @@ app.get('/api/getCompanyInfo', function (req, res) {
         // res.sendStatus(500);
         // return;
       }
-      console.log(result);
+      // console.log(result);
       let get_id = (result.rows[0].company_id);
       console.log(get_id)
       client.query('SELECT * FROM public.company_table where company_id=$1', [get_id], function (err, table) {
@@ -614,7 +617,7 @@ app.get('/api/getCompanyInfo', function (req, res) {
 
 app.get('/api/getUserList', function (req, res) {
   const email = req.query.email;
-  console.log(email)
+  // console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
     function (err, result) {
       if (err) {
@@ -622,7 +625,7 @@ app.get('/api/getUserList', function (req, res) {
         res.sendStatus(500);
         return;
       }
-      console.log(result);
+      // console.log(result);
       let get_id = (result.rows[0].company_id);
       console.log(get_id)
       client.query('SELECT first_name, last_name FROM public.user_table where company_id=$1', [get_id], function (err, table) {
@@ -641,7 +644,7 @@ app.get('/api/getUserList', function (req, res) {
 
 app.get('/api/getMemberList', function (req, res) {
   const email = req.query.email;
-  console.log(email)
+  // console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
     function (err, result) {
       if (err) {
@@ -649,7 +652,7 @@ app.get('/api/getMemberList', function (req, res) {
         res.sendStatus(500);
         return;
       }
-      console.log(result);
+      // console.log(result);
       let get_id = (result.rows[0].company_id);
       console.log(get_id)
       client.query('SELECT first_name, last_name, position FROM public.people_table where company_id=$1', [get_id], function (err, table) {
@@ -666,95 +669,95 @@ app.get('/api/getMemberList', function (req, res) {
 })
 
 
-app.get('/api/getNumDocs', function(req, res) {
+app.get('/api/getNumDocs', function (req, res) {
   const email = req.query.email;
-  console.log(email)
+  // console.log(email)
   client.query('SELECT company_id FROM public.user_table where email=$1', [email],
-  function(err, result) {
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-      return;
-    } 
-    console.log(result);
-    let get_id = (result.rows[0].company_id);
-    console.log(get_id)
-    client.query('SELECT no_docs_used FROM public.company_table where company_id=$1', [get_id], function(err, table) {
+    function (err, result) {
       if (err) {
         console.log(err);
         res.sendStatus(500);
         return;
-      } else {
-        console.log(table);
-        res.send(table.rows);
       }
+      // console.log(result);
+      let get_id = (result.rows[0].company_id);
+      console.log(get_id)
+      client.query('SELECT no_docs_used FROM public.company_table where company_id=$1', [get_id], function (err, table) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        } else {
+          console.log(table);
+          res.send(table.rows);
+        }
+      })
+
     })
-    
-  })
 
 })
 
 
 
-app.post('/api/updateNumDocs', function(req, res) {
+app.post('/api/updateNumDocs', function (req, res) {
   const docs_used = req.body.docs_used;
   const email = req.body.email;
   console.log("docs used" + docs_used);
-  client.query('SELECT company_id FROM public.user_table where email=$1', [email], 
-  function(err, result) {
-    if (err){
-      console.log(err);
-      res.sendStatus(500);
-      return;
-    } 
-    console.log(result);
-    let get_id = (result.rows[0].company_id);
-    console.log(get_id);
-    client.query('UPDATE "public"."company_table" SET no_docs_used = no_docs_used + 1 WHERE company_id = $1', [get_id], 
-    function(err, result){
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email],
+    function (err, result) {
       if (err) {
-        console.log('there is an error');
         console.log(err);
         res.sendStatus(500);
         return;
       }
-      console.log('updating docs');
-      console.log(result);
+      // console.log(result);
+      let get_id = (result.rows[0].company_id);
+      // console.log(get_id);
+      client.query('UPDATE "public"."company_table" SET no_docs_used = no_docs_used + 1 WHERE company_id = $1', [get_id],
+        function (err, result) {
+          if (err) {
+            console.log('there is an error');
+            console.log(err);
+            res.sendStatus(500);
+            return;
+          }
+          console.log('updating docs');
+          // console.log(result);
 
+        })
     })
-  })
-  
+
 })
 
 
-app.post('/api/resetDocs', function(req, res) {
+app.post('/api/resetDocs', function (req, res) {
   const docs_used = req.body.docs_used;
   const email = req.body.email;
   console.log("docs used" + docs_used);
-  client.query('SELECT company_id FROM public.user_table where email=$1', [email], 
-  function(err, result) {
-    if (err){
-      console.log(err);
-      res.sendStatus(500);
-      return;
-    } 
-    console.log(result);
-    let get_id = (result.rows[0].company_id);
-    console.log(get_id);
-    client.query('UPDATE "public"."company_table" SET no_docs_used = 0 WHERE company_id = $1', [get_id], 
-    function(err, result){
+  client.query('SELECT company_id FROM public.user_table where email=$1', [email],
+    function (err, result) {
       if (err) {
-        console.log('there is an error');
         console.log(err);
         res.sendStatus(500);
         return;
       }
-      console.log('updating docs');
-      console.log(result);
+      // console.log(result);
+      let get_id = (result.rows[0].company_id);
+      // console.log(get_id);
+      client.query('UPDATE "public"."company_table" SET no_docs_used = 0 WHERE company_id = $1', [get_id],
+        function (err, result) {
+          if (err) {
+            console.log('there is an error');
+            console.log(err);
+            res.sendStatus(500);
+            return;
+          }
+          console.log('updating docs');
+          // console.log(result);
 
+        })
     })
-  })
-  
+
 })
 
 

@@ -90,7 +90,7 @@ export default function AutomateGov2() {
     const [boardMembersList, setBoardMembersList] = React.useState([{ name: "", email: "", sharesOwned: "" }]);
     const [shareholdersList, setShareholdersList] = React.useState([{ name: "", email: "", sharesOwned: "" }]);
 
-    const [companyList, setCompanyList] = React.useState([{ name: "", email: "", sharesOwned: "", title: ""}]);
+    const [companyList, setCompanyList] = React.useState([{ name: "", email: "", sharesOwned: "", title: "" }]);
 
     const [state, setStates] = React.useState({
         boardDate: new Date(),
@@ -131,6 +131,7 @@ export default function AutomateGov2() {
             issued: state.issued,
             boardMembersList: boardMembersList,
             shareholdersList: shareholdersList,
+            companyList: companyList,
             email: state.email
         }
         fetch('/api/addCorporationGovernance', {
@@ -240,7 +241,7 @@ export default function AutomateGov2() {
 
     }
     const handleAddCompanyList = () => {
-        setCompanyList([...companyList, {name: "", email: "", sharesOwned: "", title: ""}]);;
+        setCompanyList([...companyList, { name: "", email: "", sharesOwned: "", title: "" }]);;
     }
 
 
@@ -249,9 +250,9 @@ export default function AutomateGov2() {
     return (
 
         <div class="full-page">
-              <Navbar />
+            <Navbar />
             <div class="company-id-page">
-               
+
 
                 <br></br>
                 <br></br>
@@ -561,7 +562,7 @@ export default function AutomateGov2() {
                                 < br />
                                 <br />
 
-                                    <div>
+                                <div>
                                     <p style={{ textAlign: "center" }}> Please upload the names and email address of all BoardMembers and Shareholders that your business has </p>
                                     <div class="members-form">
 
@@ -614,10 +615,10 @@ export default function AutomateGov2() {
                                                             style={{ width: "300px" }}
                                                         />
                                                     </div>
-                                                    < br/>
+                                                    < br />
                                                     <div class="title-input-c" style={{ textAlign: "center" }}>
 
-                                                    <TextField
+                                                        <TextField
                                                             name="title"
                                                             label="Title (BoardMember / Shareholder)"
                                                             value={x.title}
@@ -625,16 +626,16 @@ export default function AutomateGov2() {
                                                             style={{ width: "300px" }}
                                                             onChange={e => handleCompanyListChange(e, i)}
                                                         />
-               
-               
-               
-               
-               
-               
-               
-               
-               
-                 {/*                             <TextField
+
+
+
+
+
+
+
+
+
+                                                        {/*                             <TextField
                                                     name="title"
                                                     id="outlined"
                                                     select label="What is your title?"
@@ -653,10 +654,10 @@ export default function AutomateGov2() {
 
 
                                                 */}
-              
+
 
                                                     </div>
-                                                    
+
 
                                                 </div>
 
@@ -669,18 +670,18 @@ export default function AutomateGov2() {
 
 
                                     </div>
-                                        
-
-                                        <br />
-                                        <br />
 
 
+                                    <br />
+                                    <br />
 
 
 
 
 
-{/*
+
+
+                                    {/*
                                     <div class="members-form">
 
                                         <div class="button-add">
