@@ -11,6 +11,7 @@ import Modal from 'react-bootstrap/Modal';
 import ModalBody from 'react-bootstrap/ModalBody';
 import ModalFooter from 'react-bootstrap/ModalFooter';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import { FormErrors } from './FormErrors';
 import {
   BrowserRouter as Router,
   Switch,
@@ -283,6 +284,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const validEmailRegex = 
+  RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+
+const zipcodeRegex = RegExp(/^[0-9\b]+$/);
+
+const passwordRegex = RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/);
+
 
 export default function CreateAccount() {
 
@@ -330,7 +338,11 @@ export default function CreateAccount() {
     lastName: "",
     zipcode: "",
     companyName: "",
-    companyId: 0
+    companyId: 0,
+    emailValid: false, 
+    passwordValid: false, 
+    formValid: false,
+    errors: {email: "", password: "", zipcode: ""},
   })
 
   React.useEffect(() => {
@@ -356,11 +368,62 @@ export default function CreateAccount() {
 
 
   const handleChange = e => {
+    e.preventDefault();
     const { name, value } = e.target
-    setStates(prevState => ({
+   /* setStates(prevState => ({
       ...prevState,
       [name]: value
     }))
+    */
+    let errors = state.errors; 
+    switch(name) {
+      case 'email': 
+        errors.email = validEmailRegex.test(value)
+        ? ''
+        : 'Email is not valid!';
+        break;
+      case 'password':
+        errors.password = passwordRegex.test(value) 
+        ? ''
+        : 'Password must be 8 characters long, contain 1 special character and 1 number';
+        break; 
+      case 'zipcode': 
+        errors.zipcode = value.length >= 5 && zipcodeRegex.test(value)
+        ? ''
+        : 'Zipcode is not valid!';
+        break;
+      default: 
+        break;
+    }
+    setStates(prevState => ({
+      ...prevState,
+      errors,
+      [name]: value
+    }))
+    
+    console.log(errors);
+  }
+
+  const handleSubmit = (event) => {
+    if (validateForm(state.errors)){
+      console.info('Valid Form');
+    } else {
+      console.error('Invalid Form');
+    }
+  }
+
+  const validateForm = (errors) => {
+    let valid = true; 
+    Object.values(errors).forEach(
+      // if we have an error string set valid to false
+      (val) => val.length > 0 && (valid = false)
+    );
+    return valid;
+  }
+
+
+  function errorClass(error) {
+    return(error.length === 0 ? '' : 'has-error');
   }
 
   const handleChangePlan = (event) => {
@@ -433,6 +496,7 @@ export default function CreateAccount() {
 
   const handleClickParternship = (event) => {
     event.preventDefault();
+    handleSubmit();
     console.log('went in to the button press!');
 
     const data = {
@@ -844,11 +908,33 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
             <TextField value={state.firstName} name="firstName" onChange={handleChange} id="outlined-basic" label="First Name" variant="outlined" style={{ width: "500px" }} />
           </div>
           <br></br> */}
+
+    {/*  <div class="form-errors">
+        <FormErrors formErrors={state.formErrors} />
+        </div>
+
+        */}
+
+        
+
+      
+
+
+
+
+
+
+
+
+
+
           <div class="email-input" style={{ textAlign: "center" }}>
             {/* <TextField value={state.lastName} name="lastName" onChange={handleChange} id="outlined-basic" label="Last Name" variant="outlined" style={{ width: "500px" }} /> */}
 
             <TextField value={state.email} name="email" onChange={handleChange} required id="outlined-required" label="Email" variant="outlined" style={{ width: "500px" }} />
           </div>
+
+          {state.errors.email.length > 0 && <center> <span class="error"> {state.errors.email} </span> </center>}
           <br></br>
           <div class="first-name-input" style={{ textAlign: "center" }}>
             <TextField value={state.firstName} name="firstName" onChange={handleChange} required id="outlined-required" label="First Name" variant="outlined" style={{ width: "500px" }} />
@@ -873,6 +959,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
               style={{ width: "500px" }}
             />
           </div>
+          {state.errors.password.length > 0 && <center> <span class="error"> {state.errors.password} </span> </center>}
           <br></br>
 
           <div class="select-plan" style={{ textAlign: "center" }}>
@@ -980,6 +1067,7 @@ YOUR LEGAL RIGHTS AND OBLIGATIONS AND IF YOU DO NOT AGREE TO BE BOUND BY ALL THE
                     variant="outlined"
                     style={{ width: "500px" }} />
                 </div>
+                {state.errors.zipcode.length > 0 && <center> <span class="error"> {state.errors.zipcode} </span> </center>}
                 <br />
                 <div class="company-choice">
                   <TextField

@@ -235,6 +235,14 @@ export default class GovernanceDashboard extends Component {
 
     } = this.state
 
+    {annualMeeting === false && (
+      this.state.tempAnnualMeeting = 'No'
+    )}
+
+    {annualMeeting === true && (
+      this.state.tempAnnualMeeting = 'Yes'
+    )}
+
 
     return (
       <div class="full-page">
@@ -244,15 +252,6 @@ export default class GovernanceDashboard extends Component {
           <br />
           <br />
           <br />
-
-
-          {annualMeeting === false && (
-            this.state.tempAnnualMeeting = 'No'
-          )}
-
-          {annualMeeting === true && (
-            this.state.tempAnnualMeeting = 'Yes'
-          )}
 
           <br />
           <br></br>
